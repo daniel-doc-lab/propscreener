@@ -1,0 +1,152 @@
+"""End-to-end offline: Statstidende + cvrapi + regnskabsindeks + EJF via FakeHttp."""
+import json
+from pathlib import Path
+
+from propscreener.config import Settings
+from propscreener.demo import cvr_number, generate
+from propscreener.export import build_dataset, build_site, load_cases, write_csv, write_json
+from propscreener.http import FakeHttp
+from propscreener.pipeline import Pipeline
+
+FIX = Path(__file__).parent / "fixtures"
+DEKRET = (FIX / "dekret_demo.txt").read_text(encoding="utf-8")
+XBRL = (FIX / "aarsrapport_demo.xml").read_text(encoding="utf-8")
+
+
+def _fake_http() -> FakeHttp:
+    def statstidende(url: str, body):
+        if (body or {}).get("messageCategory") == "Tvangsauktioner":
+            return {"messages": [
+                {"id": "a1", "publicationDate": "2026-08-30", "messageCategory": "Tvangsauktioner", "messageType": "Fast ejendom",
+                 "text": "Tvangsauktion over ejendommen matr. nr. 12 a, beliggende Vestergade 12, 8000 Aarhus C, "
+                         "tilhørende Fjord Ejendomme ApS, CVR-nr. 12345678. Ejendomsværdi: kr. 9.000.000. "
+                         "Auktionen afholdes den 15.10.2026."}]}
+        if "search" in url or url.endswith("/api/messages"):
+            return {"messages": [
+                {"id": "m1", "publicationDate": "2026-08-26", "messageCategory": "Konkursboer", "messageType": "Dekret",
+                 "text": DEKRET},
+                {"id": "m2", "publicationDate": "2026-08-27", "messageCategory": "Konkursboer", "messageType": "Dekret",
+                 "text": "Konkursdekret\nVed dekret afsagt den 27.08.2026 af Retten i Roskilde er\nByens Pizzaria ApS\n"
+                         "CVR-nr. 99887766\nAlgade 1\n4000 Roskilde\ntaget under konkursbehandling.\n"
+                         "Kurator: advokat Mette Jensen, Bystrøm Advokater, Torvet 3, 4000 Roskilde."},
+                {"id": "m3", "publicationDate": "2026-08-27", "messageCategory": "Konkursboer", "messageType": "Dekret",
+                 "text": "Konkursdekret over Hans Hansen, født 01.01.1970, Ukendt vej 1."},  # personlig konkurs
+            ]}
+        return {"messages": []}
+
+    def cvrapi(url: str):
+        if "vat=12345678" in url:
+            return {"vat": 12345678, "name": "Fjord Ejendomme ApS", "address": "Vestergade 12", "zipcode": "8000",
+                    "city": "Aarhus C", "cityname": "Aarhus", "industrycode": 682040,
+                    "industrydesc": "Udlejning af erhvervsejendomme", "companydesc": "Anpartsselskab",
+                    "startdate": "01/03 - 2015", "status": "UNDER KONKURS", "employees": "2",
+                    "owners": [{"name": "Anders Andersen"}]}
+        if "vat=99887766" in url:
+            return {"vat": 99887766, "name": "Byens Pizzaria ApS", "zipcode": "4000", "city": "Roskilde",
+                    "industrycode": 561010, "industrydesc": "Restauranter", "companydesc": "Anpartsselskab"}
+        return {"error": "NOT_FOUND"}
+
+    def regnskab(url: str, body):
+        if body["query"]["bool"]["must"][0]["term"]["cvrNummer"] != 12345678:
+            return {"hits": {"hits": []}}
+        return {"hits": {"hits": [{"_source": {"cvrNummer": 12345678, "offentliggoerelsesTidspunkt": "2026-05-01",
+                                               "regnskab": {"regnskabsperiode": {"slutDato": "2025-12-31"}},
+                                               "dokumenter": [
+                                                   {"dokumentMimeType": "application/pdf", "dokumentUrl": "https://regnskaber.virk.dk/x.pdf"},
+                                                   {"dokumentMimeType": "application/xml", "dokumentUrl": "https://regnskaber.virk.dk/x.xml"},
+                                               ]}}]}}
+
+    def ejf(url: str):
+        if "CVRnr=12345678" in url:
+            return {"features": [{"properties": {"bestemtFastEjendomBFENr": 1234567, "ejerandel_taeller": 1,
+                                                 "ejerandel_naevner": 1, "ejendomstype": "Samlet fast ejendom"}}]}
+        return {"features": []}
+
+    def dawa(url: str):
+        if "bfe=1234567" in url:
+            return [{"betegnelse": "Vestergade 12, 8000 Aarhus C", "postnr": "8000", "postnrnavn": "Aarhus C",
+                     "kommunenavn": "Aarhus", "x": 10.2039, "y": 56.1572}]
+        return []
+
+    return FakeHttp({
+        "https://www.statstidende.dk/api": statstidende,
+        "https://cvrapi.dk/api": cvrapi,
+        "http://distribution.virk.dk/offentliggoerelser/_search": regnskab,
+        "https://regnskaber.virk.dk/x.xml": XBRL,
+        "https://services.datafordeler.dk/EJERFORTEGNELSE": ejf,
+        "https://services.datafordeler.dk/VUR": lambda u: [{"ejendomsvaerdi": 9_400_000}],
+        "https://api.dataforsyningen.dk/adresser": dawa,
+    })
+
+
+def _settings(tmp_path: Path) -> Settings:
+    s = Settings()
+    s.cache_dir = tmp_path / "cache"
+    s.datafordeler_user, s.datafordeler_password = "u", "p"
+    s.request_delay_s = 0
+    return s
+
+
+def test_pipeline_end_to_end(tmp_path: Path):
+    pipe = Pipeline(_settings(tmp_path), http=_fake_http())  # type: ignore[arg-type]
+    cases, stats = pipe.run(days_back=30, min_score=0)
+
+    assert stats.dekreter == 2  # personlig konkurs uden CVR/selskab filtreret fra
+    by_cvr = {c.selskab.cvr: c for c in cases}
+    fjord = by_cvr["12345678"]
+    assert fjord.selskab.branchekode == "682040"
+    assert fjord.selskab.region == "Midtjylland"
+    assert fjord.regnskab.investeringsejendomme == 48_500_000
+    assert fjord.regnskab.ltv_pct == round(100 * 41_000_000 / 48_500_000, 1)
+    ejf_prop = next(p for p in fjord.ejendomme if p.kilde == "ejerfortegnelsen")
+    auk_prop = next(p for p in fjord.ejendomme if p.kilde == "tvangsauktion")
+    assert ejf_prop.bfe_nummer == "1234567"
+    assert ejf_prop.adresse == "Vestergade 12, 8000 Aarhus C"
+    assert ejf_prop.offentlig_vurdering == 9_400_000
+    assert ejf_prop.lat == 56.1572
+    assert auk_prop.tvangsauktion_dato == "2026-10-15" and auk_prop.offentlig_vurdering == 9_000_000
+    assert stats.tvangsauktioner == 1
+    assert "tvangsauktion" in fjord.kilder
+    assert fjord.score == 100 and fjord.konfidens == "høj"
+    assert "ejerfortegnelsen" in fjord.kilder and "regnskab-xbrl" in fjord.kilder and "cvrapi" in fjord.kilder
+    assert fjord.links["aarsrapport"].endswith(".pdf")
+    assert fjord.kurator.email == "ph@nordlys-demo.dk"
+
+    pizza = by_cvr["99887766"]
+    assert pizza.score == 0 and pizza.konfidens == "lav"
+    assert cases[0] is fjord  # sorteret efter score
+
+    # filtrering
+    pipe2 = Pipeline(_settings(tmp_path), http=_fake_http())  # type: ignore[arg-type]
+    selected, _ = pipe2.run(days_back=30, min_score=40)
+    assert [c.selskab.cvr for c in selected] == ["12345678"]
+
+
+def test_export_roundtrip_and_site(tmp_path: Path):
+    cases, stats = generate(n=12, seed=1)
+    ds = build_dataset(cases, stats, demo=True)
+    write_json(ds, tmp_path / "cases.json")
+    write_csv(cases, tmp_path / "cases.csv")
+    loaded, meta = load_cases(tmp_path / "cases.json")
+    assert meta["demo"] is True and meta["antal"] == 12
+    assert [c.id for c in loaded] == [c.id for c in cases]
+    assert loaded[0].to_dict() == cases[0].to_dict()
+    csv_text = (tmp_path / "cases.csv").read_text(encoding="utf-8-sig")
+    assert csv_text.splitlines()[0].startswith("score;konfidens;cvr;navn")
+    assert len(csv_text.splitlines()) == 13
+
+    out = build_site(ds, tmp_path / "site" / "index.html")
+    html = out.read_text(encoding="utf-8")
+    assert "/*__PROPSCREENER_DATA__*/null" not in html
+    assert json.dumps(cases[0].selskab.navn, ensure_ascii=False) in html
+
+
+def test_demo_is_deterministic_and_cvr_valid():
+    a, _ = generate(n=20, seed=7)
+    b, _ = generate(n=20, seed=7)
+    assert [c.id for c in a] == [c.id for c in b]
+    weights = [2, 7, 6, 5, 4, 3, 2, 1]
+    for _ in range(50):
+        n = cvr_number(__import__("random").Random(_))
+        assert sum(int(d) * w for d, w in zip(n, weights)) % 11 == 0
+    assert any(c.score >= 60 for c in a) and any(c.score < 40 for c in a)

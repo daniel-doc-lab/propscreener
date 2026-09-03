@@ -1,0 +1,97 @@
+name: Scrape og publicér
+
+# Kører dagligt kl. 06:15 dansk tid (04:15 UTC om sommeren) – Statstidende udkommer om natten.
+# Resultatet (data/cases.json + dashboard) publiceres til GitHub Pages.
+# Hemmeligheder (alle valgfrie – se docs/SETUP.md):
+#   DATAFORDELER_USER / DATAFORDELER_PASSWORD   Ejerfortegnelsen + vurdering
+#   CVR_ES_USER / CVR_ES_PASSWORD               Erhvervsstyrelsens system-til-system CVR
+#   STATSTIDENDE_CERT_PEM / STATSTIDENDE_KEY_PEM  OCES3-certifikat (mode=api)
+#   CVRAPI_USER_AGENT                           kontaktinfo til cvrapi.dk
+
+on:
+  schedule:
+    - cron: "15 4 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Antal dage tilbage"
+        default: "90"
+      min_score:
+        description: "Mindste score"
+        default: "40"
+      demo:
+        description: "Brug demodata i stedet for at scrape (true/false)"
+        default: "false"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    env:
+      STATSTIDENDE_MODE: ${{ secrets.STATSTIDENDE_CERT_PEM != '' && 'api' || 'web' }}
+      DATAFORDELER_USER: ${{ secrets.DATAFORDELER_USER }}
+      DATAFORDELER_PASSWORD: ${{ secrets.DATAFORDELER_PASSWORD }}
+      CVR_ES_USER: ${{ secrets.CVR_ES_USER }}
+      CVR_ES_PASSWORD: ${{ secrets.CVR_ES_PASSWORD }}
+      CVRAPI_USER_AGENT: ${{ secrets.CVRAPI_USER_AGENT }}
+      PROPSCREENER_CACHE_DIR: .cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e .
+
+      - name: Genskab HTTP-cache (skåner kilderne)
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: http-cache-${{ github.run_id }}
+          restore-keys: http-cache-
+
+      - name: Skriv OCES3-certifikat (kun hvis sat)
+        if: ${{ env.STATSTIDENDE_MODE == 'api' }}
+        run: |
+          mkdir -p certs
+          printf '%s' "${{ secrets.STATSTIDENDE_CERT_PEM }}" > certs/cert.pem
+          printf '%s' "${{ secrets.STATSTIDENDE_KEY_PEM }}" > certs/key.pem
+          echo "STATSTIDENDE_CERT_FILE=$PWD/certs/cert.pem" >> "$GITHUB_ENV"
+          echo "STATSTIDENDE_KEY_FILE=$PWD/certs/key.pem" >> "$GITHUB_ENV"
+
+      - name: Kør pipeline
+        run: |
+          if [ "${{ github.event.inputs.demo }}" = "true" ]; then
+            propscreener demo -n 60 --out site/data --site site/index.html
+          else
+            propscreener run --days "${{ github.event.inputs.days || '90' }}" \
+              --min-score "${{ github.event.inputs.min_score || '40' }}" \
+              --out site/data --site site/index.html
+          fi
+          cp site/data/cases.csv site/cases.csv
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cases
+          path: site/data
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

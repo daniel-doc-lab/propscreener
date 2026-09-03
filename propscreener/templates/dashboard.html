@@ -1,0 +1,691 @@
+<title>Konkursbo-registret</title>
+<meta name="description" content="Danske konkursboer der ejer fast ejendom – nøgletal, kurator, frister og kilder for investorer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #E8EAE3;
+    --surface: #F6F7F2;
+    --surface-2: #DFE2D9;
+    --line: #C4C9BD;
+    --line-soft: #D9DDD3;
+    --ink: #121915;
+    --ink-2: #4C5751;
+    --ink-3: #7C867F;
+    --accent: #1F3A6E;
+    --accent-soft: #D8E0EF;
+    --data: #1D6F6A;
+    --data-soft: #BFE0DC;
+    --good: #2B6B3F;
+    --good-soft: #D5E8DA;
+    --warn: #9C6B0F;
+    --warn-soft: #F2E4C4;
+    --bad: #A33A24;
+    --bad-soft: #F1D6CF;
+    --stamp: #A33A24;
+    --shadow: 0 18px 40px rgba(18, 25, 21, .18);
+    --radius: 3px;
+    --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131816; --surface: #1B211D; --surface-2: #232B26; --line: #36403A; --line-soft: #2A322D;
+      --ink: #E6E9E2; --ink-2: #AEB7B0; --ink-3: #7F8A82;
+      --accent: #9DB8EA; --accent-soft: #24304A;
+      --data: #6FB8B1; --data-soft: #1F3B39;
+      --good: #7FC493; --good-soft: #1E3327; --warn: #E0B25A; --warn-soft: #3A2E14; --bad: #E8927C; --bad-soft: #3F221C;
+      --stamp: #E8927C; --shadow: 0 18px 40px rgba(0,0,0,.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131816; --surface: #1B211D; --surface-2: #232B26; --line: #36403A; --line-soft: #2A322D;
+    --ink: #E6E9E2; --ink-2: #AEB7B0; --ink-3: #7F8A82;
+    --accent: #9DB8EA; --accent-soft: #24304A;
+    --data: #6FB8B1; --data-soft: #1F3B39;
+    --good: #7FC493; --good-soft: #1E3327; --warn: #E0B25A; --warn-soft: #3A2E14; --bad: #E8927C; --bad-soft: #3F221C;
+    --stamp: #E8927C; --shadow: 0 18px 40px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 15px; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-display); font-size: 1rem; line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .num { font-variant-numeric: tabular-nums; }
+  .eyebrow { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+  .muted { color: var(--ink-2); }
+  .faint { color: var(--ink-3); }
+
+  /* ---------- masthead ---------- */
+  .masthead { border-bottom: 3px double var(--line); padding: 28px clamp(16px, 4vw, 48px) 20px; }
+  .masthead-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.6rem);
+    letter-spacing: -.03em; line-height: .98; margin: 6px 0 10px; text-wrap: balance; max-width: 16ch;
+  }
+  .masthead p.lede { font-family: var(--font-serif); font-size: 1.15rem; max-width: 62ch; margin: 0; color: var(--ink-2); }
+  .colophon { text-align: right; font-size: .8rem; color: var(--ink-2); line-height: 1.6; min-width: 220px; }
+  .colophon strong { color: var(--ink); }
+  .stamp {
+    display: inline-block; margin-top: 8px; padding: 4px 10px; border: 2px solid var(--stamp); color: var(--stamp);
+    font-weight: 800; letter-spacing: .14em; font-size: .72rem; text-transform: uppercase; transform: rotate(-2deg);
+    border-radius: 2px;
+  }
+
+  /* ---------- ledger (KPI) ---------- */
+  .ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin-top: 22px;
+            border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .ledger > div { padding: 12px 14px 12px 0; border-right: 1px solid var(--line-soft); margin-right: 14px; }
+  .ledger > div:last-child { border-right: 0; }
+  .ledger .v { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.1;
+               margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .ledger .v small { font-size: .85rem; font-weight: 400; color: var(--ink-2); margin-left: 3px; }
+  .ledger .sub { font-size: .75rem; color: var(--ink-3); margin-top: 2px; }
+
+  /* ---------- charts ---------- */
+  .charts { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 20px; padding: 18px clamp(16px, 4vw, 48px) 8px; }
+  @media (max-width: 960px) { .charts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .charts { grid-template-columns: 1fr; } }
+  .chart h3 { margin: 0 0 2px; font-size: .95rem; font-weight: 600; }
+  .chart .sub { font-size: .75rem; color: var(--ink-3); margin-bottom: 8px; }
+  .chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .chart text { font-family: var(--font-mono); font-size: 10px; fill: var(--ink-3); }
+  .chart .grid { stroke: var(--line-soft); stroke-width: 1; }
+  .chart .bar { fill: var(--data); }
+  .chart .bar.dim { fill: var(--data-soft); }
+  .chart .lbl { fill: var(--ink-2); font-family: var(--font-display); font-size: 11px; }
+  .chart .val { fill: var(--ink); font-size: 10.5px; }
+  .hbar { display: grid; grid-template-columns: 8.5em 1fr 3em; gap: 6px 10px; align-items: center; font-size: .82rem; }
+  .hbar .track { height: 12px; background: var(--surface-2); border-radius: 2px; position: relative; overflow: hidden; }
+  .hbar .fill { position: absolute; inset: 0 auto 0 0; background: var(--data); border-radius: 0 2px 2px 0; }
+  .hbar .fill.hoej { background: var(--data); }
+  .hbar .n { text-align: right; color: var(--ink-2); }
+  .hbar .k { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ---------- workspace ---------- */
+  .workspace { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 0; align-items: start; }
+  @media (max-width: 860px) { .workspace { grid-template-columns: 1fr; } .rail { position: static !important; } }
+  .rail { position: sticky; top: 0; padding: 18px 18px 24px clamp(16px, 4vw, 48px); border-right: 1px solid var(--line-soft);
+          max-height: 100vh; overflow: auto; }
+  .rail h2 { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; font-weight: 600; }
+  .field { margin-bottom: 16px; }
+  .field label.lab { display: block; font-size: .74rem; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; font-weight: 600; }
+  input[type="search"], select {
+    width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink);
+    font: inherit; font-size: .9rem;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 10px; font-size: .8rem;
+    cursor: pointer; color: var(--ink-2); line-height: 1.2;
+  }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+  :root[data-theme="dark"] .chip[aria-pressed="true"], .chip[aria-pressed="true"].dk { color: var(--paper); }
+  .range { display: flex; align-items: center; gap: 10px; }
+  .range input { flex: 1; accent-color: var(--accent); }
+  .range output { font-family: var(--font-mono); font-size: .85rem; min-width: 2.5em; text-align: right; }
+  .check { display: flex; align-items: center; gap: 8px; font-size: .88rem; margin-bottom: 8px; cursor: pointer; }
+  .check input { accent-color: var(--accent); width: 15px; height: 15px; margin: 0; }
+  .rail .actions { display: grid; gap: 8px; margin-top: 8px; }
+  .btn {
+    border: 1px solid var(--line); background: var(--surface); padding: 7px 10px; border-radius: var(--radius); cursor: pointer;
+    font-size: .85rem; text-align: left; color: var(--ink);
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+  .btn.primary.dk { color: var(--paper); }
+
+  .main { padding: 14px clamp(16px, 4vw, 48px) 40px 22px; min-width: 0; }
+  .toolbar { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .toolbar .count { font-family: var(--font-serif); font-size: 1.15rem; }
+  .toolbar .count b { font-weight: 500; }
+  .sort { display: flex; gap: 4px; flex-wrap: wrap; }
+  .sort button { border: 0; background: none; padding: 4px 8px; font-size: .8rem; color: var(--ink-2); cursor: pointer; border-radius: var(--radius); }
+  .sort button[aria-pressed="true"] { color: var(--ink); background: var(--surface-2); font-weight: 600; }
+
+  /* ---------- register rows ---------- */
+  .register { border-top: 2px solid var(--ink); }
+  .row-head, .row {
+    display: grid; align-items: center;
+    grid-template-columns: 56px minmax(220px, 2.2fr) 1.1fr .9fr 1.1fr 1fr 1.1fr 1.2fr;
+    gap: 12px; padding: 10px 6px;
+  }
+  .row-head { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--line); font-weight: 600; }
+  .row { border-bottom: 1px solid var(--line-soft); cursor: pointer; background: transparent; width: 100%; text-align: left; border-left: 3px solid transparent; }
+  .row:hover { background: var(--surface); }
+  .row[aria-current="true"] { background: var(--surface); border-left-color: var(--accent); }
+  .row .name { font-family: var(--font-serif); font-size: 1.12rem; font-weight: 500; line-height: 1.15; }
+  .row .name .form { font-family: var(--font-display); font-size: .72rem; color: var(--ink-3); margin-left: 6px; letter-spacing: .04em; }
+  .row .meta { font-size: .78rem; color: var(--ink-3); margin-top: 2px; }
+  .row .cell { font-size: .88rem; }
+  .row .cell .l { display: block; font-size: .7rem; color: var(--ink-3); letter-spacing: .05em; text-transform: uppercase; }
+  .row .cell.right { text-align: right; }
+  @media (max-width: 1100px) {
+    .row-head { display: none; }
+    .row { grid-template-columns: 56px 1fr 1fr; grid-template-areas: "meter name name" "meter a b" "meter c d" "meter e f"; row-gap: 6px; }
+    .row .name-cell { grid-area: name; }
+    .row .cell.right { text-align: left; }
+  }
+  @media (max-width: 560px) { .row { grid-template-columns: 44px 1fr; grid-template-areas: "meter name" "meter a" "meter b" "meter c" "meter d" "meter e" "meter f"; } }
+
+  .meter { display: grid; grid-template-rows: repeat(5, 5px); gap: 2px; width: 22px; align-content: center; }
+  .meter i { display: block; background: var(--surface-2); border-radius: 1px; }
+  .meter i.on { background: var(--data); }
+  .meter i.on.h { background: var(--good); }
+  .meter-wrap { display: flex; align-items: center; gap: 8px; }
+  .meter-wrap .s { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-2); }
+
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 2px; font-size: .72rem; font-weight: 600; letter-spacing: .03em; border: 1px solid transparent; }
+  .tag.hoej { background: var(--good-soft); color: var(--good); }
+  .tag.middel { background: var(--warn-soft); color: var(--warn); }
+  .tag.lav { background: var(--surface-2); color: var(--ink-2); }
+  .tag.type { background: var(--accent-soft); color: var(--accent); }
+  .tag.deadline { background: var(--surface-2); color: var(--ink-2); font-family: var(--font-mono); font-weight: 500; }
+  .tag.deadline.soon { background: var(--bad-soft); color: var(--bad); }
+  .tag.deadline.past { background: transparent; border-color: var(--line); color: var(--ink-3); }
+  .tag.auk { background: var(--bad-soft); color: var(--bad); }
+
+  .empty { padding: 48px 12px; text-align: center; color: var(--ink-3); font-family: var(--font-serif); font-size: 1.1rem; }
+
+  /* ---------- drawer ---------- */
+  .backdrop { position: fixed; inset: 0; background: rgba(18,25,21,.35); z-index: 20; }
+  .drawer {
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(720px, 100vw); background: var(--surface); z-index: 21;
+    box-shadow: var(--shadow); overflow: auto; border-left: 1px solid var(--line); display: flex; flex-direction: column;
+  }
+  .drawer-head { padding: 22px 28px 16px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--surface); z-index: 2; }
+  .drawer-head .close { position: absolute; top: 14px; right: 14px; border: 1px solid var(--line); background: var(--paper); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1rem; line-height: 1; }
+  .drawer-head h2 { font-family: var(--font-serif); font-weight: 500; font-size: 1.9rem; line-height: 1.05; margin: 6px 40px 6px 0; text-wrap: balance; }
+  .drawer-head .ident { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .84rem; color: var(--ink-2); align-items: center; }
+  .drawer-body { padding: 8px 28px 40px; display: grid; gap: 26px; }
+  .sec h3 { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; }
+  .sec h3::after { content: ""; flex: 1; height: 1px; background: var(--line-soft); }
+
+  .kurator { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); background: var(--paper); border-radius: var(--radius); }
+  .kurator .who { font-family: var(--font-serif); font-size: 1.25rem; }
+  .kurator .firm { color: var(--ink-2); font-size: .9rem; }
+  .kurator .addr { font-size: .84rem; color: var(--ink-3); margin-top: 4px; }
+  .kurator .contact { display: grid; gap: 6px; align-content: start; text-align: right; font-size: .9rem; }
+  .kurator .contact a { display: inline-block; }
+  @media (max-width: 560px) { .kurator { grid-template-columns: 1fr; } .kurator .contact { text-align: left; } }
+
+  .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 16px; }
+  .timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: var(--line); }
+  .tl { position: relative; padding: 16px 8px 0 0; font-size: .78rem; }
+  .tl::before { content: ""; position: absolute; top: 2px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink-3); }
+  .tl.done::before { background: var(--ink-3); }
+  .tl.key::before { border-color: var(--accent); background: var(--accent); }
+  .tl.urgent::before { border-color: var(--bad); background: var(--bad); }
+  .tl .d { font-family: var(--font-mono); color: var(--ink); font-size: .82rem; }
+  .tl .n { color: var(--ink-3); }
+  @media (max-width: 560px) { .timeline { grid-template-columns: 1fr 1fr; gap: 10px 0; } .timeline::before { display: none; } }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 18px; }
+  .kpi .l { font-size: .72rem; color: var(--ink-3); letter-spacing: .04em; text-transform: uppercase; }
+  .kpi .v { font-family: var(--font-mono); font-size: 1.05rem; margin-top: 2px; }
+  .kpi .v.neg { color: var(--bad); }
+  .balance { margin-top: 14px; }
+  .balance .bar { display: flex; height: 16px; gap: 2px; border-radius: 2px; overflow: hidden; }
+  .balance .seg { min-width: 2px; }
+  .balance .seg.prop { background: var(--data); }
+  .balance .seg.other { background: var(--data-soft); }
+  .balance .seg.mort { background: var(--accent); }
+  .balance .seg.debt { background: var(--accent-soft); }
+  .balance .seg.eq { background: var(--good); }
+  .balance .seg.eqneg { background: var(--bad); }
+  .balance .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .76rem; color: var(--ink-2); margin-top: 6px; }
+  .balance .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+
+  .signals { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .signals li { display: grid; grid-template-columns: 3.2em 1fr auto; gap: 10px; font-size: .88rem; align-items: baseline; }
+  .signals .pt { font-family: var(--font-mono); color: var(--data); }
+  .signals .src { font-size: .72rem; color: var(--ink-3); white-space: nowrap; }
+
+  table.props { width: 100%; border-collapse: collapse; font-size: .86rem; }
+  table.props th { text-align: left; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+  table.props td { padding: 8px 8px 8px 0; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  table.props td.r, table.props th.r { text-align: right; }
+  .table-wrap { overflow-x: auto; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a { border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 10px; text-decoration: none; font-size: .85rem; background: var(--paper); }
+  .links a:hover { border-color: var(--accent); }
+  .links a.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+  .links a.primary.dk { color: var(--paper); }
+
+  details.raw summary { cursor: pointer; font-size: .85rem; color: var(--ink-2); }
+  details.raw pre { white-space: pre-wrap; font-family: var(--font-mono); font-size: .78rem; background: var(--paper); padding: 12px; border: 1px solid var(--line-soft); line-height: 1.5; max-height: 320px; overflow: auto; }
+  .notes { font-size: .84rem; color: var(--ink-2); }
+  .notes li { margin-bottom: 3px; }
+
+  footer { border-top: 3px double var(--line); padding: 22px clamp(16px, 4vw, 48px) 40px; font-size: .84rem; color: var(--ink-2); }
+  footer .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1200px; }
+  footer h4 { margin: 0 0 6px; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  footer p { margin: 0 0 8px; max-width: 62ch; }
+  .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: 3px; font-size: .85rem; z-index: 30; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .drawer { animation: slide .22s ease-out; }
+    @keyframes slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+  @media print { .rail, .backdrop, .charts { display: none; } .drawer { position: static; width: auto; box-shadow: none; } }
+</style>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <div>
+      <div class="eyebrow">Statstidende · CVR · Regnskaber · Ejerfortegnelsen</div>
+      <h1>Konkursboer med fast ejendom</h1>
+      <p class="lede">Register over selskaber taget under konkursbehandling i Danmark, filtreret til dem der ejer eller sandsynligvis ejer fast ejendom. Hver post samler dekret, kurator, nøgletal fra seneste årsrapport og de kendte ejendomme – med frister og links til kilderne.</p>
+    </div>
+    <div class="colophon">
+      <div>Genereret <strong id="c-date">–</strong></div>
+      <div>Periode <strong id="c-period">–</strong></div>
+      <div>Kilder <strong id="c-sources">–</strong></div>
+      <div id="c-stamp" hidden><span class="stamp">Demodata · fiktive selskaber</span></div>
+    </div>
+  </div>
+  <div class="ledger" id="ledger"></div>
+</header>
+
+<section class="charts" aria-label="Oversigt">
+  <div class="chart"><h3>Konkursdekreter pr. uge</h3><div class="sub">Boer i registret, efter offentliggørelsesdato</div><div id="ch-weeks"></div></div>
+  <div class="chart"><h3>Boer pr. region</h3><div class="sub">Selskabets hjemstedsregion</div><div id="ch-region" class="hbar"></div></div>
+  <div class="chart"><h3>Ejendomstype</h3><div class="sub">Afledt af branche og ejendomme</div><div id="ch-type" class="hbar"></div></div>
+</section>
+
+<div class="workspace">
+  <aside class="rail" aria-label="Filtre">
+    <h2>Filtre</h2>
+    <div class="field"><label class="lab" for="q">Søg</label><input type="search" id="q" placeholder="Navn, CVR, kurator, by …" autocomplete="off"></div>
+    <div class="field"><label class="lab">Region</label><div class="chips" id="f-region"></div></div>
+    <div class="field"><label class="lab">Ejendomstype</label><div class="chips" id="f-type"></div></div>
+    <div class="field"><label class="lab">Konfidens</label><div class="chips" id="f-conf"></div></div>
+    <div class="field"><label class="lab" for="f-score">Mindste score</label>
+      <div class="range"><input type="range" id="f-score" min="0" max="100" step="5" value="40"><output id="f-score-out">40</output></div></div>
+    <div class="field">
+      <label class="check"><input type="checkbox" id="f-props"> Kun boer med kendte ejendomme</label>
+      <label class="check"><input type="checkbox" id="f-open"> Kun åbne anmeldelsesfrister</label>
+      <label class="check"><input type="checkbox" id="f-auk"> Med tvangsauktion</label>
+    </div>
+    <div class="actions">
+      <button class="btn" id="b-reset">Nulstil filtre</button>
+      <button class="btn" id="b-csv">Kopiér udvalg som CSV</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="toolbar">
+      <div class="count" id="count">–</div>
+      <div class="sort" id="sort" aria-label="Sortér efter"></div>
+    </div>
+    <div class="register">
+      <div class="row-head">
+        <div>Score</div><div>Selskab</div><div>Dekret</div><div>Region</div><div>Ejendom</div><div>Bogført værdi</div><div>Belåning</div><div>Kurator · frist</div>
+      </div>
+      <div id="rows"></div>
+    </div>
+  </main>
+</div>
+
+<div id="drawer-root"></div>
+
+<footer>
+  <div class="cols">
+    <div><h4>Metode</h4>
+      <p>Konkursdekreter hentes fra Statstidende. Hvert selskab beriges med CVR-data, seneste XBRL-årsrapport fra Erhvervsstyrelsen og opslag i Ejerfortegnelsen. Score 0–100 summerer uafhængige beviser for ejendomsejerskab; konfidens <em>høj</em> kræver direkte bevis (Ejerfortegnelsen eller tvangsauktion) eller bogførte ejendomme.</p></div>
+    <div><h4>Frister</h4>
+      <p>Anmeldelsesfristen er beregnet som 4 uger fra bekendtgørelsen (konkurslovens § 128). Tidsfrister, skiftesamlinger og fordringsprøvelser skal altid verificeres i selve meddelelsen og hos kurator.</p></div>
+    <div><h4>Forbehold</h4>
+      <p>Nøgletal stammer fra seneste indberettede årsrapport og afspejler ikke nødvendigvis boets aktuelle aktiver. Værktøjet er en screening, ikke rådgivning. Kontakt kurator for salgsproces, budfrist og datarum. Kildekode og dokumentation: <a href="https://github.com/daniel-doc-lab/propscreener">github.com/daniel-doc-lab/propscreener</a>.</p></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const EMBEDDED = /*__PROPSCREENER_DATA__*/null;
+  const fmtKr = new Intl.NumberFormat('da-DK', { maximumFractionDigits: 0 });
+  const fmtDate = (iso) => iso ? iso.slice(8, 10) + '.' + iso.slice(5, 7) + '.' + iso.slice(0, 4) : '–';
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const daysUntil = (iso) => iso ? Math.round((new Date(iso) - today) / 86400000) : null;
+  const mio = (v) => v == null ? '–' : (Math.abs(v) >= 1e6 ? (v / 1e6).toLocaleString('da-DK', { maximumFractionDigits: 1 }) + ' mio.' :
+                     Math.abs(v) >= 1e3 ? (v / 1e3).toLocaleString('da-DK', { maximumFractionDigits: 0 }) + ' t.' : fmtKr.format(v));
+  const kr = (v) => v == null ? '–' : fmtKr.format(v) + ' kr.';
+  const pct = (v) => v == null ? '–' : v.toLocaleString('da-DK', { maximumFractionDigits: 1 }) + ' %';
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const isDark = () => document.documentElement.dataset.theme === 'dark' ||
+    (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+
+  const REGIONS = ['Hovedstaden', 'Sjælland', 'Syddanmark', 'Midtjylland', 'Nordjylland'];
+  const TYPES = ['Bolig', 'Erhverv', 'Blandet', 'Grund/Projekt', 'Ukendt'];
+  const CONF = ['høj', 'middel', 'lav'];
+  const SORTS = [
+    ['score', 'Score', (a, b) => b.score - a.score],
+    ['dekret', 'Nyeste dekret', (a, b) => (b.dekretdato || '').localeCompare(a.dekretdato || '')],
+    ['vaerdi', 'Ejendomsværdi', (a, b) => (propValue(b) || 0) - (propValue(a) || 0)],
+    ['ltv', 'Belåning', (a, b) => (b.regnskab.ltv_pct || -1) - (a.regnskab.ltv_pct || -1)],
+    ['frist', 'Frist først', (a, b) => (a.anmeldelsesfrist || '9').localeCompare(b.anmeldelsesfrist || '9')],
+  ];
+
+  const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), score: 40, props: false, open: false, auk: false, sort: 'score', current: null };
+  try { Object.assign(state, JSON.parse(localStorage.getItem('propscreener.filters') || '{}'),
+        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), current: null }); } catch (e) {}
+  const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, open: state.open, auk: state.auk, sort: state.sort }));
+                                localStorage.setItem('propscreener.region', JSON.stringify([...state.region])); } catch (e) {} };
+
+  let DATA = null;
+
+  function propValue(c) {
+    const book = c.regnskab.ejendomsvaerdi_bogfoert;
+    if (book) return book;
+    const v = c.ejendomme.reduce((s, p) => s + (p.offentlig_vurdering || 0), 0);
+    return v || null;
+  }
+  function deadlineTag(iso) {
+    const d = daysUntil(iso);
+    if (d == null) return '<span class="tag deadline">frist ukendt</span>';
+    if (d < 0) return `<span class="tag deadline past">frist udløbet ${fmtDate(iso)}</span>`;
+    if (d <= 14) return `<span class="tag deadline soon">frist om ${d} d.</span>`;
+    return `<span class="tag deadline">frist ${fmtDate(iso)}</span>`;
+  }
+  function meter(c) {
+    const on = Math.round(c.score / 20);
+    let h = '<div class="meter" aria-hidden="true">';
+    for (let i = 5; i >= 1; i--) h += `<i class="${i <= on ? 'on' : ''}${i <= on && c.konfidens === 'høj' ? ' h' : ''}"></i>`;
+    return h + '</div>';
+  }
+
+  // ---------- filtering ----------
+  function visible() {
+    const q = state.q.trim().toLowerCase();
+    let list = DATA.cases.filter(c => {
+      if (c.score < state.score) return false;
+      if (state.region.size && !state.region.has(c.selskab.region || '')) return false;
+      if (state.type.size && !state.type.has(c.ejendomstype_hoved || 'Ukendt')) return false;
+      if (state.conf.size && !state.conf.has(c.konfidens)) return false;
+      if (state.props && !c.ejendomme.length) return false;
+      if (state.open && !(daysUntil(c.anmeldelsesfrist) >= 0)) return false;
+      if (state.auk && !c.ejendomme.some(p => p.kilde === 'tvangsauktion')) return false;
+      if (q) {
+        const hay = [c.selskab.navn, c.selskab.cvr, c.selskab.by, c.selskab.kommune, c.kurator.navn, c.kurator.firma,
+                     c.skifteret.navn, c.selskab.branchetekst, ...c.ejendomme.map(p => p.adresse)].join(' ').toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    const s = SORTS.find(x => x[0] === state.sort) || SORTS[0];
+    return list.sort(s[2]);
+  }
+
+  // ---------- render: header ----------
+  function renderHeader() {
+    const m = DATA.meta;
+    document.getElementById('c-date').textContent = m.genereret ? fmtDate(m.genereret) : '–';
+    const dates = DATA.cases.map(c => c.offentliggjort || c.dekretdato).filter(Boolean).sort();
+    document.getElementById('c-period').textContent = dates.length ? `${fmtDate(dates[0])} – ${fmtDate(dates[dates.length - 1])}` : '–';
+    document.getElementById('c-sources').textContent = (m.kilder_aktive || []).join(', ') || '–';
+    document.getElementById('c-stamp').hidden = !m.demo;
+    if (m.demo) document.title = 'Konkursbo-registret';
+    const all = DATA.cases;
+    const hoej = all.filter(c => c.konfidens === 'høj').length;
+    const props = all.reduce((s, c) => s + c.ejendomme.length, 0);
+    const book = all.reduce((s, c) => s + (c.regnskab.ejendomsvaerdi_bogfoert || 0), 0);
+    const mort = all.reduce((s, c) => s + (c.regnskab.realkreditgaeld || 0), 0);
+    const soon = all.filter(c => { const d = daysUntil(c.anmeldelsesfrist); return d != null && d >= 0 && d <= 14; }).length;
+    const auk = all.filter(c => c.ejendomme.some(p => p.kilde === 'tvangsauktion')).length;
+    document.getElementById('ledger').innerHTML = [
+      ['Boer i registret', all.length, '', `score ≥ ${DATA.meta.stats && DATA.meta.stats.min_score != null ? DATA.meta.stats.min_score : 0}`],
+      ['Bekræftet ejerskab', hoej, '', 'konfidens høj'],
+      ['Kendte ejendomme', props, '', 'Ejerfortegnelsen + auktioner'],
+      ['Bogført ejendomsværdi', mio(book), 'kr.', 'sum af seneste årsrapporter'],
+      ['Realkreditgæld', mio(mort), 'kr.', 'pant der skal indfries eller overtages'],
+      ['Frister ≤ 14 dage', soon, '', 'anmeldelse af krav'],
+      ['Tvangsauktioner', auk, '', 'bekendtgjort i Statstidende'],
+    ].map(([l, v, u, s]) => `<div><div class="eyebrow">${l}</div><div class="v">${v}${u ? `<small>${u}</small>` : ''}</div><div class="sub">${s}</div></div>`).join('');
+  }
+
+  // ---------- render: charts ----------
+  function renderCharts() {
+    // weeks
+    const weeks = [];
+    const start = new Date(today); start.setDate(start.getDate() - start.getDay() + 1 - 7 * 12);
+    for (let i = 0; i < 13; i++) { const d = new Date(start); d.setDate(d.getDate() + 7 * i); weeks.push({ from: d, n: 0 }); }
+    DATA.cases.forEach(c => { const d = new Date(c.offentliggjort || c.dekretdato); for (let i = weeks.length - 1; i >= 0; i--) { if (d >= weeks[i].from) { weeks[i].n++; break; } } });
+    const W = 520, H = 150, padL = 26, padB = 22, padT = 8;
+    const max = Math.max(1, ...weeks.map(w => w.n));
+    const bw = (W - padL) / weeks.length;
+    const ticks = [0, Math.ceil(max / 2), max];
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Konkursdekreter pr. uge, seneste 13 uger">`;
+    ticks.forEach(t => { const y = padT + (H - padT - padB) * (1 - t / max); svg += `<line class="grid" x1="${padL}" x2="${W}" y1="${y}" y2="${y}"/><text x="${padL - 6}" y="${y + 3}" text-anchor="end">${t}</text>`; });
+    weeks.forEach((w, i) => {
+      const h = (H - padT - padB) * (w.n / max); const x = padL + i * bw + 3; const y = H - padB - h;
+      const label = `uge ${isoWeek(w.from)}`;
+      svg += `<rect class="bar${i === weeks.length - 1 ? '' : ''}" x="${x}" y="${y}" width="${bw - 6}" height="${h}" rx="2"><title>${label}: ${w.n} dekreter</title></rect>`;
+      if (w.n === max && w.n > 0) svg += `<text class="val" x="${x + (bw - 6) / 2}" y="${y - 4}" text-anchor="middle">${w.n}</text>`;
+      if (i % 3 === 0 || i === weeks.length - 1) svg += `<text class="lbl" x="${x + (bw - 6) / 2}" y="${H - 6}" text-anchor="middle">${label}</text>`;
+    });
+    svg += '</svg>';
+    document.getElementById('ch-weeks').innerHTML = svg;
+
+    hbars('ch-region', REGIONS.map(r => [r, DATA.cases.filter(c => c.selskab.region === r).length]));
+    hbars('ch-type', TYPES.map(t => [t, DATA.cases.filter(c => (c.ejendomstype_hoved || 'Ukendt') === t).length]));
+  }
+  function hbars(id, rows) {
+    const max = Math.max(1, ...rows.map(r => r[1]));
+    document.getElementById(id).innerHTML = rows.map(([k, n]) =>
+      `<div class="k" title="${esc(k)}">${esc(k)}</div><div class="track"><div class="fill" style="width:${(100 * n / max).toFixed(1)}%"></div></div><div class="n num">${n}</div>`).join('');
+  }
+  function isoWeek(d) {
+    const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day);
+    const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+    return Math.ceil(((t - y0) / 86400000 + 1) / 7);
+  }
+
+  // ---------- render: filters ----------
+  function chipGroup(id, values, set, cls) {
+    const el = document.getElementById(id);
+    el.innerHTML = values.map(v => `<button class="chip${cls || ''}" type="button" aria-pressed="${set.has(v)}" data-v="${esc(v)}">${esc(v)}</button>`).join('');
+    el.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+      const v = b.dataset.v; set.has(v) ? set.delete(v) : set.add(v); b.setAttribute('aria-pressed', set.has(v)); update();
+    }));
+  }
+  function renderFilters() {
+    const dk = isDark() ? ' dk' : '';
+    chipGroup('f-region', REGIONS, state.region, dk);
+    chipGroup('f-type', TYPES, state.type, dk);
+    chipGroup('f-conf', CONF, state.conf, dk);
+    const q = document.getElementById('q'); q.value = state.q; q.addEventListener('input', () => { state.q = q.value; update(); });
+    const sc = document.getElementById('f-score'), out = document.getElementById('f-score-out');
+    sc.value = state.score; out.value = state.score;
+    sc.addEventListener('input', () => { state.score = +sc.value; out.value = sc.value; update(); });
+    [['f-props', 'props'], ['f-open', 'open'], ['f-auk', 'auk']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
+    document.getElementById('b-reset').addEventListener('click', () => {
+      Object.assign(state, { q: '', score: 0, props: false, open: false, auk: false }); state.region.clear(); state.type.clear(); state.conf.clear();
+      renderFiltersValues(); update();
+    });
+    document.getElementById('b-csv').addEventListener('click', copyCsv);
+    document.querySelectorAll('.btn.primary').forEach(b => b.classList.toggle('dk', isDark()));
+    const sort = document.getElementById('sort');
+    sort.innerHTML = SORTS.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${state.sort === k}">${l}</button>`).join('');
+    sort.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { state.sort = b.dataset.k; sort.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); update(); }));
+  }
+  function renderFiltersValues() {
+    document.getElementById('q').value = state.q; document.getElementById('f-score').value = state.score; document.getElementById('f-score-out').value = state.score;
+    ['props', 'open', 'auk'].forEach(k => document.getElementById('f-' + k).checked = state[k]);
+    document.querySelectorAll('#f-region .chip, #f-type .chip, #f-conf .chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  }
+
+  // ---------- render: rows ----------
+  function update() {
+    persist();
+    const list = visible();
+    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${DATA.cases.length} boer`;
+    const rows = document.getElementById('rows');
+    if (!list.length) { rows.innerHTML = '<div class="empty">Ingen boer matcher filtrene.</div>'; return; }
+    rows.innerHTML = list.map(c => {
+      const s = c.selskab, f = c.regnskab;
+      const auk = c.ejendomme.some(p => p.kilde === 'tvangsauktion');
+      return `<button class="row" type="button" data-id="${esc(c.id)}" aria-current="${state.current === c.id}">
+        <div class="meter-wrap">${meter(c)}<span class="s">${c.score}</span></div>
+        <div class="name-cell"><div class="name">${esc(s.navn || 'Ukendt selskab')}<span class="form">${esc(s.selskabsform || '')}</span></div>
+          <div class="meta"><span class="mono">CVR ${esc(s.cvr || '–')}</span> · ${esc(s.branchetekst || s.branchekode || 'branche ukendt')}${auk ? ' · <span class="tag auk">tvangsauktion</span>' : ''}</div></div>
+        <div class="cell"><span class="l">Dekret</span><span class="mono">${fmtDate(c.dekretdato || c.offentliggjort)}</span><br><span class="faint">${esc(shortCourt(c.skifteret.navn))}</span></div>
+        <div class="cell"><span class="l">Region</span>${esc(s.region || '–')}<br><span class="faint">${esc(s.by || '')}</span></div>
+        <div class="cell"><span class="l">Ejendom</span><span class="tag type">${esc(c.ejendomstype_hoved || 'Ukendt')}</span> <span class="tag ${c.konfidens}">${c.konfidens}</span><br><span class="faint">${c.ejendomme.length ? c.ejendomme.length + ' kendt' + (c.ejendomme.length > 1 ? 'e' : '') : 'ingen registreret'}</span></div>
+        <div class="cell right"><span class="l">Bogført værdi</span><span class="mono">${mio(propValue(c))}</span><br><span class="faint">${f.ejendomsvaerdi_bogfoert ? 'årsrapport ' + (f.regnskabsaar_slut || '').slice(0, 4) : (propValue(c) ? 'off. vurdering' : '')}</span></div>
+        <div class="cell right"><span class="l">Belåning</span><span class="mono">${pct(f.ltv_pct)}</span><br><span class="faint">${f.realkreditgaeld ? 'realkredit ' + mio(f.realkreditgaeld) : ''}</span></div>
+        <div class="cell"><span class="l">Kurator · frist</span>${esc(c.kurator.navn || 'ukendt')}<br>${deadlineTag(c.anmeldelsesfrist)}</div>
+      </button>`;
+    }).join('');
+    rows.querySelectorAll('.row').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.id)));
+  }
+  function shortCourt(n) { return (n || '').replace('Sø- og Handelsrettens skifteret', 'Sø- og Handelsretten').replace('Skifteretten i ', '').replace('Retten i ', ''); }
+
+  // ---------- drawer ----------
+  function openDrawer(id) {
+    const c = DATA.cases.find(x => x.id === id); if (!c) return;
+    state.current = id;
+    document.querySelectorAll('.row').forEach(r => r.setAttribute('aria-current', r.dataset.id === id));
+    const s = c.selskab, f = c.regnskab, k = c.kurator, dk = isDark() ? ' dk' : '';
+    const tl = [
+      ['Fristdag', c.fristdag, 'done'], ['Dekret', c.dekretdato, 'done key'], ['Bekendtgjort', c.offentliggjort, 'done'],
+      ['Anmeldelsesfrist', c.anmeldelsesfrist, daysUntil(c.anmeldelsesfrist) < 0 ? 'done' : (daysUntil(c.anmeldelsesfrist) <= 14 ? 'urgent' : '')],
+      ['Skiftesamling', c.skiftesamling, daysUntil(c.skiftesamling) < 0 ? 'done' : ''],
+    ];
+    const propv = f.ejendomsvaerdi_bogfoert || 0, other = Math.max(0, (f.aktiver || 0) - propv), mort = f.realkreditgaeld || 0,
+          debt = Math.max(0, (f.samlet_gaeld || 0) - mort), eq = f.egenkapital || 0;
+    const total = Math.max(f.aktiver || 0, mort + debt + Math.max(eq, 0)) || 1;
+    const seg = (cls, v, l) => v > 0 ? `<div class="seg ${cls}" style="flex:${v / total}" title="${l}: ${kr(v)}"></div>` : '';
+    const rel = (c.links || {});
+    const linkDefs = [['statstidende', 'Statstidende-meddelelse', true], ['cvr', 'CVR-registret'], ['aarsrapport', 'Seneste årsrapport'], ['regnskaber', 'Alle regnskaber'],
+                      ['tvangsauktion', 'Tvangsauktion'], ['tinglysning', 'Tinglysning'], ['ois', 'OIS ejendomsdata'], ['kort', 'Kort'], ['kurator_opslag', 'Kurator i Advokatsamfundet']];
+    const html = `
+      <div class="backdrop" id="backdrop"></div>
+      <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title">
+        <div class="drawer-head">
+          <button class="close" id="d-close" aria-label="Luk">✕</button>
+          <div class="eyebrow">Konkursbo · ${esc(s.status || 'under konkurs')}</div>
+          <h2 id="d-title">${esc(s.navn || 'Ukendt selskab')}</h2>
+          <div class="ident">
+            <span class="mono">CVR ${esc(s.cvr || '–')}</span><span>${esc(s.selskabsform || '')}</span>
+            <span>${esc(s.adresse || '')}${s.postnr ? ', ' + esc(s.postnr) + ' ' + esc(s.by || '') : ''}</span>
+            <span class="tag ${c.konfidens}">konfidens ${c.konfidens}</span><span class="tag type">${esc(c.ejendomstype_hoved || 'Ukendt')}</span>
+            <span class="mono">score ${c.score}</span>
+          </div>
+        </div>
+        <div class="drawer-body">
+          <section class="sec"><h3>Kurator</h3>
+            <div class="kurator">
+              <div><div class="who">${esc(k.navn || 'Ikke angivet i meddelelsen')}</div><div class="firm">${esc(k.firma || '')}</div>
+                <div class="addr">${esc([k.adresse, [k.postnr, k.by].filter(Boolean).join(' ')].filter(Boolean).join(', '))}</div>
+                <div class="addr">${esc(c.skifteret.navn || '')}${c.skifteret.sagsnummer ? ' · <span class="mono">' + esc(c.skifteret.sagsnummer) + '</span>' : ''}</div></div>
+              <div class="contact">
+                ${k.email ? `<a href="mailto:${esc(k.email)}?subject=${encodeURIComponent('Vedr. konkursboet ' + (s.navn || '') + ' – interesse i ejendomme')}">${esc(k.email)}</a>` : '<span class="faint">e-mail ikke oplyst</span>'}
+                ${k.telefon ? `<a href="tel:${esc(k.telefon.replace(/\s/g, ''))}" class="mono">${esc(k.telefon)}</a>` : '<span class="faint">telefon ikke oplyst</span>'}
+                ${k.advokatsamfundet_url ? `<a href="${esc(k.advokatsamfundet_url)}" target="_blank" rel="noopener">Slå op i Advokatsamfundet ↗</a>` : ''}
+              </div>
+            </div>
+            <div class="timeline">${tl.map(([n, d, cls]) => `<div class="tl ${cls}"><div class="d">${fmtDate(d)}</div><div class="n">${n}</div></div>`).join('')}</div>
+          </section>
+
+          <section class="sec"><h3>Nøgletal · årsrapport ${esc((f.regnskabsaar_slut || '').slice(0, 4) || 'mangler')}</h3>
+            <div class="kpis">
+              ${kpi('Bogført ejendomsværdi', mio(f.ejendomsvaerdi_bogfoert))}
+              ${kpi('Off. vurdering (sum)', mio(c.ejendomme.reduce((a, p) => a + (p.offentlig_vurdering || 0), 0) || null))}
+              ${kpi('Balance (aktiver)', mio(f.aktiver))}
+              ${kpi('Egenkapital', mio(f.egenkapital), f.egenkapital < 0)}
+              ${kpi('Realkreditgæld', mio(f.realkreditgaeld))}
+              ${kpi('Samlet gæld', mio(f.samlet_gaeld))}
+              ${kpi('Belåning (LTV)', pct(f.ltv_pct), f.ltv_pct > 90)}
+              ${kpi('Soliditet', pct(f.soliditet_pct), f.soliditet_pct < 0)}
+              ${kpi('Ejendomsandel af balance', pct(f.ejendomsandel_pct))}
+              ${kpi('Årets resultat', mio(f.aarets_resultat), f.aarets_resultat < 0)}
+              ${kpi('Bruttofortjeneste', mio(f.bruttofortjeneste))}
+              ${kpi('Ansatte', f.ansatte ?? s.ansatte ?? '–')}
+            </div>
+            ${f.aktiver ? `<div class="balance"><div class="bar">${seg('prop', propv, 'Ejendomme')}${seg('other', other, 'Øvrige aktiver')}</div>
+              <div class="bar" style="margin-top:3px">${seg('mort', mort, 'Realkreditgæld')}${seg('debt', debt, 'Anden gæld')}${eq >= 0 ? seg('eq', eq, 'Egenkapital') : seg('eqneg', -eq, 'Negativ egenkapital')}</div>
+              <div class="legend"><span><i style="background:var(--data)"></i>Ejendomme</span><span><i style="background:var(--data-soft)"></i>Øvrige aktiver</span><span><i style="background:var(--accent)"></i>Realkredit</span><span><i style="background:var(--accent-soft)"></i>Anden gæld</span><span><i style="background:${eq >= 0 ? 'var(--good)' : 'var(--bad)'}"></i>Egenkapital${eq < 0 ? ' (negativ)' : ''}</span></div></div>` : '<p class="faint">Ingen XBRL-årsrapport fundet for selskabet.</p>'}
+          </section>
+
+          <section class="sec"><h3>Ejendomme (${c.ejendomme.length})</h3>
+            ${c.ejendomme.length ? `<div class="table-wrap"><table class="props"><thead><tr><th>Adresse</th><th>Type</th><th>BFE / matrikel</th><th class="r">Off. vurdering</th><th>Kilde</th></tr></thead><tbody>
+              ${c.ejendomme.map(p => `<tr><td>${esc(p.adresse || '–')}${p.postnr ? '<br><span class="faint">' + esc(p.postnr) + ' ' + esc(p.by || '') + '</span>' : ''}${p.lat ? ` <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener" class="faint">kort ↗</a>` : ''}</td>
+                <td>${esc(p.ejendomstype || '–')}${p.ejerandel ? '<br><span class="faint">andel ' + esc(p.ejerandel) + '</span>' : ''}</td>
+                <td class="mono">${esc(p.bfe_nummer || p.matrikel || '–')}${p.bygningsareal_m2 ? '<br><span class="faint">' + p.bygningsareal_m2 + ' m² bygning</span>' : ''}</td>
+                <td class="r mono">${mio(p.offentlig_vurdering)}</td>
+                <td>${p.kilde === 'tvangsauktion' ? `<span class="tag auk">auktion ${fmtDate(p.tvangsauktion_dato)}</span>${p.tvangsauktion_url ? ` <a href="${esc(p.tvangsauktion_url)}" target="_blank" rel="noopener">↗</a>` : ''}` : esc(p.kilde || '')}</td></tr>`).join('')}
+            </tbody></table></div>` : '<p class="faint">Ingen ejendomme fundet i Ejerfortegnelsen eller via tvangsauktion. Ejendomsindikationen bygger på branche, navn og regnskab – bekræft hos kurator eller i tingbogen.</p>'}
+          </section>
+
+          <section class="sec"><h3>Hvorfor er boet med · ${c.score} point</h3>
+            <ul class="signals">${(c.signaler || []).map(x => `<li><span class="pt">+${x.point}</span><span>${esc(x.beskrivelse)}</span><span class="src">${esc(x.kilde)}</span></li>`).join('') || '<li><span class="pt">0</span><span>Ingen ejendomssignaler</span><span></span></li>'}</ul>
+          </section>
+
+          <section class="sec"><h3>Selskab</h3>
+            <div class="kpis">
+              ${kpi('Branche', esc((s.branchekode ? s.branchekode.replace(/(\d{2})(\d{2})(\d{2})/, '$1.$2.$3') + ' ' : '') + (s.branchetekst || '–')))}
+              ${kpi('Stiftet', fmtDate(s.stiftet))}
+              ${kpi('Kommune', esc(s.kommune || '–'))}
+              ${kpi('Ejere', esc((s.ejere || []).join(', ') || '–'))}
+              ${kpi('Ledelse', esc((s.ledelse || []).join(', ') || '–'))}
+              ${kpi('Formål', esc(s.formaal || '–'))}
+            </div>
+          </section>
+
+          <section class="sec"><h3>Kilder og links</h3>
+            <div class="links">${linkDefs.filter(([key]) => rel[key]).map(([key, l, primary]) => `<a href="${esc(rel[key])}" target="_blank" rel="noopener" class="${primary ? 'primary' + dk : ''}">${l} ↗</a>`).join('')}</div>
+            ${c.noter && c.noter.length ? `<ul class="notes" style="margin-top:10px">${c.noter.map(n => `<li>${esc(n)}</li>`).join('')}</ul>` : ''}
+            ${c.raa_tekst ? `<details class="raw" style="margin-top:10px"><summary>Meddelelsestekst fra Statstidende</summary><pre>${esc(c.raa_tekst)}</pre></details>` : ''}
+            <div class="faint" style="font-size:.75rem;margin-top:8px">Kilder: ${esc((c.kilder || []).join(', '))} · opdateret ${fmtDate(c.sidst_opdateret)}</div>
+          </section>
+        </div>
+      </aside>`;
+    const root = document.getElementById('drawer-root');
+    root.innerHTML = html;
+    document.getElementById('d-close').addEventListener('click', closeDrawer);
+    document.getElementById('backdrop').addEventListener('click', closeDrawer);
+    document.getElementById('d-close').focus();
+  }
+  function kpi(l, v, neg) { return `<div class="kpi"><div class="l">${l}</div><div class="v${neg ? ' neg' : ''}">${v}</div></div>`; }
+  function closeDrawer() { document.getElementById('drawer-root').innerHTML = ''; state.current = null; document.querySelectorAll('.row').forEach(r => r.setAttribute('aria-current', 'false')); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // ---------- csv ----------
+  function copyCsv() {
+    const cols = ['score', 'konfidens', 'cvr', 'navn', 'region', 'by', 'dekretdato', 'anmeldelsesfrist', 'kurator', 'kurator_email', 'kurator_telefon', 'ejendomstype', 'antal_ejendomme', 'ejendomsvaerdi', 'realkreditgaeld', 'ltv_pct', 'statstidende_url'];
+    const lines = [cols.join(';')].concat(visible().map(c => [c.score, c.konfidens, c.selskab.cvr, c.selskab.navn, c.selskab.region, c.selskab.by, c.dekretdato, c.anmeldelsesfrist,
+      c.kurator.navn, c.kurator.email, c.kurator.telefon, c.ejendomstype_hoved, c.ejendomme.length, propValue(c), c.regnskab.realkreditgaeld, c.regnskab.ltv_pct, c.statstidende_url]
+      .map(v => '"' + String(v ?? '').replace(/"/g, '""') + '"').join(';')));
+    const text = lines.join('\n');
+    const done = () => toast(`${lines.length - 1} rækker kopieret som CSV`);
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done)); else fallbackCopy(text, done);
+  }
+  function fallbackCopy(text, done) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) { toast('Kunne ikke kopiere'); } ta.remove(); }
+  function toast(msg) { const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+
+  // ---------- boot ----------
+  function boot(data) {
+    DATA = data;
+    DATA.cases.forEach(c => { c.ejendomme = c.ejendomme || []; c.regnskab = c.regnskab || {}; c.selskab = c.selskab || {}; c.kurator = c.kurator || {}; c.skifteret = c.skifteret || {}; c.links = c.links || {}; });
+    renderHeader(); renderCharts(); renderFilters(); update();
+  }
+  if (EMBEDDED) boot(EMBEDDED);
+  else fetch('data/cases.json').then(r => r.json()).then(boot).catch(() => {
+    document.getElementById('rows').innerHTML = '<div class="empty">Kunne ikke indlæse data/cases.json. Kør <code>propscreener run</code> eller <code>propscreener demo</code> først.</div>';
+  });
+})();
+</script>
