@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-04T10:33:19+00:00",
+  "genereret": "2026-09-04T11:07:54+00:00",
   "version": "0.1.0",
   "antal": 51,
   "demo": false,
@@ -13,15 +13,15 @@
    "dawa"
   ],
   "stats": {
-   "started": "2026-09-04T10:32:29+00:00",
-   "dekreter": 99,
-   "tvangsauktioner": 0,
-   "beriget_cvr": 99,
-   "beriget_regnskab": 74,
+   "started": "2026-09-04T10:33:52+00:00",
+   "dekreter": 971,
+   "tvangsauktioner": 2,
+   "beriget_cvr": 969,
+   "beriget_regnskab": 739,
    "beriget_ejf": 0,
-   "over_min_score": 4,
+   "over_min_score": 51,
    "min_score": 25,
-   "bevaret_fra_tidligere": 47,
+   "bevaret_fra_tidligere": 0,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -30,7 +30,9 @@
     "regnskab-xbrl",
     "dawa"
    ],
-   "fejl": []
+   "fejl": [
+    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
+   ]
   }
  },
  "cases": [
@@ -139,12 +141,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:23:43+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:51+00:00"
   },
   {
    "id": "34484872",
@@ -257,12 +259,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:23:42+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:50+00:00"
   },
   {
    "id": "21032794",
@@ -297,7 +299,7 @@
     "branchekode": "682040",
     "branchetekst": "Udlejning af erhvervsejendomme",
     "bibrancher": [],
-    "adresse": "ThurÃ¸vej 2",
+    "adresse": "Thurøvej 2",
     "postnr": "9500",
     "by": "Hobro",
     "kommune": null,
@@ -367,7 +369,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S02072026-244",
     "aarsrapport": "http://regnskaber.virk.dk/49723012/amNsb3VkczovLzAzLzc3L2FlL2QyL2FhLzQ1ODctNGNhMS1iYWI4LTQ1MGU4NTBkZWQwZA.xhtml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/21032794?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=ThurÃ¸vej+2,+9500+Hobro",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Thurøvej+2,+9500+Hobro",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
@@ -375,10 +377,159 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:41+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:49+00:00"
+  },
+  {
+   "id": "28850794",
+   "statstidende_id": "S07082026-177",
+   "statstidende_url": "https://www.statstidende.dk/messages/S07082026-177",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-11",
+   "dekretdato": "2026-08-07",
+   "fristdag": "2026-08-07",
+   "anmeldelsesfrist": "2026-09-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Randers",
+    "sagsnummer": "SKS 60-5266/2026"
+   },
+   "kurator": {
+    "navn": "Christian Jul Madsen",
+    "firma": null,
+    "adresse": "Kalkværksvej 16, 25",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "selskab": {
+    "cvr": "28850794",
+    "navn": "RØNBÆKVEJ 17 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "469000",
+    "branchetekst": "Ikke-specialiseret engroshandel",
+    "bibrancher": [],
+    "adresse": "Skolegyden 3",
+    "postnr": "8963",
+    "by": "Auning",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2005-06-22",
+    "status": "UNDERKONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "aktiver": 8097359,
+    "egenkapital": 539342,
+    "investeringsejendomme": 8000000,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 8000000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 5853938,
+    "kortfristet_gaeld": 597822,
+    "omsaetning": null,
+    "bruttofortjeneste": 238466,
+    "aarets_resultat": 2084669,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 8000000,
+    "ejendomsandel_pct": 98.8,
+    "soliditet_pct": 6.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 6451760
+   },
+   "ejendomme": [
+    {
+     "bfe_nummer": null,
+     "adresse": "Rønbækvej 17",
+     "postnr": "8382",
+     "by": "Hinnerup",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "10 al, Grundfør By, Grundfør",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 2400000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-07-01",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-78",
+     "lat": 56.26225376,
+     "lon": 10.09869229
+    },
+    {
+     "bfe_nummer": null,
+     "adresse": "Rønbækvej 15A",
+     "postnr": "8382",
+     "by": "Hinnerup",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "10 ar, Grundfør By, Grundfør",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1050000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-07-01",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-76",
+     "lat": 56.26335663,
+     "lon": 10.09826344
+    }
+   ],
+   "signaler": [
+    {
+     "kode": "tvangsauktion",
+     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
+     "point": 50,
+     "kilde": "Statstidende"
+    },
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 8.000.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "RØNBÆKVEJ 17 ApS\nVed dekret af 07.08.2026 har Retten i Randers taget\n\nRØNBÆKVEJ 17 ApS\nCVR-nr: 28850794\nSkolegyden 3\n8963 Auning\nSagsnr: SKS 60-5266/2026\n\nunder konkursbehandling efter begæring modtaget den 07.08.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 07.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 07.08.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Randers",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
+    "statstidende": "https://www.statstidende.dk/messages/S07082026-177",
+    "tvangsauktion": "https://www.statstidende.dk/messages/S12062026-78",
+    "aarsrapport": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28850794?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skolegyden+3,+8963+Auning",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "kilder": [
+    "statstidende",
+    "tvangsauktion",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T10:59:48+00:00"
   },
   {
    "id": "32439284",
@@ -415,7 +566,7 @@
     "bibrancher": [],
     "adresse": "Metalvej 29",
     "postnr": "4180",
-    "by": "SorÃ¸",
+    "by": "Sorø",
     "kommune": null,
     "region": "Sjælland",
     "stiftet": "2009-08-27",
@@ -483,7 +634,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S13082026-212",
     "aarsrapport": "http://regnskaber.virk.dk/48293423/amNsb3VkczovLzAzL2Q5LzQxLzBmLzE2LzE4Y2YtNDUwNS04ZmY5LTIyODE4MmVlYTY1Nw.xml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32439284?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Metalvej+29,+4180+SorÃ¸",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Metalvej+29,+4180+Sorø",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Rune+Hyllested"
@@ -491,10 +642,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:41+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:49+00:00"
   },
   {
    "id": "41553308",
@@ -607,10 +758,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:46+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:54+00:00"
   },
   {
    "id": "38252712",
@@ -645,9 +796,9 @@
     "branchekode": "682040",
     "branchetekst": "Udlejning af erhvervsejendomme",
     "bibrancher": [],
-    "adresse": "LÃ¦gÃ¥rdsvej 4",
+    "adresse": "Lægårdsvej 4",
     "postnr": "7260",
-    "by": "SÃ¸nder Omme",
+    "by": "Sønder Omme",
     "kommune": null,
     "region": "Midtjylland",
     "stiftet": "1965-12-21",
@@ -709,7 +860,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S09062026-58",
     "aarsrapport": "http://regnskaber.virk.dk/21725283/amNsb3VkczovLzAzLzE4LzBiLzQ2L2FmL2RjYjctNDA0NC05Zjg5LTc4NWViNmYyZWQ3Mw.xhtml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/38252712?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=LÃ¦gÃ¥rdsvej+4,+7260+SÃ¸nder+Omme",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Lægårdsvej+4,+7260+Sønder+Omme",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
@@ -717,153 +868,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:46+00:00"
-  },
-  {
-   "id": "28850794",
-   "statstidende_id": "S07082026-177",
-   "statstidende_url": "https://www.statstidende.dk/messages/S07082026-177",
-   "meddelelsestype": "Konkursdekret",
-   "offentliggjort": "2026-08-11",
-   "dekretdato": "2026-08-07",
-   "fristdag": "2026-08-07",
-   "anmeldelsesfrist": "2026-09-08",
-   "skiftesamling": null,
-   "fordringsproevelse": null,
-   "skifteret": {
-    "navn": "Retten i Randers",
-    "sagsnummer": "SKS 60-5266/2026"
-   },
-   "kurator": {
-    "navn": "Christian Jul Madsen",
-    "firma": null,
-    "adresse": "Kalkværksvej 16, 25",
-    "postnr": "8000",
-    "by": "Århus C",
-    "telefon": null,
-    "email": null,
-    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
-   },
-   "selskab": {
-    "cvr": "28850794",
-    "navn": "RÃNBÃKVEJ 17 ApS",
-    "binavne": [],
-    "selskabsform": "ApS",
-    "branchekode": "469000",
-    "branchetekst": "Ikke-specialiseret engroshandel",
-    "bibrancher": [],
-    "adresse": "Skolegyden 3",
-    "postnr": "8963",
-    "by": "Auning",
-    "kommune": null,
-    "region": "Midtjylland",
-    "stiftet": "2005-06-22",
-    "status": "UNDERKONKURS",
-    "ansatte": null,
-    "ejere": [],
-    "ledelse": [],
-    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
-    "formaal": null
-   },
-   "regnskab": {
-    "regnskabsaar_slut": "2024-09-30",
-    "kilde_url": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
-    "aktiver": 8097359,
-    "egenkapital": 539342,
-    "investeringsejendomme": 8000000,
-    "grunde_og_bygninger": 0,
-    "materielle_anlaeg": 8000000,
-    "realkreditgaeld": null,
-    "langfristet_gaeld": 5853938,
-    "kortfristet_gaeld": 597822,
-    "omsaetning": null,
-    "bruttofortjeneste": 238466,
-    "aarets_resultat": 2084669,
-    "ansatte": 0,
-    "ejendomsvaerdi_bogfoert": 8000000,
-    "ejendomsandel_pct": 98.8,
-    "soliditet_pct": 6.7,
-    "ltv_pct": null,
-    "samlet_gaeld": 6451760
-   },
-   "ejendomme": [
-    {
-     "bfe_nummer": null,
-     "adresse": "Rønbækvej 17",
-     "postnr": "8382",
-     "by": "Hinnerup",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "10 al, Grundfør By, Grundfør",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 2400000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-07-01",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-78",
-     "lat": 56.26225376,
-     "lon": 10.09869229
-    },
-    {
-     "bfe_nummer": null,
-     "adresse": "Rønbækvej 15A",
-     "postnr": "8382",
-     "by": "Hinnerup",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "10 ar, Grundfør By, Grundfør",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 1050000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-07-01",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-76",
-     "lat": 56.26335663,
-     "lon": 10.09826344
-    }
-   ],
-   "signaler": [
-    {
-     "kode": "tvangsauktion",
-     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
-     "point": 50,
-     "kilde": "Statstidende"
-    },
-    {
-     "kode": "xbrl_investeringsejendomme",
-     "beskrivelse": "Investeringsejendomme bogført til 8.000.000 kr.",
-     "point": 45,
-     "kilde": "Årsrapport (XBRL)"
-    }
-   ],
-   "score": 95,
-   "konfidens": "høj",
-   "ejendomstype_hoved": "Blandet",
-   "raa_tekst": "RØNBÆKVEJ 17 ApS\nVed dekret af 07.08.2026 har Retten i Randers taget\n\nRØNBÆKVEJ 17 ApS\nCVR-nr: 28850794\nSkolegyden 3\n8963 Auning\nSagsnr: SKS 60-5266/2026\n\nunder konkursbehandling efter begæring modtaget den 07.08.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 07.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 07.08.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Randers",
-   "links": {
-    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
-    "statstidende": "https://www.statstidende.dk/messages/S07082026-177",
-    "tvangsauktion": "https://www.statstidende.dk/messages/S12062026-78",
-    "aarsrapport": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
-    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28850794?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Skolegyden+3,+8963+Auning",
-    "tinglysning": "https://www.tinglysning.dk",
-    "ois": "https://www.ois.dk",
-    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
-   },
-   "kilder": [
-    "statstidende",
-    "tvangsauktion",
-    "regnskab-xbrl",
-    "apicvr-mcp"
-   ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:41+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:54+00:00"
   },
   {
    "id": "40523286",
@@ -892,7 +900,7 @@
    },
    "selskab": {
     "cvr": "40523286",
-    "navn": "SÃ¸nderbrogade 13A-B ApS",
+    "navn": "Sønderbrogade 13A-B ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "682030",
@@ -970,12 +978,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:23:47+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:55+00:00"
   },
   {
    "id": "42854980",
@@ -1004,15 +1012,15 @@
    },
    "selskab": {
     "cvr": "42854980",
-    "navn": "Ejendommen ToftegÃ¥rds Alle ApS",
+    "navn": "Ejendommen Toftegårds Alle ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "682030",
     "branchetekst": "Anden udlejning af boliger",
     "bibrancher": [],
-    "adresse": "RÃ¸dager Alle 51A",
+    "adresse": "Rødager Alle 51A",
     "postnr": "2610",
-    "by": "RÃ¸dovre",
+    "by": "Rødovre",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2021-11-24",
@@ -1074,7 +1082,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S20082026-74",
     "aarsrapport": "http://regnskaber.virk.dk/08945824/amNsb3VkczovLzAzLzZkLzc2LzA2L2Q0LzQ2YjEtNDg5Mi1hNWUxLTQ1YTYwOGQ1NDNlZA.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42854980?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=RÃ¸dager+Alle+51A,+2610+RÃ¸dovre",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rødager+Alle+51A,+2610+Rødovre",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
@@ -1082,10 +1090,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:48+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:56+00:00"
   },
   {
    "id": "43839284",
@@ -1192,10 +1200,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:51+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:59+00:00"
   },
   {
    "id": "42536857",
@@ -1228,7 +1236,7 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "683210",
-    "branchetekst": "Administration af fast ejendom pÃ¥ kontraktbasis",
+    "branchetekst": "Administration af fast ejendom på kontraktbasis",
     "bibrancher": [],
     "adresse": "Spangsbjerg Kirkevej 3",
     "postnr": "6700",
@@ -1296,10 +1304,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:51+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:59+00:00"
   },
   {
    "id": "32100279",
@@ -1406,10 +1414,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:42+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:50+00:00"
   },
   {
    "id": "42347841",
@@ -1446,7 +1454,7 @@
     "bibrancher": [],
     "adresse": "Bredgade 52",
     "postnr": "9830",
-    "by": "TÃ¥rs",
+    "by": "Tårs",
     "kommune": null,
     "region": "Nordjylland",
     "stiftet": "2021-04-29",
@@ -1502,7 +1510,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S09072026-231",
     "aarsrapport": "http://regnskaber.virk.dk/14874324/amNsb3VkczovLzAzL2UzLzkyLzBhL2U1LzVlNTEtNDdiZS1iN2Q1LTk1ZTE4Y2E4OWRmNg.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42347841?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Bredgade+52,+9830+TÃ¥rs",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Bredgade+52,+9830+Tårs",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jens+Henrik+Bech"
@@ -1510,10 +1518,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:56+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:03+00:00"
   },
   {
    "id": "40590641",
@@ -1546,9 +1554,9 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "410000",
-    "branchetekst": "OpfÃ¸relse af bygninger",
+    "branchetekst": "Opførelse af bygninger",
     "bibrancher": [],
-    "adresse": "Ãstervej 1A",
+    "adresse": "Østervej 1A",
     "postnr": "4243",
     "by": "Rude",
     "kommune": null,
@@ -1606,7 +1614,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S28072026-156",
     "aarsrapport": "http://regnskaber.virk.dk/14609504/amNsb3VkczovLzAzLzlkLzgyLzdhLzFhLzYwOWYtNGFmNi1iZWFjLWE1MzcxYjdkZDUxNQ.xml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40590641?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Ãstervej+1A,+4243+Rude",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Østervej+1A,+4243+Rude",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
@@ -1614,10 +1622,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:43+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:51+00:00"
   },
   {
    "id": "32277470",
@@ -1650,11 +1658,11 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "472200",
-    "branchetekst": "Detailhandel med kÃ¸d og kÃ¸dprodukter",
+    "branchetekst": "Detailhandel med kød og kødprodukter",
     "bibrancher": [],
     "adresse": "Prilen 2",
     "postnr": "6792",
-    "by": "RÃ¸mÃ¸",
+    "by": "Rømø",
     "kommune": "Kongsmark",
     "region": "Syddanmark",
     "stiftet": "2009-06-30",
@@ -1710,7 +1718,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S22062026-279",
     "aarsrapport": "http://regnskaber.virk.dk/07477223/amNsb3VkczovLzAzL2U0L2UzLzhjLzA4Lzg2NWMtNDMxZC05Y2FlLThhZDRlOTY4OWUxOA.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32277470?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Prilen+2,+6792+RÃ¸mÃ¸",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Prilen+2,+6792+Rømø",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Mark+Søtrup"
@@ -1718,10 +1726,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:45+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:53+00:00"
   },
   {
    "id": "37540811",
@@ -1754,11 +1762,11 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "681100",
-    "branchetekst": "KÃ¸b og salg af egen fast ejendom",
+    "branchetekst": "Køb og salg af egen fast ejendom",
     "bibrancher": [],
-    "adresse": "Langelinie AllÃ© 17",
+    "adresse": "Langelinie Allé 17",
     "postnr": "2100",
-    "by": "KÃ¸benhavn Ã",
+    "by": "København Ø",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2016-03-14",
@@ -1814,7 +1822,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S23062026-174",
     "aarsrapport": "http://regnskaber.virk.dk/11804573/amNsb3VkczovLzAzL2RlLzA0LzIwLzY2L2Y0YmItNGZlMC05ZDQ0LWY1NjMyMzYzMjY2ZA.xml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/37540811?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Langelinie+AllÃ©+17,+2100+KÃ¸benhavn+Ã",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Langelinie+Allé+17,+2100+København+Ø",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Aamann+Jensen"
@@ -1822,10 +1830,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:45+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:53+00:00"
   },
   {
    "id": "35889981",
@@ -1858,7 +1866,7 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "466100",
-    "branchetekst": "Engroshandel med landbrugsmaskiner, -udstyr og tilbehÃ¸r hertil",
+    "branchetekst": "Engroshandel med landbrugsmaskiner, -udstyr og tilbehør hertil",
     "bibrancher": [],
     "adresse": "Buntmagervej 28",
     "postnr": "7490",
@@ -1926,10 +1934,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:44+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:52+00:00"
   },
   {
    "id": "26270871",
@@ -1958,11 +1966,11 @@
    },
    "selskab": {
     "cvr": "26270871",
-    "navn": "IVERSEN INTERIÃR ApS",
+    "navn": "IVERSEN INTERIØR ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "310000",
-    "branchetekst": "Fremstilling af mÃ¸bler",
+    "branchetekst": "Fremstilling af møbler",
     "bibrancher": [],
     "adresse": "Fynsgade 14",
     "postnr": "8600",
@@ -2030,10 +2038,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:44+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:52+00:00"
   },
   {
    "id": "36492139",
@@ -2066,7 +2074,7 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "433200",
-    "branchetekst": "TÃ¸mrer- og bygningssnedkeraktiviteter",
+    "branchetekst": "Tømrer- og bygningssnedkeraktiviteter",
     "bibrancher": [],
     "adresse": "Kirkevej 5",
     "postnr": "9970",
@@ -2134,10 +2142,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:47+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:55+00:00"
   },
   {
    "id": "37902896",
@@ -2170,7 +2178,7 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "433200",
-    "branchetekst": "TÃ¸mrer- og bygningssnedkeraktiviteter",
+    "branchetekst": "Tømrer- og bygningssnedkeraktiviteter",
     "bibrancher": [],
     "adresse": "Adonisvej 74",
     "postnr": "7100",
@@ -2238,12 +2246,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under likvidation' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:23:49+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:57+00:00"
   },
   {
    "id": "36893575",
@@ -2344,10 +2352,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:48+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:56+00:00"
   },
   {
    "id": "41982659",
@@ -2380,7 +2388,7 @@
     "binavne": [],
     "selskabsform": "K/S",
     "branchekode": "681100",
-    "branchetekst": "KÃ¸b og salg af egen fast ejendom",
+    "branchetekst": "Køb og salg af egen fast ejendom",
     "bibrancher": [],
     "adresse": "Peter Bangs Vej 279",
     "postnr": "2500",
@@ -2448,10 +2456,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:49+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:57+00:00"
   },
   {
    "id": "20402644",
@@ -2552,10 +2560,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:21+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:26+00:00"
   },
   {
    "id": "40445935",
@@ -2590,10 +2598,10 @@
     "branchekode": "711100",
     "branchetekst": "Arkitektaktiviteter",
     "bibrancher": [],
-    "adresse": "RÃ¸rgrÃ¦svej 2",
+    "adresse": "Rørgræsvej 2",
     "postnr": "4591",
-    "by": "FÃ¸llenslev",
-    "kommune": "GrÃ¦smarken",
+    "by": "Føllenslev",
+    "kommune": "Græsmarken",
     "region": "Sjælland",
     "stiftet": "2019-04-11",
     "status": "UNDERKONKURS",
@@ -2642,7 +2650,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S26062026-127",
     "aarsrapport": "http://regnskaber.virk.dk/53954404/amNsb3VkczovLzAzLzNkL2EyLzc1L2U0Lzc5ODEtNDRiYS1hNzk0LWMyODU5NWFmMTJlYw.xhtml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40445935?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=RÃ¸rgrÃ¦svej+2,+4591+FÃ¸llenslev",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rørgræsvej+2,+4591+Føllenslev",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Machenhauer"
@@ -2650,10 +2658,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:50+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:58+00:00"
   },
   {
    "id": "12830033",
@@ -2690,11 +2698,11 @@
     "bibrancher": [],
     "adresse": "Birkmosevej 12",
     "postnr": "6950",
-    "by": "RingkÃ¸bing",
+    "by": "Ringkøbing",
     "kommune": "Rindum",
     "region": "Syddanmark",
     "stiftet": "1989-01-18",
-    "status": "OphÃ¸rt",
+    "status": "Ophørt",
     "ansatte": 1,
     "ejere": [],
     "ledelse": [],
@@ -2745,19 +2753,19 @@
     "cvr": "https://datacvr.virk.dk/enhed/virksomhed/12830033",
     "statstidende": "https://www.statstidende.dk/messages/S30062026-169",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/12830033?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Birkmosevej+12,+6950+RingkÃ¸bing",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Birkmosevej+12,+6950+Ringkøbing",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Bo+Christensen"
    },
    "kilder": [
     "statstidende",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Ingen XBRL-årsrapport fundet (nystiftet, holding uden pligt eller kun PDF)"
    ],
-   "sidst_opdateret": "2026-09-04T10:29:40+00:00"
+   "sidst_opdateret": "2026-09-04T11:05:39+00:00"
   },
   {
    "id": "40207422",
@@ -2786,7 +2794,7 @@
    },
    "selskab": {
     "cvr": "40207422",
-    "navn": "SÃ¸nderbrogade 69 ApS",
+    "navn": "Sønderbrogade 69 ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "682030",
@@ -2858,12 +2866,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:24:14+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:20+00:00"
   },
   {
    "id": "39276445",
@@ -2964,10 +2972,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:12+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:19+00:00"
   },
   {
    "id": "43723758",
@@ -3073,7 +3081,7 @@
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:32:33+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:11+00:00"
   },
   {
    "id": "44145227",
@@ -3171,7 +3179,7 @@
     "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:32:30+00:00"
+   "sidst_opdateret": "2026-09-04T10:59:58+00:00"
   },
   {
    "id": "41298332",
@@ -3208,7 +3216,7 @@
     "bibrancher": [],
     "adresse": "Refshalevej 169F",
     "postnr": "1432",
-    "by": "KÃ¸benhavn K",
+    "by": "København K",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2020-04-16",
@@ -3258,7 +3266,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S06072026-51",
     "aarsrapport": "http://regnskaber.virk.dk/23389214/amNsb3VkczovLzAzL2Y1L2I5L2VjLzAzLzBlZGMtNDNlNi04Y2FhLWIzZDY1N2NkMmU0NA.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41298332?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Refshalevej+169F,+1432+KÃ¸benhavn+K",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Refshalevej+169F,+1432+København+K",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Hald"
@@ -3266,10 +3274,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:57+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:05+00:00"
   },
   {
    "id": "37867462",
@@ -3302,7 +3310,7 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "422100",
-    "branchetekst": "AnlÃ¦g af ledningsnet til vÃ¦sker",
+    "branchetekst": "Anlæg af ledningsnet til væsker",
     "bibrancher": [],
     "adresse": "Nybyvej 4",
     "postnr": "3720",
@@ -3364,10 +3372,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:00+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:07+00:00"
   },
   {
    "id": "43781626",
@@ -3462,10 +3470,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:59+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:06+00:00"
   },
   {
    "id": "32569633",
@@ -3502,7 +3510,7 @@
     "bibrancher": [],
     "adresse": "Sortedam Dossering 29, 5",
     "postnr": "2200",
-    "by": "KÃ¸benhavn N",
+    "by": "København N",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2009-10-08",
@@ -3552,7 +3560,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S30062026-225",
     "aarsrapport": "http://regnskaber.virk.dk/33696523/amNsb3VkczovLzAzLzYwL2NiLzMwLzBjL2JiMDctNGIwZC1iYzdkLTQzOWFmNjEyOWIyMw.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32569633?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Sortedam+Dossering+29,+5,+2200+KÃ¸benhavn+N",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Sortedam+Dossering+29,+5,+2200+København+N",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Preben+Jakobsen"
@@ -3560,10 +3568,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:59+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:06+00:00"
   },
   {
    "id": "43729225",
@@ -3592,23 +3600,23 @@
    },
    "selskab": {
     "cvr": "43729225",
-    "navn": null,
+    "navn": "Anpartsselskabet af 12. december 2022",
     "binavne": [],
-    "selskabsform": null,
-    "branchekode": null,
-    "branchetekst": null,
+    "selskabsform": "ApS",
+    "branchekode": "681100",
+    "branchetekst": "Køb og salg af egen fast ejendom",
     "bibrancher": [],
     "adresse": "Åmosevej 49",
     "postnr": "4450",
     "by": "Jyderup",
-    "kommune": null,
+    "kommune": "Brokøb",
     "region": "Sjælland",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "2022-12-12",
+    "status": "UNDERKONKURS",
+    "ansatte": 1,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43729225",
     "formaal": null
    },
    "regnskab": {
@@ -3657,12 +3665,11 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
-   "noter": [
-    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
-   ],
-   "sidst_opdateret": "2026-09-04T10:23:58+00:00"
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T11:00:05+00:00"
   },
   {
    "id": "41727586",
@@ -3695,11 +3702,11 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "812100",
-    "branchetekst": "Almindelig rengÃ¸ring i bygninger",
+    "branchetekst": "Almindelig rengøring i bygninger",
     "bibrancher": [],
     "adresse": "Skovbrynet 6",
     "postnr": "8550",
-    "by": "RyomgÃ¥rd",
+    "by": "Ryomgård",
     "kommune": "Pindstrup",
     "region": "Midtjylland",
     "stiftet": "2020-10-02",
@@ -3749,7 +3756,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S07072026-270",
     "aarsrapport": "http://regnskaber.virk.dk/68572714/amNsb3VkczovLzAzL2U3Lzc3LzQxL2JiLzE2NDAtNDdmMC05NzQzLWNmZDdmMmY3ZmRlYQ.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41727586?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Skovbrynet+6,+8550+RyomgÃ¥rd",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skovbrynet+6,+8550+Ryomgård",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
@@ -3757,10 +3764,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:57+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:04+00:00"
   },
   {
    "id": "10214343",
@@ -3855,10 +3862,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:56+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:04+00:00"
   },
   {
    "id": "84895210",
@@ -3893,9 +3900,9 @@
     "branchekode": "649910",
     "branchetekst": "Investering for egen regning",
     "bibrancher": [],
-    "adresse": "HÃ¦rvejen 8",
+    "adresse": "Hærvejen 8",
     "postnr": "6230",
-    "by": "RÃ¸dekro",
+    "by": "Rødekro",
     "kommune": null,
     "region": "Syddanmark",
     "stiftet": "1978-09-22",
@@ -3945,7 +3952,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S10072026-201",
     "aarsrapport": "http://regnskaber.virk.dk/01259848/amNsb3VkczovLzAzLzdjLzkzL2QxLzQ5LzgyODYtNDlmMC05MTY4LWM2MzQxYWQwYTc3ZQ.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/84895210?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=HÃ¦rvejen+8,+6230+RÃ¸dekro",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Hærvejen+8,+6230+Rødekro",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
@@ -3953,10 +3960,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:55+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:03+00:00"
   },
   {
    "id": "34895562",
@@ -3988,20 +3995,20 @@
     "navn": "BEDRE RÅVARER AF DECEMBER 2012 ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "561110",
+    "branchetekst": "Servering af mad i restauranter og caféer",
     "bibrancher": [],
     "adresse": "Pile Alle 14B",
     "postnr": "2000",
     "by": "Frederiksberg",
     "kommune": null,
     "region": "Hovedstaden",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "2012-12-28",
+    "status": "UNDERKONKURS",
+    "ansatte": 4,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34895562",
     "formaal": null
    },
    "regnskab": {
@@ -4050,12 +4057,11 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
-   "noter": [
-    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
-   ],
-   "sidst_opdateret": "2026-09-04T10:23:55+00:00"
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T11:00:02+00:00"
   },
   {
    "id": "37700789",
@@ -4084,11 +4090,11 @@
    },
    "selskab": {
     "cvr": "37700789",
-    "navn": "ingeniÃ¸rfirmaet BBNIELSEN ApS",
+    "navn": "ingeniørfirmaet BBNIELSEN ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "711210",
-    "branchetekst": "RÃ¥dgivende ingeniÃ¸raktiviteter inden for byggeri og anlÃ¦gsarbejder",
+    "branchetekst": "Rådgivende ingeniøraktiviteter inden for byggeri og anlægsarbejder",
     "bibrancher": [],
     "adresse": "Halkevadvej 15",
     "postnr": "4200",
@@ -4150,10 +4156,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:54+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:02+00:00"
   },
   {
    "id": "43258842",
@@ -4191,7 +4197,7 @@
     "adresse": "Udmarksvej 61",
     "postnr": "9690",
     "by": "Fjerritslev",
-    "kommune": "HolmsÃ¸ Mark",
+    "kommune": "Holmsø Mark",
     "region": "Nordjylland",
     "stiftet": "2022-05-12",
     "status": "UNDERKONKURS",
@@ -4248,12 +4254,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:23:53+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:01+00:00"
   },
   {
    "id": "14412107",
@@ -4285,20 +4291,20 @@
     "navn": "CYCLE SERVICE NORDIC ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "464910",
+    "branchetekst": "Engroshandel med cykler, sportsartikler og lystbåde",
     "bibrancher": [],
     "adresse": "Emil Neckelmanns Vej 6",
     "postnr": "5220",
     "by": "Odense SØ",
-    "kommune": null,
+    "kommune": "Fraugde",
     "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "1990-07-01",
+    "status": "UNDERKONKURS",
+    "ansatte": 73,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/14412107",
     "formaal": null
    },
    "regnskab": {
@@ -4347,12 +4353,11 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
-   "noter": [
-    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
-   ],
-   "sidst_opdateret": "2026-09-04T10:23:53+00:00"
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T11:00:00+00:00"
   },
   {
    "id": "39775298",
@@ -4385,11 +4390,11 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "561110",
-    "branchetekst": "Servering af mad i restauranter og cafÃ©er",
+    "branchetekst": "Servering af mad i restauranter og caféer",
     "bibrancher": [],
     "adresse": "Gyldenrisvej 22, 2",
     "postnr": "2300",
-    "by": "KÃ¸benhavn S",
+    "by": "København S",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2018-08-01",
@@ -4439,7 +4444,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S20082026-205",
     "aarsrapport": "http://regnskaber.virk.dk/89257793/amNsb3VkczovLzAzLzEwLzQ0L2E4Lzc0L2ExMDUtNDNhZC1iMzQzLWVjYjQ1OGY4ZmExZA.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39775298?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Gyldenrisvej+22,+2,+2300+KÃ¸benhavn+S",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Gyldenrisvej+22,+2,+2300+København+S",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michala+Roepstorff"
@@ -4447,10 +4452,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:52+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:00+00:00"
   },
   {
    "id": "25155688",
@@ -4545,10 +4550,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:31:29+00:00"
+   "sidst_opdateret": "2026-09-04T11:07:24+00:00"
   },
   {
    "id": "40465820",
@@ -4649,12 +4654,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:24:00+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:07+00:00"
   },
   {
    "id": "27983944",
@@ -4689,7 +4694,7 @@
     "branchekode": "682040",
     "branchetekst": "Udlejning af erhvervsejendomme",
     "bibrancher": [],
-    "adresse": "BjÃ¸rnsknudevej 8A",
+    "adresse": "Bjørnsknudevej 8A",
     "postnr": "7130",
     "by": "Juelsminde",
     "kommune": null,
@@ -4741,7 +4746,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S01072026-112",
     "aarsrapport": "http://regnskaber.virk.dk/44938972/amNsb3VkczovLzAzLzhiL2Q3Lzg4L2M3L2RiNTktNDMwYy1hNjZlLTg1YzgwMTU3NjFkNQ.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/27983944?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=BjÃ¸rnsknudevej+8A,+7130+Juelsminde",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Bjørnsknudevej+8A,+7130+Juelsminde",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Janus+Bang+Topp"
@@ -4749,12 +4754,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:29:36+00:00"
+   "sidst_opdateret": "2026-09-04T11:05:35+00:00"
   },
   {
    "id": "40096957",
@@ -4787,7 +4792,7 @@
     "binavne": [],
     "selskabsform": "A/S",
     "branchekode": "683210",
-    "branchetekst": "Administration af fast ejendom pÃ¥ kontraktbasis",
+    "branchetekst": "Administration af fast ejendom på kontraktbasis",
     "bibrancher": [],
     "adresse": "Merkurvej 1K, 7",
     "postnr": "7400",
@@ -4849,10 +4854,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:28:16+00:00"
+   "sidst_opdateret": "2026-09-04T11:04:17+00:00"
   },
   {
    "id": "40134999",
@@ -4889,7 +4894,7 @@
     "bibrancher": [],
     "adresse": "Sellerup Strandvej 62",
     "postnr": "7080",
-    "by": "BÃ¸rkop",
+    "by": "Børkop",
     "kommune": "Sellerup",
     "region": "Syddanmark",
     "stiftet": "2018-12-28",
@@ -4939,7 +4944,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S24072026-72",
     "aarsrapport": "http://regnskaber.virk.dk/99943104/amNsb3VkczovLzAzLzZiLzk5LzJlLzg2LzQxOTQtNDQxNi04N2Q5LWFmNjhjOWQwNjBiZg.pdf",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40134999?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Sellerup+Strandvej+62,+7080+BÃ¸rkop",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Sellerup+Strandvej+62,+7080+Børkop",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
@@ -4947,10 +4952,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:28:06+00:00"
+   "sidst_opdateret": "2026-09-04T11:04:08+00:00"
   },
   {
    "id": "43321137",
@@ -5048,7 +5053,7 @@
     "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:33:13+00:00"
+   "sidst_opdateret": "2026-09-04T11:02:14+00:00"
   },
   {
    "id": "40313761",
@@ -5143,10 +5148,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:02+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:09+00:00"
   },
   {
    "id": "42984523",
@@ -5241,10 +5246,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:01+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:08+00:00"
   },
   {
    "id": "45690725",
@@ -5342,7 +5347,7 @@
     "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:32:31+00:00"
+   "sidst_opdateret": "2026-09-04T11:00:08+00:00"
   }
  ]
 }
