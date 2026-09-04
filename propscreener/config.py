@@ -47,11 +47,15 @@ class Settings:
     regnskab_es_base: str = "http://distribution.virk.dk/offentliggoerelser/_search"
 
     # Datafordeler
-    datafordeler_base: str = "https://services.datafordeler.dk"
+    datafordeler_base: str = "https://api.datafordeler.dk"   # ny host (services.datafordeler.dk svarer 404, sep. 2026)
     datafordeler_user: str = ""
     datafordeler_password: str = ""
     datafordeler_api_key: str = ""          # ny administration (2026): API-Key til frie data
     datafordeler_api_key_param: str = "apikey"
+    datafordeler_client_id: str = ""        # OAuth Shared Secret (kræves til EJF fildownload/GraphQL)
+    datafordeler_client_secret: str = ""
+    datafordeler_token_url: str = "https://auth.datafordeler.dk/realms/distribution/protocol/openid-connect/token"
+    index_dir: Path = field(default_factory=lambda: Path("data/index"))
 
     # DAWA (adresser, gratis)
     dawa_base: str = "https://api.dataforsyningen.dk"
@@ -82,6 +86,10 @@ class Settings:
         s.datafordeler_password = _env("DATAFORDELER_PASSWORD")
         s.datafordeler_api_key = _env("DATAFORDELER_API_KEY")
         s.datafordeler_api_key_param = _env("DATAFORDELER_API_KEY_PARAM", s.datafordeler_api_key_param)
+        s.datafordeler_client_id = _env("DATAFORDELER_CLIENT_ID")
+        s.datafordeler_client_secret = _env("DATAFORDELER_CLIENT_SECRET")
+        s.datafordeler_token_url = _env("DATAFORDELER_TOKEN_URL", s.datafordeler_token_url)
+        s.index_dir = Path(_env("PROPSCREENER_INDEX_DIR", str(s.index_dir)))
         s.datafordeler_base = _env("DATAFORDELER_BASE", s.datafordeler_base).rstrip("/")
         s.days_back = int(_env("PROPSCREENER_DAYS_BACK", str(s.days_back)))
         s.min_score = int(_env("PROPSCREENER_MIN_SCORE", str(s.min_score)))

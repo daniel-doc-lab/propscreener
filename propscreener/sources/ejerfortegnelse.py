@@ -15,6 +15,8 @@ og Vurderingsportalen/VUR (Datafordeler) for offentlig ejendomsvurdering.
 from __future__ import annotations
 
 import logging
+import re
+from pathlib import Path
 from typing import Any
 
 from ..config import Settings
@@ -134,9 +136,62 @@ def _andel(e: dict[str, Any]) -> str | None:
     return e.get("ejerandel")
 
 
+class LocalIndexes:
+    """Indekser bygget af `propscreener build-index` (Datafordeler fildownload)."""
+
+    def __init__(self, index_dir: Path):
+        from .datafordeler_files import load_index
+
+        self.ejf = load_index(index_dir / "ejf_cvr_bfe.json.gz") or {}
+        self.vur = load_index(index_dir / "vur_bfe.json.gz") or {}
+        self.ebr = load_index(index_dir / "ebr_bfe.json.gz") or {}
+        self.meta = load_index(index_dir / "meta.json.gz") or {}
+
+    @property
+    def has_ejf(self) -> bool:
+        return bool(self.ejf.get("cvr"))
+
+    def properties_for_cvr(self, cvr: str) -> list[Property]:
+        out = []
+        for e in (self.ejf.get("cvr") or {}).get(cvr, []):
+            bfe = str(e.get("bfe"))
+            p = Property(bfe_nummer=bfe, ejerandel=e.get("andel"), kilde="ejerfortegnelsen",
+                         ejendomstype=e.get("ejerforhold"))
+            v = (self.vur.get("bfe") or {}).get(bfe)
+            if v:
+                p.offentlig_vurdering = v.get("ejendomsvaerdi")
+            a = (self.ebr.get("bfe") or {}).get(bfe)
+            if a and a.get("adresse"):
+                p.adresse = a["adresse"]
+                p.kommune = a.get("kommune")
+            out.append(p)
+        return out
+
+
 def enrich_with_ejerfortegnelse(case: BankruptcyCase, ejf: EjerfortegnelseClient | None, dawa: DawaClient | None,
-                                geocode: bool = True) -> BankruptcyCase:
+                                geocode: bool = True, local: LocalIndexes | None = None) -> BankruptcyCase:
     cvr = case.selskab.cvr
+    if local is not None and local.has_ejf and cvr:
+        known = {p.bfe_nummer for p in case.ejendomme if p.bfe_nummer}
+        props = [p for p in local.properties_for_cvr(cvr) if p.bfe_nummer not in known]
+        for p in props:
+            if dawa and p.adresse and not p.postnr:
+                m = re.search(r"(\d{4})\s+([^,]+)$", p.adresse)
+                if m:
+                    p.postnr, p.by = m.group(1), m.group(2).strip()
+            if dawa and p.bfe_nummer and not p.adresse:
+                a = dawa.address_for_bfe(p.bfe_nummer)
+                if a:
+                    p.adresse = a.get("betegnelse") or a.get("vejnavn")
+                    p.postnr = str(a.get("postnr") or "") or None
+                    p.by = a.get("postnrnavn")
+                    p.kommune = a.get("kommunenavn")
+                    if a.get("x") and a.get("y"):
+                        p.lat, p.lon = float(a["y"]), float(a["x"])
+            case.ejendomme.append(p)
+        if props:
+            case.kilder.append("ejerfortegnelsen")
+        ejf = None  # ingen REST-opslag når indekset findes
     if ejf is not None and cvr:
         try:
             props = ejf.properties_for_cvr(cvr)

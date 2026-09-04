@@ -1,0 +1,59 @@
+name: Byg Datafordeler-indeks
+
+# Ugentligt (natten til mandag efter Datafordelerens generering) + manuelt. Henter landsdækkende
+# totaldownloads (CSV) fra Datafordeleren og bygger kompakte indekser:
+#   EJF Ejerskab -> cvr -> bfe   (kræver OAuth + godkendt anmodning; springes over indtil da)
+#   VUR vurdering -> bfe -> værdi (API-key)
+#   EBR beliggenhed -> bfe -> adresse (API-key)
+# Indekserne lægges i Actions-cache (nøgle "df-index-…"), som scrape.yml genskaber.
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+  push:
+    branches: ["main", "claude/**"]
+    paths: [".github/workflows/index.yml", "propscreener/sources/datafordeler_files.py"]
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    env:
+      DATAFORDELER_API_KEY: ${{ secrets.DATAFORDELER_API_KEY }}
+      DATAFORDELER_CLIENT_ID: ${{ secrets.DATAFORDELER_CLIENT_ID }}
+      DATAFORDELER_CLIENT_SECRET: ${{ secrets.DATAFORDELER_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Entiteter og kolonnenavne (til fejlsøgning; henter kun små delta-filer)
+        run: |
+          propscreener probe-files --work-dir .cache/files \
+            --headers 'VUR:^Ejendomsvurdering$' 'VUR:^BFEKrydsreference$' 'VUR:^Vurderingsejendom$' \
+                      'EJF:^Ejerskab$' 'EBR:^Ejendomsbeliggenhed$' | head -c 30000
+      - name: Byg indekser
+        run: |
+          propscreener -v build-index --index-dir data/index --work-dir .cache/files || true
+          ls -la data/index || true
+          python - <<'EOF'
+          import gzip, json, pathlib
+          for p in sorted(pathlib.Path("data/index").glob("*.json.gz")):
+              d = json.load(gzip.open(p, "rt", encoding="utf-8"))
+              top = next(iter(d.values())) if isinstance(d, dict) and d else d
+              print(p.name, p.stat().st_size // 1024, "KB", "poster:", len(top) if isinstance(top, dict) else "-")
+          EOF
+      - name: Gem indekser i cache
+        uses: actions/cache/save@v4
+        with:
+          path: data/index
+          key: df-index-${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: datafordeler-index
+          path: data/index
+          if-no-files-found: ignore

@@ -11,3 +11,4 @@ dist/
 certs/
 *.p12
 *.pem
+data/index/

@@ -166,27 +166,35 @@ jobs:
             head -c 600 body.txt | tr '\n' ' '; echo
           done
 
-      - name: Datafordeler – test API-Key (kun hvis secret er sat; nøglen udskrives ikke)
+      - name: Datafordeler – autentifikation (OAuth) og fildownload-test
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
         run: |
-          if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          Q="CVRnr=64942212&format=json&pagesize=2"   # Københavns Kommune – ejer mange ejendomme
-          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
-            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer"; do
-              for p in apikey api-key key apiKey token; do
-                code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$base/$svc?$Q&$p=$DFKEY" || echo 000)
-                echo "$code  $base/$svc?$Q&$p=***"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
-              done
-              for h in "X-Api-Key" "apikey" "Ocp-Apim-Subscription-Key"; do
-                code=$(curl -sS -m 25 -A "$UA" -H "$h: $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
-                echo "$code  $base/$svc?$Q  header $h"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
-              done
-              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
-              echo "$code  $base/$svc?$Q  header Authorization: Bearer"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
-            done
+          mask() { if [ -n "$DFKEY" ]; then sed "s/$DFKEY/***/g"; else cat; fi; }
+          txt() { sed 's/<[^>]*>/ /g' "$1" | sed 's/&nbsp;/ /g; s/&amp;/\&/g' | tr -s ' \n\t' ' '; }
+          for u in "https://confluence.kds.dk/label/DML/autentifikationsmetode" "https://confluence.kds.dk/label/DML/endpoint" "https://confluence.kds.dk/label/DML/ip-allowlist" \
+                   "https://confluence.sdfi.dk/pages/viewpage.action?pageId=151999753" "https://confluence.kds.dk/display/DML/Udvalgte+REST-tjenester+omsat+til+GraphQL-queries" \
+                   "https://confluence.kds.dk/display/DML/Guide+til+GraphQL+p%C3%A5+Datafordeleren" "https://confluence.kds.dk/display/DML/GraphQL+p%C3%A5+Datafordeleren"; do
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code} %{url_effective}" "$u" || echo 000); echo "===== $code $u"
+            grep -oE 'href="/display/DML/[^"]*"|href="/pages/viewpage.action\?pageId=[0-9]+"' page.html | sed 's/href="//; s/"$//' | sort -u | head -25
+            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -30
+            txt page.html | grep -oiE '.{0,200}(token|client_id|client_secret|oauth|bearer|apikey|api-key|GetFile|Register=|graphql/|/graphql).{0,220}' | head -16 | cut -c1-440
           done
+          echo "== label-sider: find autentifikations-siden og hent den =="
+          for pid in $(curl -sSL -m 25 -A "$UA" "https://confluence.kds.dk/label/DML/autentifikationsmetode" | grep -oE 'pageId=[0-9]+|/display/DML/[^"]+' | sort -u | head -6); do
+            case "$pid" in pageId=*) u="https://confluence.kds.dk/pages/viewpage.action?$pid";; *) u="https://confluence.kds.dk$pid";; esac
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code}" "$u" || echo 000); echo "===== $code $u"
+            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -20
+            txt page.html | grep -oiE '.{0,240}(token|client_id|client_secret|grant_type|bearer|apikey).{0,240}' | head -14 | cut -c1-480
+          done
+          echo "== fildownload med apikey (åbne registre) =="
+          for reg in EJF DAR BBR MAT EBR VUR; do
+            code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code} %{content_type}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=$reg&apikey=$DFKEY" || echo 000)
+            echo "$code  GetAvailableFileDownloads?Register=$reg" | mask; head -c 700 body.txt | tr '\n' ' ' | mask; echo
+          done
+          code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code} %{content_type}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=EJF" || echo 000)
+          echo "$code  GetAvailableFileDownloads uden nøgle"; head -c 300 body.txt; echo
 
       - uses: actions/upload-artifact@v4
         with:

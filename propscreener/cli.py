@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 from . import __version__
@@ -51,6 +52,20 @@ def main(argv: list[str] | None = None) -> int:
     p_dbg = sub.add_parser("debug-search", help="Dump rå JSON fra Statstidende-søgning og første meddelelse")
     p_dbg.add_argument("--type", default="konkurs_dekret")
     p_dbg.add_argument("--days", type=int, default=3)
+
+    p_idx = sub.add_parser("build-index", help="Byg lokale indekser fra Datafordelerens fildownload (EJF/VUR/EBR)")
+    p_idx.add_argument("--index-dir", default=None)
+    p_idx.add_argument("--work-dir", default=".cache/files")
+    p_idx.add_argument("--only", default="", help="Kommasepareret: ejf,vur,ebr (default alle tilgængelige)")
+    p_idx.add_argument("--vur-entity", default=r"^Ejendomsvurdering$", help="Regex for VUR-entitet")
+    p_idx.add_argument("--ebr-entity", default=r"^Ejendomsbeliggenhed$")
+    p_idx.add_argument("--ejf-entity", default=r"^Ejerskab$")
+    p_idx.add_argument("--force-vur", action="store_true",
+                       help="Byg VUR-indeks selv uden EJF-indeks (2+ GB download, kun til fejlsøgning)")
+    p_pf = sub.add_parser("probe-files", help="Vis hvilke entiteter Datafordeleren udstiller til fildownload (EJF/VUR/EBR/BBR/MAT)")
+    p_pf.add_argument("--headers", nargs="*", default=[], metavar="REGISTER:ENTITET",
+                      help="Hent mindste fil (delta) for entiteten og vis kolonnenavne, fx VUR:^Ejendomsvurdering$")
+    p_pf.add_argument("--work-dir", default=".cache/files")
 
     p_show = sub.add_parser("show", help="Vis et bo fra data/cases.json")
     p_show.add_argument("cvr")
@@ -138,6 +153,83 @@ def main(argv: list[str] | None = None) -> int:
             d = c.to_dict()
             d.pop("raa_tekst", None)
             print(json.dumps(d, ensure_ascii=False, indent=1)[:5000])
+        return 0
+
+    if a.cmd == "probe-files":
+        import json as _json
+
+        from .sources.datafordeler_files import DatafordelerFiles
+        http = Http(settings.user_agent, None, settings.request_delay_s, 120)
+        df = DatafordelerFiles(settings, http)
+        for reg in ("EJF", "VUR", "EBR", "BBR", "MAT"):
+            try:
+                print(f"== {reg} ==")
+                print(_json.dumps(df.entities(reg), ensure_ascii=False, indent=1))
+            except Exception as e:  # noqa: BLE001
+                print(f"  fejl: {e}")
+        for spec in a.headers:
+            reg, _, pat = spec.partition(":")
+            print(f"== kolonner {reg} {pat} ==")
+            try:
+                print(_json.dumps(df.peek_headers(reg.upper(), pat or ".", Path(a.work_dir)), ensure_ascii=False, indent=1))
+            except Exception as e:  # noqa: BLE001
+                print(f"  fejl: {e}")
+        return 0
+
+    if a.cmd == "build-index":
+        from .sources.datafordeler_files import (
+            DatafordelerFiles,
+            build_bfe_xref,
+            build_ebr_index,
+            build_ejf_index,
+            build_vur_index,
+            save_index,
+        )
+        http = Http(settings.user_agent, None, settings.request_delay_s, 120)
+        df = DatafordelerFiles(settings, http)
+        index_dir = Path(a.index_dir) if a.index_dir else settings.index_dir
+        work = Path(a.work_dir)
+        only = {x.strip() for x in a.only.split(",") if x.strip()} or {"ejf", "vur", "ebr"}
+        meta: dict = {"bygget": datetime.now(UTC).isoformat(timespec="seconds"), "filer": {}}
+        wanted: set[int] | None = None
+        if "ejf" in only:
+            info = df.latest_total("EJF", a.ejf_entity, "csv")
+            if info is None:
+                print("EJF: ingen tilgængelige fildownloads (mangler godkendt anmodning/OAuth) – springer over")
+            else:
+                zp = df.download(info, work / info.file_name)
+                idx = build_ejf_index(df.iter_csv_rows(zp))
+                save_index({"cvr": idx}, index_dir / "ejf_cvr_bfe.json.gz")
+                meta["filer"]["ejf"] = info.file_name
+                wanted = {e["bfe"] for lst in idx.values() for e in lst}
+                print(f"EJF: {len(idx)} virksomheder, {sum(len(v) for v in idx.values())} ejerskaber")
+        for key, pat, builder, name in (("vur", a.vur_entity, build_vur_index, "vur_bfe.json.gz"),
+                                        ("ebr", a.ebr_entity, build_ebr_index, "ebr_bfe.json.gz")):
+            if key not in only:
+                continue
+            if key == "vur" and wanted is None and not a.force_vur:
+                print("VUR: springes over – vurderinger giver først mening når EJF-indekset (CVR -> BFE) findes "
+                      "(brug --force-vur for at tvinge; ~4 GB download)")
+                continue
+            info = df.latest_total(key.upper(), pat, "csv")
+            if info is None:
+                print(f"{key.upper()}: ingen total-download matcher '{pat}' – kør `propscreener probe-files`")
+                continue
+            zp = df.download(info, work / info.file_name)
+            if key == "vur":
+                xref: dict[str, int] = {}
+                xinfo = df.latest_total("VUR", r"^BFEKrydsreference$", "csv")
+                if xinfo is not None:
+                    xref = build_bfe_xref(df.iter_csv_rows(df.download(xinfo, work / xinfo.file_name)), wanted)
+                    print(f"VUR: {len(xref)} krydsreferencer vurderingsejendom -> BFE")
+                idx = build_vur_index(df.iter_csv_rows(zp), wanted, xref)
+            else:
+                idx = builder(df.iter_csv_rows(zp), wanted)
+            save_index({"bfe": idx}, index_dir / name)
+            meta["filer"][key] = info.file_name
+            print(f"{key.upper()}: {len(idx)} ejendomme indekseret fra {info.file_name}")
+        save_index(meta, index_dir / "meta.json.gz")
+        print(f"indekser skrevet til {index_dir}")
         return 0
 
     if a.cmd == "show":

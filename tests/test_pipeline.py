@@ -103,8 +103,8 @@ def _fake_http() -> FakeHttp:
         "https://cvrapi.dk/api": cvrapi,
         "http://distribution.virk.dk/offentliggoerelser/_search": regnskab,
         "https://regnskaber.virk.dk/x.xml": XBRL,
-        "https://services.datafordeler.dk/EJERFORTEGNELSE": ejf,
-        "https://services.datafordeler.dk/VUR": lambda u: [{"ejendomsvaerdi": 9_400_000}],
+        "https://api.datafordeler.dk/EJERFORTEGNELSE": ejf,
+        "https://api.datafordeler.dk/VUR": lambda u: [{"ejendomsvaerdi": 9_400_000}],
         "https://api.dataforsyningen.dk/adresser": dawa,
     })
 
@@ -214,3 +214,69 @@ def test_apicvr_mcp_lookup_parses_sse():
     from propscreener.models import Company
     c = ApiCvrMcp.apply(Company(cvr="12345678"), data)
     assert c.branchekode == "682040" and c.region == "Midtjylland"
+
+
+def test_local_indexes_from_fildownload(tmp_path: Path):
+    from propscreener.models import BankruptcyCase, Company
+    from propscreener.sources.datafordeler_files import (
+        build_ebr_index,
+        build_ejf_index,
+        build_vur_index,
+        save_index,
+    )
+    from propscreener.sources.ejerfortegnelse import LocalIndexes, enrich_with_ejerfortegnelse
+
+    ejf_rows = [
+        {"id_lokalId": "a", "status": "gældende", "bestemtFastEjendomBFENr": "1234567", "ejendeVirksomhed": "12345678",
+         "ejerandel_taeller": "1", "ejerandel_naevner": "1", "ejerforholdskode": "Ejer"},
+        {"id_lokalId": "b", "status": "historisk", "bestemtFastEjendomBFENr": "999", "ejendeVirksomhed": "12345678"},
+        {"id_lokalId": "c", "status": "gældende", "bestemtFastEjendomBFENr": "555", "ejendePerson": "x"},
+    ]
+    idx = build_ejf_index(ejf_rows)
+    assert idx == {"12345678": [{"bfe": 1234567, "andel": "1/1", "ejerforhold": "Ejer", "fra": None}]}
+    vur = build_vur_index([{"BFEnummer": "1234567", "ejendomsvaerdi": "9400000", "grundvaerdi": "1000000", "vurderingsaar": "2024"},
+                           {"BFEnummer": "1234567", "ejendomsvaerdi": "8000000", "grundvaerdi": "900000", "vurderingsaar": "2022"}],
+                          {1234567})
+    assert vur["1234567"]["ejendomsvaerdi"] == 9_400_000 and vur["1234567"]["aar"] == "2024"
+    ebr = build_ebr_index([{"bfeNummer": "1234567", "adressebetegnelse": "Vestergade 12, 8000 Aarhus C", "kommunekode": "0751"}])
+    d = tmp_path / "index"
+    save_index({"cvr": idx}, d / "ejf_cvr_bfe.json.gz")
+    save_index({"bfe": vur}, d / "vur_bfe.json.gz")
+    save_index({"bfe": ebr}, d / "ebr_bfe.json.gz")
+    local = LocalIndexes(d)
+    assert local.has_ejf
+    case = BankruptcyCase(id="12345678", selskab=Company(cvr="12345678"))
+    enrich_with_ejerfortegnelse(case, None, None, geocode=False, local=local)
+    assert len(case.ejendomme) == 1
+    p = case.ejendomme[0]
+    assert (p.bfe_nummer, p.offentlig_vurdering, p.adresse, p.kilde) == ("1234567", 9_400_000, "Vestergade 12, 8000 Aarhus C", "ejerfortegnelsen")
+    assert "ejerfortegnelsen" in case.kilder
+
+
+def test_vur_index_bitemporal_with_xref():
+    """Kolonnenavne som i de rigtige VUR_V2-udtræk (verificeret 4/9-2026)."""
+    from propscreener.sources.datafordeler_files import build_bfe_xref, build_vur_index
+
+    xref = build_bfe_xref([
+        {"BFEKrydsreferenceID": "1", "BFEnummer": "100", "fkEjendomsvurderingID": "E1"},
+        {"BFEKrydsreferenceID": "2", "BFEnummer": "200", "fkEjendomsvurderingID": "E2"},
+        {"BFEKrydsreferenceID": "3", "BFEnummer": "300", "fkEjendomsvurderingID": "E3"},
+    ], wanted_bfe={100, 200})
+    assert xref == {"E1": 100, "E2": 200}
+    idx = build_vur_index([
+        {"id": "E1", "ejendomværdiBeløb": "1500000", "grundværdiBeløb": "300000", "år": "2022",
+         "fkVurderingsejendomID": "V1"},
+        {"id": "E1", "ejendomværdiBeløb": "900000", "grundværdiBeløb": "250000", "år": "2020",
+         "fkVurderingsejendomID": "V1"},
+        {"id": "E3", "ejendomværdiBeløb": "5", "grundværdiBeløb": "1", "år": "2022", "fkVurderingsejendomID": "V3"},
+    ], None, xref)
+    assert idx == {"100": {"ejendomsvaerdi": 1500000, "grundvaerdi": 300000, "aar": "2022"}}
+
+
+def test_is_current_uses_registrering_and_virkning_til():
+    from propscreener.sources.datafordeler_files import _is_current
+
+    assert _is_current({"status": "gældende", "virkningTil": "", "registreringTil": ""})
+    assert not _is_current({"status": "gældende", "virkningTil": "2026-08-28T05:24:04Z", "registreringTil": ""})
+    assert not _is_current({"status": "historisk", "virkningTil": ""})
+    assert _is_current({"id": "E1", "år": "2022"})

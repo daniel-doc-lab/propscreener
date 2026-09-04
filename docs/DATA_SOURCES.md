@@ -13,7 +13,7 @@ dette projekt eller er skrevet efter offentlig dokumentation uden live-test.
 | 4 | CVR system-til-system (Elasticsearch) | fuld virksomhedsprofil, bibrancher, deltagere, statushistorik | aftale m. Erhvervsstyrelsen | feltnavne: dokumenteret |
 | 5 | Regnskabsindeks `distribution.virk.dk/offentliggoerelser` | dokument-URL'er til XBRL/PDF | åben | feltnavne: dokumenteret |
 | 6 | XBRL-årsrapport | Assets, Equity, InvestmentProperty, LandAndBuildings, MortgageDebt, ProfitLoss … | åben | parser: ja (XBRL + iXBRL fixtures) |
-| 7 | Datafordeler – Ejerfortegnelsen | BFE-numre ejet af CVR-nr, ejerandel, ejendomstype | gratis tjenestebruger | metode-navn dokumenteret · svarform: tolerant |
+| 7 | Datafordeler – Ejerfortegnelsen | BFE-numre ejet af CVR-nr, ejerandel, ejendomstype | OAuth + godkendt anmodning (fildownload/GraphQL) | endpoints dokumenteret; adgang afventer godkendelse |
 | 8 | Datafordeler – Vurdering (VUR) | offentlig ejendomsvurdering pr. BFE | som 7 | tolerant |
 | 9 | DAWA / Dataforsyningen | adresse for BFE, koordinater | åben | dokumenteret |
 
@@ -117,21 +117,51 @@ Anmeldelsesfristen beregnes som bekendtgørelsesdato + 4 uger (konkurslovens § 
 
 ## 7–8. Ejerfortegnelsen og vurdering (Datafordeler)
 
-* Adgang (ny administration fra 2026): log ind på datafordeler.dk → Administration → IT-systemer →
-  opret et IT-system → **API-Keys → Opret**. API-nøglen giver adgang til tjenester med *frie data*
-  (Ejerfortegnelsen åben variant, Vurdering, BBR, Matriklen) og sendes med i URL'en. Sæt
-  `DATAFORDELER_API_KEY`. OAuth (shared secret/certifikat) og IP-registrering er kun nødvendigt for
-  *fortrolige* data (CPR-baseret ejerfortegnelse), som vi ikke bruger. Ældre tjenestebrugere med
-  brugernavn/adgangskode understøttes stadig via `DATAFORDELER_USER`/`DATAFORDELER_PASSWORD`.
-* Behandl API-nøglen som en adgangskode: læg den kun i GitHub Secrets. En nøgle der har været delt
-  (fx i en chat) bør deaktiveres og erstattes under API-Keys → Deaktiver / Opret.
-* REST: `GET https://services.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=…&format=json&username=…&password=…`
-  Metoden returnerer ejerskaber med `bestemtFastEjendomBFENr`, ejerandel og ejendomstype.
-  Datafordeleren har varslet at REST-varianten udfases ultimo 2026; basis-URL og sti er derfor
-  konfigurerbare (`EJF_PATH`).
-* Vurdering: `VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=…` – seneste offentlige
-  ejendomsværdi. Bemærk at de nye 2020-vurderinger for erhverv stadig udrulles; feltet kan mangle.
-* Ejerfortegnelsen indeholder **ikke** CPR-numre i den åbne variant, og vi bruger kun CVR-opslag.
+Datafordeleren har to generationer af adgang (undersøgt 4. september 2026 fra en Actions-runner):
+
+| | Gammel platform (udfases 15. jan. 2027) | Ny platform (Datafordeler Administration) |
+|---|---|---|
+| Host | `services.datafordeler.dk` (REST) | `api.datafordeler.dk` (GraphQL + Fildownload) |
+| Login | *Tjenestebruger* (brugernavn/adgangskode) fra Selvbetjeningen | *IT-system* med API-Key (frie data) eller OAuth Shared Secret/Certifikat |
+| Ejerfortegnelsen | REST: `Ejerskab?BFEnr=` i den åbne tjeneste; **opslag pr. CVR (`EjendommeMedSammeEjer?CVRnr=`) findes kun i den fortrolige tjeneste** | Fildownload (`/FileDownloads/GetAvailableFileDownloads?Register=EJF`, `/FileDownloads/GetFile?…`) og GraphQL. **Kræver OAuth og godkendt "Anmodning om adgang til EJF"** – også for de åbne entiteter |
+| Status i projektet | REST-klient findes (`EJF_PATH`), men uden tjenestebruger svarer hosten 404 | API-Key accepteres (401 → 404) men giver ikke adgang til EJF; OAuth + anmodning mangler |
+
+**Anbefalet vej** (implementeres når adgangen er godkendt): ugentligt *totaldownload aktuel* af
+entiteten `Ejerskab` (JSON/CSV, genereres natten til mandag) → filtrér til virksomhedsejere → byg et
+kompakt indeks CVR → [BFE, ejerandel] → slå alle boer op lokalt. Deltadownload dagligt til
+vedligehold. Det er hurtigere og mere robust end enkeltopslag, og det giver også *historiske* ejere
+(selskaber der solgte kort før konkursen).
+
+Sådan søger du adgang (Datafordeler Administration, gratis for åbne entiteter):
+
+1. IT-system → **OAuth Shared Secret → Opret** (gem client id og secret som `DATAFORDELER_CLIENT_ID` /
+   `DATAFORDELER_CLIENT_SECRET` i GitHub Secrets).
+2. **Anmodning om adgang** → Ejerfortegnelsen (EJF) → Fildownload (og gerne GraphQL) → vælg de
+   åbne entiteter `Ejerskab`, `Ejerskifte`, `Handelsoplysninger`, `PersonVirksomhedsoplysninger`.
+   Fortrolige entiteter (CPR) er kun for offentlige myndigheder.
+3. Registrér evt. IP-adresser kun hvis der anmodes om fortrolige data (ikke nødvendigt her).
+4. Vurdering (VUR) og BBR: samme mønster (anmodning pr. register); BBR og Matriklen er frie data.
+
+Bemærk: `EjendommeMedSammeEjer` i den gamle REST-tjeneste og GraphQL-varianten er klassificeret
+fortrolig fordi metoden også tager CPR; for CVR-opslag er fildownload-indekset den åbne løsning.
+
+### Fildownload – verificeret med API-Key (4. september 2026)
+
+`propscreener probe-files --headers …` henter det mindste delta-udtræk og viser kolonnenavne.
+Konstateret fra `.github/workflows/index.yml`:
+
+| Register | Entitet | Udtræk | Størrelse | Nøglekolonner |
+|---|---|---|---|---|
+| EBR | `Ejendomsbeliggenhed` | TotalDownload/Current/csv | 202 MB, 2,70 mio. rækker | `bestemtFastEjendomBFENr`, `betegnelse`, `kommuneinddelingKommunekode`, `adresseLokalId`, `status` |
+| VUR | `Ejendomsvurdering` | kun TotalDownload/**Bitemporal**/csv | 2,2 GB (~85 min. download) | `id`, `ejendomværdiBeløb`, `grundværdiBeløb`, `år`, `benyttelseKode`, `fkVurderingsejendomID` (ingen BFE) |
+| VUR | `BFEKrydsreference` | kun Bitemporal | 1,9 GB (~75 min.) | `fkEjendomsvurderingID` → `BFEnummer` |
+| VUR | `Vurderingsejendom` | kun Bitemporal | – | `vurderingsejendomID`, `VURejendomsid`, `ESRejendomsnummer` |
+| EJF | `Ejerskab` m.fl. | – | – | listen er tom indtil anmodningen er godkendt (OAuth) |
+
+Konsekvenser for pipelinen: EBR-indekset (BFE → adresse/kommune) bygges hver uge med API-Key.
+VUR-indekset bygges først, når EJF-indekset findes, fordi vurderingerne kun kan kobles til et bo via
+CVR → BFE, og fordi de to VUR-filer tager knap tre timer at hente (`--force-vur` tvinger det).
+Delta-udtræk uden ændringer er ~350–500 bytes (kun kolonnelinje).
 
 ## 9. DAWA
 
