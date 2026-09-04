@@ -47,7 +47,7 @@ class Settings:
     regnskab_es_base: str = "http://distribution.virk.dk/offentliggoerelser/_search"
 
     # Datafordeler
-    datafordeler_base: str = "https://services.datafordeler.dk"
+    datafordeler_base: str = "https://api.datafordeler.dk"   # ny host (services.datafordeler.dk svarer 404, sep. 2026)
     datafordeler_user: str = ""
     datafordeler_password: str = ""
     datafordeler_api_key: str = ""          # ny administration (2026): API-Key til frie data

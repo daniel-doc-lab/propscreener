@@ -166,40 +166,40 @@ jobs:
             head -c 600 body.txt | tr '\n' ' '; echo
           done
 
-      - name: Datafordeler – test API-Key (kun hvis secret er sat; nøglen udskrives ikke)
+      - name: Datafordeler – test API-Key på api.datafordeler.dk (nøglen udskrives ikke)
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
         run: |
           if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          B=https://api.datafordeler.dk
           mask() { sed "s/$DFKEY/***/g"; }
-          try() { # $1=label $2=url [$3=header]
-            if [ -n "$3" ]; then code=$(curl -sS -m 25 -A "$UA" -H "$3" -o body.txt -w "%{http_code}" "$2" || echo 000)
-            else code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$2" || echo 000); fi
-            echo "$code  $1" | mask
-            if [ "$code" = "200" ]; then echo "   >>> $(head -c 1200 body.txt | tr '\n' ' ' | mask)"; fi
-          }
-          CVR=64942212   # Københavns Kommune – ejer mange ejendomme
-          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
-            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/Ejerskab"; do
-              Q="$base/$svc?CVRnr=$CVR&format=json&pagesize=2"
-              try "$svc uden nøgle" "$Q"
-              for pn in apikey api-key key apiKey token accesskey subscription-key; do try "$svc ?$pn=" "$Q&$pn=$DFKEY"; done
-              for h in "X-Api-Key" "apikey" "api-key" "Ocp-Apim-Subscription-Key" "X-API-KEY"; do try "$svc header $h" "$Q" "$h: $DFKEY"; done
-              try "$svc Authorization: Bearer" "$Q" "Authorization: Bearer $DFKEY"
-              try "$svc Authorization: ApiKey" "$Q" "Authorization: ApiKey $DFKEY"
+          try() { code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$2" || echo 000); echo "$code  $1" | mask
+                  if [ "$code" != "401" ] && [ "$code" != "404" ]; then echo "   >>> $(head -c 1500 body.txt | tr '\n' ' ' | mask)"; fi
+                  if [ "$code" = "404" ]; then echo "   404-body: $(head -c 300 body.txt | tr '\n' ' ' | mask)"; fi; }
+          echo "== BFE-nummer via DAWA =="
+          BFE=$(curl -sS -m 20 -A "$UA" "https://api.dataforsyningen.dk/adgangsadresser?q=R%C3%A5dhuspladsen%201,%201550&per_side=1" | python3 -c 'import sys,json; a=json.load(sys.stdin)[0]; j=a.get("jordstykke") or {}; print(j.get("bfenummer") or a.get("bfenummer") or "")')
+          echo "BFE=$BFE"
+          [ -z "$BFE" ] && BFE=100056600
+          echo "== EJF: metode- og parameter-varianter =="
+          for m in EjendommeMedSammeEjer Ejerskab EjendomMedEjer EjerskabMedStamoplysninger Ejerfortegnelsen; do
+            for q in "CVRnr=64942212" "cvrnr=64942212" "CVRNr=64942212" "cvrNummer=64942212" "BFEnr=$BFE" "BFENr=$BFE" "bfenr=$BFE"; do
+              try "EJF/$m?$q" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/$m?$q&format=json&apikey=$DFKEY"
             done
           done
-          echo "== VUR (vurdering) =="
-          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
-            for svc in "VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=100056600" "VUR/VUR/1/REST/Ejendomsvurdering?BFEnummer=100056600" "VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=100056600&status=Gældende"; do
-              try "$svc ?apikey" "$base/$svc&format=json&apikey=$DFKEY"
-              try "$svc header X-Api-Key" "$base/$svc&format=json" "X-Api-Key: $DFKEY"
-            done
-          done
-          echo "== BBR (bygning pr. BFE, til areal) =="
-          try "BBR bygning ?apikey" "https://services.datafordeler.dk/BBR/BBRPublic/1/REST/bygning?BFENummer=100056600&format=json&pagesize=2&apikey=$DFKEY"
-          try "BBR bygning header" "https://services.datafordeler.dk/BBR/BBRPublic/1/REST/bygning?BFENummer=100056600&format=json&pagesize=2" "X-Api-Key: $DFKEY"
+          try "EJF/rest-liste" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/?apikey=$DFKEY"
+          try "EJF/rest-liste2" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/rest?apikey=$DFKEY"
+          try "EJF uden format" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=64942212&apikey=$DFKEY"
+          try "EJF Format=JSON" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=64942212&Format=JSON&apikey=$DFKEY"
+          try "EJF version 2" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/2/REST/EjendommeMedSammeEjer?CVRnr=64942212&format=json&apikey=$DFKEY"
+          echo "== VUR / BBR / MAT pr. BFE =="
+          try "VUR BFEejendomsvurdering" "$B/VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=$BFE&format=json&apikey=$DFKEY"
+          try "VUR Ejendomsvurdering" "$B/VUR/VUR/1/REST/Ejendomsvurdering?BFEnummer=$BFE&format=json&apikey=$DFKEY"
+          try "VUR status=1" "$B/VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=$BFE&status=1&format=json&apikey=$DFKEY"
+          try "BBR bygning" "$B/BBR/BBRPublic/1/REST/bygning?BFENummer=$BFE&format=json&pagesize=2&apikey=$DFKEY"
+          try "BBR ejendomsrelation" "$B/BBR/BBRPublic/1/REST/ejendomsrelation?BFENummer=$BFE&format=json&apikey=$DFKEY"
+          try "MAT SamletFastEjendom" "$B/Matriklen2/Matrikel/2.0.0/rest/SamletFastEjendom?BFEnr=$BFE&format=json&apikey=$DFKEY"
+          try "EBR Ejendomsbeliggenhed" "$B/EBR/Ejendomsbeliggenhed/1/REST/Ejendomsbeliggenhed?BFEnr=$BFE&format=json&apikey=$DFKEY"
 
       - uses: actions/upload-artifact@v4
         with:
