@@ -1,0 +1,89 @@
+name: Opdag Statstidende-endpoints
+
+# Manuelt diagnoseværktøj: afdækker hvilke API-stier statstidende.dk's frontend bruger,
+# og om de øvrige kilder kan nås fra en Actions-runner. Skriver kun til loggen.
+
+on:
+  workflow_dispatch:
+    inputs:
+      extra_url:
+        description: "Ekstra URL at afprøve (valgfri)"
+        default: ""
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+
+      - name: Forside og script-bundles
+        run: |
+          set -x
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          curl -sSL -A "$UA" -o index.html -w "status=%{http_code} url=%{url_effective}\n" https://www.statstidende.dk/
+          head -c 3000 index.html; echo
+          grep -oE '(src|href)="[^"]+\.(js|json)[^"]*"' index.html | sort -u | head -50 > assets.txt || true
+          cat assets.txt
+          mkdir -p bundles
+          i=0
+          for a in $(grep -oE '"[^"]+\.js[^"]*"' assets.txt | tr -d '"'); do
+            case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
+            i=$((i+1)); curl -sSL -A "$UA" -o "bundles/$i.js" "$u" || true
+          done
+          ls -la bundles || true
+
+      - name: API-stier og nøgler i bundles
+        run: |
+          echo "== /api-stier =="
+          grep -ohE '"[^"]*/api/[A-Za-z0-9/_.\-]*"' bundles/*.js 2>/dev/null | sort | uniq -c | sort -rn | head -80 || true
+          echo "== api.statstidende / statstidende.dk-værter =="
+          grep -ohE 'https?://[a-z0-9.-]*statstidende[a-z0-9./_-]*' bundles/*.js index.html 2>/dev/null | sort -u | head -40 || true
+          echo "== nøgler der ligner søgeparametre =="
+          grep -ohE '\b(messageType|messageTypes|messageCategory|publicationDate[A-Za-z]*|publishedFrom|publishedTo|dateFrom|dateTo|searchText|freeText|pageSize|pageNumber|messageTypeId|categoryId|MessageType[A-Za-z]*)\b' bundles/*.js 2>/dev/null | sort | uniq -c | sort -rn | head -60 || true
+          echo "== kandidat-ord omkring 'konkurs' =="
+          grep -ohE '.{0,80}[Kk]onkurs.{0,80}' bundles/*.js 2>/dev/null | sort -u | head -40 || true
+
+      - name: Prøv kendte stier
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          for u in \
+            https://www.statstidende.dk/robots.txt \
+            https://www.statstidende.dk/sitemap.xml \
+            https://www.statstidende.dk/api \
+            https://www.statstidende.dk/api/messages \
+            "https://www.statstidende.dk/api/messages?page=0&pageSize=2" \
+            https://www.statstidende.dk/api/v1/messages \
+            https://www.statstidende.dk/api/messages/search \
+            https://www.statstidende.dk/api/messagetypes \
+            https://www.statstidende.dk/api/message-types \
+            https://www.statstidende.dk/api/categories \
+            https://www.statstidende.dk/swagger/index.html \
+            https://www.statstidende.dk/swagger/v1/swagger.json \
+            https://www.statstidende.dk/api/swagger/v1/swagger.json \
+            https://www.statstidende.dk/rss \
+            https://www.statstidende.dk/feed \
+            "https://www.statstidende.dk/messages?messageTypes=Konkursboer" \
+            https://api.statstidende.dk/ \
+            https://api.statstidende.dk/docs/index.html \
+            https://api.statstidende.dk/swagger/v1/swagger.json \
+            "${{ github.event.inputs.extra_url }}" ; do
+            [ -z "$u" ] && continue
+            echo "----- GET $u"
+            curl -sS -m 25 -A "$UA" -H "Accept: application/json, text/html" -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || echo "curl-fejl"
+            head -c 700 body.txt | tr '\n' ' '; echo
+          done
+          echo "----- POST /api/messages/search"
+          curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"page":0,"pageSize":2}' -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" https://www.statstidende.dk/api/messages/search || true
+          head -c 700 body.txt; echo
+
+      - name: Øvrige kilder
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          echo "----- cvrapi"; curl -sS -m 25 -A "$UA" -o body.txt -w "status=%{http_code}\n" "https://cvrapi.dk/api?vat=10150817&country=dk" ; head -c 400 body.txt; echo
+          echo "----- regnskabsindeks"; curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"query":{"term":{"cvrNummer":10150817}},"size":1}' -o body.txt -w "status=%{http_code}\n" http://distribution.virk.dk/offentliggoerelser/_search ; head -c 800 body.txt; echo
+          echo "----- dawa"; curl -sS -m 25 -A "$UA" -o body.txt -w "status=%{http_code}\n" "https://api.dataforsyningen.dk/adresser?q=Vestergade%201%2C%208000&per_side=1&struktur=mini" ; head -c 300 body.txt; echo
+          echo "----- propscreener probe"; propscreener probe || true
