@@ -80,7 +80,7 @@ jobs:
           echo "----- api.statstidende.dk/ (redirect-mål)"
           curl -sS -m 25 -A "$UA" -o /dev/null -w "status=%{http_code} redirect=%{redirect_url}\n" https://api.statstidende.dk/
 
-      - name: Frontend – alle api/-stier og søgekald
+      - name: Frontend – chunks, api/-stier og søgekald
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
           curl -sSL -A "$UA" -o index.html https://www.statstidende.dk/
@@ -89,35 +89,47 @@ jobs:
             case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
             curl -sSL -A "$UA" -o "bundles/main.js" "$u" || true
           done
-          echo "== alle api/-stier =="
-          grep -ohE '["`]api/[A-Za-z0-9/_.${}-]+' bundles/main.js | tr -d '"`' | sort -u | tee apipaths.txt
+          echo "== webpack chunk-skabelon =="
+          grep -oE '.{0,80}"static/js/".{0,200}' bundles/main.js | head -3
+          echo "== chunk-map =="
+          python3 - <<'EOF'
+          import re, json
+          js = open("bundles/main.js", encoding="utf-8", errors="replace").read()
+          maps = re.findall(r'\{(\d+:"[0-9a-f]{6,}"(?:,\d+:"[0-9a-f]{6,}")*)\}', js)
+          ids = {}
+          for m in maps:
+              for k, v in re.findall(r'(\d+):"([0-9a-f]{6,})"', m):
+                  ids[k] = v
+          print(len(ids), "chunks")
+          with open("chunks.txt", "w") as f:
+              for k, v in ids.items():
+                  f.write(f"static/js/{k}.{v}.chunk.js\n")
+          EOF
+          head -50 chunks.txt
+          while read -r c; do curl -sS -m 20 -A "$UA" -o "bundles/$(basename "$c")" "https://www.statstidende.dk/$c" || true; done < chunks.txt
+          ls -la bundles | head -80
+          echo "== alle api/-stier i alle bundles =="
+          grep -ohE '["`]api/[A-Za-z0-9/_.${}-]+' bundles/*.js | tr -d '"`' | sort -u | tee apipaths.txt
           echo "== kontekst omkring search-kald =="
-          grep -oiE '.{0,300}api/[a-z]*search[a-z/]*.{0,400}' bundles/main.js | head -8
-          echo "== kontekst omkring 'take' =="
-          grep -oE '.{0,200}\btake:.{0,200}' bundles/main.js | head -8
-          echo "== kontekst omkring GetLatestPublication =="
-          grep -oE '.{0,100}GetLatestPublication.{0,300}' bundles/main.js | head -3
-          echo "== hjælpefunktionen \$T (http-klient) =="
-          grep -oE '.{0,400}\$T:\(\)=>[a-zA-Z_$]+.{0,100}' bundles/main.js | head -2
-          grep -oE 'async function [a-zA-Z_$]+\(e,t\)\{[^}]{0,300}api[^}]{0,300}\}' bundles/main.js | head -3
-          grep -oE '.{0,300}(withCredentials|baseURL:"[^"]*"|baseURL:`[^`]*`|axios\.create\(\{[^}]*\}).{0,200}' bundles/main.js | head -5
+          grep -oiE '.{0,400}api/[a-z/]*search[a-z/]*.{0,600}' bundles/*.js | head -10
+          echo "== kontekst omkring api/message/ GET med params =="
+          grep -oE '.{0,300}\$T\)\(`api/[^`]*`[^)]{0,200}\)' bundles/*.js | head -20
+          echo "== kontekst omkring publicationfile =="
+          grep -oE '.{0,200}publicationfile.{0,200}' bundles/*.js | head -6
+          echo "== GetLatestPublication (fuldt svar) =="
+          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/Publication/GetLatestPublication; echo
+          echo "== api/section (første 4000 tegn) =="
+          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/section | head -c 4000; echo
 
-      - name: Kald alle parameterløse api/-stier (GET)
+      - name: Kald nye parameterløse api/-stier (GET)
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
           while read -r p; do
-            case "$p" in *'$'*|*'{'*) continue;; esac
+            case "$p" in *'$'*|*'{'*|api/user/*|api/message/*|api/log/*|api/auth/*) continue;; esac
             u="https://www.statstidende.dk/$p"
             curl -sS -m 20 -A "$UA" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  GET $u\n" "$u" || echo "curl-fejl $u"
-            if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 500 body.txt | tr '\n' ' '; echo; fi
+            if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 400 body.txt | tr '\n' ' '; echo; fi
           done < apipaths.txt
-          echo "== POST-forsøg på søgning =="
-          for p in api/Search/Search api/search api/Search api/Message/Search api/messages/search api/Search/Messages api/Search/SearchMessages; do
-            for body in '{"take":5,"page":1}' '{"searchText":"","take":5,"skip":0}' '{}'; do
-              curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json" -d "$body" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  POST $p $body\n" "https://www.statstidende.dk/$p" || true
-              if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 600 body.txt | tr '\n' ' '; echo; fi
-            done
-          done
 
       - uses: actions/upload-artifact@v4
         with:
