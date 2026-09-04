@@ -108,28 +108,45 @@ jobs:
           head -50 chunks.txt
           while read -r c; do curl -sS -m 20 -A "$UA" -o "bundles/$(basename "$c")" "https://www.statstidende.dk/$c" || true; done < chunks.txt
           ls -la bundles | head -80
-          echo "== alle api/-stier i alle bundles =="
-          grep -ohE '["`]api/[A-Za-z0-9/_.${}-]+' bundles/*.js | tr -d '"`' | sort -u | tee apipaths.txt
-          echo "== kontekst omkring search-kald =="
-          grep -oiE '.{0,400}api/[a-z/]*search[a-z/]*.{0,600}' bundles/*.js | head -10
-          echo "== kontekst omkring api/message/ GET med params =="
-          grep -oE '.{0,300}\$T\)\(`api/[^`]*`[^)]{0,200}\)' bundles/*.js | head -20
-          echo "== kontekst omkring publicationfile =="
-          grep -oE '.{0,200}publicationfile.{0,200}' bundles/*.js | head -6
-          echo "== GetLatestPublication (fuldt svar) =="
-          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/Publication/GetLatestPublication; echo
-          echo "== api/section (første 4000 tegn) =="
-          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/section | head -c 4000; echo
+          echo "== alle api/-stier i alle bundles (med og uden skråstreg) =="
+          grep -ohE '["`]/?api/[A-Za-z0-9/_.${}-]+' bundles/*.js | tr -d '"`' | sed 's#^/##' | sort -u | tee apipaths.txt
+          echo "== kontekst omkring /api/messagesearch (ikke abonnement) =="
+          grep -ohE '.{0,900}/api/messagesearch/[A-Za-z]+.{0,1200}' bundles/*.js | grep -viE 'subscri' | head -6
+          echo "== alle messagesearch-strenge =="
+          grep -ohE '/api/messagesearch/[A-Za-z]+' bundles/*.js | sort | uniq -c
+          echo "== kontekst omkring searchServiceClient =="
+          grep -ohE '.{0,600}searchServiceClient.{0,600}' bundles/*.js | head -3
+          echo "== søgefelter =="
+          grep -ohE '\b(messageTypeIds|sectionIds|sectionPublicKeys|messageTypePublicKeys|publicationDateFrom|publicationDateTo|fromDate|toDate|dateFrom|dateTo|searchText|freeText|query|pageNumber|pageSize|skip|take|sortField|sortOrder|orderBy)\b' bundles/*.js | sort | uniq -c | sort -rn | head -30
+          echo "== GetLatestPublication (kompakt) =="
+          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/Publication/GetLatestPublication | python3 -c 'import json,sys; print(json.dumps(json.load(sys.stdin), ensure_ascii=False)[:3000])'
+          echo "== api/section (kompakt, 3500 tegn) =="
+          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/section | python3 -c 'import json,sys; d=json.load(sys.stdin); print(json.dumps(d, ensure_ascii=False)[:3500])'
+          echo "== api/section: konkurs-relaterede rubrikker =="
+          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/section | python3 -c '
+          import json,sys
+          d=json.load(sys.stdin)
+          def walk(o, path=""):
+              if isinstance(o, dict):
+                  name = str(o.get("name") or o.get("Name") or "")
+                  if any(k in name.lower() for k in ("konkurs","tvangsauktion","dekret")):
+                      print(path, json.dumps({k:v for k,v in o.items() if not isinstance(v,(list,dict))}, ensure_ascii=False))
+                  for k,v in o.items(): walk(v, path+"/"+str(k))
+              elif isinstance(o, list):
+                  for i,v in enumerate(o): walk(v, path+f"[{i}]")
+          walk(d)'
 
-      - name: Kald nye parameterløse api/-stier (GET)
+      - name: Prøv messagesearch-endpoints
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          while read -r p; do
-            case "$p" in *'$'*|*'{'*|api/user/*|api/message/*|api/log/*|api/auth/*) continue;; esac
-            u="https://www.statstidende.dk/$p"
-            curl -sS -m 20 -A "$UA" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  GET $u\n" "$u" || echo "curl-fejl $u"
-            if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 400 body.txt | tr '\n' ' '; echo; fi
-          done < apipaths.txt
+          for p in $(grep -oE '^api/messagesearch/[A-Za-z]+' apipaths.txt | sort -u); do
+            for body in '{}' '{"page":1,"pageSize":5}' '{"pageNumber":1,"pageSize":5}' '{"searchText":"konkurs","page":1,"pageSize":5}'; do
+              curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json" -d "$body" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  POST $p $body\n" "https://www.statstidende.dk/$p" || true
+              if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 900 body.txt | tr '\n' ' '; echo; fi
+            done
+            curl -sS -m 25 -A "$UA" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  GET $p\n" "https://www.statstidende.dk/$p?page=1&pageSize=5" || true
+            if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 900 body.txt | tr '\n' ' '; echo; fi
+          done
 
       - uses: actions/upload-artifact@v4
         with:
