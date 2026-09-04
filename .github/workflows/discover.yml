@@ -1,0 +1,169 @@
+name: Opdag Statstidende-endpoints
+
+# Diagnoseværktøj: dumper Statstidende API'ets OpenAPI-spec, tester hvilke endpoints der
+# svarer uden certifikat, og afdækker hvilke stier statstidende.dk's frontend bruger.
+# Skriver kun til loggen (og gemmer spec'en som artefakt).
+
+on:
+  push:
+    branches: ["claude/danish-bankruptcy-scraper-5vt1u3"]
+    paths: [".github/workflows/discover.yml"]
+  workflow_dispatch:
+    inputs:
+      extra_url:
+        description: "Ekstra URL at afprøve (valgfri)"
+        default: ""
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+
+      - name: OpenAPI-spec for api.statstidende.dk
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          curl -sS -m 30 -A "$UA" -o swagger.json -w "status=%{http_code} size=%{size_download}\n" https://api.statstidende.dk/swagger/v1/swagger.json
+          python - <<'EOF'
+          import json, re
+          s = json.load(open("swagger.json"))
+          info = s.get("info", {})
+          print("TITLE:", info.get("title"), "VERSION:", info.get("version"))
+          desc = re.sub(r"<[^>]+>", " ", info.get("description", ""))
+          print("DESC:", re.sub(r"\s+", " ", desc)[:1500])
+          print("SERVERS:", s.get("servers"))
+          print("SECURITY (global):", s.get("security"))
+          print("SECURITY SCHEMES:", json.dumps(s.get("components", {}).get("securitySchemes"), ensure_ascii=False))
+          print("=== PATHS ===")
+          for p, ops in s.get("paths", {}).items():
+              for m, op in ops.items():
+                  if m not in ("get", "post", "put", "delete", "patch"):
+                      continue
+                  params = [f"{x.get('name')}({x.get('in')}{'*' if x.get('required') else ''})" for x in op.get("parameters", [])]
+                  body = ""
+                  rb = op.get("requestBody", {}).get("content", {})
+                  if rb:
+                      sch = next(iter(rb.values())).get("schema", {})
+                      body = " body=" + (sch.get("$ref", "").split("/")[-1] or json.dumps(sch)[:120])
+                  print(f"{m.upper():6s} {p:55s} sec={op.get('security', '-')} tags={op.get('tags')} params={params}{body}")
+                  if op.get("summary") or op.get("description"):
+                      print("       ", re.sub(r"\s+", " ", (op.get("summary") or "") + " | " + (op.get("description") or ""))[:300])
+          print("=== SCHEMAS ===")
+          for name, sch in s.get("components", {}).get("schemas", {}).items():
+              props = sch.get("properties", {})
+              print(f"{name}: " + ", ".join(f"{k}:{v.get('type', v.get('$ref', '?')).split('/')[-1]}" for k, v in props.items())[:900])
+              if sch.get("enum"):
+                  print("   enum:", sch["enum"])
+          EOF
+
+      - name: Kald GET-endpoints uden certifikat
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          python - <<'EOF' > urls.txt
+          import json
+          s = json.load(open("swagger.json"))
+          base = "https://api.statstidende.dk"
+          for p, ops in s.get("paths", {}).items():
+              if "get" in ops and "{" not in p:
+                  print(base + p)
+          EOF
+          cat urls.txt
+          while read -r u; do
+            echo "----- GET $u"
+            curl -sS -m 25 -A "$UA" -H "Accept: application/json" -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || echo curl-fejl
+            head -c 600 body.txt | tr '\n' ' '; echo
+          done < urls.txt
+          echo "----- api.statstidende.dk/ (redirect-mål)"
+          curl -sS -m 25 -A "$UA" -o /dev/null -w "status=%{http_code} redirect=%{redirect_url}\n" https://api.statstidende.dk/
+
+      - name: Frontend – chunks, api/-stier og søgekald
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          curl -sSL -A "$UA" -o index.html https://www.statstidende.dk/
+          mkdir -p bundles
+          for a in $(grep -oE 'src="[^"]+\.js[^"]*"' index.html | sed 's/src="//; s/"$//'); do
+            case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
+            curl -sSL -A "$UA" -o "bundles/main.js" "$u" || true
+          done
+          echo "== chunk-map fra n.u-skabelonen =="
+          python3 - <<'EOF'
+          import re
+          js = open("bundles/main.js", encoding="utf-8", errors="replace").read()
+          m = re.search(r'"static/js/"\+e\+"\."\+\{([^}]+)\}\[e\]\+"\.chunk\.js"', js)
+          pairs = re.findall(r'(\d+):"([0-9a-f]+)"', m.group(1)) if m else []
+          print(len(pairs), "chunks i n.u")
+          with open("chunks.txt", "w") as f:
+              for k, v in pairs:
+                  f.write(f"static/js/{k}.{v}.chunk.js\n")
+          EOF
+          ok=0; while read -r c; do if curl -sSf -m 20 -A "$UA" -o "bundles/$(basename "$c")" "https://www.statstidende.dk/$c"; then ok=$((ok+1)); else echo "404: $c"; fi; done < chunks.txt
+          echo "hentet $ok chunks"; du -ch bundles/*.js | tail -1
+          echo "== alle api/-stier i alle bundles =="
+          grep -ohE '["`]/?api/[A-Za-z0-9/_.${}-]+' bundles/*.js | tr -d '"`' | sed 's#^/##' | sort -u
+          echo "== kaldesteder for \$T/DD/UX/yo (http-klient) i chunks =="
+          grep -ohE '\((0,[a-zA-Z]+\.(\$T|DD|UX|yo))\)\([^;]{0,300}' bundles/*.chunk.js | sort -u | head -60
+          echo "== kontekst omkring 'search' + api i chunks =="
+          grep -ohiE '.{0,500}api/[a-z]*search[a-z/]*.{0,700}' bundles/*.chunk.js | grep -viE 'subscri' | head -6
+          echo "== parseQueryString-forbrugere med fetch =="
+          grep -ohE '.{0,400}(publicationDateFrom|publicationDateTo|fromDate|toDate|dateFrom|dateTo|messageTypeIds|sectionIds|searchText|freeText)[^a-zA-Z].{0,400}' bundles/*.chunk.js | head -8
+          echo "== plan B: dagens udgave (fileId) =="
+          FID=$(curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/Publication/GetLatestPublication | python3 -c 'import json,sys; print(json.load(sys.stdin)["fileId"])')
+          echo "fileId=$FID"
+          for u in "api/publicationfile/$FID" "api/publicationfile/download/$FID" "api/publicationfile/$FID/download" "api/Publication/$FID" "api/Publication/file/$FID" "api/Publication/GetPublicationFile/$FID" "api/publicationfile?fileId=$FID" "publicationfile/$FID" "api/file/$FID"; do
+            curl -sS -m 30 -A "$UA" -o body.bin -w "%{http_code} %{content_type} %{size_download}b  GET $u\n" "https://www.statstidende.dk/$u" || true
+            head -c 120 body.bin | tr -c '[:print:]' '.'; echo
+          done
+          echo "== publicationfile-kontekst i alle bundles =="
+          grep -ohE '.{0,300}publicationfile.{0,300}' bundles/*.js | grep -v signingcertificates | head -6
+          grep -ohE '.{0,300}fileId.{0,300}' bundles/*.js | head -8
+
+      - name: apicvr.dk – MCP-server og REST
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          for u in https://apicvr.dk/ https://api.apicvr.dk/ https://apicvr.dk/docs https://mcp.apicvr.dk/ https://mcp.apicvr.dk/mcp; do
+            printf "GET %s -> " "$u"; curl -sS -m 20 -A "$UA" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
+            head -c 600 body.txt | tr '\n' ' '; echo
+          done
+          echo "== MCP initialize =="
+          curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
+            -D headers.txt -o body.txt -w "%{http_code} %{content_type}\n" \
+            -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"propscreener-discovery","version":"0.1"}}}' \
+            https://mcp.apicvr.dk/mcp || true
+          grep -i "mcp-session-id" headers.txt || true; head -c 1500 body.txt; echo
+          SID=$(grep -i "^mcp-session-id:" headers.txt | tr -d '\r' | awk '{print $2}')
+          echo "== MCP tools/list =="
+          curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" ${SID:+-H "Mcp-Session-Id: $SID"} \
+            -o body.txt -w "%{http_code} %{content_type}\n" \
+            -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' https://mcp.apicvr.dk/mcp || true
+          head -c 6000 body.txt; echo
+
+      - name: Datafordeler – test API-Key (kun hvis secret er sat; nøglen udskrives ikke)
+        env:
+          DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
+        run: |
+          if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          Q="CVRnr=64942212&format=json&pagesize=2"   # Københavns Kommune – ejer mange ejendomme
+          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
+            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer"; do
+              for p in apikey api-key key apiKey token; do
+                code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$base/$svc?$Q&$p=$DFKEY" || echo 000)
+                echo "$code  $base/$svc?$Q&$p=***"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+              done
+              for h in "X-Api-Key" "apikey" "Ocp-Apim-Subscription-Key"; do
+                code=$(curl -sS -m 25 -A "$UA" -H "$h: $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
+                echo "$code  $base/$svc?$Q  header $h"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+              done
+              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
+              echo "$code  $base/$svc?$Q  header Authorization: Bearer"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+            done
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: statstidende-openapi
+          path: swagger.json

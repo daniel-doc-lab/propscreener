@@ -1,0 +1,21 @@
+{
+ "$id": "1",
+ "sectionName": "Konkursboer",
+ "messageTypeName": "Dekret",
+ "messageTypeId": 13048120,
+ "messageNumber": "S02092026-87",
+ "document": "{\n  \"fieldgroups\": [\n    {\n      \"name\": \"\",\n      \"fields\": [\n        {\n          \"value\": \"Ved dekret af 02.09.2026 har Retten i Aarhus taget\",\n          \"type\": 3\n        }\n      ]\n    },\n    {\n      \"name\": \"\",\n      \"fields\": [\n        {\n          \"value\": \"Eksempel Ejendomme A/S under tvangsopløsning\",\n          \"type\": 1\n        },\n        {\n          \"value\": \"12345678\",\n          \"type\": 10,\n          \"name\": \"CVR-nr.\"\n        },\n        {\n          \"value\": \"Trindsøvej 6, 1\",\n          \"type\": 1\n        },\n        {\n          \"value\": \"8000 Århus C\",\n          \"type\": 1\n        },\n        {\n          \"value\": \"SKS 41-20428/2026\",\n          \"type\": 1,\n          \"name\": \"Sagsnr.\"\n        }\n      ]\n    },\n    {\n      \"name\": \"\",\n      \"fields\": [\n        {\n          \"value\": \"under konkursbehandling efter begæring modtaget den 24.08.2026.\\n\\nKurator er advokat Boris K. Frederiksen, Kalvebod Brygge 32, 1560 København V.\\n\\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\\n\\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 02.09.2026.\\n\\nRetten i Aarhus, den 02.09.2026.\",\n          \"type\": 3\n        }\n      ]\n    },\n    {\n      \"name\": \"Kurator\",\n      \"fields\": [\n        {\n          \"value\": \"Advokat Boris K. Frederiksen\",\n          \"type\": 1\n        },\n        {\n          \"value\": \"Kalvebod Brygge 32\",\n          \"type\": 1\n        },\n        {\n          \"value\": \"1560 København V\",\n          \"type\": 1\n        }\n      ]\n    },\n    {\n      \"name\": \"Skifteret\",\n      \"fields\": [\n        {\n          \"value\": \"Retten i Aarhus\",\n          \"type\": 6\n        }\n      ]\n    }\n  ],\n  \"defaultfieldgroups\": []\n}",
+ "title": "Eksempel Ejendomme A/S under tvangsopløsning",
+ "summaryFields": [
+  {
+   "name": "CVR-nr.",
+   "value": "12345678"
+  },
+  {
+   "name": "Retskreds",
+   "value": "Retten i Aarhus"
+  }
+ ],
+ "publicationDate": "04.09.2026",
+ "messageState": 8
+}

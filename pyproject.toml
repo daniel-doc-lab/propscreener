@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "propscreener"
+version = "0.1.0"
+description = "Screener for danske konkursboer med fast ejendom – scraper, berigelse, scoring og dashboard"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "propscreener contributors" }]
+keywords = ["konkurs", "statstidende", "ejendomme", "cvr", "xbrl", "investering", "danmark"]
+dependencies = [
+  "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+propscreener = "propscreener.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["propscreener*"]
+
+[tool.setuptools.package-data]
+propscreener = ["templates/*.html"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+# Eksplicit regelsæt så lokal og CI-ruff er enige uanset version
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+ignore = ["B904", "UP035"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

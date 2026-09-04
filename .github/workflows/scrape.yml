@@ -1,0 +1,150 @@
+name: Scrape og publicér
+
+# Kører dagligt kl. 06:15 dansk sommertid (04:15 UTC) – Statstidende udkommer om natten.
+# Resultatet committes til repoet (data/cases.json, data/cases.csv, site/index.html), så
+# det er tilgængeligt uden ekstra opsætning. Sættes repo-variablen ENABLE_PAGES=true
+# (Settings → Secrets and variables → Actions → Variables) og GitHub Pages er slået til med
+# kilde "GitHub Actions", publiceres dashboardet desuden på <owner>.github.io/<repo>/.
+#
+# Hemmeligheder (alle valgfrie – se docs/SETUP.md):
+#   DATAFORDELER_API_KEY (eller DATAFORDELER_USER/PASSWORD)  Ejerfortegnelsen + vurdering
+#   CVR_ES_USER / CVR_ES_PASSWORD                 Erhvervsstyrelsens system-til-system CVR
+#   STATSTIDENDE_CERT_PEM / STATSTIDENDE_KEY_PEM  OCES3-certifikat (mode=api)
+#   CVRAPI_USER_AGENT                             kontaktinfo til cvrapi.dk
+
+on:
+  schedule:
+    - cron: "15 4 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Antal dage tilbage"
+        default: "90"
+      min_score:
+        description: "Mindste score"
+        default: "40"
+      demo:
+        description: "Brug demodata i stedet for at scrape (true/false)"
+        default: "false"
+  push:
+    branches: ["claude/danish-bankruptcy-scraper-5vt1u3"]
+    paths: [".github/workflows/scrape.yml", "propscreener/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: scrape-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    env:
+      STATSTIDENDE_MODE: ${{ secrets.STATSTIDENDE_CERT_PEM != '' && 'api' || 'web' }}
+      DATAFORDELER_API_KEY: ${{ secrets.DATAFORDELER_API_KEY }}
+      DATAFORDELER_API_KEY_PARAM: ${{ vars.DATAFORDELER_API_KEY_PARAM || 'apikey' }}
+      DATAFORDELER_USER: ${{ secrets.DATAFORDELER_USER }}
+      DATAFORDELER_PASSWORD: ${{ secrets.DATAFORDELER_PASSWORD }}
+      CVR_ES_USER: ${{ secrets.CVR_ES_USER }}
+      CVR_ES_PASSWORD: ${{ secrets.CVR_ES_PASSWORD }}
+      CVRAPI_USER_AGENT: ${{ secrets.CVRAPI_USER_AGENT }}
+      PROPSCREENER_CACHE_DIR: .cache
+      SCRAPE_DAYS_ON_PUSH: "7"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e .
+
+      - name: Genskab HTTP-cache (skåner kilderne)
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: http-cache-v2-${{ github.run_id }}
+          restore-keys: http-cache-v2-
+
+      - name: Skriv OCES3-certifikat (kun hvis sat)
+        if: ${{ env.STATSTIDENDE_MODE == 'api' }}
+        run: |
+          mkdir -p certs
+          printf '%s' "${{ secrets.STATSTIDENDE_CERT_PEM }}" > certs/cert.pem
+          printf '%s' "${{ secrets.STATSTIDENDE_KEY_PEM }}" > certs/key.pem
+          echo "STATSTIDENDE_CERT_FILE=$PWD/certs/cert.pem" >> "$GITHUB_ENV"
+          echo "STATSTIDENDE_KEY_FILE=$PWD/certs/key.pem" >> "$GITHUB_ENV"
+
+      - name: Probe og rå eksempel (til fejlsøgning)
+        run: |
+          propscreener probe || true
+          propscreener debug-search --days 3 || true
+          echo "=== tvangsauktion-eksempel (felter/tekst/case) ==="; propscreener debug-search --type tvangsauktion_fast_ejendom --days 7 | sed -n '/=== FELTER ===/,$p' | head -c 7000 || true; echo
+          echo "=== alternative CVR-kilder ==="
+          for u in "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhed?cvrnummer=10150817&locale=da" \
+                   "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhedsInfo?cvrnummer=10150817" \
+                   "https://datacvr.virk.dk/gateway/soeg?soeg=10150817&type=Alle&locale=da" \
+                   "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhed?cvrnummer=10150817" \
+                   "https://cvrapi.dk/api?vat=10150817&country=dk&format=json"; do
+            printf "%s -> " "$u"; curl -sS -m 20 -A "propscreener/0.1 (+https://github.com/${{ github.repository }})" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
+            head -c 500 body.txt | tr '\n' ' '; echo
+          done
+
+      - name: Kør pipeline
+        run: |
+          DAYS="${{ github.event.inputs.days || '' }}"
+          if [ -z "$DAYS" ]; then
+            if [ "${{ github.event_name }}" = "push" ]; then DAYS="${SCRAPE_DAYS_ON_PUSH:-7}"; else DAYS=90; fi
+          fi
+          if [ "${{ github.event.inputs.demo }}" = "true" ]; then
+            propscreener demo -n 60 --out data --site site/index.html
+          else
+            propscreener -v run --days "$DAYS" \
+              --min-score "${{ github.event.inputs.min_score || '25' }}" \
+              --out data --site site/index.html
+          fi
+          mkdir -p site/data && cp data/cases.json data/cases.csv site/data/
+          python - <<'EOF'
+          import json; m = json.load(open("data/cases.json"))["meta"]
+          print("boer:", m["antal"], "| demo:", m["demo"], "| kilder:", m["kilder_aktive"])
+          print("stats:", json.dumps(m["stats"], ensure_ascii=False))
+          EOF
+
+      - name: Commit resultater til branchen
+        run: |
+          git config user.name "propscreener-bot"
+          git config user.email "propscreener-bot@users.noreply.github.com"
+          git add -f data/cases.json data/cases.csv site/index.html
+          if git diff --cached --quiet; then echo "ingen ændringer"; exit 0; fi
+          git commit -m "data: opdateret $(date -u +%Y-%m-%d) ($(python -c 'import json;print(json.load(open("data/cases.json"))["meta"]["antal"])') boer)"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && break
+            sleep 5
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cases
+          path: |
+            data/cases.json
+            data/cases.csv
+            site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        if: ${{ vars.ENABLE_PAGES == 'true' }}
+        with:
+          path: site
+
+  deploy:
+    needs: scrape
+    if: ${{ vars.ENABLE_PAGES == 'true' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

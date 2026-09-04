@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance"
+            xmlns:fsa="http://xbrl.dcca.dk/fsa"
+            xmlns:gsd="http://xbrl.dcca.dk/gsd"
+            xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+            xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+  <xbrli:context id="ctx_2025">
+    <xbrli:entity><xbrli:identifier scheme="http://www.dcca.dk/cvr">12345678</xbrli:identifier></xbrli:entity>
+    <xbrli:period><xbrli:instant>2025-12-31</xbrli:instant></xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="ctx_2024">
+    <xbrli:entity><xbrli:identifier scheme="http://www.dcca.dk/cvr">12345678</xbrli:identifier></xbrli:entity>
+    <xbrli:period><xbrli:instant>2024-12-31</xbrli:instant></xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="dur_2025">
+    <xbrli:entity><xbrli:identifier scheme="http://www.dcca.dk/cvr">12345678</xbrli:identifier></xbrli:entity>
+    <xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-12-31</xbrli:endDate></xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="dur_2025_dim">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.dcca.dk/cvr">12345678</xbrli:identifier>
+      <xbrli:segment><xbrldi:explicitMember dimension="fsa:ConsolidatedSoloDimension">fsa:SoloMember</xbrldi:explicitMember></xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-12-31</xbrli:endDate></xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="DKK"><xbrli:measure>iso4217:DKK</xbrli:measure></xbrli:unit>
+
+  <gsd:NameOfReportingEntity contextRef="dur_2025">Fjord Ejendomme ApS</gsd:NameOfReportingEntity>
+  <fsa:InvestmentProperty contextRef="ctx_2025" unitRef="DKK" decimals="0">48500000</fsa:InvestmentProperty>
+  <fsa:InvestmentProperty contextRef="ctx_2024" unitRef="DKK" decimals="0">46000000</fsa:InvestmentProperty>
+  <fsa:Assets contextRef="ctx_2025" unitRef="DKK" decimals="0">51200000</fsa:Assets>
+  <fsa:Assets contextRef="ctx_2024" unitRef="DKK" decimals="0">48900000</fsa:Assets>
+  <fsa:Equity contextRef="ctx_2025" unitRef="DKK" decimals="0">3100000</fsa:Equity>
+  <fsa:LongtermMortgageDebt contextRef="ctx_2025" unitRef="DKK" decimals="0">41000000</fsa:LongtermMortgageDebt>
+  <fsa:LongtermLiabilitiesOtherThanProvisions contextRef="ctx_2025" unitRef="DKK" decimals="0">42500000</fsa:LongtermLiabilitiesOtherThanProvisions>
+  <fsa:ShorttermLiabilitiesOtherThanProvisions contextRef="ctx_2025" unitRef="DKK" decimals="0">5600000</fsa:ShorttermLiabilitiesOtherThanProvisions>
+  <fsa:GrossProfitLoss contextRef="dur_2025" unitRef="DKK" decimals="0">2100000</fsa:GrossProfitLoss>
+  <fsa:ProfitLoss contextRef="dur_2025" unitRef="DKK" decimals="0">-1250000</fsa:ProfitLoss>
+  <fsa:ProfitLoss contextRef="dur_2025_dim" unitRef="DKK" decimals="0">-999</fsa:ProfitLoss>
+  <fsa:AverageNumberOfEmployees contextRef="dur_2025" unitRef="DKK" decimals="0">2</fsa:AverageNumberOfEmployees>
+</xbrli:xbrl>

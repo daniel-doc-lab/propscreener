@@ -1,0 +1,4302 @@
+{
+ "meta": {
+  "genereret": "2026-09-04T08:25:43+00:00",
+  "version": "0.1.0",
+  "antal": 41,
+  "demo": false,
+  "kilder_aktive": [
+   "statstidende:web",
+   "cvrapi",
+   "regnskab-xbrl",
+   "dawa"
+  ],
+  "stats": {
+   "started": "2026-09-04T08:24:53+00:00",
+   "dekreter": 99,
+   "tvangsauktioner": 0,
+   "beriget_cvr": 0,
+   "beriget_regnskab": 74,
+   "beriget_ejf": 0,
+   "over_min_score": 2,
+   "min_score": 25,
+   "bevaret_fra_tidligere": 39,
+   "kilder_aktive": [
+    "statstidende:web",
+    "cvrapi",
+    "regnskab-xbrl",
+    "dawa"
+   ],
+   "fejl": [
+    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
+   ]
+  }
+ },
+ "cases": [
+  {
+   "id": "28850794",
+   "statstidende_id": "S07082026-177",
+   "statstidende_url": "https://www.statstidende.dk/messages/S07082026-177",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-11",
+   "dekretdato": "2026-08-07",
+   "fristdag": "2026-08-07",
+   "anmeldelsesfrist": "2026-09-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Randers",
+    "sagsnummer": "SKS 60-5266/2026"
+   },
+   "kurator": {
+    "navn": "Christian Jul Madsen",
+    "firma": null,
+    "adresse": "Kalkværksvej 16, 25",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "selskab": {
+    "cvr": "28850794",
+    "navn": "RØNBÆKVEJ 17 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Skolegyden 3",
+    "postnr": "8963",
+    "by": "Auning",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "aktiver": 8097359,
+    "egenkapital": 539342,
+    "investeringsejendomme": 8000000,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 8000000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 5853938,
+    "kortfristet_gaeld": 597822,
+    "omsaetning": null,
+    "bruttofortjeneste": 238466,
+    "aarets_resultat": 2084669,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 8000000,
+    "ejendomsandel_pct": 98.8,
+    "soliditet_pct": 6.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 6451760
+   },
+   "ejendomme": [
+    {
+     "bfe_nummer": null,
+     "adresse": "Rønbækvej 17",
+     "postnr": "8382",
+     "by": "Hinnerup",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "10 al, Grundfør By, Grundfør",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 2400000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-07-01",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-78",
+     "lat": 56.26225376,
+     "lon": 10.09869229
+    },
+    {
+     "bfe_nummer": null,
+     "adresse": "Rønbækvej 15A",
+     "postnr": "8382",
+     "by": "Hinnerup",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "10 ar, Grundfør By, Grundfør",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1050000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-07-01",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-76",
+     "lat": 56.26335663,
+     "lon": 10.09826344
+    }
+   ],
+   "signaler": [
+    {
+     "kode": "tvangsauktion",
+     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
+     "point": 50,
+     "kilde": "Statstidende"
+    },
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 8.000.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "RØNBÆKVEJ 17 ApS\nVed dekret af 07.08.2026 har Retten i Randers taget\n\nRØNBÆKVEJ 17 ApS\nCVR-nr: 28850794\nSkolegyden 3\n8963 Auning\nSagsnr: SKS 60-5266/2026\n\nunder konkursbehandling efter begæring modtaget den 07.08.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 07.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 07.08.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Randers",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
+    "statstidende": "https://www.statstidende.dk/messages/S07082026-177",
+    "tvangsauktion": "https://www.statstidende.dk/messages/S12062026-78",
+    "aarsrapport": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28850794?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skolegyden+3,+8963+Auning",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "kilder": [
+    "statstidende",
+    "tvangsauktion",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:46+00:00"
+  },
+  {
+   "id": "21032794",
+   "statstidende_id": "S02072026-244",
+   "statstidende_url": "https://www.statstidende.dk/messages/S02072026-244",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-04",
+   "dekretdato": "2026-07-02",
+   "fristdag": "2026-07-02",
+   "anmeldelsesfrist": "2026-08-01",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-332/2026"
+   },
+   "kurator": {
+    "navn": "Per Buttenschøn",
+    "firma": null,
+    "adresse": "Hack Kampmanns Plads 2, 3",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "selskab": {
+    "cvr": "21032794",
+    "navn": "F.K. EJENDOMME ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Thurøvej 2",
+    "postnr": "9500",
+    "by": "Hobro",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/49723012/amNsb3VkczovLzAzLzc3L2FlL2QyL2FhLzQ1ODctNGNhMS1iYWI4LTQ1MGU4NTBkZWQwZA.xhtml",
+    "aktiver": 10449151,
+    "egenkapital": 1929391,
+    "investeringsejendomme": 7500000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 7500000,
+    "realkreditgaeld": 3537192,
+    "langfristet_gaeld": 6565072,
+    "kortfristet_gaeld": 763175,
+    "omsaetning": null,
+    "bruttofortjeneste": 420721,
+    "aarets_resultat": 372936,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 7500000,
+    "ejendomsandel_pct": 71.8,
+    "soliditet_pct": 18.5,
+    "ltv_pct": 47.2,
+    "samlet_gaeld": 7328247
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 7.500.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 3.537.192 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 85,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "F.K. EJENDOMME ApS\nVed dekret af 02.07.2026 har Retten i Aalborg taget\n\nF.K. EJENDOMME ApS\nCVR-nr: 21032794\nThurøvej 2\n9500 Hobro\nSagsnr: SKS 31-332/2026\n\nunder konkursbehandling efter begæring modtaget den 02.07.2026.\n\nKurator er advokat Per Buttenschøn, Hack Kampmanns Plads 2, 3., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 02.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 02.07.2026.\n\nKurator\nAdvokat Per Buttenschøn\nHack Kampmanns Plads 2, 3\n8000 Århus C\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/21032794",
+    "statstidende": "https://www.statstidende.dk/messages/S02072026-244",
+    "aarsrapport": "http://regnskaber.virk.dk/49723012/amNsb3VkczovLzAzLzc3L2FlL2QyL2FhLzQ1ODctNGNhMS1iYWI4LTQ1MGU4NTBkZWQwZA.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/21032794?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Thurøvej+2,+9500+Hobro",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:46+00:00"
+  },
+  {
+   "id": "34484872",
+   "statstidende_id": "S26062026-100",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26062026-100",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-30",
+   "dekretdato": "2026-06-23",
+   "fristdag": "2026-06-22",
+   "anmeldelsesfrist": "2026-07-28",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-305/2026"
+   },
+   "kurator": {
+    "navn": "Lars Møgelvang Hansen",
+    "firma": null,
+    "adresse": "Adelgade 1",
+    "postnr": "9500",
+    "by": "Hobro",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Møgelvang+Hansen"
+   },
+   "selskab": {
+    "cvr": "34484872",
+    "navn": "SKL BOLIG ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Plovhusene 7D",
+    "postnr": "9310",
+    "by": "Vodskov",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2023-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/27848443/amNsb3VkczovLzAzL2ZiLzM3LzUyLzI2L2UwZjEtNGUwNi1hNzQ1LTNhNzRlZjZjY2FiYw.xml",
+    "aktiver": 2187879,
+    "egenkapital": 266034,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1765000,
+    "materielle_anlaeg": 2173457,
+    "realkreditgaeld": 1069805,
+    "langfristet_gaeld": 1069805,
+    "kortfristet_gaeld": 776266,
+    "omsaetning": null,
+    "bruttofortjeneste": -63530,
+    "aarets_resultat": -245164,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 1765000,
+    "ejendomsandel_pct": 80.7,
+    "soliditet_pct": 12.2,
+    "ltv_pct": 60.6,
+    "samlet_gaeld": 1846071
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.765.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.069.805 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 80,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "SKL BOLIG ApS under tvangsopløsning\nVed dekret af 23.06.2026 har Retten i Aalborg taget\n\nSKL BOLIG ApS under tvangsopløsning\nCVR-nr: 34484872\nPlovhusene 7D\n9310 Vodskov\nSagsnr: SKS 31-305/2026\n\nunder konkursbehandling efter begæring modtaget den 22.06.2026.\n\nKurator er advokat Lars Møgelvang Hansen, Adelgade 1, 9500 Hobro.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nForudgående anmodning om opløsning af selskabet er dateret 22.08.2025.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 23.06.2026.\n\nKurator\nAdvokat Lars Møgelvang Hansen\nAdelgade 1\n9500 Hobro\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/34484872",
+    "statstidende": "https://www.statstidende.dk/messages/S26062026-100",
+    "aarsrapport": "http://regnskaber.virk.dk/27848443/amNsb3VkczovLzAzL2ZiLzM3LzUyLzI2L2UwZjEtNGUwNi1hNzQ1LTNhNzRlZjZjY2FiYw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/34484872?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Plovhusene+7D,+9310+Vodskov",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Møgelvang+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:47+00:00"
+  },
+  {
+   "id": "32439284",
+   "statstidende_id": "S13082026-212",
+   "statstidende_url": "https://www.statstidende.dk/messages/S13082026-212",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-15",
+   "dekretdato": "2026-08-13",
+   "fristdag": "2026-07-24",
+   "anmeldelsesfrist": "2026-09-12",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Næstved",
+    "sagsnummer": "SKS INS-350/2026"
+   },
+   "kurator": {
+    "navn": "Rune Hyllested",
+    "firma": null,
+    "adresse": "Tankedraget 7, 4",
+    "postnr": "9000",
+    "by": "Aalborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Rune+Hyllested"
+   },
+   "selskab": {
+    "cvr": "32439284",
+    "navn": "EJENDOMMEN METALVEJ 27-29 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Metalvej 29",
+    "postnr": "4180",
+    "by": "Sorø",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/48293423/amNsb3VkczovLzAzL2Q5LzQxLzBmLzE2LzE4Y2YtNDUwNS04ZmY5LTIyODE4MmVlYTY1Nw.xml",
+    "aktiver": 5527948,
+    "egenkapital": 2662868,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 3979138,
+    "materielle_anlaeg": 3979138,
+    "realkreditgaeld": 1909536,
+    "langfristet_gaeld": 1909536,
+    "kortfristet_gaeld": 510983,
+    "omsaetning": null,
+    "bruttofortjeneste": 369061,
+    "aarets_resultat": 86311,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 3979138,
+    "ejendomsandel_pct": 72.0,
+    "soliditet_pct": 48.2,
+    "ltv_pct": 48.0,
+    "samlet_gaeld": 2420519
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 3.979.138 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.909.536 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 80,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "EJENDOMMEN METALVEJ 27-29 ApS\nVed dekret af 13.08.2026 har Retten i Næstved taget\n\nEJENDOMMEN METALVEJ 27-29 ApS\nCVR-nr: 32439284\nMetalvej 29\n4180 Sorø\nSagsnr: SKS INS-350/2026\n\nunder konkursbehandling efter begæring modtaget den 24.07.2026.\n\nSelskabet har hjemsted i Sorø kommune og har drevet virksomhed fra adressen Metalvej 29, 4180 Sorø.\n\nKurator er advokat Rune Hyllested, Tankedraget 7, 4., 9000 Aalborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 13.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Næstved, den 13.08.2026.\n\nKurator\nAdvokat Rune Hyllested\nTankedraget 7, 4\n9000 Aalborg\n\nSkifteret\nRetten i Næstved",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32439284",
+    "statstidende": "https://www.statstidende.dk/messages/S13082026-212",
+    "aarsrapport": "http://regnskaber.virk.dk/48293423/amNsb3VkczovLzAzL2Q5LzQxLzBmLzE2LzE4Y2YtNDUwNS04ZmY5LTIyODE4MmVlYTY1Nw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32439284?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Metalvej+29,+4180+Sorø",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Rune+Hyllested"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:47+00:00"
+  },
+  {
+   "id": "32100279",
+   "statstidende_id": "S09072026-273",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09072026-273",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-11",
+   "dekretdato": "2026-07-09",
+   "fristdag": "2026-04-09",
+   "anmeldelsesfrist": "2026-08-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-147/2026"
+   },
+   "kurator": {
+    "navn": "Mads Danielsen",
+    "firma": null,
+    "adresse": "Damhaven 5C",
+    "postnr": "7100",
+    "by": "Vejle",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Mads+Danielsen"
+   },
+   "selskab": {
+    "cvr": "32100279",
+    "navn": "STJERNE GRUPPEN HOLDING ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Koldingvej 44, 1",
+    "postnr": "7100",
+    "by": "Vejle",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/97200123/amNsb3VkczovLzAzLzU0L2Q3LzQ0LzkzLzlkMzMtNDg5ZS1iYmZlLWQ5OGVkOTBjMGViYQ.xml",
+    "aktiver": 4289354,
+    "egenkapital": 465712,
+    "investeringsejendomme": 3978655,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 4127543,
+    "realkreditgaeld": 3113549,
+    "langfristet_gaeld": 3141849,
+    "kortfristet_gaeld": 594928,
+    "omsaetning": null,
+    "bruttofortjeneste": 708624,
+    "aarets_resultat": 376897,
+    "ansatte": 2,
+    "ejendomsvaerdi_bogfoert": 3978655,
+    "ejendomsandel_pct": 92.8,
+    "soliditet_pct": 10.9,
+    "ltv_pct": 78.3,
+    "samlet_gaeld": 3736777
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 3.978.655 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 3.113.549 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 75,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "STJERNE GRUPPEN HOLDING ApS\nVed dekret af 09.07.2026 har Retten i Kolding taget\n\nSTJERNE GRUPPEN HOLDING ApS\nCVR-nr: 32100279\nKoldingvej 44, 1\n7100 Vejle\nSagsnr: 6-147/2026\n\nunder konkursbehandling efter begæring modtaget den 09.04.2026.\n\nSelskabet har hjemsted i Vejle kommune og har drevet virksomhed fra adressen Koldingvej 44, 1., 7100 Vejle.\n\nKurator er advokat Mads Danielsen, Damhaven 5C, 7100 Vejle.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 09.07.2026.\n\nKurator\nAdvokat Mads Danielsen\nDamhaven 5C\n7100 Vejle\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32100279",
+    "statstidende": "https://www.statstidende.dk/messages/S09072026-273",
+    "aarsrapport": "http://regnskaber.virk.dk/97200123/amNsb3VkczovLzAzLzU0L2Q3LzQ0LzkzLzlkMzMtNDg5ZS1iYmZlLWQ5OGVkOTBjMGViYQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32100279?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Koldingvej+44,+1,+7100+Vejle",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Mads+Danielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:48+00:00"
+  },
+  {
+   "id": "33377088",
+   "statstidende_id": "S11062026-52",
+   "statstidende_url": "https://www.statstidende.dk/messages/S11062026-52",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-13",
+   "dekretdato": "2026-06-11",
+   "fristdag": "2026-06-02",
+   "anmeldelsesfrist": "2026-07-11",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aarhus",
+    "sagsnummer": "SKS 41-20316/2026"
+   },
+   "kurator": {
+    "navn": "Henrik Selchau Poulsen",
+    "firma": null,
+    "adresse": "Nørregade 21",
+    "postnr": "1165",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "selskab": {
+    "cvr": "33377088",
+    "navn": "S1021 A/S",
+    "binavne": [],
+    "selskabsform": "A/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Rolfsgade 4",
+    "postnr": "8260",
+    "by": "Viby J",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/88077333/amNsb3VkczovLzAzL2NhL2U5L2YzLzZkLzc0YjEtNGVmMS04ZTdhLTMxZjI4ZTMwZWY2MQ.pdf",
+    "aktiver": 7440289,
+    "egenkapital": 3800596,
+    "investeringsejendomme": 6679000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 6679000,
+    "realkreditgaeld": 1087766,
+    "langfristet_gaeld": 1149515,
+    "kortfristet_gaeld": 2227620,
+    "omsaetning": null,
+    "bruttofortjeneste": 257440,
+    "aarets_resultat": 87863,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 6679000,
+    "ejendomsandel_pct": 89.8,
+    "soliditet_pct": 51.1,
+    "ltv_pct": 16.3,
+    "samlet_gaeld": 3377135
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 6.679.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.087.766 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "S1021 A/S under tvangsopløsning\nVed dekret af 11.06.2026 har Retten i Aarhus taget\n\nS1021 A/S under tvangsopløsning\nCVR-nr: 33377088\nRolfsgade 4\n8260 Viby J\nSagsnr: SKS 41-20316/2026\n\nunder konkursbehandling efter begæring modtaget den 02.06.2026.\n\nKurator er advokat Henrik Selchau Poulsen, Nørregade 21, 1165 København K.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 11.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\nAnmeldelse indgivet under forudgående likvidation til likvidator, advokat Henrik Selchau Poulsen, tages i betragtning uden ny anmeldelse, dog må eventuelle renter opgjort pr. konkursdagen anmeldes.\n\nRetten i Aarhus, den 11.06.2026.\n\nKurator\nAdvokat Henrik Selchau Poulsen\nNørregade 21\n1165 København K\n\nSkifteret\nRetten i Aarhus",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/33377088",
+    "statstidende": "https://www.statstidende.dk/messages/S11062026-52",
+    "aarsrapport": "http://regnskaber.virk.dk/88077333/amNsb3VkczovLzAzL2NhL2U5L2YzLzZkLzc0YjEtNGVmMS04ZTdhLTMxZjI4ZTMwZWY2MQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/33377088?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rolfsgade+4,+8260+Viby+J",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:49+00:00"
+  },
+  {
+   "id": "40590641",
+   "statstidende_id": "S28072026-156",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28072026-156",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-30",
+   "dekretdato": "2026-07-28",
+   "fristdag": "2026-07-16",
+   "anmeldelsesfrist": "2026-08-27",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Næstved",
+    "sagsnummer": "SKS INS-351/2026"
+   },
+   "kurator": {
+    "navn": "Henrik Selchau Poulsen",
+    "firma": null,
+    "adresse": "Nørregade 21",
+    "postnr": "1165",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "selskab": {
+    "cvr": "40590641",
+    "navn": "Ejendomsselskabet Hyllinge ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Østervej 1A",
+    "postnr": "4243",
+    "by": "Rude",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/14609504/amNsb3VkczovLzAzLzlkLzgyLzdhLzFhLzYwOWYtNGFmNi1iZWFjLWE1MzcxYjdkZDUxNQ.xml",
+    "aktiver": 11535208,
+    "egenkapital": 381709,
+    "investeringsejendomme": 9428962,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 9689887,
+    "realkreditgaeld": 146718,
+    "langfristet_gaeld": 11042363,
+    "kortfristet_gaeld": 0,
+    "omsaetning": 130924,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": -595923,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 9428962,
+    "ejendomsandel_pct": 81.7,
+    "soliditet_pct": 3.3,
+    "ltv_pct": 1.6,
+    "samlet_gaeld": 11042363
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 9.428.962 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 146.718 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Ejendomsselskabet Hyllinge ApS\nVed dekret af 28.07.2026 har Retten i Næstved taget\n\nEjendomsselskabet Hyllinge ApS\nCVR-nr: 40590641\nØstervej 1A\n4243 Rude\nSagsnr: SKS INS-351/2026\n\nunder konkursbehandling efter begæring modtaget den 16.07.2026.\n\nErhvervsstyrelsens anmodning om tvangsopløsning er dateret den 06.02.2026.\n\nKurator er advokat Henrik Selchau Poulsen, Nørregade 21, 1165 København K.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 28.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Næstved, den 28.07.2026.\n\nKurator\nAdvokat Henrik Selchau Poulsen\nNørregade 21\n1165 København K\n\nSkifteret\nRetten i Næstved",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40590641",
+    "statstidende": "https://www.statstidende.dk/messages/S28072026-156",
+    "aarsrapport": "http://regnskaber.virk.dk/14609504/amNsb3VkczovLzAzLzlkLzgyLzdhLzFhLzYwOWYtNGFmNi1iZWFjLWE1MzcxYjdkZDUxNQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40590641?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Østervej+1A,+4243+Rude",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:48+00:00"
+  },
+  {
+   "id": "41553308",
+   "statstidende_id": "S04062026-69",
+   "statstidende_url": "https://www.statstidende.dk/messages/S04062026-69",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-06",
+   "dekretdato": "2026-06-03",
+   "fristdag": "2026-05-22",
+   "anmeldelsesfrist": "2026-07-04",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1103/26-B"
+   },
+   "kurator": {
+    "navn": "Henrik Selchau Poulsen",
+    "firma": null,
+    "adresse": "Nørregade 21",
+    "postnr": "1165",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "selskab": {
+    "cvr": "41553308",
+    "navn": "Jens Chr. Skousvej 14 K/S",
+    "binavne": [],
+    "selskabsform": "K/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Peter Bangs Vej 279",
+    "postnr": "2500",
+    "by": "Valby",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/80335514/amNsb3VkczovLzAzL2RhLzQxLzIxLzQ4L2U2OTgtNGEzZC1iNjFkLTYwNjJiZjBmZTk0MA.xml",
+    "aktiver": 36958044,
+    "egenkapital": 84607,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 35773127,
+    "materielle_anlaeg": 35773127,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 36873437,
+    "omsaetning": 0,
+    "bruttofortjeneste": 664337,
+    "aarets_resultat": 275873,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 35773127,
+    "ejendomsandel_pct": 96.8,
+    "soliditet_pct": 0.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 36873437
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 35.773.127 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "form_ks",
+     "beskrivelse": "Selskabsform K/S (typisk ejendomsprojekt)",
+     "point": 10,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Jens Chr. Skousvej 14 K/S\nVed dekret af 03.06.2026 har Sø- og Handelsrettens skifteret taget\n\nJens Chr. Skousvej 14 K/S\nCVR-nr: 41553308\nPeter Bangs Vej 279\n2500 Valby\nSagsnr: K 1103/26-B\n\nunder konkursbehandling på grundlag af en begæring modtaget den 22.05.2026.\n\nSom kurator er udpeget advokat Henrik Selchau Poulsen, Nørregade 21, 1165 København K.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 04.06.2026\n\nKurator\nAdvokat Henrik Selchau Poulsen\nNørregade 21\n1165 København K\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41553308",
+    "statstidende": "https://www.statstidende.dk/messages/S04062026-69",
+    "aarsrapport": "http://regnskaber.virk.dk/80335514/amNsb3VkczovLzAzL2RhLzQxLzIxLzQ4L2U2OTgtNGEzZC1iNjFkLTYwNjJiZjBmZTk0MA.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41553308?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Peter+Bangs+Vej+279,+2500+Valby",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:52+00:00"
+  },
+  {
+   "id": "38252712",
+   "statstidende_id": "S09062026-58",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09062026-58",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-11",
+   "dekretdato": "2026-06-09",
+   "fristdag": "2026-06-04",
+   "anmeldelsesfrist": "2026-07-09",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-233/2026"
+   },
+   "kurator": {
+    "navn": "Christian Jul Madsen",
+    "firma": null,
+    "adresse": "Kalkværksvej 16, 25",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "selskab": {
+    "cvr": "38252712",
+    "navn": "EJENDOMSELSKABET OMME A/S",
+    "binavne": [],
+    "selskabsform": "A/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Lægårdsvej 4",
+    "postnr": "7260",
+    "by": "Sønder Omme",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-10-31",
+    "kilde_url": "http://regnskaber.virk.dk/21725283/amNsb3VkczovLzAzLzE4LzBiLzQ2L2FmL2RjYjctNDA0NC05Zjg5LTc4NWViNmYyZWQ3Mw.xhtml",
+    "aktiver": 32640746,
+    "egenkapital": 14119162,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 21163888,
+    "materielle_anlaeg": 22544558,
+    "realkreditgaeld": 6346095,
+    "langfristet_gaeld": 11919540,
+    "kortfristet_gaeld": 4647744,
+    "omsaetning": null,
+    "bruttofortjeneste": 3771979,
+    "aarets_resultat": 1622897,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 21163888,
+    "ejendomsandel_pct": 64.8,
+    "soliditet_pct": 43.3,
+    "ltv_pct": 30.0,
+    "samlet_gaeld": 16567284
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 21.163.888 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 6.346.095 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "EJENDOMSELSKABET OMME A/S\nVed dekret af 09.06.2026 har Retten i Kolding taget\n\nEJENDOMSELSKABET OMME A/S\nCVR-nr: 38252712\nLægårdsvej 4\n7260 Sønder Omme\nSagsnr: 6-233/2026\n\nunder konkursbehandling efter begæring modtaget den 04.06.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 09.06.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/38252712",
+    "statstidende": "https://www.statstidende.dk/messages/S09062026-58",
+    "aarsrapport": "http://regnskaber.virk.dk/21725283/amNsb3VkczovLzAzLzE4LzBiLzQ2L2FmL2RjYjctNDA0NC05Zjg5LTc4NWViNmYyZWQ3Mw.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/38252712?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Lægårdsvej+4,+7260+Sønder+Omme",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:51+00:00"
+  },
+  {
+   "id": "32277470",
+   "statstidende_id": "S22062026-279",
+   "statstidende_url": "https://www.statstidende.dk/messages/S22062026-279",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-24",
+   "dekretdato": "2026-06-22",
+   "fristdag": "2026-06-15",
+   "anmeldelsesfrist": "2026-07-22",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Sønderborg",
+    "sagsnummer": "SKS S01-184/2026"
+   },
+   "kurator": {
+    "navn": "Mark Søtrup",
+    "firma": null,
+    "adresse": "Esbjerg Brygge 28",
+    "postnr": "6700",
+    "by": "Esbjerg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Mark+Søtrup"
+   },
+   "selskab": {
+    "cvr": "32277470",
+    "navn": "Selskabet af 12. juni 2026 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Prilen 2",
+    "postnr": "6792",
+    "by": "Rømø",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/07477223/amNsb3VkczovLzAzL2U0L2UzLzhjLzA4Lzg2NWMtNDMxZC05Y2FlLThhZDRlOTY4OWUxOA.pdf",
+    "aktiver": 5605785,
+    "egenkapital": 4701657,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1017234,
+    "materielle_anlaeg": 1260234,
+    "realkreditgaeld": 297993,
+    "langfristet_gaeld": 297993,
+    "kortfristet_gaeld": 512353,
+    "omsaetning": null,
+    "bruttofortjeneste": 1717034,
+    "aarets_resultat": 645898,
+    "ansatte": 2,
+    "ejendomsvaerdi_bogfoert": 1017234,
+    "ejendomsandel_pct": 18.1,
+    "soliditet_pct": 83.9,
+    "ltv_pct": 29.3,
+    "samlet_gaeld": 810346
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.017.234 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 297.993 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Selskabet af 12. juni 2026 ApS\nVed dekret af 22.06.2026 har Retten i Sønderborg taget\n\nSelskabet af 12. juni 2026 ApS\nCVR-nr: 32277470\nPrilen 2\n6792 Rømø\nSagsnr: SKS S01-184/2026\n\nunder konkursbehandling efter begæring modtaget den 15.06.2026.\n\nKurator er advokat Mark Søtrup, Esbjerg Brygge 28, 6700 Esbjerg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 22.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Sønderborg, den 22.06.2026.\n\nKurator\nAdvokat Mark Søtrup\nEsbjerg Brygge 28\n6700 Esbjerg\n\nSkifteret\nRetten i Sønderborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32277470",
+    "statstidende": "https://www.statstidende.dk/messages/S22062026-279",
+    "aarsrapport": "http://regnskaber.virk.dk/07477223/amNsb3VkczovLzAzL2U0L2UzLzhjLzA4Lzg2NWMtNDMxZC05Y2FlLThhZDRlOTY4OWUxOA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32277470?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Prilen+2,+6792+Rømø",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Mark+Søtrup"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:51+00:00"
+  },
+  {
+   "id": "37540811",
+   "statstidende_id": "S23062026-174",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23062026-174",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-25",
+   "dekretdato": "2026-06-23",
+   "fristdag": "2026-06-23",
+   "anmeldelsesfrist": "2026-07-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1305/26-K"
+   },
+   "kurator": {
+    "navn": "Søren Aamann Jensen",
+    "firma": null,
+    "adresse": "Alexandriagade 8",
+    "postnr": "2150",
+    "by": "Nordhavn",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Aamann+Jensen"
+   },
+   "selskab": {
+    "cvr": "37540811",
+    "navn": "Investgruppen Nordic ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Langelinie Allé 17",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/11804573/amNsb3VkczovLzAzL2RlLzA0LzIwLzY2L2Y0YmItNGZlMC05ZDQ0LWY1NjMyMzYzMjY2ZA.xml",
+    "aktiver": 5205008,
+    "egenkapital": -1978806,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 4917955,
+    "materielle_anlaeg": 4917955,
+    "realkreditgaeld": 2690490,
+    "langfristet_gaeld": 6348551,
+    "kortfristet_gaeld": 835263,
+    "omsaetning": null,
+    "bruttofortjeneste": 124000,
+    "aarets_resultat": -272898,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 4917955,
+    "ejendomsandel_pct": 94.5,
+    "soliditet_pct": -38.0,
+    "ltv_pct": 54.7,
+    "samlet_gaeld": 7183814
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 4.917.955 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 2.690.490 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Investgruppen Nordic ApS\nVed dekret af 23.06.2026 har Sø- og Handelsrettens skifteret taget\n\nInvestgruppen Nordic ApS\nCVR-nr: 37540811\nLangelinie Allé 17\n2100 København Ø\nSagsnr: K 1305/26-K\n\nunder konkursbehandling på grundlag af en begæring modtaget den 23.06.2026 fra likvidator.\n\nSom kurator er udpeget advokat Søren Aamann Jensen, Alexandriagade 8, 2150 Nordhavn.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 23.06.2026\n\nKurator\nAdvokat Søren Aamann Jensen\nAlexandriagade 8\n2150 Nordhavn\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/37540811",
+    "statstidende": "https://www.statstidende.dk/messages/S23062026-174",
+    "aarsrapport": "http://regnskaber.virk.dk/11804573/amNsb3VkczovLzAzL2RlLzA0LzIwLzY2L2Y0YmItNGZlMC05ZDQ0LWY1NjMyMzYzMjY2ZA.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/37540811?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Langelinie+Allé+17,+2100+København+Ø",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Aamann+Jensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:50+00:00"
+  },
+  {
+   "id": "35889981",
+   "statstidende_id": "S03082026-153",
+   "statstidende_url": "https://www.statstidende.dk/messages/S03082026-153",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-05",
+   "dekretdato": "2026-08-03",
+   "fristdag": "2026-07-14",
+   "anmeldelsesfrist": "2026-09-02",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Herning",
+    "sagsnummer": "SKS 14-167/2026"
+   },
+   "kurator": {
+    "navn": "Christopher Pilgaard Bering",
+    "firma": null,
+    "adresse": "Sct. Mathias Gade 96B",
+    "postnr": "8800",
+    "by": "Viborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christopher+Pilgaard+Bering"
+   },
+   "selskab": {
+    "cvr": "35889981",
+    "navn": "AgroXperten ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Buntmagervej 28",
+    "postnr": "7490",
+    "by": "Aulum",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/18998853/amNsb3VkczovLzAzL2I3LzY0L2NiLzdkLzNlYjItNDFjNC05ODAzLTA0MjA5NjdjZWE2Yg.pdf",
+    "aktiver": 46683916,
+    "egenkapital": 9411948,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 14364866,
+    "materielle_anlaeg": 15890725,
+    "realkreditgaeld": 7006611,
+    "langfristet_gaeld": 12124707,
+    "kortfristet_gaeld": 24771354,
+    "omsaetning": null,
+    "bruttofortjeneste": 10763405,
+    "aarets_resultat": 1540023,
+    "ansatte": 9,
+    "ejendomsvaerdi_bogfoert": 14364866,
+    "ejendomsandel_pct": 30.8,
+    "soliditet_pct": 20.2,
+    "ltv_pct": 48.8,
+    "samlet_gaeld": 36896061
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 14.364.866 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 7.006.611 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "AgroXperten ApS\nVed dekret af 03.08.2026 har Retten i Herning taget\n\nAgroXperten ApS\nCVR-nr: 35889981\nBuntmagervej 28\n7490 Aulum\nSagsnr: SKS 14-167/2026\n\nunder konkursbehandling efter begæring modtaget den 14.07.2026.\n\nSelskabet har hjemsted i Herning Kommune og har drevet virksomhed fra adressen Buntmagervej 28, 7490 Aulum.\n\nKurator er advokat Christopher Pilgaard Bering, Sct. Mathias Gade 96B, 8800 Viborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Herning, den 03.08.2026.\n\nKurator\nAdvokat Christopher Pilgaard Bering\nSct. Mathias Gade 96B\n8800 Viborg\n\nSkifteret\nRetten i Herning",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/35889981",
+    "statstidende": "https://www.statstidende.dk/messages/S03082026-153",
+    "aarsrapport": "http://regnskaber.virk.dk/18998853/amNsb3VkczovLzAzL2I3LzY0L2NiLzdkLzNlYjItNDFjNC05ODAzLTA0MjA5NjdjZWE2Yg.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/35889981?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Buntmagervej+28,+7490+Aulum",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christopher+Pilgaard+Bering"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:50+00:00"
+  },
+  {
+   "id": "26270871",
+   "statstidende_id": "S11082026-120",
+   "statstidende_url": "https://www.statstidende.dk/messages/S11082026-120",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-13",
+   "dekretdato": "2026-08-11",
+   "fristdag": "2026-08-05",
+   "anmeldelsesfrist": "2026-09-10",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Viborg",
+    "sagsnummer": "SKS 5-253/2026"
+   },
+   "kurator": {
+    "navn": "Søren Hedegaard Frederiksen",
+    "firma": null,
+    "adresse": "Torvet 1A",
+    "postnr": "8600",
+    "by": "Silkeborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Hedegaard+Frederiksen"
+   },
+   "selskab": {
+    "cvr": "26270871",
+    "navn": "IVERSEN INTERIØR ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Fynsgade 14",
+    "postnr": "8600",
+    "by": "Silkeborg",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/17807262/amNsb3VkczovLzAzLzRiL2M5L2ZiL2I0L2YwYmQtNDcyMy1hMDM1LTZjNTE4NzMyNGY3Ng.pdf",
+    "aktiver": 14972573,
+    "egenkapital": 3884490,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 2879957,
+    "materielle_anlaeg": 7376371,
+    "realkreditgaeld": 308154,
+    "langfristet_gaeld": 3710685,
+    "kortfristet_gaeld": 7377398,
+    "omsaetning": null,
+    "bruttofortjeneste": 2078404,
+    "aarets_resultat": -961821,
+    "ansatte": 10,
+    "ejendomsvaerdi_bogfoert": 2879957,
+    "ejendomsandel_pct": 19.2,
+    "soliditet_pct": 25.9,
+    "ltv_pct": 10.7,
+    "samlet_gaeld": 11088083
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 2.879.957 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 308.154 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "IVERSEN INTERIØR ApS\nVed dekret af 11.08.2026 har Retten i Viborg taget\n\nIVERSEN INTERIØR ApS\nCVR-nr: 26270871\nFynsgade 14\n8600 Silkeborg\nSagsnr: SKS 5-253/2026\n\nunder konkursbehandling efter begæring modtaget den 05.08.2026.\n\nKurator er advokat Søren Hedegaard Frederiksen, Torvet 1A, 8600 Silkeborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 11.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Viborg, den 11.08.2026.\n\nKurator\nAdvokat Søren Hedegaard Frederiksen\nTorvet 1A\n8600 Silkeborg\n\nSkifteret\nRetten i Viborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/26270871",
+    "statstidende": "https://www.statstidende.dk/messages/S11082026-120",
+    "aarsrapport": "http://regnskaber.virk.dk/17807262/amNsb3VkczovLzAzLzRiL2M5L2ZiL2I0L2YwYmQtNDcyMy1hMDM1LTZjNTE4NzMyNGY3Ng.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/26270871?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Fynsgade+14,+8600+Silkeborg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Hedegaard+Frederiksen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:49+00:00"
+  },
+  {
+   "id": "36492139",
+   "statstidende_id": "S01072026-36",
+   "statstidende_url": "https://www.statstidende.dk/messages/S01072026-36",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-03",
+   "dekretdato": "2026-07-01",
+   "fristdag": "2026-06-18",
+   "anmeldelsesfrist": "2026-07-31",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Hjørring",
+    "sagsnummer": "SKS SKIF-209/2026"
+   },
+   "kurator": {
+    "navn": "Palle Møller Jørgensen",
+    "firma": null,
+    "adresse": "Amtmandstoften 3",
+    "postnr": "9800",
+    "by": "Hjørring",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Palle+Møller+Jørgensen"
+   },
+   "selskab": {
+    "cvr": "36492139",
+    "navn": "EMAJA ESTATE INVEST ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Kirkevej 5",
+    "postnr": "9970",
+    "by": "Strandby",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/93129463/amNsb3VkczovLzAzL2I3Lzk0LzQ0LzRiL2ZhMTQtNGY2OC1iYzY4LWM2Nzk3YWEzZjdkNQ.pdf",
+    "aktiver": 8848008,
+    "egenkapital": 3739612,
+    "investeringsejendomme": 6090025,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 6527025,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 991816,
+    "kortfristet_gaeld": 4116580,
+    "omsaetning": null,
+    "bruttofortjeneste": 1864640,
+    "aarets_resultat": -460512,
+    "ansatte": 4,
+    "ejendomsvaerdi_bogfoert": 6090025,
+    "ejendomsandel_pct": 68.8,
+    "soliditet_pct": 42.3,
+    "ltv_pct": null,
+    "samlet_gaeld": 5108396
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 6.090.025 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 60,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "EMAJA ESTATE INVEST ApS\nVed dekret af 01.07.2026 har Retten i Hjørring taget\n\nEMAJA ESTATE INVEST ApS\nCVR-nr: 36492139\nKirkevej 5\n9970 Strandby\nSagsnr: SKS SKIF-209/2026\n\nunder konkursbehandling efter begæring modtaget den 18.06.2026.\n\nSelskabet har hjemsted i Frederikshavn kommune og har drevet virksomhed fra adressen Kirkevej 5, 9970 Strandby.\n\nKurator er advokat Palle Møller Jørgensen, Amtmandstoften 3, 9800 Hjørring.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 01.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Hjørring, den 01.07.2026.\n\nKurator\nAdvokat Palle Møller Jørgensen\nAmtmandstoften 3\n9800 Hjørring\n\nSkifteret\nRetten i Hjørring",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/36492139",
+    "statstidende": "https://www.statstidende.dk/messages/S01072026-36",
+    "aarsrapport": "http://regnskaber.virk.dk/93129463/amNsb3VkczovLzAzL2I3Lzk0LzQ0LzRiL2ZhMTQtNGY2OC1iYzY4LWM2Nzk3YWEzZjdkNQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/36492139?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Kirkevej+5,+9970+Strandby",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Palle+Møller+Jørgensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:53+00:00"
+  },
+  {
+   "id": "40523286",
+   "statstidende_id": "S01072026-86",
+   "statstidende_url": "https://www.statstidende.dk/messages/S01072026-86",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-03",
+   "dekretdato": "2026-07-01",
+   "fristdag": "2026-06-29",
+   "anmeldelsesfrist": "2026-07-31",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Horsens",
+    "sagsnummer": "SKS 41-171/2026"
+   },
+   "kurator": {
+    "navn": "Janus Bang Topp",
+    "firma": null,
+    "adresse": "Vitus Berings Plads 5",
+    "postnr": "8700",
+    "by": "Horsens",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Janus+Bang+Topp"
+   },
+   "selskab": {
+    "cvr": "40523286",
+    "navn": "Sønderbrogade 13A-B ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Vroldvej 58",
+    "postnr": "8660",
+    "by": "Skanderborg",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/68232504/amNsb3VkczovLzAzLzE2LzMxLzAxL2VlLzE5NzUtNGU4NS04NTYxLWExYmJiZWEwYjdhYw.xml",
+    "aktiver": 11469139,
+    "egenkapital": 333441,
+    "investeringsejendomme": 11450000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 11450000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 9857080,
+    "kortfristet_gaeld": 1278618,
+    "omsaetning": null,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": 0,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 11450000,
+    "ejendomsandel_pct": 99.8,
+    "soliditet_pct": 2.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 11135698
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 11.450.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 60,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Sønderbrogade 13A-B ApS under tvangsopløsning\nVed dekret af 01.07.2026 har Retten i Horsens taget\n\nSønderbrogade 13A-B ApS under tvangsopløsning\nCVR-nr: 40523286\nVroldvej 58\n8660 Skanderborg\nSagsnr: SKS 41-171/2026\n\nunder konkursbehandling efter begæring modtaget den 29.06.2026.\n\nKurator er advokat Janus Bang Topp, Vitus Berings Plads 5, 8700 Horsens.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 01.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nAnmeldelse indgivet under forudgående likvidation til likvidator, advokat Janus Bang Topp, tages i betragtning uden ny anmeldelse, dog må eventuelle renter opgøres pr. konkursdagen. \n\nRetten i Horsens, den 01.07.2026.\n\nKurator\nAdvokat Janus Bang Topp\nVitus Berings Plads 5\n8700 Horsens\n\nSkifteret\nRetten i Horsens",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40523286",
+    "statstidende": "https://www.statstidende.dk/messages/S01072026-86",
+    "aarsrapport": "http://regnskaber.virk.dk/68232504/amNsb3VkczovLzAzLzE2LzMxLzAxL2VlLzE5NzUtNGU4NS04NTYxLWExYmJiZWEwYjdhYw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40523286?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vroldvej+58,+8660+Skanderborg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Janus+Bang+Topp"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:52+00:00"
+  },
+  {
+   "id": "37902896",
+   "statstidende_id": "S11062026-27",
+   "statstidende_url": "https://www.statstidende.dk/messages/S11062026-27",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-13",
+   "dekretdato": "2026-06-11",
+   "fristdag": "2026-06-10",
+   "anmeldelsesfrist": "2026-07-11",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-243/2026"
+   },
+   "kurator": {
+    "navn": "Jan Bruun Jørgensen",
+    "firma": null,
+    "adresse": "Buen 11",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jan+Bruun+Jørgensen"
+   },
+   "selskab": {
+    "cvr": "37902896",
+    "navn": "KRM Byg ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Adonisvej 74",
+    "postnr": "7100",
+    "by": "Vejle",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/69820973/amNsb3VkczovLzAzLzc0LzVlLzk5Lzc4LzI0MWMtNDQ0ZC04ZmY3LWU1Yzc1MzY1MWRkNA.pdf",
+    "aktiver": 929888,
+    "egenkapital": -69530,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 226432,
+    "materielle_anlaeg": 838378,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 594653,
+    "kortfristet_gaeld": 404765,
+    "omsaetning": null,
+    "bruttofortjeneste": 740266,
+    "aarets_resultat": 99633,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 226432,
+    "ejendomsandel_pct": 24.4,
+    "soliditet_pct": -7.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 999418
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 226.432 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Grund/Projekt",
+   "raa_tekst": "KRM Byg ApS under likvidation\nVed dekret af 11.06.2026 har Retten i Kolding taget\n\nKRM Byg ApS under likvidation\nCVR-nr: 37902896\nAdonisvej 74\n7100 Vejle\nSagsnr: 6-243/2026\n\nunder konkursbehandling efter begæring modtaget den 10.06.2026.\n\nKurator er advokat Jan Bruun Jørgensen, Buen 11, 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 11.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 11.06.2026.\n\nKurator\nAdvokat Jan Bruun Jørgensen\nBuen 11\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/37902896",
+    "statstidende": "https://www.statstidende.dk/messages/S11062026-27",
+    "aarsrapport": "http://regnskaber.virk.dk/69820973/amNsb3VkczovLzAzLzc0LzVlLzk5Lzc4LzI0MWMtNDQ0ZC04ZmY3LWU1Yzc1MzY1MWRkNA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/37902896?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Adonisvej+74,+7100+Vejle",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jan+Bruun+Jørgensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under likvidation' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:54+00:00"
+  },
+  {
+   "id": "36893575",
+   "statstidende_id": "S26062026-183",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26062026-183",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-30",
+   "dekretdato": "2026-06-22",
+   "fristdag": "2026-05-11",
+   "anmeldelsesfrist": "2026-07-28",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Holbæk",
+    "sagsnummer": "SKS 51-178/2026"
+   },
+   "kurator": {
+    "navn": "Finn Machenhauer",
+    "firma": null,
+    "adresse": "Kalundborgvej 4",
+    "postnr": "4300",
+    "by": "Holbæk",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Machenhauer"
+   },
+   "selskab": {
+    "cvr": "36893575",
+    "navn": "REA BYG ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Plejeruphuse 2",
+    "postnr": "4571",
+    "by": "Grevinge",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/57539863/amNsb3VkczovLzAzLzY5LzQ4LzkxL2ExLzZlZTctNGEwMS04ZDQwLWQ0YzBkMGU3ODdmYw.xhtml",
+    "aktiver": 277,
+    "egenkapital": 223,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 7,
+    "materielle_anlaeg": 7,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": 54,
+    "omsaetning": null,
+    "bruttofortjeneste": 117,
+    "aarets_resultat": -159,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 7,
+    "ejendomsandel_pct": 2.5,
+    "soliditet_pct": 80.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 54
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 7 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Grund/Projekt",
+   "raa_tekst": "REA BYG ApS\nVed dekret af 22.06.2026 har Retten i Holbæk taget\n\nREA BYG ApS\nCVR-nr: 36893575\nPlejeruphuse 2\n4571 Grevinge\nSagsnr: SKS 51-178/2026\n\nunder konkursbehandling efter begæring modtaget den 11.05.2026.\n\nSelskabet har været under likvidation i perioden 25. marts 2026 til 22. juni 2026 efter anmodning af 26. januar 2026 om tvangsopløsning indgivet af Erhvervsstyrelsen og modtaget i skifteretten den 26. januar 2026. Sagen har været behandlet under skifterettens sagsnr. SK 4/2026.\n\nKurator er advokat Finn Machenhauer, Kalundborgvej 4, 4300 Holbæk.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 22.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Holbæk, den 22.06.2026.\n\nKurator\nAdvokat Finn Machenhauer\nKalundborgvej 4\n4300 Holbæk\n\nSkifteret\nRetten i Holbæk",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/36893575",
+    "statstidende": "https://www.statstidende.dk/messages/S26062026-183",
+    "aarsrapport": "http://regnskaber.virk.dk/57539863/amNsb3VkczovLzAzLzY5LzQ4LzkxL2ExLzZlZTctNGEwMS04ZDQwLWQ0YzBkMGU3ODdmYw.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/36893575?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Plejeruphuse+2,+4571+Grevinge",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Machenhauer"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:54+00:00"
+  },
+  {
+   "id": "42854980",
+   "statstidende_id": "S20082026-74",
+   "statstidende_url": "https://www.statstidende.dk/messages/S20082026-74",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-22",
+   "dekretdato": "2026-08-20",
+   "fristdag": "2026-08-18",
+   "anmeldelsesfrist": "2026-09-19",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1630/26-F"
+   },
+   "kurator": {
+    "navn": "Boris K. Frederiksen",
+    "firma": null,
+    "adresse": "Kalvebod Brygge 32",
+    "postnr": "1560",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
+   },
+   "selskab": {
+    "cvr": "42854980",
+    "navn": "Ejendommen Toftegårds Alle ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Rødager Alle 51A",
+    "postnr": "2610",
+    "by": "Rødovre",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/08945824/amNsb3VkczovLzAzLzZkLzc2LzA2L2Q0LzQ2YjEtNDg5Mi1hNWUxLTQ1YTYwOGQ1NDNlZA.pdf",
+    "aktiver": 420308,
+    "egenkapital": 51023,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 396400,
+    "materielle_anlaeg": 396400,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 350258,
+    "kortfristet_gaeld": 19027,
+    "omsaetning": null,
+    "bruttofortjeneste": -65506,
+    "aarets_resultat": -72306,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 396400,
+    "ejendomsandel_pct": 94.3,
+    "soliditet_pct": 12.1,
+    "ltv_pct": null,
+    "samlet_gaeld": 369285
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 396.400 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Ejendommen Toftegårds Alle ApS\nVed dekret af 20.08.2026 har Sø- og Handelsrettens skifteret taget\n\nEjendommen Toftegårds Alle ApS\nCVR-nr: 42854980\nRødager Alle 51A\n2610 Rødovre\nSagsnr: K 1630/26-F\n\nunder konkursbehandling på grundlag af en begæring modtaget den 18.08.2026 fra likvidator.\n\nSom kurator er udpeget advokat Boris K. Frederiksen, Kalvebod Brygge 32, 1560 København V.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 20.08.2026\n\nKurator\nAdvokat Boris K. Frederiksen\nKalvebod Brygge 32\n1560 København V\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42854980",
+    "statstidende": "https://www.statstidende.dk/messages/S20082026-74",
+    "aarsrapport": "http://regnskaber.virk.dk/08945824/amNsb3VkczovLzAzLzZkLzc2LzA2L2Q0LzQ2YjEtNDg5Mi1hNWUxLTQ1YTYwOGQ1NDNlZA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42854980?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rødager+Alle+51A,+2610+Rødovre",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:53+00:00"
+  },
+  {
+   "id": "41982659",
+   "statstidende_id": "S16062026-198",
+   "statstidende_url": "https://www.statstidende.dk/messages/S16062026-198",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-18",
+   "dekretdato": "2026-06-15",
+   "fristdag": "2026-06-03",
+   "anmeldelsesfrist": "2026-07-16",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1148/26-B"
+   },
+   "kurator": {
+    "navn": "Anders Hauge Gløde",
+    "firma": null,
+    "adresse": "Gdanskgade 18",
+    "postnr": "2150",
+    "by": "Nordhavn",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Hauge+Gløde"
+   },
+   "selskab": {
+    "cvr": "41982659",
+    "navn": "Aspecta K/S",
+    "binavne": [],
+    "selskabsform": "K/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Peter Bangs vej 279",
+    "postnr": "2500",
+    "by": "Valby",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/95628914/amNsb3VkczovLzAzL2RlLzg1LzI0LzQxL2JmNDItNDJkOS05ZDdlLTYwY2EwYzM0MGVmYQ.xml",
+    "aktiver": 2352168,
+    "egenkapital": 104007,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1653775,
+    "materielle_anlaeg": 2347068,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 2248161,
+    "omsaetning": 3549527,
+    "bruttofortjeneste": 3549527,
+    "aarets_resultat": 2775,
+    "ansatte": 3,
+    "ejendomsvaerdi_bogfoert": 1653775,
+    "ejendomsandel_pct": 70.3,
+    "soliditet_pct": 4.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 2248161
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.653.775 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "form_ks",
+     "beskrivelse": "Selskabsform K/S (typisk ejendomsprojekt)",
+     "point": 10,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 50,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Aspecta K/S\nVed dekret af 15.06.2026 har Sø- og Handelsrettens skifteret taget\n\nAspecta K/S\nCVR-nr: 41982659\nPeter Bangs vej 279\n2500 Valby\nSagsnr: K 1148/26-B\n\nunder konkursbehandling på grundlag af en begæring modtaget den 03.06.2026.\n\nSom kurator er udpeget advokat Anders Hauge Gløde, Gdanskgade 18, 2150 Nordhavn og advokat Per Hald, Kalvebod Brygge 39-41, 1560 København V\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 16.06.2026\n\nKurator\nAdvokat Anders Hauge Gløde\nGdanskgade 18\n2150 Nordhavn\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41982659",
+    "statstidende": "https://www.statstidende.dk/messages/S16062026-198",
+    "aarsrapport": "http://regnskaber.virk.dk/95628914/amNsb3VkczovLzAzL2RlLzg1LzI0LzQxL2JmNDItNDJkOS05ZDdlLTYwY2EwYzM0MGVmYQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41982659?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Peter+Bangs+vej+279,+2500+Valby",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Hauge+Gløde"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:55+00:00"
+  },
+  {
+   "id": "43839284",
+   "statstidende_id": "S19062026-139",
+   "statstidende_url": "https://www.statstidende.dk/messages/S19062026-139",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-23",
+   "dekretdato": "2026-06-19",
+   "fristdag": "2026-06-17",
+   "anmeldelsesfrist": "2026-07-21",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Herning",
+    "sagsnummer": "SKS 14-147/2026"
+   },
+   "kurator": {
+    "navn": "Jacob Staghøj Troelsen",
+    "firma": null,
+    "adresse": "Golfvej 12",
+    "postnr": "7400",
+    "by": "Herning",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jacob+Staghøj+Troelsen"
+   },
+   "selskab": {
+    "cvr": "43839284",
+    "navn": "CBT Invest ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Hamletsvej 2",
+    "postnr": "7480",
+    "by": "Vildbjerg",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/48293834/amNsb3VkczovLzAzL2RmL2U2LzM1LzQzL2I1ZTMtNGM1Yy04YjRjLTRjYmZkYjY5Y2ZlNQ.pdf",
+    "aktiver": 19179008,
+    "egenkapital": -53164,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 6461350,
+    "materielle_anlaeg": 19028900,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 12111284,
+    "kortfristet_gaeld": 7120888,
+    "omsaetning": null,
+    "bruttofortjeneste": 1201516,
+    "aarets_resultat": -56471,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 6461350,
+    "ejendomsandel_pct": 33.7,
+    "soliditet_pct": -0.3,
+    "ltv_pct": null,
+    "samlet_gaeld": 19232172
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 6.461.350 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "CBT Invest ApS\nVed dekret af 19.06.2026 har Retten i Herning taget\n\nCBT Invest ApS\nCVR-nr: 43839284\nHamletsvej 2\n7480 Vildbjerg\nSagsnr: SKS 14-147/2026\n\nunder konkursbehandling efter begæring modtaget den 17.06.2026.\n\nKurator er advokat Jacob Staghøj Troelsen, Golfvej 12, 7400 Herning.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 19.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Herning, den 19.06.2026.\n\nKurator\nAdvokat Jacob Staghøj Troelsen\nGolfvej 12\n7400 Herning\n\nSkifteret\nRetten i Herning",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43839284",
+    "statstidende": "https://www.statstidende.dk/messages/S19062026-139",
+    "aarsrapport": "http://regnskaber.virk.dk/48293834/amNsb3VkczovLzAzL2RmL2U2LzM1LzQzL2I1ZTMtNGM1Yy04YjRjLTRjYmZkYjY5Y2ZlNQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43839284?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Hamletsvej+2,+7480+Vildbjerg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jacob+Staghøj+Troelsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:57+00:00"
+  },
+  {
+   "id": "42536857",
+   "statstidende_id": "S24062026-334",
+   "statstidende_url": "https://www.statstidende.dk/messages/S24062026-334",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-26",
+   "dekretdato": "2026-06-24",
+   "fristdag": "2026-06-02",
+   "anmeldelsesfrist": "2026-07-24",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Esbjerg",
+    "sagsnummer": "SKS 15-143/2026"
+   },
+   "kurator": {
+    "navn": "Stefan Nielsen",
+    "firma": null,
+    "adresse": "John Tranums Vej 23",
+    "postnr": "6705",
+    "by": "Esbjerg Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "selskab": {
+    "cvr": "42536857",
+    "navn": "DANA Ejendomsadministration ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Spangsbjerg Kirkevej 3",
+    "postnr": "6700",
+    "by": "Esbjerg",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/75863524/amNsb3VkczovLzAzLzhkLzk2L2Y3L2M5LzAwMTMtNGNlMi1iY2E0LWYwZWVhMDhkNjBlYg.pdf",
+    "aktiver": 35479013,
+    "egenkapital": 9358516,
+    "investeringsejendomme": 31500000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 31500000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 15234298,
+    "kortfristet_gaeld": 6881181,
+    "omsaetning": null,
+    "bruttofortjeneste": 1851095,
+    "aarets_resultat": 1639005,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 31500000,
+    "ejendomsandel_pct": 88.8,
+    "soliditet_pct": 26.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 22115479
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 31.500.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "DANA Ejendomsadministration ApS\nVed dekret af 24.06.2026 har Retten i Esbjerg taget\n\nDANA Ejendomsadministration ApS\nCVR-nr: 42536857\nSpangsbjerg Kirkevej 3\n6700 Esbjerg\nSagsnr: SKS 15-143/2026\n\nunder konkursbehandling efter begæring modtaget den 02.06.2026.\n\nSelskabet har hjemsted i Esbjerg Kommune og har drevet virksomhed fra adressen Spangsbjerg Kirkevej 3, 6700 Esbjerg.\n\nKuratellet består af advokat Stefan Nielsen, John Tranums Vej 23, 6705 Esbjerg Ø, og advokat Boris Frederiksen, Kalvebod Brygge 32, 1560 København V. \n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 24.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Esbjerg, den 24.06.2026.\n\nKurator\nAdvokat Stefan Nielsen\nJohn Tranums Vej 23\n6705 Esbjerg Ø\n\nSkifteret\nRetten i Esbjerg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42536857",
+    "statstidende": "https://www.statstidende.dk/messages/S24062026-334",
+    "aarsrapport": "http://regnskaber.virk.dk/75863524/amNsb3VkczovLzAzLzhkLzk2L2Y3L2M5LzAwMTMtNGNlMi1iY2E0LWYwZWVhMDhkNjBlYg.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42536857?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Spangsbjerg+Kirkevej+3,+6700+Esbjerg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:56+00:00"
+  },
+  {
+   "id": "40445935",
+   "statstidende_id": "S26062026-127",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26062026-127",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-30",
+   "dekretdato": "2026-06-26",
+   "fristdag": "2026-06-23",
+   "anmeldelsesfrist": "2026-07-28",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Holbæk",
+    "sagsnummer": "SKS 51-186/2026"
+   },
+   "kurator": {
+    "navn": "Finn Machenhauer",
+    "firma": null,
+    "adresse": "Kalundborgvej 4",
+    "postnr": "4300",
+    "by": "Holbæk",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Machenhauer"
+   },
+   "selskab": {
+    "cvr": "40445935",
+    "navn": "House Work ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Rørgræsvej 2",
+    "postnr": "4591",
+    "by": "Føllenslev",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/53954404/amNsb3VkczovLzAzLzNkL2EyLzc1L2U0Lzc5ODEtNDRiYS1hNzk0LWMyODU5NWFmMTJlYw.xhtml",
+    "aktiver": 1621406,
+    "egenkapital": 175,
+    "investeringsejendomme": 1075000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 1075000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 1446680,
+    "omsaetning": 4403925,
+    "bruttofortjeneste": 724,
+    "aarets_resultat": -581,
+    "ansatte": 2,
+    "ejendomsvaerdi_bogfoert": 1075000,
+    "ejendomsandel_pct": 66.3,
+    "soliditet_pct": 0.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 1446680
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 1.075.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "House Work ApS\nVed dekret af 26.06.2026 har Retten i Holbæk taget\n\nHouse Work ApS\nCVR-nr: 40445935\nRørgræsvej 2\n4591 Føllenslev\nSagsnr: SKS 51-186/2026\n\nunder konkursbehandling efter begæring modtaget den 23.06.2026.\n\nKurator er advokat Finn Machenhauer, Kalundborgvej 4, 4300 Holbæk.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 26.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Holbæk, den 26.06.2026.\n\nKurator\nAdvokat Finn Machenhauer\nKalundborgvej 4\n4300 Holbæk\n\nSkifteret\nRetten i Holbæk",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40445935",
+    "statstidende": "https://www.statstidende.dk/messages/S26062026-127",
+    "aarsrapport": "http://regnskaber.virk.dk/53954404/amNsb3VkczovLzAzLzNkL2EyLzc1L2U0Lzc5ODEtNDRiYS1hNzk0LWMyODU5NWFmMTJlYw.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40445935?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rørgræsvej+2,+4591+Føllenslev",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Machenhauer"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:56+00:00"
+  },
+  {
+   "id": "44145227",
+   "statstidende_id": "S27082026-225",
+   "statstidende_url": "https://www.statstidende.dk/messages/S27082026-225",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-29",
+   "dekretdato": "2026-08-27",
+   "fristdag": "2026-08-19",
+   "anmeldelsesfrist": "2026-09-26",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Viborg",
+    "sagsnummer": "SKS 5-270/2026"
+   },
+   "kurator": {
+    "navn": "Claus Nielsen",
+    "firma": null,
+    "adresse": "Kong Christians Alle 28",
+    "postnr": "9000",
+    "by": "Aalborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Claus+Nielsen"
+   },
+   "selskab": {
+    "cvr": "44145227",
+    "navn": "Maylander ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Rydhaugen 12",
+    "postnr": "8620",
+    "by": "Kjellerup",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/72254144/amNsb3VkczovLzAzLzBiLzcxLzliL2FjLzFjNGUtNGZjZS05NzY0LTI2NzBlYjQ0NTIxMw.pdf",
+    "aktiver": 2493935,
+    "egenkapital": 183100,
+    "investeringsejendomme": 1556452,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 2000298,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 1850175,
+    "kortfristet_gaeld": 452838,
+    "omsaetning": null,
+    "bruttofortjeneste": 779557,
+    "aarets_resultat": 429985,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 1556452,
+    "ejendomsandel_pct": 62.4,
+    "soliditet_pct": 7.3,
+    "ltv_pct": null,
+    "samlet_gaeld": 2303013
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 1.556.452 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Maylander ApS\nVed dekret af 27.08.2026 har Retten i Viborg taget\n\nMaylander ApS\nCVR-nr: 44145227\nRydhaugen 12\n8620 Kjellerup\nSagsnr: SKS 5-270/2026\n\nunder konkursbehandling efter begæring modtaget den 19.08.2026.\n\nSelskabet har hjemsted i Silkeborg Kommune og har drevet virksomhed fra adressen Rydhaugen 12, 8620 Kjellerup.\n\nKurator er advokat Claus Nielsen, Kong Christians Alle 28, 9000 Aalborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 27.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Viborg, den 27.08.2026.\n\nKurator\nAdvokat Claus Nielsen\nKong Christians Alle 28\n9000 Aalborg\n\nSkifteret\nRetten i Viborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/44145227",
+    "statstidende": "https://www.statstidende.dk/messages/S27082026-225",
+    "aarsrapport": "http://regnskaber.virk.dk/72254144/amNsb3VkczovLzAzLzBiLzcxLzliL2FjLzFjNGUtNGZjZS05NzY0LTI2NzBlYjQ0NTIxMw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/44145227?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rydhaugen+12,+8620+Kjellerup",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Claus+Nielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:24:54+00:00"
+  },
+  {
+   "id": "41298332",
+   "statstidende_id": "S06072026-51",
+   "statstidende_url": "https://www.statstidende.dk/messages/S06072026-51",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-08",
+   "dekretdato": null,
+   "fristdag": null,
+   "anmeldelsesfrist": "2026-08-05",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 3237/23-F"
+   },
+   "kurator": {
+    "navn": "Per Hald",
+    "firma": null,
+    "adresse": "Kalvebod Brygge 39",
+    "postnr": "1560",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Hald"
+   },
+   "selskab": {
+    "cvr": "41298332",
+    "navn": "K-Kajen ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Færgehavnsvej 35",
+    "postnr": "2150",
+    "by": "Nordhavn",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2022-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/23389214/amNsb3VkczovLzAzL2Y1L2I5L2VjLzAzLzBlZGMtNDNlNi04Y2FhLWIzZDY1N2NkMmU0NA.pdf",
+    "aktiver": 7692740,
+    "egenkapital": 576663,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1819608,
+    "materielle_anlaeg": 2045618,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 7116077,
+    "omsaetning": null,
+    "bruttofortjeneste": 4171712,
+    "aarets_resultat": 776799,
+    "ansatte": 6,
+    "ejendomsvaerdi_bogfoert": 1819608,
+    "ejendomsandel_pct": 23.7,
+    "soliditet_pct": 7.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 7116077
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.819.608 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "K-Kajen ApS\nVed beslutning af 03.07.2026 har Sø- og Handelsrettens skifteret genoptaget bobehandlingen af konkursboet\n\nK-Kajen ApS\nCVR-nr: 41298332\nFærgehavnsvej 35\n2150 Nordhavn\nSagsnr: K 3237/23-F\n\nSom kurator er udpeget advokat Per Hald, Kalvebod Brygge 39, 1560 København V.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 06.07.2026\n\nKurator\nAdvokat Per Hald\nKalvebod Brygge 39\n1560 København V\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41298332",
+    "statstidende": "https://www.statstidende.dk/messages/S06072026-51",
+    "aarsrapport": "http://regnskaber.virk.dk/23389214/amNsb3VkczovLzAzL2Y1L2I5L2VjLzAzLzBlZGMtNDNlNi04Y2FhLWIzZDY1N2NkMmU0NA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41298332?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Færgehavnsvej+35,+2150+Nordhavn",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Hald"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:02+00:00"
+  },
+  {
+   "id": "37867462",
+   "statstidende_id": "S09062026-349",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09062026-349",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-11",
+   "dekretdato": "2026-06-09",
+   "fristdag": "2026-06-08",
+   "anmeldelsesfrist": "2026-07-09",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten på Bornholm",
+    "sagsnummer": "SKS 4-29/2026"
+   },
+   "kurator": {
+    "navn": "Henrik Selchau Poulsen",
+    "firma": null,
+    "adresse": "Nørregade 21",
+    "postnr": "1165",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "selskab": {
+    "cvr": "37867462",
+    "navn": "Pedersker Fjernvarme ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Nybyvej 4",
+    "postnr": "3720",
+    "by": "Aakirkeby",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/26476873/amNsb3VkczovLzAzLzkwLzhjL2UwLzcxL2I0OWQtNDg1NC05ZDJiLWQ5NTliY2I2OTI2YQ.pdf",
+    "aktiver": 10569433,
+    "egenkapital": 60456,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 8013640,
+    "materielle_anlaeg": 9531310,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 9066047,
+    "kortfristet_gaeld": 1442930,
+    "omsaetning": 1554907,
+    "bruttofortjeneste": 590225,
+    "aarets_resultat": 1,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 8013640,
+    "ejendomsandel_pct": 75.8,
+    "soliditet_pct": 0.6,
+    "ltv_pct": null,
+    "samlet_gaeld": 10508977
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 8.013.640 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Pedersker Fjernvarme ApS\nVed dekret af 09.06.2026 har Retten på Bornholm taget\n\nPedersker Fjernvarme ApS\nCVR-nr: 37867462\nNybyvej 4\n3720 Aakirkeby\nSagsnr: SKS 4-29/2026\n\nunder konkursbehandling efter begæring modtaget den 08.06.2026. Fristdagen er den 9. april 2026. \n\nSelskabet har hjemsted i Bornholms Regionskommune og har drevet virksomhed fra adressen Nybyvej 4, 3720 Aakirkeby.\n\nKurator er advokat Henrik Selchau Poulsen, Nørregade 21, 1165 København K.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten på Bornholm, den 09.06.2026.\n\nKurator\nAdvokat Henrik Selchau Poulsen\nNørregade 21\n1165 København K\n\nSkifteret\nRetten på Bornholm",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/37867462",
+    "statstidende": "https://www.statstidende.dk/messages/S09062026-349",
+    "aarsrapport": "http://regnskaber.virk.dk/26476873/amNsb3VkczovLzAzLzkwLzhjL2UwLzcxL2I0OWQtNDg1NC05ZDJiLWQ5NTliY2I2OTI2YQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/37867462?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nybyvej+4,+3720+Aakirkeby",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:04+00:00"
+  },
+  {
+   "id": "43781626",
+   "statstidende_id": "S29062026-119",
+   "statstidende_url": "https://www.statstidende.dk/messages/S29062026-119",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-01",
+   "dekretdato": "2026-06-29",
+   "fristdag": "2026-06-15",
+   "anmeldelsesfrist": "2026-07-29",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Skifteretten i Odense",
+    "sagsnummer": "SKS S33-292/2026"
+   },
+   "kurator": {
+    "navn": "Thomas Bilstrup Rask",
+    "firma": null,
+    "adresse": "Vesterballevej 25",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Thomas+Bilstrup+Rask"
+   },
+   "selskab": {
+    "cvr": "43781626",
+    "navn": "Hotelier ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Kongensgade 67",
+    "postnr": "5000",
+    "by": "Odense C",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/62618734/amNsb3VkczovLzAzLzVhLzNiLzQwLzcyL2NjMjAtNGMyMC1hZDg4LWZlNTc0OWNlYTFkZQ.xhtml",
+    "aktiver": 3162920,
+    "egenkapital": 871,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1472766,
+    "materielle_anlaeg": 2709756,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 525,
+    "kortfristet_gaeld": 1766863,
+    "omsaetning": null,
+    "bruttofortjeneste": 1108410,
+    "aarets_resultat": 313,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 1472766,
+    "ejendomsandel_pct": 46.6,
+    "soliditet_pct": 0.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 1767388
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.472.766 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "Hotelier ApS\nVed dekret af 29.06.2026 har Skifteretten i Odense taget\n\nHotelier ApS\nCVR-nr: 43781626\nKongensgade 67\n5000 Odense C\nSagsnr: SKS S33-292/2026\n\nunder konkursbehandling efter begæring modtaget den 15.06.2026.\n\nSelskabet har hjemsted i Odense kommune og har drevet virksomhed fra adressen Kongensgade 67, 5000 Odense C samt fra adresserne Vangled 32, 6720 Fanø, Torvet 7, 6280 Højer og Talind 2, 6560 Sommersted.\nKurator er advokat Thomas Bilstrup Rask, Vesterballevej 25, 7000 Fredericia.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 29.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 29.06.2026.\n\nKurator\nAdvokat Thomas Bilstrup Rask\nVesterballevej 25\n7000 Fredericia\n\nSkifteret\nRetten i Odense",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43781626",
+    "statstidende": "https://www.statstidende.dk/messages/S29062026-119",
+    "aarsrapport": "http://regnskaber.virk.dk/62618734/amNsb3VkczovLzAzLzVhLzNiLzQwLzcyL2NjMjAtNGMyMC1hZDg4LWZlNTc0OWNlYTFkZQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43781626?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Kongensgade+67,+5000+Odense+C",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Thomas+Bilstrup+Rask"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:03+00:00"
+  },
+  {
+   "id": "32569633",
+   "statstidende_id": "S30062026-225",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30062026-225",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-02",
+   "dekretdato": "2026-06-30",
+   "fristdag": "2026-06-30",
+   "anmeldelsesfrist": "2026-07-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1356/26-F"
+   },
+   "kurator": {
+    "navn": "Preben Jakobsen",
+    "firma": null,
+    "adresse": "Axeltorv 2",
+    "postnr": "1609",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Preben+Jakobsen"
+   },
+   "selskab": {
+    "cvr": "32569633",
+    "navn": "MUSIC Tribe Brands DK1 A/S",
+    "binavne": [],
+    "selskabsform": "A/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Sortedam Dossering 29, 5 TH",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/33696523/amNsb3VkczovLzAzLzYwL2NiLzMwLzBjL2JiMDctNGIwZC1iYzdkLTQzOWFmNjEyOWIyMw.pdf",
+    "aktiver": 119164000,
+    "egenkapital": 80417000,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 76925000,
+    "materielle_anlaeg": 77177000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 38747000,
+    "omsaetning": null,
+    "bruttofortjeneste": 54195000,
+    "aarets_resultat": 13724000,
+    "ansatte": 53,
+    "ejendomsvaerdi_bogfoert": 76925000,
+    "ejendomsandel_pct": 64.6,
+    "soliditet_pct": 67.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 38747000
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 76.925.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "MUSIC Tribe Brands DK1 A/S\nVed dekret af 30.06.2026 har Sø- og Handelsrettens skifteret taget\n\nMUSIC Tribe Brands DK1 A/S\nCVR-nr: 32569633\nSortedam Dossering 29, 5 TH.\n2200 København N\nSagsnr: K 1356/26-F\n\nunder konkursbehandling på grundlag af en begæring modtaget den 30.06.2026 fra likvidator.\n\nSom kurator er udpeget advokat Preben Jakobsen, Axeltorv 2, 1609 København V.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 30.06.2026\n\nKurator\nAdvokat Preben Jakobsen\nAxeltorv 2\n1609 København V\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32569633",
+    "statstidende": "https://www.statstidende.dk/messages/S30062026-225",
+    "aarsrapport": "http://regnskaber.virk.dk/33696523/amNsb3VkczovLzAzLzYwL2NiLzMwLzBjL2JiMDctNGIwZC1iYzdkLTQzOWFmNjEyOWIyMw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32569633?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Sortedam+Dossering+29,+5+TH,+2200+København+N",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Preben+Jakobsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:03+00:00"
+  },
+  {
+   "id": "43729225",
+   "statstidende_id": "S02072026-137",
+   "statstidende_url": "https://www.statstidende.dk/messages/S02072026-137",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-04",
+   "dekretdato": "2026-07-02",
+   "fristdag": "2026-05-22",
+   "anmeldelsesfrist": "2026-08-01",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1091/26-D"
+   },
+   "kurator": {
+    "navn": "Anders Ibsen Melballe",
+    "firma": null,
+    "adresse": "Philip Heymans Alle 7",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Ibsen+Melballe"
+   },
+   "selskab": {
+    "cvr": "43729225",
+    "navn": null,
+    "binavne": [],
+    "selskabsform": null,
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Åmosevej 49",
+    "postnr": "4450",
+    "by": "Jyderup",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/52292734/amNsb3VkczovLzAzLzU3LzAxLzBhLzU3LzI2NTktNGZmZS04OGZmLTZkNmYwOGEwNTc1ZQ.pdf",
+    "aktiver": 10706611,
+    "egenkapital": 5303537,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 4088151,
+    "materielle_anlaeg": 5264520,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 62014,
+    "kortfristet_gaeld": 5271127,
+    "omsaetning": null,
+    "bruttofortjeneste": 27224678,
+    "aarets_resultat": 3227063,
+    "ansatte": 51,
+    "ejendomsvaerdi_bogfoert": 4088151,
+    "ejendomsandel_pct": 38.2,
+    "soliditet_pct": 49.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 5333141
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 4.088.151 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Anpartsselskabet af 12. December 2022\nVed dekret af 02.07.2026 har Sø- og Handelsrettens skifteret taget\n\nAnpartsselskabet af 12. December 2022\nCVR-nr: 43729225\nÅmosevej 49\n4450 Jyderup\nSagsnr: K 1091/26-D\n\nunder konkursbehandling på grundlag af en begæring modtaget den 22.05.2026.\n\nSelskabet har også drevet virksomhed fra adressen Islands Byrgge 81A, 5. th., 2300 København S.\n\nSom kurator er udpeget advokat Anders Ibsen Melballe, Philip Heymans Alle 7, 2900 Hellerup.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 02.07.2026\n\nKurator\nAdvokat Anders Ibsen Melballe\nPhilip Heymans Alle 7\n2900 Hellerup\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43729225",
+    "statstidende": "https://www.statstidende.dk/messages/S02072026-137",
+    "aarsrapport": "http://regnskaber.virk.dk/52292734/amNsb3VkczovLzAzLzU3LzAxLzBhLzU3LzI2NTktNGZmZS04OGZmLTZkNmYwOGEwNTc1ZQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43729225?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Åmosevej+49,+4450+Jyderup",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Ibsen+Melballe"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:02+00:00"
+  },
+  {
+   "id": "41727586",
+   "statstidende_id": "S07072026-270",
+   "statstidende_url": "https://www.statstidende.dk/messages/S07072026-270",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-09",
+   "dekretdato": "2026-07-06",
+   "fristdag": "2026-07-01",
+   "anmeldelsesfrist": "2026-08-06",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Randers",
+    "sagsnummer": "SKS 60-5223/2026"
+   },
+   "kurator": {
+    "navn": "Boris K. Frederiksen",
+    "firma": null,
+    "adresse": "Europaplads 8B, st",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
+   },
+   "selskab": {
+    "cvr": "41727586",
+    "navn": null,
+    "binavne": [],
+    "selskabsform": null,
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Skovbrynet 006",
+    "postnr": "8550",
+    "by": "Ryomgård",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/68572714/amNsb3VkczovLzAzL2U3Lzc3LzQxL2JiLzE2NDAtNDdmMC05NzQzLWNmZDdmMmY3ZmRlYQ.pdf",
+    "aktiver": 7104298,
+    "egenkapital": 3065074,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 4220872,
+    "materielle_anlaeg": 4627072,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 674625,
+    "kortfristet_gaeld": 3364599,
+    "omsaetning": null,
+    "bruttofortjeneste": 5222752,
+    "aarets_resultat": -1105584,
+    "ansatte": 17,
+    "ejendomsvaerdi_bogfoert": 4220872,
+    "ejendomsandel_pct": 59.4,
+    "soliditet_pct": 43.1,
+    "ltv_pct": null,
+    "samlet_gaeld": 4039224
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 4.220.872 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Walid Nabih Ibrik\nVed dekret af 06.07.2026 har Retten i Randers taget\n\nWalid Nabih Ibrik\nCVR-nr: 41727586\nSkovbrynet 006\n8550 Ryomgård\nSagsnr: SKS 60-5223/2026\n\nunder konkursbehandling efter begæring modtaget den 01.07.2026.\n\nWalid Nabih Ibrik har drevet virksomheden WNI service ApS, Skovbrynet 6, 8550 Ryomgård, CVR.nr. 41727586, Walid Nabih Ibrik har drevet virksomheden Venecia service ApS, Lystrupvej 32, 8961 Allingåbro, CVR.nr. 45885518.\n\nKurator er advokat Boris K. Frederiksen, Europaplads 8B, st., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 06.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 06.07.2026.\n\nKurator\nAdvokat Boris K. Frederiksen\nEuropaplads 8B, st\n8000 Århus C\n\nSkifteret\nRetten i Randers",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41727586",
+    "statstidende": "https://www.statstidende.dk/messages/S07072026-270",
+    "aarsrapport": "http://regnskaber.virk.dk/68572714/amNsb3VkczovLzAzL2U3Lzc3LzQxL2JiLzE2NDAtNDdmMC05NzQzLWNmZDdmMmY3ZmRlYQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41727586?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skovbrynet+006,+8550+Ryomgård",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Boris+K.+Frederiksen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:01+00:00"
+  },
+  {
+   "id": "10214343",
+   "statstidende_id": "S08072026-321",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08072026-321",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-10",
+   "dekretdato": "2026-07-08",
+   "fristdag": "2026-07-06",
+   "anmeldelsesfrist": "2026-08-07",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Randers",
+    "sagsnummer": "SKS 60-5236/2026"
+   },
+   "kurator": {
+    "navn": "Jørgen Lindhardt Steffensen",
+    "firma": null,
+    "adresse": "Sønderport 2",
+    "postnr": "8500",
+    "by": "Grenaa",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jørgen+Lindhardt+Steffensen"
+   },
+   "selskab": {
+    "cvr": "10214343",
+    "navn": "HASLUND BYGGEFIRMA A/S",
+    "binavne": [],
+    "selskabsform": "A/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Lerbakken 4",
+    "postnr": "8940",
+    "by": "Randers SV",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/34341201/amNsb3VkczovLzAzLzRjL2RmLzA0L2JiLzA1NmYtNDYyYy1hMTBmLTExNDY3MjQwN2Y5Nw.pdf",
+    "aktiver": 1401238,
+    "egenkapital": -1992900,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1059963,
+    "materielle_anlaeg": 1059963,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 3394138,
+    "omsaetning": null,
+    "bruttofortjeneste": 15520,
+    "aarets_resultat": -58933,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 1059963,
+    "ejendomsandel_pct": 75.6,
+    "soliditet_pct": -142.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 3394138
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.059.963 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "HASLUND BYGGEFIRMA A/S\nVed dekret af 08.07.2026 har Retten i Randers taget\n\nHASLUND BYGGEFIRMA A/S\nCVR-nr: 10214343\nLerbakken 4\n8940 Randers SV\nSagsnr: SKS 60-5236/2026\n\nunder konkursbehandling efter begæring modtaget den 06.07.2026.\n\nKurator er advokat Jørgen Lindhardt Steffensen, Sønderport 2, 8500 Grenaa.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 08.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 08.07.2026.\n\nKurator\nAdvokat Jørgen Lindhardt Steffensen\nSønderport 2\n8500 Grenaa\n\nSkifteret\nRetten i Randers",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/10214343",
+    "statstidende": "https://www.statstidende.dk/messages/S08072026-321",
+    "aarsrapport": "http://regnskaber.virk.dk/34341201/amNsb3VkczovLzAzLzRjL2RmLzA0L2JiLzA1NmYtNDYyYy1hMTBmLTExNDY3MjQwN2Y5Nw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/10214343?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Lerbakken+4,+8940+Randers+SV",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jørgen+Lindhardt+Steffensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:01+00:00"
+  },
+  {
+   "id": "42347841",
+   "statstidende_id": "S09072026-231",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09072026-231",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-11",
+   "dekretdato": "2026-07-09",
+   "fristdag": "2026-07-03",
+   "anmeldelsesfrist": "2026-08-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Hjørring",
+    "sagsnummer": "SKS SKIF-223/2026"
+   },
+   "kurator": {
+    "navn": "Jens Henrik Bech",
+    "firma": null,
+    "adresse": "Amtmandstoften 3",
+    "postnr": "9800",
+    "by": "Hjørring",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jens+Henrik+Bech"
+   },
+   "selskab": {
+    "cvr": "42347841",
+    "navn": "HaPeRo ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Bredgade 52",
+    "postnr": "9830",
+    "by": "Tårs",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/14874324/amNsb3VkczovLzAzL2UzLzkyLzBhL2U1LzVlNTEtNDdiZS1iN2Q1LTk1ZTE4Y2E4OWRmNg.pdf",
+    "aktiver": 2721052,
+    "egenkapital": 256769,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 2220096,
+    "materielle_anlaeg": 2220096,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 1780654,
+    "kortfristet_gaeld": 646629,
+    "omsaetning": null,
+    "bruttofortjeneste": 288625,
+    "aarets_resultat": 107392,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 2220096,
+    "ejendomsandel_pct": 81.6,
+    "soliditet_pct": 9.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 2427283
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 2.220.096 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "HaPeRo ApS\nVed dekret af 09.07.2026 har Retten i Hjørring taget\n\nHaPeRo ApS\nCVR-nr: 42347841\nBredgade 52\n9830 Tårs\nSagsnr: SKS SKIF-223/2026\n\nunder konkursbehandling efter begæring modtaget den 03.07.2026.\n\nKurator er advokat Jens Henrik Bech, Amtmandstoften 3, 9800 Hjørring.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Hjørring, den 09.07.2026.\n\nKurator\nAdvokat Jens Henrik Bech\nAmtmandstoften 3\n9800 Hjørring\n\nSkifteret\nRetten i Hjørring",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42347841",
+    "statstidende": "https://www.statstidende.dk/messages/S09072026-231",
+    "aarsrapport": "http://regnskaber.virk.dk/14874324/amNsb3VkczovLzAzL2UzLzkyLzBhL2U1LzVlNTEtNDdiZS1iN2Q1LTk1ZTE4Y2E4OWRmNg.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42347841?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Bredgade+52,+9830+Tårs",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jens+Henrik+Bech"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:00+00:00"
+  },
+  {
+   "id": "84895210",
+   "statstidende_id": "S10072026-201",
+   "statstidende_url": "https://www.statstidende.dk/messages/S10072026-201",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-14",
+   "dekretdato": "2026-07-10",
+   "fristdag": "2026-07-08",
+   "anmeldelsesfrist": "2026-08-11",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Sønderborg",
+    "sagsnummer": "SKS S01-202/2026"
+   },
+   "kurator": {
+    "navn": "Per Buttenschøn",
+    "firma": null,
+    "adresse": "Hack Kampmanns Plads 2, 3",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "selskab": {
+    "cvr": "84895210",
+    "navn": "HANDELS- OG FINANSIERINGSSELSKABETAF 1.10.1989 A/S",
+    "binavne": [],
+    "selskabsform": "A/S",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Hærvejen 8",
+    "postnr": "6230",
+    "by": "Rødekro",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/01259848/amNsb3VkczovLzAzLzdjLzkzL2QxLzQ5LzgyODYtNDlmMC05MTY4LWM2MzQxYWQwYTc3ZQ.pdf",
+    "aktiver": 6498268,
+    "egenkapital": 6121728,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 522384,
+    "materielle_anlaeg": 522384,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 376540,
+    "omsaetning": null,
+    "bruttofortjeneste": -76357,
+    "aarets_resultat": -4224361,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 522384,
+    "ejendomsandel_pct": 8.0,
+    "soliditet_pct": 94.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 376540
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 522.384 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "HANDELS- OG FINANSIERINGSSELSKABETAF 1.10.1989 A/S\nVed dekret af 10.07.2026 har Retten i Sønderborg taget\n\nHANDELS- OG FINANSIERINGSSELSKABETAF 1.10.1989 A/S\nCVR-nr: 84895210\nHærvejen 8\n6230 Rødekro\nSagsnr: SKS S01-202/2026\n\nunder konkursbehandling efter begæring modtaget den 08.07.2026.\n\nKurator er advokat Per Buttenschøn, Hack Kampmanns Plads 2, 3., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 10.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Sønderborg, den 10.07.2026.\n\nKurator\nAdvokat Per Buttenschøn\nHack Kampmanns Plads 2, 3\n8000 Århus C\n\nSkifteret\nRetten i Sønderborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/84895210",
+    "statstidende": "https://www.statstidende.dk/messages/S10072026-201",
+    "aarsrapport": "http://regnskaber.virk.dk/01259848/amNsb3VkczovLzAzLzdjLzkzL2QxLzQ5LzgyODYtNDlmMC05MTY4LWM2MzQxYWQwYTc3ZQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/84895210?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Hærvejen+8,+6230+Rødekro",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:00+00:00"
+  },
+  {
+   "id": "34895562",
+   "statstidende_id": "S13072026-68",
+   "statstidende_url": "https://www.statstidende.dk/messages/S13072026-68",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-15",
+   "dekretdato": "2026-07-13",
+   "fristdag": "2026-07-10",
+   "anmeldelsesfrist": "2026-08-12",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1444/26-G"
+   },
+   "kurator": {
+    "navn": "Henrik Selchau Poulsen",
+    "firma": null,
+    "adresse": "Nørregade 21",
+    "postnr": "1165",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "selskab": {
+    "cvr": "34895562",
+    "navn": "BEDRE RÅVARER AF DECEMBER 2012 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Pile Alle 14B",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/26559843/amNsb3VkczovLzAzLzEyLzQyLzRjL2IwLzk2OTAtNDk3MS1iYzI1LTg2ZjIzYWEwMTEwMA.xhtml",
+    "aktiver": 291,
+    "egenkapital": -317,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 214,
+    "materielle_anlaeg": 255,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 608,
+    "omsaetning": null,
+    "bruttofortjeneste": -51,
+    "aarets_resultat": -563,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 214,
+    "ejendomsandel_pct": 73.5,
+    "soliditet_pct": -108.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 608
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 214 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "BEDRE RÅVARER AF DECEMBER 2012 ApS\nVed dekret af 13.07.2026 har Sø- og Handelsrettens skifteret taget\n\nBEDRE RÅVARER AF DECEMBER 2012 ApS\nCVR-nr: 34895562\nPile Alle 14B\n2000 Frederiksberg\nSagsnr: K 1444/26-G\n\nunder konkursbehandling på grundlag af en begæring modtaget den 10.07.2026 fra likvidator.\n\nSom kurator er udpeget advokat Henrik Selchau Poulsen, Nørregade 21, 1165 København K.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 13.07.2026\n\nKurator\nAdvokat Henrik Selchau Poulsen\nNørregade 21\n1165 København K\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/34895562",
+    "statstidende": "https://www.statstidende.dk/messages/S13072026-68",
+    "aarsrapport": "http://regnskaber.virk.dk/26559843/amNsb3VkczovLzAzLzEyLzQyLzRjL2IwLzk2OTAtNDk3MS1iYzI1LTg2ZjIzYWEwMTEwMA.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/34895562?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Pile+Alle+14B,+2000+Frederiksberg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Selchau+Poulsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:59+00:00"
+  },
+  {
+   "id": "37700789",
+   "statstidende_id": "S20072026-108",
+   "statstidende_url": "https://www.statstidende.dk/messages/S20072026-108",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-07-22",
+   "dekretdato": "2026-07-20",
+   "fristdag": "2026-07-01",
+   "anmeldelsesfrist": "2026-08-19",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Næstved",
+    "sagsnummer": "SKS INS-319/2026"
+   },
+   "kurator": {
+    "navn": "Per Astrup Madsen",
+    "firma": null,
+    "adresse": "Oslo Plads 2",
+    "postnr": "2100",
+    "by": "København Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Astrup+Madsen"
+   },
+   "selskab": {
+    "cvr": "37700789",
+    "navn": "ingeniørfirmaet BBNIELSEN ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Halkevadvej 15",
+    "postnr": "4200",
+    "by": "Slagelse",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/98700773/amNsb3VkczovLzAzLzMzLzM0L2FmLzExL2ZkZjQtNDA0My1hOWRlLWUwYjU3YjA4NTQ4Yg.xhtml",
+    "aktiver": 815,
+    "egenkapital": -683,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 800,
+    "materielle_anlaeg": 800,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 799,
+    "kortfristet_gaeld": 700,
+    "omsaetning": null,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": 0,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 800,
+    "ejendomsandel_pct": 98.2,
+    "soliditet_pct": -83.8,
+    "ltv_pct": null,
+    "samlet_gaeld": 1499
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 800 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "ingeniørfirmaet BBNIELSEN ApS\nVed dekret af 20.07.2026 har Retten i Næstved taget\n\ningeniørfirmaet BBNIELSEN ApS\nCVR-nr: 37700789\nHalkevadvej 15\n4200 Slagelse\nSagsnr: SKS INS-319/2026\n\nunder konkursbehandling efter begæring modtaget den 01.07.2026.\n\nSelskabet har hjemsted i Slagelse kommune og har drevet virksomhed fra adressen Halkevadvej 15, 4200 Slagelse.\n\nKurator er advokat Per Astrup Madsen, Oslo Plads 2, 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 20.07.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Næstved, den 20.07.2026.\n\nKurator\nAdvokat Per Astrup Madsen\nOslo Plads 2\n2100 København Ø\n\nSkifteret\nRetten i Næstved",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/37700789",
+    "statstidende": "https://www.statstidende.dk/messages/S20072026-108",
+    "aarsrapport": "http://regnskaber.virk.dk/98700773/amNsb3VkczovLzAzLzMzLzM0L2FmLzExL2ZkZjQtNDA0My1hOWRlLWUwYjU3YjA4NTQ4Yg.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/37700789?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Halkevadvej+15,+4200+Slagelse",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Astrup+Madsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:59+00:00"
+  },
+  {
+   "id": "43258842",
+   "statstidende_id": "S11082026-55",
+   "statstidende_url": "https://www.statstidende.dk/messages/S11082026-55",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-13",
+   "dekretdato": "2026-08-06",
+   "fristdag": "2026-08-05",
+   "anmeldelsesfrist": "2026-09-10",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Hjørring",
+    "sagsnummer": "SKS SKIF-248/2026"
+   },
+   "kurator": {
+    "navn": "Mikkel Anker Pedersen",
+    "firma": null,
+    "adresse": "Tankedraget 7, 4",
+    "postnr": "9000",
+    "by": "Aalborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Mikkel+Anker+Pedersen"
+   },
+   "selskab": {
+    "cvr": "43258842",
+    "navn": "RVZ Husly ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Udmarksvej 61",
+    "postnr": "9690",
+    "by": "Fjerritslev",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2023-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/24885234/amNsb3VkczovLzAzLzViL2RlLzEzLzlhLzgyNmUtNDc2Ny1iYTNkLWQxMjg4MDFlY2ZkYw.xml",
+    "aktiver": 90000,
+    "egenkapital": 90000,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 90000,
+    "materielle_anlaeg": 90000,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": 0,
+    "omsaetning": 0,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": 0,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 90000,
+    "ejendomsandel_pct": 100.0,
+    "soliditet_pct": 100.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 0
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 90.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "RVZ Husly ApS under tvangsopløsning\nVed dekret af 06.08.2026 har Retten i Hjørring taget\n\nRVZ Husly ApS under tvangsopløsning\nCVR-nr: 43258842\nUdmarksvej 61\n9690 Fjerritslev\nSagsnr: SKS SKIF-248/2026\n\nunder konkursbehandling efter begæring modtaget den 05.08.2026.\n\nKurator er advokat Mikkel Anker Pedersen, Tankedraget 7, 4., 9000 Aalborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 06.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Hjørring, den 06.08.2026.\n\nKurator\nAdvokat Mikkel Anker Pedersen\nTankedraget 7, 4\n9000 Aalborg\n\nSkifteret\nRetten i Hjørring",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43258842",
+    "statstidende": "https://www.statstidende.dk/messages/S11082026-55",
+    "aarsrapport": "http://regnskaber.virk.dk/24885234/amNsb3VkczovLzAzLzViL2RlLzEzLzlhLzgyNmUtNDc2Ny1iYTNkLWQxMjg4MDFlY2ZkYw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43258842?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Udmarksvej+61,+9690+Fjerritslev",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Mikkel+Anker+Pedersen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:58+00:00"
+  },
+  {
+   "id": "14412107",
+   "statstidende_id": "S13082026-286",
+   "statstidende_url": "https://www.statstidende.dk/messages/S13082026-286",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-15",
+   "dekretdato": "2026-08-13",
+   "fristdag": "2026-08-05",
+   "anmeldelsesfrist": "2026-09-12",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Skifteretten i Odense",
+    "sagsnummer": "SKS S34-349/2026"
+   },
+   "kurator": {
+    "navn": "Preben Jakobsen",
+    "firma": null,
+    "adresse": "Axeltorv 2",
+    "postnr": "1609",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Preben+Jakobsen"
+   },
+   "selskab": {
+    "cvr": "14412107",
+    "navn": "CYCLE SERVICE NORDIC ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Emil Neckelmanns Vej 6",
+    "postnr": "5220",
+    "by": "Odense SØ",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/70121441/amNsb3VkczovLzAzL2IyLzNmLzg1L2E0Lzc4MGUtNDg2Yi05YjBlLTY3OTUwOTRjZGI5Mw.xhtml",
+    "aktiver": 306377786,
+    "egenkapital": -95533367,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 15291492,
+    "materielle_anlaeg": 17192650,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 14595132,
+    "kortfristet_gaeld": 385797867,
+    "omsaetning": null,
+    "bruttofortjeneste": -32289998,
+    "aarets_resultat": -82222811,
+    "ansatte": 64,
+    "ejendomsvaerdi_bogfoert": 15291492,
+    "ejendomsandel_pct": 5.0,
+    "soliditet_pct": -31.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 400392999
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 15.291.492 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "CYCLE SERVICE NORDIC ApS\nVed dekret af 13.08.2026 har Skifteretten i Odense taget\n\nCYCLE SERVICE NORDIC ApS\nCVR-nr: 14412107\nEmil Neckelmanns Vej 6\n5220 Odense SØ\nSagsnr: SKS S34-349/2026\n\nunder konkursbehandling efter begæring modtaget den 05.08.2026.\n\nKurator er advokat Preben Jakobsen, Axeltorv 2, 1609 København V.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 13.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 13.08.2026.\n\nKurator\nAdvokat Preben Jakobsen\nAxeltorv 2\n1609 København V\n\nSkifteret\nRetten i Odense",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/14412107",
+    "statstidende": "https://www.statstidende.dk/messages/S13082026-286",
+    "aarsrapport": "http://regnskaber.virk.dk/70121441/amNsb3VkczovLzAzL2IyLzNmLzg1L2E0Lzc4MGUtNDg2Yi05YjBlLTY3OTUwOTRjZGI5Mw.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/14412107?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Emil+Neckelmanns+Vej+6,+5220+Odense+SØ",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Preben+Jakobsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:58+00:00"
+  },
+  {
+   "id": "39775298",
+   "statstidende_id": "S20082026-205",
+   "statstidende_url": "https://www.statstidende.dk/messages/S20082026-205",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-22",
+   "dekretdato": "2026-08-20",
+   "fristdag": "2026-08-19",
+   "anmeldelsesfrist": "2026-09-19",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1640/26-G"
+   },
+   "kurator": {
+    "navn": "Michala Roepstorff",
+    "firma": null,
+    "adresse": "Amerika Plads 37",
+    "postnr": "2100",
+    "by": "København Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michala+Roepstorff"
+   },
+   "selskab": {
+    "cvr": "39775298",
+    "navn": "Schades Cafe ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Gyldenrisvej 22, 2 tv",
+    "postnr": "2300",
+    "by": "København S",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/89257793/amNsb3VkczovLzAzLzEwLzQ0L2E4Lzc0L2ExMDUtNDNhZC1iMzQzLWVjYjQ1OGY4ZmExZA.pdf",
+    "aktiver": 2763853,
+    "egenkapital": -2555077,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1907552,
+    "materielle_anlaeg": 2090601,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 5318930,
+    "omsaetning": null,
+    "bruttofortjeneste": 2819768,
+    "aarets_resultat": -1400845,
+    "ansatte": 12,
+    "ejendomsvaerdi_bogfoert": 1907552,
+    "ejendomsandel_pct": 69.0,
+    "soliditet_pct": -92.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 5318930
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.907.552 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Schades Cafe ApS\nVed dekret af 20.08.2026 har Sø- og Handelsrettens skifteret taget\n\nSchades Cafe ApS\nCVR-nr: 39775298\nGyldenrisvej 22, 2 tv\n2300 København S\nSagsnr: K 1640/26-G\n\nunder konkursbehandling på grundlag af en begæring modtaget den 19.08.2026 fra likvidator.\n\nSom kurator er udpeget advokat Michala Roepstorff, Amerika Plads 37, 2100 København Ø.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 20.08.2026\n\nKurator\nAdvokat Michala Roepstorff\nAmerika Plads 37\n2100 København Ø\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39775298",
+    "statstidende": "https://www.statstidende.dk/messages/S20082026-205",
+    "aarsrapport": "http://regnskaber.virk.dk/89257793/amNsb3VkczovLzAzLzEwLzQ0L2E4Lzc0L2ExMDUtNDNhZC1iMzQzLWVjYjQ1OGY4ZmExZA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39775298?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Gyldenrisvej+22,+2+tv,+2300+København+S",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michala+Roepstorff"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:13:57+00:00"
+  },
+  {
+   "id": "40465820",
+   "statstidende_id": "S26062026-106",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26062026-106",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-30",
+   "dekretdato": "2026-06-23",
+   "fristdag": "2026-06-22",
+   "anmeldelsesfrist": "2026-07-28",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-306/2026"
+   },
+   "kurator": {
+    "navn": "Finn Bødstrup",
+    "firma": null,
+    "adresse": "K. Christensens Vej 2E",
+    "postnr": "9200",
+    "by": "Aalborg SV",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Bødstrup"
+   },
+   "selskab": {
+    "cvr": "40465820",
+    "navn": "MUNKHOLT HOLDING ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Griegsvej 201",
+    "postnr": "9200",
+    "by": "Aalborg SV",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2023-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/02856404/amNsb3VkczovLzAzLzYzLzE2LzczLzk2Lzc3MGEtNDQ4Zi05Y2NkLTdhMTNmY2QyNTVlOQ.xhtml",
+    "aktiver": 230,
+    "egenkapital": 22,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 65,
+    "langfristet_gaeld": 95,
+    "kortfristet_gaeld": 112,
+    "omsaetning": 0,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": -28,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": 9.6,
+    "ltv_pct": null,
+    "samlet_gaeld": 207
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 65 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "MUNKHOLT HOLDING ApS under tvangsopløsning\nVed dekret af 23.06.2026 har Retten i Aalborg taget\n\nMUNKHOLT HOLDING ApS under tvangsopløsning\nCVR-nr: 40465820\nGriegsvej 201\n9200 Aalborg SV\nSagsnr: SKS 31-306/2026\n\nunder konkursbehandling efter begæring modtaget den 22.06.2026.\n\nKurator er advokat Finn Bødstrup, K. Christensens Vej 2E, 9200 Aalborg SV.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nForudgående anmodning om opløsning af selskabet er dateret 19.08.2026.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 23.06.2026.\n\nKurator\nAdvokat Finn Bødstrup\nK. Christensens Vej 2E\n9200 Aalborg SV\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40465820",
+    "statstidende": "https://www.statstidende.dk/messages/S26062026-106",
+    "aarsrapport": "http://regnskaber.virk.dk/02856404/amNsb3VkczovLzAzLzYzLzE2LzczLzk2Lzc3MGEtNDQ4Zi05Y2NkLTdhMTNmY2QyNTVlOQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40465820?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Griegsvej+201,+9200+Aalborg+SV",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Bødstrup"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:04+00:00"
+  },
+  {
+   "id": "40313761",
+   "statstidende_id": "S11062026-293",
+   "statstidende_url": "https://www.statstidende.dk/messages/S11062026-293",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-13",
+   "dekretdato": "2026-06-11",
+   "fristdag": "2026-06-08",
+   "anmeldelsesfrist": "2026-07-11",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Svendborg",
+    "sagsnummer": "SKS 4-110/2026"
+   },
+   "kurator": {
+    "navn": "Stefan Simmelsgaard Hansen",
+    "firma": null,
+    "adresse": "Dyrehavevej 101",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Simmelsgaard+Hansen"
+   },
+   "selskab": {
+    "cvr": "40313761",
+    "navn": "BC 2026 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Rudmevej 101",
+    "postnr": "5750",
+    "by": "Ringe",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/16731304/amNsb3VkczovLzAzLzJiLzBmL2M1L2U1LzFiMjEtNDFlMi1iYjYyLTc5MjgxMWQ5YjExMQ.pdf",
+    "aktiver": 271745,
+    "egenkapital": -1224862,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 788131,
+    "langfristet_gaeld": 788131,
+    "kortfristet_gaeld": 708476,
+    "omsaetning": null,
+    "bruttofortjeneste": 79001,
+    "aarets_resultat": -949835,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -450.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 1496607
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 788.131 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 25,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "BC 2026 ApS\nVed dekret af 11.06.2026 har Retten i Svendborg taget\n\nBC 2026 ApS\nCVR-nr: 40313761\nRudmevej 101\n5750 Ringe\nSagsnr: SKS 4-110/2026\n\nunder konkursbehandling efter begæring modtaget den 08.06.2026.\n\nKurator er advokat Stefan Simmelsgaard Hansen, Dyrehavevej 101, 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 11.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Svendborg, den 11.06.2026.\n\nKurator\nAdvokat Stefan Simmelsgaard Hansen\nDyrehavevej 101\n6000 Kolding\n\nSkifteret\nRetten i Svendborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40313761",
+    "statstidende": "https://www.statstidende.dk/messages/S11062026-293",
+    "aarsrapport": "http://regnskaber.virk.dk/16731304/amNsb3VkczovLzAzLzJiLzBmL2M1L2U1LzFiMjEtNDFlMi1iYjYyLTc5MjgxMWQ5YjExMQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40313761?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Rudmevej+101,+5750+Ringe",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Simmelsgaard+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:06+00:00"
+  },
+  {
+   "id": "42984523",
+   "statstidende_id": "S16062026-202",
+   "statstidende_url": "https://www.statstidende.dk/messages/S16062026-202",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-06-18",
+   "dekretdato": "2026-06-16",
+   "fristdag": "2026-06-09",
+   "anmeldelsesfrist": "2026-07-16",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-276/2026"
+   },
+   "kurator": {
+    "navn": "Tim Rosenkrantz Buur",
+    "firma": null,
+    "adresse": "Vingårdsgade 22",
+    "postnr": "9000",
+    "by": "Aalborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Tim+Rosenkrantz+Buur"
+   },
+   "selskab": {
+    "cvr": "42984523",
+    "navn": "KK EL-teknik ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Staunvej 71",
+    "postnr": "9240",
+    "by": "Nibe",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/32548924/amNsb3VkczovLzAzL2MwL2QxLzJiL2VkLzM5ZjAtNGY5Ny1iODQ2LTRhYzcyMmMyMTIzOA.pdf",
+    "aktiver": 6600434,
+    "egenkapital": 695032,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 975302,
+    "realkreditgaeld": 1772959,
+    "langfristet_gaeld": 1772959,
+    "kortfristet_gaeld": 4084554,
+    "omsaetning": null,
+    "bruttofortjeneste": 3816333,
+    "aarets_resultat": 81899,
+    "ansatte": 7,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": 10.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 5857513
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.772.959 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 25,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "KK EL-teknik ApS\nVed dekret af 16.06.2026 har Retten i Aalborg taget\n\nKK EL-teknik ApS\nCVR-nr: 42984523\nStaunvej 71\n9240 Nibe\nSagsnr: SKS 31-276/2026\n\nunder konkursbehandling efter begæring modtaget den 09.06.2026.\n\nSelskabet har hjemsted i Aalborg kommune og har drevet virksomhed fra adressen Staunvej 71, 9240 Nibe.\n\nKurator er advokat Tim Rosenkrantz Buur, Vingårdsgade 22, 9000 Aalborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 16.06.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 16.06.2026.\n\nKurator\nAdvokat Tim Rosenkrantz Buur\nVingårdsgade 22\n9000 Aalborg\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42984523",
+    "statstidende": "https://www.statstidende.dk/messages/S16062026-202",
+    "aarsrapport": "http://regnskaber.virk.dk/32548924/amNsb3VkczovLzAzL2MwL2QxLzJiL2VkLzM5ZjAtNGY5Ny1iODQ2LTRhYzcyMmMyMTIzOA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42984523?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Staunvej+71,+9240+Nibe",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Tim+Rosenkrantz+Buur"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:14:05+00:00"
+  },
+  {
+   "id": "45690725",
+   "statstidende_id": "S26082026-200",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26082026-200",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-28",
+   "dekretdato": "2026-08-26",
+   "fristdag": "2026-07-13",
+   "anmeldelsesfrist": "2026-09-25",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1445/26-K"
+   },
+   "kurator": {
+    "navn": "Agnete Brus Krusell",
+    "firma": null,
+    "adresse": "Søtorvet 5, 3",
+    "postnr": "1371",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Agnete+Brus+Krusell"
+   },
+   "selskab": {
+    "cvr": "45690725",
+    "navn": "Take and Eat ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": null,
+    "branchetekst": null,
+    "bibrancher": [],
+    "adresse": "Nørrebrogade 30",
+    "postnr": "2200",
+    "by": "København N",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": null,
+    "status": "UNDER KONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": null,
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/52709654/amNsb3VkczovLzAzLzAyLzk1LzBhL2ZmL2ViZGQtNGUyMi05MzkxLThkYjM5MWRkNjM2MQ.xhtml",
+    "aktiver": 2174459,
+    "egenkapital": -309,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 442,
+    "realkreditgaeld": 1757709,
+    "langfristet_gaeld": 1757709,
+    "kortfristet_gaeld": 726,
+    "omsaetning": null,
+    "bruttofortjeneste": 237,
+    "aarets_resultat": -329,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -0.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 1758435
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.757.709 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 25,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "Take and Eat ApS\nVed dekret af 26.08.2026 har Sø- og Handelsrettens skifteret taget\n\nTake and Eat ApS\nCVR-nr: 45690725\nNørrebrogade 30\n2200 København N\nSagsnr: K 1445/26-K\n\nunder konkursbehandling på grundlag af en begæring modtaget den 13.07.2026.\n\nSom kurator er udpeget advokat Agnete Brus Krusell, Søtorvet 5, 3., 1371 København K.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 26.08.2026\n\nKurator\nAdvokat Agnete Brus Krusell\nSøtorvet 5, 3\n1371 København K\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/45690725",
+    "statstidende": "https://www.statstidende.dk/messages/S26082026-200",
+    "aarsrapport": "http://regnskaber.virk.dk/52709654/amNsb3VkczovLzAzLzAyLzk1LzBhL2ZmL2ViZGQtNGUyMi05MzkxLThkYjM5MWRkNjM2MQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/45690725?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nørrebrogade+30,+2200+København+N",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Agnete+Brus+Krusell"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl"
+   ],
+   "noter": [
+    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
+   ],
+   "sidst_opdateret": "2026-09-04T08:24:54+00:00"
+  }
+ ]
+}
