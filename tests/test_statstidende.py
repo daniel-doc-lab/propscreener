@@ -7,12 +7,12 @@ from propscreener.sources.statstidende import (
     _extract_list,
     auction_debtor_keys,
     message_to_case,
+    normalize_company_name,
     normalize_message,
     parse_date,
     parse_dekret_text,
     parse_kurator,
     parse_tvangsauktion,
-    normalize_company_name,
     web_message_to_raw,
 )
 
