@@ -295,6 +295,7 @@
       <div>Periode <strong id="c-period">–</strong></div>
       <div>Kilder <strong id="c-sources">–</strong></div>
       <div id="c-stamp" hidden><span class="stamp">Demodata · fiktive selskaber</span></div>
+      <div id="c-warn" class="faint" hidden style="max-width:300px;margin-top:6px;font-size:.74rem"></div>
     </div>
   </div>
   <div class="ledger" id="ledger"></div>
@@ -437,6 +438,9 @@
     document.getElementById('c-period').textContent = dates.length ? `${fmtDate(dates[0])} – ${fmtDate(dates[dates.length - 1])}` : '–';
     document.getElementById('c-sources').textContent = (m.kilder_aktive || []).join(', ') || '–';
     document.getElementById('c-stamp').hidden = !m.demo;
+    const fejl = (m.stats && m.stats.fejl) || [];
+    const warn = document.getElementById('c-warn');
+    if (fejl.length) { warn.hidden = false; warn.textContent = 'Begrænsninger i denne kørsel: ' + fejl.map(f => f.replace(/:.*$/, '')).join('; ') + '. Boer uden CVR-branche scores kun på regnskab og navn.'; }
     if (m.demo) document.title = 'Konkursbo-registret';
     const all = DATA.cases;
     const hoej = all.filter(c => c.konfidens === 'høj').length;
