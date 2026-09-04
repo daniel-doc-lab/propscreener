@@ -140,6 +140,31 @@ jobs:
             -o body.txt -w "%{http_code} %{content_type}\n" \
             -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' https://mcp.apicvr.dk/mcp || true
           head -c 6000 body.txt; echo
+          echo "== MCP tools/call lookup_company (Erhvervsstyrelsen) =="
+          curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" ${SID:+-H "Mcp-Session-Id: $SID"} \
+            -o body.txt -w "%{http_code} %{content_type}\n" \
+            -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"lookup_company","arguments":{"cvrNumber":10150817}}}' https://mcp.apicvr.dk/mcp || true
+          head -c 3000 body.txt; echo
+          echo "== apicvr.dk REST openapi (stier) =="
+          curl -sS -m 20 -A "$UA" https://apicvr.dk/openapi.json -o openapi_apicvr.json || true
+          python3 - <<'EOF'
+          import json
+          try:
+              s = json.load(open("openapi_apicvr.json"))
+          except Exception as e:
+              print("kunne ikke læse openapi:", e); raise SystemExit
+          print(s.get("info", {}).get("title"), s.get("info", {}).get("version"))
+          print("servers:", s.get("servers"))
+          for p, ops in s.get("paths", {}).items():
+              for m, op in ops.items():
+                  params = [f"{x.get('name')}({x.get('in')})" for x in op.get("parameters", [])]
+                  print(m.upper(), p, params, (op.get("summary") or "")[:80])
+          EOF
+          echo "== apicvr.dk REST eksempel =="
+          for u in "https://apicvr.dk/api/cvr/10150817" "https://apicvr.dk/api/company/10150817" "https://apicvr.dk/company/10150817" "https://apicvr.dk/api/v1/cvr/10150817" "https://apicvr.dk/api?vat=10150817"; do
+            printf "%s -> " "$u"; curl -sS -m 20 -A "$UA" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
+            head -c 600 body.txt | tr '\n' ' '; echo
+          done
 
       - name: Datafordeler – test API-Key (kun hvis secret er sat; nøglen udskrives ikke)
         env:

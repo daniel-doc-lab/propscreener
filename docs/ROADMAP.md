@@ -4,19 +4,21 @@
 
 * Statstidendes åbne JSON-API er verificeret og i drift (971 dekreter på 90 dage).
 * Regnskabsdata (XBRL) virker for ca. 76 % af selskaberne.
-* cvrapi.dk giver kun få opslag pr. dag fra GitHub-runnere (delt IP-kvote). Branchekode mangler
-  derfor på de fleste boer indtil der sættes CVR system-til-system-adgang op.
-* Ejerfortegnelsen afventer Datafordeler-login (secrets).
+* CVR: apicvr.dk (gratis, open source, REST + MCP) er primær kilde og dækker 99,8 % af boerne;
+  cvrapi.dk er sekundær (lille daglig kvote pr. IP på GitHub-runnere).
+* Ejerfortegnelsen afventer Datafordeler API-nøgle (secret `DATAFORDELER_API_KEY`).
 * Tvangsauktioner matches på "Skødehaver ifølge tingbogsattest"; 2 match i første kørsel.
+* Dashboard publiceres på GitHub Pages fra `main` efter hver daglig kørsel.
 
 ## Næste skridt
 
-1. **Merge til `main`** så GitHub Pages-deploy virker (miljøet `github-pages` tillader kun `main`).
-2. **Datafordeler-secrets** (`DATAFORDELER_USER/PASSWORD`) → bekræftet ejerskab med BFE-numre.
-   Optag EJF- og VUR-svar som fixtures og stram `_iter_ejerskaber`/`valuation`.
-3. **CVR-adgang**: ansøg om system-til-system adgang hos Erhvervsstyrelsen (gratis) og sæt
-   `CVR_ES_USER/PASSWORD` – fjerner afhængigheden af cvrapi.dk's kvote.
-4. **Kalibrering**: gennemgå 20 boer manuelt mod tingbogen og justér pointene i `detect.py`.
+1. **Datafordeler API-nøgle** som secret `DATAFORDELER_API_KEY` → kør `discover.yml` (verificerer
+   parameternavn) → bekræftet ejerskab med BFE-numre og offentlig vurdering. Optag EJF- og VUR-svar
+   som fixtures og stram `_iter_ejerskaber`/`valuation`.
+2. **Kalibrering**: gennemgå 20 boer manuelt mod tingbogen og justér pointene i `detect.py`.
+3. **Reelle ejere / ledelse**: apicvr.dk leverer ikke deltagere; kræver CVR system-til-system
+   (`CVR_ES_USER/PASSWORD`, gratis aftale hos Erhvervsstyrelsen) – giver også koncernstruktur.
+4. **Ændringsfeed**: e-mail/Slack med nye boer siden i går.
 
 ## Funktioner
 

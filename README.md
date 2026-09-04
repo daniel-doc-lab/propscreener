@@ -17,7 +17,7 @@ Statstidende ──► CVR ──► Årsrapport (XBRL) ──► Ejerfortegnels
 | **Dashboard** | `propscreener demo` bygger `site/index.html` (offline demodata) – i produktion publiceres det dagligt til GitHub Pages af `scrape.yml` |
 | **Data** | `data/cases.json` (kanonisk), `data/cases.csv` (regneark, `;`-separeret) |
 | **Dokumentation** | [docs/](docs/) – arkitektur, datakilder, scoring, investorguide, opsætning, datamodel, jura |
-| **Status** | Kører dagligt i GitHub Actions mod Statstidendes åbne JSON-API (verificeret 4. sep. 2026). 24 offline tests. Ejerfortegnelsen aktiveres med en gratis Datafordeler-bruger – se [docs/SETUP.md](docs/SETUP.md) |
+| **Status** | I drift: daglig kørsel i GitHub Actions mod Statstidendes åbne JSON-API, CVR via apicvr.dk, regnskaber via Erhvervsstyrelsen. Live: https://daniel-doc-lab.github.io/propscreener/ . 30 offline tests. Ejerfortegnelsen aktiveres med en Datafordeler API-nøgle – se [docs/SETUP.md](docs/SETUP.md) |
 
 ## Hurtig start
 
@@ -52,7 +52,7 @@ pytest -q
 | Kilde | Bruges til | Adgang |
 |---|---|---|
 | [Statstidende](https://www.statstidende.dk) | Konkursdekreter, kurator, skifteret, tvangsauktioner | Offentlig søgning, eller REST-API med OCES3-certifikat |
-| [cvrapi.dk](https://cvrapi.dk) / [CVR system-til-system](https://datacvr.virk.dk/artikel/system-til-system-adgang-til-cvr-data) | Branche, adresse, ejere, status | Gratis (User-Agent) / aftale |
+| [apicvr.dk](https://apicvr.dk) (primær) / [cvrapi.dk](https://cvrapi.dk) / [CVR system-til-system](https://datacvr.virk.dk/artikel/system-til-system-adgang-til-cvr-data) | Branche, adresse, status, ejere | Gratis open source / gratis m. kvote / aftale |
 | [Regnskabsdata](https://datacvr.virk.dk/artikel/system-til-system-adgang-til-regnskabsdata) | XBRL-årsrapporter: investeringsejendomme, grunde og bygninger, realkreditgæld, egenkapital | Åben, ingen login |
 | [Ejerfortegnelsen (Datafordeler)](https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/ejerfortegnelsen/) | Ejendomme (BFE) ejet af CVR-nummer | Gratis tjenestebruger |
 | [DAWA](https://dawadocs.dataforsyningen.dk) | Adresser, koordinater | Åben |
@@ -73,9 +73,9 @@ propscreener/
   demo.py           deterministisk fiktivt datasæt
   sources/          statstidende · cvr · regnskab · ejerfortegnelse
   templates/        dashboard.html (indlejrer data ved build)
-tests/              24 tests, fixtures for dekret (tekst + rigtigt API-format), XBRL og iXBRL
+tests/              30 tests, fixtures for dekret (tekst + rigtigt API-format), XBRL og iXBRL
 docs/               dokumentation
-.github/workflows/  ci.yml (tests) · scrape.yml (daglig kørsel → repo + Pages) · discover.yml (API-opdagelse)
+.github/workflows/  ci.yml (tests) · scrape.yml (daglig kørsel → repo) · pages.yml (GitHub Pages) · discover.yml (API-opdagelse)
 ```
 
 ## Vigtige forbehold
@@ -86,7 +86,7 @@ docs/               dokumentation
   ellers er det en sandsynlighed baseret på branche, navn og regnskab.
 * Statstidendes interne søge-endpoint er ikke officielt dokumenteret og kan ændre sig; workflowet
   `discover.yml` genfinder det. Det officielle API kræver OCES3-certifikat – se [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
-* cvrapi.dk har en lille daglig kvote; uden CVR-adgang mangler branchekode på en del boer.
+* CVR-data kommer fra apicvr.dk (open source). Reelle ejere og ledelse kræver Erhvervsstyrelsens system-til-system adgang.
 * Persondata: kuratorer optræder i deres professionelle rolle som offentliggjort i
   Statstidende. Se [docs/LEGAL.md](docs/LEGAL.md).
 

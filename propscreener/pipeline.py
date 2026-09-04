@@ -9,7 +9,7 @@ from .config import Settings
 from .detect import score_case
 from .http import Http
 from .models import BankruptcyCase
-from .sources.cvr import CvrApi, CvrElastic, StatstidendeCvr, enrich_with_cvr
+from .sources.cvr import ApiCvrMcp, ApiCvrRest, CvrApi, CvrElastic, StatstidendeCvr, enrich_with_cvr
 from .sources.ejerfortegnelse import DawaClient, EjerfortegnelseClient, enrich_with_ejerfortegnelse
 from .sources.regnskab import RegnskabClient, enrich_with_regnskab
 from .sources.statstidende import (
@@ -48,6 +48,8 @@ class Pipeline:
         self.cvrapi = CvrApi(settings, self.http)
         self.cvr_es = CvrElastic(settings, self.http) if settings.has_cvr_es else None
         self.cvr_fallback = StatstidendeCvr(settings, self.http)
+        self.cvr_mcp = ApiCvrMcp(settings, self.http) if settings.apicvr_mcp_url else None
+        self.cvr_rest = ApiCvrRest(settings, self.http) if settings.apicvr_rest_base else None
         self.regnskab = RegnskabClient(settings, self.http)
         self.ejf = EjerfortegnelseClient(settings, self.http) if settings.has_datafordeler else None
         self.dawa = DawaClient(settings, self.http)
@@ -101,7 +103,7 @@ class Pipeline:
         score_case(case)  # foreløbig score (bruges til at prioritere CVR-opslag)
 
     def enrich_cvr(self, case: BankruptcyCase) -> None:
-        enrich_with_cvr(case, self.cvrapi, self.cvr_es, self.cvr_fallback)
+        enrich_with_cvr(case, self.cvrapi, self.cvr_es, self.cvr_fallback, self.cvr_mcp, self.cvr_rest)
         if case.selskab.branchekode:
             self.stats.beriget_cvr += 1
 
@@ -155,7 +157,7 @@ class Pipeline:
         return selected, self.stats
 
     def active_sources(self) -> list[str]:
-        src = [f"statstidende:{self.s.statstidende_mode}", "cvrapi", "regnskab-xbrl", "dawa"]
+        src = [f"statstidende:{self.s.statstidende_mode}", "apicvr-rest", "cvrapi", "apicvr-mcp", "regnskab-xbrl", "dawa"]
         if self.cvr_es:
             src.append("cvr-es")
         if self.ejf:

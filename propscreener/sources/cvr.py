@@ -172,6 +172,117 @@ class CvrElastic:
         return company
 
 
+class ApiCvrRest:
+    """apicvr.dk REST: GET https://apicvr.dk/api/v1/{cvr} -> samme JSON-form som cvrapi.dk
+    (vat, name, address, zipcode, city, industrycode, industrydesc, companydesc, status, bankrupt, …).
+    Gratis, open source, ingen login (verificeret 4. sep. 2026). Primær CVR-kilde."""
+
+    def __init__(self, settings: Settings, http: Http):
+        self.s = settings
+        self.http = http
+        self.disabled = not settings.apicvr_rest_base
+        self.last_error: str | None = None
+
+    def lookup(self, cvr: str) -> dict[str, Any] | None:
+        if self.disabled or not cvr:
+            return None
+        try:
+            body = self.http.get_json(f"{self.s.apicvr_rest_base}/api/v1/{int(cvr)}", cache_ttl_s=30 * 24 * 3600,
+                                      cache_if=lambda b: isinstance(b, dict) and bool(b.get("name") or b.get("vat")))
+        except HttpError as e:
+            self.last_error = str(e)
+            if e.status in (403, 429):
+                log.warning("apicvr REST afvist (%s) – slår kilden fra for denne kørsel", e.status)
+                self.disabled = True
+            elif e.status != 404:
+                log.warning("apicvr REST %s: %s", cvr, e)
+            return None
+        except Exception as e:  # noqa: BLE001
+            self.last_error = str(e)
+            return None
+        if not isinstance(body, dict) or body.get("detail") or not (body.get("name") or body.get("vat")):
+            return None
+        return body
+
+
+class ApiCvrMcp:
+    """apicvr.dk – gratis open source CVR-API med MCP-server (https://mcp.apicvr.dk/mcp).
+    Verificeret 4. sep. 2026: ingen login, JSON-RPC over HTTP med SSE-svar. Værktøjer:
+    lookup_company(cvrNumber), search_company(companyName), fuzzy_search_company(companyName) m.fl."""
+
+    def __init__(self, settings: Settings, http: Http):
+        self.s = settings
+        self.http = http
+        self.url = settings.apicvr_mcp_url
+        self.session_id: str | None = None
+        self._rpc_id = 0
+        self.disabled = False
+
+    def _call(self, method: str, params: dict[str, Any], cache_ttl_s: float | None) -> Any:
+        import json as _json
+
+        self._rpc_id += 1
+        headers = {"Accept": "application/json, text/event-stream", "Content-Type": "application/json"}
+        if self.session_id:
+            headers["Mcp-Session-Id"] = self.session_id
+        body = {"jsonrpc": "2.0", "id": self._rpc_id, "method": method, "params": params}
+        text = self.http.request("POST", self.url, json_body=body, headers=headers, cache_ttl_s=cache_ttl_s,
+                                 as_json=False, cache_if=lambda t: '"error"' not in str(t)[:200])
+        # SSE: "event: message\ndata: {...}" – eller ren JSON
+        payload = None
+        for line in str(text).splitlines():
+            if line.startswith("data:"):
+                payload = line[5:].strip()
+        payload = payload or str(text).strip()
+        msg = _json.loads(payload)
+        if "error" in msg:
+            raise HttpError(500, self.url, str(msg["error"]))
+        return msg.get("result")
+
+    def _ensure_session(self) -> None:
+        if self.session_id is not None or self.disabled:
+            return
+        self._call("initialize", {"protocolVersion": "2025-03-26", "capabilities": {},
+                                  "clientInfo": {"name": "propscreener", "version": "0.1"}}, cache_ttl_s=None)
+        self.session_id = self.session_id or ""  # serveren kræver ikke nødvendigvis session-id
+
+    def lookup(self, cvr: str) -> dict[str, Any] | None:
+        import json as _json
+
+        if self.disabled:
+            return None
+        try:
+            self._ensure_session()
+            res = self._call("tools/call", {"name": "lookup_company", "arguments": {"cvrNumber": int(cvr)}},
+                             cache_ttl_s=30 * 24 * 3600)
+        except Exception as e:  # noqa: BLE001
+            log.warning("apicvr MCP %s: %s", cvr, e)
+            if "429" in str(e) or "403" in str(e):
+                self.disabled = True
+            return None
+        if not isinstance(res, dict) or res.get("isError"):
+            return None
+        data: Any = res.get("structuredContent")
+        if not data:
+            for c in res.get("content") or []:
+                if isinstance(c, dict) and c.get("type") == "text":
+                    try:
+                        data = _json.loads(c["text"])
+                        break
+                    except (ValueError, TypeError):
+                        continue
+        if isinstance(data, dict) and isinstance(data.get("company"), dict):
+            data = data["company"]
+        return data if isinstance(data, dict) and (data.get("name") or data.get("vat") or data.get("cvr")) else None
+
+    @staticmethod
+    def apply(company: Company, data: dict[str, Any]) -> Company:
+        # apicvr.dk følger cvrapi.dk's feltnavne (vat, name, industrycode, …); fald tilbage på tolerant mapping
+        if "vat" in data or "industrycode" in data:
+            return CvrApi.apply(company, data)
+        return StatstidendeCvr.apply(company, data)
+
+
 class StatstidendeCvr:
     """Fallback: statstidende.dk's eget CVR-opslag (GET /api/cvr/{cvr}), som frontend'en bruger.
     Svarets feltnavne er ikke dokumenteret; vi mapper tolerant."""
@@ -251,7 +362,9 @@ def _company_form(desc: str | None) -> str | None:
 
 
 def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
-                    fallback: StatstidendeCvr | None = None) -> BankruptcyCase:
+                    fallback: StatstidendeCvr | None = None, mcp: ApiCvrMcp | None = None,
+                    rest: ApiCvrRest | None = None) -> BankruptcyCase:
+    """Rækkefølge: Erhvervsstyrelsen (hvis login) -> apicvr.dk REST -> cvrapi.dk -> apicvr.dk MCP -> statstidende."""
     c = case.selskab
     data = None
     if es is not None and c.cvr:
@@ -263,6 +376,14 @@ def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
                 return case
         except Exception as e:  # noqa: BLE001
             log.warning("CVR ES fejl for %s: %s", c.cvr, e)
+    data = rest.lookup(c.cvr) if (rest is not None and c.cvr) else None
+    if data:
+        CvrApi.apply(c, data)
+        case.kilder.append("apicvr-rest")
+        if not case.id or case.id.startswith("st-"):
+            case.id = c.cvr or case.id
+        case.links["cvr"] = c.cvr_url or case.links.get("cvr", "")
+        return case
     data = api.lookup(cvr=c.cvr) if c.cvr else api.lookup(name=c.navn)
     if data:
         CvrApi.apply(c, data)
@@ -271,6 +392,11 @@ def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
             case.id = c.cvr or case.id
         case.links["cvr"] = c.cvr_url or case.links.get("cvr", "")
     else:
+        alt = mcp.lookup(c.cvr) if (mcp is not None and c.cvr) else None
+        if alt:
+            ApiCvrMcp.apply(c, alt)
+            case.kilder.append("apicvr-mcp")
+            return case
         alt = fallback.lookup(c.cvr) if (fallback is not None and c.cvr) else None
         if alt:
             StatstidendeCvr.apply(c, alt)
