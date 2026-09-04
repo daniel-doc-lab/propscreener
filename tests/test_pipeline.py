@@ -89,8 +89,17 @@ def _fake_http() -> FakeHttp:
                      "kommunenavn": "Aarhus", "x": 10.2039, "y": 56.1572}]
         return []
 
+    def apicvr(url: str):
+        if url.endswith("/api/v1/12345678"):
+            return {"vat": 12345678, "name": "Fjord Ejendomme ApS", "address": "Vestergade 12", "zipcode": 8000,
+                    "city": "Aarhus C", "industrycode": "682040", "industrydesc": "Udlejning af erhvervsejendomme",
+                    "companydesc": "Anpartsselskab", "startdate": "2015-03-01", "status": "UNDER KONKURS", "employees": 2,
+                    "bankrupt": True}
+        return {"detail": "Not Found"}
+
     return FakeHttp({
         "https://www.statstidende.dk/api": statstidende,
+        "https://apicvr.dk/api/v1/": apicvr,
         "https://cvrapi.dk/api": cvrapi,
         "http://distribution.virk.dk/offentliggoerelser/_search": regnskab,
         "https://regnskaber.virk.dk/x.xml": XBRL,
@@ -129,7 +138,8 @@ def test_pipeline_end_to_end(tmp_path: Path):
     assert stats.tvangsauktioner == 1
     assert "tvangsauktion" in fjord.kilder
     assert fjord.score == 100 and fjord.konfidens == "høj"
-    assert "ejerfortegnelsen" in fjord.kilder and "regnskab-xbrl" in fjord.kilder and "cvrapi" in fjord.kilder
+    assert "ejerfortegnelsen" in fjord.kilder and "regnskab-xbrl" in fjord.kilder and "apicvr-rest" in fjord.kilder
+    assert "cvrapi" in by_cvr["99887766"].kilder  # REST 404 -> cvrapi.dk
     assert fjord.links["aarsrapport"].endswith(".pdf")
     assert fjord.kurator.email == "ph@nordlys-demo.dk"
 

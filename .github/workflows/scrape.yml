@@ -52,7 +52,7 @@ jobs:
       CVR_ES_PASSWORD: ${{ secrets.CVR_ES_PASSWORD }}
       CVRAPI_USER_AGENT: ${{ secrets.CVRAPI_USER_AGENT }}
       PROPSCREENER_CACHE_DIR: .cache
-      SCRAPE_DAYS_ON_PUSH: "90"
+      SCRAPE_DAYS_ON_PUSH: "7"
     steps:
       - uses: actions/checkout@v4
         with:

@@ -172,6 +172,39 @@ class CvrElastic:
         return company
 
 
+class ApiCvrRest:
+    """apicvr.dk REST: GET https://apicvr.dk/api/v1/{cvr} -> samme JSON-form som cvrapi.dk
+    (vat, name, address, zipcode, city, industrycode, industrydesc, companydesc, status, bankrupt, …).
+    Gratis, open source, ingen login (verificeret 4. sep. 2026). Primær CVR-kilde."""
+
+    def __init__(self, settings: Settings, http: Http):
+        self.s = settings
+        self.http = http
+        self.disabled = not settings.apicvr_rest_base
+        self.last_error: str | None = None
+
+    def lookup(self, cvr: str) -> dict[str, Any] | None:
+        if self.disabled or not cvr:
+            return None
+        try:
+            body = self.http.get_json(f"{self.s.apicvr_rest_base}/api/v1/{int(cvr)}", cache_ttl_s=30 * 24 * 3600,
+                                      cache_if=lambda b: isinstance(b, dict) and bool(b.get("name") or b.get("vat")))
+        except HttpError as e:
+            self.last_error = str(e)
+            if e.status in (403, 429):
+                log.warning("apicvr REST afvist (%s) – slår kilden fra for denne kørsel", e.status)
+                self.disabled = True
+            elif e.status != 404:
+                log.warning("apicvr REST %s: %s", cvr, e)
+            return None
+        except Exception as e:  # noqa: BLE001
+            self.last_error = str(e)
+            return None
+        if not isinstance(body, dict) or body.get("detail") or not (body.get("name") or body.get("vat")):
+            return None
+        return body
+
+
 class ApiCvrMcp:
     """apicvr.dk – gratis open source CVR-API med MCP-server (https://mcp.apicvr.dk/mcp).
     Verificeret 4. sep. 2026: ingen login, JSON-RPC over HTTP med SSE-svar. Værktøjer:
@@ -329,7 +362,9 @@ def _company_form(desc: str | None) -> str | None:
 
 
 def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
-                    fallback: StatstidendeCvr | None = None, mcp: ApiCvrMcp | None = None) -> BankruptcyCase:
+                    fallback: StatstidendeCvr | None = None, mcp: ApiCvrMcp | None = None,
+                    rest: ApiCvrRest | None = None) -> BankruptcyCase:
+    """Rækkefølge: Erhvervsstyrelsen (hvis login) -> apicvr.dk REST -> cvrapi.dk -> apicvr.dk MCP -> statstidende."""
     c = case.selskab
     data = None
     if es is not None and c.cvr:
@@ -341,6 +376,14 @@ def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
                 return case
         except Exception as e:  # noqa: BLE001
             log.warning("CVR ES fejl for %s: %s", c.cvr, e)
+    data = rest.lookup(c.cvr) if (rest is not None and c.cvr) else None
+    if data:
+        CvrApi.apply(c, data)
+        case.kilder.append("apicvr-rest")
+        if not case.id or case.id.startswith("st-"):
+            case.id = c.cvr or case.id
+        case.links["cvr"] = c.cvr_url or case.links.get("cvr", "")
+        return case
     data = api.lookup(cvr=c.cvr) if c.cvr else api.lookup(name=c.navn)
     if data:
         CvrApi.apply(c, data)
