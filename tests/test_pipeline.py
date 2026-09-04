@@ -240,7 +240,9 @@ def test_local_indexes_from_fildownload(tmp_path: Path):
     assert vur["1234567"]["ejendomsvaerdi"] == 9_400_000 and vur["1234567"]["aar"] == "2024"
     ebr = build_ebr_index([{"bfeNummer": "1234567", "adressebetegnelse": "Vestergade 12, 8000 Aarhus C", "kommunekode": "0751"}])
     d = tmp_path / "index"
-    save_index({"cvr": idx}, d / "ejf_cvr_bfe.json.gz"); save_index({"bfe": vur}, d / "vur_bfe.json.gz"); save_index({"bfe": ebr}, d / "ebr_bfe.json.gz")
+    save_index({"cvr": idx}, d / "ejf_cvr_bfe.json.gz")
+    save_index({"bfe": vur}, d / "vur_bfe.json.gz")
+    save_index({"bfe": ebr}, d / "ebr_bfe.json.gz")
     local = LocalIndexes(d)
     assert local.has_ejf
     case = BankruptcyCase(id="12345678", selskab=Company(cvr="12345678"))
