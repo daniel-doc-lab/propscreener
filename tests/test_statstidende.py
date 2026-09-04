@@ -12,6 +12,7 @@ from propscreener.sources.statstidende import (
     parse_dekret_text,
     parse_kurator,
     parse_tvangsauktion,
+    normalize_company_name,
     web_message_to_raw,
 )
 
@@ -162,3 +163,19 @@ def test_tvangsauktion_from_search_summary():
     assert p.tvangsauktion_dato == "2026-09-29"
     assert p.offentlig_vurdering == 461_000
     assert auction_debtor_keys(msg) == ("12345678", "Demo Ejendomme ApS")
+
+
+def test_tvangsauktion_real_fieldgroups():
+    felter = {"ejendom/#1": "5 e, Skårup By, Dreslette", "ejendom/#2": "2. auktion - Søbrovej 40", "ejendom/#3": "Sarup",
+              "ejendom/#4": "5683 Haarby", "ejendom/#5": "Danmark",
+              "ejendomsværdi/#1": "Pr. 01.01.2022 kr. 461.000 heraf grundværdi kr. 108.000.",
+              "skødehaver ifølge tingbogsattest/#1": "Demo Ejendomme ApS under konkurs",
+              "dato, tid og sted for afholdelse af auktion/dato": "29.09.2026", "dato": "29.09.2026"}
+    msg = RawMessage(id="S1", url="u", kategori="Tvangsauktioner", undertype="Fast ejendom", offentliggjort="2026-09-04",
+                     overskrift=None, tekst="Ejendom\n5 e, Skårup By, Dreslette\n2. auktion - Søbrovej 40\nSarup\n5683 Haarby",
+                     felter=felter)
+    p = parse_tvangsauktion(msg)
+    assert (p.adresse, p.postnr, p.by, p.matrikel) == ("Søbrovej 40", "5683", "Haarby", "5 e, Skårup By, Dreslette")
+    assert p.offentlig_vurdering == 461_000 and p.tvangsauktion_dato == "2026-09-29"
+    assert auction_debtor_keys(msg) == (None, "Demo Ejendomme ApS under konkurs")
+    assert normalize_company_name("Demo Ejendomme ApS under konkurs") == normalize_company_name("Demo Ejendomme ApS")

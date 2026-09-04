@@ -16,6 +16,7 @@ from .sources.statstidende import (
     StatstidendeClient,
     auction_debtor_keys,
     message_to_case,
+    normalize_company_name,
     parse_tvangsauktion,
 )
 
@@ -67,7 +68,7 @@ class Pipeline:
 
     def attach_auctions(self, cases: list[BankruptcyCase], date_from: date) -> None:
         by_cvr = {c.selskab.cvr: c for c in cases if c.selskab.cvr}
-        by_name = {(c.selskab.navn or "").lower(): c for c in cases if c.selskab.navn}
+        by_name = {normalize_company_name(c.selskab.navn): c for c in cases if c.selskab.navn}
         try:
             msgs = list(self.statstidende.search("tvangsauktion_fast_ejendom", date_from))
         except Exception as e:  # noqa: BLE001
@@ -75,7 +76,7 @@ class Pipeline:
             return
         for msg in msgs:
             cvr, navn = auction_debtor_keys(msg)
-            target = by_cvr.get(cvr or "") or by_name.get((navn or "").lower())
+            target = by_cvr.get(cvr or "") or by_name.get(normalize_company_name(navn))
             if target is None:
                 continue
             target.ejendomme.append(parse_tvangsauktion(msg))

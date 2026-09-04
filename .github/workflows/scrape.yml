@@ -65,8 +65,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache
-          key: http-cache-${{ github.run_id }}
-          restore-keys: http-cache-
+          key: http-cache-v2-${{ github.run_id }}
+          restore-keys: http-cache-v2-
 
       - name: Skriv OCES3-certifikat (kun hvis sat)
         if: ${{ env.STATSTIDENDE_MODE == 'api' }}

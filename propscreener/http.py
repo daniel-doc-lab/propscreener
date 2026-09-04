@@ -95,7 +95,7 @@ class Http:
     ) -> Any:
         key = json.dumps([method, url, params, json_body, bool(auth)], sort_keys=True, default=str)
         cached = self._cache_get(key, cache_ttl_s) if cache_ttl_s else None
-        if cached is not None:
+        if cached is not None and (cache_if is None or cache_if(cached["body"])):
             return cached["body"]
 
         last_exc: Exception | None = None

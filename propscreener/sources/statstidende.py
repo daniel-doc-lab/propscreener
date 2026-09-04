@@ -664,8 +664,20 @@ def parse_tvangsauktion(msg: RawMessage) -> Property:
     mt = AUCTION_TITLE_RE.match((msg.overskrift or "").strip())
     if mt:
         p.adresse, p.postnr, p.by = _clean(mt.group(1)), mt.group(2), _clean(mt.group(3))
+    else:  # feltgruppen "Ejendom": matrikel, adresse, (bynavn), "postnr by", "Danmark"
+        ejd = [v for k, v in sorted(f.items()) if k.startswith("ejendom/#")]
+        for ln in ejd[1:]:
+            pm = re.match(r"^(\d{4})\s+(.+)$", ln)
+            if pm:
+                p.postnr, p.by = pm.group(1), _clean(pm.group(2))
+            elif not p.adresse and ln.lower() != "danmark":
+                p.adresse = _clean(re.sub(r"^\d+\.\s*auktion\s*[-–:]\s*", "", ln, flags=re.IGNORECASE))
+    p.matrikel = _clean(f.get("ejendom/#1")) if f.get("ejendom/#1") and re.search(r"\d", f["ejendom/#1"]) else None
     p.tvangsauktion_dato = parse_date(f.get("summary/dato") or f.get("dato") or "")
-    p.offentlig_vurdering = _kr(f.get("summary/ejendomsværdi") or f.get("ejendomsværdi"))
+    ev = f.get("summary/ejendomsværdi") or f.get("ejendomsværdi") or f.get("ejendomsværdi/#1")
+    if ev:
+        m_ev = re.search(r"kr\.?\s*([\d.]+)", ev)
+        p.offentlig_vurdering = _kr(m_ev.group(1) if m_ev else ev)
     m = BELIGGENDE_RE.search(t)
     if m and not p.adresse:
         addr = m.group(1)
@@ -674,8 +686,9 @@ def parse_tvangsauktion(msg: RawMessage) -> Property:
             p.adresse, p.postnr, p.by = _clean(pm.group(1)), pm.group(2), _clean(pm.group(3))
         else:
             p.adresse = _clean(addr)
-    m = MATRIKEL_RE.search(t)
-    p.matrikel = _clean(m.group(1)) if m else None
+    if not p.matrikel:
+        m = MATRIKEL_RE.search(t)
+        p.matrikel = _clean(m.group(1)) if m else None
     if p.offentlig_vurdering is None:
         m = EJENDOMSVAERDI_RE.search(t)
         if m:
@@ -702,7 +715,23 @@ def auction_debtor_keys(msg: RawMessage) -> tuple[str | None, str | None]:
     m = CVR_RE.search(msg.tekst)
     if not cvr and m:
         cvr = re.sub(r"\s", "", m.group(1))
-    m = re.search(r"(?:tilhørende|ejer|skyldner|rekvisitus)[:\s]+([^\n,]+?(?:ApS|A/S|K/S|P/S|I/S|IVS))", msg.tekst,
-                  re.IGNORECASE)
-    navn = _clean(m.group(1)) if m else None
+    navn = None
+    for k, v in f.items():  # "Skødehaver ifølge tingbogsattest/#1" = ejer ifølge tingbogen
+        if "skødehaver" in k or k.startswith("ejer/"):
+            navn = _clean(v)
+            break
+    if not navn:
+        m = re.search(r"(?:tilhørende|ejer|skyldner|rekvisitus|skødehaver)[:\s]+([^\n,]+?(?:ApS|A/S|K/S|P/S|I/S|IVS))",
+                      msg.tekst, re.IGNORECASE)
+        navn = _clean(m.group(1)) if m else None
     return cvr, navn
+
+
+def normalize_company_name(name: str | None) -> str:
+    """Til matchning på tværs af kilder: små bogstaver, uden status-suffiks og tegnsætning."""
+    if not name:
+        return ""
+    n = STATUS_SUFFIX_RE.sub("", name).lower()
+    n = re.sub(r"\b(under konkurs|i likvidation|under tvangsopløsning)\b", "", n)
+    n = re.sub(r"[^\wæøå ]", " ", n)
+    return re.sub(r"\s+", " ", n).strip()
