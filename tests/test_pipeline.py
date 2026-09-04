@@ -251,3 +251,21 @@ def test_local_indexes_from_fildownload(tmp_path: Path):
     p = case.ejendomme[0]
     assert (p.bfe_nummer, p.offentlig_vurdering, p.adresse, p.kilde) == ("1234567", 9_400_000, "Vestergade 12, 8000 Aarhus C", "ejerfortegnelsen")
     assert "ejerfortegnelsen" in case.kilder
+
+
+def test_vur_index_bitemporal_with_xref():
+    from propscreener.sources.datafordeler_files import build_bfe_xref, build_vur_index
+
+    xref = build_bfe_xref([
+        {"vurderingsejendomId": "V1", "BFEnummer": "100", "status": "gældende", "virkningTil": ""},
+        {"vurderingsejendomId": "V2", "BFEnummer": "200", "status": "gældende", "virkningTil": "2020-01-01"},
+    ])
+    assert xref == {"V1": 100}
+    idx = build_vur_index([
+        {"vurderingsejendomId": "V1", "ejendomsvaerdiBeloeb": "1500000", "grundvaerdiBeloeb": "300000",
+         "vurderingsaar": "2022", "status": "gældende", "registreringTil": ""},
+        {"vurderingsejendomId": "V1", "ejendomsvaerdiBeloeb": "900000", "grundvaerdiBeloeb": "250000",
+         "vurderingsaar": "2020", "status": "gældende", "registreringTil": ""},
+        {"vurderingsejendomId": "V2", "ejendomsvaerdiBeloeb": "5", "vurderingsaar": "2022", "status": "gældende"},
+    ], None, xref)
+    assert idx == {"100": {"ejendomsvaerdi": 1500000, "grundvaerdi": 300000, "aar": "2022"}}

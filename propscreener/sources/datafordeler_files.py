@@ -105,13 +105,20 @@ class DatafordelerFiles:
         return {k: sorted(v) for k, v in sorted(out.items())}
 
     def latest_total(self, register: str, entity_pattern: str, fmt: str = "csv",
-                     type_of_data: str = "Current") -> FileInfo | None:
+                     type_of_data: str | tuple[str, ...] = ("Current", "Temporal", "Bitemporal")) -> FileInfo | None:
+        """Nyeste landsdækkende totaludtræk. VUR udstilles fx kun bitemporalt (verificeret 4/9-2026),
+        så vi prøver datatyperne i rækkefølge og lader indeksbyggerne filtrere til gældende rækker."""
         pat = re.compile(entity_pattern, re.IGNORECASE)
-        cands = [f for f in self.list_files(register)
-                 if pat.search(f.entity) and f.type_of_download == "TotalDownload" and f.type_of_data == type_of_data
+        kinds = (type_of_data,) if isinstance(type_of_data, str) else type_of_data
+        files = [f for f in self.list_files(register)
+                 if pat.search(f.entity) and f.type_of_download == "TotalDownload"
                  and f.fmt.lower() == fmt and not f.municipality]
-        cands.sort(key=lambda f: f.generated, reverse=True)
-        return cands[0] if cands else None
+        for kind in kinds:
+            cands = [f for f in files if f.type_of_data == kind]
+            if cands:
+                cands.sort(key=lambda f: f.generated, reverse=True)
+                return cands[0]
+        return None
 
     # -- download -----------------------------------------------------------
     def download(self, info: FileInfo, dest: Path) -> Path:
@@ -156,14 +163,24 @@ def _col(row: dict[str, str], *patterns: str) -> str | None:
     return None
 
 
+def _is_current(row: dict[str, str]) -> bool:
+    """Gældende række i et (bi)temporalt udtræk: status gældende og hverken registrerings- eller virkningstid lukket."""
+    status = _col(row, r"^status$", r"^registreringsstatus$")
+    if status and status.lower() not in ("gældende", "gaeldende", "aktiv", "current"):
+        return False
+    for k, v in row.items():
+        if k and re.search(r"(registrering|virkning)Til$", k, re.IGNORECASE) and v not in (None, ""):
+            return False
+    return True
+
+
 def build_ejf_index(rows: Iterable[dict[str, str]]) -> dict[str, list[dict[str, Any]]]:
     """Ejerskab-rækker -> {cvr: [{bfe, andel, ejerforhold}]}. Kun virksomhedsejere (CVR)."""
     idx: dict[str, list[dict[str, Any]]] = {}
     n = 0
     for row in rows:
         n += 1
-        status = _col(row, r"^status$", r"^registreringsstatus$")
-        if status and status.lower() not in ("gældende", "gaeldende", "aktiv", "current"):
+        if not _is_current(row):
             continue
         cvr = _col(row, r"cvr", r"ejendeVirksomhed", r"virksomhed")
         bfe = _col(row, r"bfe")
@@ -182,13 +199,34 @@ def build_ejf_index(rows: Iterable[dict[str, str]]) -> dict[str, list[dict[str, 
     return idx
 
 
-def build_vur_index(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None = None) -> dict[str, dict[str, Any]]:
+def build_bfe_xref(rows: Iterable[dict[str, str]]) -> dict[str, int]:
+    """VUR BFEKrydsreference: vurderingsejendom-id -> BFE-nummer (kun gældende rækker)."""
+    xref: dict[str, int] = {}
+    for row in rows:
+        if not _is_current(row):
+            continue
+        vid = _col(row, r"vurderingsejendom", r"VURejendom", r"ejendomsid")
+        bfe = _col(row, r"bfe")
+        if vid and bfe:
+            xref[vid.strip()] = int(re.sub(r"\D", "", bfe) or 0)
+    return xref
+
+
+def build_vur_index(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None = None,
+                    xref: dict[str, int] | None = None) -> dict[str, dict[str, Any]]:
+    """Ejendomsvurdering-rækker -> {bfe: {ejendomsvaerdi, grundvaerdi, aar}}, seneste vurderingsår vinder.
+    BFE tages fra rækken selv eller via krydsreferencen (vurderingsejendom-id -> BFE)."""
     idx: dict[str, dict[str, Any]] = {}
     for row in rows:
-        bfe = _col(row, r"bfe")
-        if not bfe:
+        if not _is_current(row):
             continue
-        b = int(re.sub(r"\D", "", bfe) or 0)
+        bfe = _col(row, r"bfe")
+        b = int(re.sub(r"\D", "", bfe) or 0) if bfe else 0
+        if not b and xref:
+            vid = _col(row, r"vurderingsejendom", r"VURejendom", r"ejendomsid")
+            b = xref.get((vid or "").strip(), 0)
+        if not b:
+            continue
         if wanted_bfe is not None and b not in wanted_bfe:
             continue
         val = _col(row, r"^ejendomsv(ae|æ)rdi", r"ejendomsvaerdi", r"ejendomsværdi")

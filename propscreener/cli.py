@@ -57,7 +57,7 @@ def main(argv: list[str] | None = None) -> int:
     p_idx.add_argument("--index-dir", default=None)
     p_idx.add_argument("--work-dir", default=".cache/files")
     p_idx.add_argument("--only", default="", help="Kommasepareret: ejf,vur,ebr (default alle tilgængelige)")
-    p_idx.add_argument("--vur-entity", default=r"vurdering", help="Regex for VUR-entitet")
+    p_idx.add_argument("--vur-entity", default=r"^Ejendomsvurdering$", help="Regex for VUR-entitet")
     p_idx.add_argument("--ebr-entity", default=r"^Ejendomsbeliggenhed$")
     p_idx.add_argument("--ejf-entity", default=r"^Ejerskab$")
     sub.add_parser("probe-files", help="Vis hvilke entiteter Datafordeleren udstiller til fildownload (EJF/VUR/EBR/BBR/MAT)")
@@ -167,6 +167,7 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "build-index":
         from .sources.datafordeler_files import (
             DatafordelerFiles,
+            build_bfe_xref,
             build_ebr_index,
             build_ejf_index,
             build_vur_index,
@@ -199,7 +200,15 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"{key.upper()}: ingen total-download matcher '{pat}' – kør `propscreener probe-files`")
                 continue
             zp = df.download(info, work / info.file_name)
-            idx = builder(df.iter_csv_rows(zp), wanted)
+            if key == "vur":
+                xref: dict[str, int] = {}
+                xinfo = df.latest_total("VUR", r"^BFEKrydsreference$", "csv")
+                if xinfo is not None:
+                    xref = build_bfe_xref(df.iter_csv_rows(df.download(xinfo, work / xinfo.file_name)))
+                    print(f"VUR: {len(xref)} krydsreferencer vurderingsejendom -> BFE")
+                idx = build_vur_index(df.iter_csv_rows(zp), wanted, xref)
+            else:
+                idx = builder(df.iter_csv_rows(zp), wanted)
             save_index({"bfe": idx}, index_dir / name)
             meta["filer"][key] = info.file_name
             print(f"{key.upper()}: {len(idx)} ejendomme indekseret fra {info.file_name}")
