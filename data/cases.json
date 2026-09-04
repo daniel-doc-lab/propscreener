@@ -1,36 +1,36 @@
 {
  "meta": {
-  "genereret": "2026-09-04T10:32:00+00:00",
+  "genereret": "2026-09-04T10:33:19+00:00",
   "version": "0.1.0",
   "antal": 51,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
+   "apicvr-rest",
    "cvrapi",
    "apicvr-mcp",
    "regnskab-xbrl",
    "dawa"
   ],
   "stats": {
-   "started": "2026-09-04T10:23:29+00:00",
-   "dekreter": 971,
-   "tvangsauktioner": 2,
-   "beriget_cvr": 938,
-   "beriget_regnskab": 739,
+   "started": "2026-09-04T10:32:29+00:00",
+   "dekreter": 99,
+   "tvangsauktioner": 0,
+   "beriget_cvr": 99,
+   "beriget_regnskab": 74,
    "beriget_ejf": 0,
-   "over_min_score": 51,
+   "over_min_score": 4,
    "min_score": 25,
-   "bevaret_fra_tidligere": 0,
+   "bevaret_fra_tidligere": 47,
    "kilder_aktive": [
     "statstidende:web",
+    "apicvr-rest",
     "cvrapi",
     "apicvr-mcp",
     "regnskab-xbrl",
     "dawa"
    ],
-   "fejl": [
-    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
-   ]
+   "fejl": []
   }
  },
  "cases": [
@@ -3068,12 +3068,12 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet"
    ],
-   "sidst_opdateret": "2026-09-04T10:24:04+00:00"
+   "sidst_opdateret": "2026-09-04T10:32:33+00:00"
   },
   {
    "id": "44145227",
@@ -3168,10 +3168,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:23:50+00:00"
+   "sidst_opdateret": "2026-09-04T10:32:30+00:00"
   },
   {
    "id": "41298332",
@@ -4979,7 +4979,7 @@
    },
    "selskab": {
     "cvr": "43321137",
-    "navn": "BorgerstÃ¸ttet kÃ¸bmand i Bandholm ApS",
+    "navn": "Borgerstøttet købmand i Bandholm ApS",
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "682030",
@@ -5045,10 +5045,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:26:09+00:00"
+   "sidst_opdateret": "2026-09-04T10:33:13+00:00"
   },
   {
    "id": "40313761",
@@ -5277,11 +5277,11 @@
     "binavne": [],
     "selskabsform": "ApS",
     "branchekode": "561110",
-    "branchetekst": "Servering af mad i restauranter og cafÃ©er",
+    "branchetekst": "Servering af mad i restauranter og caféer",
     "bibrancher": [],
-    "adresse": "NÃ¸rrebrogade 30",
+    "adresse": "Nørrebrogade 30",
     "postnr": "2200",
-    "by": "KÃ¸benhavn N",
+    "by": "København N",
     "kommune": null,
     "region": "Hovedstaden",
     "stiftet": "2025-06-20",
@@ -5331,7 +5331,7 @@
     "statstidende": "https://www.statstidende.dk/messages/S26082026-200",
     "aarsrapport": "http://regnskaber.virk.dk/52709654/amNsb3VkczovLzAzLzAyLzk1LzBhL2ZmL2ViZGQtNGUyMi05MzkxLThkYjM5MWRkNjM2MQ.xhtml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/45690725?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=NÃ¸rrebrogade+30,+2200+KÃ¸benhavn+N",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nørrebrogade+30,+2200+København+N",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Agnete+Brus+Krusell"
@@ -5339,10 +5339,10 @@
    "kilder": [
     "statstidende",
     "regnskab-xbrl",
-    "apicvr-mcp"
+    "apicvr-rest"
    ],
    "noter": [],
-   "sidst_opdateret": "2026-09-04T10:24:01+00:00"
+   "sidst_opdateret": "2026-09-04T10:32:31+00:00"
   }
  ]
 }
