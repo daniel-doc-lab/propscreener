@@ -1,28 +1,30 @@
 {
  "meta": {
-  "genereret": "2026-09-04T09:57:06+00:00",
+  "genereret": "2026-09-04T10:07:24+00:00",
   "version": "0.1.0",
-  "antal": 41,
+  "antal": 43,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
    "cvrapi",
+   "apicvr-mcp",
    "regnskab-xbrl",
    "dawa"
   ],
   "stats": {
-   "started": "2026-09-04T09:56:16+00:00",
+   "started": "2026-09-04T10:06:31+00:00",
    "dekreter": 99,
    "tvangsauktioner": 0,
-   "beriget_cvr": 0,
+   "beriget_cvr": 97,
    "beriget_regnskab": 74,
    "beriget_ejf": 0,
-   "over_min_score": 2,
+   "over_min_score": 4,
    "min_score": 25,
    "bevaret_fra_tidligere": 39,
    "kilder_aktive": [
     "statstidende:web",
     "cvrapi",
+    "apicvr-mcp",
     "regnskab-xbrl",
     "dawa"
    ],
@@ -2410,6 +2412,112 @@
    "sidst_opdateret": "2026-09-04T08:13:56+00:00"
   },
   {
+   "id": "43723758",
+   "statstidende_id": "S26082026-163",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26082026-163",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-28",
+   "dekretdato": "2026-08-26",
+   "fristdag": "2026-08-21",
+   "anmeldelsesfrist": "2026-09-25",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Horsens",
+    "sagsnummer": "SKS 41-203/2026"
+   },
+   "kurator": {
+    "navn": "Jakob Brunse Mæhlisen",
+    "firma": null,
+    "adresse": "Nørre Alle 32",
+    "postnr": "8362",
+    "by": "Hørning",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jakob+Brunse+Mæhlisen"
+   },
+   "selskab": {
+    "cvr": "43723758",
+    "navn": "Dandan Ejendomme ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Langballe 6",
+    "postnr": "8700",
+    "by": "Horsens",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2022-12-20",
+    "status": "UNDERKONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43723758",
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/85732734/amNsb3VkczovLzAzLzM5LzdkLzE3Lzk4L2IzYzktNDJhMy1hOGY1LWIwMTVmNDI4OTQ1Mw.pdf",
+    "aktiver": 0,
+    "egenkapital": -11777,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": 11777,
+    "omsaetning": null,
+    "bruttofortjeneste": 33060,
+    "aarets_resultat": -299444,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": null,
+    "ltv_pct": null,
+    "samlet_gaeld": 11777
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "Dandan Ejendomme ApS under tvangsopløsning\nVed dekret af 26.08.2026 har Retten i Horsens taget\n\nDandan Ejendomme ApS under tvangsopløsning\nCVR-nr: 43723758\nLangballe 6\n8700 Horsens\nSagsnr: SKS 41-203/2026\n\nunder konkursbehandling efter begæring modtaget den 21.08.2026.\n\nKurator er advokat Jakob Brunse Mæhlisen, Nørre Alle 32, 8362 Hørning.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 26.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nAnmeldelse indgivet under forudgående likvidation til likvidator, advokat Jakob Brunse Mæhlisen, tages i betragtning uden ny anmeldelse, dog må eventuelle renter opgøres pr. konkursdagen. \n\nRetten i Horsens, den 26.08.2026.\n\nKurator\nAdvokat Jakob Brunse Mæhlisen\nNørre Alle 32\n8362 Hørning\n\nSkifteret\nRetten i Horsens",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43723758",
+    "statstidende": "https://www.statstidende.dk/messages/S26082026-163",
+    "aarsrapport": "http://regnskaber.virk.dk/85732734/amNsb3VkczovLzAzLzM5LzdkLzE3Lzk4L2IzYzktNDJhMy1hOGY1LWIwMTVmNDI4OTQ1Mw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43723758?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Langballe+6,+8700+Horsens",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jakob+Brunse+Mæhlisen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-mcp"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet"
+   ],
+   "sidst_opdateret": "2026-09-04T10:06:36+00:00"
+  },
+  {
    "id": "44145227",
    "statstidende_id": "S27082026-225",
    "statstidende_url": "https://www.statstidende.dk/messages/S27082026-225",
@@ -2439,20 +2547,20 @@
     "navn": "Maylander ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "331200",
+    "branchetekst": "Reparation og vedligeholdelse af maskiner",
     "bibrancher": [],
     "adresse": "Rydhaugen 12",
     "postnr": "8620",
     "by": "Kjellerup",
-    "kommune": null,
+    "kommune": "Vium",
     "region": "Midtjylland",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
+    "stiftet": "2023-06-28",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44145227",
     "formaal": null
    },
    "regnskab": {
@@ -2501,12 +2609,11 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-mcp"
    ],
-   "noter": [
-    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
-   ],
-   "sidst_opdateret": "2026-09-04T09:56:18+00:00"
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T10:06:33+00:00"
   },
   {
    "id": "41298332",
@@ -4002,6 +4109,104 @@
    "sidst_opdateret": "2026-09-04T08:14:04+00:00"
   },
   {
+   "id": "43321137",
+   "statstidende_id": "S26082026-87",
+   "statstidende_url": "https://www.statstidende.dk/messages/S26082026-87",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-28",
+   "dekretdato": "2026-08-25",
+   "fristdag": "2026-08-20",
+   "anmeldelsesfrist": "2026-09-25",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Nykøbing Falster",
+    "sagsnummer": "SKS 12-249/2026"
+   },
+   "kurator": {
+    "navn": "Lars Hindsgaul Stuckert",
+    "firma": null,
+    "adresse": "C. E. Christiansens Vej 2",
+    "postnr": "4930",
+    "by": "Maribo",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Hindsgaul+Stuckert"
+   },
+   "selskab": {
+    "cvr": "43321137",
+    "navn": "BorgerstÃ¸ttet kÃ¸bmand i Bandholm ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682030",
+    "branchetekst": "Anden udlejning af boliger",
+    "bibrancher": [],
+    "adresse": "Strandparken 13",
+    "postnr": "4941",
+    "by": "Bandholm",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": "2022-06-12",
+    "status": "UNDERKONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43321137",
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/73112334/amNsb3VkczovLzAzLzJkLzQwLzI2LzhkLzQwMjktNDM1Yy04OGE0LTI2ZmU1MjQxNzllNA.pdf",
+    "aktiver": 814188,
+    "egenkapital": 101168,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 501704,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 713020,
+    "omsaetning": null,
+    "bruttofortjeneste": -34211,
+    "aarets_resultat": -34211,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": 12.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 713020
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.30 Anden udlejning af boliger",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "Borgerstøttet købmand i Bandholm ApS\nVed dekret af 25.08.2026 har Retten i Nykøbing Falster taget\n\nBorgerstøttet købmand i Bandholm ApS\nCVR-nr: 43321137\nStrandparken 13\n4941 Bandholm\nSagsnr: SKS 12-249/2026\n\nunder konkursbehandling efter begæring modtaget den 20.08.2026.\n\nKurator er advokat Lars Hindsgaul Stuckert, C. E. Christiansens Vej 2, 4930 Maribo.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 25.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Nykøbing Falster, den 25.08.2026.\n\nKurator\nAdvokat Lars Hindsgaul Stuckert\nC. E. Christiansens Vej 2\n4930 Maribo\n\nSkifteret\nRetten i Nykøbing Falster",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43321137",
+    "statstidende": "https://www.statstidende.dk/messages/S26082026-87",
+    "aarsrapport": "http://regnskaber.virk.dk/73112334/amNsb3VkczovLzAzLzJkLzQwLzI2LzhkLzQwMjktNDM1Yy04OGE0LTI2ZmU1MjQxNzllNA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43321137?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Strandparken+13,+4941+Bandholm",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Hindsgaul+Stuckert"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-mcp"
+   ],
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T10:07:17+00:00"
+  },
+  {
    "id": "40313761",
    "statstidende_id": "S11062026-293",
    "statstidende_url": "https://www.statstidende.dk/messages/S11062026-293",
@@ -4229,20 +4434,20 @@
     "navn": "Take and Eat ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "561110",
+    "branchetekst": "Servering af mad i restauranter og cafÃ©er",
     "bibrancher": [],
-    "adresse": "Nørrebrogade 30",
+    "adresse": "NÃ¸rrebrogade 30",
     "postnr": "2200",
-    "by": "København N",
+    "by": "KÃ¸benhavn N",
     "kommune": null,
     "region": "Hovedstaden",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "2025-06-20",
+    "status": "UNDERKONKURS",
+    "ansatte": 3,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/45690725",
     "formaal": null
    },
    "regnskab": {
@@ -4284,19 +4489,18 @@
     "statstidende": "https://www.statstidende.dk/messages/S26082026-200",
     "aarsrapport": "http://regnskaber.virk.dk/52709654/amNsb3VkczovLzAzLzAyLzk1LzBhL2ZmL2ViZGQtNGUyMi05MzkxLThkYjM5MWRkNjM2MQ.xhtml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/45690725?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Nørrebrogade+30,+2200+København+N",
+    "kort": "https://www.google.com/maps/search/?api=1&query=NÃ¸rrebrogade+30,+2200+KÃ¸benhavn+N",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
     "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Agnete+Brus+Krusell"
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-mcp"
    ],
-   "noter": [
-    "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
-   ],
-   "sidst_opdateret": "2026-09-04T09:56:18+00:00"
+   "noter": [],
+   "sidst_opdateret": "2026-09-04T10:06:34+00:00"
   }
  ]
 }
