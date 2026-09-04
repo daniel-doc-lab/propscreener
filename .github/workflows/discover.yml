@@ -166,40 +166,41 @@ jobs:
             head -c 600 body.txt | tr '\n' ' '; echo
           done
 
-      - name: Datafordeler – test API-Key på api.datafordeler.dk (nøglen udskrives ikke)
+      - name: Datafordeler – find dokumenterede URL'er på den nye platform
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
         run: |
-          if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          B=https://api.datafordeler.dk
-          mask() { sed "s/$DFKEY/***/g"; }
-          try() { code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$2" || echo 000); echo "$code  $1" | mask
-                  if [ "$code" != "401" ] && [ "$code" != "404" ]; then echo "   >>> $(head -c 1500 body.txt | tr '\n' ' ' | mask)"; fi
-                  if [ "$code" = "404" ]; then echo "   404-body: $(head -c 300 body.txt | tr '\n' ' ' | mask)"; fi; }
-          echo "== BFE-nummer via DAWA =="
-          BFE=$(curl -sS -m 20 -A "$UA" "https://api.dataforsyningen.dk/adgangsadresser?q=R%C3%A5dhuspladsen%201,%201550&per_side=1" | python3 -c 'import sys,json; a=json.load(sys.stdin)[0]; j=a.get("jordstykke") or {}; print(j.get("bfenummer") or a.get("bfenummer") or "")')
-          echo "BFE=$BFE"
-          [ -z "$BFE" ] && BFE=100056600
-          echo "== EJF: metode- og parameter-varianter =="
-          for m in EjendommeMedSammeEjer Ejerskab EjendomMedEjer EjerskabMedStamoplysninger Ejerfortegnelsen; do
-            for q in "CVRnr=64942212" "cvrnr=64942212" "CVRNr=64942212" "cvrNummer=64942212" "BFEnr=$BFE" "BFENr=$BFE" "bfenr=$BFE"; do
-              try "EJF/$m?$q" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/$m?$q&format=json&apikey=$DFKEY"
+          mask() { if [ -n "$DFKEY" ]; then sed "s/$DFKEY/***/g"; else cat; fi; }
+          echo "== api.datafordeler.dk rod / swagger =="
+          for u in "https://api.datafordeler.dk/" "https://api.datafordeler.dk/swagger" "https://api.datafordeler.dk/swagger/index.html" "https://api.datafordeler.dk/openapi.json" "https://api.datafordeler.dk/api" "https://api.datafordeler.dk/EJERFORTEGNELSE" "https://api.datafordeler.dk/ejerfortegnelse" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST" ; do
+            for q in "" "?apikey=$DFKEY"; do
+              code=$(curl -sS -m 20 -A "$UA" -o body.txt -w "%{http_code} %{content_type} %{size_download}b %{redirect_url}" "$u$q" || echo 000)
+              echo "$code  GET $u$q" | mask; head -c 400 body.txt | tr '\n' ' ' | mask; echo
             done
           done
-          try "EJF/rest-liste" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/?apikey=$DFKEY"
-          try "EJF/rest-liste2" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/rest?apikey=$DFKEY"
-          try "EJF uden format" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=64942212&apikey=$DFKEY"
-          try "EJF Format=JSON" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=64942212&Format=JSON&apikey=$DFKEY"
-          try "EJF version 2" "$B/EJERFORTEGNELSE/Ejerfortegnelsen/2/REST/EjendommeMedSammeEjer?CVRnr=64942212&format=json&apikey=$DFKEY"
-          echo "== VUR / BBR / MAT pr. BFE =="
-          try "VUR BFEejendomsvurdering" "$B/VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=$BFE&format=json&apikey=$DFKEY"
-          try "VUR Ejendomsvurdering" "$B/VUR/VUR/1/REST/Ejendomsvurdering?BFEnummer=$BFE&format=json&apikey=$DFKEY"
-          try "VUR status=1" "$B/VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=$BFE&status=1&format=json&apikey=$DFKEY"
-          try "BBR bygning" "$B/BBR/BBRPublic/1/REST/bygning?BFENummer=$BFE&format=json&pagesize=2&apikey=$DFKEY"
-          try "BBR ejendomsrelation" "$B/BBR/BBRPublic/1/REST/ejendomsrelation?BFENummer=$BFE&format=json&apikey=$DFKEY"
-          try "MAT SamletFastEjendom" "$B/Matriklen2/Matrikel/2.0.0/rest/SamletFastEjendom?BFEnr=$BFE&format=json&apikey=$DFKEY"
-          try "EBR Ejendomsbeliggenhed" "$B/EBR/Ejendomsbeliggenhed/1/REST/Ejendomsbeliggenhed?BFEnr=$BFE&format=json&apikey=$DFKEY"
+          echo "== dokumentationssider: udtræk URL-eksempler =="
+          for u in "https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/ejerfortegnelsen/" \
+                   "https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/" \
+                   "https://datafordeler.dk/dataoversigt/vurdering-vur/" \
+                   "https://datafordeler.dk/dataoversigt/bygnings-og-boligregistret-bbr/bbr-public/" \
+                   "https://datafordeler.dk/vejledning/" \
+                   "https://datafordeler.dk/vejledning/brugeradgang/" \
+                   "https://datafordeler.dk/vejledning/brugeradgang/api-key/" \
+                   "https://datafordeler.dk/vejledning/rest/" \
+                   "https://datafordeler.dk/nyheder/" \
+                   "https://confluence.sdfi.dk/x/5YBQAQ" \
+                   "https://confluence.sdfi.dk/pages/viewpage.action?pageId=22151141" \
+                   "https://confluence.sdfi.dk/display/DP/Ejerfortegnelsen" ; do
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code} %{url_effective}" "$u" || echo 000)
+            echo "----- $code  $u"
+            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -30
+            grep -oiE '.{0,120}(api-?key|apikey|API-Key).{0,160}' page.html | sed 's/<[^>]*>//g' | sort -u | head -12
+            grep -oiE '.{0,80}(EjendommeMedSammeEjer|Ejerskab|BFEejendomsvurdering|/REST/|/rest/).{0,120}' page.html | sed 's/<[^>]*>//g' | sort -u | head -20
+          done
+          echo "== Google-cache-fri søgning: datafordeler.dk sitemap =="
+          curl -sSL -m 25 -A "$UA" https://datafordeler.dk/sitemap.xml -o sitemap.xml || true
+          grep -oE 'https://datafordeler\.dk/[^<]*' sitemap.xml | grep -iE 'vejledning|api|rest|adgang|it-system|noegle|key' | head -40
 
       - uses: actions/upload-artifact@v4
         with:
