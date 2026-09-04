@@ -40,9 +40,8 @@ Opsætning af Pages (gratis på offentlige repos):
 
 1. Settings → Pages → Source: **GitHub Actions**.
 2. Settings → Secrets and variables → Actions → **Variables** → `ENABLE_PAGES` = `true`.
-3. Pages-miljøet (`github-pages`) tillader som standard kun udrulning fra standardbranchen
-   (`main`). Enten merges udviklingsbranchen til `main`, eller også tilføjes branchen under
-   Settings → Environments → github-pages → *Deployment branches*.
+3. Pages-miljøet (`github-pages`) tillader kun udrulning fra `main`. Udrulningen sker fra
+   `pages.yml` (ved ændringer i `site/` på `main`) og fra `scrape.yml`'s deploy-job på `main`.
 4. Dashboardet ligger derefter på `https://<owner>.github.io/propscreener/`, data på
    `…/data/cases.json` og `…/data/cases.csv`.
 

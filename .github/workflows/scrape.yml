@@ -27,7 +27,7 @@ on:
         description: "Brug demodata i stedet for at scrape (true/false)"
         default: "false"
   push:
-    branches: ["claude/danish-bankruptcy-scraper-5vt1u3"]
+    branches: ["main", "claude/**"]
     paths: [".github/workflows/scrape.yml", "propscreener/**"]
 
 permissions:
@@ -134,13 +134,13 @@ jobs:
             data/cases.csv
             site/index.html
       - uses: actions/upload-pages-artifact@v3
-        if: ${{ vars.ENABLE_PAGES == 'true' }}
+        if: ${{ vars.ENABLE_PAGES == 'true' && github.ref_name == 'main' }}
         with:
           path: site
 
   deploy:
     needs: scrape
-    if: ${{ vars.ENABLE_PAGES == 'true' }}
+    if: ${{ vars.ENABLE_PAGES == 'true' && github.ref_name == 'main' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
