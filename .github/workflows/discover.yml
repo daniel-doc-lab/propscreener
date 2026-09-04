@@ -172,21 +172,34 @@ jobs:
         run: |
           if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          Q="CVRnr=64942212&format=json&pagesize=2"   # Københavns Kommune – ejer mange ejendomme
+          mask() { sed "s/$DFKEY/***/g"; }
+          try() { # $1=label $2=url [$3=header]
+            if [ -n "$3" ]; then code=$(curl -sS -m 25 -A "$UA" -H "$3" -o body.txt -w "%{http_code}" "$2" || echo 000)
+            else code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$2" || echo 000); fi
+            echo "$code  $1" | mask
+            if [ "$code" = "200" ]; then echo "   >>> $(head -c 1200 body.txt | tr '\n' ' ' | mask)"; fi
+          }
+          CVR=64942212   # Københavns Kommune – ejer mange ejendomme
           for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
-            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer"; do
-              for p in apikey api-key key apiKey token; do
-                code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$base/$svc?$Q&$p=$DFKEY" || echo 000)
-                echo "$code  $base/$svc?$Q&$p=***"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
-              done
-              for h in "X-Api-Key" "apikey" "Ocp-Apim-Subscription-Key"; do
-                code=$(curl -sS -m 25 -A "$UA" -H "$h: $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
-                echo "$code  $base/$svc?$Q  header $h"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
-              done
-              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
-              echo "$code  $base/$svc?$Q  header Authorization: Bearer"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/Ejerskab"; do
+              Q="$base/$svc?CVRnr=$CVR&format=json&pagesize=2"
+              try "$svc uden nøgle" "$Q"
+              for pn in apikey api-key key apiKey token accesskey subscription-key; do try "$svc ?$pn=" "$Q&$pn=$DFKEY"; done
+              for h in "X-Api-Key" "apikey" "api-key" "Ocp-Apim-Subscription-Key" "X-API-KEY"; do try "$svc header $h" "$Q" "$h: $DFKEY"; done
+              try "$svc Authorization: Bearer" "$Q" "Authorization: Bearer $DFKEY"
+              try "$svc Authorization: ApiKey" "$Q" "Authorization: ApiKey $DFKEY"
             done
           done
+          echo "== VUR (vurdering) =="
+          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
+            for svc in "VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=100056600" "VUR/VUR/1/REST/Ejendomsvurdering?BFEnummer=100056600" "VUR/VUR/1/REST/BFEejendomsvurdering?BFEnummer=100056600&status=Gældende"; do
+              try "$svc ?apikey" "$base/$svc&format=json&apikey=$DFKEY"
+              try "$svc header X-Api-Key" "$base/$svc&format=json" "X-Api-Key: $DFKEY"
+            done
+          done
+          echo "== BBR (bygning pr. BFE, til areal) =="
+          try "BBR bygning ?apikey" "https://services.datafordeler.dk/BBR/BBRPublic/1/REST/bygning?BFENummer=100056600&format=json&pagesize=2&apikey=$DFKEY"
+          try "BBR bygning header" "https://services.datafordeler.dk/BBR/BBRPublic/1/REST/bygning?BFENummer=100056600&format=json&pagesize=2" "X-Api-Key: $DFKEY"
 
       - uses: actions/upload-artifact@v4
         with:
