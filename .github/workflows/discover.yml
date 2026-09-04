@@ -89,46 +89,37 @@ jobs:
             case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
             curl -sSL -A "$UA" -o "bundles/main.js" "$u" || true
           done
-          echo "== webpack chunk-skabelon =="
-          grep -oE '.{0,80}"static/js/".{0,200}' bundles/main.js | head -3
-          echo "== chunk-map =="
+          echo "== chunk-map fra n.u-skabelonen =="
           python3 - <<'EOF'
-          import re, json
+          import re
           js = open("bundles/main.js", encoding="utf-8", errors="replace").read()
-          maps = re.findall(r'\{(\d+:"[0-9a-f]{6,}"(?:,\d+:"[0-9a-f]{6,}")*)\}', js)
-          ids = {}
-          for m in maps:
-              for k, v in re.findall(r'(\d+):"([0-9a-f]{6,})"', m):
-                  ids[k] = v
-          print(len(ids), "chunks")
+          m = re.search(r'"static/js/"\+e\+"\."\+\{([^}]+)\}\[e\]\+"\.chunk\.js"', js)
+          pairs = re.findall(r'(\d+):"([0-9a-f]+)"', m.group(1)) if m else []
+          print(len(pairs), "chunks i n.u")
           with open("chunks.txt", "w") as f:
-              for k, v in ids.items():
+              for k, v in pairs:
                   f.write(f"static/js/{k}.{v}.chunk.js\n")
           EOF
-          head -50 chunks.txt
-          while read -r c; do curl -sS -m 20 -A "$UA" -o "bundles/$(basename "$c")" "https://www.statstidende.dk/$c" || true; done < chunks.txt
-          ls -la bundles | head -80
-          echo "== /api/config (fuldt) =="
-          curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/config | tee config.json; echo
-          echo "== URL'er i config – prøv dem =="
-          for u in $(grep -oE 'https?://[^" ]+' config.json | sort -u); do
-            printf "%s -> " "$u"; curl -sS -m 20 -A "$UA" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
-            head -c 300 body.txt | tr '\n' ' '; echo
+          ok=0; while read -r c; do if curl -sSf -m 20 -A "$UA" -o "bundles/$(basename "$c")" "https://www.statstidende.dk/$c"; then ok=$((ok+1)); else echo "404: $c"; fi; done < chunks.txt
+          echo "hentet $ok chunks"; du -ch bundles/*.js | tail -1
+          echo "== alle api/-stier i alle bundles =="
+          grep -ohE '["`]/?api/[A-Za-z0-9/_.${}-]+' bundles/*.js | tr -d '"`' | sed 's#^/##' | sort -u
+          echo "== kaldesteder for \$T/DD/UX/yo (http-klient) i chunks =="
+          grep -ohE '\((0,[a-zA-Z]+\.(\$T|DD|UX|yo))\)\([^;]{0,300}' bundles/*.chunk.js | sort -u | head -60
+          echo "== kontekst omkring 'search' + api i chunks =="
+          grep -ohiE '.{0,500}api/[a-z]*search[a-z/]*.{0,700}' bundles/*.chunk.js | grep -viE 'subscri' | head -6
+          echo "== parseQueryString-forbrugere med fetch =="
+          grep -ohE '.{0,400}(publicationDateFrom|publicationDateTo|fromDate|toDate|dateFrom|dateTo|messageTypeIds|sectionIds|searchText|freeText)[^a-zA-Z].{0,400}' bundles/*.chunk.js | head -8
+          echo "== plan B: dagens udgave (fileId) =="
+          FID=$(curl -sS -m 20 -A "$UA" https://www.statstidende.dk/api/Publication/GetLatestPublication | python3 -c 'import json,sys; print(json.load(sys.stdin)["fileId"])')
+          echo "fileId=$FID"
+          for u in "api/publicationfile/$FID" "api/publicationfile/download/$FID" "api/publicationfile/$FID/download" "api/Publication/$FID" "api/Publication/file/$FID" "api/Publication/GetPublicationFile/$FID" "api/publicationfile?fileId=$FID" "publicationfile/$FID" "api/file/$FID"; do
+            curl -sS -m 30 -A "$UA" -o body.bin -w "%{http_code} %{content_type} %{size_download}b  GET $u\n" "https://www.statstidende.dk/$u" || true
+            head -c 120 body.bin | tr -c '[:print:]' '.'; echo
           done
-          echo "== søgerelaterede identifikatorer i main.js =="
-          grep -ohE '.{0,400}(searchService|SearchService|searchUrl|searchApi|searchBase|searchEndpoint|wasUrl|opensearch|elastic).{0,400}' bundles/main.js | head -10
-          echo "== template-URLs med variabel host =="
-          grep -ohE '`\$\{[^}]{1,60}\}/[A-Za-z0-9/_.${}?=&-]+`' bundles/*.js | sort -u | head -40
-          echo "== webpack-modul 84083 (search) =="
-          grep -oE '84083:\(e,t,n\)=>\{.{0,3500}' bundles/main.js | head -c 3600; echo
-          echo "== webpack-modul 15377 (searchServiceClient) =="
-          grep -oE '15377:\(e,t,n\)=>\{.{0,2500}' bundles/main.js | head -c 2600; echo
-          echo "== webpack-modul 3057 (messages) =="
-          grep -oE '3057:\(e,t,n\)=>\{.{0,2500}' bundles/main.js | head -c 2600; echo
-          echo "== forekomster af 'messagesearch' uden api-præfiks =="
-          grep -ohiE '.{0,200}messagesearch.{0,200}' bundles/*.js | grep -viE 'subscri' | head -6
-          echo "== fetch-kald (ikke axios) =="
-          grep -ohE 'fetch\(`[^`]{0,200}`|fetch\("[^"]{0,200}"' bundles/*.js | sort -u | head -20
+          echo "== publicationfile-kontekst i alle bundles =="
+          grep -ohE '.{0,300}publicationfile.{0,300}' bundles/*.js | grep -v signingcertificates | head -6
+          grep -ohE '.{0,300}fileId.{0,300}' bundles/*.js | head -8
 
       - uses: actions/upload-artifact@v4
         with:
