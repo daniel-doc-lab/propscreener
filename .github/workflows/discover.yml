@@ -4,6 +4,9 @@ name: Opdag Statstidende-endpoints
 # og om de øvrige kilder kan nås fra en Actions-runner. Skriver kun til loggen.
 
 on:
+  push:
+    branches: ["claude/danish-bankruptcy-scraper-5vt1u3"]
+    paths: [".github/workflows/discover.yml", "propscreener/sources/statstidende.py"]
   workflow_dispatch:
     inputs:
       extra_url:
@@ -70,7 +73,7 @@ jobs:
             https://api.statstidende.dk/ \
             https://api.statstidende.dk/docs/index.html \
             https://api.statstidende.dk/swagger/v1/swagger.json \
-            "${{ github.event.inputs.extra_url }}" ; do
+            "${{ github.event.inputs.extra_url }}" "https://www.statstidende.dk/api/messages?messageCategory=Konkursboer&pageSize=2" ; do
             [ -z "$u" ] && continue
             echo "----- GET $u"
             curl -sS -m 25 -A "$UA" -H "Accept: application/json, text/html" -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || echo "curl-fejl"
