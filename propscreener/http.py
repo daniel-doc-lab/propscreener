@@ -11,6 +11,7 @@ import hashlib
 import json
 import logging
 import time
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -90,6 +91,7 @@ class Http:
         auth: tuple[str, str] | None = None,
         cache_ttl_s: float | None = 6 * 3600,
         as_json: bool = True,
+        cache_if: Callable[[Any], bool] | None = None,
     ) -> Any:
         key = json.dumps([method, url, params, json_body, bool(auth)], sort_keys=True, default=str)
         cached = self._cache_get(key, cache_ttl_s) if cache_ttl_s else None
@@ -109,7 +111,7 @@ class Http:
                 if r.status_code >= 400:
                     raise HttpError(r.status_code, url, r.text)
                 body: Any = r.json() if as_json else r.text
-                if cache_ttl_s:
+                if cache_ttl_s and (cache_if is None or cache_if(body)):
                     self._cache_put(key, {"body": body})
                 return body
             except (requests.RequestException, HttpError) as exc:  # noqa: PERF203

@@ -81,7 +81,7 @@ jobs:
         run: |
           propscreener probe || true
           propscreener debug-search --days 3 || true
-          echo "=== tvangsauktion-eksempel ==="; propscreener debug-search --type tvangsauktion_fast_ejendom --days 7 | head -c 6000 || true; echo
+          echo "=== tvangsauktion-eksempel (felter/tekst/case) ==="; propscreener debug-search --type tvangsauktion_fast_ejendom --days 7 | sed -n '/=== FELTER ===/,$p' | head -c 7000 || true; echo
           echo "=== alternative CVR-kilder ==="
           for u in "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhed?cvrnummer=10150817&locale=da" \
                    "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhedsInfo?cvrnummer=10150817" \

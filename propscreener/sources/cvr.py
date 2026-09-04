@@ -63,7 +63,8 @@ class CvrApi:
             return None
         try:
             body = self.http.get_json(self.s.cvrapi_base, params=params,
-                                      headers={"User-Agent": self.s.cvrapi_user_agent}, cache_ttl_s=24 * 3600)
+                                      headers={"User-Agent": self.s.cvrapi_user_agent}, cache_ttl_s=30 * 24 * 3600,
+                                      cache_if=lambda b: isinstance(b, dict) and not b.get("error"))
         except HttpError as e:
             log.warning("cvrapi %s: %s", params, e)
             self.last_error = str(e)
