@@ -10,7 +10,12 @@ from .detect import score_case
 from .http import Http
 from .models import BankruptcyCase
 from .sources.cvr import ApiCvrMcp, ApiCvrRest, CvrApi, CvrElastic, StatstidendeCvr, enrich_with_cvr
-from .sources.ejerfortegnelse import DawaClient, EjerfortegnelseClient, enrich_with_ejerfortegnelse
+from .sources.ejerfortegnelse import (
+    DawaClient,
+    EjerfortegnelseClient,
+    LocalIndexes,
+    enrich_with_ejerfortegnelse,
+)
 from .sources.regnskab import RegnskabClient, enrich_with_regnskab
 from .sources.statstidende import (
     StatstidendeClient,
@@ -53,6 +58,7 @@ class Pipeline:
         self.regnskab = RegnskabClient(settings, self.http)
         self.ejf = EjerfortegnelseClient(settings, self.http) if settings.has_datafordeler else None
         self.dawa = DawaClient(settings, self.http)
+        self.local = LocalIndexes(settings.index_dir)
         self.stats = RunStats()
 
     # ------------------------------------------------------------------ steps
@@ -108,7 +114,7 @@ class Pipeline:
             self.stats.beriget_cvr += 1
 
     def enrich_ejf(self, case: BankruptcyCase) -> None:
-        enrich_with_ejerfortegnelse(case, self.ejf, self.dawa)
+        enrich_with_ejerfortegnelse(case, self.ejf, self.dawa, local=self.local)
         if any(p.kilde == "ejerfortegnelsen" for p in case.ejendomme):
             self.stats.beriget_ejf += 1
 
@@ -160,8 +166,12 @@ class Pipeline:
         src = [f"statstidende:{self.s.statstidende_mode}", "apicvr-rest", "cvrapi", "apicvr-mcp", "regnskab-xbrl", "dawa"]
         if self.cvr_es:
             src.append("cvr-es")
-        if self.ejf:
+        if self.local.has_ejf:
+            src.append("ejerfortegnelsen-indeks")
+        elif self.ejf:
             src.append("ejerfortegnelsen")
+        if self.local.vur.get("bfe"):
+            src.append("vurdering-indeks")
         return src
 
 

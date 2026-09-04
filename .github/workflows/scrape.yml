@@ -46,6 +46,8 @@ jobs:
       STATSTIDENDE_MODE: ${{ secrets.STATSTIDENDE_CERT_PEM != '' && 'api' || 'web' }}
       DATAFORDELER_API_KEY: ${{ secrets.DATAFORDELER_API_KEY }}
       DATAFORDELER_API_KEY_PARAM: ${{ vars.DATAFORDELER_API_KEY_PARAM || 'apikey' }}
+      DATAFORDELER_CLIENT_ID: ${{ secrets.DATAFORDELER_CLIENT_ID }}
+      DATAFORDELER_CLIENT_SECRET: ${{ secrets.DATAFORDELER_CLIENT_SECRET }}
       DATAFORDELER_USER: ${{ secrets.DATAFORDELER_USER }}
       DATAFORDELER_PASSWORD: ${{ secrets.DATAFORDELER_PASSWORD }}
       CVR_ES_USER: ${{ secrets.CVR_ES_USER }}
@@ -69,6 +71,13 @@ jobs:
           path: .cache
           key: http-cache-v3-${{ github.run_id }}
           restore-keys: http-cache-v3-
+
+      - name: Genskab Datafordeler-indekser (bygget af index.yml)
+        uses: actions/cache/restore@v4
+        with:
+          path: data/index
+          key: df-index-
+          restore-keys: df-index-
 
       - name: Skriv OCES3-certifikat (kun hvis sat)
         if: ${{ env.STATSTIDENDE_MODE == 'api' }}
