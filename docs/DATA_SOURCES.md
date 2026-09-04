@@ -110,8 +110,14 @@ Anmeldelsesfristen beregnes som bekendtgørelsesdato + 4 uger (konkurslovens § 
 
 ## 7–8. Ejerfortegnelsen og vurdering (Datafordeler)
 
-* Opret gratis tjenestebruger på datafordeler.dk (Selvbetjening → Brugere → Tjenestebruger,
-  adgang med brugernavn/adgangskode). Sæt `DATAFORDELER_USER`/`DATAFORDELER_PASSWORD`.
+* Adgang (ny administration fra 2026): log ind på datafordeler.dk → Administration → IT-systemer →
+  opret et IT-system → **API-Keys → Opret**. API-nøglen giver adgang til tjenester med *frie data*
+  (Ejerfortegnelsen åben variant, Vurdering, BBR, Matriklen) og sendes med i URL'en. Sæt
+  `DATAFORDELER_API_KEY`. OAuth (shared secret/certifikat) og IP-registrering er kun nødvendigt for
+  *fortrolige* data (CPR-baseret ejerfortegnelse), som vi ikke bruger. Ældre tjenestebrugere med
+  brugernavn/adgangskode understøttes stadig via `DATAFORDELER_USER`/`DATAFORDELER_PASSWORD`.
+* Behandl API-nøglen som en adgangskode: læg den kun i GitHub Secrets. En nøgle der har været delt
+  (fx i en chat) bør deaktiveres og erstattes under API-Keys → Deaktiver / Opret.
 * REST: `GET https://services.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer?CVRnr=…&format=json&username=…&password=…`
   Metoden returnerer ejerskaber med `bestemtFastEjendomBFENr`, ejerandel og ejendomstype.
   Datafordeleren har varslet at REST-varianten udfases ultimo 2026; basis-URL og sti er derfor

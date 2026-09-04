@@ -1,8 +1,9 @@
 """Ejerfortegnelsen (EJF) via Datafordeleren – det direkte bevis for ejendomsejerskab.
 
 REST-tjenesten `EjendommeMedSammeEjer` returnerer alle ejendomme (BFE-numre)
-hvor et CVR-nummer er registreret ejer. Kræver en gratis tjenestebruger på
-datafordeler.dk (brugernavn/adgangskode – sæt DATAFORDELER_USER/PASSWORD).
+hvor et CVR-nummer er registreret ejer. Adgang: opret et IT-system på datafordeler.dk
+(Administration → IT-systemer) og en API-Key til frie data; sæt DATAFORDELER_API_KEY.
+Ældre tjenestebrugere med brugernavn/adgangskode virker via DATAFORDELER_USER/PASSWORD.
 
 Dokumentation: https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/ejerfortegnelsen/
 Bemærk at REST-varianten udfases ultimo 2026 til fordel for en ny; tjenestens
@@ -33,6 +34,10 @@ class EjerfortegnelseClient:
         self.http = http
 
     def _params(self, **kw: Any) -> dict[str, Any]:
+        """Datafordelerens nye administration (2026) bruger en API-Key i URL'en til frie data;
+        den gamle model bruger tjenestebruger med brugernavn/adgangskode. Begge understøttes."""
+        if self.s.datafordeler_api_key:
+            return {self.s.datafordeler_api_key_param: self.s.datafordeler_api_key, "format": "json", **kw}
         return {"username": self.s.datafordeler_user, "password": self.s.datafordeler_password,
                 "format": "json", **kw}
 

@@ -121,6 +121,48 @@ jobs:
           grep -ohE '.{0,300}publicationfile.{0,300}' bundles/*.js | grep -v signingcertificates | head -6
           grep -ohE '.{0,300}fileId.{0,300}' bundles/*.js | head -8
 
+      - name: apicvr.dk – MCP-server og REST
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          for u in https://apicvr.dk/ https://api.apicvr.dk/ https://apicvr.dk/docs https://mcp.apicvr.dk/ https://mcp.apicvr.dk/mcp; do
+            printf "GET %s -> " "$u"; curl -sS -m 20 -A "$UA" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
+            head -c 600 body.txt | tr '\n' ' '; echo
+          done
+          echo "== MCP initialize =="
+          curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
+            -D headers.txt -o body.txt -w "%{http_code} %{content_type}\n" \
+            -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"propscreener-discovery","version":"0.1"}}}' \
+            https://mcp.apicvr.dk/mcp || true
+          grep -i "mcp-session-id" headers.txt || true; head -c 1500 body.txt; echo
+          SID=$(grep -i "^mcp-session-id:" headers.txt | tr -d '\r' | awk '{print $2}')
+          echo "== MCP tools/list =="
+          curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" ${SID:+-H "Mcp-Session-Id: $SID"} \
+            -o body.txt -w "%{http_code} %{content_type}\n" \
+            -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' https://mcp.apicvr.dk/mcp || true
+          head -c 6000 body.txt; echo
+
+      - name: Datafordeler – test API-Key (kun hvis secret er sat; nøglen udskrives ikke)
+        env:
+          DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
+        run: |
+          if [ -z "$DFKEY" ]; then echo "DATAFORDELER_API_KEY ikke sat – springer over"; exit 0; fi
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          Q="CVRnr=64942212&format=json&pagesize=2"   # Københavns Kommune – ejer mange ejendomme
+          for base in https://services.datafordeler.dk https://api.datafordeler.dk; do
+            for svc in "EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjendommeMedSammeEjer" "EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjendommeMedSammeEjer"; do
+              for p in apikey api-key key apiKey token; do
+                code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$base/$svc?$Q&$p=$DFKEY" || echo 000)
+                echo "$code  $base/$svc?$Q&$p=***"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+              done
+              for h in "X-Api-Key" "apikey" "Ocp-Apim-Subscription-Key"; do
+                code=$(curl -sS -m 25 -A "$UA" -H "$h: $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
+                echo "$code  $base/$svc?$Q  header $h"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+              done
+              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $DFKEY" -o body.txt -w "%{http_code}" "$base/$svc?$Q" || echo 000)
+              echo "$code  $base/$svc?$Q  header Authorization: Bearer"; [ "$code" = "200" ] && head -c 500 body.txt | sed "s/$DFKEY/***/g" && echo
+            done
+          done
+
       - uses: actions/upload-artifact@v4
         with:
           name: statstidende-openapi

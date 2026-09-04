@@ -7,7 +7,7 @@ name: Scrape og publicér
 # kilde "GitHub Actions", publiceres dashboardet desuden på <owner>.github.io/<repo>/.
 #
 # Hemmeligheder (alle valgfrie – se docs/SETUP.md):
-#   DATAFORDELER_USER / DATAFORDELER_PASSWORD     Ejerfortegnelsen + vurdering
+#   DATAFORDELER_API_KEY (eller DATAFORDELER_USER/PASSWORD)  Ejerfortegnelsen + vurdering
 #   CVR_ES_USER / CVR_ES_PASSWORD                 Erhvervsstyrelsens system-til-system CVR
 #   STATSTIDENDE_CERT_PEM / STATSTIDENDE_KEY_PEM  OCES3-certifikat (mode=api)
 #   CVRAPI_USER_AGENT                             kontaktinfo til cvrapi.dk
@@ -44,6 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       STATSTIDENDE_MODE: ${{ secrets.STATSTIDENDE_CERT_PEM != '' && 'api' || 'web' }}
+      DATAFORDELER_API_KEY: ${{ secrets.DATAFORDELER_API_KEY }}
+      DATAFORDELER_API_KEY_PARAM: ${{ vars.DATAFORDELER_API_KEY_PARAM || 'apikey' }}
       DATAFORDELER_USER: ${{ secrets.DATAFORDELER_USER }}
       DATAFORDELER_PASSWORD: ${{ secrets.DATAFORDELER_PASSWORD }}
       CVR_ES_USER: ${{ secrets.CVR_ES_USER }}

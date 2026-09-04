@@ -48,6 +48,8 @@ class Settings:
     datafordeler_base: str = "https://services.datafordeler.dk"
     datafordeler_user: str = ""
     datafordeler_password: str = ""
+    datafordeler_api_key: str = ""          # ny administration (2026): API-Key til frie data
+    datafordeler_api_key_param: str = "apikey"
 
     # DAWA (adresser, gratis)
     dawa_base: str = "https://api.dataforsyningen.dk"
@@ -74,6 +76,9 @@ class Settings:
         s.cvr_es_password = _env("CVR_ES_PASSWORD")
         s.datafordeler_user = _env("DATAFORDELER_USER")
         s.datafordeler_password = _env("DATAFORDELER_PASSWORD")
+        s.datafordeler_api_key = _env("DATAFORDELER_API_KEY")
+        s.datafordeler_api_key_param = _env("DATAFORDELER_API_KEY_PARAM", s.datafordeler_api_key_param)
+        s.datafordeler_base = _env("DATAFORDELER_BASE", s.datafordeler_base).rstrip("/")
         s.days_back = int(_env("PROPSCREENER_DAYS_BACK", str(s.days_back)))
         s.min_score = int(_env("PROPSCREENER_MIN_SCORE", str(s.min_score)))
         s.cache_dir = Path(_env("PROPSCREENER_CACHE_DIR", str(s.cache_dir)))
@@ -81,7 +86,7 @@ class Settings:
 
     @property
     def has_datafordeler(self) -> bool:
-        return bool(self.datafordeler_user and self.datafordeler_password)
+        return bool(self.datafordeler_api_key or (self.datafordeler_user and self.datafordeler_password))
 
     @property
     def has_cvr_es(self) -> bool:

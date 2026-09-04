@@ -17,7 +17,8 @@ Det giver score på branche, navn, regnskab og tvangsauktioner – men ingen BFE
 
 | Miljøvariabel | Hvor får man den | Effekt |
 |---|---|---|
-| `DATAFORDELER_USER` / `_PASSWORD` | datafordeler.dk → Selvbetjening → opret tjenestebruger (gratis) | Ejerfortegnelsen + vurdering → konfidens *høj* |
+| `DATAFORDELER_API_KEY` | datafordeler.dk → Administration → IT-systemer → dit IT-system → API-Keys → Opret (gratis, frie data). Parameternavnet verificeres af `discover.yml`; sæt evt. variablen `DATAFORDELER_API_KEY_PARAM` | Ejerfortegnelsen + vurdering → konfidens *høj* |
+| `DATAFORDELER_USER` / `_PASSWORD` | Ældre tjenestebruger med brugernavn/adgangskode (kun hvis du har en) | som ovenfor |
 | `CVR_ES_USER` / `_PASSWORD` | datacvr.virk.dk → "System-til-system adgang til CVR-data" (aftale) | Bibrancher, ejere/ledelse, statushistorik; alternativ konkurskilde |
 | `STATSTIDENDE_CERT_FILE` / `_KEY_FILE` | Aftale med Civilstyrelsen + OCES3-certifikat | Officielt API i stedet for web-søgning |
 | `CVRAPI_USER_AGENT` | Din egen tekst med kontaktinfo | Krævet af cvrapi.dk's vilkår |
