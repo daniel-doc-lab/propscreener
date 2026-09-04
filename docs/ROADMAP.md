@@ -11,11 +11,12 @@
 
 ## Næste skridt
 
-1. **Verificér Statstidende-endpoint** i web-mode og lås payload-nøglerne (docs/DATA_SOURCES.md).
-   Tilføj en optaget JSON-respons som fixture i `tests/fixtures/`.
-2. **Kør første rigtige pipeline** i GitHub Actions (`demo=false`) og gennemgå 20 boer manuelt
-   mod tingbogen for at kalibrere pointene i `detect.py`.
-3. **Optag EJF- og VUR-svar** som fixtures og stram `_iter_ejerskaber`/`valuation`.
+1. **Merge til `main`** så GitHub Pages-deploy virker (miljøet `github-pages` tillader kun `main`).
+2. **Datafordeler-secrets** (`DATAFORDELER_USER/PASSWORD`) → bekræftet ejerskab med BFE-numre.
+   Optag EJF- og VUR-svar som fixtures og stram `_iter_ejerskaber`/`valuation`.
+3. **CVR-adgang**: ansøg om system-til-system adgang hos Erhvervsstyrelsen (gratis) og sæt
+   `CVR_ES_USER/PASSWORD` – fjerner afhængigheden af cvrapi.dk's kvote.
+4. **Kalibrering**: gennemgå 20 boer manuelt mod tingbogen og justér pointene i `detect.py`.
 
 ## Funktioner
 
