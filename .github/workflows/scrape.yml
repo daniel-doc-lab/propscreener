@@ -50,7 +50,7 @@ jobs:
       CVR_ES_PASSWORD: ${{ secrets.CVR_ES_PASSWORD }}
       CVRAPI_USER_AGENT: ${{ secrets.CVRAPI_USER_AGENT }}
       PROPSCREENER_CACHE_DIR: .cache
-      SCRAPE_DAYS_ON_PUSH: "7"
+      SCRAPE_DAYS_ON_PUSH: "90"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -102,7 +102,7 @@ jobs:
             propscreener demo -n 60 --out data --site site/index.html
           else
             propscreener -v run --days "$DAYS" \
-              --min-score "${{ github.event.inputs.min_score || '40' }}" \
+              --min-score "${{ github.event.inputs.min_score || '25' }}" \
               --out data --site site/index.html
           fi
           mkdir -p site/data && cp data/cases.json data/cases.csv site/data/
