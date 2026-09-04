@@ -166,27 +166,35 @@ jobs:
             head -c 600 body.txt | tr '\n' ' '; echo
           done
 
-      - name: Datafordeler – GraphQL/Fildownload-dokumentation (DML) og endpoint-test
+      - name: Datafordeler – autentifikation (OAuth) og fildownload-test
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
           mask() { if [ -n "$DFKEY" ]; then sed "s/$DFKEY/***/g"; else cat; fi; }
           txt() { sed 's/<[^>]*>/ /g' "$1" | sed 's/&nbsp;/ /g; s/&amp;/\&/g' | tr -s ' \n\t' ' '; }
-          for u in "https://confluence.kds.dk/display/DML/GraphQL" "https://confluence.kds.dk/display/DML/Fildownload" \
-                   "https://confluence.kds.dk/display/DML/Ejerfortegnelsen" "https://confluence.kds.dk/display/DML/GraphQL+%28EJF%29" \
-                   "https://confluence.kds.dk/display/DML/Fildownload+%28EJF%29" "https://confluence.kds.dk/display/DML/Autentifikation" \
-                   "https://confluence.kds.dk/display/DML/API-key" "https://confluence.kds.dk/display/DML"; do
+          for u in "https://confluence.kds.dk/label/DML/autentifikationsmetode" "https://confluence.kds.dk/label/DML/endpoint" "https://confluence.kds.dk/label/DML/ip-allowlist" \
+                   "https://confluence.sdfi.dk/pages/viewpage.action?pageId=151999753" "https://confluence.kds.dk/display/DML/Udvalgte+REST-tjenester+omsat+til+GraphQL-queries" \
+                   "https://confluence.kds.dk/display/DML/Guide+til+GraphQL+p%C3%A5+Datafordeleren" "https://confluence.kds.dk/display/DML/GraphQL+p%C3%A5+Datafordeleren"; do
             code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code} %{url_effective}" "$u" || echo 000); echo "===== $code $u"
-            echo "-- links:"; grep -oE 'href="[^"]*"' page.html | sed 's/href="//; s/"$//' | grep -iE 'graphql|fildownload|ejerfortegn|EJF|api-?key|autentif|hent-data|endpoint' | grep -v "os_destination" | sort -u | head -30
-            echo "-- urls:"; grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -30
-            echo "-- tekst:"; txt page.html | grep -oiE '.{0,220}(api-?key|apikey|graphql|fildownload|endpoint|https://api\.datafordeler|ejerskab|CVR).{0,220}' | head -14 | cut -c1-460
+            grep -oE 'href="/display/DML/[^"]*"|href="/pages/viewpage.action\?pageId=[0-9]+"' page.html | sed 's/href="//; s/"$//' | sort -u | head -25
+            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -30
+            txt page.html | grep -oiE '.{0,200}(token|client_id|client_secret|oauth|bearer|apikey|api-key|GetFile|Register=|graphql/|/graphql).{0,220}' | head -16 | cut -c1-440
           done
-          echo "== endpoint-gæt fra dokumentation =="
-          for u in "https://api.datafordeler.dk/graphql/EJF" "https://api.datafordeler.dk/EJF/graphql" "https://api.datafordeler.dk/v1/graphql" "https://api.datafordeler.dk/graphql/ejf" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/graphql" "https://api.datafordeler.dk/graphql/Ejerfortegnelsen" "https://api.datafordeler.dk/graphql/ejerfortegnelsen/1" "https://api.datafordeler.dk/EJF/1/graphql"; do
-            code=$(curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"query":"{ __typename }"}' -o body.txt -w "%{http_code} %{content_type}" "$u?apikey=$DFKEY" || echo 000)
-            echo "$code  POST $u" | mask; head -c 300 body.txt | tr '\n' ' ' | mask; echo
+          echo "== label-sider: find autentifikations-siden og hent den =="
+          for pid in $(curl -sSL -m 25 -A "$UA" "https://confluence.kds.dk/label/DML/autentifikationsmetode" | grep -oE 'pageId=[0-9]+|/display/DML/[^"]+' | sort -u | head -6); do
+            case "$pid" in pageId=*) u="https://confluence.kds.dk/pages/viewpage.action?$pid";; *) u="https://confluence.kds.dk$pid";; esac
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code}" "$u" || echo 000); echo "===== $code $u"
+            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -20
+            txt page.html | grep -oiE '.{0,240}(token|client_id|client_secret|grant_type|bearer|apikey).{0,240}' | head -14 | cut -c1-480
           done
+          echo "== fildownload med apikey (åbne registre) =="
+          for reg in EJF DAR BBR MAT EBR VUR; do
+            code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code} %{content_type}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=$reg&apikey=$DFKEY" || echo 000)
+            echo "$code  GetAvailableFileDownloads?Register=$reg" | mask; head -c 700 body.txt | tr '\n' ' ' | mask; echo
+          done
+          code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code} %{content_type}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=EJF" || echo 000)
+          echo "$code  GetAvailableFileDownloads uden nøgle"; head -c 300 body.txt; echo
 
       - uses: actions/upload-artifact@v4
         with:

@@ -17,7 +17,8 @@ Det giver score på branche, navn, regnskab og tvangsauktioner – men ingen BFE
 
 | Miljøvariabel | Hvor får man den | Effekt |
 |---|---|---|
-| `DATAFORDELER_API_KEY` | datafordeler.dk → Administration → IT-systemer → dit IT-system → API-Keys → Opret (gratis, frie data). Parameternavnet verificeres af `discover.yml`; sæt evt. variablen `DATAFORDELER_API_KEY_PARAM` | Ejerfortegnelsen + vurdering → konfidens *høj* |
+| `DATAFORDELER_CLIENT_ID` / `DATAFORDELER_CLIENT_SECRET` | Datafordeler Administration → IT-system → OAuth Shared Secret → Opret, **plus** godkendt "Anmodning om adgang til Ejerfortegnelsen (EJF)" for Fildownload/GraphQL | Ejerfortegnelsen (CVR → BFE-indeks) → konfidens *høj* |
+| `DATAFORDELER_API_KEY` | IT-system → API-Keys (frie data). Verificeret: nøglen accepteres som `?apikey=` på api.datafordeler.dk, men EJF kræver OAuth + anmodning | BBR/Matriklen/DAR-fildownload (frie data) |
 | `DATAFORDELER_USER` / `_PASSWORD` | Ældre tjenestebruger med brugernavn/adgangskode (kun hvis du har en) | som ovenfor |
 | `CVR_ES_USER` / `_PASSWORD` | datacvr.virk.dk → "System-til-system adgang til CVR-data" (aftale) | Bibrancher, ejere/ledelse, statushistorik; alternativ konkurskilde |
 | `STATSTIDENDE_CERT_FILE` / `_KEY_FILE` | Aftale med Civilstyrelsen + OCES3-certifikat | Officielt API i stedet for web-søgning |
