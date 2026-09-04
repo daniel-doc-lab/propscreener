@@ -166,41 +166,51 @@ jobs:
             head -c 600 body.txt | tr '\n' ' '; echo
           done
 
-      - name: Datafordeler – find dokumenterede URL'er på den nye platform
+      - name: Datafordeler – fildownload, GraphQL og BFE-opslag (nøglen udskrives ikke)
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
           mask() { if [ -n "$DFKEY" ]; then sed "s/$DFKEY/***/g"; else cat; fi; }
-          echo "== api.datafordeler.dk rod / swagger =="
-          for u in "https://api.datafordeler.dk/" "https://api.datafordeler.dk/swagger" "https://api.datafordeler.dk/swagger/index.html" "https://api.datafordeler.dk/openapi.json" "https://api.datafordeler.dk/api" "https://api.datafordeler.dk/EJERFORTEGNELSE" "https://api.datafordeler.dk/ejerfortegnelse" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST" ; do
-            for q in "" "?apikey=$DFKEY"; do
-              code=$(curl -sS -m 20 -A "$UA" -o body.txt -w "%{http_code} %{content_type} %{size_download}b %{redirect_url}" "$u$q" || echo 000)
-              echo "$code  GET $u$q" | mask; head -c 400 body.txt | tr '\n' ' ' | mask; echo
-            done
+          try() { code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "$2" || echo 000); echo "$code  $1" | mask
+                  if [ "$code" != "401" ]; then echo "   >>> $(head -c ${3:-900} body.txt | tr '\n' ' ' | mask)"; fi; }
+          echo "== vejledning: undersider =="
+          curl -sSL -m 25 -A "$UA" https://datafordeler.dk/vejledning/ -o vejl.html
+          grep -oE 'href="[^"]*vejledning/[^"]*"' vejl.html | sed 's/href="//; s/"$//' | sort -u | head -60
+          for path in $(grep -oE 'href="[^"]*vejledning/[^"]*"' vejl.html | sed 's/href="//; s/"$//' | grep -iE 'graphql|fildownload|api|adgang|rest|tjenest|brug' | sort -u | head -12); do
+            case "$path" in http*) u="$path";; *) u="https://datafordeler.dk$path";; esac
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code}" "$u" || echo 000)
+            echo "----- $code $u"
+            sed 's/<[^>]*>/ /g' page.html | tr -s ' \n' ' ' | grep -oiE '.{0,200}(api-key|apikey|graphql|fildownload|https://[a-z0-9.-]*datafordeler\.dk/[^ ]*).{0,200}' | head -8 | cut -c1-500
           done
-          echo "== dokumentationssider: udtræk URL-eksempler =="
-          for u in "https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/ejerfortegnelsen/" \
-                   "https://datafordeler.dk/dataoversigt/ejerfortegnelsen-ejf/" \
-                   "https://datafordeler.dk/dataoversigt/vurdering-vur/" \
-                   "https://datafordeler.dk/dataoversigt/bygnings-og-boligregistret-bbr/bbr-public/" \
-                   "https://datafordeler.dk/vejledning/" \
-                   "https://datafordeler.dk/vejledning/brugeradgang/" \
-                   "https://datafordeler.dk/vejledning/brugeradgang/api-key/" \
-                   "https://datafordeler.dk/vejledning/rest/" \
-                   "https://datafordeler.dk/nyheder/" \
-                   "https://confluence.sdfi.dk/x/5YBQAQ" \
-                   "https://confluence.sdfi.dk/pages/viewpage.action?pageId=22151141" \
-                   "https://confluence.sdfi.dk/display/DP/Ejerfortegnelsen" ; do
-            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code} %{url_effective}" "$u" || echo 000)
-            echo "----- $code  $u"
-            grep -oiE 'https?://[a-z0-9.-]*datafordeler\.dk/[^"'"'"'<> )]+' page.html | sort -u | head -30
-            grep -oiE '.{0,120}(api-?key|apikey|API-Key).{0,160}' page.html | sed 's/<[^>]*>//g' | sort -u | head -12
-            grep -oiE '.{0,80}(EjendommeMedSammeEjer|Ejerskab|BFEejendomsvurdering|/REST/|/rest/).{0,120}' page.html | sed 's/<[^>]*>//g' | sort -u | head -20
+          echo "== GraphQL-endpoints =="
+          for u in "https://api.datafordeler.dk/graphql" "https://api.datafordeler.dk/EJERFORTEGNELSE/graphql" "https://api.datafordeler.dk/ejerfortegnelse/graphql" "https://api.datafordeler.dk/GraphQL/EJERFORTEGNELSE" "https://graphql.datafordeler.dk/" "https://api.datafordeler.dk/graphql/ejerfortegnelsen"; do
+            try "GET $u" "$u?apikey=$DFKEY" 400
+            code=$(curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"query":"{ __schema { queryType { name } } }"}' -o body.txt -w "%{http_code}" "$u?apikey=$DFKEY" || echo 000)
+            echo "$code  POST introspection $u" | mask; head -c 400 body.txt | tr '\n' ' ' | mask; echo
           done
-          echo "== Google-cache-fri søgning: datafordeler.dk sitemap =="
-          curl -sSL -m 25 -A "$UA" https://datafordeler.dk/sitemap.xml -o sitemap.xml || true
-          grep -oE 'https://datafordeler\.dk/[^<]*' sitemap.xml | grep -iE 'vejledning|api|rest|adgang|it-system|noegle|key' | head -40
+          echo "== BFE via DAWA (fuld struktur) =="
+          curl -sS -m 20 -A "$UA" "https://api.dataforsyningen.dk/adgangsadresser?q=R%C3%A5dhuspladsen%201,%201550&per_side=1" | python3 -c 'import sys,json; a=json.load(sys.stdin)[0]; print(sorted(a.keys())); print("jordstykke:", a.get("jordstykke")); print("bfe:", a.get("jordstykke",{}).get("bfenummer") if a.get("jordstykke") else None)'
+          BFE=$(curl -sS -m 20 -A "$UA" "https://api.dataforsyningen.dk/jordstykker?adresse=R%C3%A5dhuspladsen%201&per_side=1" 2>/dev/null | python3 -c 'import sys,json; d=json.load(sys.stdin); print(d[0].get("bfenummer","") if d else "")' 2>/dev/null)
+          echo "BFE via jordstykker=$BFE"
+          [ -z "$BFE" ] && BFE=$(curl -sS -m 20 -A "$UA" "https://api.dataforsyningen.dk/adgangsadresser?q=R%C3%A5dhuspladsen%201,%201550&per_side=1&struktur=flad" | python3 -c 'import sys,json; a=json.load(sys.stdin)[0]; print(a.get("jordstykke_bfenummer") or a.get("bfenummer") or "")')
+          echo "BFE=$BFE"
+          echo "== EJF åbne metoder pr. BFE (små bogstaver rest) =="
+          for v in 1 1.0.0 2.0.0; do for m in EjerskabMedStamoplysninger Handelsoplysning Ejerskifte; do
+            try "EJF/$v/rest/$m?BFEnr=$BFE" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/$v/rest/$m?BFEnr=$BFE&format=json&apikey=$DFKEY" 1500
+          done; done
+          try "EJF/1/REST/EjerskabMedStamoplysninger (stort REST)" "https://api.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/REST/EjerskabMedStamoplysninger?BFEnr=$BFE&format=json&apikey=$DFKEY" 800
+          try "EJF s5-certservices uden cert" "https://s5-certservices.datafordeler.dk/EJERFORTEGNELSE/Ejerfortegnelsen/1/rest/EjerskabMedStamoplysninger?BFEnr=$BFE&format=json&apikey=$DFKEY" 400
+          echo "== fildownload =="
+          for u in "https://api.datafordeler.dk/FileDownloads" "https://api.datafordeler.dk/FileDownloads/GetFileList" "https://api.datafordeler.dk/filedownload" "https://api.datafordeler.dk/fildownload" "https://api.datafordeler.dk/FileDownloads/EJERFORTEGNELSE"; do
+            try "GET $u" "$u?apikey=$DFKEY" 600
+          done
+          echo "== confluence: Ejerfortegnelsen fildownload / GraphQL =="
+          for u in "https://confluence.sdfi.dk/x/m4LQ" "https://confluence.sdfi.dk/display/DP/Fildownload" "https://confluence.sdfi.dk/display/DP/GraphQL"; do
+            code=$(curl -sSL -m 25 -A "$UA" -o page.html -w "%{http_code} %{url_effective}" "$u" || echo 000); echo "----- $code $u"
+            grep -oE 'href="[^"]*"' page.html | sed 's/href="//; s/"$//' | grep -iE 'fildownload|filudtr|graphql|ejerfortegnelse|rest' | sort -u | head -25
+            sed 's/<[^>]*>/ /g' page.html | tr -s ' \n' ' ' | grep -oiE '.{0,160}(fildownload|filudtræk|graphql|api-key).{0,200}' | head -8 | cut -c1-400
+          done
 
       - uses: actions/upload-artifact@v4
         with:
