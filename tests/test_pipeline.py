@@ -171,3 +171,16 @@ def test_demo_is_deterministic_and_cvr_valid():
         n = cvr_number(__import__("random").Random(_))
         assert sum(int(d) * w for d, w in zip(n, weights, strict=True)) % 11 == 0
     assert any(c.score >= 60 for c in a) and any(c.score < 40 for c in a)
+
+
+def test_merge_with_existing_keeps_recent_unseen(tmp_path: Path):
+    from propscreener.export import merge_with_existing
+    old, stats = generate(n=6, seed=3)
+    write_json(build_dataset(old, stats, demo=True), tmp_path / "cases.json")
+    new, _ = generate(n=3, seed=3)          # samme tre første id'er som `old`
+    new[0].score = 99
+    merged, kept = merge_with_existing(new, tmp_path / "cases.json", retention_days=365)
+    assert kept == 3 and len(merged) == 6
+    assert next(c for c in merged if c.id == new[0].id).score == 99   # ny version vinder
+    merged2, kept2 = merge_with_existing(new, tmp_path / "cases.json", retention_days=0)
+    assert kept2 == 0 and len(merged2) == 3                            # uden retention: kun nye

@@ -1,6 +1,15 @@
 # Roadmap
 
-## Næste skridt (kræver netværksadgang)
+## Status 4. september 2026
+
+* Statstidendes åbne JSON-API er verificeret og i drift (971 dekreter på 90 dage).
+* Regnskabsdata (XBRL) virker for ca. 76 % af selskaberne.
+* cvrapi.dk giver kun få opslag pr. dag fra GitHub-runnere (delt IP-kvote). Branchekode mangler
+  derfor på de fleste boer indtil der sættes CVR system-til-system-adgang op.
+* Ejerfortegnelsen afventer Datafordeler-login (secrets).
+* Tvangsauktioner matches på "Skødehaver ifølge tingbogsattest"; 2 match i første kørsel.
+
+## Næste skridt
 
 1. **Verificér Statstidende-endpoint** i web-mode og lås payload-nøglerne (docs/DATA_SOURCES.md).
    Tilføj en optaget JSON-respons som fixture i `tests/fixtures/`.

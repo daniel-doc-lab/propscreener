@@ -8,7 +8,7 @@ from pathlib import Path
 
 from . import __version__
 from .config import Settings
-from .export import build_dataset, build_site, load_cases, write_csv, write_json
+from .export import build_dataset, build_site, load_cases, merge_with_existing, write_csv, write_json
 from .http import Http
 
 
@@ -29,7 +29,13 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--days", type=int, help="Antal dage tilbage (default fra env, 90)")
     p_run.add_argument("--min-score", type=int, help="Mindste score for at komme med (default 40)")
     p_run.add_argument("--all", action="store_true", help="Medtag alle boer uanset score (min-score=0)")
+    p_run.add_argument("--no-merge", action="store_true", help="Overskriv eksisterende data i stedet for at flette")
+    p_run.add_argument("--retention", type=int, default=180, help="Behold boer fra tidligere kørsler i N dage (default 180)")
     _common_out(p_run)
+
+    p_re = sub.add_parser("rescore", help="Kør scoring og klassificering igen på eksisterende data/cases.json")
+    p_re.add_argument("--min-score", type=int, default=0)
+    _common_out(p_re)
 
     p_demo = sub.add_parser("demo", help="Generér fiktivt demodatasæt (offline)")
     p_demo.add_argument("-n", type=int, default=60)
@@ -60,7 +66,22 @@ def main(argv: list[str] | None = None) -> int:
         pipe = Pipeline(settings)
         min_score = 0 if a.all else a.min_score
         cases, stats = pipe.run(days_back=a.days, min_score=min_score)
+        if not a.no_merge:
+            cases, kept = merge_with_existing(cases, Path(a.out) / "cases.json", a.retention, min_score)
+            stats.bevaret_fra_tidligere = kept
         return _write(cases, stats, a, demo=False)
+
+    if a.cmd == "rescore":
+        from .detect import score_case
+        from .pipeline import RunStats, add_investor_links
+        cases, meta = load_cases(Path(a.out) / "cases.json")
+        for c in cases:
+            score_case(c)
+            add_investor_links(c)
+        cases = [c for c in cases if c.score >= a.min_score]
+        cases.sort(key=lambda c: (-c.score, c.dekretdato or ""))
+        stats = meta.get("stats") or RunStats()
+        return _write(cases, stats, a, demo=bool(meta.get("demo")))
 
     if a.cmd == "demo":
         from .demo import generate

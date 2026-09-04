@@ -156,14 +156,19 @@ def classify_property_type(case: BankruptcyCase) -> str:
     types = {(p.ejendomstype or "").lower() for p in case.ejendomme}
     code = (case.selskab.branchekode or "").replace(".", "")
     navn = (case.selskab.navn or "").lower()
+    f = case.regnskab
     if any("ejerlejlighed" in t for t in types) or code in ("682030", "682020") or "bolig" in navn:
         if code in ("682010", "682040"):
             return "Blandet"
         return "Bolig"
-    if code in ("682010", "682040", "552010", "552020"):
+    if code in ("682010", "682040", "552010", "552020") or re.search(r"erhverv|kontor|lager|hotel", navn):
         return "Erhverv"
-    if code in ("681000", "411000") or "grund" in navn or "projekt" in navn:
+    if code in ("681000", "411000") or re.search(r"grund|projekt|byg\b|byg |development|entrepren", navn):
         return "Grund/Projekt"
-    if case.ejendomme:
+    if case.ejendomme or NAME_ADDRESS.search(navn) or re.search(r"ejendom|estate|properties|udlejning", navn):
         return "Blandet"
+    if (f.investeringsejendomme or 0) > 0:
+        return "Blandet"  # investeringsejendomme uden nærmere angivelse
+    if (f.grunde_og_bygninger or 0) > 0:
+        return "Egen domicil"  # grunde og bygninger i driftsselskab: typisk egen ejendom
     return "Ukendt"

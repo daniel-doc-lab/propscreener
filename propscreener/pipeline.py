@@ -33,6 +33,7 @@ class RunStats:
     beriget_ejf: int = 0
     over_min_score: int = 0
     min_score: int = 0
+    bevaret_fra_tidligere: int = 0
     kilder_aktive: list[str] = field(default_factory=list)
     fejl: list[str] = field(default_factory=list)
 

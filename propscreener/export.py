@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 import json
 from dataclasses import asdict
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -60,7 +60,7 @@ def build_dataset(cases: list[BankruptcyCase], stats: Any, demo: bool = False) -
             "version": __version__,
             "antal": len(cases),
             "demo": demo,
-            "kilder_aktive": getattr(stats, "kilder_aktive", []),
+            "kilder_aktive": getattr(stats, "kilder_aktive", None) or (stats.get("kilder_aktive", []) if isinstance(stats, dict) else []),
             "stats": asdict(stats) if hasattr(stats, "__dataclass_fields__") else stats,
         },
         "cases": [c.to_dict() for c in cases],
@@ -92,6 +92,25 @@ def build_site(dataset: dict[str, Any], out_path: Path, template: Path | None = 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return out_path
+
+
+def merge_with_existing(cases: list[BankruptcyCase], path: Path, retention_days: int = 180,
+                        min_score: int = 0) -> tuple[list[BankruptcyCase], int]:
+    """Inkrementel opdatering: nye/gensete boer erstatter gamle med samme id; boer der ikke er set
+    i denne kørsel beholdes indtil de er ældre end `retention_days`. Returnerer (liste, antal bevaret)."""
+    if not path.exists():
+        return cases, 0
+    try:
+        old, _ = load_cases(path)
+    except Exception:  # noqa: BLE001
+        return cases, 0
+    cutoff = (datetime.now(UTC).date() - timedelta(days=retention_days)).isoformat()
+    seen = {c.id for c in cases}
+    kept = [c for c in old if c.id not in seen and (c.offentliggjort or c.dekretdato or "") >= cutoff
+            and c.score >= min_score]
+    merged = cases + kept
+    merged.sort(key=lambda c: (-c.score, c.dekretdato or "", c.selskab.navn or ""))
+    return merged, len(kept)
 
 
 def load_cases(path: Path) -> tuple[list[BankruptcyCase], dict[str, Any]]:
