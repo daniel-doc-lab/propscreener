@@ -42,6 +42,9 @@ def main(argv: list[str] | None = None) -> int:
     p_site.add_argument("--site", default="site/index.html")
 
     sub.add_parser("probe", help="Afprøv Statstidende-endpoints og kildernes tilgængelighed")
+    p_dbg = sub.add_parser("debug-search", help="Dump rå JSON fra Statstidende-søgning og første meddelelse")
+    p_dbg.add_argument("--type", default="konkurs_dekret")
+    p_dbg.add_argument("--days", type=int, default=3)
 
     p_show = sub.add_parser("show", help="Vis et bo fra data/cases.json")
     p_show.add_argument("cvr")
@@ -78,7 +81,7 @@ def main(argv: list[str] | None = None) -> int:
         from .sources.statstidende import StatstidendeClient
         http = Http(settings.user_agent, None, settings.request_delay_s, settings.timeout_s)
         st = StatstidendeClient(settings, http)
-        print("Statstidende (web) kandidat-endpoints:")
+        print("Statstidende (web):")
         for method, url, status in st.probe():
             print(f"  {method:4s} {url:60s} {status}")
         for name, url in (("regnskabsindeks", settings.regnskab_es_base), ("cvrapi", settings.cvrapi_base),
@@ -90,6 +93,30 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {name:16s} {e}")
         print(f"Datafordeler-login: {'sat' if settings.has_datafordeler else 'mangler (Ejerfortegnelsen springes over)'}")
         print(f"CVR system-til-system: {'sat' if settings.has_cvr_es else 'mangler (bruger cvrapi.dk)'}")
+        return 0
+
+    if a.cmd == "debug-search":
+        import json
+
+        from .sources.statstidende import StatstidendeClient, message_to_case, web_message_to_raw
+        http = Http(settings.user_agent, None, settings.request_delay_s, settings.timeout_s)
+        st = StatstidendeClient(settings, http)
+        dump = st.debug_dump(a.type, a.days)
+        print("=== SEARCH (4000 tegn) ===")
+        print(json.dumps(dump["search"], ensure_ascii=False)[:4000])
+        print("=== FIRST MESSAGE (6000 tegn) ===")
+        print(json.dumps(dump["first_message"], ensure_ascii=False)[:6000])
+        if isinstance(dump["first_message"], dict):
+            raw = web_message_to_raw(dump["first_message"], settings.statstidende_web_base)
+            print("=== FELTER ===")
+            print(json.dumps(raw.felter, ensure_ascii=False, indent=1)[:4000])
+            print("=== TEKST ===")
+            print(raw.tekst[:3000])
+            print("=== CASE ===")
+            c = message_to_case(raw)
+            d = c.to_dict()
+            d.pop("raa_tekst", None)
+            print(json.dumps(d, ensure_ascii=False, indent=1)[:5000])
         return 0
 
     if a.cmd == "show":

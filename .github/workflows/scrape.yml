@@ -50,6 +50,7 @@ jobs:
       CVR_ES_PASSWORD: ${{ secrets.CVR_ES_PASSWORD }}
       CVRAPI_USER_AGENT: ${{ secrets.CVRAPI_USER_AGENT }}
       PROPSCREENER_CACHE_DIR: .cache
+      SCRAPE_DAYS_ON_PUSH: "7"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -76,12 +77,21 @@ jobs:
           echo "STATSTIDENDE_CERT_FILE=$PWD/certs/cert.pem" >> "$GITHUB_ENV"
           echo "STATSTIDENDE_KEY_FILE=$PWD/certs/key.pem" >> "$GITHUB_ENV"
 
+      - name: Probe og rå eksempel (til fejlsøgning)
+        run: |
+          propscreener probe || true
+          propscreener debug-search --days 3 || true
+
       - name: Kør pipeline
         run: |
+          DAYS="${{ github.event.inputs.days || '' }}"
+          if [ -z "$DAYS" ]; then
+            if [ "${{ github.event_name }}" = "push" ]; then DAYS="${SCRAPE_DAYS_ON_PUSH:-7}"; else DAYS=90; fi
+          fi
           if [ "${{ github.event.inputs.demo }}" = "true" ]; then
             propscreener demo -n 60 --out data --site site/index.html
           else
-            propscreener -v run --days "${{ github.event.inputs.days || '90' }}" \
+            propscreener -v run --days "$DAYS" \
               --min-score "${{ github.event.inputs.min_score || '40' }}" \
               --out data --site site/index.html
           fi

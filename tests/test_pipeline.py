@@ -14,25 +14,46 @@ XBRL = (FIX / "aarsrapport_demo.xml").read_text(encoding="utf-8")
 
 
 def _fake_http() -> FakeHttp:
-    def statstidende(url: str, body):
-        if (body or {}).get("messageCategory") == "Tvangsauktioner":
-            return {"messages": [
-                {"id": "a1", "publicationDate": "2026-08-30", "messageCategory": "Tvangsauktioner", "messageType": "Fast ejendom",
-                 "text": "Tvangsauktion over ejendommen matr. nr. 12 a, beliggende Vestergade 12, 8000 Aarhus C, "
-                         "tilhørende Fjord Ejendomme ApS, CVR-nr. 12345678. Ejendomsværdi: kr. 9.000.000. "
-                         "Auktionen afholdes den 15.10.2026."}]}
-        if "search" in url or url.endswith("/api/messages"):
-            return {"messages": [
-                {"id": "m1", "publicationDate": "2026-08-26", "messageCategory": "Konkursboer", "messageType": "Dekret",
-                 "text": DEKRET},
-                {"id": "m2", "publicationDate": "2026-08-27", "messageCategory": "Konkursboer", "messageType": "Dekret",
-                 "text": "Konkursdekret\nVed dekret afsagt den 27.08.2026 af Retten i Roskilde er\nByens Pizzaria ApS\n"
-                         "CVR-nr. 99887766\nAlgade 1\n4000 Roskilde\ntaget under konkursbehandling.\n"
-                         "Kurator: advokat Mette Jensen, Bystrøm Advokater, Torvet 3, 4000 Roskilde."},
-                {"id": "m3", "publicationDate": "2026-08-27", "messageCategory": "Konkursboer", "messageType": "Dekret",
-                 "text": "Konkursdekret over Hans Hansen, født 01.01.1970, Ukendt vej 1."},  # personlig konkurs
-            ]}
-        return {"messages": []}
+    DEKRET_PK = "14a1d71df21558e5ade0214f90482cdc"
+
+    def fg(name, **fields):
+        return {"name": name, "fields": [{"name": k, "value": v} for k, v in fields.items()]}
+
+    messages = {
+        "m1": {"messageNumber": "m1", "publicationDate": "2026-08-26T00:00:00", "sectionName": "Konkursboer",
+               "messageTypeName": "Dekret", "title": "Fjord Ejendomme ApS",
+               "document": json.dumps({"fieldgroups": [
+                   fg("Skyldner", Navn="Fjord Ejendomme ApS", **{"CVR-nummer": "12345678"}, Adresse="Vestergade 12",
+                      Postnummer="8000", By="Aarhus C"),
+                   fg("Dekret", Dekretdato="2026-08-25", Fristdag="2026-08-10", Skifteret="Skifteretten i Aarhus",
+                      Sagsnummer="SKS 41-1234/2026"),
+                   fg("Kurator", Navn="Peter Hansen", Firma="Advokatfirmaet Nordlys", Adresse="Åboulevarden 1",
+                      Postnummer="8000", By="Aarhus C", Telefon="86 12 34 56", **{"E-mail": "ph@nordlys-demo.dk"}),
+               ]})},
+        "m2": {"messageNumber": "m2", "publicationDate": "2026-08-27T00:00:00", "sectionName": "Konkursboer",
+               "messageTypeName": "Dekret", "document": json.dumps({"fieldgroups": [fg("Meddelelse", Tekst=(
+                   "Ved dekret afsagt den 27.08.2026 af Retten i Roskilde er Byens Pizzaria ApS, CVR-nr. 99887766, "
+                   "Algade 1, 4000 Roskilde, taget under konkursbehandling. Kurator: advokat Mette Jensen, "
+                   "Bystrøm Advokater, Torvet 3, 4000 Roskilde."))]})},
+        "m3": {"messageNumber": "m3", "publicationDate": "2026-08-27T00:00:00", "sectionName": "Konkursboer",
+               "messageTypeName": "Dekret", "document": json.dumps({"fieldgroups": [fg("Meddelelse", Tekst=(
+                   "Konkursdekret over Hans Hansen, født 01.01.1970, Ukendt vej 1."))]})},  # personlig konkurs
+        "a1": {"messageNumber": "a1", "publicationDate": "2026-08-30T00:00:00", "sectionName": "Tvangsauktioner",
+               "messageTypeName": "Fast ejendom", "document": json.dumps({"fieldgroups": [fg("Ejendom", Tekst=(
+                   "Tvangsauktion over ejendommen matr. nr. 12 a, beliggende Vestergade 12, 8000 Aarhus C, "
+                   "tilhørende Fjord Ejendomme ApS, CVR-nr. 12345678. Ejendomsværdi: kr. 9.000.000. "
+                   "Auktionen afholdes den 15.10.2026."))]})},
+    }
+
+    def statstidende(url: str):
+        if "/api/messagesearch?" in url:
+            ids = ["m1", "m2", "m3"] if f"m={DEKRET_PK}" in url else ["a1"]
+            return {"pageCount": 1, "results": [{"messageNumber": i, "publicationDate": messages[i]["publicationDate"]}
+                                                for i in ids]}
+        for num, body in messages.items():
+            if url.endswith(f"/api/message/{num}"):
+                return body
+        return {"pageCount": 0, "results": []}
 
     def cvrapi(url: str):
         if "vat=12345678" in url:

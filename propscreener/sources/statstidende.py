@@ -11,16 +11,24 @@ To adgangsveje:
               (kun tilgængelig med certifikat).
 
   mode="web"  Den offentlige søgning på https://www.statstidende.dk. Sitet er en
-              SPA der henter JSON fra et internt endpoint. Endpoint og
-              parametre er ikke offentligt dokumenteret og kan ændre sig –
-              derfor er de konfigurerbare, og `probe()` afprøver kandidater.
-              Se docs/DATA_SOURCES.md for hvordan endpointet verificeres.
+              React-SPA der henter JSON fra et internt, åbent API (verificeret
+              4. september 2026 fra GitHub Actions):
+
+                GET /api/section                         rubrik-katalog (publicKey pr. rubrik)
+                GET /api/messagesearch?m=<pk>&s=8&fromDate=YYYY-MM-DD&toDate=YYYY-MM-DD&page=0&ps=100
+                GET /api/messagesearch/messagetypecount?…  antal pr. rubrik
+                GET /api/message/{messageNumber}         hele meddelelsen (feltgrupper)
+                GET /api/Publication/GetLatestPublication  dagens udgave (fileId -> …/pdf)
+
+              `m` er rubrikkens publicKey uden bindestreger (kan gentages), `s=8`
+              er tilstanden "kundgjort". Se docs/DATA_SOURCES.md.
 
 Uanset adgangsvej normaliseres svaret til `RawMessage`, og dekretteksten
 parses med `parse_dekret_text`, som er den del der er dækket af tests.
 """
 from __future__ import annotations
 
+import json
 import logging
 import re
 from dataclasses import dataclass, field
@@ -34,22 +42,22 @@ from ..models import BankruptcyCase, Kurator, Property, Skifteret
 log = logging.getLogger(__name__)
 
 # Meddelelsestyper i Statstidende (kategori -> undertype). Bruges til filtrering.
-MESSAGE_TYPES = {
-    "konkurs_dekret": ("Konkursboer", "Dekret"),
-    "konkurs_skiftesamling": ("Konkursboer", "Indkaldelse til skiftesamling"),
-    "konkurs_fordringsproevelse": ("Konkursboer", "Fordringsprøvelse"),
-    "konkurs_afslutning": ("Konkursboer", "Regnskab og boafslutning"),
-    "tvangsauktion_fast_ejendom": ("Tvangsauktioner", "Fast ejendom"),
+# (sektion, rubrik, publicKey). Nøglerne stammer fra GET /api/section (4. sep. 2026).
+MESSAGE_TYPES: dict[str, tuple[str, str, str]] = {
+    "konkurs_dekret": ("Konkursboer", "Dekret", "14a1d71d-f215-58e5-ade0-214f90482cdc"),
+    "konkurs_ophaevelse": ("Konkursboer", "Ophævelse af dekret", "383f1800-1b39-5f39-8250-61a5c0798fad"),
+    "konkurs_afslutning": ("Konkursboer", "Regnskab og boafslutning", "018d0141-0efb-5472-a698-9328817df00a"),
+    "tvangsauktion_fast_ejendom": ("Tvangsauktioner", "Fast ejendom", "2aa7d6a1-b250-51a8-88a6-3f6c18574526"),
+    "tvangsauktion_andelsbolig": ("Tvangsauktioner", "Andelsbolig", "84aba03b-79ab-48ca-b318-8f8d90f0b095"),
 }
+SECTION_KONKURSBOER = "c245eeb3-4c82-5e36-8bbb-7a3f098ee1a8"
+SECTION_TVANGSAUKTIONER = "be95960b-a673-5f46-8bf0-f78b29af21f7"
 
-# Kandidat-endpoints for web-mode (afprøves i rækkefølge af `probe`)
-WEB_SEARCH_CANDIDATES = (
-    ("POST", "/api/messages/search"),
-    ("GET", "/api/messages"),
-    ("GET", "/api/v1/messages"),
-    ("POST", "/api/v1/messages/search"),
-)
-API_SEARCH_PATH = "/v1/messages"
+WEB_SEARCH_PATH = "/api/messagesearch"
+WEB_MESSAGE_PATH = "/api/message/{messageNumber}"
+WEB_SECTION_PATH = "/api/section"
+WEB_STATE_PUBLISHED = 8          # parameter `s` i søgningen: kundgjorte meddelelser
+API_SEARCH_PATH = "/v1/messages"  # officielt API (certifikat)
 
 
 @dataclass
@@ -213,10 +221,10 @@ def parse_dekret_text(text: str) -> dict[str, Any]:
 # ----------------------------------------------------------------------- normalisering
 
 _KEY_ALIASES = {
-    "id": ("id", "messageId", "meddelelsesId", "uuid"),
+    "id": ("messageNumber", "id", "messageId", "meddelelsesId", "uuid"),
     "offentliggjort": ("publicationDate", "publishedDate", "published", "offentliggoerelsesDato", "offentliggjort",
                        "publicationTime"),
-    "overskrift": ("title", "heading", "overskrift", "headline"),
+    "overskrift": ("title", "heading", "overskrift", "headline", "summary"),
     "tekst": ("text", "body", "content", "tekst", "meddelelsestekst", "plainText", "bodyText"),
     "kategori": ("category", "messageCategory", "kategori", "messageTypeCategory", "type"),
     "undertype": ("messageType", "subType", "undertype", "meddelelsestype", "messageTypeName"),
@@ -288,6 +296,73 @@ def _extract_list(body: Any) -> list[dict[str, Any]]:
 
 # ---------------------------------------------------------------------------- klient
 
+def flatten_fieldgroups(groups: Any) -> tuple[dict[str, str], str]:
+    """Statstidendes meddelelser består af feltgrupper -> felter. Returnerer
+    (felter, tekst) hvor felter har nøglerne "gruppe/felt" og "felt", og tekst er
+    en læsbar gengivelse "Gruppe\nFelt: værdi" som regex-parseren kan arbejde på."""
+    felter: dict[str, str] = {}
+    lines: list[str] = []
+    if isinstance(groups, dict):
+        groups = groups.get("fieldgroups") or groups.get("fieldGroups") or []
+    for g in groups or []:
+        if not isinstance(g, dict):
+            continue
+        gname = str(g.get("name") or g.get("label") or g.get("publicKey") or "").strip()
+        fields = g.get("fields") or g.get("felter") or []
+        if gname:
+            lines.append(gname)
+        for f in fields or []:
+            if not isinstance(f, dict):
+                continue
+            fname = str(f.get("name") or f.get("label") or f.get("publicKey") or "").strip()
+            val = f.get("value")
+            if val in (None, "", [], {}):
+                continue
+            if isinstance(val, (dict, list)):
+                val = _stringify(val)
+            val = _strip_html(str(val))
+            felter[f"{gname}/{fname}".lower()] = val
+            felter.setdefault(fname.lower(), val)
+            lines.append(f"{fname}: {val}" if fname else val)
+        lines.append("")
+    return felter, "\n".join(lines).strip()
+
+
+def web_message_to_raw(body: dict[str, Any], web_base: str) -> RawMessage:
+    """GET /api/message/{messageNumber} -> RawMessage."""
+    number = str(body.get("messageNumber") or body.get("id") or "")
+    doc = body.get("document")
+    groups: Any = None
+    if isinstance(doc, str):
+        try:
+            groups = json.loads(doc)
+        except json.JSONDecodeError:
+            groups = None
+    elif isinstance(doc, dict):
+        groups = doc
+    if groups is None:
+        groups = body.get("fieldGroups") or body.get("fieldgroups") or []
+    felter, tekst = flatten_fieldgroups(groups)
+    summary = body.get("summaryFields")
+    if isinstance(summary, list):
+        for it in summary:
+            if isinstance(it, dict) and it.get("value") not in (None, ""):
+                felter.setdefault(str(it.get("name") or it.get("label") or "").lower(), str(it["value"]))
+    title = body.get("title")
+    if title:
+        tekst = f"{title}\n{tekst}"
+    return RawMessage(
+        id=number,
+        url=f"{web_base}/messages/{number}" if number else web_base,
+        kategori=str(body.get("sectionName") or ""),
+        undertype=str(body.get("messageTypeName") or ""),
+        offentliggjort=parse_date(str(body.get("publicationDate") or "")),
+        overskrift=title,
+        tekst=tekst,
+        felter=felter,
+    )
+
+
 class StatstidendeClient:
     def __init__(self, settings: Settings, http: Http):
         self.s = settings
@@ -295,135 +370,206 @@ class StatstidendeClient:
         self.web_base = settings.statstidende_web_base
         self.api_base = settings.statstidende_api_base
         self.mode = settings.statstidende_mode
-        self.search_endpoint: tuple[str, str] | None = None
 
-    # -- opdagelse ------------------------------------------------------------
+    # -- katalog ---------------------------------------------------------------
+    def sections(self) -> list[dict[str, Any]]:
+        body = self.http.get_json(self.web_base + WEB_SECTION_PATH, cache_ttl_s=7 * 24 * 3600)
+        return body if isinstance(body, list) else []
+
     def probe(self) -> list[tuple[str, str, str]]:
-        """Afprøv kandidat-endpoints. Returnerer [(method, url, status)]."""
-        results = []
-        for method, path in WEB_SEARCH_CANDIDATES:
-            url = self.web_base + path
-            try:
-                body = self.http.request(method, url, params={"page": 0, "pageSize": 1} if method == "GET" else None,
-                                         json_body={"page": 0, "pageSize": 1} if method == "POST" else None,
-                                         cache_ttl_s=None)
-                n = len(_extract_list(body))
-                results.append((method, url, f"OK – {n} meddelelse(r) i svar"))
-                if self.search_endpoint is None:
-                    self.search_endpoint = (method, path)
-            except HttpError as e:
-                results.append((method, url, f"HTTP {e.status}"))
-            except Exception as e:  # noqa: BLE001
-                results.append((method, url, f"fejl: {e}"))
-        return results
+        """Tjek at søgning og katalog svarer. Returnerer [(method, url, status)]."""
+        out: list[tuple[str, str, str]] = []
+        try:
+            secs = self.sections()
+            names = [f"{x.get('name')}({x.get('id')})" for x in secs]
+            out.append(("GET", self.web_base + WEB_SECTION_PATH, f"OK – {len(secs)} sektioner: {', '.join(names)[:200]}"))
+        except Exception as e:  # noqa: BLE001
+            out.append(("GET", self.web_base + WEB_SECTION_PATH, f"fejl: {e}"))
+        try:
+            d1 = date.today()
+            body = self._search_page("konkurs_dekret", d1 - timedelta(days=7), d1, 0, 5)
+            items = _extract_list(body)
+            keys = list(body.keys())[:12] if isinstance(body, dict) else []
+            out.append(("GET", self.web_base + WEB_SEARCH_PATH,
+                        f"OK – {len(items)} af pageCount={body.get('pageCount') if isinstance(body, dict) else '?'}; nøgler {keys}"))
+        except Exception as e:  # noqa: BLE001
+            out.append(("GET", self.web_base + WEB_SEARCH_PATH, f"fejl: {e}"))
+        return out
 
     # -- søgning --------------------------------------------------------------
     def search(self, type_key: str, date_from: date, date_to: date | None = None,
                page_size: int = 100) -> Iterable[RawMessage]:
-        kategori, undertype = MESSAGE_TYPES[type_key]
         date_to = date_to or date.today()
         if self.mode == "api":
-            yield from self._search_api(kategori, undertype, date_from, date_to, page_size)
+            yield from self._search_api(type_key, date_from, date_to, page_size)
         else:
-            yield from self._search_web(kategori, undertype, date_from, date_to, page_size)
+            yield from self._search_web(type_key, date_from, date_to, page_size)
 
-    def _search_api(self, kategori: str, undertype: str, d0: date, d1: date, page_size: int) -> Iterable[RawMessage]:
-        page = 0
-        while True:
-            params = {
-                "messageCategory": kategori, "messageType": undertype,
-                "publishedFrom": d0.isoformat(), "publishedTo": d1.isoformat(),
-                "page": page, "pageSize": page_size,
-            }
-            body = self.http.get_json(self.api_base + API_SEARCH_PATH, params=params, cache_ttl_s=3600)
-            items = _extract_list(body)
-            if not items:
-                return
-            for it in items:
+    def _search_api(self, type_key: str, d0: date, d1: date, page_size: int) -> Iterable[RawMessage]:
+        _, _, public_key = MESSAGE_TYPES[type_key]
+        d = d0
+        while d <= d1:  # det officielle API henter pr. kundgørelsesdato
+            body = self.http.get_json(self.api_base + API_SEARCH_PATH,
+                                      params={"publicationdate": d.isoformat(), "messagetypes": public_key},
+                                      cache_ttl_s=24 * 3600)
+            for it in _extract_list(body):
                 yield normalize_message(it, self.web_base)
-            if len(items) < page_size:
-                return
-            page += 1
+            d += timedelta(days=1)
 
-    def _search_web(self, kategori: str, undertype: str, d0: date, d1: date, page_size: int) -> Iterable[RawMessage]:
-        if self.search_endpoint is None:
-            self.probe()
-        if self.search_endpoint is None:
-            raise RuntimeError(
-                "Kunne ikke finde et fungerende søge-endpoint på statstidende.dk. "
-                "Kør `propscreener probe` og sæt STATSTIDENDE_SEARCH_ENDPOINT – se docs/DATA_SOURCES.md")
-        method, path = self.search_endpoint
+    def _search_page(self, type_key: str, d0: date, d1: date, page: int, page_size: int) -> Any:
+        _, _, public_key = MESSAGE_TYPES[type_key]
+        params: list[tuple[str, Any]] = [
+            ("m", public_key.replace("-", "")), ("s", WEB_STATE_PUBLISHED),
+            ("fromDate", d0.isoformat()), ("toDate", d1.isoformat()),
+            ("page", page), ("ps", page_size),
+        ]
+        return self.http.get_json(self.web_base + WEB_SEARCH_PATH, params=dict(params), cache_ttl_s=3600)
+
+    def _search_web(self, type_key: str, d0: date, d1: date, page_size: int) -> Iterable[RawMessage]:
         page = 0
+        seen: set[str] = set()
         while True:
-            payload = {
-                "messageCategory": kategori, "messageType": undertype,
-                "publicationDateFrom": d0.isoformat(), "publicationDateTo": d1.isoformat(),
-                "page": page, "pageSize": page_size,
-            }
-            if method == "POST":
-                body = self.http.post_json(self.web_base + path, payload, cache_ttl_s=3600)
-            else:
-                body = self.http.get_json(self.web_base + path, params=payload, cache_ttl_s=3600)
+            body = self._search_page(type_key, d0, d1, page, page_size)
             items = _extract_list(body)
             if not items:
                 return
             for it in items:
-                msg = normalize_message(it, self.web_base)
-                if not msg.tekst and msg.id:
-                    msg = self.fetch_message(msg.id) or msg
+                number = str(_pick(it, "id") or "")
+                if not number or number in seen:
+                    continue
+                seen.add(number)
+                msg = self.fetch_message(number)
+                if msg is None:
+                    msg = normalize_message(it, self.web_base)
+                if not msg.offentliggjort:
+                    msg.offentliggjort = parse_date(str(_pick(it, "offentliggjort") or ""))
                 yield msg
-            if len(items) < page_size:
+            page_count = body.get("pageCount") if isinstance(body, dict) else None
+            if page_count is not None and page + 1 >= int(page_count):
+                return
+            if page_count is None and len(items) < page_size:
                 return
             page += 1
 
-    def fetch_message(self, message_id: str) -> RawMessage | None:
-        for path in (f"/api/messages/{message_id}", f"/api/message/{message_id}"):
-            try:
-                body = self.http.get_json(self.web_base + path, cache_ttl_s=7 * 24 * 3600)
-                if isinstance(body, dict):
-                    return normalize_message(body, self.web_base)
-            except HttpError:
-                continue
-        return None
+    def fetch_message(self, message_number: str) -> RawMessage | None:
+        url = self.web_base + WEB_MESSAGE_PATH.format(messageNumber=message_number)
+        try:
+            body = self.http.get_json(url, cache_ttl_s=30 * 24 * 3600)
+        except HttpError as e:
+            log.warning("meddelelse %s: %s", message_number, e)
+            return None
+        if not isinstance(body, dict):
+            return None
+        return web_message_to_raw(body, self.web_base)
+
+    def debug_dump(self, type_key: str = "konkurs_dekret", days: int = 3) -> dict[str, Any]:
+        """Rå svar fra søgning + første meddelelse – til at verificere feltnavne."""
+        d1 = date.today()
+        body = self._search_page(type_key, d1 - timedelta(days=days), d1, 0, 3)
+        items = _extract_list(body)
+        first = None
+        if items:
+            number = str(_pick(items[0], "id") or "")
+            url = self.web_base + WEB_MESSAGE_PATH.format(messageNumber=number)
+            first = self.http.get_json(url, cache_ttl_s=None)
+        return {"search": body, "first_message": first}
 
 
 # ---------------------------------------------------------------- dekret -> BankruptcyCase
+
+def _group_fields(f: dict[str, str], *group_words: str) -> dict[str, str]:
+    """Felter i feltgrupper hvis navn indeholder et af ordene: {"navn": ..., "postnummer": ...}."""
+    out: dict[str, str] = {}
+    for k, v in f.items():
+        if "/" not in k:
+            continue
+        g, name = k.split("/", 1)
+        if any(w in g for w in group_words):
+            out.setdefault(name, v)
+    return out
+
+
+def _kurator_from_fields(kf: dict[str, str]) -> Kurator | None:
+    if not kf:
+        return None
+
+    def g(*names: str) -> str | None:
+        for n in names:
+            for k, v in kf.items():
+                if k == n or k.startswith(n):
+                    return _clean(v)
+        return None
+
+    k = Kurator(
+        navn=g("navn", "kurator", "advokat"),
+        firma=g("firma", "advokatfirma", "virksomhed", "selskab"),
+        adresse=g("adresse", "vej", "gade"),
+        postnr=g("postnummer", "postnr"),
+        by=g("by", "bynavn"),
+        telefon=g("telefon", "tlf"),
+        email=g("e-mail", "email", "mail"),
+    )
+    if k.postnr and not k.postnr.isdigit():
+        m = re.match(r"(\d{4})\s*(.*)", k.postnr)
+        if m:
+            k.postnr, k.by = m.group(1), k.by or _clean(m.group(2))
+    if not any((k.navn, k.firma, k.email, k.telefon)):
+        return None
+    if k.navn:
+        k.advokatsamfundet_url = "https://www.advokatsamfundet.dk/find-advokat/?q=" + k.navn.replace(" ", "+")
+    return k
+
 
 def message_to_case(msg: RawMessage) -> BankruptcyCase:
     parsed = parse_dekret_text(msg.tekst)
     # strukturerede felter vinder over regex hvis de findes
     f = {k.lower(): v for k, v in msg.felter.items()}
+    skyldner = _group_fields(f, "skyldner", "virksomhed", "selskab", "konkurs")
 
     def fld(*names: str) -> str | None:
         for n in names:
-            v = f.get(n.lower())
-            if v:
-                return _stringify(v)
+            for src in (skyldner, f):
+                v = src.get(n.lower())
+                if v:
+                    return _stringify(v)
         return None
 
-    cvr = re.sub(r"\D", "", fld("cvr", "cvrnummer", "cvr-nr", "cvrnr") or "") or parsed.get("cvr")
-    navn = fld("navn", "skyldner", "virksomhedsnavn", "selskab") or parsed.get("navn")
+    cvr = re.sub(r"\D", "", fld("cvr", "cvr-nummer", "cvrnummer", "cvr-nr", "cvrnr", "cvr nr") or "") or parsed.get("cvr")
+    if cvr and len(cvr) != 8:
+        cvr = parsed.get("cvr") or (cvr if len(cvr) == 8 else None)
+    navn = fld("navn", "skyldner", "virksomhedsnavn", "selskabsnavn", "selskab") or parsed.get("navn")
+    kurator = _kurator_from_fields(_group_fields(f, "kurator", "bobestyrer"))
+    if kurator is None:
+        kurator = parse_kurator(fld("kurator")) if fld("kurator") else parsed.get("kurator", Kurator())
     case = BankruptcyCase(
         id=cvr or f"st-{msg.id}",
         statstidende_id=msg.id or None,
         statstidende_url=msg.url,
         meddelelsestype="Konkursdekret",
         offentliggjort=msg.offentliggjort,
-        dekretdato=parse_date(fld("dekretdato", "dekret afsagt")) or parsed.get("dekretdato"),
+        dekretdato=parse_date(fld("dekretdato", "dekret afsagt", "dato for dekret", "dekretets dato", "dato"))
+        or parsed.get("dekretdato"),
         fristdag=parse_date(fld("fristdag")) or parsed.get("fristdag"),
-        skiftesamling=parsed.get("skiftesamling"),
-        skifteret=Skifteret(navn=fld("skifteret", "ret") or parsed.get("skifteret"),
-                            sagsnummer=fld("sagsnummer", "sagsnr", "sags nr") or parsed.get("sagsnummer")),
-        kurator=parse_kurator(fld("kurator") or "") if fld("kurator") else parsed.get("kurator", Kurator()),
+        skiftesamling=parse_date(fld("skiftesamling")) or parsed.get("skiftesamling"),
+        skifteret=Skifteret(navn=fld("skifteret", "retten", "ret") or parsed.get("skifteret"),
+                            sagsnummer=fld("sagsnummer", "sagsnr", "sags nr", "sag") or parsed.get("sagsnummer")),
+        kurator=kurator,
         raa_tekst=msg.tekst,
         kilder=["statstidende"],
     )
     case.selskab.cvr = cvr
     case.selskab.navn = navn
-    case.selskab.selskabsform = parsed.get("selskabsform")
-    case.selskab.adresse = parsed.get("adresse")
-    case.selskab.postnr = parsed.get("postnr")
-    case.selskab.by = parsed.get("by")
+    fm = COMPANY_FORM_RE.search(navn or "")
+    case.selskab.selskabsform = (fm.group(1).upper().replace("APS", "ApS") if fm else None) or parsed.get("selskabsform")
+    case.selskab.adresse = fld("adresse", "vejnavn", "vej") or parsed.get("adresse")
+    postnr = fld("postnummer", "postnr")
+    if postnr and not postnr.strip().isdigit():
+        m = re.match(r"\s*(\d{4})\s*(.*)", postnr)
+        postnr, by = (m.group(1), _clean(m.group(2))) if m else (None, None)
+    else:
+        by = None
+    case.selskab.postnr = postnr or parsed.get("postnr")
+    case.selskab.by = fld("by", "bynavn") or by or parsed.get("by")
     case.selskab.status = "UNDER KONKURS"
     base = case.offentliggjort or case.dekretdato
     if base:
