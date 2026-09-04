@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-04T08:25:43+00:00",
+  "genereret": "2026-09-04T09:57:06+00:00",
   "version": "0.1.0",
   "antal": 41,
   "demo": false,
@@ -11,7 +11,7 @@
    "dawa"
   ],
   "stats": {
-   "started": "2026-09-04T08:24:53+00:00",
+   "started": "2026-09-04T09:56:16+00:00",
    "dekreter": 99,
    "tvangsauktioner": 0,
    "beriget_cvr": 0,
@@ -2506,7 +2506,7 @@
    "noter": [
     "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
    ],
-   "sidst_opdateret": "2026-09-04T08:24:54+00:00"
+   "sidst_opdateret": "2026-09-04T09:56:18+00:00"
   },
   {
    "id": "41298332",
@@ -4296,7 +4296,7 @@
    "noter": [
     "CVR-opslag fejlede (QUOTA_EXCEEDED) – branche og ejere mangler"
    ],
-   "sidst_opdateret": "2026-09-04T08:24:54+00:00"
+   "sidst_opdateret": "2026-09-04T09:56:18+00:00"
   }
  ]
 }
