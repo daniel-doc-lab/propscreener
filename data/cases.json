@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-04T11:09:47+00:00",
+  "genereret": "2026-09-04T11:39:02+00:00",
   "version": "0.1.0",
   "antal": 51,
   "demo": false,
@@ -10,29 +10,29 @@
    "cvrapi",
    "apicvr-mcp",
    "regnskab-xbrl",
-   "dawa"
+   "dawa",
+   "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-04T10:33:52+00:00",
-   "dekreter": 971,
-   "tvangsauktioner": 2,
-   "beriget_cvr": 969,
-   "beriget_regnskab": 739,
+   "started": "2026-09-04T11:38:09+00:00",
+   "dekreter": 99,
+   "tvangsauktioner": 0,
+   "beriget_cvr": 99,
+   "beriget_regnskab": 74,
    "beriget_ejf": 0,
-   "over_min_score": 51,
+   "over_min_score": 4,
    "min_score": 25,
-   "bevaret_fra_tidligere": 0,
+   "bevaret_fra_tidligere": 47,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
     "cvrapi",
     "apicvr-mcp",
     "regnskab-xbrl",
-    "dawa"
+    "dawa",
+    "ejerfortegnelsen"
    ],
-   "fejl": [
-    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
-   ]
+   "fejl": []
   }
  },
  "cases": [
@@ -3079,9 +3079,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:00:11+00:00"
+   "sidst_opdateret": "2026-09-04T11:38:15+00:00"
   },
   {
    "id": "44145227",
@@ -3178,8 +3179,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:58+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-04T11:38:13+00:00"
   },
   {
    "id": "41298332",
@@ -5052,8 +5055,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:02:14+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-04T11:38:55+00:00"
   },
   {
    "id": "40313761",
@@ -5346,8 +5351,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:08+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-04T11:38:13+00:00"
   }
  ]
 }
