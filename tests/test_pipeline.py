@@ -217,9 +217,14 @@ def test_apicvr_mcp_lookup_parses_sse():
 
 
 def test_local_indexes_from_fildownload(tmp_path: Path):
-    from propscreener.sources.datafordeler_files import build_ebr_index, build_ejf_index, build_vur_index, save_index
-    from propscreener.sources.ejerfortegnelse import LocalIndexes, enrich_with_ejerfortegnelse
     from propscreener.models import BankruptcyCase, Company
+    from propscreener.sources.datafordeler_files import (
+        build_ebr_index,
+        build_ejf_index,
+        build_vur_index,
+        save_index,
+    )
+    from propscreener.sources.ejerfortegnelse import LocalIndexes, enrich_with_ejerfortegnelse
 
     ejf_rows = [
         {"id_lokalId": "a", "status": "gældende", "bestemtFastEjendomBFENr": "1234567", "ejendeVirksomhed": "12345678",
