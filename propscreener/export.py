@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 import json
 from dataclasses import asdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -56,7 +56,7 @@ CSV_COLUMNS = [
 def build_dataset(cases: list[BankruptcyCase], stats: Any, demo: bool = False) -> dict[str, Any]:
     return {
         "meta": {
-            "genereret": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "genereret": datetime.now(UTC).isoformat(timespec="seconds"),
             "version": __version__,
             "antal": len(cases),
             "demo": demo,

@@ -148,5 +148,5 @@ def test_demo_is_deterministic_and_cvr_valid():
     weights = [2, 7, 6, 5, 4, 3, 2, 1]
     for _ in range(50):
         n = cvr_number(__import__("random").Random(_))
-        assert sum(int(d) * w for d, w in zip(n, weights)) % 11 == 0
+        assert sum(int(d) * w for d, w in zip(n, weights, strict=True)) % 11 == 0
     assert any(c.score >= 60 for c in a) and any(c.score < 40 for c in a)

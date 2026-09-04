@@ -1,12 +1,13 @@
 name: Opdag Statstidende-endpoints
 
-# Manuelt diagnoseværktøj: afdækker hvilke API-stier statstidende.dk's frontend bruger,
-# og om de øvrige kilder kan nås fra en Actions-runner. Skriver kun til loggen.
+# Diagnoseværktøj: dumper Statstidende API'ets OpenAPI-spec, tester hvilke endpoints der
+# svarer uden certifikat, og afdækker hvilke stier statstidende.dk's frontend bruger.
+# Skriver kun til loggen (og gemmer spec'en som artefakt).
 
 on:
   push:
     branches: ["claude/danish-bankruptcy-scraper-5vt1u3"]
-    paths: [".github/workflows/discover.yml", "propscreener/sources/statstidende.py"]
+    paths: [".github/workflows/discover.yml"]
   workflow_dispatch:
     inputs:
       extra_url:
@@ -23,70 +24,90 @@ jobs:
           python-version: "3.12"
       - run: pip install -e .
 
-      - name: Forside og script-bundles
-        run: |
-          set -x
-          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          curl -sSL -A "$UA" -o index.html -w "status=%{http_code} url=%{url_effective}\n" https://www.statstidende.dk/
-          head -c 3000 index.html; echo
-          grep -oE '(src|href)="[^"]+\.(js|json)[^"]*"' index.html | sort -u | head -50 > assets.txt || true
-          cat assets.txt
-          mkdir -p bundles
-          i=0
-          for a in $(grep -oE '"[^"]+\.js[^"]*"' assets.txt | tr -d '"'); do
-            case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
-            i=$((i+1)); curl -sSL -A "$UA" -o "bundles/$i.js" "$u" || true
-          done
-          ls -la bundles || true
-
-      - name: API-stier og nøgler i bundles
-        run: |
-          echo "== /api-stier =="
-          grep -ohE '"[^"]*/api/[A-Za-z0-9/_.\-]*"' bundles/*.js 2>/dev/null | sort | uniq -c | sort -rn | head -80 || true
-          echo "== api.statstidende / statstidende.dk-værter =="
-          grep -ohE 'https?://[a-z0-9.-]*statstidende[a-z0-9./_-]*' bundles/*.js index.html 2>/dev/null | sort -u | head -40 || true
-          echo "== nøgler der ligner søgeparametre =="
-          grep -ohE '\b(messageType|messageTypes|messageCategory|publicationDate[A-Za-z]*|publishedFrom|publishedTo|dateFrom|dateTo|searchText|freeText|pageSize|pageNumber|messageTypeId|categoryId|MessageType[A-Za-z]*)\b' bundles/*.js 2>/dev/null | sort | uniq -c | sort -rn | head -60 || true
-          echo "== kandidat-ord omkring 'konkurs' =="
-          grep -ohE '.{0,80}[Kk]onkurs.{0,80}' bundles/*.js 2>/dev/null | sort -u | head -40 || true
-
-      - name: Prøv kendte stier
+      - name: OpenAPI-spec for api.statstidende.dk
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          for u in \
-            https://www.statstidende.dk/robots.txt \
-            https://www.statstidende.dk/sitemap.xml \
-            https://www.statstidende.dk/api \
-            https://www.statstidende.dk/api/messages \
-            "https://www.statstidende.dk/api/messages?page=0&pageSize=2" \
-            https://www.statstidende.dk/api/v1/messages \
-            https://www.statstidende.dk/api/messages/search \
-            https://www.statstidende.dk/api/messagetypes \
-            https://www.statstidende.dk/api/message-types \
-            https://www.statstidende.dk/api/categories \
-            https://www.statstidende.dk/swagger/index.html \
-            https://www.statstidende.dk/swagger/v1/swagger.json \
-            https://www.statstidende.dk/api/swagger/v1/swagger.json \
-            https://www.statstidende.dk/rss \
-            https://www.statstidende.dk/feed \
-            "https://www.statstidende.dk/messages?messageTypes=Konkursboer" \
-            https://api.statstidende.dk/ \
-            https://api.statstidende.dk/docs/index.html \
-            https://api.statstidende.dk/swagger/v1/swagger.json \
-            "${{ github.event.inputs.extra_url }}" "https://www.statstidende.dk/api/messages?messageCategory=Konkursboer&pageSize=2" ; do
-            [ -z "$u" ] && continue
+          curl -sS -m 30 -A "$UA" -o swagger.json -w "status=%{http_code} size=%{size_download}\n" https://api.statstidende.dk/swagger/v1/swagger.json
+          python - <<'EOF'
+          import json, re
+          s = json.load(open("swagger.json"))
+          info = s.get("info", {})
+          print("TITLE:", info.get("title"), "VERSION:", info.get("version"))
+          desc = re.sub(r"<[^>]+>", " ", info.get("description", ""))
+          print("DESC:", re.sub(r"\s+", " ", desc)[:1500])
+          print("SERVERS:", s.get("servers"))
+          print("SECURITY (global):", s.get("security"))
+          print("SECURITY SCHEMES:", json.dumps(s.get("components", {}).get("securitySchemes"), ensure_ascii=False))
+          print("=== PATHS ===")
+          for p, ops in s.get("paths", {}).items():
+              for m, op in ops.items():
+                  if m not in ("get", "post", "put", "delete", "patch"):
+                      continue
+                  params = [f"{x.get('name')}({x.get('in')}{'*' if x.get('required') else ''})" for x in op.get("parameters", [])]
+                  body = ""
+                  rb = op.get("requestBody", {}).get("content", {})
+                  if rb:
+                      sch = next(iter(rb.values())).get("schema", {})
+                      body = " body=" + (sch.get("$ref", "").split("/")[-1] or json.dumps(sch)[:120])
+                  print(f"{m.upper():6s} {p:55s} sec={op.get('security', '-')} tags={op.get('tags')} params={params}{body}")
+                  if op.get("summary") or op.get("description"):
+                      print("       ", re.sub(r"\s+", " ", (op.get("summary") or "") + " | " + (op.get("description") or ""))[:300])
+          print("=== SCHEMAS ===")
+          for name, sch in s.get("components", {}).get("schemas", {}).items():
+              props = sch.get("properties", {})
+              print(f"{name}: " + ", ".join(f"{k}:{v.get('type', v.get('$ref', '?')).split('/')[-1]}" for k, v in props.items())[:900])
+              if sch.get("enum"):
+                  print("   enum:", sch["enum"])
+          EOF
+
+      - name: Kald GET-endpoints uden certifikat
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          python - <<'EOF' > urls.txt
+          import json
+          s = json.load(open("swagger.json"))
+          base = "https://api.statstidende.dk"
+          for p, ops in s.get("paths", {}).items():
+              if "get" in ops and "{" not in p:
+                  print(base + p)
+          EOF
+          cat urls.txt
+          while read -r u; do
             echo "----- GET $u"
-            curl -sS -m 25 -A "$UA" -H "Accept: application/json, text/html" -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || echo "curl-fejl"
-            head -c 700 body.txt | tr '\n' ' '; echo
-          done
-          echo "----- POST /api/messages/search"
-          curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"page":0,"pageSize":2}' -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" https://www.statstidende.dk/api/messages/search || true
-          head -c 700 body.txt; echo
+            curl -sS -m 25 -A "$UA" -H "Accept: application/json" -o body.txt -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || echo curl-fejl
+            head -c 600 body.txt | tr '\n' ' '; echo
+          done < urls.txt
+          echo "----- api.statstidende.dk/ (redirect-mål)"
+          curl -sS -m 25 -A "$UA" -o /dev/null -w "status=%{http_code} redirect=%{redirect_url}\n" https://api.statstidende.dk/
 
-      - name: Øvrige kilder
+      - name: Frontend – konfiguration og API-kald
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
-          echo "----- cvrapi"; curl -sS -m 25 -A "$UA" -o body.txt -w "status=%{http_code}\n" "https://cvrapi.dk/api?vat=10150817&country=dk" ; head -c 400 body.txt; echo
-          echo "----- regnskabsindeks"; curl -sS -m 25 -A "$UA" -H "Content-Type: application/json" -d '{"query":{"term":{"cvrNummer":10150817}},"size":1}' -o body.txt -w "status=%{http_code}\n" http://distribution.virk.dk/offentliggoerelser/_search ; head -c 800 body.txt; echo
-          echo "----- dawa"; curl -sS -m 25 -A "$UA" -o body.txt -w "status=%{http_code}\n" "https://api.dataforsyningen.dk/adresser?q=Vestergade%201%2C%208000&per_side=1&struktur=mini" ; head -c 300 body.txt; echo
-          echo "----- propscreener probe"; propscreener probe || true
+          curl -sSL -A "$UA" -o index.html https://www.statstidende.dk/
+          echo "== script/link-tags =="; grep -oE '<(script|link)[^>]+>' index.html | head -30
+          for c in /config.json /appsettings.json /assets/config.json /env.js /environment.json /api/config /configuration; do
+            printf "%s -> " "$c"; curl -sS -m 15 -A "$UA" -o body.txt -w "%{http_code} %{content_type}\n" "https://www.statstidende.dk$c"; head -c 300 body.txt | tr '\n' ' '; echo
+          done
+          mkdir -p bundles; i=0
+          for a in $(grep -oE 'src="[^"]+\.js[^"]*"' index.html | sed 's/src="//; s/"$//'); do
+            case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
+            i=$((i+1)); echo "bundle $i: $u"; curl -sSL -A "$UA" -o "bundles/$i.js" "$u" || true
+          done
+          ls -la bundles
+          echo "== api-basen =="; grep -ohE '.{0,60}(apiUrl|apiBase|baseUrl|baseURL|API_URL|apiEndpoint|environment\.api|\.api\b).{0,80}' bundles/*.js | sort -u | head -30
+          echo "== fetch/axios-kald =="; grep -ohE '(fetch|axios\.(get|post)|\.get|\.post)\(`?"?[^)]{0,120}' bundles/*.js | grep -iE 'message|search|api' | sort -u | head -40
+          echo "== strenge med messages =="; grep -ohE '"[^"]{0,40}[Mm]essages?[^"]{0,60}"' bundles/*.js | sort | uniq -c | sort -rn | head -40
+          echo "== messageTypeId-kontekst =="; grep -ohE '.{0,120}messageTypeId.{0,120}' bundles/*.js | head -12
+          echo "== publicationDate-kontekst =="; grep -ohE '.{0,120}publicationDate.{0,120}' bundles/*.js | head -8
+          # lazy-loadede chunks
+          echo "== chunk-referencer =="; grep -ohE '"[0-9a-zA-Z_.-]+\.[0-9a-f]{6,}\.(chunk\.)?js"' bundles/*.js | sort -u | head -40
+          for ch in $(grep -ohE '"[0-9a-zA-Z_.-]+\.[0-9a-f]{6,}\.(chunk\.)?js"' bundles/*.js | tr -d '"' | sort -u | head -40); do
+            u="https://www.statstidende.dk/static/js/$ch"; curl -sS -m 15 -A "$UA" -o "bundles/c_$ch" "$u" 2>/dev/null || true
+          done
+          echo "== api-stier i alle chunks =="; grep -ohE '"[^"]*/api/[A-Za-z0-9/_.{}\$-]*"|`[^`]*/api/[^`]*`' bundles/* | sort | uniq -c | sort -rn | head -60
+          echo "== søge-payload-felter =="; grep -ohE '\b(searchText|freeText|fromDate|toDate|dateFrom|dateTo|publicationDateFrom|publicationDateTo|messageTypeIds|categoryIds|page|pageSize|pageNumber|skip|take|sortBy|orderBy)\b' bundles/* | sort | uniq -c | sort -rn | head -30
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: statstidende-openapi
+          path: swagger.json

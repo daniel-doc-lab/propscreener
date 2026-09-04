@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 
 from .config import Settings
 from .detect import score_case
@@ -24,7 +24,7 @@ log = logging.getLogger(__name__)
 
 @dataclass
 class RunStats:
-    started: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat(timespec="seconds"))
+    started: str = field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds"))
     dekreter: int = 0
     tvangsauktioner: int = 0
     beriget_cvr: int = 0
@@ -94,7 +94,7 @@ class Pipeline:
         if any(p.kilde == "ejerfortegnelsen" for p in case.ejendomme):
             self.stats.beriget_ejf += 1
         score_case(case)
-        case.sidst_opdateret = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        case.sidst_opdateret = datetime.now(UTC).isoformat(timespec="seconds")
         add_investor_links(case)
         return case
 

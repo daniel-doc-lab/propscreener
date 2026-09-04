@@ -60,7 +60,7 @@ def cvr_number(rng: random.Random) -> str:
     weights = [2, 7, 6, 5, 4, 3, 2]
     while True:
         digits = [rng.randint(1, 9)] + [rng.randint(0, 9) for _ in range(6)]
-        s = sum(d * w for d, w in zip(digits, weights))
+        s = sum(d * w for d, w in zip(digits, weights, strict=False))
         rem = s % 11
         if rem == 1:
             continue

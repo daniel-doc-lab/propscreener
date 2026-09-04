@@ -144,7 +144,7 @@ class BankruptcyCase:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, d: dict[str, Any]) -> "BankruptcyCase":
+    def from_dict(cls, d: dict[str, Any]) -> BankruptcyCase:
         return cls(
             id=d["id"],
             statstidende_id=d.get("statstidende_id"),

@@ -11,4 +11,3 @@ dist/
 certs/
 *.p12
 *.pem
-site/

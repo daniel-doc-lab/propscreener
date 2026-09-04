@@ -61,7 +61,7 @@ class Settings:
     user_agent: str = "propscreener/0.1 (+https://github.com/daniel-doc-lab/propscreener)"
 
     @classmethod
-    def from_env(cls) -> "Settings":
+    def from_env(cls) -> Settings:
         load_dotenv()
         s = cls()
         s.statstidende_mode = _env("STATSTIDENDE_MODE", s.statstidende_mode)
