@@ -8,7 +8,8 @@ dette projekt eller er skrevet efter offentlig dokumentation uden live-test.
 |---|---|---|---|---|
 | 1 | Statstidende – konkursdekreter | skyldner, CVR, dekretdato, fristdag, skifteret, sagsnr, kurator | offentlig søgning / REST-API m. certifikat | **ja** – endpoint og format verificeret 4. sep. 2026 |
 | 2 | Statstidende – tvangsauktioner | ejendom, matrikel, ejendomsværdi, auktionsdato, ejer | som 1 | endpoint: ja · feltformat: under kalibrering |
-| 3 | cvrapi.dk | navn, branche, adresse, status, ejere, ansatte | gratis, User-Agent | feltnavne: dokumenteret |
+| 3 | cvrapi.dk | navn, branche, adresse, status, ejere, ansatte | gratis, User-Agent, lille daglig kvote | feltnavne: dokumenteret |
+| 3b | apicvr.dk (MCP + REST) | samme felter som cvrapi.dk | gratis, open source, ingen login | MCP verificeret 4. sep. 2026 |
 | 4 | CVR system-til-system (Elasticsearch) | fuld virksomhedsprofil, bibrancher, deltagere, statushistorik | aftale m. Erhvervsstyrelsen | feltnavne: dokumenteret |
 | 5 | Regnskabsindeks `distribution.virk.dk/offentliggoerelser` | dokument-URL'er til XBRL/PDF | åben | feltnavne: dokumenteret |
 | 6 | XBRL-årsrapport | Assets, Equity, InvestmentProperty, LandAndBuildings, MortgageDebt, ProfitLoss … | åben | parser: ja (XBRL + iXBRL fixtures) |
@@ -91,6 +92,9 @@ Anmeldelsesfristen beregnes som bekendtgørelsesdato + 4 uger (konkurslovens § 
   **daglig kvote pr. IP** (i praksis under 20 opslag fra en GitHub-runner, observeret 4. sep.
   2026). Pipelinen prioriterer derfor CVR-opslag efter foreløbig score (regnskab + navn) og
   falder tilbage til statstidende.dk's `api/cvr/{cvr}`. Resultater caches 24 timer.
+* **apicvr.dk** (fallback, aktiv som standard): gratis open source CVR-API. Vi kalder MCP-serveren
+  `https://mcp.apicvr.dk/mcp` (JSON-RPC over HTTP, svar som SSE) med værktøjet `lookup_company`;
+  der findes også REST med OpenAPI på `https://apicvr.dk/openapi.json`. Slås fra med tom `APICVR_MCP_URL`.
 * **System-til-system**: `POST http://distribution.virk.dk/cvr-permanent/virksomhed/_search`
   med Basic auth. Giver `virksomhedMetadata.nyesteHovedbranche`, `nyesteBibranche1-3`,
   `deltagerRelation` (ejere/ledelse), `virksomhedsstatus` med gyldighedsperioder. Samme klient

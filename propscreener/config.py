@@ -40,6 +40,7 @@ class Settings:
     cvr_es_base: str = "http://distribution.virk.dk/cvr-permanent/virksomhed/_search"
     cvr_es_user: str = ""
     cvr_es_password: str = ""
+    apicvr_mcp_url: str = "https://mcp.apicvr.dk/mcp"   # gratis CVR-opslag (MCP, ingen login)
 
     # Regnskaber (offentlig, ingen login)
     regnskab_es_base: str = "http://distribution.virk.dk/offentliggoerelser/_search"
@@ -72,6 +73,7 @@ class Settings:
         s.statstidende_cert_file = _env("STATSTIDENDE_CERT_FILE")
         s.statstidende_key_file = _env("STATSTIDENDE_KEY_FILE")
         s.cvrapi_user_agent = _env("CVRAPI_USER_AGENT", s.cvrapi_user_agent)
+        s.apicvr_mcp_url = _env("APICVR_MCP_URL", s.apicvr_mcp_url)
         s.cvr_es_user = _env("CVR_ES_USER")
         s.cvr_es_password = _env("CVR_ES_PASSWORD")
         s.datafordeler_user = _env("DATAFORDELER_USER")

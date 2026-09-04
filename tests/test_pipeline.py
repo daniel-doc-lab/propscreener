@@ -184,3 +184,23 @@ def test_merge_with_existing_keeps_recent_unseen(tmp_path: Path):
     assert next(c for c in merged if c.id == new[0].id).score == 99   # ny version vinder
     merged2, kept2 = merge_with_existing(new, tmp_path / "cases.json", retention_days=0)
     assert kept2 == 0 and len(merged2) == 3                            # uden retention: kun nye
+
+
+def test_apicvr_mcp_lookup_parses_sse():
+    from propscreener.sources.cvr import ApiCvrMcp
+    calls = []
+
+    def mcp(url, body):
+        calls.append(body["method"])
+        if body["method"] == "initialize":
+            return 'event: message\ndata: {"result":{"protocolVersion":"2025-03-26"},"jsonrpc":"2.0","id":1}\n'
+        return ('event: message\ndata: {"result":{"content":[{"type":"text","text":"{\\"vat\\":12345678,'
+                '\\"name\\":\\"Fjord Ejendomme ApS\\",\\"industrycode\\":682040,\\"zipcode\\":\\"8000\\"}"}]},"jsonrpc":"2.0","id":2}\n')
+
+    s = Settings()
+    client = ApiCvrMcp(s, FakeHttp({"https://mcp.apicvr.dk/mcp": mcp}))  # type: ignore[arg-type]
+    data = client.lookup("12345678")
+    assert data["name"] == "Fjord Ejendomme ApS" and calls == ["initialize", "tools/call"]
+    from propscreener.models import Company
+    c = ApiCvrMcp.apply(Company(cvr="12345678"), data)
+    assert c.branchekode == "682040" and c.region == "Midtjylland"
