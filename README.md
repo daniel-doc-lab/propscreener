@@ -17,7 +17,7 @@ Statstidende ──► CVR ──► Årsrapport (XBRL) ──► Ejerfortegnels
 | **Dashboard** | `propscreener demo` bygger `site/index.html` (offline demodata) – i produktion publiceres det dagligt til GitHub Pages af `scrape.yml` |
 | **Data** | `data/cases.json` (kanonisk), `data/cases.csv` (regneark, `;`-separeret) |
 | **Dokumentation** | [docs/](docs/) – arkitektur, datakilder, scoring, investorguide, opsætning, datamodel, jura |
-| **Status** | Pipeline, parsere og dashboard er testet offline (23 tests). Live-kørsel mod Statstidende kræver netværksadgang og evt. certifikat – se [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) |
+| **Status** | Kører dagligt i GitHub Actions mod Statstidendes åbne JSON-API (verificeret 4. sep. 2026). 24 offline tests. Ejerfortegnelsen aktiveres med en gratis Datafordeler-bruger – se [docs/SETUP.md](docs/SETUP.md) |
 
 ## Hurtig start
 
@@ -73,9 +73,9 @@ propscreener/
   demo.py           deterministisk fiktivt datasæt
   sources/          statstidende · cvr · regnskab · ejerfortegnelse
   templates/        dashboard.html (indlejrer data ved build)
-tests/              23 tests, fixtures for dekret, XBRL og iXBRL
+tests/              24 tests, fixtures for dekret (tekst + rigtigt API-format), XBRL og iXBRL
 docs/               dokumentation
-.github/workflows/  ci.yml (tests) · scrape.yml (daglig kørsel → GitHub Pages)
+.github/workflows/  ci.yml (tests) · scrape.yml (daglig kørsel → repo + Pages) · discover.yml (API-opdagelse)
 ```
 
 ## Vigtige forbehold
@@ -84,8 +84,9 @@ docs/               dokumentation
   *indberettede* årsrapport, som kan være 6–18 måneder gammel og ikke afspejle boets aktiver.
 * Ejendomsejerskab er kun **bekræftet** når Ejerfortegnelsen eller en tvangsauktion matcher;
   ellers er det en sandsynlighed baseret på branche, navn og regnskab.
-* Statstidendes interne søge-endpoint er ikke offentligt dokumenteret; se
-  [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) for verificering og det officielle API.
+* Statstidendes interne søge-endpoint er ikke officielt dokumenteret og kan ændre sig; workflowet
+  `discover.yml` genfinder det. Det officielle API kræver OCES3-certifikat – se [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
+* cvrapi.dk har en lille daglig kvote; uden CVR-adgang mangler branchekode på en del boer.
 * Persondata: kuratorer optræder i deres professionelle rolle som offentliggjort i
   Statstidende. Se [docs/LEGAL.md](docs/LEGAL.md).
 

@@ -24,15 +24,29 @@ Det giver score på branche, navn, regnskab og tvangsauktioner – men ingen BFE
 
 Øvrige knapper: `PROPSCREENER_DAYS_BACK`, `PROPSCREENER_MIN_SCORE`, `PROPSCREENER_CACHE_DIR`.
 
-## GitHub Actions (daglig kørsel → GitHub Pages)
+## GitHub Actions (daglig kørsel → repo + GitHub Pages)
 
-1. Repository → Settings → Pages → Source: **GitHub Actions**.
-2. Settings → Secrets and variables → Actions: læg de hemmeligheder ind du har (se ovenfor).
-   Certifikater lægges som PEM-tekst i `STATSTIDENDE_CERT_PEM` / `STATSTIDENDE_KEY_PEM`.
-3. Workflowet `scrape.yml` kører 04:15 UTC dagligt og kan startes manuelt (Actions → *Scrape og
-   publicér* → Run workflow). Inputs: `days`, `min_score`, `demo=true` for at publicere demodata.
-4. Output: `https://<owner>.github.io/propscreener/` (dashboard), `…/data/cases.json`, `…/cases.csv`.
-   Data-artefaktet gemmes desuden på hver kørsel under Actions → Artifacts.
+Workflowet `scrape.yml` kører 04:15 UTC dagligt, på manuel start (Actions → *Scrape og publicér*
+→ Run workflow; inputs `days`, `min_score`, `demo=true`) og på push til udviklingsbranchen
+(kort vindue på 7 dage). Hver kørsel:
+
+1. henter dekreter, beriger og scorer,
+2. **committer** `data/cases.json`, `data/cases.csv` og `site/index.html` til branchen,
+3. gemmer dem som Actions-artefakt (`cases`),
+4. publicerer `site/` til GitHub Pages, hvis repo-variablen `ENABLE_PAGES` er `true`.
+
+Opsætning af Pages (gratis på offentlige repos):
+
+1. Settings → Pages → Source: **GitHub Actions**.
+2. Settings → Secrets and variables → Actions → **Variables** → `ENABLE_PAGES` = `true`.
+3. Pages-miljøet (`github-pages`) tillader som standard kun udrulning fra standardbranchen
+   (`main`). Enten merges udviklingsbranchen til `main`, eller også tilføjes branchen under
+   Settings → Environments → github-pages → *Deployment branches*.
+4. Dashboardet ligger derefter på `https://<owner>.github.io/propscreener/`, data på
+   `…/data/cases.json` og `…/data/cases.csv`.
+
+Hemmeligheder lægges under **Secrets** (se tabellen ovenfor). Certifikater som PEM-tekst i
+`STATSTIDENDE_CERT_PEM` / `STATSTIDENDE_KEY_PEM`.
 
 HTTP-cachen gemmes mellem kørsler (`actions/cache`), så regnskaber og CVR-opslag ikke hentes igen.
 
@@ -40,7 +54,8 @@ HTTP-cachen gemmes mellem kørsler (`actions/cache`), så regnskaber og CVR-opsl
 
 | Symptom | Årsag / løsning |
 |---|---|
-| `Kunne ikke finde et fungerende søge-endpoint på statstidende.dk` | Endpointet er ændret. Følg proceduren i DATA_SOURCES.md → *Offentlig søgning* |
+| `probe` melder fejl på `/api/messagesearch` | Statstidende har ændret sit interne API. Kør workflowet `discover.yml` (Actions) – det dumper sitets bundles og finder de nye stier |
+| `cvrapi.dk kvote opbrugt` i `meta.stats.fejl` | Daglig kvote pr. IP. Pipelinen falder tilbage til statstidende.dk's CVR-opslag; sæt evt. `CVR_ES_USER/PASSWORD` for fuld dækning |
 | `HTTP 403` fra cvrapi.dk | Manglende/anonym User-Agent. Sæt `CVRAPI_USER_AGENT` med kontaktinfo |
 | `Ejerfortegnelsen kunne ikke slås op` i `noter` | Forkert login, eller tjenestebrugeren mangler adgang til EJF-tjenesten (tildel i selvbetjening) |
 | Mange boer med `Ingen XBRL-årsrapport fundet` | Normalt for nye selskaber og holdingselskaber |

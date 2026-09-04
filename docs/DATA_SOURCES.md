@@ -6,8 +6,8 @@ dette projekt eller er skrevet efter offentlig dokumentation uden live-test.
 
 | # | Kilde | Data | Adgang | Verificeret |
 |---|---|---|---|---|
-| 1 | Statstidende – konkursdekreter | skyldner, CVR, dekretdato, fristdag, skifteret, sagsnr, kurator | offentlig søgning / REST-API m. certifikat | parser: ja (fixtures) · endpoint: **nej** |
-| 2 | Statstidende – tvangsauktioner | ejendom, matrikel, ejendomsværdi, auktionsdato, ejer | som 1 | parser: ja · endpoint: nej |
+| 1 | Statstidende – konkursdekreter | skyldner, CVR, dekretdato, fristdag, skifteret, sagsnr, kurator | offentlig søgning / REST-API m. certifikat | **ja** – endpoint og format verificeret 4. sep. 2026 |
+| 2 | Statstidende – tvangsauktioner | ejendom, matrikel, ejendomsværdi, auktionsdato, ejer | som 1 | endpoint: ja · feltformat: under kalibrering |
 | 3 | cvrapi.dk | navn, branche, adresse, status, ejere, ansatte | gratis, User-Agent | feltnavne: dokumenteret |
 | 4 | CVR system-til-system (Elasticsearch) | fuld virksomhedsprofil, bibrancher, deltagere, statushistorik | aftale m. Erhvervsstyrelsen | feltnavne: dokumenteret |
 | 5 | Regnskabsindeks `distribution.virk.dk/offentliggoerelser` | dokument-URL'er til XBRL/PDF | åben | feltnavne: dokumenteret |
@@ -32,23 +32,39 @@ til senere brug.
   `publishedTo`, `page`, `pageSize`. **Parameternavnene skal afstemmes med den udleverede
   dokumentation** – de er konfigureret ét sted (`_search_api`).
 
-### Offentlig søgning (`STATSTIDENDE_MODE=web`, standard)
+### Offentlig søgning (`STATSTIDENDE_MODE=web`, standard) – verificeret
 
-statstidende.dk er en single-page-app der henter JSON fra et internt endpoint. Det er ikke
-dokumenteret og kan ændre sig. Derfor:
+statstidende.dk er en React-SPA, der taler med et internt JSON-API på samme host. API'et
+kræver ikke login for læsning. Endpoints og parametre er verificeret 4. september 2026 ved
+at læse sitets JavaScript-bundles fra en GitHub Actions-runner (workflowet `discover.yml`):
 
-1. `propscreener probe` afprøver kandidaterne i `WEB_SEARCH_CANDIDATES`
-   (`POST /api/messages/search`, `GET /api/messages`, `GET /api/v1/messages`, …) og
-   rapporterer hvilke der svarer med en meddelelsesliste.
-2. Kan intet endpoint findes: åbn statstidende.dk → søg på *Konkursboer / Dekret* →
-   DevTools → Network → filtrér XHR. Notér URL, metode og request-body. Tilføj den som første
-   kandidat i `WEB_SEARCH_CANDIDATES` og tilpas payload-nøglerne i `_search_web`.
-3. `normalize_message` er bevidst tolerant over for feltnavne (`id`/`messageId`,
-   `text`/`body`/`content`, `publicationDate`/`publishedDate` …), så mindre ændringer ikke
-   kræver kodeændring.
+| Endpoint | Formål |
+|---|---|
+| `GET /api/section` | Alle sektioner og rubrikker med `id`, `name`, `publicKey` |
+| `GET /api/messagesearch?m=<pk>&s=8&fromDate=YYYY-MM-DD&toDate=YYYY-MM-DD&page=0&ps=100` | Søgning. `m` = rubrikkens publicKey **uden bindestreger** (kan gentages), `s=8` = kundgjorte, `page` er 0-baseret. Svar: `{pageCount, resultCount, results:[{messageNumber, published, title, summary:[{name,value}], sectionName, messageTypeName}]}` |
+| `GET /api/messagesearch/messagetypecount?…` | Antal pr. rubrik for samme parametre |
+| `GET /api/message/{messageNumber}` | Hele meddelelsen: `document` (JSON-streng med `fieldgroups[].fields[].{name,value,type}`), `title`, `publicationDate`, `summaryFields` |
+| `GET /api/Publication/GetLatestPublication` | Dagens udgave: `date`, `fileId`, `sectionCounts`, `topMessageTypeCounts` |
+| `GET /api/publicationfile/{fileId}/pdf` | Dagens samlede PDF-udgave (plan B til parsing) |
+| `GET /api/cvr/{cvr}` | Sitets eget CVR-opslag (bruges som fallback når cvrapi.dk's kvote er brugt) |
 
-**Vilkår**: Statstidendes data er offentlige, men brug rimelig frekvens (én daglig kørsel,
-0,5 s mellem kald). Hvis I skal bruge det kommercielt i stor skala, indgå aftale om API-adgang.
+Rubrikker vi bruger (fra `/api/section`):
+
+| Rubrik | messageTypeId | publicKey |
+|---|---|---|
+| Konkursboer → Dekret | 13048120 | `14a1d71d-f215-58e5-ade0-214f90482cdc` |
+| Konkursboer → Ophævelse af dekret | 3605286 | `383f1800-1b39-5f39-8250-61a5c0798fad` |
+| Konkursboer → Regnskab og boafslutning | 3625429 | `018d0141-0efb-5472-a698-9328817df00a` |
+| Tvangsauktioner → Fast ejendom | 790596 | `2aa7d6a1-b250-51a8-88a6-3f6c18574526` |
+| Tvangsauktioner → Andelsbolig | 13048125 | `84aba03b-79ab-48ca-b318-8f8d90f0b095` |
+
+Meddelelsesnumre har formen `S02092026-87` (S + dato + løbenummer), og den offentlige side er
+`https://www.statstidende.dk/messages/{messageNumber}`.
+
+**Vilkår og høflighed**: robots.txt på statstidende.dk tillader kun forsiden og enkelte
+info-sider for crawlere. Vi crawler ikke sider – vi kalder det JSON-API sitet selv bruger, én
+gang i døgnet, med 0,5 s mellem kald og en User-Agent med kontaktlink. Til systematisk,
+kommerciel høst bør man tegne den officielle API-aftale hos Civilstyrelsen (se ovenfor).
 
 ### Dekretteksten
 
@@ -71,8 +87,10 @@ Anmeldelsesfristen beregnes som bekendtgørelsesdato + 4 uger (konkurslovens § 
 ## 3–4. CVR
 
 * **cvrapi.dk**: `GET https://cvrapi.dk/api?vat=<cvr>&country=dk&format=json`.
-  Kræver en beskrivende `User-Agent` med kontaktoplysning (`CVRAPI_USER_AGENT`). Rate-limit er
-  uofficielt; vi holder 0,5 s mellem kald og cacher 24 timer.
+  Kræver en beskrivende `User-Agent` med kontaktoplysning (`CVRAPI_USER_AGENT`). Der er en
+  **daglig kvote pr. IP** (i praksis under 20 opslag fra en GitHub-runner, observeret 4. sep.
+  2026). Pipelinen prioriterer derfor CVR-opslag efter foreløbig score (regnskab + navn) og
+  falder tilbage til statstidende.dk's `api/cvr/{cvr}`. Resultater caches 24 timer.
 * **System-til-system**: `POST http://distribution.virk.dk/cvr-permanent/virksomhed/_search`
   med Basic auth. Giver `virksomhedMetadata.nyesteHovedbranche`, `nyesteBibranche1-3`,
   `deltagerRelation` (ejere/ledelse), `virksomhedsstatus` med gyldighedsperioder. Samme klient
