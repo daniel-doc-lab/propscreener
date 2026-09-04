@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-04T17:17:37+00:00",
+  "genereret": "2026-09-04T17:29:45+00:00",
   "version": "0.1.0",
   "antal": 51,
   "demo": false,
@@ -14,7 +14,7 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-04T17:16:45+00:00",
+   "started": "2026-09-04T17:28:55+00:00",
    "dekreter": 99,
    "tvangsauktioner": 0,
    "beriget_cvr": 99,
@@ -3082,7 +3082,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:16:51+00:00"
+   "sidst_opdateret": "2026-09-04T17:28:59+00:00"
   },
   {
    "id": "44145227",
@@ -3182,7 +3182,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:16:48+00:00"
+   "sidst_opdateret": "2026-09-04T17:28:56+00:00"
   },
   {
    "id": "41298332",
@@ -5058,7 +5058,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:17:30+00:00"
+   "sidst_opdateret": "2026-09-04T17:29:38+00:00"
   },
   {
    "id": "40313761",
@@ -5354,7 +5354,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:16:48+00:00"
+   "sidst_opdateret": "2026-09-04T17:28:56+00:00"
   }
  ]
 }
