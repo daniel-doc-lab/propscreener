@@ -82,8 +82,15 @@ jobs:
           propscreener probe || true
           propscreener debug-search --days 3 || true
           echo "=== tvangsauktion-eksempel ==="; propscreener debug-search --type tvangsauktion_fast_ejendom --days 7 | head -c 6000 || true; echo
-          echo "=== statstidende api/cvr ==="; curl -sS -m 20 -A "propscreener/0.1" https://www.statstidende.dk/api/cvr/10150817 | head -c 1200; echo
-          echo "=== cvrapi råsvar ==="; curl -sS -m 20 -A "${CVRAPI_USER_AGENT:-propscreener/0.1 (+https://github.com/${{ github.repository }})}" "https://cvrapi.dk/api?vat=10150817&country=dk&format=json" | head -c 600; echo
+          echo "=== alternative CVR-kilder ==="
+          for u in "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhed?cvrnummer=10150817&locale=da" \
+                   "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhedsInfo?cvrnummer=10150817" \
+                   "https://datacvr.virk.dk/gateway/soeg?soeg=10150817&type=Alle&locale=da" \
+                   "https://datacvr.virk.dk/gateway/virksomhed/hentVirksomhed?cvrnummer=10150817" \
+                   "https://cvrapi.dk/api?vat=10150817&country=dk&format=json"; do
+            printf "%s -> " "$u"; curl -sS -m 20 -A "propscreener/0.1 (+https://github.com/${{ github.repository }})" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b\n" "$u" || echo curl-fejl
+            head -c 500 body.txt | tr '\n' ' '; echo
+          done
 
       - name: Kør pipeline
         run: |
@@ -112,7 +119,10 @@ jobs:
           git add -f data/cases.json data/cases.csv site/index.html
           if git diff --cached --quiet; then echo "ingen ændringer"; exit 0; fi
           git commit -m "data: opdateret $(date -u +%Y-%m-%d) ($(python -c 'import json;print(json.load(open("data/cases.json"))["meta"]["antal"])') boer)"
-          git push origin HEAD:${{ github.ref_name }}
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && break
+            sleep 5
+          done
 
       - uses: actions/upload-artifact@v4
         with:

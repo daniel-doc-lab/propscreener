@@ -328,6 +328,8 @@ def flatten_fieldgroups(groups: Any) -> tuple[dict[str, str], str]:
             if isinstance(val, (dict, list)):
                 val = _stringify(val)
             val = _strip_html(str(val))
+            if val.startswith("data:"):  # indlejrede billeder (kort, fotos) – irrelevante og store
+                continue
             n += 1
             key = fname.lower() if fname else f"#{n}"
             felter[f"{gname}/{key}".lower()] = val
@@ -452,7 +454,12 @@ class StatstidendeClient:
                 if msg is None:
                     msg = normalize_message(it, self.web_base)
                 if not msg.offentliggjort:
-                    msg.offentliggjort = parse_date(str(_pick(it, "offentliggjort") or ""))
+                    msg.offentliggjort = parse_date(str(_pick(it, "offentliggjort") or it.get("published") or ""))
+                if not msg.overskrift and it.get("title"):
+                    msg.overskrift = str(it["title"])
+                for sm in it.get("summary") or []:  # fx Dato, Ejendomsværdi, Retskreds, CVR-nr.
+                    if isinstance(sm, dict) and sm.get("value") not in (None, ""):
+                        msg.felter.setdefault(f"summary/{str(sm.get('name') or '').lower().rstrip('.:')}", str(sm["value"]))
                 yield msg
             page_count = body.get("pageCount") if isinstance(body, dict) else None
             if page_count is not None and page + 1 >= int(page_count):
@@ -639,11 +646,28 @@ AUKTION_DATO_RE = re.compile(r"auktion(?:en)?\s+(?:afholdes\s+)?(?:den\s+)?" + D
 BELIGGENDE_RE = re.compile(r"beliggende\s+([^\n,]+?,\s*\d{4}\s+[^\n,.]+)", re.IGNORECASE)
 
 
+AUCTION_TITLE_RE = re.compile(r"^(?:\d+\.\s*auktion\s*[-–:]\s*)?(.+?),\s*(\d{4})\s+(.+)$", re.IGNORECASE)
+
+
+def _kr(v: str | None) -> int | None:
+    if not v:
+        return None
+    digits = re.sub(r"[^\d]", "", v.split(",")[0])
+    return int(digits) if digits else None
+
+
 def parse_tvangsauktion(msg: RawMessage) -> Property:
     t = msg.tekst
+    f = msg.felter
     p = Property(kilde="tvangsauktion", tvangsauktion_url=msg.url)
+    # Titel: "2. auktion - Søbrovej 40, 5683 Haarby"
+    mt = AUCTION_TITLE_RE.match((msg.overskrift or "").strip())
+    if mt:
+        p.adresse, p.postnr, p.by = _clean(mt.group(1)), mt.group(2), _clean(mt.group(3))
+    p.tvangsauktion_dato = parse_date(f.get("summary/dato") or f.get("dato") or "")
+    p.offentlig_vurdering = _kr(f.get("summary/ejendomsværdi") or f.get("ejendomsværdi"))
     m = BELIGGENDE_RE.search(t)
-    if m:
+    if m and not p.adresse:
         addr = m.group(1)
         pm = re.search(r"(.+?),\s*(\d{4})\s+(.+)$", addr)
         if pm:
@@ -652,14 +676,16 @@ def parse_tvangsauktion(msg: RawMessage) -> Property:
             p.adresse = _clean(addr)
     m = MATRIKEL_RE.search(t)
     p.matrikel = _clean(m.group(1)) if m else None
-    m = EJENDOMSVAERDI_RE.search(t)
-    if m:
-        try:
-            p.offentlig_vurdering = int(m.group(1).replace(".", ""))
-        except ValueError:
-            pass
-    m = AUKTION_DATO_RE.search(t)
-    p.tvangsauktion_dato = parse_date(m.group(1)) if m else None
+    if p.offentlig_vurdering is None:
+        m = EJENDOMSVAERDI_RE.search(t)
+        if m:
+            try:
+                p.offentlig_vurdering = int(m.group(1).replace(".", ""))
+            except ValueError:
+                pass
+    if not p.tvangsauktion_dato:
+        m = AUKTION_DATO_RE.search(t)
+        p.tvangsauktion_dato = parse_date(m.group(1)) if m else None
     if re.search(r"ejerlejlighed", t, re.IGNORECASE):
         p.ejendomstype = "Ejerlejlighed"
     elif re.search(r"erhverv|kontor|lager|butik", t, re.IGNORECASE):
@@ -671,8 +697,11 @@ def parse_tvangsauktion(msg: RawMessage) -> Property:
 
 def auction_debtor_keys(msg: RawMessage) -> tuple[str | None, str | None]:
     """(cvr, navn) på skyldner/ejer i en tvangsauktionsmeddelelse."""
+    f = msg.felter
+    cvr = re.sub(r"\D", "", f.get("summary/cvr-nr") or f.get("cvr-nr") or f.get("cvr-nummer") or "") or None
     m = CVR_RE.search(msg.tekst)
-    cvr = re.sub(r"\s", "", m.group(1)) if m else None
+    if not cvr and m:
+        cvr = re.sub(r"\s", "", m.group(1))
     m = re.search(r"(?:tilhørende|ejer|skyldner|rekvisitus)[:\s]+([^\n,]+?(?:ApS|A/S|K/S|P/S|I/S|IVS))", msg.tekst,
                   re.IGNORECASE)
     navn = _clean(m.group(1)) if m else None

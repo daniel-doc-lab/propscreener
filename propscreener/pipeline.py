@@ -69,7 +69,7 @@ class Pipeline:
         by_cvr = {c.selskab.cvr: c for c in cases if c.selskab.cvr}
         by_name = {(c.selskab.navn or "").lower(): c for c in cases if c.selskab.navn}
         try:
-            msgs = list(self.statstidende.search("tvangsauktion_fast_ejendom", date_from - timedelta(days=180)))
+            msgs = list(self.statstidende.search("tvangsauktion_fast_ejendom", date_from))
         except Exception as e:  # noqa: BLE001
             self.stats.fejl.append(f"tvangsauktioner: {e}")
             return

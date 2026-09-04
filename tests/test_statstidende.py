@@ -149,3 +149,16 @@ def test_web_message_real_format():
     assert (case.kurator.postnr, case.kurator.by) == ("1560", "København V")
     assert any("tvangsopløsning" in n for n in case.noter)
     assert case.statstidende_url.endswith("/messages/S02092026-87")
+
+
+def test_tvangsauktion_from_search_summary():
+    msg = RawMessage(id="S31082026-202", url="https://www.statstidende.dk/messages/S31082026-202", kategori="Tvangsauktioner",
+                     undertype="Fast ejendom", offentliggjort="2026-09-04", overskrift="2. auktion - Søbrovej 40, 5683 Haarby",
+                     tekst="Rekvirent: Realkredit Danmark. Ejer: Demo Ejendomme ApS, CVR-nr. 12345678.",
+                     felter={"summary/dato": "29.09.2026", "summary/ejendomsværdi": "461.000", "summary/grundværdi": "108.000",
+                             "summary/retskreds": "Retten i Odense"})
+    p = parse_tvangsauktion(msg)
+    assert (p.adresse, p.postnr, p.by) == ("Søbrovej 40", "5683", "Haarby")
+    assert p.tvangsauktion_dato == "2026-09-29"
+    assert p.offentlig_vurdering == 461_000
+    assert auction_debtor_keys(msg) == ("12345678", "Demo Ejendomme ApS")
