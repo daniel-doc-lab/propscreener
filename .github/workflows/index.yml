@@ -31,8 +31,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -e .
-      - name: Entiteter der udstilles (til fejlsøgning)
-        run: propscreener probe-files | head -c 12000
+      - name: Entiteter og kolonnenavne (til fejlsøgning; henter kun små delta-filer)
+        run: |
+          propscreener probe-files --work-dir .cache/files \
+            --headers 'VUR:^Ejendomsvurdering$' 'VUR:^BFEKrydsreference$' 'VUR:^Vurderingsejendom$' \
+                      'EJF:^Ejerskab$' 'EBR:^Ejendomsbeliggenhed$' | head -c 30000
       - name: Byg indekser
         run: |
           propscreener -v build-index --index-dir data/index --work-dir .cache/files || true

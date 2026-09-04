@@ -120,6 +120,28 @@ class DatafordelerFiles:
                 return cands[0]
         return None
 
+    def smallest(self, register: str, entity_pattern: str, fmt: str = "csv") -> FileInfo | None:
+        """Mindste tilgængelige fil for en entitet (typisk et delta-udtræk) – til at læse kolonnenavne billigt."""
+        pat = re.compile(entity_pattern, re.IGNORECASE)
+        cands = [f for f in self.list_files(register) if pat.search(f.entity) and f.fmt.lower() == fmt]
+        cands.sort(key=lambda f: (f.type_of_download != "DeltaDownload", f.size or 1 << 40, f.generated))
+        return cands[0] if cands else None
+
+    def peek_headers(self, register: str, entity_pattern: str, work: Path, rows: int = 2) -> dict[str, Any]:
+        """Kolonnenavne og et par eksempelrækker fra den mindste fil for entiteten."""
+        info = self.smallest(register, entity_pattern)
+        if info is None:
+            return {"entity": entity_pattern, "fejl": "ingen fil"}
+        zp = self.download(info, work / info.file_name)
+        sample: list[dict[str, str]] = []
+        headers: list[str] = []
+        for row in self.iter_csv_rows(zp):
+            headers = headers or list(row.keys())
+            sample.append(row)
+            if len(sample) >= rows:
+                break
+        return {"fil": info.file_name, "bytes": info.size, "kolonner": headers, "eksempler": sample}
+
     # -- download -----------------------------------------------------------
     def download(self, info: FileInfo, dest: Path) -> Path:
         import requests
@@ -180,6 +202,8 @@ def build_ejf_index(rows: Iterable[dict[str, str]]) -> dict[str, list[dict[str, 
     n = 0
     for row in rows:
         n += 1
+        if n == 1:
+            log.info("ejerskab kolonner: %s", list(row.keys()))
         if not _is_current(row):
             continue
         cvr = _col(row, r"cvr", r"ejendeVirksomhed", r"virksomhed")
@@ -202,7 +226,9 @@ def build_ejf_index(rows: Iterable[dict[str, str]]) -> dict[str, list[dict[str, 
 def build_bfe_xref(rows: Iterable[dict[str, str]]) -> dict[str, int]:
     """VUR BFEKrydsreference: vurderingsejendom-id -> BFE-nummer (kun gældende rækker)."""
     xref: dict[str, int] = {}
-    for row in rows:
+    for n, row in enumerate(rows):
+        if n == 0:
+            log.info("krydsreference kolonner: %s", list(row.keys()))
         if not _is_current(row):
             continue
         vid = _col(row, r"vurderingsejendom", r"VURejendom", r"ejendomsid")
@@ -217,7 +243,9 @@ def build_vur_index(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None 
     """Ejendomsvurdering-rækker -> {bfe: {ejendomsvaerdi, grundvaerdi, aar}}, seneste vurderingsår vinder.
     BFE tages fra rækken selv eller via krydsreferencen (vurderingsejendom-id -> BFE)."""
     idx: dict[str, dict[str, Any]] = {}
-    for row in rows:
+    for n, row in enumerate(rows):
+        if n == 0:
+            log.info("vurdering kolonner: %s", list(row.keys()))
         if not _is_current(row):
             continue
         bfe = _col(row, r"bfe")

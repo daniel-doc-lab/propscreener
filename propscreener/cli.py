@@ -60,7 +60,12 @@ def main(argv: list[str] | None = None) -> int:
     p_idx.add_argument("--vur-entity", default=r"^Ejendomsvurdering$", help="Regex for VUR-entitet")
     p_idx.add_argument("--ebr-entity", default=r"^Ejendomsbeliggenhed$")
     p_idx.add_argument("--ejf-entity", default=r"^Ejerskab$")
-    sub.add_parser("probe-files", help="Vis hvilke entiteter Datafordeleren udstiller til fildownload (EJF/VUR/EBR/BBR/MAT)")
+    p_idx.add_argument("--force-vur", action="store_true",
+                       help="Byg VUR-indeks selv uden EJF-indeks (2+ GB download, kun til fejlsøgning)")
+    p_pf = sub.add_parser("probe-files", help="Vis hvilke entiteter Datafordeleren udstiller til fildownload (EJF/VUR/EBR/BBR/MAT)")
+    p_pf.add_argument("--headers", nargs="*", default=[], metavar="REGISTER:ENTITET",
+                      help="Hent mindste fil (delta) for entiteten og vis kolonnenavne, fx VUR:^Ejendomsvurdering$")
+    p_pf.add_argument("--work-dir", default=".cache/files")
 
     p_show = sub.add_parser("show", help="Vis et bo fra data/cases.json")
     p_show.add_argument("cvr")
@@ -162,6 +167,13 @@ def main(argv: list[str] | None = None) -> int:
                 print(_json.dumps(df.entities(reg), ensure_ascii=False, indent=1))
             except Exception as e:  # noqa: BLE001
                 print(f"  fejl: {e}")
+        for spec in a.headers:
+            reg, _, pat = spec.partition(":")
+            print(f"== kolonner {reg} {pat} ==")
+            try:
+                print(_json.dumps(df.peek_headers(reg.upper(), pat or ".", Path(a.work_dir)), ensure_ascii=False, indent=1))
+            except Exception as e:  # noqa: BLE001
+                print(f"  fejl: {e}")
         return 0
 
     if a.cmd == "build-index":
@@ -194,6 +206,10 @@ def main(argv: list[str] | None = None) -> int:
         for key, pat, builder, name in (("vur", a.vur_entity, build_vur_index, "vur_bfe.json.gz"),
                                         ("ebr", a.ebr_entity, build_ebr_index, "ebr_bfe.json.gz")):
             if key not in only:
+                continue
+            if key == "vur" and wanted is None and not a.force_vur:
+                print("VUR: springes over – vurderinger giver først mening når EJF-indekset (CVR -> BFE) findes "
+                      "(brug --force-vur for at tvinge; ~4 GB download)")
                 continue
             info = df.latest_total(key.upper(), pat, "csv")
             if info is None:
