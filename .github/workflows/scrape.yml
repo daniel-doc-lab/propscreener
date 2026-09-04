@@ -81,6 +81,9 @@ jobs:
         run: |
           propscreener probe || true
           propscreener debug-search --days 3 || true
+          echo "=== tvangsauktion-eksempel ==="; propscreener debug-search --type tvangsauktion_fast_ejendom --days 7 | head -c 6000 || true; echo
+          echo "=== statstidende api/cvr ==="; curl -sS -m 20 -A "propscreener/0.1" https://www.statstidende.dk/api/cvr/10150817 | head -c 1200; echo
+          echo "=== cvrapi råsvar ==="; curl -sS -m 20 -A "${CVRAPI_USER_AGENT:-propscreener/0.1 (+https://github.com/${{ github.repository }})}" "https://cvrapi.dk/api?vat=10150817&country=dk&format=json" | head -c 600; echo
 
       - name: Kør pipeline
         run: |

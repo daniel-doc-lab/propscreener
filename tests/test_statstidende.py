@@ -1,3 +1,4 @@
+import json
 from datetime import date
 from pathlib import Path
 
@@ -11,6 +12,7 @@ from propscreener.sources.statstidende import (
     parse_dekret_text,
     parse_kurator,
     parse_tvangsauktion,
+    web_message_to_raw,
 )
 
 FIX = Path(__file__).parent / "fixtures"
@@ -121,3 +123,29 @@ def test_tvangsauktion_parse():
 
 def test_date_today_is_iso():
     assert date.today().isoformat().count("-") == 2
+
+
+def test_web_message_real_format():
+    """Format som statstidende.dk's /api/message/{nr} leverer det (verificeret 4. sep. 2026, anonymiseret)."""
+    body = json.loads((FIX / "web_message_dekret.json").read_text(encoding="utf-8"))
+    raw = web_message_to_raw(body, "https://www.statstidende.dk")
+    assert raw.id == "S02092026-87"
+    assert raw.offentliggjort == "2026-09-04"
+    assert raw.felter["cvr-nr"] == "12345678"
+    assert raw.felter["kurator/#1"] == "Advokat Boris K. Frederiksen"
+    case = message_to_case(raw)
+    assert case.selskab.cvr == "12345678"
+    assert case.selskab.navn == "Eksempel Ejendomme A/S"
+    assert case.selskab.selskabsform == "A/S"
+    assert case.selskab.adresse == "Trindsøvej 6, 1"
+    assert (case.selskab.postnr, case.selskab.by, case.selskab.region) == ("8000", "Århus C", "Midtjylland")
+    assert case.dekretdato == "2026-09-02"
+    assert case.fristdag == "2026-08-24"
+    assert case.anmeldelsesfrist == "2026-10-02"
+    assert case.skifteret.navn == "Retten i Aarhus"
+    assert case.skifteret.sagsnummer == "SKS 41-20428/2026"
+    assert case.kurator.navn == "Boris K. Frederiksen"
+    assert case.kurator.adresse == "Kalvebod Brygge 32"
+    assert (case.kurator.postnr, case.kurator.by) == ("1560", "København V")
+    assert any("tvangsopløsning" in n for n in case.noter)
+    assert case.statstidende_url.endswith("/messages/S02092026-87")

@@ -43,13 +43,17 @@ def region_for_postnr(postnr: str | None) -> str | None:
 
 
 class CvrApi:
-    """cvrapi.dk – https://cvrapi.dk/documentation"""
+    """cvrapi.dk – https://cvrapi.dk/documentation (gratis, men med daglig kvote pr. IP)."""
 
     def __init__(self, settings: Settings, http: Http):
         self.s = settings
         self.http = http
+        self.quota_exceeded = False
+        self.last_error: str | None = None
 
     def lookup(self, cvr: str | None = None, name: str | None = None) -> dict[str, Any] | None:
+        if self.quota_exceeded:
+            return None
         params: dict[str, Any] = {"country": "dk", "format": "json"}
         if cvr:
             params["vat"] = cvr
@@ -62,8 +66,16 @@ class CvrApi:
                                       headers={"User-Agent": self.s.cvrapi_user_agent}, cache_ttl_s=24 * 3600)
         except HttpError as e:
             log.warning("cvrapi %s: %s", params, e)
+            self.last_error = str(e)
+            if e.status in (403, 429):
+                self.quota_exceeded = True
             return None
         if not isinstance(body, dict) or body.get("error"):
+            err = str((body or {}).get("error") if isinstance(body, dict) else body)
+            self.last_error = err
+            if "QUOTA" in err.upper() or "LIMIT" in err.upper():
+                self.quota_exceeded = True
+                log.warning("cvrapi: kvote opbrugt (%s) – springer resten over", err)
             return None
         return body
 
@@ -159,6 +171,65 @@ class CvrElastic:
         return company
 
 
+class StatstidendeCvr:
+    """Fallback: statstidende.dk's eget CVR-opslag (GET /api/cvr/{cvr}), som frontend'en bruger.
+    Svarets feltnavne er ikke dokumenteret; vi mapper tolerant."""
+
+    KEYS = {
+        "navn": ("name", "navn", "companyName", "virksomhedsnavn"),
+        "adresse": ("address", "adresse", "street", "vejnavn", "addressLine1"),
+        "postnr": ("zipcode", "postnummer", "zip", "postalCode", "postnr"),
+        "by": ("city", "by", "postdistrikt", "cityName"),
+        "branchekode": ("industrycode", "branchekode", "industryCode", "hovedbranche"),
+        "branchetekst": ("industrydesc", "branchetekst", "industryDescription"),
+        "selskabsform": ("companydesc", "virksomhedsform", "companyType", "companyForm"),
+        "status": ("status", "virksomhedsstatus"),
+    }
+
+    def __init__(self, settings: Settings, http: Http):
+        self.s = settings
+        self.http = http
+
+    def lookup(self, cvr: str) -> dict[str, Any] | None:
+        try:
+            body = self.http.get_json(f"{self.s.statstidende_web_base}/api/cvr/{cvr}", cache_ttl_s=24 * 3600)
+        except HttpError as e:
+            log.debug("statstidende cvr %s: %s", cvr, e)
+            return None
+        if not isinstance(body, dict):
+            return None
+        inner = body.get("company") if isinstance(body.get("company"), dict) else body
+        if not inner or (inner.get("statusCode") not in (None, 200)):
+            return None
+        return inner
+
+    @classmethod
+    def apply(cls, company: Company, data: dict[str, Any]) -> Company:
+        low = {k.lower(): v for k, v in data.items()}
+
+        def pick(attr: str) -> Any:
+            for k in cls.KEYS[attr]:
+                v = low.get(k.lower())
+                if v not in (None, "", {}):
+                    return v
+            return None
+
+        company.navn = pick("navn") or company.navn
+        company.adresse = pick("adresse") or company.adresse
+        company.postnr = str(pick("postnr") or company.postnr or "") or None
+        company.by = pick("by") or company.by
+        bc = pick("branchekode")
+        if isinstance(bc, dict):
+            bc = bc.get("branchekode") or bc.get("code")
+        company.branchekode = str(bc) if bc else company.branchekode
+        company.branchetekst = pick("branchetekst") or company.branchetekst
+        company.selskabsform = _company_form(str(pick("selskabsform") or "")) or company.selskabsform
+        company.status = str(pick("status") or company.status or "") or None
+        company.region = region_for_postnr(company.postnr)
+        company.cvr_url = f"https://datacvr.virk.dk/enhed/virksomhed/{company.cvr}" if company.cvr else None
+        return company
+
+
 def _int(v: Any) -> int | None:
     try:
         return int(str(v).replace(".", "").split("-")[0]) if v not in (None, "") else None
@@ -178,7 +249,8 @@ def _company_form(desc: str | None) -> str | None:
     return desc.strip()
 
 
-def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None) -> BankruptcyCase:
+def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None,
+                    fallback: StatstidendeCvr | None = None) -> BankruptcyCase:
     c = case.selskab
     data = None
     if es is not None and c.cvr:
@@ -198,6 +270,12 @@ def enrich_with_cvr(case: BankruptcyCase, api: CvrApi, es: CvrElastic | None) ->
             case.id = c.cvr or case.id
         case.links["cvr"] = c.cvr_url or case.links.get("cvr", "")
     else:
-        c.region = region_for_postnr(c.postnr)
-        case.noter.append("CVR-opslag fejlede – nøgletal fra CVR mangler")
+        alt = fallback.lookup(c.cvr) if (fallback is not None and c.cvr) else None
+        if alt:
+            StatstidendeCvr.apply(c, alt)
+            case.kilder.append("statstidende-cvr")
+        else:
+            c.region = region_for_postnr(c.postnr)
+            why = f" ({api.last_error})" if api.last_error else ""
+            case.noter.append(f"CVR-opslag fejlede{why} – branche og ejere mangler")
     return case

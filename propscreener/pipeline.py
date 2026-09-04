@@ -9,7 +9,7 @@ from .config import Settings
 from .detect import score_case
 from .http import Http
 from .models import BankruptcyCase
-from .sources.cvr import CvrApi, CvrElastic, enrich_with_cvr
+from .sources.cvr import CvrApi, CvrElastic, StatstidendeCvr, enrich_with_cvr
 from .sources.ejerfortegnelse import DawaClient, EjerfortegnelseClient, enrich_with_ejerfortegnelse
 from .sources.regnskab import RegnskabClient, enrich_with_regnskab
 from .sources.statstidende import (
@@ -45,6 +45,7 @@ class Pipeline:
         self.statstidende = StatstidendeClient(settings, self.http)
         self.cvrapi = CvrApi(settings, self.http)
         self.cvr_es = CvrElastic(settings, self.http) if settings.has_cvr_es else None
+        self.cvr_fallback = StatstidendeCvr(settings, self.http)
         self.regnskab = RegnskabClient(settings, self.http)
         self.ejf = EjerfortegnelseClient(settings, self.http) if settings.has_datafordeler else None
         self.dawa = DawaClient(settings, self.http)
@@ -84,15 +85,30 @@ class Pipeline:
             self.stats.tvangsauktioner += 1
 
     def enrich(self, case: BankruptcyCase) -> BankruptcyCase:
-        enrich_with_cvr(case, self.cvrapi, self.cvr_es)
-        if case.selskab.branchekode:
-            self.stats.beriget_cvr += 1
+        """Fuld berigelse af ét bo (bruges af tests og `run`). Rækkefølgen i `run` er
+        regnskab -> foreløbig score -> CVR (kvote) -> EJF -> endelig score."""
+        self.enrich_regnskab(case)
+        self.enrich_cvr(case)
+        self.enrich_ejf(case)
+        return self.finish(case)
+
+    def enrich_regnskab(self, case: BankruptcyCase) -> None:
         enrich_with_regnskab(case, self.regnskab)
         if case.regnskab.aktiver is not None:
             self.stats.beriget_regnskab += 1
+        score_case(case)  # foreløbig score (bruges til at prioritere CVR-opslag)
+
+    def enrich_cvr(self, case: BankruptcyCase) -> None:
+        enrich_with_cvr(case, self.cvrapi, self.cvr_es, self.cvr_fallback)
+        if case.selskab.branchekode:
+            self.stats.beriget_cvr += 1
+
+    def enrich_ejf(self, case: BankruptcyCase) -> None:
         enrich_with_ejerfortegnelse(case, self.ejf, self.dawa)
         if any(p.kilde == "ejerfortegnelsen" for p in case.ejendomme):
             self.stats.beriget_ejf += 1
+
+    def finish(self, case: BankruptcyCase) -> BankruptcyCase:
         score_case(case)
         case.sidst_opdateret = datetime.now(UTC).isoformat(timespec="seconds")
         add_investor_links(case)
@@ -109,15 +125,27 @@ class Pipeline:
         log.info("%d konkursdekreter fundet siden %s", len(cases), date_from)
         self.attach_auctions(cases, date_from)
 
-        for i, case in enumerate(cases, 1):
+        def _safe(step, case: BankruptcyCase) -> None:
             try:
-                self.enrich(case)
+                step(case)
             except Exception as e:  # noqa: BLE001
-                log.exception("berigelse fejlede for %s", case.id)
-                self.stats.fejl.append(f"{case.id}: {e}")
-                case.noter.append(f"Berigelse fejlede: {e}")
+                log.exception("%s fejlede for %s", step.__name__, case.id)
+                self.stats.fejl.append(f"{case.id} {step.__name__}: {e}")
+                case.noter.append(f"{step.__name__} fejlede: {e}")
+
+        for i, case in enumerate(cases, 1):
+            _safe(self.enrich_regnskab, case)
             if i % 25 == 0:
-                log.info("beriget %d/%d", i, len(cases))
+                log.info("regnskab %d/%d", i, len(cases))
+        # CVR-opslag har kvote: tag de mest lovende boer først
+        for i, case in enumerate(sorted(cases, key=lambda c: -c.score), 1):
+            _safe(self.enrich_cvr, case)
+            _safe(self.enrich_ejf, case)
+            self.finish(case)
+            if i % 25 == 0:
+                log.info("cvr/ejf %d/%d", i, len(cases))
+        if self.cvrapi.quota_exceeded:
+            self.stats.fejl.append(f"cvrapi.dk kvote opbrugt: {self.cvrapi.last_error}")
 
         selected = [c for c in cases if c.score >= min_score]
         selected.sort(key=lambda c: (-c.score, c.dekretdato or "", c.selskab.navn or ""))

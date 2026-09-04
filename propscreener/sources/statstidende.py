@@ -38,6 +38,7 @@ from typing import Any, Iterable
 from ..config import Settings
 from ..http import Http, HttpError
 from ..models import BankruptcyCase, Kurator, Property, Skifteret
+from .cvr import region_for_postnr
 
 log = logging.getLogger(__name__)
 
@@ -113,14 +114,19 @@ SKIFTERET_RE = re.compile(
     r"(Sø-\s?og\s?Handelsrettens?\s?skifteret(?:safdeling)?|Skifteretten\s+(?:i|på)\s+[A-ZÆØÅ][\wæøå]+(?:\s[A-ZÆØÅ][\wæøå]+)?|"
     r"Retten\s+(?:i|på)\s+[A-ZÆØÅ][\wæøå]+(?:\s[A-ZÆØÅ][\wæøå]+)?)")
 DATE_ANY = r"(\d{1,2}\.?\s+[a-zæøå]+\s+\d{4}|\d{4}-\d{2}-\d{2}|\d{1,2}[./-]\d{1,2}[./-]\d{4})"
-DEKRET_RE = re.compile(r"(?:dekret|konkursdekret)\s+(?:er\s+)?afsagt\s+(?:den\s+)?" + DATE_ANY,
+DEKRET_RE = re.compile(r"(?:dekret|konkursdekret)\s+(?:er\s+)?(?:afsagt|af)\s+(?:den\s+)?" + DATE_ANY,
                        re.IGNORECASE)
-FRISTDAG_RE = re.compile(r"fristdag(?:en)?[:\s]*(?:er\s+)?(?:den\s+)?" + DATE_ANY, re.IGNORECASE)
+FRISTDAG_RE = re.compile(r"(?:fristdag(?:en)?[:\s]*(?:er\s+)?(?:den\s+)?|begæring(?:en)?\s+(?:er\s+)?modtaget\s+(?:den\s+)?)"
+                         + DATE_ANY, re.IGNORECASE)
 SKIFTESAMLING_RE = re.compile(r"skiftesamling[^\n]*?(?:den\s+)?" + DATE_ANY, re.IGNORECASE)
 KURATOR_RE = re.compile(
-    r"(?:kurator(?:er)?|bobestyrer)\s*(?:er|:)?\s*(?:advokat(?:erne)?\s+)?(.+?)(?=\.\s+(?:[A-ZÆØÅ]|$)|\n\s*\n|$)",
+    r"(?:kurator(?:er)?|bobestyrer)\s*(?:er|:)?\s*(?:advokat(?:erne)?\s+)?(.+?)(?=(?<![A-ZÆØÅ])\.\s+(?:[A-ZÆØÅ]|$)|\.\s*\n|\n\s*\n|$)",
     re.IGNORECASE | re.DOTALL)
-NAME_ON_OWN_LINE_RE = re.compile(r"^\s*(.+?(?:ApS|A/S|K/S|P/S|I/S|IVS|S\.M\.B\.A|AMBA|A\.M\.B\.A\.))\s*$", re.MULTILINE | re.IGNORECASE)
+NAME_ON_OWN_LINE_RE = re.compile(
+    r"^\s*(.+?(?:ApS|A/S|K/S|P/S|I/S|IVS|S\.M\.B\.A|AMBA|A\.M\.B\.A\.))(?:\s+(?:under\s+\w+|i\s+likvidation)[^\n]*)?\s*$",
+    re.MULTILINE | re.IGNORECASE)
+STATUS_SUFFIX_RE = re.compile(r"\s+(under\s+(?:tvangsopløsning|likvidation|rekonstruktion|konkurs)|i\s+likvidation)\b.*$",
+                              re.IGNORECASE)
 COMPANY_FORM_RE = re.compile(r"\b(ApS|A/S|K/S|P/S|I/S|IVS|S\.M\.B\.A\.?|A\.M\.B\.A\.?|AMBA)\b", re.IGNORECASE)
 
 
@@ -210,7 +216,7 @@ def parse_dekret_text(text: str) -> dict[str, Any]:
                 pb = pm
         if pb:
             out["postnr"], out["by"] = pb.group(1), _clean(pb.group(2))
-        street = [ln for ln in addr_block if not re.match(r"^\d{4}\s", ln)]
+        street = [ln for ln in addr_block if not re.match(r"^\d{4}\s", ln) and not re.match(r"^sags", ln, re.IGNORECASE)]
         out["adresse"] = _clean(", ".join(street)) if street else None
 
     m = KURATOR_RE.search(t)
@@ -311,18 +317,22 @@ def flatten_fieldgroups(groups: Any) -> tuple[dict[str, str], str]:
         fields = g.get("fields") or g.get("felter") or []
         if gname:
             lines.append(gname)
+        n = 0
         for f in fields or []:
             if not isinstance(f, dict):
                 continue
-            fname = str(f.get("name") or f.get("label") or f.get("publicKey") or "").strip()
+            fname = str(f.get("name") or f.get("label") or "").strip().rstrip(".:")
             val = f.get("value")
             if val in (None, "", [], {}):
                 continue
             if isinstance(val, (dict, list)):
                 val = _stringify(val)
             val = _strip_html(str(val))
-            felter[f"{gname}/{fname}".lower()] = val
-            felter.setdefault(fname.lower(), val)
+            n += 1
+            key = fname.lower() if fname else f"#{n}"
+            felter[f"{gname}/{key}".lower()] = val
+            if fname:
+                felter.setdefault(fname.lower(), val)
             lines.append(f"{fname}: {val}" if fname else val)
         lines.append("")
     return felter, "\n".join(lines).strip()
@@ -489,9 +499,37 @@ def _group_fields(f: dict[str, str], *group_words: str) -> dict[str, str]:
     return out
 
 
+def _kurator_from_lines(lines: list[str]) -> Kurator:
+    """Feltgruppen 'Kurator' har typisk unavngivne linjer: navn, (firma), adresse, postnr by, tlf, mail."""
+    k = Kurator()
+    for ln in lines:
+        ln = ln.strip()
+        if not ln:
+            continue
+        low = ln.lower()
+        if EMAIL_RE.search(ln) and not k.email:
+            k.email = EMAIL_RE.search(ln).group(0).rstrip(".")
+        elif re.match(r"^(tlf|telefon|tel)", low) or (re.fullmatch(r"[+\d ]{8,}", ln) and not k.telefon):
+            k.telefon = _clean(re.sub(r"^(tlf\.?|telefon|tel\.?)[:\s]*", "", ln, flags=re.IGNORECASE))
+        elif re.match(r"^\d{4}\s+\S", ln) and not k.postnr:
+            k.postnr, k.by = ln[:4], _clean(ln[4:])
+        elif not k.navn and (re.match(r"^(advokat|kurator|adv\.)", low) or not re.search(r"\d", ln)):
+            k.navn = _clean(re.sub(r"^(advokat(?:erne)?|kurator|adv\.)\s+", "", ln, flags=re.IGNORECASE))
+        elif re.search(r"\d", ln) and not k.adresse:
+            k.adresse = _clean(ln)
+        elif not k.firma:
+            k.firma = _clean(ln)
+    if k.navn:
+        k.advokatsamfundet_url = "https://www.advokatsamfundet.dk/find-advokat/?q=" + k.navn.replace(" ", "+")
+    return k
+
+
 def _kurator_from_fields(kf: dict[str, str]) -> Kurator | None:
     if not kf:
         return None
+    if all(re.match(r"#\d+$", k) for k in kf):
+        k = _kurator_from_lines([v for _, v in sorted(kf.items(), key=lambda x: int(x[0][1:]))])
+        return k if any((k.navn, k.firma, k.email, k.telefon)) else None
 
     def g(*names: str) -> str | None:
         for n in names:
@@ -538,6 +576,16 @@ def message_to_case(msg: RawMessage) -> BankruptcyCase:
     if cvr and len(cvr) != 8:
         cvr = parsed.get("cvr") or (cvr if len(cvr) == 8 else None)
     navn = fld("navn", "skyldner", "virksomhedsnavn", "selskabsnavn", "selskab") or parsed.get("navn")
+    if not navn and msg.overskrift and COMPANY_FORM_RE.search(msg.overskrift):
+        navn = msg.overskrift
+    status_note = None
+    for cand in (navn, msg.overskrift):
+        m_status = STATUS_SUFFIX_RE.search(cand or "")
+        if m_status:
+            status_note = m_status.group(1).strip()
+            break
+    if navn:
+        navn = _clean(STATUS_SUFFIX_RE.sub("", navn))
     kurator = _kurator_from_fields(_group_fields(f, "kurator", "bobestyrer"))
     if kurator is None:
         kurator = parse_kurator(fld("kurator")) if fld("kurator") else parsed.get("kurator", Kurator())
@@ -570,7 +618,10 @@ def message_to_case(msg: RawMessage) -> BankruptcyCase:
         by = None
     case.selskab.postnr = postnr or parsed.get("postnr")
     case.selskab.by = fld("by", "bynavn") or by or parsed.get("by")
+    case.selskab.region = region_for_postnr(case.selskab.postnr)
     case.selskab.status = "UNDER KONKURS"
+    if status_note:
+        case.noter.append(f"Selskabet var '{status_note}' ved dekretet")
     base = case.offentliggjort or case.dekretdato
     if base:
         case.anmeldelsesfrist = (datetime.fromisoformat(base) + timedelta(weeks=4)).date().isoformat()
