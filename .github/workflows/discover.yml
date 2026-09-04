@@ -80,32 +80,44 @@ jobs:
           echo "----- api.statstidende.dk/ (redirect-mål)"
           curl -sS -m 25 -A "$UA" -o /dev/null -w "status=%{http_code} redirect=%{redirect_url}\n" https://api.statstidende.dk/
 
-      - name: Frontend – konfiguration og API-kald
+      - name: Frontend – alle api/-stier og søgekald
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
           curl -sSL -A "$UA" -o index.html https://www.statstidende.dk/
-          echo "== script/link-tags =="; grep -oE '<(script|link)[^>]+>' index.html | head -30
-          for c in /config.json /appsettings.json /assets/config.json /env.js /environment.json /api/config /configuration; do
-            printf "%s -> " "$c"; curl -sS -m 15 -A "$UA" -o body.txt -w "%{http_code} %{content_type}\n" "https://www.statstidende.dk$c"; head -c 300 body.txt | tr '\n' ' '; echo
-          done
-          mkdir -p bundles; i=0
+          mkdir -p bundles
           for a in $(grep -oE 'src="[^"]+\.js[^"]*"' index.html | sed 's/src="//; s/"$//'); do
             case "$a" in http*) u="$a";; /*) u="https://www.statstidende.dk$a";; *) u="https://www.statstidende.dk/$a";; esac
-            i=$((i+1)); echo "bundle $i: $u"; curl -sSL -A "$UA" -o "bundles/$i.js" "$u" || true
+            curl -sSL -A "$UA" -o "bundles/main.js" "$u" || true
           done
-          ls -la bundles
-          echo "== api-basen =="; grep -ohE '.{0,60}(apiUrl|apiBase|baseUrl|baseURL|API_URL|apiEndpoint|environment\.api|\.api\b).{0,80}' bundles/*.js | sort -u | head -30
-          echo "== fetch/axios-kald =="; grep -ohE '(fetch|axios\.(get|post)|\.get|\.post)\(`?"?[^)]{0,120}' bundles/*.js | grep -iE 'message|search|api' | sort -u | head -40
-          echo "== strenge med messages =="; grep -ohE '"[^"]{0,40}[Mm]essages?[^"]{0,60}"' bundles/*.js | sort | uniq -c | sort -rn | head -40
-          echo "== messageTypeId-kontekst =="; grep -ohE '.{0,120}messageTypeId.{0,120}' bundles/*.js | head -12
-          echo "== publicationDate-kontekst =="; grep -ohE '.{0,120}publicationDate.{0,120}' bundles/*.js | head -8
-          # lazy-loadede chunks
-          echo "== chunk-referencer =="; grep -ohE '"[0-9a-zA-Z_.-]+\.[0-9a-f]{6,}\.(chunk\.)?js"' bundles/*.js | sort -u | head -40
-          for ch in $(grep -ohE '"[0-9a-zA-Z_.-]+\.[0-9a-f]{6,}\.(chunk\.)?js"' bundles/*.js | tr -d '"' | sort -u | head -40); do
-            u="https://www.statstidende.dk/static/js/$ch"; curl -sS -m 15 -A "$UA" -o "bundles/c_$ch" "$u" 2>/dev/null || true
+          echo "== alle api/-stier =="
+          grep -ohE '["`]api/[A-Za-z0-9/_.${}-]+' bundles/main.js | tr -d '"`' | sort -u | tee apipaths.txt
+          echo "== kontekst omkring search-kald =="
+          grep -oiE '.{0,300}api/[a-z]*search[a-z/]*.{0,400}' bundles/main.js | head -8
+          echo "== kontekst omkring 'take' =="
+          grep -oE '.{0,200}\btake:.{0,200}' bundles/main.js | head -8
+          echo "== kontekst omkring GetLatestPublication =="
+          grep -oE '.{0,100}GetLatestPublication.{0,300}' bundles/main.js | head -3
+          echo "== hjælpefunktionen \$T (http-klient) =="
+          grep -oE '.{0,400}\$T:\(\)=>[a-zA-Z_$]+.{0,100}' bundles/main.js | head -2
+          grep -oE 'async function [a-zA-Z_$]+\(e,t\)\{[^}]{0,300}api[^}]{0,300}\}' bundles/main.js | head -3
+          grep -oE '.{0,300}(withCredentials|baseURL:"[^"]*"|baseURL:`[^`]*`|axios\.create\(\{[^}]*\}).{0,200}' bundles/main.js | head -5
+
+      - name: Kald alle parameterløse api/-stier (GET)
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          while read -r p; do
+            case "$p" in *'$'*|*'{'*) continue;; esac
+            u="https://www.statstidende.dk/$p"
+            curl -sS -m 20 -A "$UA" -H "Accept: application/json" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  GET $u\n" "$u" || echo "curl-fejl $u"
+            if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 500 body.txt | tr '\n' ' '; echo; fi
+          done < apipaths.txt
+          echo "== POST-forsøg på søgning =="
+          for p in api/Search/Search api/search api/Search api/Message/Search api/messages/search api/Search/Messages api/Search/SearchMessages; do
+            for body in '{"take":5,"page":1}' '{"searchText":"","take":5,"skip":0}' '{}'; do
+              curl -sS -m 20 -A "$UA" -H "Content-Type: application/json" -H "Accept: application/json" -d "$body" -o body.txt -w "%{http_code} %{content_type} %{size_download}b  POST $p $body\n" "https://www.statstidende.dk/$p" || true
+              if head -c 1 body.txt | grep -qE '[\[{]'; then head -c 600 body.txt | tr '\n' ' '; echo; fi
+            done
           done
-          echo "== api-stier i alle chunks =="; grep -ohE '"[^"]*/api/[A-Za-z0-9/_.{}\$-]*"|`[^`]*/api/[^`]*`' bundles/* | sort | uniq -c | sort -rn | head -60
-          echo "== søge-payload-felter =="; grep -ohE '\b(searchText|freeText|fromDate|toDate|dateFrom|dateTo|publicationDateFrom|publicationDateTo|messageTypeIds|categoryIds|page|pageSize|pageNumber|skip|take|sortBy|orderBy)\b' bundles/* | sort | uniq -c | sort -rn | head -30
 
       - uses: actions/upload-artifact@v4
         with:
