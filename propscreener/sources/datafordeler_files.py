@@ -124,7 +124,8 @@ class DatafordelerFiles:
         """Mindste tilgængelige fil for en entitet (typisk et delta-udtræk) – til at læse kolonnenavne billigt."""
         pat = re.compile(entity_pattern, re.IGNORECASE)
         cands = [f for f in self.list_files(register) if pat.search(f.entity) and f.fmt.lower() == fmt]
-        cands.sort(key=lambda f: (f.type_of_download != "DeltaDownload", f.size or 1 << 40, f.generated))
+        # tomme delta-udtræk er ~300-500 bytes; vælg mindste delta med indhold (>2 KB), ellers mindste overhovedet
+        cands.sort(key=lambda f: (f.type_of_download != "DeltaDownload", f.size < 2048, f.size or 1 << 40, f.generated))
         return cands[0] if cands else None
 
     def peek_headers(self, register: str, entity_pattern: str, work: Path, rows: int = 2) -> dict[str, Any]:
@@ -135,12 +136,18 @@ class DatafordelerFiles:
         zp = self.download(info, work / info.file_name)
         sample: list[dict[str, str]] = []
         headers: list[str] = []
+        with zipfile.ZipFile(zp) as zf:
+            indhold = [(n, zf.getinfo(n).file_size) for n in zf.namelist()]
+            for name, _ in indhold:
+                if name.lower().endswith(".csv"):
+                    with zf.open(name) as raw:
+                        first = io.TextIOWrapper(raw, encoding="utf-8-sig").readline().rstrip("\r\n")
+                    headers = headers or re.split(r"[;,|\t]", first)
         for row in self.iter_csv_rows(zp):
-            headers = headers or list(row.keys())
             sample.append(row)
             if len(sample) >= rows:
                 break
-        return {"fil": info.file_name, "bytes": info.size, "kolonner": headers, "eksempler": sample}
+        return {"fil": info.file_name, "bytes": info.size, "zip": indhold, "kolonner": headers, "eksempler": sample}
 
     # -- download -----------------------------------------------------------
     def download(self, info: FileInfo, dest: Path) -> Path:
