@@ -145,6 +145,24 @@ Sådan søger du adgang (Datafordeler Administration, gratis for åbne entiteter
 Bemærk: `EjendommeMedSammeEjer` i den gamle REST-tjeneste og GraphQL-varianten er klassificeret
 fortrolig fordi metoden også tager CPR; for CVR-opslag er fildownload-indekset den åbne løsning.
 
+### Fildownload – verificeret med API-Key (4. september 2026)
+
+`propscreener probe-files --headers …` henter det mindste delta-udtræk og viser kolonnenavne.
+Konstateret fra `.github/workflows/index.yml`:
+
+| Register | Entitet | Udtræk | Størrelse | Nøglekolonner |
+|---|---|---|---|---|
+| EBR | `Ejendomsbeliggenhed` | TotalDownload/Current/csv | 202 MB, 2,70 mio. rækker | `bestemtFastEjendomBFENr`, `betegnelse`, `kommuneinddelingKommunekode`, `adresseLokalId`, `status` |
+| VUR | `Ejendomsvurdering` | kun TotalDownload/**Bitemporal**/csv | 2,2 GB (~85 min. download) | `id`, `ejendomværdiBeløb`, `grundværdiBeløb`, `år`, `benyttelseKode`, `fkVurderingsejendomID` (ingen BFE) |
+| VUR | `BFEKrydsreference` | kun Bitemporal | 1,9 GB (~75 min.) | `fkEjendomsvurderingID` → `BFEnummer` |
+| VUR | `Vurderingsejendom` | kun Bitemporal | – | `vurderingsejendomID`, `VURejendomsid`, `ESRejendomsnummer` |
+| EJF | `Ejerskab` m.fl. | – | – | listen er tom indtil anmodningen er godkendt (OAuth) |
+
+Konsekvenser for pipelinen: EBR-indekset (BFE → adresse/kommune) bygges hver uge med API-Key.
+VUR-indekset bygges først, når EJF-indekset findes, fordi vurderingerne kun kan kobles til et bo via
+CVR → BFE, og fordi de to VUR-filer tager knap tre timer at hente (`--force-vur` tvinger det).
+Delta-udtræk uden ændringer er ~350–500 bytes (kun kolonnelinje).
+
 ## 9. DAWA
 
 `GET https://api.dataforsyningen.dk/adresser?bfe=<bfe>&struktur=mini` → adresse og koordinater

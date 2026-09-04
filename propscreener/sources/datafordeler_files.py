@@ -230,25 +230,31 @@ def build_ejf_index(rows: Iterable[dict[str, str]]) -> dict[str, list[dict[str, 
     return idx
 
 
-def build_bfe_xref(rows: Iterable[dict[str, str]]) -> dict[str, int]:
-    """VUR BFEKrydsreference: vurderingsejendom-id -> BFE-nummer (kun gældende rækker)."""
+def build_bfe_xref(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None = None) -> dict[str, int]:
+    """VUR BFEKrydsreference (verificeret 4/9-2026: kolonner BFEKrydsreferenceID, BFEnummer, fkEjendomsvurderingID):
+    ejendomsvurdering-id -> BFE-nummer. Begrænses til ønskede BFE'er for at holde hukommelsen nede."""
     xref: dict[str, int] = {}
     for n, row in enumerate(rows):
         if n == 0:
             log.info("krydsreference kolonner: %s", list(row.keys()))
         if not _is_current(row):
             continue
-        vid = _col(row, r"vurderingsejendom", r"VURejendom", r"ejendomsid")
-        bfe = _col(row, r"bfe")
-        if vid and bfe:
-            xref[vid.strip()] = int(re.sub(r"\D", "", bfe) or 0)
+        vid = _col(row, r"^fkEjendomsvurderingID$", r"ejendomsvurdering", r"vurderingsejendom", r"VURejendom")
+        bfe = _col(row, r"^BFEnummer$", r"bfe")
+        if not (vid and bfe):
+            continue
+        b = int(re.sub(r"\D", "", bfe) or 0)
+        if wanted_bfe is not None and b not in wanted_bfe:
+            continue
+        xref[vid.strip()] = b
     return xref
 
 
 def build_vur_index(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None = None,
                     xref: dict[str, int] | None = None) -> dict[str, dict[str, Any]]:
     """Ejendomsvurdering-rækker -> {bfe: {ejendomsvaerdi, grundvaerdi, aar}}, seneste vurderingsår vinder.
-    BFE tages fra rækken selv eller via krydsreferencen (vurderingsejendom-id -> BFE)."""
+    Verificerede kolonner (VUR_V2, 4/9-2026): id, ejendomværdiBeløb, grundværdiBeløb, år, fkVurderingsejendomID.
+    BFE tages fra rækken selv (findes ikke i VUR_V2) eller via krydsreferencen (ejendomsvurdering-id -> BFE)."""
     idx: dict[str, dict[str, Any]] = {}
     for n, row in enumerate(rows):
         if n == 0:
@@ -258,15 +264,15 @@ def build_vur_index(rows: Iterable[dict[str, str]], wanted_bfe: set[int] | None 
         bfe = _col(row, r"bfe")
         b = int(re.sub(r"\D", "", bfe) or 0) if bfe else 0
         if not b and xref:
-            vid = _col(row, r"vurderingsejendom", r"VURejendom", r"ejendomsid")
+            vid = _col(row, r"^id$", r"^ejendomsvurderingID$", r"vurderingsejendom", r"VURejendom")
             b = xref.get((vid or "").strip(), 0)
         if not b:
             continue
         if wanted_bfe is not None and b not in wanted_bfe:
             continue
-        val = _col(row, r"^ejendomsv(ae|æ)rdi", r"ejendomsvaerdi", r"ejendomsværdi")
+        val = _col(row, r"^ejendoms?v(ae|æ)rdi", r"ejendoms?v(ae|æ)rdi")
         grund = _col(row, r"grundv(ae|æ)rdi")
-        aar = _col(row, r"vurderings(aar|år)", r"^aar$|^år$")
+        aar = _col(row, r"^(aar|år)$", r"vurderings(aar|år)")
         entry = {"ejendomsvaerdi": _num(val), "grundvaerdi": _num(grund), "aar": aar}
         prev = idx.get(str(b))
         if prev is None or (aar or "") >= (prev.get("aar") or ""):

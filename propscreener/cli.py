@@ -220,7 +220,7 @@ def main(argv: list[str] | None = None) -> int:
                 xref: dict[str, int] = {}
                 xinfo = df.latest_total("VUR", r"^BFEKrydsreference$", "csv")
                 if xinfo is not None:
-                    xref = build_bfe_xref(df.iter_csv_rows(df.download(xinfo, work / xinfo.file_name)))
+                    xref = build_bfe_xref(df.iter_csv_rows(df.download(xinfo, work / xinfo.file_name)), wanted)
                     print(f"VUR: {len(xref)} krydsreferencer vurderingsejendom -> BFE")
                 idx = build_vur_index(df.iter_csv_rows(zp), wanted, xref)
             else:

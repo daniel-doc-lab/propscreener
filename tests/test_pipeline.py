@@ -254,18 +254,29 @@ def test_local_indexes_from_fildownload(tmp_path: Path):
 
 
 def test_vur_index_bitemporal_with_xref():
+    """Kolonnenavne som i de rigtige VUR_V2-udtræk (verificeret 4/9-2026)."""
     from propscreener.sources.datafordeler_files import build_bfe_xref, build_vur_index
 
     xref = build_bfe_xref([
-        {"vurderingsejendomId": "V1", "BFEnummer": "100", "status": "gældende", "virkningTil": ""},
-        {"vurderingsejendomId": "V2", "BFEnummer": "200", "status": "gældende", "virkningTil": "2020-01-01"},
-    ])
-    assert xref == {"V1": 100}
+        {"BFEKrydsreferenceID": "1", "BFEnummer": "100", "fkEjendomsvurderingID": "E1"},
+        {"BFEKrydsreferenceID": "2", "BFEnummer": "200", "fkEjendomsvurderingID": "E2"},
+        {"BFEKrydsreferenceID": "3", "BFEnummer": "300", "fkEjendomsvurderingID": "E3"},
+    ], wanted_bfe={100, 200})
+    assert xref == {"E1": 100, "E2": 200}
     idx = build_vur_index([
-        {"vurderingsejendomId": "V1", "ejendomsvaerdiBeloeb": "1500000", "grundvaerdiBeloeb": "300000",
-         "vurderingsaar": "2022", "status": "gældende", "registreringTil": ""},
-        {"vurderingsejendomId": "V1", "ejendomsvaerdiBeloeb": "900000", "grundvaerdiBeloeb": "250000",
-         "vurderingsaar": "2020", "status": "gældende", "registreringTil": ""},
-        {"vurderingsejendomId": "V2", "ejendomsvaerdiBeloeb": "5", "vurderingsaar": "2022", "status": "gældende"},
+        {"id": "E1", "ejendomværdiBeløb": "1500000", "grundværdiBeløb": "300000", "år": "2022",
+         "fkVurderingsejendomID": "V1"},
+        {"id": "E1", "ejendomværdiBeløb": "900000", "grundværdiBeløb": "250000", "år": "2020",
+         "fkVurderingsejendomID": "V1"},
+        {"id": "E3", "ejendomværdiBeløb": "5", "grundværdiBeløb": "1", "år": "2022", "fkVurderingsejendomID": "V3"},
     ], None, xref)
     assert idx == {"100": {"ejendomsvaerdi": 1500000, "grundvaerdi": 300000, "aar": "2022"}}
+
+
+def test_is_current_uses_registrering_and_virkning_til():
+    from propscreener.sources.datafordeler_files import _is_current
+
+    assert _is_current({"status": "gældende", "virkningTil": "", "registreringTil": ""})
+    assert not _is_current({"status": "gældende", "virkningTil": "2026-08-28T05:24:04Z", "registreringTil": ""})
+    assert not _is_current({"status": "historisk", "virkningTil": ""})
+    assert _is_current({"id": "E1", "år": "2022"})
