@@ -110,6 +110,8 @@ class Http:
                     raise HttpError(r.status_code, url, r.text)
                 if r.status_code >= 400:
                     raise HttpError(r.status_code, url, r.text)
+                if not as_json and "charset" not in (r.headers.get("Content-Type") or "").lower():
+                    r.encoding = "utf-8"  # JSON/SSE uden charset er UTF-8 (requests gætter ellers ISO-8859-1)
                 body: Any = r.json() if as_json else r.text
                 if cache_ttl_s and (cache_if is None or cache_if(body)):
                     self._cache_put(key, {"body": body})
