@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-04T17:50:34+00:00",
+  "genereret": "2026-09-05T08:59:26+00:00",
   "version": "0.1.0",
-  "antal": 51,
+  "antal": 52,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,15 +14,15 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-04T17:49:43+00:00",
-   "dekreter": 99,
-   "tvangsauktioner": 0,
-   "beriget_cvr": 99,
-   "beriget_regnskab": 74,
+   "started": "2026-09-05T08:20:57+00:00",
+   "dekreter": 966,
+   "tvangsauktioner": 2,
+   "beriget_cvr": 964,
+   "beriget_regnskab": 735,
    "beriget_ejf": 0,
-   "over_min_score": 4,
+   "over_min_score": 51,
    "min_score": 25,
-   "bevaret_fra_tidligere": 47,
+   "bevaret_fra_tidligere": 1,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -32,7 +32,9 @@
     "dawa",
     "ejerfortegnelsen"
    ],
-   "fejl": []
+   "fejl": [
+    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
+   ]
   }
  },
  "cases": [
@@ -144,9 +146,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T10:59:51+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:14+00:00"
   },
   {
    "id": "34484872",
@@ -262,9 +265,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T10:59:50+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:11+00:00"
   },
   {
    "id": "21032794",
@@ -379,8 +383,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:49+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:09+00:00"
   },
   {
    "id": "28850794",
@@ -528,8 +534,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:48+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:08+00:00"
   },
   {
    "id": "32439284",
@@ -644,8 +652,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:49+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:10+00:00"
   },
   {
    "id": "41553308",
@@ -870,8 +880,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:54+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:19+00:00"
   },
   {
    "id": "40523286",
@@ -981,9 +993,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T10:59:55+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:20+00:00"
   },
   {
    "id": "42854980",
@@ -1092,8 +1105,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:56+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:22+00:00"
   },
   {
    "id": "43839284",
@@ -1202,8 +1217,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:59+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:29+00:00"
   },
   {
    "id": "42536857",
@@ -1306,8 +1323,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:59+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:28+00:00"
   },
   {
    "id": "32100279",
@@ -1416,8 +1435,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:50+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:12+00:00"
   },
   {
    "id": "42347841",
@@ -1520,8 +1541,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:03+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:37+00:00"
   },
   {
    "id": "40590641",
@@ -1624,8 +1647,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:51+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:13+00:00"
   },
   {
    "id": "32277470",
@@ -1728,8 +1753,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:53+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:18+00:00"
   },
   {
    "id": "37540811",
@@ -1832,8 +1859,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:53+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:17+00:00"
   },
   {
    "id": "35889981",
@@ -1936,8 +1965,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:52+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:16+00:00"
   },
   {
    "id": "26270871",
@@ -2040,8 +2071,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:52+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:15+00:00"
   },
   {
    "id": "36492139",
@@ -2144,8 +2177,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:55+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:21+00:00"
   },
   {
    "id": "37902896",
@@ -2249,9 +2284,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under likvidation' ved dekretet"
+    "Selskabet var 'under likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T10:59:57+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:24+00:00"
   },
   {
    "id": "36893575",
@@ -2354,8 +2390,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:56+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:23+00:00"
   },
   {
    "id": "41982659",
@@ -2458,8 +2496,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:57+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:25+00:00"
   },
   {
    "id": "20402644",
@@ -2562,8 +2602,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:26+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:45:20+00:00"
   },
   {
    "id": "40445935",
@@ -2660,8 +2702,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T10:59:58+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:27+00:00"
   },
   {
    "id": "12830033",
@@ -2763,9 +2807,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Ingen XBRL-årsrapport fundet (nystiftet, holding uden pligt eller kun PDF)"
+    "Ingen XBRL-årsrapport fundet (nystiftet, holding uden pligt eller kun PDF)",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:05:39+00:00"
+   "sidst_opdateret": "2026-09-05T08:55:16+00:00"
   },
   {
    "id": "40207422",
@@ -2869,9 +2914,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:00:20+00:00"
+   "sidst_opdateret": "2026-09-05T08:45:08+00:00"
   },
   {
    "id": "39276445",
@@ -2974,8 +3020,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:19+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:45:05+00:00"
   },
   {
    "id": "43723758",
@@ -3082,7 +3130,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:49:48+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:51+00:00"
   },
   {
    "id": "44145227",
@@ -3182,7 +3230,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:49:45+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:26+00:00"
   },
   {
    "id": "41298332",
@@ -3279,8 +3327,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:05+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:40+00:00"
   },
   {
    "id": "37867462",
@@ -3377,8 +3427,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:07+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:44+00:00"
   },
   {
    "id": "43781626",
@@ -3475,8 +3527,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:06+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:43+00:00"
   },
   {
    "id": "32569633",
@@ -3573,8 +3627,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:06+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:42+00:00"
   },
   {
    "id": "43729225",
@@ -3671,8 +3727,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:05+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:41+00:00"
   },
   {
    "id": "41727586",
@@ -3769,8 +3827,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:04+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:39+00:00"
   },
   {
    "id": "10214343",
@@ -3867,8 +3927,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:04+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:38+00:00"
   },
   {
    "id": "84895210",
@@ -3965,8 +4027,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:03+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:36+00:00"
   },
   {
    "id": "34895562",
@@ -4063,8 +4127,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:02+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:35+00:00"
   },
   {
    "id": "37700789",
@@ -4161,8 +4227,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:02+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:34+00:00"
   },
   {
    "id": "43258842",
@@ -4260,9 +4328,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:00:01+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:33+00:00"
   },
   {
    "id": "14412107",
@@ -4359,8 +4428,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:00+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:32+00:00"
   },
   {
    "id": "39775298",
@@ -4457,8 +4528,110 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:00+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:31+00:00"
+  },
+  {
+   "id": "32887902",
+   "statstidende_id": "S03092026-90",
+   "statstidende_url": "https://www.statstidende.dk/messages/S03092026-90",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-05",
+   "dekretdato": "2026-09-03",
+   "fristdag": "2026-09-02",
+   "anmeldelsesfrist": "2026-10-03",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Esbjerg",
+    "sagsnummer": "SKS 15-217/2026"
+   },
+   "kurator": {
+    "navn": "Birgitte Harregaard Frederiksen",
+    "firma": null,
+    "adresse": "Ådalen 7C",
+    "postnr": "6600",
+    "by": "Vejen",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Birgitte+Harregaard+Frederiksen"
+   },
+   "selskab": {
+    "cvr": "32887902",
+    "navn": "G & W HOEDAN ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "014200",
+    "branchetekst": "Avl af andet kvæg og bøfler",
+    "bibrancher": [],
+    "adresse": "Frifeltvej 6",
+    "postnr": "6870",
+    "by": "Ølgod",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2010-05-03",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32887902",
+    "formaal": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/20978823/amNsb3VkczovLzAzLzI2LzMyL2RjL2U1Lzc0NDgtNGNjYy04YmM2LThiNzJkM2VlNjA2NQ.pdf",
+    "aktiver": 1080961,
+    "egenkapital": -282799,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 800000,
+    "materielle_anlaeg": 800000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 1343760,
+    "omsaetning": null,
+    "bruttofortjeneste": -334,
+    "aarets_resultat": -51082,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 800000,
+    "ejendomsandel_pct": 74.0,
+    "soliditet_pct": -26.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 1343760
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 800.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "G & W HOEDAN ApS\nVed dekret af 03.09.2026 har Retten i Esbjerg taget\n\nG & W HOEDAN ApS\nCVR-nr: 32887902\nFrifeltvej 6\n6870 Ølgod\nSagsnr: SKS 15-217/2026\n\nunder konkursbehandling efter begæring modtaget den 02.09.2026. Selskabet har været under tvangsopløsning siden 11.08.2026.\n\nKurator er advokat Birgitte Harregaard Frederiksen, Ådalen 7C, 6600 Vejen.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Esbjerg, den 03.09.2026.\n\nKurator\nAdvokat Birgitte Harregaard Frederiksen\nÅdalen 7C\n6600 Vejen\n\nSkifteret\nRetten i Esbjerg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32887902",
+    "statstidende": "https://www.statstidende.dk/messages/S03092026-90",
+    "aarsrapport": "http://regnskaber.virk.dk/20978823/amNsb3VkczovLzAzLzI2LzMyL2RjL2U1Lzc0NDgtNGNjYy04YmM2LThiNzJkM2VlNjA2NQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32887902?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Frifeltvej+6,+6870+Ølgod",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Birgitte+Harregaard+Frederiksen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:30+00:00"
   },
   {
    "id": "25155688",
@@ -4555,8 +4728,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:07:24+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:58:48+00:00"
   },
   {
    "id": "40465820",
@@ -4660,9 +4835,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:00:07+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:45+00:00"
   },
   {
    "id": "27983944",
@@ -4760,9 +4936,10 @@
     "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'under tvangsopløsning' ved dekretet"
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T11:05:35+00:00"
+   "sidst_opdateret": "2026-09-05T08:55:07+00:00"
   },
   {
    "id": "40096957",
@@ -4859,8 +5036,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:04:17+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:52:31+00:00"
   },
   {
    "id": "40134999",
@@ -4957,8 +5136,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:04:08+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:52:12+00:00"
   },
   {
    "id": "43321137",
@@ -5058,7 +5239,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:50:27+00:00"
+   "sidst_opdateret": "2026-09-05T08:48:31+00:00"
   },
   {
    "id": "40313761",
@@ -5155,8 +5336,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:09+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:47+00:00"
   },
   {
    "id": "42984523",
@@ -5253,8 +5436,10 @@
     "regnskab-xbrl",
     "apicvr-rest"
    ],
-   "noter": [],
-   "sidst_opdateret": "2026-09-04T11:00:08+00:00"
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "sidst_opdateret": "2026-09-05T08:44:46+00:00"
   },
   {
    "id": "45690725",
@@ -5354,7 +5539,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-04T17:49:45+00:00"
+   "sidst_opdateret": "2026-09-05T08:44:45+00:00"
   }
  ]
 }
