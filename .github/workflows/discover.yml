@@ -216,10 +216,7 @@ jobs:
             [ -z "$cid" ] && continue
             resp=$(curl -sS -m 20 -A "$UA" -o tok.json -w "%{http_code}" -X POST https://auth.datafordeler.dk/realms/distribution/protocol/openid-connect/token \
                    -d grant_type=client_credentials -d "client_id=$cid" -d "client_secret=$CSEC" || echo 000)
-            echo "client_id='$cid' -> HTTP $resp: $(python3 -c 'import json,sys
-            try:
-                d=json.load(open("tok.json")); print({k:(v if k!="access_token" else "<token %d tegn>"%len(v)) for k,v in d.items() if k in ("access_token","expires_in","token_type","error","error_description","scope")})
-            except Exception as e: print("ikke JSON")')" | mask
+            echo "client_id='$cid' -> HTTP $resp: $(python3 -c 'import json;d=json.load(open("tok.json"));print({k:(v if k!="access_token" else "<token %d tegn>"%len(v)) for k,v in d.items() if k in ("access_token","expires_in","token_type","error","error_description","scope")})' 2>/dev/null || head -c 300 tok.json)" | mask
             if [ "$resp" = "200" ] && [ -z "$TOKEN" ]; then TOKEN=$(python3 -c 'import json;print(json.load(open("tok.json"))["access_token"])'); fi
           done
           echo "== fildownload-liste EJF: apikey vs. bearer =="
@@ -232,10 +229,22 @@ jobs:
             fi
           done
           code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?apikey=$DFKEY" || echo 000)
-          echo "apikey uden Register -> $code: $(python3 -c 'import json
-          try:
-              d=json.load(open("body.txt")); L=d.get("availableFileDownloads",[]); print(len(L),"filer; registre:",sorted({x.get("register") for x in L}))
-          except Exception as e: print(open("body.txt").read()[:300])')" | mask
+          echo "apikey uden Register -> $code: $(python3 -c 'import json;d=json.load(open("body.txt"));L=d.get("availableFileDownloads",[]);print(len(L),"filer (side 1); registre:",sorted({x.get("register") for x in L}))' 2>/dev/null || head -c 300 body.txt)" | mask
+          echo "== registre i fildownload-kataloget (alle sider) =="
+          python3 - "$DFKEY" <<'PY'
+          import json, sys, urllib.request
+          key = sys.argv[1]; regs = {}; page = 1
+          while True:
+              u = f"https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?apikey={key}&page={page}&pageSize=10000"
+              d = json.load(urllib.request.urlopen(u, timeout=60))
+              for x in d.get("availableFileDownloads", []):
+                  regs.setdefault(x.get("register"), set()).add(x.get("entityName"))
+              meta = d.get("paginationMetadata", {})
+              if page >= int(meta.get("totalPages") or 1): break
+              page += 1
+          for r, ents in sorted(regs.items()):
+              print(r, len(ents), "entiteter:", ", ".join(sorted(e for e in ents if e)[:40]))
+          PY
           if [ -n "$TOKEN" ]; then
             echo "== GraphQL EJF med bearer (introspektion af typer) =="
             for u in https://graphql.datafordeler.dk/EJF/v1 https://graphql.datafordeler.dk/ejf/v1 https://graphql.datafordeler.dk/EJF; do
