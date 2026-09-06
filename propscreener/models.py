@@ -109,6 +109,46 @@ class Company:
     ledelse: list[str] = field(default_factory=list)
     cvr_url: str | None = None
     formaal: str | None = None
+    lat: float | None = None            # geokodet hjemstedsadresse (DAWA) – til kortvisning
+    lon: float | None = None
+
+
+@dataclass
+class Auction:
+    """Én tvangsauktion over fast ejendom bekendtgjort i Statstidende (selvstændigt register)."""
+
+    id: str                                   # statstidende messageNumber
+    statstidende_url: str | None = None
+    offentliggjort: str | None = None
+    auktionsdato: str | None = None
+    tidspunkt: str | None = None
+    auktionsnummer: int | None = None         # 1. eller 2. auktion
+    fogedret: str | None = None               # "Retten i Odense"
+    adresse: str | None = None
+    postnr: str | None = None
+    by: str | None = None
+    region: str | None = None
+    matrikel: str | None = None
+    ejendomstype: str | None = None
+    beskrivelse: str | None = None            # første del af auktionsbekendtgørerens beskrivelse
+    offentlig_vurdering: int | None = None
+    grundvaerdi: int | None = None
+    vurderingsdato: str | None = None
+    skoedehaver: str | None = None            # ejer ifølge tingbogsattest
+    skyldner_cvr: str | None = None
+    rekvirent: str | None = None
+    rekvirent_telefon: str | None = None
+    besigtigelse: str | None = None
+    konkursbo_id: str | None = None           # id på bo i registret hvis skyldner er et konkursbo
+    lat: float | None = None
+    lon: float | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> Auction:
+        return cls(**{k: v for k, v in d.items() if k in cls.__dataclass_fields__})
 
 
 @dataclass
@@ -138,6 +178,7 @@ class BankruptcyCase:
     links: dict[str, str] = field(default_factory=dict)
     kilder: list[str] = field(default_factory=list)
     noter: list[str] = field(default_factory=list)
+    relationer: list[dict[str, Any]] = field(default_factory=list)   # mulige koncernforbundne boer
     sidst_opdateret: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -169,5 +210,6 @@ class BankruptcyCase:
             links=d.get("links", {}),
             kilder=d.get("kilder", []),
             noter=d.get("noter", []),
+            relationer=d.get("relationer", []),
             sidst_opdateret=d.get("sidst_opdateret"),
         )

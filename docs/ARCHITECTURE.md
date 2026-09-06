@@ -53,7 +53,8 @@ Se DATA_SCHEMA.md. Kort: `BankruptcyCase` ⊃ `Company`, `Financials`, `Kurator`
 
 1. `collect_cases(date_from)` – hent dekreter, dedupliker på CVR, drop personlige konkurser
    (ingen CVR og intet selskabsnavn).
-2. `attach_auctions` – hent tvangsauktioner 180 dage bagud og match på CVR eller navn.
+2. `attach_auctions` – hent alle tvangsauktioner i perioden; hver meddelelse bliver en `Auction` i auktionsregistret (`data/auktioner.json`), og de der matcher et bo på CVR eller skødehaver-navn knyttes til boet.
+   Efter scoring beregner `relations.compute_relations` mulige koncernforbindelser på tværs af *alle* dekreter, og `geocode_companies`/`geocode_auctions` slår koordinater op i DAWA til kortet.
 3. Pr. bo: CVR → regnskab → EJF/DAWA → `score_case` → `add_investor_links`.
 4. Filtrér `score >= min_score`, sortér efter score, dekretdato.
 5. `RunStats` rapporterer antal, berigelsesgrad og fejl; gemmes i `meta.stats`.

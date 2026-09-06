@@ -15,9 +15,9 @@ Statstidende ──► CVR ──► Årsrapport (XBRL) ──► Ejerfortegnels
 | | |
 |---|---|
 | **Dashboard** | `propscreener demo` bygger `site/index.html` (offline demodata) – i produktion publiceres det dagligt til GitHub Pages af `scrape.yml` |
-| **Data** | `data/cases.json` (kanonisk), `data/cases.csv` (regneark, `;`-separeret) |
+| **Data** | `data/cases.json` (kanonisk), `data/cases.csv` (regneark, `;`-separeret), `data/auktioner.json` (auktionsregister) |
 | **Dokumentation** | [docs/](docs/) – arkitektur, datakilder, scoring, investorguide, opsætning, datamodel, jura |
-| **Status** | I drift: daglig kørsel i GitHub Actions mod Statstidendes åbne JSON-API, CVR via apicvr.dk, regnskaber via Erhvervsstyrelsen. Live: https://daniel-doc-lab.github.io/propscreener/ . 30 offline tests. Ejerfortegnelsen aktiveres med en Datafordeler API-nøgle – se [docs/SETUP.md](docs/SETUP.md) |
+| **Status** | I drift: daglig kørsel i GitHub Actions mod Statstidendes åbne JSON-API, CVR via apicvr.dk, regnskaber via Erhvervsstyrelsen. Live: https://daniel-doc-lab.github.io/propscreener/ . 36 offline tests. Ejerfortegnelsen aktiveres med en Datafordeler API-nøgle – se [docs/SETUP.md](docs/SETUP.md) |
 
 ## Hurtig start
 
@@ -45,7 +45,25 @@ pytest -q
   med BFE-nummer og offentlig vurdering, signalerne bag scoren, og links til Statstidende,
   CVR, årsrapport, tinglysning, OIS og kort.
 * **Filtre**: fritekst, region, ejendomstype, konfidens, mindste score, kun med kendte
-  ejendomme, kun åbne frister, med tvangsauktion. Udvalget kan kopieres som CSV.
+  ejendomme, kun med koncern-relationer, kun åbne frister, med tvangsauktion, min liste.
+  Udvalget kan kopieres som CSV (inkl. status og noter).
+* **Min liste**: hvert bo kan markeres *Interessant / Kontaktet / Bud afgivet / Afvist* med en
+  note. Gemmes kun i din egen browser (localStorage) – ingen server, ingen deling.
+* **Mikro-grafer** i registret: en balance-stribe pr. bo (ejendomme mod gæld og egenkapital),
+  så friværdi kan aflæses uden at åbne panelet.
+* **Koncern og relaterede boer**: panelet viser andre konkursboer i perioden med samme adresse,
+  ejer/ledelse, navnestamme eller kurator + dekretdato – også boer der ikke selv ejer ejendom.
+* **Faktaark**: knappen *Faktaark (print/PDF)* i panelet åbner en ét-sides udskrift med nøgletal,
+  ejendomme, kurator, frister, relationer og kildelinks (vælg »Gem som PDF« i printdialogen).
+* **Kort**: Danmarkskort (inlinet SVG, ingen eksterne kortfliser) med boernes hjemsted og kendte
+  ejendomme, farvet efter konfidens og skaleret efter ejendomsværdi.
+* **Frist-kalender**: ugevisning af anmeldelsesfrister, skiftesamlinger, fordringsprøvelser og
+  auktionsdatoer; klik åbner boet.
+* **Tvangsauktioner**: selvstændigt register over *alle* auktioner over fast ejendom i perioden
+  (adresse, vurdering, auktionsdato, fogedret, skødehaver, rekvirent, besigtigelse), med markering
+  af de auktioner hvor skyldneren er et konkursbo i registret.
+* **Kuratorer**: profil pr. kurator med antal boer, samlet ejendomsværdi, kendte ejendomme, åbne
+  frister, regioner og kontaktoplysninger.
 
 ## Datakilder (kort)
 

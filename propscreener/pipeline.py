@@ -8,7 +8,8 @@ from datetime import UTC, date, datetime, timedelta
 from .config import Settings
 from .detect import score_case
 from .http import Http
-from .models import BankruptcyCase
+from .models import Auction, BankruptcyCase
+from .relations import compute_relations
 from .sources.cvr import ApiCvrMcp, ApiCvrRest, CvrApi, CvrElastic, StatstidendeCvr, enrich_with_cvr
 from .sources.ejerfortegnelse import (
     DawaClient,
@@ -20,6 +21,7 @@ from .sources.regnskab import RegnskabClient, enrich_with_regnskab
 from .sources.statstidende import (
     StatstidendeClient,
     auction_debtor_keys,
+    auction_from_message,
     message_to_case,
     normalize_company_name,
     parse_tvangsauktion,
@@ -33,6 +35,8 @@ class RunStats:
     started: str = field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds"))
     dekreter: int = 0
     tvangsauktioner: int = 0
+    auktioner_i_alt: int = 0
+    boer_med_relationer: int = 0
     beriget_cvr: int = 0
     beriget_regnskab: int = 0
     beriget_ejf: int = 0
@@ -60,6 +64,7 @@ class Pipeline:
         self.dawa = DawaClient(settings, self.http)
         self.local = LocalIndexes(settings.index_dir)
         self.stats = RunStats()
+        self.auctions: list[Auction] = []
 
     # ------------------------------------------------------------------ steps
     def collect_cases(self, date_from: date, date_to: date | None = None) -> list[BankruptcyCase]:
@@ -83,9 +88,21 @@ class Pipeline:
         except Exception as e:  # noqa: BLE001
             self.stats.fejl.append(f"tvangsauktioner: {e}")
             return
+        seen: set[str] = set()
         for msg in msgs:
+            if msg.id in seen:
+                continue
+            seen.add(msg.id)
+            try:
+                auction = auction_from_message(msg)
+            except Exception as e:  # noqa: BLE001
+                log.warning("auktion %s kunne ikke parses: %s", msg.id, e)
+                auction = None
             cvr, navn = auction_debtor_keys(msg)
             target = by_cvr.get(cvr or "") or by_name.get(normalize_company_name(navn))
+            if auction is not None:
+                auction.konkursbo_id = target.id if target is not None else None
+                self.auctions.append(auction)
             if target is None:
                 continue
             target.ejendomme.append(parse_tvangsauktion(msg))
@@ -93,6 +110,28 @@ class Pipeline:
             if "tvangsauktion" not in target.kilder:
                 target.kilder.append("tvangsauktion")
             self.stats.tvangsauktioner += 1
+        self.stats.auktioner_i_alt = len(self.auctions)
+
+    def geocode_auctions(self) -> None:
+        for a in self.auctions:
+            if a.adresse and a.lat is None:
+                try:
+                    ll = self.dawa.geocode(a.adresse, a.postnr)
+                except Exception:  # noqa: BLE001
+                    ll = None
+                if ll:
+                    a.lat, a.lon = ll
+
+    def geocode_companies(self, cases: list[BankruptcyCase]) -> None:
+        for c in cases:
+            s = c.selskab
+            if s.adresse and s.postnr and s.lat is None:
+                try:
+                    ll = self.dawa.geocode(s.adresse, s.postnr)
+                except Exception:  # noqa: BLE001
+                    ll = None
+                if ll:
+                    s.lat, s.lon = ll
 
     def enrich(self, case: BankruptcyCase) -> BankruptcyCase:
         """Fuld berigelse af ét bo (bruges af tests og `run`). Rækkefølgen i `run` er
@@ -157,9 +196,12 @@ class Pipeline:
         if self.cvrapi.quota_exceeded:
             self.stats.fejl.append(f"cvrapi.dk kvote opbrugt: {self.cvrapi.last_error}")
 
+        self.stats.boer_med_relationer = compute_relations(cases, min_score)
         selected = [c for c in cases if c.score >= min_score]
         selected.sort(key=lambda c: (-c.score, c.dekretdato or "", c.selskab.navn or ""))
         self.stats.over_min_score = len(selected)
+        self.geocode_companies(selected)
+        self.geocode_auctions()
         return selected, self.stats
 
     def active_sources(self) -> list[str]:

@@ -9,7 +9,17 @@ from pathlib import Path
 
 from . import __version__
 from .config import Settings
-from .export import build_dataset, build_site, load_cases, merge_with_existing, write_csv, write_json
+from .export import (
+    build_dataset,
+    build_site,
+    load_auctions,
+    load_cases,
+    merge_auctions,
+    merge_with_existing,
+    write_auctions,
+    write_csv,
+    write_json,
+)
 from .http import Http
 
 
@@ -81,10 +91,12 @@ def main(argv: list[str] | None = None) -> int:
         pipe = Pipeline(settings)
         min_score = 0 if a.all else a.min_score
         cases, stats = pipe.run(days_back=a.days, min_score=min_score)
+        auctions = pipe.auctions
         if not a.no_merge:
             cases, kept = merge_with_existing(cases, Path(a.out) / "cases.json", a.retention, min_score)
             stats.bevaret_fra_tidligere = kept
-        return _write(cases, stats, a, demo=False)
+            auctions, _ = merge_auctions(auctions, Path(a.out) / "auktioner.json", a.retention)
+        return _write(cases, stats, a, demo=False, auctions=auctions)
 
     if a.cmd == "rescore":
         from .detect import score_case
@@ -96,19 +108,20 @@ def main(argv: list[str] | None = None) -> int:
         cases = [c for c in cases if c.score >= a.min_score]
         cases.sort(key=lambda c: (-c.score, c.dekretdato or ""))
         stats = meta.get("stats") or RunStats()
-        return _write(cases, stats, a, demo=bool(meta.get("demo")))
+        return _write(cases, stats, a, demo=bool(meta.get("demo")), auctions=load_auctions(Path(a.out) / "auktioner.json"))
 
     if a.cmd == "demo":
-        from .demo import generate
+        from .demo import demo_auctions, generate
         cases, stats = generate(n=a.n, seed=a.seed)
         cases = [c for c in cases if c.score >= a.min_score]
         stats.min_score = a.min_score
         cases.sort(key=lambda c: (-c.score, c.dekretdato or ""))
-        return _write(cases, stats, a, demo=True)
+        return _write(cases, stats, a, demo=True, auctions=demo_auctions(cases, seed=a.seed))
 
     if a.cmd == "build-site":
         cases, meta = load_cases(Path(a.data))
-        dataset = {"meta": meta, "cases": [c.to_dict() for c in cases]}
+        auctions = load_auctions(Path(a.data).parent / "auktioner.json")
+        dataset = {"meta": meta, "cases": [c.to_dict() for c in cases], "auktioner": [x.to_dict() for x in auctions]}
         out = build_site(dataset, Path(a.site))
         print(f"dashboard: {out}")
         return 0
@@ -244,12 +257,14 @@ def main(argv: list[str] | None = None) -> int:
     return 2
 
 
-def _write(cases, stats, a, demo: bool) -> int:
+def _write(cases, stats, a, demo: bool, auctions=None) -> int:
     out = Path(a.out)
-    dataset = build_dataset(cases, stats, demo=demo)
-    write_json(dataset, out / "cases.json")
+    auctions = auctions or []
+    dataset = build_dataset(cases, stats, demo=demo, auctions=auctions)
+    write_json({k: v for k, v in dataset.items() if k != "auktioner"}, out / "cases.json")
     write_csv(cases, out / "cases.csv")
-    print(f"{len(cases)} boer skrevet til {out}/cases.json og cases.csv")
+    write_auctions(auctions, out / "auktioner.json")
+    print(f"{len(cases)} boer og {len(auctions)} auktioner skrevet til {out}/")
     if not a.no_site:
         site = build_site(dataset, Path(a.site))
         print(f"dashboard: {site}")

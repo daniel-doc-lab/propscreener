@@ -66,4 +66,4 @@ Dashboardets mail-link udfylder emnelinjen automatisk.
   statusoversigt (KL § 125) – bed om den.
 * Det ser ikke ejendomme ejet via **datterselskaber** medmindre datterselskabet selv er konkurs.
 * **Personlige konkurser** (selvstændige, privatpersoner med ejendom) er filtreret fra.
-* Tvangsauktioner i registret er kun dem der er annonceret på samme skyldner inden for 180 dage.
+* Tvangsauktioner på et bo er dem der er annonceret på samme skyldner inden for perioden; fanen *Tvangsauktioner* viser desuden alle auktioner over fast ejendom, også uden konkurs.

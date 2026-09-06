@@ -179,3 +179,35 @@ def test_tvangsauktion_real_fieldgroups():
     assert p.offentlig_vurdering == 461_000 and p.tvangsauktion_dato == "2026-09-29"
     assert auction_debtor_keys(msg) == (None, "Demo Ejendomme ApS under konkurs")
     assert normalize_company_name("Demo Ejendomme ApS under konkurs") == normalize_company_name("Demo Ejendomme ApS")
+
+
+def test_auction_from_message_real_fields():
+    from propscreener.sources.statstidende import RawMessage, auction_from_message
+
+    felter = {
+        "/#1": "Fritliggende enfamiliehus i Haarby\n\nEjendommen er et fritliggende enfamiliehus i 1½ plan.",
+        "ejendom/#1": "5 e, Skårup By, Dreslette", "ejendom/#2": "2. auktion - Søbrovej 40", "ejendom/#3": "Sarup",
+        "ejendom/#4": "5683 Haarby", "ejendom/#5": "Danmark",
+        "ejendomsværdi/#1": "Pr. 01.01.2022 kr. 461.000 heraf grundværdi kr. 108.000.",
+        "skødehaver ifølge tingbogsattest/#1": "Boet efter Bjarne Lehmann Gadebusch",
+        "begæreren af auktionen (rekvirenten)/#1": "LIND Advokataktieselskab v/ advokat Anders Bendtsen",
+        "begæreren af auktionen (rekvirenten)/telefon": "82309000",
+        "dato, tid og sted for afholdelse af auktion/dato": "29.09.2026", "dato": "29.09.2026",
+        "dato, tid og sted for afholdelse af auktion/tidspunkt": "09:30",
+        "dato, tid og sted for afholdelse af auktion/#3": "Retten i Odense",
+        "dato, tid og sted for afholdelse af auktion/#4": "Tinghusgården",
+        "henvendelse vedr. besigtigelse (hvis henvendelse kan ske flere steder)/#1": "LIND Advokataktieselskab v/ advokat Stine Persson",
+    }
+    msg = RawMessage(id="S01092026-12", url="https://www.statstidende.dk/messages/S01092026-12", kategori="Tvangsauktioner",
+                     undertype="Fast ejendom", offentliggjort="2026-09-03", overskrift="2. auktion - Søbrovej 40, 5683 Haarby",
+                     tekst="2. auktion - Søbrovej 40, 5683 Haarby\nEjendom\n5 e, Skårup By, Dreslette\n", felter=felter)
+    a = auction_from_message(msg)
+    assert a.adresse == "Søbrovej 40" and a.postnr == "5683" and a.by == "Haarby" and a.region == "Syddanmark"
+    assert a.auktionsnummer == 2 and a.auktionsdato == "2026-09-29" and a.tidspunkt == "09:30"
+    assert a.fogedret == "Retten i Odense"
+    assert a.offentlig_vurdering == 461_000 and a.grundvaerdi == 108_000 and a.vurderingsdato == "2022-01-01"
+    assert a.skoedehaver == "Boet efter Bjarne Lehmann Gadebusch" and a.skyldner_cvr is None
+    assert a.rekvirent.startswith("LIND Advokataktieselskab") and a.rekvirent_telefon == "82309000"
+    assert a.besigtigelse.startswith("LIND")
+    assert a.ejendomstype == "Beboelse" and a.beskrivelse.startswith("Fritliggende enfamiliehus")
+    assert a.matrikel == "5 e, Skårup By, Dreslette"

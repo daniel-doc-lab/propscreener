@@ -39,6 +39,7 @@
 | `links` | dict | `statstidende`, `cvr`, `regnskaber`, `aarsrapport`, `tvangsauktion`, `tinglysning`, `ois`, `kort`, `kurator_opslag` |
 | `kilder` | str[] | Hvilke kilder der bidrog |
 | `noter` | str[] | Advarsler pr. bo |
+| `relationer` | Relation[] | Mulige koncernforbundne boer, se nedenfor |
 | `sidst_opdateret` | datetime | |
 
 ## Kurator
@@ -49,7 +50,7 @@
 
 `cvr`, `navn`, `binavne[]`, `selskabsform`, `branchekode` (6 cifre), `branchetekst`, `bibrancher[]`,
 `adresse`, `postnr`, `by`, `kommune`, `region`, `stiftet`, `status`, `ansatte`, `ejere[]`, `ledelse[]`,
-`cvr_url`, `formaal`.
+`cvr_url`, `formaal`, `lat`, `lon` (hjemstedsadresse geokodet via DAWA – bruges af kortet).
 
 ## Financials (DKK, seneste årsrapport)
 
@@ -79,6 +80,37 @@
 `bfe_nummer`, `adresse`, `postnr`, `by`, `kommune`, `ejendomstype`, `ejerandel`, `matrikel`,
 `kilde` (`ejerfortegnelsen` / `tvangsauktion` / `regnskab` / `demo`), `offentlig_vurdering`,
 `grundareal_m2`, `bygningsareal_m2`, `tvangsauktion_dato`, `tvangsauktion_url`, `lat`, `lon`.
+
+## Relation (`relationer[]`)
+
+Afledt af alle dekreter i perioden (også boer under `min_score`) i `propscreener/relations.py`:
+
+| Felt | Beskrivelse |
+|---|---|
+| `id`, `cvr`, `navn` | Det relaterede bo |
+| `score`, `konfidens`, `dekretdato`, `branchetekst`, `by`, `ejendomsvaerdi`, `antal_ejendomme` | Nøgletal på det relaterede bo |
+| `statstidende_url` | Dekretet |
+| `i_registret` | `true` hvis boet selv er med i `cases` (score ≥ min_score) |
+| `grund` | str[] – fx `samme hjemstedsadresse`, `samme ejer/ledelse (…)`, `fælles navnestamme »kyst« og samme kurator`, `samme kurator og dekret samme dage` |
+
+## Auction (`data/auktioner.json`)
+
+Selvstændigt register over alle tvangsauktioner over fast ejendom bekendtgjort i Statstidende i
+perioden (rubrik *Tvangsauktioner → Fast ejendom*). Filen har formen `{genereret, antal, auktioner[]}`
+og indlejres i dashboardet under `auktioner`.
+
+| Felt | Beskrivelse |
+|---|---|
+| `id`, `statstidende_url`, `offentliggjort` | Meddelelsen |
+| `auktionsdato`, `tidspunkt`, `auktionsnummer` | Afholdelse; `auktionsnummer` er 1 eller 2 |
+| `fogedret` | fx `Retten i Odense` |
+| `adresse`, `postnr`, `by`, `region`, `matrikel`, `ejendomstype` | Ejendommen (`Beboelse`, `Ejerlejlighed`, `Erhvervsejendom`, `Landbrug`, `Grund`, `Samlet fast ejendom`) |
+| `beskrivelse` | Første 600 tegn af auktionsbekendtgørerens beskrivelse |
+| `offentlig_vurdering`, `grundvaerdi`, `vurderingsdato` | Fra feltet *Ejendomsværdi* (`Pr. 01.01.2022 kr. 461.000 heraf grundværdi kr. 108.000`) |
+| `skoedehaver`, `skyldner_cvr` | Ejer ifølge tingbogsattest og evt. CVR-nr |
+| `rekvirent`, `rekvirent_telefon`, `besigtigelse` | Begæreren af auktionen og kontakt for besigtigelse |
+| `konkursbo_id` | `id` på boet i `cases` hvis skyldneren er et konkursbo i registret |
+| `lat`, `lon` | Geokodet via DAWA |
 
 ## CSV
 
