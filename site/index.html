@@ -390,7 +390,19 @@
   .auk-row details summary { cursor: pointer; font-size: .78rem; color: var(--ink-2); }
   .auk-row details p { font-size: .82rem; color: var(--ink-2); margin: 6px 0 0; max-width: 70ch; }
   @media (max-width: 1100px) { .auk-head { display: none; } .auk-row { grid-template-columns: 96px 1fr 1fr; } .auk-row .adr-cell { grid-column: 2 / -1; } }
-  .auk-filters { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; font-size: .86rem; }
+  .auk-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px 18px; margin-bottom: 12px; padding: 12px 14px; border: 1px solid var(--line-soft); background: var(--surface); border-radius: var(--radius); }
+  .auk-filters .field { margin: 0; }
+  .auk-filters .wide { grid-column: 1 / -1; }
+  .auk-filters .range-in { display: flex; gap: 6px; align-items: center; }
+  .auk-filters .range-in input { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); font: inherit; font-size: .85rem; }
+  .auk-filters select { background: var(--paper); }
+  .auk-filters .chip .n { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-3); margin-left: 4px; }
+  .auk-filters .chip[aria-pressed="true"] .n { color: inherit; opacity: .8; }
+  .auk-head button { all: unset; cursor: pointer; display: inline-flex; gap: 4px; align-items: baseline; }
+  .auk-head button:hover { color: var(--ink); }
+  .auk-head button[aria-sort="ascending"], .auk-head button[aria-sort="descending"] { color: var(--accent); }
+  .auk-head button .arr { font-size: .8em; }
+  .auk-head button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   /* ---------- kuratorer ---------- */
   .kur-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
@@ -497,13 +509,9 @@
       <div class="cal" id="cal"></div>
     </section>
     <section class="view" id="view-auktioner" hidden>
-      <div class="auk-filters">
-        <label class="check"><input type="checkbox" id="a-future" checked> Kun kommende auktioner</label>
-        <label class="check"><input type="checkbox" id="a-bo"> Kun skyldnere der er konkursboer i registret</label>
-        <label class="check"><input type="checkbox" id="a-second"> Kun 2. auktion</label>
-      </div>
+      <div class="auk-filters" id="auk-filters"></div>
       <div class="register">
-        <div class="auk-head"><div>Auktion</div><div>Ejendom</div><div>Type</div><div>Off. vurdering</div><div>Fogedret</div><div>Skødehaver</div><div>Rekvirent</div></div>
+        <div class="auk-head" id="auk-head"></div>
         <div id="auk-rows"></div>
       </div>
     </section>
@@ -556,11 +564,11 @@
   const WL_STATUS = ['Interessant', 'Kontaktet', 'Bud afgivet', 'Afvist'];
   const VIEWS = [['register', 'Register'], ['kort', 'Kort'], ['kalender', 'Frist-kalender'], ['auktioner', 'Tvangsauktioner'], ['kuratorer', 'Kuratorer']];
   const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), wl: new Set(), score: 40, props: false, rel: false, open: false, soon: false, auk: false, week: null, sort: 'score', current: null, view: 'register',
-                  aFuture: true, aBo: false, aSecond: false };
+                  aFuture: true, aBo: false, aSecond: false, aWhen: 'kommende', aType: new Set(), aCourt: '', aMin: '', aMax: '', aSort: 'dato', aDir: 'asc', aMatch: '' };
   try { Object.assign(state, JSON.parse(localStorage.getItem('propscreener.filters') || '{}'),
-        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), wl: new Set(), current: null, week: null, soon: false }); } catch (e) {}
+        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), wl: new Set(), current: null, week: null, soon: false, aType: new Set() }); } catch (e) {}
   if (!VIEWS.some(v => v[0] === state.view)) state.view = 'register';
-  const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, rel: state.rel, open: state.open, auk: state.auk, sort: state.sort, view: state.view, aFuture: state.aFuture, aBo: state.aBo, aSecond: state.aSecond }));
+  const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, rel: state.rel, open: state.open, auk: state.auk, sort: state.sort, view: state.view, aWhen: state.aWhen, aBo: state.aBo, aSecond: state.aSecond, aCourt: state.aCourt, aMin: state.aMin, aMax: state.aMax, aSort: state.aSort, aDir: state.aDir, aMatch: state.aMatch }));
                                 localStorage.setItem('propscreener.region', JSON.stringify([...state.region])); } catch (e) {} };
 
   // ---------- watchlist (gemmes kun i denne browser) ----------
@@ -760,7 +768,7 @@
     [['f-props', 'props'], ['f-rel', 'rel'], ['f-open', 'open'], ['f-auk', 'auk']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
     document.getElementById('b-reset').addEventListener('click', resetFilters);
     document.getElementById('b-csv').addEventListener('click', copyCsv);
-    [['a-future', 'aFuture'], ['a-bo', 'aBo'], ['a-second', 'aSecond']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
+    renderAuctionFilters();
     document.querySelectorAll('.btn.primary').forEach(b => b.classList.toggle('dk', isDark()));
     const sort = document.getElementById('sort');
     sort.innerHTML = SORTS.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${state.sort === k}">${l}</button>`).join('');
@@ -1055,21 +1063,76 @@
   }
 
   // ---------- tvangsauktioner (selvstændigt register) ----------
-  function auctionsVisible() {
+  const AUK_TYPES = ['Beboelse', 'Ejerlejlighed', 'Sommerhus', 'Erhvervsejendom', 'Landbrug', 'Grund', 'Fast ejendom'];
+  const AUK_SORTS = {
+    dato: (a, b) => (a.auktionsdato || '9').localeCompare(b.auktionsdato || '9') || (a.tidspunkt || '').localeCompare(b.tidspunkt || ''),
+    adresse: (a, b) => (a.by || '').localeCompare(b.by || '', 'da') || (a.adresse || '').localeCompare(b.adresse || '', 'da'),
+    type: (a, b) => (a.ejendomstype || '').localeCompare(b.ejendomstype || '', 'da') || (b.offentlig_vurdering || 0) - (a.offentlig_vurdering || 0),
+    vurdering: (a, b) => (a.offentlig_vurdering || 0) - (b.offentlig_vurdering || 0),
+    fogedret: (a, b) => (a.fogedret || '').localeCompare(b.fogedret || '', 'da') || AUK_SORTS.dato(a, b),
+    skoedehaver: (a, b) => (a.skoedehaver || '').localeCompare(b.skoedehaver || '', 'da'),
+    rekvirent: (a, b) => (a.rekvirent || '').localeCompare(b.rekvirent || '', 'da') || AUK_SORTS.dato(a, b),
+  };
+  function auctionMatches(a, ignore) {
     const q = state.q.trim().toLowerCase();
-    return (DATA.auktioner || []).filter(a => {
-      if (state.region.size && !state.region.has(a.region || '')) return false;
-      if (state.aFuture && !(daysUntil(a.auktionsdato) >= 0)) return false;
-      if (state.aBo && !a.konkursbo_id) return false;
-      if (state.aSecond && a.auktionsnummer !== 2) return false;
-      if (q) { const hay = [a.adresse, a.postnr, a.by, a.skoedehaver, a.rekvirent, a.fogedret, a.matrikel, a.ejendomstype].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
-      return true;
-    }).sort((a, b) => (a.auktionsdato || '9').localeCompare(b.auktionsdato || '9'));
+    if (state.region.size && !state.region.has(a.region || '')) return false;
+    if (ignore !== 'when') { const d = daysUntil(a.auktionsdato);
+      if (state.aWhen === 'kommende' && !(d >= 0)) return false;
+      if (state.aWhen === '14' && !(d != null && d >= 0 && d <= 14)) return false;
+      if (state.aWhen === 'afholdt' && !(d < 0)) return false; }
+    if (ignore !== 'type' && state.aType.size && !state.aType.has(a.ejendomstype || 'Fast ejendom')) return false;
+    if (ignore !== 'court' && state.aCourt && (a.fogedret || '') !== state.aCourt) return false;
+    if (ignore !== 'match') { if (state.aMatch === 'bo' && !a.konkursbo_id) return false; if (state.aMatch === 'privat' && a.konkursbo_id) return false; }
+    if (state.aSecond && a.auktionsnummer !== 2) return false;
+    const v = a.offentlig_vurdering || 0, mn = parseFloat(String(state.aMin).replace(',', '.')), mx = parseFloat(String(state.aMax).replace(',', '.'));
+    if (!isNaN(mn) && state.aMin !== '' && v < mn * 1e6) return false;
+    if (!isNaN(mx) && state.aMax !== '' && v > mx * 1e6) return false;
+    if (q) { const hay = [a.adresse, a.postnr, a.by, a.skoedehaver, a.rekvirent, a.fogedret, a.matrikel, a.ejendomstype, a.beskrivelse].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
+    return true;
+  }
+  function auctionsVisible() {
+    const cmp = AUK_SORTS[state.aSort] || AUK_SORTS.dato;
+    const list = (DATA.auktioner || []).filter(a => auctionMatches(a));
+    list.sort(cmp);
+    if (state.aDir === 'desc') list.reverse();
+    return list;
+  }
+  function renderAuctionFilters() {
+    const all = DATA.auktioner || [];
+    const courts = [...new Set(all.map(a => a.fogedret).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'da'));
+    const dk = isDark() ? ' dk' : '';
+    const cnt = (pred, ignore) => all.filter(a => auctionMatches(a, ignore) && pred(a)).length;
+    const el = document.getElementById('auk-filters');
+    el.innerHTML = `
+      <div class="field wide"><label class="lab">Ejendomstype</label><div class="chips" id="a-type">${AUK_TYPES.map(t => `<button type="button" class="chip${dk}" data-v="${t}" aria-pressed="${state.aType.has(t)}">${t}<span class="n">${cnt(a => (a.ejendomstype || 'Fast ejendom') === t, 'type')}</span></button>`).join('')}</div></div>
+      <div class="field"><label class="lab" for="a-when">Tidspunkt</label><select id="a-when">
+        ${[['kommende', 'Kommende auktioner'], ['14', 'Inden 14 dage'], ['afholdt', 'Afholdte'], ['alle', 'Alle']].map(([v, l]) => `<option value="${v}"${state.aWhen === v ? ' selected' : ''}>${l} (${cnt(a => { const d = daysUntil(a.auktionsdato); return v === 'alle' || (v === 'kommende' && d >= 0) || (v === '14' && d != null && d >= 0 && d <= 14) || (v === 'afholdt' && d < 0); }, 'when')})</option>`).join('')}</select></div>
+      <div class="field"><label class="lab" for="a-court">Fogedret</label><select id="a-court"><option value="">Alle fogedretter (${cnt(() => true, 'court')})</option>${courts.map(c => `<option value="${esc(c)}"${state.aCourt === c ? ' selected' : ''}>${esc(c)} (${cnt(a => a.fogedret === c, 'court')})</option>`).join('')}</select></div>
+      <div class="field"><label class="lab" for="a-match">Skyldner</label><select id="a-match">
+        <option value=""${state.aMatch === '' ? ' selected' : ''}>Alle (${cnt(() => true, 'match')})</option>
+        <option value="bo"${state.aMatch === 'bo' ? ' selected' : ''}>Konkursboer i registret (${cnt(a => !!a.konkursbo_id, 'match')})</option>
+        <option value="privat"${state.aMatch === 'privat' ? ' selected' : ''}>Øvrige skyldnere (${cnt(a => !a.konkursbo_id, 'match')})</option></select></div>
+      <div class="field"><label class="lab">Off. vurdering, mio. kr.</label><div class="range-in"><input id="a-min" type="number" min="0" step="0.1" placeholder="fra" value="${esc(state.aMin)}" aria-label="Mindste vurdering i mio. kr."><span class="faint">–</span><input id="a-max" type="number" min="0" step="0.1" placeholder="til" value="${esc(state.aMax)}" aria-label="Største vurdering i mio. kr."></div></div>
+      <div class="field"><label class="lab">Andet</label><label class="check"><input type="checkbox" id="a-second"${state.aSecond ? ' checked' : ''}> Kun 2. auktion</label>
+        <button class="btn" id="a-reset" type="button" style="margin-top:4px">Nulstil auktionsfiltre</button></div>`;
+    el.querySelectorAll('#a-type .chip').forEach(b => b.addEventListener('click', () => { const v = b.dataset.v; state.aType.has(v) ? state.aType.delete(v) : state.aType.add(v); update(); }));
+    [['a-when', 'aWhen'], ['a-court', 'aCourt'], ['a-match', 'aMatch']].forEach(([id, k]) => document.getElementById(id).addEventListener('change', e => { state[k] = e.target.value; update(); }));
+    [['a-min', 'aMin'], ['a-max', 'aMax']].forEach(([id, k]) => { const inp = document.getElementById(id); let t; inp.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { state[k] = inp.value; update(); }, 250); }); });
+    document.getElementById('a-second').addEventListener('change', e => { state.aSecond = e.target.checked; update(); });
+    document.getElementById('a-reset').addEventListener('click', () => { Object.assign(state, { aWhen: 'kommende', aCourt: '', aMin: '', aMax: '', aSecond: false, aMatch: '', aSort: 'dato', aDir: 'asc' }); state.aType.clear(); update(); });
+    const head = document.getElementById('auk-head');
+    head.innerHTML = [['dato', 'Auktion'], ['adresse', 'Ejendom'], ['type', 'Type'], ['vurdering', 'Off. vurdering'], ['fogedret', 'Fogedret'], ['skoedehaver', 'Skødehaver'], ['rekvirent', 'Rekvirent']].map(([k, l]) =>
+      `<div><button type="button" data-k="${k}" aria-sort="${state.aSort === k ? (state.aDir === 'asc' ? 'ascending' : 'descending') : 'none'}" title="Sortér efter ${l.toLowerCase()}">${l}<span class="arr">${state.aSort === k ? (state.aDir === 'asc' ? '▲' : '▼') : ''}</span></button></div>`).join('');
+    head.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { const k = b.dataset.k; if (state.aSort === k) state.aDir = state.aDir === 'asc' ? 'desc' : 'asc'; else { state.aSort = k; state.aDir = k === 'vurdering' ? 'desc' : 'asc'; } update(); }));
   }
   function renderAuctions() {
+    if (document.activeElement && (document.activeElement.id === 'a-min' || document.activeElement.id === 'a-max')) {
+      // behold fokus i talfeltet: opdatér kun tællere i chips/valg uden at gentegne felterne
+    } else renderAuctionFilters();
     const list = auctionsVisible();
     const all = (DATA.auktioner || []).length;
-    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${all} tvangsauktioner over fast ejendom`;
+    const sum = list.reduce((s, a) => s + (a.offentlig_vurdering || 0), 0);
+    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${all} tvangsauktioner over fast ejendom${list.length ? ` · samlet vurdering ${mio(sum)}` : ''}`;
     const rows = document.getElementById('auk-rows');
     if (!all) { rows.innerHTML = '<div class="empty">Ingen auktioner i datasættet endnu – registret fyldes ved næste kørsel af pipelinen.</div>'; return; }
     if (!list.length) { rows.innerHTML = '<div class="empty">Ingen auktioner matcher filtrene.</div>'; return; }
