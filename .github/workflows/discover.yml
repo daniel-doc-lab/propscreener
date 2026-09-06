@@ -196,6 +196,51 @@ jobs:
           code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code} %{content_type}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=EJF" || echo 000)
           echo "$code  GetAvailableFileDownloads uden nøgle"; head -c 300 body.txt; echo
 
+      - name: Datafordeler – OAuth token med Shared Secret og EJF-adgang
+        env:
+          DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
+          CID: ${{ secrets.DATAFORDELER_CLIENT_ID || vars.DATAFORDELER_CLIENT_ID }}
+          CSEC: ${{ secrets.DATAFORDELER_CLIENT_SECRET || secrets.OAUTH_SHARED_SECRET }}
+        run: |
+          UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
+          mask() { sed -e "s/${DFKEY:-__x__}/***/g" -e "s/${CSEC:-__x__}/***/g"; }
+          echo "client_id sat: $([ -n "$CID" ] && echo ja || echo nej) | shared secret sat: $([ -n "$CSEC" ] && echo ja || echo nej) ($(printf %s "$CSEC" | wc -c) tegn)"
+          echo "== OpenID-konfiguration for realm 'distribution' =="
+          curl -sS -m 20 -A "$UA" https://auth.datafordeler.dk/realms/distribution/.well-known/openid-configuration | python3 -c 'import sys,json;d=json.load(sys.stdin);print({k:d.get(k) for k in ("issuer","token_endpoint","grant_types_supported","token_endpoint_auth_methods_supported")})' || echo "well-known fejlede"
+          echo "== token-forsøg (client_credentials) med forskellige client_id-kandidater =="
+          TOKEN=""
+          for cid in "$CID" "Ejendomme1" "ejendomme1" "propscreener"; do
+            [ -z "$cid" ] && continue
+            resp=$(curl -sS -m 20 -A "$UA" -o tok.json -w "%{http_code}" -X POST https://auth.datafordeler.dk/realms/distribution/protocol/openid-connect/token \
+                   -d grant_type=client_credentials -d "client_id=$cid" -d "client_secret=$CSEC" || echo 000)
+            echo "client_id='$cid' -> HTTP $resp: $(python3 -c 'import json,sys
+            try:
+                d=json.load(open("tok.json")); print({k:(v if k!="access_token" else "<token %d tegn>"%len(v)) for k,v in d.items() if k in ("access_token","expires_in","token_type","error","error_description","scope")})
+            except Exception as e: print("ikke JSON")')" | mask
+            if [ "$resp" = "200" ] && [ -z "$TOKEN" ]; then TOKEN=$(python3 -c 'import json;print(json.load(open("tok.json"))["access_token"])'); fi
+          done
+          echo "== fildownload-liste EJF: apikey vs. bearer =="
+          for reg in EJF EJERFORTEGNELSE Ejerfortegnelsen; do
+            code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=$reg&apikey=$DFKEY" || echo 000)
+            echo "apikey  Register=$reg -> $code $(head -c 300 body.txt | tr '\n' ' ')" | mask
+            if [ -n "$TOKEN" ]; then
+              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $TOKEN" -o body.txt -w "%{http_code}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?Register=$reg" || echo 000)
+              echo "bearer  Register=$reg -> $code $(head -c 600 body.txt | tr '\n' ' ')" | mask
+            fi
+          done
+          code=$(curl -sS -m 25 -A "$UA" -o body.txt -w "%{http_code}" "https://api.datafordeler.dk/FileDownloads/GetAvailableFileDownloads?apikey=$DFKEY" || echo 000)
+          echo "apikey uden Register -> $code: $(python3 -c 'import json
+          try:
+              d=json.load(open("body.txt")); L=d.get("availableFileDownloads",[]); print(len(L),"filer; registre:",sorted({x.get("register") for x in L}))
+          except Exception as e: print(open("body.txt").read()[:300])')" | mask
+          if [ -n "$TOKEN" ]; then
+            echo "== GraphQL EJF med bearer (introspektion af typer) =="
+            for u in https://graphql.datafordeler.dk/EJF/v1 https://graphql.datafordeler.dk/ejf/v1 https://graphql.datafordeler.dk/EJF; do
+              code=$(curl -sS -m 25 -A "$UA" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -o body.txt -w "%{http_code}" -X POST "$u" -d '{"query":"{ __schema { queryType { fields { name } } } }"}' || echo 000)
+              echo "$u -> $code $(head -c 500 body.txt | tr '\n' ' ')"
+            done
+          fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: statstidende-openapi

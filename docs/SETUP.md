@@ -17,7 +17,7 @@ Det giver score på branche, navn, regnskab og tvangsauktioner – men ingen BFE
 
 | Miljøvariabel | Hvor får man den | Effekt |
 |---|---|---|
-| `DATAFORDELER_CLIENT_ID` / `DATAFORDELER_CLIENT_SECRET` | Datafordeler Administration → IT-system → OAuth Shared Secret → Opret, **plus** godkendt "Anmodning om adgang til Ejerfortegnelsen (EJF)" for Fildownload/GraphQL | Ejerfortegnelsen (CVR → BFE-indeks) → konfidens *høj* |
+| `DATAFORDELER_CLIENT_ID` / `DATAFORDELER_CLIENT_SECRET` (secret `OAUTH_SHARED_SECRET` accepteres også som client secret; client id kan ligge som repo-*variable* `DATAFORDELER_CLIENT_ID`) | Datafordeler Administration → IT-system → OAuth Shared Secret → Opret: notér både **Client ID** og **Secret**, **plus** godkendt "Anmodning om adgang til Ejerfortegnelsen (EJF)" for Fildownload/GraphQL | Ejerfortegnelsen (CVR → BFE-indeks) → konfidens *høj* |
 | `DATAFORDELER_API_KEY` | IT-system → API-Keys (frie data). Verificeret: nøglen accepteres som `?apikey=` på api.datafordeler.dk, men EJF kræver OAuth + anmodning | BBR/Matriklen/DAR-fildownload (frie data) |
 | `DATAFORDELER_USER` / `_PASSWORD` | Ældre tjenestebruger med brugernavn/adgangskode (kun hvis du har en) | som ovenfor |
 | `CVR_ES_USER` / `_PASSWORD` | datacvr.virk.dk → "System-til-system adgang til CVR-data" (aftale) | Bibrancher, ejere/ledelse, statushistorik; alternativ konkurskilde |
