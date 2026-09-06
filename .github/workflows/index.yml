@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATAFORDELER_API_KEY: ${{ secrets.DATAFORDELER_API_KEY }}
-      DATAFORDELER_CLIENT_ID: ${{ secrets.DATAFORDELER_CLIENT_ID }}
-      DATAFORDELER_CLIENT_SECRET: ${{ secrets.DATAFORDELER_CLIENT_SECRET }}
+      DATAFORDELER_CLIENT_ID: ${{ secrets.DATAFORDELER_CLIENT_ID || vars.DATAFORDELER_CLIENT_ID }}
+      DATAFORDELER_CLIENT_SECRET: ${{ secrets.DATAFORDELER_CLIENT_SECRET || secrets.OAUTH_SHARED_SECRET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
