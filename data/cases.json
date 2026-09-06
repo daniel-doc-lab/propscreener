@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-06T08:47:51+00:00",
+  "genereret": "2026-09-06T09:38:11+00:00",
   "version": "0.1.0",
   "antal": 52,
   "demo": false,
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-06T08:39:36+00:00",
-   "dekreter": 966,
-   "tvangsauktioner": 2,
-   "auktioner_i_alt": 344,
-   "boer_med_relationer": 252,
-   "beriget_cvr": 964,
-   "beriget_regnskab": 735,
+   "started": "2026-09-06T09:37:32+00:00",
+   "dekreter": 76,
+   "tvangsauktioner": 0,
+   "auktioner_i_alt": 44,
+   "boer_med_relationer": 9,
+   "beriget_cvr": 76,
+   "beriget_regnskab": 57,
    "beriget_ejf": 0,
-   "over_min_score": 51,
+   "over_min_score": 1,
    "min_score": 25,
-   "bevaret_fra_tidligere": 1,
+   "bevaret_fra_tidligere": 51,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -34,9 +34,7 @@
     "dawa",
     "ejerfortegnelsen"
    ],
-   "fejl": [
-    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
-   ]
+   "fejl": []
   }
  },
  "cases": [
@@ -5226,7 +5224,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-06T08:39:59+00:00"
+   "sidst_opdateret": "2026-09-06T09:37:34+00:00"
   },
   {
    "id": "25155688",
