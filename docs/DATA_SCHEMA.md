@@ -104,7 +104,7 @@ og indlejres i dashboardet under `auktioner`.
 | `id`, `statstidende_url`, `offentliggjort` | Meddelelsen |
 | `auktionsdato`, `tidspunkt`, `auktionsnummer` | Afholdelse; `auktionsnummer` er 1 eller 2 |
 | `fogedret` | fx `Retten i Odense` |
-| `adresse`, `postnr`, `by`, `region`, `matrikel`, `ejendomstype` | Ejendommen (`Beboelse`, `Ejerlejlighed`, `Erhvervsejendom`, `Landbrug`, `Grund`, `Samlet fast ejendom`) |
+| `adresse`, `postnr`, `by`, `region`, `matrikel`, `ejendomstype` | Ejendommen (`Beboelse`, `Ejerlejlighed`, `Sommerhus`, `Erhvervsejendom`, `Landbrug`, `Grund`, `Fast ejendom` – afledt af beskrivelsens indledning) |
 | `beskrivelse` | Første 600 tegn af auktionsbekendtgørerens beskrivelse |
 | `offentlig_vurdering`, `grundvaerdi`, `vurderingsdato` | Fra feltet *Ejendomsværdi* (`Pr. 01.01.2022 kr. 461.000 heraf grundværdi kr. 108.000`) |
 | `skoedehaver`, `skyldner_cvr` | Ejer ifølge tingbogsattest og evt. CVR-nr |

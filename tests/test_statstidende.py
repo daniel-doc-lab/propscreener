@@ -211,3 +211,17 @@ def test_auction_from_message_real_fields():
     assert a.besigtigelse.startswith("LIND")
     assert a.ejendomstype == "Beboelse" and a.beskrivelse.startswith("Fritliggende enfamiliehus")
     assert a.matrikel == "5 e, Skårup By, Dreslette"
+
+
+def test_classify_auction_type_prefers_description_head():
+    from propscreener.sources.statstidende import classify_auction_type
+
+    assert classify_auction_type("Fritliggende enfamiliehus i Haarby. Ejendommen ...", "") == "Beboelse"
+    assert classify_auction_type("Ejerlejlighed i Aarhus C, beliggende på 3. sal ...", "") == "Ejerlejlighed"
+    assert classify_auction_type("Sommerhus ved Vesterhavet", "") == "Sommerhus"
+    assert classify_auction_type("Erhvervsejendom med kontor og lager i Herning", "") == "Erhvervsejendom"
+    assert classify_auction_type("Ubebygget grund i Roskilde", "") == "Grund"
+    assert classify_auction_type("Nedlagt landbrug med 12 ha jord", "") == "Landbrug"
+    # ordet 'erhverv' langt nede i BBR-teksten må ikke overskrive en bolig i indledningen
+    assert classify_auction_type("Parcelhus i Vejle. " + "x " * 200 + "Anvendelse: erhverv", "") == "Beboelse"
+    assert classify_auction_type("", "Tvangsauktion over ejendommen matr. nr. 1a") == "Fast ejendom"

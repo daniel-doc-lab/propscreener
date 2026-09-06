@@ -96,6 +96,7 @@ def main(argv: list[str] | None = None) -> int:
             cases, kept = merge_with_existing(cases, Path(a.out) / "cases.json", a.retention, min_score)
             stats.bevaret_fra_tidligere = kept
             auctions, _ = merge_auctions(auctions, Path(a.out) / "auktioner.json", a.retention)
+            pipe.geocode_companies(cases)  # boer bevaret fra tidligere kørsler mangler evt. koordinater
         return _write(cases, stats, a, demo=False, auctions=auctions)
 
     if a.cmd == "rescore":

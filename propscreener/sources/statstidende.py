@@ -753,14 +753,36 @@ def auction_from_message(msg: RawMessage) -> Auction:
         desc = parts[1] if len(parts) == 2 else ""
     desc = re.sub(r"\s+", " ", desc).strip()
     a.beskrivelse = (desc[:600] + "…") if len(desc) > 600 else (desc or None)
-    if re.search(r"enfamiliehus|villa|parcelhus|rækkehus|sommerhus|fritidshus|lejlighed|bolig", desc[:300], re.IGNORECASE) \
-            and a.ejendomstype == "Samlet fast ejendom":
-        a.ejendomstype = "Beboelse"
-    elif re.search(r"landbrug|landejendom|stuehus", desc[:300], re.IGNORECASE):
-        a.ejendomstype = "Landbrug"
-    elif re.search(r"\bgrund\b|ubebygget", desc[:300], re.IGNORECASE):
-        a.ejendomstype = "Grund"
+    a.ejendomstype = classify_auction_type(desc, msg.tekst)
+    if a.fogedret:
+        a.fogedret = re.split(r",\s*(?:mødelokale|retssal|lokale|sal)\b", a.fogedret, flags=re.IGNORECASE)[0].strip()
     return a
+
+
+AUCTION_TYPES: tuple[tuple[str, str], ...] = (
+    ("Ejerlejlighed", r"ejerlejlighed"),
+    ("Sommerhus", r"sommerhus|fritidshus|fritidsbolig|feriebolig"),
+    ("Landbrug", r"landbrug|landejendom|nedlagt landbrug|bedrift|hektar|\bha\b"),
+    ("Erhvervsejendom", r"erhvervsejendom|erhvervsareal|erhvervslokaler|erhvervslejemål|kontor|lager|butik|fabrik|"
+                        r"industri|værksted|restaurant|hotel|domicil|blandet bolig og erhverv|blandet beboelse"),
+    ("Beboelse", r"enfamilie\w*|villa|parcelhus|rækkehus|r[æe]kkehus|dobbelthus|beboelsesejendom|udlejningsejendom|"
+                 r"boligejendom|etageejendom|helårsbolig|stuehus|boligareal|beboelse|bolig\b"),
+    ("Grund", r"ubebygget|byggegrund|\bgrund\b|parcel\b|sommerhusgrund"),
+)
+
+
+def classify_auction_type(beskrivelse: str, tekst: str) -> str:
+    """Ejendomstype ud fra beskrivelsens indledning (overskrift + første linjer). Første match i
+    prioriteret rækkefølge vinder; ejerlejlighed og sommerhus før den brede "bolig"-klasse."""
+    head = (beskrivelse or "")[:260].lower()
+    for name, pat in AUCTION_TYPES:
+        if re.search(pat, head):
+            return name
+    body = (beskrivelse or tekst or "")[:1200].lower()
+    for name, pat in AUCTION_TYPES:
+        if re.search(pat, body):
+            return name
+    return "Fast ejendom"
 
 
 def auction_debtor_keys(msg: RawMessage) -> tuple[str | None, str | None]:
