@@ -31,6 +31,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -e .
+      - name: Hvilke Datafordeler-secrets ser workflowet? (navnene skal være præcis disse)
+        run: |
+          for v in DATAFORDELER_API_KEY DATAFORDELER_CLIENT_ID DATAFORDELER_CLIENT_SECRET; do
+            if [ -n "${!v}" ]; then echo "$v: sat (${#v} tegn i navnet, $(printf %s "${!v}" | wc -c) tegn i værdien)"; else echo "$v: MANGLER – tilføj som Repository secret under Settings → Secrets and variables → Actions"; fi
+          done
       - name: Entiteter og kolonnenavne (til fejlsøgning; henter kun små delta-filer)
         run: |
           propscreener probe-files --work-dir .cache/files \
