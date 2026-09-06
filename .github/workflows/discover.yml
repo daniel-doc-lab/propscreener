@@ -13,6 +13,9 @@ on:
       extra_url:
         description: "Ekstra URL at afprøve (valgfri)"
         default: ""
+      client_id:
+        description: "Datafordeler OAuth Client ID at teste (GUID fra Administration → IT-system → OAuth Shared Secret)"
+        default: ""
 
 jobs:
   discover:
@@ -199,7 +202,7 @@ jobs:
       - name: Datafordeler – OAuth token med Shared Secret og EJF-adgang
         env:
           DFKEY: ${{ secrets.DATAFORDELER_API_KEY }}
-          CID: ${{ secrets.DATAFORDELER_CLIENT_ID || vars.DATAFORDELER_CLIENT_ID }}
+          CID: ${{ inputs.client_id || secrets.DATAFORDELER_CLIENT_ID || vars.DATAFORDELER_CLIENT_ID }}
           CSEC: ${{ secrets.DATAFORDELER_CLIENT_SECRET || secrets.OAUTH_SHARED_SECRET }}
         run: |
           UA="propscreener-discovery/0.1 (+https://github.com/${{ github.repository }})"
