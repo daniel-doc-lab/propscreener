@@ -87,7 +87,7 @@
   /* ---------- ledger (KPI) ---------- */
   .ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin-top: 22px;
             border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .ledger > div { padding: 12px 14px 12px 0; border-right: 1px solid var(--line-soft); margin-right: 14px; }
+  .ledger > div, .ledger > button { padding: 12px 14px 12px 0; border-right: 1px solid var(--line-soft); margin-right: 14px; }
   .ledger > div:last-child { border-right: 0; }
   .ledger .v { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.1;
                margin-top: 4px; font-variant-numeric: tabular-nums; }
@@ -105,14 +105,33 @@
   .chart .grid { stroke: var(--line-soft); stroke-width: 1; }
   .chart .bar { fill: var(--data); }
   .chart .bar.dim { fill: var(--data-soft); }
+  .chart .bar.total { fill: var(--surface-2); }
+  .chart g.wk { cursor: pointer; }
+  .chart g.wk:hover .bar.total { fill: var(--line-soft); }
+  .chart g.wk.sel .bar.vis { fill: var(--accent); }
+  .chart g.wk.sel .lbl { fill: var(--accent); font-weight: 600; }
+  .chart g.wk:focus-visible { outline: 2px solid var(--accent); }
+  .chart .hint { font-size: .72rem; color: var(--ink-3); margin-top: 6px; }
   .chart .lbl { fill: var(--ink-2); font-family: var(--font-display); font-size: 11px; }
   .chart .val { fill: var(--ink); font-size: 10.5px; }
   .hbar { display: grid; grid-template-columns: 8.5em 1fr 3em; gap: 6px 10px; align-items: center; font-size: .82rem; }
   .hbar .track { height: 12px; background: var(--surface-2); border-radius: 2px; position: relative; overflow: hidden; }
   .hbar .fill { position: absolute; inset: 0 auto 0 0; background: var(--data); border-radius: 0 2px 2px 0; }
-  .hbar .fill.hoej { background: var(--data); }
+  .hbar .fill.total { background: var(--data-soft); }
   .hbar .n { text-align: right; color: var(--ink-2); }
+  .hbar .n small { color: var(--ink-3); font-size: .72rem; }
   .hbar .k { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hbar button { display: contents; cursor: pointer; }
+  .hbar button > * { cursor: pointer; }
+  .hbar button:hover .k { color: var(--ink); }
+  .hbar button[aria-pressed="true"] .k { color: var(--accent); font-weight: 600; }
+  .hbar button[aria-pressed="true"] .fill:not(.total) { background: var(--accent); }
+  .hbar button:focus-visible .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .ledger button { all: unset; display: block; cursor: pointer; padding: 12px 14px 12px 0; border-right: 1px solid var(--line-soft); margin-right: 14px; }
+  .ledger button:hover .eyebrow, .ledger button[aria-pressed="true"] .eyebrow { color: var(--accent); }
+  .ledger button[aria-pressed="true"] .v { color: var(--accent); }
+  .ledger button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .ledger > button:last-child { border-right: 0; }
 
   /* ---------- workspace ---------- */
   .workspace { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 0; align-items: start; }
@@ -425,9 +444,9 @@
 </header>
 
 <section class="charts" aria-label="Oversigt">
-  <div class="chart"><h3>Konkursdekreter pr. uge</h3><div class="sub">Boer i registret, efter offentliggørelsesdato</div><div id="ch-weeks"></div></div>
-  <div class="chart"><h3>Boer pr. region</h3><div class="sub">Selskabets hjemstedsregion</div><div id="ch-region" class="hbar"></div></div>
-  <div class="chart"><h3>Ejendomstype</h3><div class="sub">Afledt af branche og ejendomme</div><div id="ch-type" class="hbar"></div></div>
+  <div class="chart"><h3>Konkursdekreter pr. uge</h3><div class="sub">Klik på en uge for kun at vise dens boer</div><div id="ch-weeks"></div></div>
+  <div class="chart"><h3>Boer pr. region</h3><div class="sub">Klik for at filtrere · mørk del = i udvalget</div><div id="ch-region" class="hbar"></div></div>
+  <div class="chart"><h3>Ejendomstype</h3><div class="sub">Klik for at filtrere · mørk del = i udvalget</div><div id="ch-type" class="hbar"></div></div>
 </section>
 
 <nav class="views" id="views" aria-label="Visninger"></nav>
@@ -536,10 +555,10 @@
 
   const WL_STATUS = ['Interessant', 'Kontaktet', 'Bud afgivet', 'Afvist'];
   const VIEWS = [['register', 'Register'], ['kort', 'Kort'], ['kalender', 'Frist-kalender'], ['auktioner', 'Tvangsauktioner'], ['kuratorer', 'Kuratorer']];
-  const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), wl: new Set(), score: 40, props: false, rel: false, open: false, auk: false, sort: 'score', current: null, view: 'register',
+  const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), wl: new Set(), score: 40, props: false, rel: false, open: false, soon: false, auk: false, week: null, sort: 'score', current: null, view: 'register',
                   aFuture: true, aBo: false, aSecond: false };
   try { Object.assign(state, JSON.parse(localStorage.getItem('propscreener.filters') || '{}'),
-        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), wl: new Set(), current: null }); } catch (e) {}
+        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), wl: new Set(), current: null, week: null, soon: false }); } catch (e) {}
   if (!VIEWS.some(v => v[0] === state.view)) state.view = 'register';
   const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, rel: state.rel, open: state.open, auk: state.auk, sort: state.sort, view: state.view, aFuture: state.aFuture, aBo: state.aBo, aSecond: state.aSecond }));
                                 localStorage.setItem('propscreener.region', JSON.stringify([...state.region])); } catch (e) {} };
@@ -556,6 +575,9 @@
 
   let DATA = null;
 
+  const weekStartOf = (iso) => { const d = new Date(iso); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d; };
+  const isoDay = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  function inWeek(c, weekIso) { const d = c.offentliggjort || c.dekretdato; return !!d && isoDay(weekStartOf(d)) === weekIso; }
   function propValue(c) {
     const book = c.regnskab.ejendomsvaerdi_bogfoert;
     if (book) return book;
@@ -588,6 +610,8 @@
       if (state.rel && !(c.relationer && c.relationer.length)) return false;
       if (state.wl.size) { const w = watchOf(c.id); if (!w || !state.wl.has(w.status || '')) return false; }
       if (state.open && !(daysUntil(c.anmeldelsesfrist) >= 0)) return false;
+      if (state.soon) { const d = daysUntil(c.anmeldelsesfrist); if (!(d != null && d >= 0 && d <= 14)) return false; }
+      if (state.week && !inWeek(c, state.week)) return false;
       if (state.auk && !c.ejendomme.some(p => p.kilde === 'tvangsauktion')) return false;
       if (q) {
         const w = watchOf(c.id);
@@ -620,47 +644,93 @@
     const mort = all.reduce((s, c) => s + (c.regnskab.realkreditgaeld || 0), 0);
     const soon = all.filter(c => { const d = daysUntil(c.anmeldelsesfrist); return d != null && d >= 0 && d <= 14; }).length;
     const auk = all.filter(c => c.ejendomme.some(p => p.kilde === 'tvangsauktion')).length;
-    document.getElementById('ledger').innerHTML = [
-      ['Boer i registret', all.length, '', `score ≥ ${DATA.meta.stats && DATA.meta.stats.min_score != null ? DATA.meta.stats.min_score : 0}`],
-      ['Bekræftet ejerskab', hoej, '', 'konfidens høj'],
-      ['Kendte ejendomme', props, '', 'Ejerfortegnelsen + auktioner'],
-      ['Bogført ejendomsværdi', mio(book), 'kr.', 'sum af seneste årsrapporter'],
-      ['Realkreditgæld', mio(mort), 'kr.', 'pant der skal indfries eller overtages'],
-      ['Frister ≤ 14 dage', soon, '', 'anmeldelse af krav'],
-      ['Tvangsauktioner', (DATA.auktioner || []).length || auk, '', (DATA.auktioner || []).length ? 'i auktionsregistret' : 'bekendtgjort i Statstidende'],
-    ].map(([l, v, u, s]) => `<div><div class="eyebrow">${l}</div><div class="v">${v}${u ? `<small>${u}</small>` : ''}</div><div class="sub">${s}</div></div>`).join('');
+    const tiles = [
+      ['Boer i registret', all.length, '', `score ≥ ${DATA.meta.stats && DATA.meta.stats.min_score != null ? DATA.meta.stats.min_score : 0}`, 'reset', 'Nulstil alle filtre'],
+      ['Bekræftet ejerskab', hoej, '', 'konfidens høj', 'hoej', 'Vis kun boer med konfidens høj'],
+      ['Kendte ejendomme', props, '', 'Ejerfortegnelsen + auktioner', 'props', 'Vis kun boer med kendte ejendomme'],
+      ['Bogført ejendomsværdi', mio(book), 'kr.', 'sum af seneste årsrapporter', 'vaerdi', 'Sortér efter ejendomsværdi'],
+      ['Realkreditgæld', mio(mort), 'kr.', 'pant der skal indfries eller overtages', 'ltv', 'Sortér efter belåning'],
+      ['Frister ≤ 14 dage', soon, '', 'anmeldelse af krav', 'soon', 'Vis kun boer med frist inden 14 dage'],
+      ['Tvangsauktioner', (DATA.auktioner || []).length || auk, '', (DATA.auktioner || []).length ? 'i auktionsregistret' : 'bekendtgjort i Statstidende', 'auktioner', 'Åbn auktionsregistret'],
+    ];
+    document.getElementById('ledger').innerHTML = tiles.map(([l, v, u, s, act, title]) =>
+      `<button type="button" data-act="${act}" title="${title}" aria-pressed="${tilePressed(act)}"><div class="eyebrow">${l}</div><div class="v">${v}${u ? `<small>${u}</small>` : ''}</div><div class="sub">${s}</div></button>`).join('');
+    document.querySelectorAll('#ledger button').forEach(b => b.addEventListener('click', () => tileAction(b.dataset.act)));
+  }
+  function tilePressed(act) {
+    if (act === 'hoej') return state.conf.size === 1 && state.conf.has('høj');
+    if (act === 'props') return state.props; if (act === 'soon') return state.soon;
+    if (act === 'vaerdi' || act === 'ltv') return state.sort === act && state.view === 'register';
+    if (act === 'auktioner') return state.view === 'auktioner';
+    return false;
+  }
+  function tileAction(act) {
+    if (act === 'reset') { resetFilters(); return; }
+    if (act === 'hoej') { if (tilePressed('hoej')) state.conf.clear(); else { state.conf.clear(); state.conf.add('høj'); } }
+    else if (act === 'props') state.props = !state.props;
+    else if (act === 'soon') state.soon = !state.soon;
+    else if (act === 'vaerdi' || act === 'ltv') { state.sort = act; state.view = 'register'; }
+    else if (act === 'auktioner') state.view = state.view === 'auktioner' ? 'register' : 'auktioner';
+    if (act !== 'auktioner' && state.view !== 'register' && state.view !== 'kort' && state.view !== 'kalender') state.view = 'register';
+    syncFilterControls(); update();
+  }
+  function resetFilters() {
+    Object.assign(state, { q: '', score: 0, props: false, rel: false, open: false, soon: false, auk: false, week: null }); state.region.clear(); state.type.clear(); state.conf.clear(); state.wl.clear();
+    syncFilterControls(); update();
+  }
+  function syncFilterControls() {
+    document.getElementById('q').value = state.q; document.getElementById('f-score').value = state.score; document.getElementById('f-score-out').value = state.score;
+    ['props', 'rel', 'open', 'auk'].forEach(k => document.getElementById('f-' + k).checked = state[k]);
+    const sets = { 'f-region': state.region, 'f-type': state.type, 'f-conf': state.conf, 'f-wl': state.wl };
+    Object.entries(sets).forEach(([id, set]) => document.querySelectorAll(`#${id} .chip`).forEach(b => b.setAttribute('aria-pressed', set.has(b.dataset.v))));
+    document.querySelectorAll('#sort button').forEach(x => x.setAttribute('aria-pressed', x.dataset.k === state.sort));
   }
 
   // ---------- render: charts ----------
-  function renderCharts() {
-    // weeks
+  function renderCharts(list) {
+    list = list || DATA.cases;
+    const visIds = new Set(list.map(c => c.id));
+    // uger: total (lys) + i udvalget (mørk); klik = filtrér på ugen
     const weeks = [];
-    const start = new Date(today); start.setDate(start.getDate() - start.getDay() + 1 - 7 * 12);
-    for (let i = 0; i < 13; i++) { const d = new Date(start); d.setDate(d.getDate() + 7 * i); weeks.push({ from: d, n: 0 }); }
-    DATA.cases.forEach(c => { const d = new Date(c.offentliggjort || c.dekretdato); for (let i = weeks.length - 1; i >= 0; i--) { if (d >= weeks[i].from) { weeks[i].n++; break; } } });
+    const start = weekStartOf(isoDay(today)); start.setDate(start.getDate() - 7 * 12);
+    for (let i = 0; i < 13; i++) { const d = new Date(start); d.setDate(d.getDate() + 7 * i); weeks.push({ from: d, iso: isoDay(d), n: 0, v: 0 }); }
+    DATA.cases.forEach(c => { const d = c.offentliggjort || c.dekretdato; if (!d) return; const wk = isoDay(weekStartOf(d)); const w = weeks.find(x => x.iso === wk); if (w) { w.n++; if (visIds.has(c.id)) w.v++; } });
     const W = 520, H = 150, padL = 26, padB = 22, padT = 8;
     const max = Math.max(1, ...weeks.map(w => w.n));
     const bw = (W - padL) / weeks.length;
     const ticks = [0, Math.ceil(max / 2), max];
-    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Konkursdekreter pr. uge, seneste 13 uger">`;
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Konkursdekreter pr. uge, seneste 13 uger. Klik på en uge for at filtrere.">`;
     ticks.forEach(t => { const y = padT + (H - padT - padB) * (1 - t / max); svg += `<line class="grid" x1="${padL}" x2="${W}" y1="${y}" y2="${y}"/><text x="${padL - 6}" y="${y + 3}" text-anchor="end">${t}</text>`; });
     weeks.forEach((w, i) => {
-      const h = (H - padT - padB) * (w.n / max); const x = padL + i * bw + 3; const y = H - padB - h;
+      const h = (H - padT - padB) * (w.n / max), hv = (H - padT - padB) * (w.v / max); const x = padL + i * bw + 3; const y = H - padB - h;
       const label = `uge ${isoWeek(w.from)}`;
-      svg += `<rect class="bar${i === weeks.length - 1 ? '' : ''}" x="${x}" y="${y}" width="${bw - 6}" height="${h}" rx="2"><title>${label}: ${w.n} dekreter</title></rect>`;
-      if (w.n === max && w.n > 0) svg += `<text class="val" x="${x + (bw - 6) / 2}" y="${y - 4}" text-anchor="middle">${w.n}</text>`;
-      if (i % 3 === 0 || i === weeks.length - 1) svg += `<text class="lbl" x="${x + (bw - 6) / 2}" y="${H - 6}" text-anchor="middle">${label}</text>`;
+      svg += `<g class="wk${state.week === w.iso ? ' sel' : ''}" data-week="${w.iso}" tabindex="0" role="button" aria-pressed="${state.week === w.iso}"><title>${label} (fra ${fmtDate(w.iso)}): ${w.v} af ${w.n} boer i udvalget – klik for at filtrere</title>
+        <rect x="${x - 2}" y="${padT}" width="${bw - 2}" height="${H - padT - padB}" fill="transparent"/>
+        <rect class="bar total" x="${x}" y="${y}" width="${bw - 6}" height="${h}" rx="2"/>
+        <rect class="bar vis" x="${x}" y="${H - padB - hv}" width="${bw - 6}" height="${hv}" rx="2"/>
+        ${w.n === max && w.n > 0 ? `<text class="val" x="${x + (bw - 6) / 2}" y="${y - 4}" text-anchor="middle">${w.v === w.n ? w.n : w.v + '/' + w.n}</text>` : ''}
+        ${(i % 3 === 0 || i === weeks.length - 1) ? `<text class="lbl" x="${x + (bw - 6) / 2}" y="${H - 6}" text-anchor="middle">${label}</text>` : ''}</g>`;
     });
     svg += '</svg>';
-    document.getElementById('ch-weeks').innerHTML = svg;
+    const wk = document.getElementById('ch-weeks');
+    wk.innerHTML = svg + (state.week ? `<div class="hint">Viser kun uge ${isoWeek(new Date(state.week))} (fra ${fmtDate(state.week)}) · <a href="#" data-clear-week>vis alle uger</a></div>` : '');
+    wk.querySelectorAll('g.wk').forEach(g => { const act = () => { state.week = state.week === g.dataset.week ? null : g.dataset.week; if (state.view !== 'register' && state.view !== 'kort' && state.view !== 'kalender') state.view = 'register'; update(); };
+      g.addEventListener('click', act); g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } }); });
+    const clr = wk.querySelector('[data-clear-week]'); if (clr) clr.addEventListener('click', e => { e.preventDefault(); state.week = null; update(); });
 
-    hbars('ch-region', REGIONS.map(r => [r, DATA.cases.filter(c => c.selskab.region === r).length]));
-    hbars('ch-type', TYPES.map(t => [t, DATA.cases.filter(c => (c.ejendomstype_hoved || 'Ukendt') === t).length]));
+    hbars('ch-region', REGIONS.map(r => [r, DATA.cases.filter(c => c.selskab.region === r).length, list.filter(c => c.selskab.region === r).length]), state.region);
+    hbars('ch-type', TYPES.map(t => [t, DATA.cases.filter(c => (c.ejendomstype_hoved || 'Ukendt') === t).length, list.filter(c => (c.ejendomstype_hoved || 'Ukendt') === t).length]), state.type);
   }
-  function hbars(id, rows) {
+  function hbars(id, rows, set) {
     const max = Math.max(1, ...rows.map(r => r[1]));
-    document.getElementById(id).innerHTML = rows.map(([k, n]) =>
-      `<div class="k" title="${esc(k)}">${esc(k)}</div><div class="track"><div class="fill" style="width:${(100 * n / max).toFixed(1)}%"></div></div><div class="n num">${n}</div>`).join('');
+    const el = document.getElementById(id);
+    el.innerHTML = rows.map(([k, n, v]) =>
+      `<button type="button" data-v="${esc(k)}" aria-pressed="${set.has(k)}" title="${esc(k)}: ${v} af ${n} boer i udvalget – klik for at filtrere"><div class="k">${esc(k)}</div><div class="track"><div class="fill total" style="width:${(100 * n / max).toFixed(1)}%"></div><div class="fill" style="width:${(100 * v / max).toFixed(1)}%"></div></div><div class="n num">${v === n ? n : `${v}<small>/${n}</small>`}</div></button>`).join('');
+    el.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      const v = b.dataset.v; set.has(v) ? set.delete(v) : set.add(v);
+      if (state.view !== 'register' && state.view !== 'kort' && state.view !== 'kalender') state.view = 'register';
+      syncFilterControls(); update();
+    }));
   }
   function isoWeek(d) {
     const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -688,10 +758,7 @@
     sc.value = state.score; out.value = state.score;
     sc.addEventListener('input', () => { state.score = +sc.value; out.value = sc.value; update(); });
     [['f-props', 'props'], ['f-rel', 'rel'], ['f-open', 'open'], ['f-auk', 'auk']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
-    document.getElementById('b-reset').addEventListener('click', () => {
-      Object.assign(state, { q: '', score: 0, props: false, rel: false, open: false, auk: false }); state.region.clear(); state.type.clear(); state.conf.clear(); state.wl.clear();
-      renderFiltersValues(); update();
-    });
+    document.getElementById('b-reset').addEventListener('click', resetFilters);
     document.getElementById('b-csv').addEventListener('click', copyCsv);
     [['a-future', 'aFuture'], ['a-bo', 'aBo'], ['a-second', 'aSecond']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
     document.querySelectorAll('.btn.primary').forEach(b => b.classList.toggle('dk', isDark()));
@@ -699,11 +766,7 @@
     sort.innerHTML = SORTS.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${state.sort === k}">${l}</button>`).join('');
     sort.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { state.sort = b.dataset.k; sort.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); update(); }));
   }
-  function renderFiltersValues() {
-    document.getElementById('q').value = state.q; document.getElementById('f-score').value = state.score; document.getElementById('f-score-out').value = state.score;
-    ['props', 'rel', 'open', 'auk'].forEach(k => document.getElementById('f-' + k).checked = state[k]);
-    document.querySelectorAll('#f-region .chip, #f-type .chip, #f-conf .chip, #f-wl .chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
-  }
+
 
   // ---------- render: rows ----------
   function balanceParts(f) {
@@ -722,6 +785,8 @@
   function update() {
     persist();
     const list = visible();
+    renderCharts(list);
+    document.querySelectorAll('#ledger button').forEach(b => b.setAttribute('aria-pressed', tilePressed(b.dataset.act)));
     renderViews(list);
     document.querySelectorAll('.view').forEach(v => v.hidden = v.id !== 'view-' + state.view);
     document.getElementById('sort').hidden = state.view !== 'register';
@@ -729,7 +794,7 @@
     if (state.view === 'kalender') { document.getElementById('count').innerHTML = `Frister og auktioner for <b>${list.length}</b> boer`; renderCalendar(list); return; }
     if (state.view === 'auktioner') { renderAuctions(); return; }
     if (state.view === 'kuratorer') { renderKuratorer(list); return; }
-    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${DATA.cases.length} boer`;
+    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${DATA.cases.length} boer${state.week ? ` · uge ${isoWeek(new Date(state.week))}` : ''}${state.soon ? ' · frist ≤ 14 dage' : ''}`;
     const rows = document.getElementById('rows');
     if (!list.length) { rows.innerHTML = '<div class="empty">Ingen boer matcher filtrene.</div>'; return; }
     rows.innerHTML = list.map(c => {
@@ -1082,7 +1147,7 @@
     DATA = data;
     DATA.auktioner = DATA.auktioner || [];
     DATA.cases.forEach(c => { c.ejendomme = c.ejendomme || []; c.regnskab = c.regnskab || {}; c.selskab = c.selskab || {}; c.kurator = c.kurator || {}; c.skifteret = c.skifteret || {}; c.links = c.links || {}; c.relationer = c.relationer || []; });
-    renderHeader(); renderCharts(); renderFilters(); update();
+    renderHeader(); renderFilters(); update();
   }
   if (EMBEDDED) boot(EMBEDDED);
   else fetch('data/cases.json').then(r => r.json()).then(boot).catch(() => {
