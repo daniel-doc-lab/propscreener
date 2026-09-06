@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-06T08:26:41+00:00",
+  "genereret": "2026-09-06T09:36:32+00:00",
   "version": "0.1.0",
   "antal": 52,
   "demo": false,
@@ -14,7 +14,7 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-06T08:26:02+00:00",
+   "started": "2026-09-06T09:35:53+00:00",
    "dekreter": 76,
    "tvangsauktioner": 0,
    "auktioner_i_alt": 44,
@@ -5224,7 +5224,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-06T08:26:04+00:00"
+   "sidst_opdateret": "2026-09-06T09:35:55+00:00"
   },
   {
    "id": "25155688",
