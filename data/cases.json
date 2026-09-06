@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-06T07:21:55+00:00",
+  "genereret": "2026-09-06T07:34:03+00:00",
   "version": "0.1.0",
   "antal": 52,
   "demo": false,
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-06T07:20:52+00:00",
-   "dekreter": 76,
-   "tvangsauktioner": 0,
-   "auktioner_i_alt": 44,
-   "boer_med_relationer": 9,
-   "beriget_cvr": 76,
-   "beriget_regnskab": 57,
+   "started": "2026-09-06T07:23:55+00:00",
+   "dekreter": 966,
+   "tvangsauktioner": 2,
+   "auktioner_i_alt": 344,
+   "boer_med_relationer": 252,
+   "beriget_cvr": 964,
+   "beriget_regnskab": 735,
    "beriget_ejf": 0,
-   "over_min_score": 1,
+   "over_min_score": 51,
    "min_score": 25,
-   "bevaret_fra_tidligere": 51,
+   "bevaret_fra_tidligere": 1,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -34,7 +34,9 @@
     "dawa",
     "ejerfortegnelsen"
    ],
-   "fejl": []
+   "fejl": [
+    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
+   ]
   }
  },
  "cases": [
@@ -152,7 +154,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:14+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:09+00:00"
   },
   {
    "id": "34484872",
@@ -274,7 +276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:11+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:08+00:00"
   },
   {
    "id": "21032794",
@@ -394,8 +396,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:09+00:00"
+   "relationer": [
+    {
+     "id": "43595016",
+     "cvr": "43595016",
+     "navn": "Servicecenter Hobro ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-08",
+     "branchetekst": "Reparation og vedligeholdelse af motorkøretøjer i.a.n.",
+     "by": "Hobro",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S08072026-118",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:07+00:00"
   },
   {
    "id": "28850794",
@@ -549,7 +569,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:08+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:07+00:00"
   },
   {
    "id": "32439284",
@@ -669,8 +689,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:10+00:00"
+   "relationer": [
+    {
+     "id": "32439268",
+     "cvr": "32439268",
+     "navn": "MM HOLDING AF 1/9-2009 ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-02",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Sorø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S02072026-279",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:07+00:00"
   },
   {
    "id": "41553308",
@@ -903,8 +941,45 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:19+00:00"
+   "relationer": [
+    {
+     "id": "20761695",
+     "cvr": "20761695",
+     "navn": "Holdingselskabet af 9. juni 2026 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-09",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Sønder Omme",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S09062026-60",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "13927634",
+     "cvr": "13927634",
+     "navn": "Driftsselskabet af 9. juni 2026 A/S",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-09",
+     "branchetekst": "Fremstilling af løfte- og håndteringsudstyr",
+     "by": "Sønder Omme",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S09062026-59",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:12+00:00"
   },
   {
    "id": "40523286",
@@ -1019,8 +1094,46 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:20+00:00"
+   "relationer": [
+    {
+     "id": "40207422",
+     "cvr": "40207422",
+     "navn": "Sønderbrogade 69 ApS",
+     "score": 45,
+     "konfidens": "middel",
+     "dekretdato": "2026-07-01",
+     "branchetekst": "Anden udlejning af boliger",
+     "by": "Skanderborg",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-96",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »sønderbrogade« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40195874",
+     "cvr": "40195874",
+     "navn": "Mi casa es su casa ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-01",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Skanderborg",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-90",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:12+00:00"
   },
   {
    "id": "42854980",
@@ -1135,7 +1248,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:22+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:13+00:00"
   },
   {
    "id": "43839284",
@@ -1250,7 +1363,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:29+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:17+00:00"
   },
   {
    "id": "42536857",
@@ -1358,8 +1471,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:28+00:00"
+   "relationer": [
+    {
+     "id": "33870574",
+     "cvr": "33870574",
+     "navn": "DRIFTSSELSKABET 2011 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-24",
+     "branchetekst": "Flytteaktiviteter",
+     "by": "Esbjerg",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S24062026-306",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:16+00:00"
   },
   {
    "id": "32100279",
@@ -1474,7 +1605,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:12+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:08+00:00"
   },
   {
    "id": "42347841",
@@ -1582,8 +1713,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:37+00:00"
+   "relationer": [
+    {
+     "id": "42347833",
+     "cvr": "42347833",
+     "navn": "Bostedet Bredgade ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-24",
+     "branchetekst": "Drift af døgninstitutioner for børn og unge",
+     "by": "Tårs",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S31082026-31",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:21+00:00"
   },
   {
    "id": "40590641",
@@ -1692,7 +1841,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:13+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:09+00:00"
   },
   {
    "id": "32277470",
@@ -1800,8 +1949,27 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:18+00:00"
+   "relationer": [
+    {
+     "id": "40892273",
+     "cvr": "40892273",
+     "navn": "Selskabet af 17. juni 2026 A/S",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-19",
+     "branchetekst": "Fremstilling af andre tanke og beholdere af metal",
+     "by": "Lem St",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S19062026-128",
+     "i_registret": false,
+     "grund": [
+      "fælles navnestamme »juni« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:11+00:00"
   },
   {
    "id": "37540811",
@@ -1909,8 +2077,213 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:17+00:00"
+   "relationer": [
+    {
+     "id": "36906537",
+     "cvr": "36906537",
+     "navn": "MLarsen Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-20",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S20082026-162",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "45667413",
+     "cvr": "45667413",
+     "navn": "Appreciate Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-20",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S20082026-129",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "40829660",
+     "cvr": "40829660",
+     "navn": "TY Holding.ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-07",
+     "branchetekst": "Formueforvaltning",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S07072026-41",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "41937807",
+     "cvr": "41937807",
+     "navn": "Bjerregaard OE Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-02",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S02072026-92",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "42042692",
+     "cvr": "42042692",
+     "navn": "WLM Group ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-22",
+     "branchetekst": "Opførelse af bygninger",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S22062026-284",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "46087275",
+     "cvr": "46087275",
+     "navn": "Ejendomsselskabet Barnstedt ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-02",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03092026-181",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "42704237",
+     "cvr": "42704237",
+     "navn": "copenhagenDIRECT ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-02",
+     "branchetekst": "Ikke-specialiseret engroshandel",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S02092026-229",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "45477479",
+     "cvr": "45477479",
+     "navn": "Image Solutions (IMSOL) Europe ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-02",
+     "branchetekst": "Computerkonsulentbistand og forvaltning af computerfaciliteter",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S02092026-198",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "45513890",
+     "cvr": "45513890",
+     "navn": "SIERRA BIOSYSTEMS DENMARK ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-27",
+     "branchetekst": "Engroshandel med medicinalvarer og sygeplejeartikler",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S27082026-78",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "45601196",
+     "cvr": "45601196",
+     "navn": "NICRAM ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-26",
+     "branchetekst": "El-installation",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S26082026-91",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "43526596",
+     "cvr": "43526596",
+     "navn": "La Royal Selskabslokale ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-26",
+     "branchetekst": "Drift af teater- og koncertsale, kulturhuse mv.",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S26082026-210",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "42777803",
+     "cvr": "42777803",
+     "navn": "KBH-HS EL & VVS ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": null,
+     "branchetekst": "El-installation",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S19082026-10",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:11+00:00"
   },
   {
    "id": "35889981",
@@ -2019,7 +2392,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:16+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:10+00:00"
   },
   {
    "id": "26270871",
@@ -2128,7 +2501,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:15+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:10+00:00"
   },
   {
    "id": "36492139",
@@ -2237,7 +2610,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:21+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:13+00:00"
   },
   {
    "id": "37902896",
@@ -2347,7 +2720,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:24+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:14+00:00"
   },
   {
    "id": "36893575",
@@ -2456,7 +2829,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:23+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:14+00:00"
   },
   {
    "id": "41982659",
@@ -2564,8 +2937,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:25+00:00"
+   "relationer": [
+    {
+     "id": "38248138",
+     "cvr": "38248138",
+     "navn": "Link Opportunity ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-07",
+     "branchetekst": "Anden finansiel formidling i.a.n.",
+     "by": "Valby",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S07072026-225",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:15+00:00"
   },
   {
    "id": "20402644",
@@ -2674,7 +3065,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:45:20+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:44+00:00"
   },
   {
    "id": "40445935",
@@ -2777,7 +3168,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:27+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:16+00:00"
   },
   {
    "id": "12830033",
@@ -2885,7 +3276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:55:16+00:00"
+   "sidst_opdateret": "2026-09-06T07:30:05+00:00"
   },
   {
    "id": "40207422",
@@ -2994,8 +3385,46 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:45:08+00:00"
+   "relationer": [
+    {
+     "id": "40523286",
+     "cvr": "40523286",
+     "navn": "Sønderbrogade 13A-B ApS",
+     "score": 90,
+     "konfidens": "høj",
+     "dekretdato": "2026-07-01",
+     "branchetekst": "Anden udlejning af boliger",
+     "by": "Skanderborg",
+     "ejendomsvaerdi": 11450000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-86",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »sønderbrogade« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40195874",
+     "cvr": "40195874",
+     "navn": "Mi casa es su casa ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-01",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Skanderborg",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-90",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:38+00:00"
   },
   {
    "id": "39276445",
@@ -3104,7 +3533,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:45:05+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:37+00:00"
   },
   {
    "id": "43723758",
@@ -3214,7 +3643,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:51+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:29+00:00"
   },
   {
    "id": "44145227",
@@ -3317,7 +3746,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:26+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:15+00:00"
   },
   {
    "id": "41298332",
@@ -3420,7 +3849,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:40+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:22+00:00"
   },
   {
    "id": "37867462",
@@ -3522,8 +3951,26 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:44+00:00"
+   "relationer": [
+    {
+     "id": "25076818",
+     "cvr": "25076818",
+     "navn": "Selskabet af 6. december 1999 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-05",
+     "branchetekst": "Rådgivende ingeniøraktiviteter inden for byggeri og anlægsarbejder",
+     "by": "Aakirkeby",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S06082026-8",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:24+00:00"
   },
   {
    "id": "43781626",
@@ -3626,7 +4073,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:43+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:24+00:00"
   },
   {
    "id": "32569633",
@@ -3729,7 +4176,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:42+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:23+00:00"
   },
   {
    "id": "43729225",
@@ -3832,7 +4279,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:41+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:23+00:00"
   },
   {
    "id": "41727586",
@@ -3935,7 +4382,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:39+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:22+00:00"
   },
   {
    "id": "10214343",
@@ -4038,7 +4485,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:38+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:21+00:00"
   },
   {
    "id": "84895210",
@@ -4141,7 +4588,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:36+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:20+00:00"
   },
   {
    "id": "34895562",
@@ -4244,7 +4691,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:35+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:20+00:00"
   },
   {
    "id": "37700789",
@@ -4347,7 +4794,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:34+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:19+00:00"
   },
   {
    "id": "43258842",
@@ -4451,7 +4898,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:33+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:19+00:00"
   },
   {
    "id": "14412107",
@@ -4553,8 +5000,27 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:32+00:00"
+   "relationer": [
+    {
+     "id": "32570763",
+     "cvr": "32570763",
+     "navn": "ACCELL DANMARK ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-13",
+     "branchetekst": "Engroshandel med cykler, sportsartikler og lystbåde",
+     "by": "Odense SØ",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S13082026-285",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:24:18+00:00"
   },
   {
    "id": "39775298",
@@ -4657,7 +5123,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:31+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:18+00:00"
   },
   {
    "id": "32887902",
@@ -4760,7 +5226,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-06T07:20:53+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:17+00:00"
   },
   {
    "id": "25155688",
@@ -4863,7 +5329,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:58:48+00:00"
+   "sidst_opdateret": "2026-09-06T07:31:49+00:00"
   },
   {
    "id": "40465820",
@@ -4973,7 +5439,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:45+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:25+00:00"
   },
   {
    "id": "27983944",
@@ -5076,8 +5542,28 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:55:07+00:00"
+   "relationer": [
+    {
+     "id": "28115660",
+     "cvr": "28115660",
+     "navn": "PÅ HAVNEN ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-01",
+     "branchetekst": "Servering af mad i restauranter og caféer",
+     "by": "Juelsminde",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-115",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »havnen« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:30:00+00:00"
   },
   {
    "id": "40096957",
@@ -5179,8 +5665,82 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:52:31+00:00"
+   "relationer": [
+    {
+     "id": "25193458",
+     "cvr": "25193458",
+     "navn": "DIFKO INVEST A/S",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-20",
+     "branchetekst": "Anden finansiel formidling i.a.n.",
+     "by": "Herning",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S21072026-105",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »difko« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "19529142",
+     "cvr": "19529142",
+     "navn": "DIFKO A/S",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-20",
+     "branchetekst": "Finansiel leasing",
+     "by": "Herning",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S21072026-110",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »difko« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "42715921",
+     "cvr": "42715921",
+     "navn": "Difko Invest Micro Living ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-06-19",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Herning",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S22062026-92",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »difko« og samme kurator"
+     ]
+    },
+    {
+     "id": "44905566",
+     "cvr": "44905566",
+     "navn": "P/S Difko Batteripark XII",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-08-20",
+     "branchetekst": "Lagring af elektricitet",
+     "by": "Vejle",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S20082026-231",
+     "i_registret": false,
+     "grund": [
+      "fælles navnestamme »difko« og samme kurator"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:28:43+00:00"
   },
   {
    "id": "40134999",
@@ -5282,8 +5842,27 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:52:12+00:00"
+   "relationer": [
+    {
+     "id": "41063548",
+     "cvr": "41063548",
+     "navn": "Aika Invest ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-24",
+     "branchetekst": "Investering for egen regning",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S24072026-71",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-06T07:28:33+00:00"
   },
   {
    "id": "43321137",
@@ -5386,7 +5965,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:48:31+00:00"
+   "sidst_opdateret": "2026-09-06T07:26:39+00:00"
   },
   {
    "id": "40313761",
@@ -5489,7 +6068,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:47+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:26+00:00"
   },
   {
    "id": "42984523",
@@ -5592,7 +6171,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:46+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:26+00:00"
   },
   {
    "id": "45690725",
@@ -5695,7 +6274,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-05T08:44:45+00:00"
+   "sidst_opdateret": "2026-09-06T07:24:25+00:00"
   }
  ]
 }
