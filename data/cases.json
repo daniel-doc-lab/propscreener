@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-06T07:17:57+00:00",
+  "genereret": "2026-09-06T07:23:06+00:00",
   "version": "0.1.0",
   "antal": 52,
   "demo": false,
@@ -14,7 +14,7 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-06T07:16:11+00:00",
+   "started": "2026-09-06T07:21:40+00:00",
    "dekreter": 76,
    "tvangsauktioner": 0,
    "auktioner_i_alt": 44,
@@ -83,8 +83,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/33377088",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.13712692,
+    "lon": 10.18358525
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -199,8 +199,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34484872",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 57.11055567,
+    "lon": 10.044255
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -321,8 +321,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/21032794",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.62592941,
+    "lon": 9.80719884
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -442,8 +442,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.43018757,
+    "lon": 10.38276679
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -596,8 +596,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32439284",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.46481565,
+    "lon": 11.55484505
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -717,8 +717,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41553308",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.67348466,
+    "lon": 12.48450806
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -836,8 +836,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/38252712",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.84143746,
+    "lon": 8.88457051
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-10-31",
@@ -951,8 +951,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40523286",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.03824918,
+    "lon": 9.91117344
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -1067,8 +1067,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42854980",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.67492155,
+    "lon": 12.4560649
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1182,8 +1182,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43839284",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.16743052,
+    "lon": 8.84774474
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1297,8 +1297,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42536857",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.47993675,
+    "lon": 8.46243628
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1406,8 +1406,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32100279",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.70265734,
+    "lon": 9.52846123
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -1521,8 +1521,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42347841",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 57.38716398,
+    "lon": 10.11044116
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1630,8 +1630,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40590641",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.22945964,
+    "lon": 11.46986939
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1739,8 +1739,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32277470",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.13426997,
+    "lon": 8.54867507
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1848,8 +1848,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37540811",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.69744225,
+    "lon": 12.59967601
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1957,8 +1957,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/35889981",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.25359357,
+    "lon": 8.79688384
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2066,8 +2066,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/26270871",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.17706377,
+    "lon": 9.54647344
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2175,8 +2175,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36492139",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 57.49312568,
+    "lon": 10.50018467
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2284,8 +2284,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37902896",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.71849357,
+    "lon": 9.49698843
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2394,8 +2394,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36893575",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.79222507,
+    "lon": 11.6130763
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -2503,8 +2503,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41982659",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.67348466,
+    "lon": 12.48450806
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -2612,8 +2612,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/20402644",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.78570764,
+    "lon": 12.50418011
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2721,8 +2721,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40445935",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.73973524,
+    "lon": 11.31489233
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -2824,8 +2824,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/12830033",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.08801929,
+    "lon": 8.26880371
    },
    "regnskab": {
     "regnskabsaar_slut": null,
@@ -2932,8 +2932,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40207422",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.03824918,
+    "lon": 9.91117344
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -3042,8 +3042,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39276445",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.39592544,
+    "lon": 11.32068512
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -3151,8 +3151,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43723758",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.85040589,
+    "lon": 9.8143501
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3261,8 +3261,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44145227",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.32853747,
+    "lon": 9.39032826
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3364,8 +3364,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41298332",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.69241331,
+    "lon": 12.60822579
    },
    "regnskab": {
     "regnskabsaar_slut": "2022-12-31",
@@ -3467,8 +3467,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37867462",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.06901625,
+    "lon": 14.921397
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3570,8 +3570,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43781626",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.3982781,
+    "lon": 10.38030234
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -3673,8 +3673,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32569633",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.68989916,
+    "lon": 12.56570126
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3776,8 +3776,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43729225",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.60393359,
+    "lon": 11.42449091
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3879,8 +3879,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41727586",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.39079343,
+    "lon": 10.42037794
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3982,8 +3982,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/10214343",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.41826362,
+    "lon": 10.02388828
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -4085,8 +4085,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/84895210",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.07358102,
+    "lon": 9.33538242
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -4188,8 +4188,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34895562",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.6715962,
+    "lon": 12.5293648
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -4291,8 +4291,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37700789",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.330926,
+    "lon": 11.37403252
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-09-30",
@@ -4394,8 +4394,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43258842",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 57.05162097,
+    "lon": 9.40266709
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -4498,8 +4498,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/14412107",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.36315292,
+    "lon": 10.49496641
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -4601,8 +4601,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39775298",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.64137729,
+    "lon": 12.61324475
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -4760,7 +4760,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-06T07:16:48+00:00"
+   "sidst_opdateret": "2026-09-06T07:21:43+00:00"
   },
   {
    "id": "25155688",
@@ -4807,8 +4807,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/25155688",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.07623873,
+    "lon": 12.34762748
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -4910,8 +4910,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40465820",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 57.01129316,
+    "lon": 9.80474747
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -5020,8 +5020,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27983944",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.70184579,
+    "lon": 10.01518014
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5124,8 +5124,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40096957",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.13514674,
+    "lon": 9.00099372
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -5227,8 +5227,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40134999",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.68678088,
+    "lon": 9.67554117
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5330,8 +5330,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43321137",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 54.83789518,
+    "lon": 11.48505773
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5433,8 +5433,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40313761",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.1993196,
+    "lon": 10.46486409
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5536,8 +5536,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42984523",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 56.98921774,
+    "lon": 9.46759686
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5639,8 +5639,8 @@
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/45690725",
     "formaal": null,
-    "lat": null,
-    "lon": null
+    "lat": 55.68867721,
+    "lon": 12.5589614
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
