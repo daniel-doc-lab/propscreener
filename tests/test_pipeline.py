@@ -135,7 +135,10 @@ def test_pipeline_end_to_end(tmp_path: Path):
     assert ejf_prop.offentlig_vurdering == 9_400_000
     assert ejf_prop.lat == 56.1572
     assert auk_prop.tvangsauktion_dato == "2026-10-15" and auk_prop.offentlig_vurdering == 9_000_000
-    assert stats.tvangsauktioner == 1
+    assert stats.tvangsauktioner == 1 and stats.auktioner_i_alt == 1
+    assert pipe.auctions[0].konkursbo_id == fjord.id and pipe.auctions[0].skyldner_cvr == "12345678"
+    assert pipe.auctions[0].offentlig_vurdering == 9_000_000 and pipe.auctions[0].region == "Midtjylland"
+    assert fjord.selskab.lat is None or isinstance(fjord.selskab.lat, float)
     assert "tvangsauktion" in fjord.kilder
     assert fjord.score == 100 and fjord.konfidens == "høj"
     assert "ejerfortegnelsen" in fjord.kilder and "regnskab-xbrl" in fjord.kilder and "apicvr-rest" in fjord.kilder
@@ -165,6 +168,17 @@ def test_export_roundtrip_and_site(tmp_path: Path):
     csv_text = (tmp_path / "cases.csv").read_text(encoding="utf-8-sig")
     assert csv_text.splitlines()[0].startswith("score;konfidens;cvr;navn")
     assert len(csv_text.splitlines()) == 13
+
+    from propscreener.demo import demo_auctions
+    from propscreener.export import load_auctions, merge_auctions, write_auctions
+    auks = demo_auctions(cases, seed=1)
+    assert auks and all(a.auktionsdato for a in auks)
+    write_auctions(auks, tmp_path / "auktioner.json")
+    assert [x.id for x in load_auctions(tmp_path / "auktioner.json")] == [x.id for x in auks]
+    merged, kept = merge_auctions(auks[:2], tmp_path / "auktioner.json", retention_days=365)
+    assert kept == len(auks) - 2 and len(merged) == len(auks)
+    ds = build_dataset(cases, stats, demo=True, auctions=auks)
+    assert len(ds["auktioner"]) == len(auks)
 
     out = build_site(ds, tmp_path / "site" / "index.html")
     html = out.read_text(encoding="utf-8")

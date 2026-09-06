@@ -52,6 +52,7 @@
   }
 
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { font-size: 15px; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
@@ -280,7 +281,129 @@
     .drawer { animation: slide .22s ease-out; }
     @keyframes slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
   }
-  @media print { .rail, .backdrop, .charts { display: none; } .drawer { position: static; width: auto; box-shadow: none; } }
+  /* ---------- visninger ---------- */
+  .views { display: flex; gap: 2px; padding: 4px clamp(16px, 4vw, 48px) 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .views button { border: 0; border-bottom: 3px solid transparent; background: none; padding: 10px 14px 9px; font-size: .9rem; color: var(--ink-2); cursor: pointer; margin-bottom: -1px; }
+  .views button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+  .views button .n { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-3); margin-left: 6px; }
+  .view[hidden] { display: none; }
+
+  /* ---------- mikro-grafer ---------- */
+  .mini { display: grid; gap: 2px; margin-top: 4px; width: 100%; max-width: 120px; margin-left: auto; }
+  .mini .bar { display: flex; height: 5px; gap: 1px; border-radius: 1px; overflow: hidden; background: var(--surface-2); }
+  .mini .seg { min-width: 1px; }
+  .mini .seg.prop { background: var(--data); } .mini .seg.other { background: var(--data-soft); }
+  .mini .seg.mort { background: var(--accent); } .mini .seg.debt { background: var(--accent-soft); }
+  .mini .seg.eq { background: var(--good); } .mini .seg.eqneg { background: var(--bad); }
+  @media (max-width: 1100px) { .mini { margin-left: 0; } }
+
+  /* ---------- watchlist ---------- */
+  .wl { display: inline-block; padding: 1px 7px; border-radius: 2px; font-size: .7rem; font-weight: 600; letter-spacing: .04em; border: 1px solid var(--line); color: var(--ink-2); background: var(--paper); }
+  .wl.Interessant { border-color: var(--data); color: var(--data); }
+  .wl.Kontaktet { border-color: var(--warn); color: var(--warn); }
+  .wl.Bud { border-color: var(--good); color: var(--good); background: var(--good-soft); }
+  .wl.Afvist { color: var(--ink-3); text-decoration: line-through; }
+  .wl-box { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; margin-top: 12px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--paper); }
+  .wl-box select, .wl-box input { padding: 6px 8px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); font: inherit; font-size: .85rem; width: 100%; }
+  .wl-box .lab { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+  .rel-n { font-family: var(--font-mono); font-size: .72rem; color: var(--accent); }
+
+  /* ---------- relationer ---------- */
+  .rel { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .rel li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 10px 12px; border: 1px solid var(--line-soft); border-left: 3px solid var(--accent); background: var(--paper); border-radius: var(--radius); }
+  .rel .nm { font-family: var(--font-serif); font-size: 1.05rem; }
+  .rel .nm button { border: 0; background: none; padding: 0; font: inherit; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+  .rel .why { font-size: .8rem; color: var(--ink-2); grid-column: 1 / -1; }
+  .rel .why i { font-style: normal; display: inline-block; padding: 1px 6px; border-radius: 2px; background: var(--surface-2); margin: 2px 4px 0 0; }
+
+  /* ---------- kort ---------- */
+  .map-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; align-items: start; }
+  @media (max-width: 900px) { .map-wrap { grid-template-columns: 1fr; } }
+  .map { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 10px; }
+  .map svg { width: 100%; height: auto; display: block; }
+  .map .land { fill: var(--surface-2); stroke: var(--line); stroke-width: .8; }
+  .map .sea { fill: var(--paper); }
+  .map .pt { cursor: pointer; stroke: var(--surface); stroke-width: 1.2; fill: var(--data-soft); opacity: .9; }
+  .map .pt.middel { fill: var(--data); } .map .pt.hoej { fill: var(--good); }
+  .map .pt.auk { fill: var(--bad); }
+  .map .pt.prop { fill: var(--accent); }
+  .map .pt:hover, .map .pt.cur { stroke: var(--ink); stroke-width: 2; opacity: 1; }
+  .map .grat { stroke: var(--line-soft); stroke-width: .5; stroke-dasharray: 2 3; }
+  .map .city { font-family: var(--font-mono); font-size: 9px; fill: var(--ink-3); pointer-events: none; }
+  .map-side { font-size: .86rem; display: grid; gap: 14px; }
+  .map-side .legend { display: grid; gap: 6px; }
+  .map-side .legend span { display: flex; align-items: center; gap: 8px; }
+  .map-side .legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; border: 1px solid var(--surface); }
+  .map-side .legend i.sq { border-radius: 2px; }
+  .map-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 420px; overflow: auto; }
+  .map-list button { width: 100%; text-align: left; border: 1px solid var(--line-soft); background: var(--paper); padding: 6px 8px; border-radius: var(--radius); cursor: pointer; font-size: .82rem; }
+  .map-list button:hover { border-color: var(--accent); }
+  .map-list .mono { color: var(--ink-3); }
+
+  /* ---------- kalender ---------- */
+  .cal { display: grid; gap: 1px; background: var(--line-soft); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .cal-head, .cal-week { display: grid; grid-template-columns: 64px repeat(7, minmax(0, 1fr)); gap: 1px; }
+  .cal-head > div { background: var(--surface-2); padding: 6px 8px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+  .cal-week > div { background: var(--surface); min-height: 74px; padding: 6px; }
+  .cal-week .wk { background: var(--paper); font-family: var(--font-mono); font-size: .78rem; color: var(--ink-2); }
+  .cal-week .wk b { display: block; color: var(--ink); font-weight: 500; }
+  .cal .d { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-3); margin-bottom: 4px; }
+  .cal .today .d { color: var(--accent); font-weight: 600; }
+  .cal .today { background: var(--accent-soft); }
+  .cal .we { background: var(--paper); }
+  .ev { display: block; width: 100%; text-align: left; border: 0; border-left: 3px solid var(--data); background: var(--data-soft); color: var(--ink); padding: 3px 6px; margin-bottom: 3px; font-size: .74rem; line-height: 1.25; border-radius: 2px; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-decoration: none; }
+  .ev.auk { border-left-color: var(--bad); background: var(--bad-soft); }
+  .ev.moede { border-left-color: var(--warn); background: var(--warn-soft); }
+  .ev.past { opacity: .55; }
+  .ev:hover { filter: brightness(.96); }
+  .cal-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-2); margin: 8px 0 12px; }
+  .cal-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+  @media (max-width: 700px) { .cal-head { display: none; } .cal-week { grid-template-columns: 1fr; } .cal-week > div { min-height: 0; } .cal-week > div:empty { display: none; } }
+
+  /* ---------- auktioner ---------- */
+  .auk-head, .auk-row { display: grid; grid-template-columns: 96px minmax(200px, 2fr) 1fr 1fr 1.2fr 1.4fr 1.2fr; gap: 12px; padding: 10px 6px; align-items: center; }
+  .auk-head { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--line); font-weight: 600; }
+  .auk-row { border-bottom: 1px solid var(--line-soft); }
+  .auk-row .adr { font-family: var(--font-serif); font-size: 1.05rem; }
+  .auk-row .cell { font-size: .86rem; }
+  .auk-row .cell .l { display: block; font-size: .68rem; color: var(--ink-3); letter-spacing: .05em; text-transform: uppercase; }
+  .auk-row .bo { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 2px; text-align: left; }
+  .auk-row details summary { cursor: pointer; font-size: .78rem; color: var(--ink-2); }
+  .auk-row details p { font-size: .82rem; color: var(--ink-2); margin: 6px 0 0; max-width: 70ch; }
+  @media (max-width: 1100px) { .auk-head { display: none; } .auk-row { grid-template-columns: 96px 1fr 1fr; } .auk-row .adr-cell { grid-column: 2 / -1; } }
+  .auk-filters { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; font-size: .86rem; }
+
+  /* ---------- kuratorer ---------- */
+  .kur-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .kur-card { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 10px; align-content: start; }
+  .kur-card .who { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.15; }
+  .kur-card .firm { font-size: .84rem; color: var(--ink-2); }
+  .kur-card .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .kur-card .facts .l { font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+  .kur-card .facts .v { font-family: var(--font-mono); font-size: .95rem; }
+  .kur-card .boer { display: flex; flex-wrap: wrap; gap: 4px; }
+  .kur-card .boer button { border: 1px solid var(--line-soft); background: var(--paper); border-radius: 999px; padding: 2px 9px; font-size: .76rem; cursor: pointer; color: var(--ink-2); }
+  .kur-card .boer button:hover { border-color: var(--accent); color: var(--ink); }
+  .kur-card .links { margin-top: 2px; }
+
+  /* ---------- faktaark (print) ---------- */
+  #print-sheet { display: none; }
+  @media print {
+    body > *:not(#print-sheet) { display: none !important; }
+    #print-sheet { display: block; font-size: 11pt; color: #000; background: #fff; padding: 0; max-width: none; }
+    #print-sheet h1 { font-family: var(--font-serif); font-weight: 500; font-size: 22pt; margin: 0 0 2pt; }
+    #print-sheet .ps-eyebrow { font-size: 8pt; letter-spacing: .12em; text-transform: uppercase; color: #555; }
+    #print-sheet .ps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt 14pt; margin: 10pt 0; }
+    #print-sheet .ps-grid .l { font-size: 7.5pt; letter-spacing: .05em; text-transform: uppercase; color: #555; }
+    #print-sheet .ps-grid .v { font-family: var(--font-mono); font-size: 10.5pt; }
+    #print-sheet h2 { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: #333; border-bottom: 1px solid #999; padding-bottom: 2pt; margin: 12pt 0 6pt; }
+    #print-sheet table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+    #print-sheet th, #print-sheet td { text-align: left; padding: 3pt 6pt 3pt 0; border-bottom: 1px solid #ddd; vertical-align: top; }
+    #print-sheet .ps-foot { margin-top: 14pt; font-size: 8pt; color: #555; border-top: 1px solid #999; padding-top: 4pt; }
+    #print-sheet ul { margin: 0; padding-left: 14pt; }
+    #print-sheet a { color: #000; text-decoration: none; }
+    #print-sheet .ps-url { font-family: var(--font-mono); font-size: 8pt; color: #333; word-break: break-all; }
+  }
 </style>
 
 <header class="masthead">
@@ -307,6 +430,8 @@
   <div class="chart"><h3>Ejendomstype</h3><div class="sub">Afledt af branche og ejendomme</div><div id="ch-type" class="hbar"></div></div>
 </section>
 
+<nav class="views" id="views" aria-label="Visninger"></nav>
+
 <div class="workspace">
   <aside class="rail" aria-label="Filtre">
     <h2>Filtre</h2>
@@ -316,8 +441,10 @@
     <div class="field"><label class="lab">Konfidens</label><div class="chips" id="f-conf"></div></div>
     <div class="field"><label class="lab" for="f-score">Mindste score</label>
       <div class="range"><input type="range" id="f-score" min="0" max="100" step="5" value="40"><output id="f-score-out">40</output></div></div>
+    <div class="field"><label class="lab">Min liste</label><div class="chips" id="f-wl"></div></div>
     <div class="field">
       <label class="check"><input type="checkbox" id="f-props"> Kun boer med kendte ejendomme</label>
+      <label class="check"><input type="checkbox" id="f-rel"> Kun boer med koncern-relationer</label>
       <label class="check"><input type="checkbox" id="f-open"> Kun åbne anmeldelsesfrister</label>
       <label class="check"><input type="checkbox" id="f-auk"> Med tvangsauktion</label>
     </div>
@@ -332,21 +459,48 @@
       <div class="count" id="count">–</div>
       <div class="sort" id="sort" aria-label="Sortér efter"></div>
     </div>
-    <div class="register">
-      <div class="row-head">
-        <div>Score</div><div>Selskab</div><div>Dekret</div><div>Region</div><div>Ejendom</div><div>Bogført værdi</div><div>Belåning</div><div>Kurator · frist</div>
+    <section class="view" id="view-register">
+      <div class="register">
+        <div class="row-head">
+          <div>Score</div><div>Selskab</div><div>Dekret</div><div>Region</div><div>Ejendom</div><div>Bogført værdi</div><div>Belåning</div><div>Kurator · frist</div>
+        </div>
+        <div id="rows"></div>
       </div>
-      <div id="rows"></div>
-    </div>
+    </section>
+    <section class="view" id="view-kort" hidden>
+      <div class="map-wrap">
+        <div class="map" id="map"></div>
+        <aside class="map-side" id="map-side"></aside>
+      </div>
+    </section>
+    <section class="view" id="view-kalender" hidden>
+      <div class="cal-legend"><span><i style="background:var(--data)"></i>Anmeldelsesfrist</span><span><i style="background:var(--warn)"></i>Skiftesamling / fordringsprøvelse</span><span><i style="background:var(--bad)"></i>Tvangsauktion</span></div>
+      <div class="cal" id="cal"></div>
+    </section>
+    <section class="view" id="view-auktioner" hidden>
+      <div class="auk-filters">
+        <label class="check"><input type="checkbox" id="a-future" checked> Kun kommende auktioner</label>
+        <label class="check"><input type="checkbox" id="a-bo"> Kun skyldnere der er konkursboer i registret</label>
+        <label class="check"><input type="checkbox" id="a-second"> Kun 2. auktion</label>
+      </div>
+      <div class="register">
+        <div class="auk-head"><div>Auktion</div><div>Ejendom</div><div>Type</div><div>Off. vurdering</div><div>Fogedret</div><div>Skødehaver</div><div>Rekvirent</div></div>
+        <div id="auk-rows"></div>
+      </div>
+    </section>
+    <section class="view" id="view-kuratorer" hidden>
+      <div class="kur-grid" id="kur-grid"></div>
+    </section>
   </main>
 </div>
 
 <div id="drawer-root"></div>
+<div id="print-sheet" aria-hidden="true"></div>
 
 <footer>
   <div class="cols">
     <div><h4>Metode</h4>
-      <p>Konkursdekreter hentes fra Statstidende. Hvert selskab beriges med CVR-data, seneste XBRL-årsrapport fra Erhvervsstyrelsen og opslag i Ejerfortegnelsen. Score 0–100 summerer uafhængige beviser for ejendomsejerskab; konfidens <em>høj</em> kræver direkte bevis (Ejerfortegnelsen eller tvangsauktion) eller bogførte ejendomme.</p></div>
+      <p>Konkursdekreter og tvangsauktioner hentes fra Statstidende. Hvert selskab beriges med CVR-data, seneste XBRL-årsrapport fra Erhvervsstyrelsen og opslag i Ejerfortegnelsen. »Min liste« og noter gemmes kun i din egen browser. Score 0–100 summerer uafhængige beviser for ejendomsejerskab; konfidens <em>høj</em> kræver direkte bevis (Ejerfortegnelsen eller tvangsauktion) eller bogførte ejendomme.</p></div>
     <div><h4>Frister</h4>
       <p>Anmeldelsesfristen er beregnet som 4 uger fra bekendtgørelsen (konkurslovens § 128). Tidsfrister, skiftesamlinger og fordringsprøvelser skal altid verificeres i selve meddelelsen og hos kurator.</p></div>
     <div><h4>Forbehold</h4>
@@ -380,11 +534,25 @@
     ['frist', 'Frist først', (a, b) => (a.anmeldelsesfrist || '9').localeCompare(b.anmeldelsesfrist || '9')],
   ];
 
-  const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), score: 40, props: false, open: false, auk: false, sort: 'score', current: null };
+  const WL_STATUS = ['Interessant', 'Kontaktet', 'Bud afgivet', 'Afvist'];
+  const VIEWS = [['register', 'Register'], ['kort', 'Kort'], ['kalender', 'Frist-kalender'], ['auktioner', 'Tvangsauktioner'], ['kuratorer', 'Kuratorer']];
+  const state = { q: '', region: new Set(), type: new Set(), conf: new Set(), wl: new Set(), score: 40, props: false, rel: false, open: false, auk: false, sort: 'score', current: null, view: 'register',
+                  aFuture: true, aBo: false, aSecond: false };
   try { Object.assign(state, JSON.parse(localStorage.getItem('propscreener.filters') || '{}'),
-        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), current: null }); } catch (e) {}
-  const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, open: state.open, auk: state.auk, sort: state.sort }));
+        { region: new Set(JSON.parse(localStorage.getItem('propscreener.region') || '[]')) , type: new Set(), conf: new Set(), wl: new Set(), current: null }); } catch (e) {}
+  if (!VIEWS.some(v => v[0] === state.view)) state.view = 'register';
+  const persist = () => { try { localStorage.setItem('propscreener.filters', JSON.stringify({ q: state.q, score: state.score, props: state.props, rel: state.rel, open: state.open, auk: state.auk, sort: state.sort, view: state.view, aFuture: state.aFuture, aBo: state.aBo, aSecond: state.aSecond }));
                                 localStorage.setItem('propscreener.region', JSON.stringify([...state.region])); } catch (e) {} };
+
+  // ---------- watchlist (gemmes kun i denne browser) ----------
+  let WATCH = {};
+  try { WATCH = JSON.parse(localStorage.getItem('propscreener.watch') || '{}') || {}; } catch (e) { WATCH = {}; }
+  const watchOf = (id) => WATCH[id] || null;
+  function setWatch(id, status, note) {
+    if (!status && !note) delete WATCH[id]; else WATCH[id] = { status: status || null, note: note || '', t: new Date().toISOString().slice(0, 10) };
+    try { localStorage.setItem('propscreener.watch', JSON.stringify(WATCH)); } catch (e) {}
+  }
+  const wlTag = (id) => { const w = watchOf(id); return w && w.status ? `<span class="wl ${esc(w.status.split(' ')[0])}" title="${esc(w.note || '')}">${esc(w.status)}</span>` : ''; };
 
   let DATA = null;
 
@@ -417,11 +585,14 @@
       if (state.type.size && !state.type.has(c.ejendomstype_hoved || 'Ukendt')) return false;
       if (state.conf.size && !state.conf.has(c.konfidens)) return false;
       if (state.props && !c.ejendomme.length) return false;
+      if (state.rel && !(c.relationer && c.relationer.length)) return false;
+      if (state.wl.size) { const w = watchOf(c.id); if (!w || !state.wl.has(w.status || '')) return false; }
       if (state.open && !(daysUntil(c.anmeldelsesfrist) >= 0)) return false;
       if (state.auk && !c.ejendomme.some(p => p.kilde === 'tvangsauktion')) return false;
       if (q) {
+        const w = watchOf(c.id);
         const hay = [c.selskab.navn, c.selskab.cvr, c.selskab.by, c.selskab.kommune, c.kurator.navn, c.kurator.firma,
-                     c.skifteret.navn, c.selskab.branchetekst, ...c.ejendomme.map(p => p.adresse)].join(' ').toLowerCase();
+                     c.skifteret.navn, c.selskab.branchetekst, w && w.note, ...(c.relationer || []).map(r => r.navn), ...c.ejendomme.map(p => p.adresse)].join(' ').toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -456,7 +627,7 @@
       ['Bogført ejendomsværdi', mio(book), 'kr.', 'sum af seneste årsrapporter'],
       ['Realkreditgæld', mio(mort), 'kr.', 'pant der skal indfries eller overtages'],
       ['Frister ≤ 14 dage', soon, '', 'anmeldelse af krav'],
-      ['Tvangsauktioner', auk, '', 'bekendtgjort i Statstidende'],
+      ['Tvangsauktioner', (DATA.auktioner || []).length || auk, '', (DATA.auktioner || []).length ? 'i auktionsregistret' : 'bekendtgjort i Statstidende'],
     ].map(([l, v, u, s]) => `<div><div class="eyebrow">${l}</div><div class="v">${v}${u ? `<small>${u}</small>` : ''}</div><div class="sub">${s}</div></div>`).join('');
   }
 
@@ -511,16 +682,18 @@
     chipGroup('f-region', REGIONS, state.region, dk);
     chipGroup('f-type', TYPES, state.type, dk);
     chipGroup('f-conf', CONF, state.conf, dk);
+    chipGroup('f-wl', WL_STATUS, state.wl, dk);
     const q = document.getElementById('q'); q.value = state.q; q.addEventListener('input', () => { state.q = q.value; update(); });
     const sc = document.getElementById('f-score'), out = document.getElementById('f-score-out');
     sc.value = state.score; out.value = state.score;
     sc.addEventListener('input', () => { state.score = +sc.value; out.value = sc.value; update(); });
-    [['f-props', 'props'], ['f-open', 'open'], ['f-auk', 'auk']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
+    [['f-props', 'props'], ['f-rel', 'rel'], ['f-open', 'open'], ['f-auk', 'auk']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
     document.getElementById('b-reset').addEventListener('click', () => {
-      Object.assign(state, { q: '', score: 0, props: false, open: false, auk: false }); state.region.clear(); state.type.clear(); state.conf.clear();
+      Object.assign(state, { q: '', score: 0, props: false, rel: false, open: false, auk: false }); state.region.clear(); state.type.clear(); state.conf.clear(); state.wl.clear();
       renderFiltersValues(); update();
     });
     document.getElementById('b-csv').addEventListener('click', copyCsv);
+    [['a-future', 'aFuture'], ['a-bo', 'aBo'], ['a-second', 'aSecond']].forEach(([id, k]) => { const el = document.getElementById(id); el.checked = state[k]; el.addEventListener('change', () => { state[k] = el.checked; update(); }); });
     document.querySelectorAll('.btn.primary').forEach(b => b.classList.toggle('dk', isDark()));
     const sort = document.getElementById('sort');
     sort.innerHTML = SORTS.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${state.sort === k}">${l}</button>`).join('');
@@ -528,28 +701,49 @@
   }
   function renderFiltersValues() {
     document.getElementById('q').value = state.q; document.getElementById('f-score').value = state.score; document.getElementById('f-score-out').value = state.score;
-    ['props', 'open', 'auk'].forEach(k => document.getElementById('f-' + k).checked = state[k]);
-    document.querySelectorAll('#f-region .chip, #f-type .chip, #f-conf .chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    ['props', 'rel', 'open', 'auk'].forEach(k => document.getElementById('f-' + k).checked = state[k]);
+    document.querySelectorAll('#f-region .chip, #f-type .chip, #f-conf .chip, #f-wl .chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
   }
 
   // ---------- render: rows ----------
+  function balanceParts(f) {
+    const propv = f.ejendomsvaerdi_bogfoert || 0, other = Math.max(0, (f.aktiver || 0) - propv), mort = f.realkreditgaeld || 0,
+          debt = Math.max(0, (f.samlet_gaeld || 0) - mort), eq = f.egenkapital || 0;
+    const total = Math.max(f.aktiver || 0, mort + debt + Math.max(eq, 0)) || 1;
+    return { propv, other, mort, debt, eq, total };
+  }
+  function miniGraph(f) {
+    if (!f.aktiver) return '';
+    const b = balanceParts(f);
+    const seg = (cls, v, l) => v > 0 ? `<i class="seg ${cls}" style="flex:${(v / b.total).toFixed(4)}" title="${l}: ${kr(v)}"></i>` : '';
+    return `<div class="mini" aria-label="Balance: ejendomme mod gæld og egenkapital"><div class="bar">${seg('prop', b.propv, 'Ejendomme')}${seg('other', b.other, 'Øvrige aktiver')}</div>
+      <div class="bar">${seg('mort', b.mort, 'Realkredit')}${seg('debt', b.debt, 'Anden gæld')}${b.eq >= 0 ? seg('eq', b.eq, 'Egenkapital') : seg('eqneg', -b.eq, 'Negativ egenkapital')}</div></div>`;
+  }
   function update() {
     persist();
     const list = visible();
+    renderViews(list);
+    document.querySelectorAll('.view').forEach(v => v.hidden = v.id !== 'view-' + state.view);
+    document.getElementById('sort').hidden = state.view !== 'register';
+    if (state.view === 'kort') { document.getElementById('count').innerHTML = `<b>${list.length}</b> boer på kortet`; renderMap(list); return; }
+    if (state.view === 'kalender') { document.getElementById('count').innerHTML = `Frister og auktioner for <b>${list.length}</b> boer`; renderCalendar(list); return; }
+    if (state.view === 'auktioner') { renderAuctions(); return; }
+    if (state.view === 'kuratorer') { renderKuratorer(list); return; }
     document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${DATA.cases.length} boer`;
     const rows = document.getElementById('rows');
     if (!list.length) { rows.innerHTML = '<div class="empty">Ingen boer matcher filtrene.</div>'; return; }
     rows.innerHTML = list.map(c => {
       const s = c.selskab, f = c.regnskab;
       const auk = c.ejendomme.some(p => p.kilde === 'tvangsauktion');
+      const nrel = (c.relationer || []).length;
       return `<button class="row" type="button" data-id="${esc(c.id)}" aria-current="${state.current === c.id}">
         <div class="meter-wrap">${meter(c)}<span class="s">${c.score}</span></div>
-        <div class="name-cell"><div class="name">${esc(s.navn || 'Ukendt selskab')}<span class="form">${esc(s.selskabsform || '')}</span></div>
-          <div class="meta"><span class="mono">CVR ${esc(s.cvr || '–')}</span> · ${esc(s.branchetekst || s.branchekode || 'branche ukendt')}${auk ? ' · <span class="tag auk">tvangsauktion</span>' : ''}</div></div>
+        <div class="name-cell"><div class="name">${esc(s.navn || 'Ukendt selskab')}<span class="form">${esc(s.selskabsform || '')}</span> ${wlTag(c.id)}</div>
+          <div class="meta"><span class="mono">CVR ${esc(s.cvr || '–')}</span> · ${esc(s.branchetekst || s.branchekode || 'branche ukendt')}${auk ? ' · <span class="tag auk">tvangsauktion</span>' : ''}${nrel ? ` · <span class="rel-n" title="Mulige koncernforbundne boer">⛓ ${nrel} relateret${nrel > 1 ? 'e' : ''}</span>` : ''}</div></div>
         <div class="cell"><span class="l">Dekret</span><span class="mono">${fmtDate(c.dekretdato || c.offentliggjort)}</span><br><span class="faint">${esc(shortCourt(c.skifteret.navn))}</span></div>
         <div class="cell"><span class="l">Region</span>${esc(s.region || '–')}<br><span class="faint">${esc(s.by || '')}</span></div>
         <div class="cell"><span class="l">Ejendom</span><span class="tag type">${esc(c.ejendomstype_hoved || 'Ukendt')}</span> <span class="tag ${c.konfidens}">${c.konfidens}</span><br><span class="faint">${c.ejendomme.length ? c.ejendomme.length + ' kendt' + (c.ejendomme.length > 1 ? 'e' : '') : 'ingen registreret'}</span></div>
-        <div class="cell right"><span class="l">Bogført værdi</span><span class="mono">${mio(propValue(c))}</span><br><span class="faint">${f.ejendomsvaerdi_bogfoert ? 'årsrapport ' + (f.regnskabsaar_slut || '').slice(0, 4) : (propValue(c) ? 'off. vurdering' : '')}</span></div>
+        <div class="cell right"><span class="l">Bogført værdi</span><span class="mono">${mio(propValue(c))}</span><br><span class="faint">${f.ejendomsvaerdi_bogfoert ? 'årsrapport ' + (f.regnskabsaar_slut || '').slice(0, 4) : (propValue(c) ? 'off. vurdering' : '')}</span>${miniGraph(f)}</div>
         <div class="cell right"><span class="l">Belåning</span><span class="mono">${pct(f.ltv_pct)}</span><br><span class="faint">${f.realkreditgaeld ? 'realkredit ' + mio(f.realkreditgaeld) : ''}</span></div>
         <div class="cell"><span class="l">Kurator · frist</span>${esc(c.kurator.navn || 'ukendt')}<br>${deadlineTag(c.anmeldelsesfrist)}</div>
       </button>`;
@@ -588,6 +782,13 @@
             <span>${esc(s.adresse || '')}${s.postnr ? ', ' + esc(s.postnr) + ' ' + esc(s.by || '') : ''}</span>
             <span class="tag ${c.konfidens}">konfidens ${c.konfidens}</span><span class="tag type">${esc(c.ejendomstype_hoved || 'Ukendt')}</span>
             <span class="mono">score ${c.score}</span>
+          </div>
+          <div class="wl-box">
+            <span class="lab">Min liste</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><select id="wl-status" aria-label="Status på min liste" style="max-width:180px"><option value="">Ikke på listen</option>${WL_STATUS.map(x => `<option value="${x}"${(watchOf(c.id) || {}).status === x ? ' selected' : ''}>${x}</option>`).join('')}</select>
+              <button class="btn" id="d-print" type="button" title="Åbner udskrift – vælg »Gem som PDF«">Faktaark (print/PDF)</button></div>
+            <span class="lab">Note</span>
+            <input id="wl-note" type="text" placeholder="Fx: ringet til kurator 12/9, datarum åbner uge 40" value="${esc((watchOf(c.id) || {}).note || '')}" aria-label="Note">
           </div>
         </div>
         <div class="drawer-body">
@@ -639,6 +840,16 @@
             <ul class="signals">${(c.signaler || []).map(x => `<li><span class="pt">+${x.point}</span><span>${esc(x.beskrivelse)}</span><span class="src">${esc(x.kilde)}</span></li>`).join('') || '<li><span class="pt">0</span><span>Ingen ejendomssignaler</span><span></span></li>'}</ul>
           </section>
 
+          <section class="sec"><h3>Koncern og relaterede boer (${(c.relationer || []).length})</h3>
+            ${(c.relationer || []).length ? `<ul class="rel">${c.relationer.map(r => `<li>
+                <div class="nm">${r.i_registret && DATA.cases.some(x => x.id === r.id) ? `<button type="button" data-open="${esc(r.id)}">${esc(r.navn || r.cvr)}</button>` : esc(r.navn || r.cvr)}
+                  <span class="faint" style="font-size:.78rem"> · CVR ${esc(r.cvr || '–')} · dekret ${fmtDate(r.dekretdato)}${r.by ? ' · ' + esc(r.by) : ''}</span></div>
+                <div><span class="tag ${r.konfidens || 'lav'}">score ${r.score ?? '–'}</span>${r.ejendomsvaerdi ? ` <span class="mono" style="font-size:.8rem">${mio(r.ejendomsvaerdi)}</span>` : ''}${!r.i_registret ? ' <span class="faint" style="font-size:.74rem">uden ejendomssignaler</span>' : ''}${r.statstidende_url ? ` <a href="${esc(r.statstidende_url)}" target="_blank" rel="noopener" style="font-size:.78rem">Statstidende ↗</a>` : ''}</div>
+                <div class="why">${(r.grund || []).map(g => `<i>${esc(g)}</i>`).join('')}${r.branchetekst ? `<span class="faint">${esc(r.branchetekst)}</span>` : ''}</div></li>`).join('')}</ul>
+              <p class="faint" style="font-size:.78rem;margin:8px 0 0">Relationer er afledt af adresse, ejer/ledelse, navnestamme og kurator/dekretdato for alle dekreter i perioden – de er indikationer, ikke registrerede koncernforhold. Bekræft i CVR under »Ejerforhold«.</p>`
+              : '<p class="faint">Ingen andre konkursboer i perioden deler adresse, ejer, navnestamme eller kurator/dekretdato med selskabet.</p>'}
+          </section>
+
           <section class="sec"><h3>Selskab</h3>
             <div class="kpis">
               ${kpi('Branche', esc((s.branchekode ? s.branchekode.replace(/(\d{2})(\d{2})(\d{2})/, '$1.$2.$3') + ' ' : '') + (s.branchetekst || '–')))}
@@ -662,6 +873,12 @@
     root.innerHTML = html;
     document.getElementById('d-close').addEventListener('click', closeDrawer);
     document.getElementById('backdrop').addEventListener('click', closeDrawer);
+    const sel = document.getElementById('wl-status'), note = document.getElementById('wl-note');
+    const saveWl = () => { setWatch(c.id, sel.value, note.value.trim()); toast(sel.value ? `Gemt på min liste: ${sel.value}` : 'Fjernet fra min liste'); update(); };
+    sel.addEventListener('change', saveWl);
+    note.addEventListener('change', saveWl);
+    document.getElementById('d-print').addEventListener('click', () => printSheet(c));
+    root.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.open)));
     document.getElementById('d-close').focus();
   }
   function kpi(l, v, neg) { return `<div class="kpi"><div class="l">${l}</div><div class="v${neg ? ' neg' : ''}">${v}</div></div>`; }
@@ -670,9 +887,10 @@
 
   // ---------- csv ----------
   function copyCsv() {
-    const cols = ['score', 'konfidens', 'cvr', 'navn', 'region', 'by', 'dekretdato', 'anmeldelsesfrist', 'kurator', 'kurator_email', 'kurator_telefon', 'ejendomstype', 'antal_ejendomme', 'ejendomsvaerdi', 'realkreditgaeld', 'ltv_pct', 'statstidende_url'];
+    const cols = ['score', 'konfidens', 'cvr', 'navn', 'region', 'by', 'dekretdato', 'anmeldelsesfrist', 'kurator', 'kurator_email', 'kurator_telefon', 'ejendomstype', 'antal_ejendomme', 'ejendomsvaerdi', 'realkreditgaeld', 'ltv_pct', 'relationer', 'min_liste', 'note', 'statstidende_url'];
     const lines = [cols.join(';')].concat(visible().map(c => [c.score, c.konfidens, c.selskab.cvr, c.selskab.navn, c.selskab.region, c.selskab.by, c.dekretdato, c.anmeldelsesfrist,
-      c.kurator.navn, c.kurator.email, c.kurator.telefon, c.ejendomstype_hoved, c.ejendomme.length, propValue(c), c.regnskab.realkreditgaeld, c.regnskab.ltv_pct, c.statstidende_url]
+      c.kurator.navn, c.kurator.email, c.kurator.telefon, c.ejendomstype_hoved, c.ejendomme.length, propValue(c), c.regnskab.realkreditgaeld, c.regnskab.ltv_pct,
+      (c.relationer || []).map(r => r.navn).join(', '), (watchOf(c.id) || {}).status, (watchOf(c.id) || {}).note, c.statstidende_url]
       .map(v => '"' + String(v ?? '').replace(/"/g, '""') + '"').join(';')));
     const text = lines.join('\n');
     const done = () => toast(`${lines.length - 1} rækker kopieret som CSV`);
@@ -681,10 +899,189 @@
   function fallbackCopy(text, done) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) { toast('Kunne ikke kopiere'); } ta.remove(); }
   function toast(msg) { const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
 
+
+  // ---------- visninger ----------
+  function renderViews(list) {
+    const nav = document.getElementById('views');
+    const auks = auctionsVisible();
+    const counts = { register: list.length, kort: list.filter(c => c.selskab.lat || c.ejendomme.some(p => p.lat)).length,
+                     kalender: calendarEvents(list).length, auktioner: auks.length, kuratorer: new Set(list.map(c => c.kurator.navn).filter(Boolean)).size };
+    nav.innerHTML = VIEWS.map(([k, l]) => `<button type="button" data-v="${k}" aria-pressed="${state.view === k}">${l}<span class="n">${counts[k]}</span></button>`).join('');
+    nav.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { state.view = b.dataset.v; update(); }));
+  }
+
+  // ---------- kort (inline SVG, ingen eksterne kortfliser) ----------
+  const DKMAP = {"path": "M61.7,429.4 62.8,421.9 60.1,410.9 60.4,406.2 63.4,394.9 53.8,393.5 53.3,400.3 48.6,404.8 46.2,402.9 45.3,399.3 46.2,388.5 47.8,385.6 51.1,385.1 56.3,388.0 52.9,391.0 53.1,392.6 64.0,393.7 60.7,373.6 61.6,366.7 59.4,353.4 58.2,350.6 56.2,349.0 43.9,346.9 40.6,343.7 33.3,332.5 33.3,331.5 35.1,331.2 33.5,329.6 29.8,329.9 27.5,333.2 30.1,337.2 27.9,339.2 33.8,343.2 34.6,345.7 33.5,346.1 23.8,337.9 15.8,334.5 15.7,332.3 20.3,319.9 22.8,308.3 23.0,302.4 18.5,270.7 20.3,272.3 22.3,283.4 23.8,287.3 22.8,293.9 23.8,296.3 36.3,287.9 39.5,284.5 40.0,282.1 38.3,277.2 34.0,271.0 33.1,261.2 31.0,257.9 20.2,252.8 19.5,254.0 19.0,269.8 17.8,269.4 16.9,265.4 16.7,251.6 19.0,239.1 18.0,188.7 22.6,171.2 24.2,167.3 25.9,165.8 27.0,168.9 24.5,175.9 27.0,176.8 28.7,180.8 32.9,182.0 31.7,182.7 31.8,186.4 33.0,188.4 33.9,187.0 33.4,184.8 39.9,183.9 43.5,184.6 49.8,189.8 54.0,184.8 56.4,191.6 56.8,196.1 59.8,199.2 67.0,198.7 68.3,196.6 69.0,188.7 69.9,187.0 65.6,183.4 64.7,180.1 63.4,179.3 63.4,177.9 68.2,176.6 73.4,167.8 82.4,165.9 76.3,163.9 79.2,157.8 85.6,152.2 90.4,153.0 94.3,150.8 97.8,152.6 99.0,157.8 103.5,165.9 101.2,166.5 98.8,170.3 96.8,170.8 97.1,173.2 94.0,176.8 93.1,180.7 94.1,186.7 96.8,184.9 97.8,180.1 101.8,179.8 100.6,177.9 99.0,178.8 101.8,172.8 101.3,176.1 111.6,176.9 112.1,180.2 109.5,184.8 111.1,187.8 115.6,191.8 117.3,188.7 118.4,189.7 119.4,188.6 119.4,186.7 117.6,185.8 114.6,187.9 113.0,187.4 113.6,180.4 115.6,171.6 114.0,167.8 111.1,166.8 105.3,170.6 103.6,170.7 102.9,168.8 103.8,167.1 107.5,164.8 108.9,160.3 105.1,156.9 103.4,151.8 103.5,150.0 106.3,145.2 106.3,143.5 105.4,141.0 102.4,139.0 105.4,132.4 109.6,127.6 111.9,126.5 112.6,124.0 124.6,120.0 136.8,124.0 135.7,126.6 138.5,127.9 145.1,117.9 150.9,115.1 154.8,116.0 163.4,115.1 158.6,110.7 153.7,108.1 146.9,114.7 143.9,112.1 136.3,116.4 129.2,116.5 109.1,123.2 98.5,115.1 99.0,117.0 98.3,117.9 92.6,121.0 88.9,119.5 81.2,125.6 80.5,123.6 77.1,123.1 75.7,124.0 76.9,125.2 73.9,127.9 69.9,130.0 67.0,129.2 63.2,130.5 61.9,134.3 58.5,139.0 57.4,145.4 54.3,150.0 51.6,150.5 48.0,153.5 47.3,155.4 48.0,162.6 46.7,164.9 50.7,164.9 51.3,166.6 50.8,167.9 48.7,168.8 44.8,166.8 41.2,168.8 41.2,169.9 45.1,168.8 48.7,170.8 55.6,168.8 55.6,173.9 57.4,177.2 55.4,180.4 52.4,181.5 53.5,182.7 49.6,180.7 44.2,172.4 36.7,168.2 34.0,164.0 32.6,157.9 27.9,155.9 29.4,164.4 29.3,166.4 28.0,166.6 27.3,156.8 28.2,150.8 30.0,146.4 44.6,123.0 48.9,118.5 55.6,108.1 58.2,105.7 71.7,108.3 82.3,105.0 87.6,100.2 107.9,103.1 115.3,102.2 122.6,99.5 129.6,94.9 135.7,88.3 153.1,56.8 167.6,37.6 186.3,36.2 198.7,29.2 214.0,15.4 218.6,14.4 222.9,16.4 218.5,18.0 214.3,22.0 207.6,31.9 205.2,40.6 207.4,47.2 211.5,53.2 214.6,60.3 212.2,66.7 212.3,74.3 214.0,89.2 206.5,96.7 203.6,102.6 198.4,122.1 196.2,123.9 189.7,124.6 182.9,120.1 177.9,114.8 169.8,110.1 165.9,114.7 164.3,115.1 165.9,115.2 170.4,111.4 185.9,124.4 195.7,126.1 192.9,130.0 191.8,137.0 194.2,155.7 197.9,164.7 196.1,166.0 189.5,164.9 186.8,166.8 182.1,163.9 165.9,173.3 154.5,174.9 154.5,175.9 158.2,176.5 170.4,172.8 174.3,170.8 175.4,168.8 178.5,169.7 180.3,168.3 181.2,165.4 182.5,165.1 185.1,165.9 184.5,167.8 189.9,168.9 197.4,166.6 198.9,169.8 199.3,174.6 197.9,178.8 187.7,187.8 187.0,197.6 185.1,200.7 188.6,199.8 188.7,190.3 189.5,188.3 197.1,181.2 198.7,182.3 199.9,187.8 208.4,193.2 215.0,194.0 236.9,191.3 239.6,192.7 243.4,198.7 248.4,203.8 245.6,209.8 244.2,220.4 236.7,231.0 231.5,235.6 231.3,242.1 230.2,246.5 227.6,247.0 224.8,244.9 222.9,241.6 225.8,240.4 226.0,236.6 221.2,234.4 214.8,243.0 216.8,252.6 214.7,254.2 212.3,254.0 210.1,248.6 212.9,246.6 211.6,244.2 208.2,243.2 203.4,245.0 199.0,239.6 205.1,236.6 209.0,239.5 210.1,237.5 208.7,235.2 208.8,233.4 211.2,228.6 206.2,225.5 204.1,226.5 202.9,225.6 202.2,228.7 199.8,230.3 195.6,237.7 191.2,241.3 188.1,247.4 191.3,254.5 191.8,258.2 191.5,261.0 189.0,266.5 192.4,265.3 192.8,266.4 190.7,270.9 190.2,281.4 185.1,287.3 186.4,290.6 185.0,293.1 182.5,292.5 180.3,287.4 178.5,286.0 170.6,286.4 165.8,290.2 159.5,290.5 161.6,292.7 174.0,296.0 171.7,303.0 171.9,304.1 175.1,304.4 175.1,305.4 171.8,307.3 170.8,308.9 171.7,311.3 170.7,312.4 168.8,311.2 153.4,316.3 144.9,311.3 134.3,310.9 134.0,312.4 135.7,313.2 142.6,314.0 146.8,318.3 149.1,322.8 158.4,323.2 150.6,331.2 147.0,332.9 146.5,336.2 138.4,339.2 134.6,338.2 135.1,339.2 133.9,340.9 129.6,343.2 132.5,344.0 138.0,342.2 142.7,344.8 143.0,346.5 141.8,350.2 136.8,352.2 138.5,357.1 137.9,361.1 141.5,364.5 141.8,365.9 140.6,368.1 144.5,374.4 146.4,375.8 146.8,378.2 144.7,385.6 141.3,386.9 135.4,386.3 133.5,389.0 128.6,391.6 128.6,392.9 130.7,393.9 130.7,394.9 126.2,396.0 131.5,397.5 134.6,401.9 131.1,406.1 124.4,408.9 125.1,410.9 126.1,410.9 133.5,409.0 136.2,406.9 142.9,412.9 148.5,415.0 151.1,428.8 150.2,429.9 146.9,429.1 146.2,430.9 149.6,433.8 149.7,438.2 147.5,438.2 145.7,434.8 139.7,433.9 140.6,431.9 138.7,428.4 141.4,426.9 141.0,425.3 139.1,424.1 136.8,424.8 133.5,431.9 131.5,431.9 126.2,437.0 124.6,441.9 122.0,442.2 120.4,440.6 114.9,443.2 107.5,442.5 106.3,437.3 105.0,436.1 81.4,429.1 74.9,428.0 67.5,430.4 61.7,429.4Z M319.9,453.3 316.8,456.8 320.0,458.2 319.7,461.4 317.1,464.5 313.5,465.7 300.9,462.8 292.9,465.7 289.8,468.7 280.4,463.7 266.6,453.2 253.8,449.1 251.3,445.3 251.8,442.9 253.8,441.6 258.6,441.8 260.1,438.8 257.7,437.4 252.9,430.9 252.9,428.4 254.0,426.1 257.4,421.8 270.1,419.9 278.8,426.1 281.3,431.6 299.6,441.8 297.8,436.4 304.6,433.8 303.6,430.4 304.0,426.9 310.2,432.7 312.6,437.4 315.2,438.8 314.0,439.8 315.2,442.4 320.2,447.3 320.7,451.6 319.9,453.3Z M206.8,428.9 210.7,432.5 210.7,434.8 212.3,435.8 206.0,437.4 203.2,439.8 201.4,438.9 187.4,423.1 185.6,417.6 193.7,422.9 198.6,429.3 202.0,429.5 201.8,425.9 204.8,432.8 207.6,432.6 206.8,428.9Z M366.3,409.9 373.4,411.4 376.0,414.0 377.3,419.0 376.4,421.4 360.7,420.1 355.1,423.8 349.3,430.9 341.8,427.8 342.9,426.9 342.9,424.3 344.5,422.9 342.9,420.9 345.8,418.3 346.8,419.0 347.4,417.9 346.8,415.9 351.3,417.9 355.7,415.9 355.2,413.3 356.3,410.9 352.9,407.9 352.8,405.5 355.1,405.0 356.9,408.2 359.6,409.5 366.3,409.9Z M171.2,417.9 175.5,431.6 166.5,434.3 160.1,430.9 160.1,429.9 162.2,428.7 169.6,432.8 165.7,428.3 161.2,426.9 158.4,428.9 155.2,428.7 152.5,426.4 150.9,422.6 150.7,417.0 156.3,422.2 157.9,421.8 156.7,419.4 157.5,418.6 153.0,414.3 154.0,411.9 147.6,412.5 143.9,411.3 143.4,409.9 145.7,406.9 141.5,407.8 140.1,405.9 147.3,402.4 153.5,402.6 158.4,408.5 167.1,412.1 171.2,417.9Z M239.6,407.9 240.2,403.8 242.9,396.6 246.0,391.1 247.8,392.0 244.0,409.9 238.2,423.4 230.4,450.3 229.6,452.1 226.5,452.8 223.5,442.9 219.0,437.8 222.2,437.1 225.8,430.6 226.9,431.6 229.0,430.9 228.5,427.8 225.6,427.8 226.8,424.3 239.6,407.9Z M587.9,394.9 586.8,396.9 587.4,401.7 584.3,407.8 584.9,411.7 581.6,415.5 574.3,414.2 564.2,408.8 557.9,406.9 550.1,399.6 551.1,396.5 552.1,380.0 556.3,369.4 563.6,378.2 569.7,382.9 573.5,382.9 575.7,386.9 587.9,394.9Z M46.7,364.1 44.7,364.9 40.7,359.1 38.2,352.2 37.6,349.0 38.5,347.0 41.2,346.2 41.5,350.5 45.7,352.2 44.6,357.1 46.7,364.1Z M224.3,405.0 219.3,405.2 213.9,410.0 201.8,406.9 199.7,405.2 195.6,405.1 189.3,400.9 186.9,400.7 186.2,405.0 181.8,400.9 175.6,400.9 181.8,396.0 182.9,393.9 179.4,387.6 173.5,388.0 170.6,385.6 169.6,386.9 169.8,389.2 172.6,393.6 172.3,396.0 169.1,395.7 169.4,392.2 168.0,387.5 168.6,383.4 163.1,381.1 160.9,377.5 161.8,373.6 160.7,368.6 160.9,363.6 154.3,361.6 152.3,359.0 156.5,357.8 157.3,356.2 152.9,354.2 155.6,354.2 154.8,352.5 149.0,350.6 146.2,347.1 146.2,346.2 148.4,347.2 152.9,350.8 155.0,350.2 147.0,342.9 144.0,342.3 150.4,335.2 156.3,334.6 157.3,338.2 161.2,340.4 165.4,338.8 173.5,333.2 183.9,329.7 189.5,326.3 192.3,326.3 192.9,329.3 194.1,328.8 194.1,324.7 195.2,324.4 203.3,329.6 206.3,333.9 212.3,336.8 208.8,337.0 208.4,338.7 209.9,340.3 209.7,342.4 207.3,343.2 204.3,347.6 205.6,350.0 208.5,349.9 210.1,346.7 219.7,342.7 219.1,340.7 216.2,338.2 216.5,336.9 219.0,339.2 220.0,337.6 218.5,330.2 220.1,332.2 219.6,325.2 221.2,325.1 227.4,334.3 227.8,337.7 230.1,340.3 230.5,343.4 223.6,347.5 216.6,347.3 215.2,350.0 218.5,350.2 218.0,349.0 218.6,347.5 226.9,350.3 234.9,362.2 237.9,372.1 234.9,369.6 233.5,370.0 232.9,372.6 235.6,377.9 236.4,383.2 233.8,396.3 229.8,403.9 227.5,405.2 224.3,405.0Z M382.4,314.3 387.1,326.9 384.3,330.2 377.5,334.3 375.8,331.5 374.6,327.6 374.6,324.3 378.4,319.2 381.8,312.4 382.4,314.3Z M215.6,288.4 217.4,284.3 217.3,281.8 216.2,279.4 212.1,276.0 212.3,272.4 214.4,269.2 215.4,269.6 216.0,275.7 217.3,278.2 221.2,280.4 220.2,283.4 220.7,286.4 222.1,288.4 224.3,285.4 224.5,286.4 221.2,291.4 220.9,298.8 220.1,301.4 217.5,303.9 214.6,303.1 212.5,299.7 211.7,294.3 212.2,291.4 215.6,288.4Z M335.7,429.9 340.3,429.1 346.2,437.8 337.9,445.3 334.3,452.8 329.2,458.8 329.9,476.9 328.3,477.0 321.8,463.8 321.9,460.8 325.1,454.8 322.4,453.6 322.9,449.7 317.0,442.7 315.7,436.9 312.1,432.8 311.5,425.2 309.0,422.9 309.0,421.8 312.9,419.0 316.5,421.8 319.3,419.2 321.3,419.6 322.9,417.0 319.6,409.9 310.4,405.0 305.3,404.7 301.3,400.9 318.4,406.9 316.6,403.6 311.6,399.7 309.5,396.0 316.5,394.7 316.8,393.0 315.0,391.5 310.4,391.8 309.0,389.9 310.9,386.9 310.8,385.2 309.5,384.0 307.7,384.1 304.0,388.0 285.7,382.1 281.3,384.0 275.7,384.0 277.3,386.0 272.5,385.2 271.2,383.1 270.7,379.1 273.1,380.0 274.6,377.1 271.0,378.2 270.9,373.8 264.5,367.9 263.7,366.6 266.6,365.6 266.8,364.1 262.9,363.1 261.4,366.1 260.1,366.1 258.5,362.2 258.5,361.1 261.8,361.2 267.9,357.4 268.7,355.6 268.6,353.9 267.6,353.1 267.3,348.3 264.6,341.4 262.3,339.4 257.9,339.7 258.5,336.7 262.5,335.4 263.4,333.3 262.1,327.8 258.5,323.2 254.5,320.8 245.7,318.3 245.7,317.3 258.5,318.3 257.1,315.9 250.1,312.4 248.1,309.0 242.5,308.0 241.3,306.3 254.0,308.3 264.5,305.4 264.5,306.3 261.2,307.2 264.6,311.8 267.0,312.5 269.0,311.3 265.7,308.3 266.8,307.2 271.8,308.3 279.9,304.4 280.9,303.1 281.8,296.9 279.6,292.4 283.7,294.2 287.3,291.4 290.1,292.0 292.3,288.0 292.7,282.3 290.1,277.5 276.0,273.6 274.2,272.0 273.5,269.4 283.8,274.5 298.5,275.9 299.9,277.4 313.6,273.2 314.6,274.5 311.3,280.4 312.2,282.0 311.7,282.9 309.0,282.4 309.5,280.4 307.0,280.6 305.1,282.4 310.7,293.5 309.5,296.4 304.6,296.4 302.1,299.4 300.6,299.4 300.6,300.5 306.0,300.5 311.3,298.4 313.2,305.4 304.6,308.1 306.8,309.4 311.9,308.0 315.8,314.3 314.6,318.3 317.1,315.6 320.7,307.8 319.6,304.4 321.8,297.3 327.4,294.3 328.7,290.2 325.1,281.2 325.7,278.5 327.1,278.6 332.3,283.1 331.8,287.3 335.0,295.6 336.4,301.6 336.6,307.2 334.6,310.3 330.2,309.4 329.0,313.5 325.1,318.3 329.1,317.6 331.0,315.6 331.2,313.3 332.5,312.7 335.0,314.4 335.7,316.3 333.2,315.4 333.4,317.1 337.3,319.2 339.9,311.6 340.1,308.3 336.8,292.4 336.5,285.2 334.6,277.5 331.8,274.7 321.5,277.8 320.2,276.5 321.5,272.9 345.8,253.9 352.3,250.2 359.1,250.5 366.1,254.5 371.8,254.5 382.9,262.6 378.4,269.4 374.0,279.4 377.4,286.0 379.1,293.8 381.3,298.4 380.1,308.3 381.3,311.3 376.3,320.0 373.2,322.1 371.9,325.7 370.1,326.3 365.2,324.3 359.3,327.8 352.6,334.9 348.5,343.4 350.7,351.1 354.6,354.7 362.3,356.2 367.7,361.4 370.1,372.1 364.3,377.2 347.3,381.3 342.3,386.5 341.3,389.5 341.8,392.0 340.5,393.8 339.0,393.0 339.6,389.8 338.6,387.9 337.0,387.3 333.6,390.0 333.4,391.5 336.2,393.9 346.1,395.6 346.8,399.0 345.8,401.0 342.0,403.6 345.7,410.9 345.6,413.7 344.5,415.2 335.1,419.0 327.9,413.4 325.1,412.9 325.7,413.9 324.1,415.0 324.4,417.7 322.9,422.9 323.5,424.5 325.8,425.7 326.9,424.8 326.2,422.9 329.0,421.8 331.0,425.9 335.7,429.9Z M292.9,167.8 292.7,165.7 293.6,164.9 304.0,162.9 304.0,164.0 301.5,165.5 298.5,169.9 295.4,170.3 292.9,167.8Z M75.1,160.8 70.6,164.9 70.2,167.4 61.5,170.4 55.6,161.9 53.2,160.8 49.8,161.6 50.5,159.2 53.0,157.3 52.3,153.9 54.6,152.3 60.3,151.5 62.3,148.9 58.5,148.0 61.2,142.9 60.9,138.9 72.3,136.0 74.1,136.6 78.4,129.0 80.3,130.1 82.4,126.6 83.4,127.0 81.8,131.0 82.9,134.9 81.1,141.8 80.1,142.9 79.7,140.1 78.4,139.0 76.2,141.0 77.4,149.8 79.5,151.9 77.3,153.0 78.4,153.9 75.1,160.8Z M262.9,75.3 266.8,76.2 267.3,78.0 266.7,80.8 263.0,79.8 256.7,81.2 259.0,84.5 258.7,86.8 253.7,94.2 251.2,94.8 247.4,89.6 242.3,87.9 239.6,85.1 247.0,79.3 252.2,78.5 253.6,76.9 259.6,77.0 262.9,75.3Z", "lon0": 7.9, "lat1": 57.85, "k": 0.5577451089796901, "s": 145.3730024265145, "W": 600, "H": 487};
+  const CITIES = [['København', 12.568, 55.676], ['Aarhus', 10.203, 56.162], ['Odense', 10.388, 55.403], ['Aalborg', 9.921, 57.048], ['Esbjerg', 8.452, 55.476], ['Rønne', 14.70, 55.10]];
+  const proj = (lon, lat) => [(lon - DKMAP.lon0) * DKMAP.k * DKMAP.s, (DKMAP.lat1 - lat) * DKMAP.s];
+  function renderMap(list) {
+    const pts = [];
+    list.forEach(c => {
+      if (c.selskab.lat && c.selskab.lon) pts.push({ id: c.id, kind: 'bo', cls: c.konfidens, lat: c.selskab.lat, lon: c.selskab.lon, v: propValue(c) || 0,
+        label: `${c.selskab.navn} · ${c.selskab.by || ''} · score ${c.score}` });
+      c.ejendomme.forEach(p => { if (p.lat && p.lon) pts.push({ id: c.id, kind: p.kilde === 'tvangsauktion' ? 'auk' : 'prop', cls: p.kilde === 'tvangsauktion' ? 'auk' : 'prop', lat: p.lat, lon: p.lon, v: p.offentlig_vurdering || 0,
+        label: `${p.adresse || 'Ejendom'} · ${c.selskab.navn}${p.kilde === 'tvangsauktion' ? ' · tvangsauktion ' + fmtDate(p.tvangsauktion_dato) : ''}` }); });
+    });
+    const r = (v) => 3.5 + Math.min(6, Math.sqrt(v / 1e6));
+    let svg = `<svg viewBox="-4 -4 ${DKMAP.W + 8} ${DKMAP.H + 8}" role="img" aria-label="Kort over Danmark med konkursboer og ejendomme">`;
+    svg += `<rect class="sea" x="-4" y="-4" width="${DKMAP.W + 8}" height="${DKMAP.H + 8}"/>`;
+    for (let lat = 55; lat <= 57.5; lat += 0.5) { const [, y] = proj(8, lat); svg += `<line class="grat" x1="0" x2="${DKMAP.W}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}"/>`; }
+    for (let lon = 8; lon <= 15; lon += 1) { const [x] = proj(lon, 56); svg += `<line class="grat" y1="0" y2="${DKMAP.H}" x1="${x.toFixed(1)}" x2="${x.toFixed(1)}"/>`; }
+    svg += `<path class="land" d="${DKMAP.path}"/>`;
+    CITIES.forEach(([n, lon, lat]) => { const [x, y] = proj(lon, lat); svg += `<text class="city" x="${(x + 5).toFixed(1)}" y="${(y - 4).toFixed(1)}">${n}</text>`; });
+    pts.sort((a, b) => (a.kind === 'bo' ? 0 : 1) - (b.kind === 'bo' ? 0 : 1)).forEach(p => {
+      const [x, y] = proj(p.lon, p.lat);
+      if (x < -2 || y < -2 || x > DKMAP.W + 2 || y > DKMAP.H + 2) return;
+      svg += p.kind === 'bo'
+        ? `<circle class="pt ${p.cls}${state.current === p.id ? ' cur' : ''}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r(p.v).toFixed(1)}" data-id="${esc(p.id)}" tabindex="0"><title>${esc(p.label)}</title></circle>`
+        : `<rect class="pt ${p.cls}${state.current === p.id ? ' cur' : ''}" x="${(x - 4).toFixed(1)}" y="${(y - 4).toFixed(1)}" width="8" height="8" data-id="${esc(p.id)}" tabindex="0"><title>${esc(p.label)}</title></rect>`;
+    });
+    svg += '</svg>';
+    const map = document.getElementById('map');
+    map.innerHTML = pts.length || true ? svg : '';
+    map.querySelectorAll('.pt').forEach(el => { el.addEventListener('click', () => openDrawer(el.dataset.id)); el.addEventListener('keydown', e => { if (e.key === 'Enter') openDrawer(el.dataset.id); }); });
+    const missing = list.length - new Set(pts.filter(p => p.kind === 'bo').map(p => p.id)).size;
+    document.getElementById('map-side').innerHTML = `
+      <div class="legend"><div class="eyebrow" style="margin-bottom:4px">Signatur</div>
+        <span><i style="background:var(--good)"></i>Bo, konfidens høj (hjemsted)</span><span><i style="background:var(--data)"></i>Bo, konfidens middel</span><span><i style="background:var(--data-soft)"></i>Bo, konfidens lav</span>
+        <span><i class="sq" style="background:var(--accent)"></i>Kendt ejendom (Ejerfortegnelsen)</span><span><i class="sq" style="background:var(--bad)"></i>Ejendom på tvangsauktion</span>
+        <div class="faint" style="font-size:.76rem;margin-top:4px">Cirklens størrelse følger bogført ejendomsværdi. Positioner er geokodet via DAWA${missing ? `; ${missing} bo${missing > 1 ? 'er' : ''} mangler koordinater` : ''}.</div></div>
+      <div><div class="eyebrow" style="margin-bottom:6px">Boer på kortet</div>
+        <ul class="map-list">${list.filter(c => c.selskab.lat || c.ejendomme.some(p => p.lat)).map(c => `<li><button type="button" data-id="${esc(c.id)}"><b>${esc(c.selskab.navn)}</b><br><span class="mono">${esc(c.selskab.postnr || '')} ${esc(c.selskab.by || '')}</span> · ${mio(propValue(c))}</button></li>`).join('') || '<li class="faint">Ingen boer med koordinater i udvalget.</li>'}</ul></div>`;
+    document.querySelectorAll('.map-list button').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.id)));
+  }
+
+  // ---------- frist-kalender ----------
+  function calendarEvents(list) {
+    const ev = [];
+    list.forEach(c => {
+      if (c.anmeldelsesfrist) ev.push({ d: c.anmeldelsesfrist, cls: 'frist', id: c.id, t: `Frist · ${c.selskab.navn}`, title: `Anmeldelsesfrist for krav i ${c.selskab.navn} (kurator ${c.kurator.navn || 'ukendt'})` });
+      if (c.skiftesamling) ev.push({ d: c.skiftesamling, cls: 'moede', id: c.id, t: `Skiftesamling · ${c.selskab.navn}`, title: `Skiftesamling, ${c.skifteret.navn || ''}` });
+      if (c.fordringsproevelse) ev.push({ d: c.fordringsproevelse, cls: 'moede', id: c.id, t: `Fordringsprøvelse · ${c.selskab.navn}`, title: 'Fordringsprøvelse' });
+      c.ejendomme.forEach(p => { if (p.tvangsauktion_dato) ev.push({ d: p.tvangsauktion_dato, cls: 'auk', id: c.id, t: `Auktion · ${p.adresse || c.selskab.navn}`, title: `Tvangsauktion over ${p.adresse || 'ejendom'} (${c.selskab.navn})` }); });
+    });
+    const boIds = new Set(list.map(c => c.id));
+    auctionsVisible().forEach(a => { if (a.auktionsdato && !(a.konkursbo_id && boIds.has(a.konkursbo_id)))
+      ev.push({ d: a.auktionsdato, cls: 'auk', url: a.statstidende_url, t: `Auktion · ${a.adresse || ''}, ${a.by || ''}`, title: `${a.auktionsnummer || 1}. auktion ${a.tidspunkt || ''} ${a.fogedret || ''} · ${a.skoedehaver || ''}` }); });
+    return ev;
+  }
+  function renderCalendar(list) {
+    const ev = calendarEvents(list);
+    const byDay = {}; ev.forEach(e => (byDay[e.d] = byDay[e.d] || []).push(e));
+    const start = new Date(today); start.setDate(start.getDate() - ((start.getDay() + 6) % 7) - 7);  // sidste uge + 9 frem
+    const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const DAYS = ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør', 'Søn'];
+    let html = `<div class="cal-head"><div>Uge</div>${DAYS.map(d => `<div>${d}</div>`).join('')}</div>`;
+    for (let w = 0; w < 10; w++) {
+      const mon = new Date(start); mon.setDate(mon.getDate() + 7 * w);
+      html += `<div class="cal-week"><div class="wk">uge ${isoWeek(mon)}<b>${mon.toLocaleDateString('da-DK', { month: 'short' })}</b></div>`;
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(mon); d.setDate(d.getDate() + i); const k = iso(d); const evs = byDay[k] || [];
+        const isToday = k === iso(today), past = d < today;
+        html += `<div class="${isToday ? 'today' : ''}${i >= 5 ? ' we' : ''}"><div class="d">${d.getDate()}.</div>${evs.slice(0, 6).map(e =>
+          e.url ? `<a class="ev ${e.cls}${past ? ' past' : ''}" href="${esc(e.url)}" target="_blank" rel="noopener" title="${esc(e.title)}">${esc(e.t)}</a>`
+                : `<button type="button" class="ev ${e.cls}${past ? ' past' : ''}" data-id="${esc(e.id)}" title="${esc(e.title)}">${esc(e.t)}</button>`).join('')}${evs.length > 6 ? `<div class="faint" style="font-size:.72rem">+${evs.length - 6} mere</div>` : ''}</div>`;
+      }
+      html += '</div>';
+    }
+    const cal = document.getElementById('cal');
+    cal.innerHTML = html;
+    cal.querySelectorAll('button.ev').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.id)));
+  }
+
+  // ---------- tvangsauktioner (selvstændigt register) ----------
+  function auctionsVisible() {
+    const q = state.q.trim().toLowerCase();
+    return (DATA.auktioner || []).filter(a => {
+      if (state.region.size && !state.region.has(a.region || '')) return false;
+      if (state.aFuture && !(daysUntil(a.auktionsdato) >= 0)) return false;
+      if (state.aBo && !a.konkursbo_id) return false;
+      if (state.aSecond && a.auktionsnummer !== 2) return false;
+      if (q) { const hay = [a.adresse, a.postnr, a.by, a.skoedehaver, a.rekvirent, a.fogedret, a.matrikel, a.ejendomstype].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
+      return true;
+    }).sort((a, b) => (a.auktionsdato || '9').localeCompare(b.auktionsdato || '9'));
+  }
+  function renderAuctions() {
+    const list = auctionsVisible();
+    const all = (DATA.auktioner || []).length;
+    document.getElementById('count').innerHTML = `<b>${list.length}</b> af ${all} tvangsauktioner over fast ejendom`;
+    const rows = document.getElementById('auk-rows');
+    if (!all) { rows.innerHTML = '<div class="empty">Ingen auktioner i datasættet endnu – registret fyldes ved næste kørsel af pipelinen.</div>'; return; }
+    if (!list.length) { rows.innerHTML = '<div class="empty">Ingen auktioner matcher filtrene.</div>'; return; }
+    rows.innerHTML = list.map(a => {
+      const bo = a.konkursbo_id ? DATA.cases.find(c => c.id === a.konkursbo_id) : null;
+      const d = daysUntil(a.auktionsdato);
+      return `<div class="auk-row">
+        <div class="cell"><span class="l">Auktion</span><span class="mono">${fmtDate(a.auktionsdato)}</span>${a.tidspunkt ? `<br><span class="mono faint">kl. ${esc(a.tidspunkt)}</span>` : ''}<br>${d != null && d >= 0 && d <= 14 ? `<span class="tag deadline soon">om ${d} d.</span>` : d != null && d < 0 ? '<span class="tag deadline past">afholdt</span>' : ''} ${a.auktionsnummer === 2 ? '<span class="tag auk">2. auktion</span>' : ''}</div>
+        <div class="cell adr-cell"><div class="adr">${esc(a.adresse || 'Adresse ukendt')}</div><span class="faint">${esc(a.postnr || '')} ${esc(a.by || '')}${a.matrikel ? ' · matr. ' + esc(a.matrikel) : ''}</span>
+          ${a.beskrivelse ? `<details><summary>Beskrivelse</summary><p>${esc(a.beskrivelse)}</p></details>` : ''}</div>
+        <div class="cell"><span class="l">Type</span>${esc(a.ejendomstype || '–')}<br><span class="faint">${esc(a.region || '')}</span></div>
+        <div class="cell"><span class="l">Off. vurdering</span><span class="mono">${mio(a.offentlig_vurdering)}</span>${a.grundvaerdi ? `<br><span class="faint">grund ${mio(a.grundvaerdi)}</span>` : ''}${a.vurderingsdato ? `<br><span class="faint">pr. ${fmtDate(a.vurderingsdato)}</span>` : ''}</div>
+        <div class="cell"><span class="l">Fogedret</span>${esc(a.fogedret || '–')}</div>
+        <div class="cell"><span class="l">Skødehaver</span>${bo ? `<button class="bo" type="button" data-id="${esc(bo.id)}">${esc(a.skoedehaver || bo.selskab.navn)}</button><br><span class="tag hoej">konkursbo i registret</span>` : esc(a.skoedehaver || '–')}${a.skyldner_cvr && !bo ? `<br><span class="mono faint">CVR ${esc(a.skyldner_cvr)}</span>` : ''}</div>
+        <div class="cell"><span class="l">Rekvirent</span>${esc(a.rekvirent || '–')}${a.rekvirent_telefon ? `<br><a class="mono" href="tel:${esc(a.rekvirent_telefon)}">${esc(a.rekvirent_telefon)}</a>` : ''}${a.besigtigelse ? `<br><span class="faint" style="font-size:.76rem">besigtigelse: ${esc(a.besigtigelse)}</span>` : ''}<br><a href="${esc(a.statstidende_url || '#')}" target="_blank" rel="noopener" style="font-size:.8rem">Statstidende ↗</a></div>
+      </div>`;
+    }).join('');
+    rows.querySelectorAll('.bo').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.id)));
+  }
+
+  // ---------- kuratorer ----------
+  function renderKuratorer(list) {
+    const groups = {};
+    list.forEach(c => { const k = c.kurator.navn || 'Ikke angivet'; (groups[k] = groups[k] || { navn: k, k: c.kurator, boer: [] }).boer.push(c); });
+    const arr = Object.values(groups).sort((a, b) => b.boer.length - a.boer.length || b.boer.reduce((s, c) => s + (propValue(c) || 0), 0) - a.boer.reduce((s, c) => s + (propValue(c) || 0), 0));
+    document.getElementById('count').innerHTML = `<b>${arr.length}</b> kuratorer for ${list.length} boer`;
+    const allByKur = {}; DATA.cases.forEach(c => { const k = c.kurator.navn || 'Ikke angivet'; allByKur[k] = (allByKur[k] || 0) + 1; });
+    document.getElementById('kur-grid').innerHTML = arr.map(g => {
+      const val = g.boer.reduce((s, c) => s + (propValue(c) || 0), 0), props = g.boer.reduce((s, c) => s + c.ejendomme.length, 0);
+      const regions = [...new Set(g.boer.map(c => c.selskab.region).filter(Boolean))];
+      const open = g.boer.filter(c => daysUntil(c.anmeldelsesfrist) >= 0).length;
+      const k = g.k;
+      return `<article class="kur-card">
+        <div><div class="who">${esc(g.navn)}</div><div class="firm">${esc([k.firma, k.adresse, [k.postnr, k.by].filter(Boolean).join(' ')].filter(Boolean).join(' · '))}</div></div>
+        <div class="facts"><div><div class="l">Boer i udvalg</div><div class="v">${g.boer.length}${allByKur[g.navn] > g.boer.length ? `<span class="faint" style="font-size:.75rem"> / ${allByKur[g.navn]}</span>` : ''}</div></div>
+          <div><div class="l">Ejendomsværdi</div><div class="v">${mio(val)}</div></div><div><div class="l">Kendte ejendomme</div><div class="v">${props}</div></div>
+          <div><div class="l">Åbne frister</div><div class="v">${open}</div></div><div><div class="l">Regioner</div><div class="v" style="font-size:.8rem;font-family:var(--font-display)">${esc(regions.join(', ') || '–')}</div></div>
+          <div><div class="l">Høj konfidens</div><div class="v">${g.boer.filter(c => c.konfidens === 'høj').length}</div></div></div>
+        <div class="boer">${g.boer.sort((a, b) => b.score - a.score).map(c => `<button type="button" data-id="${esc(c.id)}" title="score ${c.score} · ${esc(c.selskab.by || '')}">${esc(c.selskab.navn)}</button>`).join('')}</div>
+        <div class="links">${k.email ? `<a href="mailto:${esc(k.email)}">${esc(k.email)}</a>` : ''}${k.telefon ? `<a href="tel:${esc(k.telefon.replace(/\s/g, ''))}" class="mono">${esc(k.telefon)}</a>` : ''}${k.advokatsamfundet_url ? `<a href="${esc(k.advokatsamfundet_url)}" target="_blank" rel="noopener">Advokatsamfundet ↗</a>` : ''}</div>
+      </article>`;
+    }).join('') || '<div class="empty">Ingen kuratorer i udvalget.</div>';
+    document.querySelectorAll('.kur-card .boer button').forEach(b => b.addEventListener('click', () => openDrawer(b.dataset.id)));
+  }
+
+  // ---------- faktaark ----------
+  function printSheet(c) {
+    const s = c.selskab, f = c.regnskab, k = c.kurator, w = watchOf(c.id);
+    const row = (l, v) => `<div><div class="l">${l}</div><div class="v">${v}</div></div>`;
+    const sheet = document.getElementById('print-sheet');
+    sheet.innerHTML = `
+      <div class="ps-eyebrow">Faktaark · konkursbo med fast ejendom · ${fmtDate(new Date().toISOString())}</div>
+      <h1>${esc(s.navn || 'Ukendt selskab')}</h1>
+      <div>CVR ${esc(s.cvr || '–')} · ${esc(s.selskabsform || '')} · ${esc([s.adresse, [s.postnr, s.by].filter(Boolean).join(' ')].filter(Boolean).join(', '))} · ${esc(s.branchetekst || '')}</div>
+      <div class="ps-grid">${row('Score / konfidens', `${c.score} / ${esc(c.konfidens)}`)}${row('Ejendomstype', esc(c.ejendomstype_hoved || '–'))}${row('Dekret', fmtDate(c.dekretdato))}${row('Anmeldelsesfrist', fmtDate(c.anmeldelsesfrist))}
+        ${row('Bogført ejendomsværdi', mio(f.ejendomsvaerdi_bogfoert))}${row('Realkreditgæld', mio(f.realkreditgaeld))}${row('Belåning (LTV)', pct(f.ltv_pct))}${row('Egenkapital', mio(f.egenkapital))}
+        ${row('Balance', mio(f.aktiver))}${row('Samlet gæld', mio(f.samlet_gaeld))}${row('Årets resultat', mio(f.aarets_resultat))}${row('Regnskabsår', esc(f.regnskabsaar_slut || '–'))}</div>
+      <h2>Kurator og skifteret</h2>
+      <div>${esc(k.navn || 'Ikke angivet')}${k.firma ? ', ' + esc(k.firma) : ''}${k.adresse ? ', ' + esc(k.adresse) : ''}${k.postnr ? ', ' + esc(k.postnr) + ' ' + esc(k.by || '') : ''}${k.telefon ? ' · tlf. ' + esc(k.telefon) : ''}${k.email ? ' · ' + esc(k.email) : ''}<br>
+        ${esc(c.skifteret.navn || '')}${c.skifteret.sagsnummer ? ' · ' + esc(c.skifteret.sagsnummer) : ''} · fristdag ${fmtDate(c.fristdag)} · bekendtgjort ${fmtDate(c.offentliggjort)}${c.skiftesamling ? ' · skiftesamling ' + fmtDate(c.skiftesamling) : ''}</div>
+      <h2>Ejendomme (${c.ejendomme.length})</h2>
+      ${c.ejendomme.length ? `<table><thead><tr><th>Adresse</th><th>Type</th><th>BFE / matrikel</th><th>Off. vurdering</th><th>Kilde</th></tr></thead><tbody>${c.ejendomme.map(p => `<tr><td>${esc(p.adresse || '–')} ${esc(p.postnr || '')} ${esc(p.by || '')}</td><td>${esc(p.ejendomstype || '–')}${p.ejerandel ? ' (' + esc(p.ejerandel) + ')' : ''}</td><td>${esc(p.bfe_nummer || p.matrikel || '–')}</td><td>${mio(p.offentlig_vurdering)}</td><td>${esc(p.kilde || '')}${p.tvangsauktion_dato ? ', auktion ' + fmtDate(p.tvangsauktion_dato) : ''}</td></tr>`).join('')}</tbody></table>` : '<div>Ingen ejendomme registreret i Ejerfortegnelsen eller via tvangsauktion – indikationen bygger på regnskab, branche og navn.</div>'}
+      <h2>Hvorfor er boet med (${c.score} point)</h2>
+      <ul>${(c.signaler || []).map(x => `<li>+${x.point} ${esc(x.beskrivelse)} <span class="faint">(${esc(x.kilde)})</span></li>`).join('')}</ul>
+      ${(c.relationer || []).length ? `<h2>Mulige koncernforbundne boer</h2><ul>${c.relationer.map(r => `<li>${esc(r.navn || r.cvr)} (CVR ${esc(r.cvr || '–')}, dekret ${fmtDate(r.dekretdato)}, score ${r.score ?? '–'}) – ${esc((r.grund || []).join('; '))}</li>`).join('')}</ul>` : ''}
+      ${w && (w.status || w.note) ? `<h2>Egne noter</h2><div>${esc(w.status || '')}${w.note ? ' – ' + esc(w.note) : ''}</div>` : ''}
+      <h2>Kilder</h2>
+      <div class="ps-url">${Object.entries(c.links || {}).filter(([k2]) => ['statstidende', 'cvr', 'aarsrapport', 'tvangsauktion', 'ois'].includes(k2)).map(([k2, u]) => `${k2}: ${esc(u)}`).join('<br>')}</div>
+      <div class="ps-foot">Genereret af Konkursbo-registret (github.com/daniel-doc-lab/propscreener) ud fra Statstidende, CVR, Erhvervsstyrelsens regnskaber og Datafordeleren. Nøgletal er fra seneste årsrapport og afspejler ikke nødvendigvis boets aktuelle aktiver. Screening, ikke rådgivning – kontakt kurator.</div>`;
+    setTimeout(() => window.print(), 50);
+  }
+
   // ---------- boot ----------
   function boot(data) {
     DATA = data;
-    DATA.cases.forEach(c => { c.ejendomme = c.ejendomme || []; c.regnskab = c.regnskab || {}; c.selskab = c.selskab || {}; c.kurator = c.kurator || {}; c.skifteret = c.skifteret || {}; c.links = c.links || {}; });
+    DATA.auktioner = DATA.auktioner || [];
+    DATA.cases.forEach(c => { c.ejendomme = c.ejendomme || []; c.regnskab = c.regnskab || {}; c.selskab = c.selskab || {}; c.kurator = c.kurator || {}; c.skifteret = c.skifteret || {}; c.links = c.links || {}; c.relationer = c.relationer || []; });
     renderHeader(); renderCharts(); renderFilters(); update();
   }
   if (EMBEDDED) boot(EMBEDDED);

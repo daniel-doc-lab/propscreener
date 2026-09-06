@@ -11,8 +11,9 @@ import random
 from datetime import date, timedelta
 
 from .detect import score_case
-from .models import BankruptcyCase, Company, Financials, Kurator, Property, Skifteret
+from .models import Auction, BankruptcyCase, Company, Financials, Kurator, Property, Skifteret
 from .pipeline import RunStats, add_investor_links
+from .relations import compute_relations
 from .sources.cvr import region_for_postnr
 from .sources.regnskab import derive_ratios
 
@@ -28,6 +29,25 @@ CITIES = [
     ("8900", "Randers C", "Randers"), ("9000", "Aalborg", "Aalborg"), ("9400", "Nørresundby", "Aalborg"),
     ("9800", "Hjørring", "Hjørring"), ("3700", "Rønne", "Bornholm"),
 ]
+CITY_COORDS = {
+    "1550": (55.672, 12.560), "2100": (55.705, 12.580), "2200": (55.695, 12.550), "2300": (55.655, 12.600),
+    "2900": (55.730, 12.570), "2600": (55.667, 12.400), "3000": (56.036, 12.610), "3400": (55.930, 12.300),
+    "4000": (55.640, 12.080), "4700": (55.230, 11.760), "4200": (55.400, 11.350), "4800": (54.770, 11.870),
+    "5000": (55.400, 10.390), "5700": (55.060, 10.610), "6000": (55.490, 9.470), "6700": (55.470, 8.450),
+    "6200": (55.040, 9.420), "7100": (55.710, 9.530), "7400": (56.140, 8.980), "7500": (56.360, 8.620),
+    "8000": (56.150, 10.210), "8200": (56.190, 10.190), "8600": (56.170, 9.550), "8700": (55.860, 9.850),
+    "8900": (56.460, 10.030), "9000": (57.050, 9.920), "9400": (57.060, 9.920), "9800": (57.460, 9.980),
+    "3700": (55.100, 14.700),
+}
+
+
+def _jitter(rng: random.Random, postnr: str | None) -> tuple[float | None, float | None]:
+    c = CITY_COORDS.get(postnr or "")
+    if not c:
+        return None, None
+    return round(c[0] + rng.uniform(-0.03, 0.03), 5), round(c[1] + rng.uniform(-0.05, 0.05), 5)
+
+
 STREETS = ["Vestergade", "Nørregade", "Søndergade", "Østergade", "Havnegade", "Jernbanegade", "Kirkevej",
            "Strandvejen", "Industrivej", "Møllevej", "Bredgade", "Algade", "Torvegade", "Skolegade", "Parkvej"]
 PREFIX = ["Nordhavn", "Amager", "Fjord", "Kyst", "Bakke", "Å", "Søndre", "Vestre", "Havne", "Bro", "Skov", "Eng",
@@ -138,6 +158,7 @@ def generate(n: int = 60, seed: int = 2026, days_back: int = 90) -> tuple[list[B
                 ledelse=[f"{rng.choice(FIRST)} {rng.choice(LAST)}"],
                 formaal="Selskabets formål er at eje og udleje fast ejendom samt hermed beslægtet virksomhed." if is_prop else
                         "Selskabets formål er at drive handel og service.",
+                lat=_jitter(rng, postnr)[0], lon=_jitter(rng, postnr)[1],
             ),
             kilder=["demo"],
         )
@@ -183,7 +204,7 @@ def generate(n: int = 60, seed: int = 2026, days_back: int = 90) -> tuple[list[B
                     ejendomstype=ptype, ejerandel="1/1", kilde="ejerfortegnelsen",
                     offentlig_vurdering=int(book / n_props * rng.uniform(0.7, 1.15) / 100_000) * 100_000,
                     grundareal_m2=rng.randint(200, 6000), bygningsareal_m2=rng.randint(120, 4000),
-                    lat=round(rng.uniform(54.6, 57.7), 4), lon=round(rng.uniform(8.1, 12.6), 4),
+                    lat=_jitter(rng, p_post)[0], lon=_jitter(rng, p_post)[1],
                 ))
             case.kilder.append("ejerfortegnelsen")
         if is_prop and rng.random() < 0.18:
@@ -193,7 +214,7 @@ def generate(n: int = 60, seed: int = 2026, days_back: int = 90) -> tuple[list[B
                 offentlig_vurdering=rng.randint(15, 400) * 100_000,
                 tvangsauktion_dato=(today + timedelta(days=rng.randint(7, 60))).isoformat(),
                 tvangsauktion_url=f"https://www.statstidende.dk/messages/demo-auk-{i:04d}",
-                lat=round(rng.uniform(54.6, 57.7), 4), lon=round(rng.uniform(8.1, 12.6), 4),
+                lat=_jitter(rng, postnr)[0], lon=_jitter(rng, postnr)[1],
             ))
             case.kilder.append("tvangsauktion")
         case.raa_tekst = _dekret_tekst(case)
@@ -207,4 +228,36 @@ def generate(n: int = 60, seed: int = 2026, days_back: int = 90) -> tuple[list[B
                      beriget_cvr=n, beriget_regnskab=sum(1 for c in cases if c.regnskab.aktiver),
                      beriget_ejf=sum(1 for c in cases if any(p.kilde == "ejerfortegnelsen" for p in c.ejendomme)),
                      kilder_aktive=["demo"], min_score=0)
+    stats.boer_med_relationer = compute_relations(cases, 0)
     return cases, stats
+
+
+def demo_auctions(cases: list[BankruptcyCase], seed: int = 2026, extra: int = 25) -> list[Auction]:
+    """Fiktivt auktionsregister: auktioner på boernes ejendomme plus løse auktioner (private skyldnere)."""
+    rng = random.Random(seed + 1)
+    out: list[Auction] = []
+    for c in cases:
+        for p in c.ejendomme:
+            if p.kilde == "tvangsauktion":
+                out.append(Auction(id=f"demo-auk-{c.id}-{len(out)}", statstidende_url=p.tvangsauktion_url,
+                                   offentliggjort=c.offentliggjort, auktionsdato=p.tvangsauktion_dato,
+                                   tidspunkt="10:00", auktionsnummer=1, fogedret=c.skifteret.navn, adresse=p.adresse,
+                                   postnr=p.postnr, by=p.by, region=region_for_postnr(p.postnr), matrikel=p.matrikel,
+                                   ejendomstype=p.ejendomstype, offentlig_vurdering=p.offentlig_vurdering,
+                                   skoedehaver=c.selskab.navn, skyldner_cvr=c.selskab.cvr, konkursbo_id=c.id,
+                                   lat=p.lat, lon=p.lon, beskrivelse="Demodata – fiktiv ejendom."))
+    today = date.today()
+    for i in range(extra):
+        postnr, by, _ = rng.choice(CITIES)
+        d = today + timedelta(days=rng.randint(-10, 60))
+        out.append(Auction(id=f"demo-auk-x{i}", statstidende_url="https://www.statstidende.dk", auktionsdato=d.isoformat(),
+                           offentliggjort=(d - timedelta(days=21)).isoformat(), tidspunkt=f"{rng.randint(9, 14):02d}:00",
+                           auktionsnummer=rng.choice([1, 1, 2]), fogedret=f"Retten i {by.split()[0]}",
+                           adresse=f"{rng.choice(STREETS)} {rng.randint(1, 90)}", postnr=postnr, by=by,
+                           region=region_for_postnr(postnr), ejendomstype=rng.choice(["Beboelse", "Ejerlejlighed", "Erhvervsejendom", "Grund"]),
+                           offentlig_vurdering=rng.randint(6, 90) * 100_000, grundvaerdi=rng.randint(1, 20) * 100_000,
+                           skoedehaver=f"{rng.choice(FIRST)} {rng.choice(LAST)}", rekvirent=rng.choice(LAW_FIRMS),
+                           lat=_jitter(rng, postnr)[0], lon=_jitter(rng, postnr)[1],
+                           beskrivelse="Demodata – fiktiv ejendom."))
+    out.sort(key=lambda a: a.auktionsdato or "")
+    return out

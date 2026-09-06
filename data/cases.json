@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-05T08:59:26+00:00",
+  "genereret": "2026-09-06T07:17:57+00:00",
   "version": "0.1.0",
   "antal": 52,
   "demo": false,
@@ -14,15 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-05T08:20:57+00:00",
-   "dekreter": 966,
-   "tvangsauktioner": 2,
-   "beriget_cvr": 964,
-   "beriget_regnskab": 735,
+   "started": "2026-09-06T07:16:11+00:00",
+   "dekreter": 76,
+   "tvangsauktioner": 0,
+   "auktioner_i_alt": 44,
+   "boer_med_relationer": 9,
+   "beriget_cvr": 76,
+   "beriget_regnskab": 57,
    "beriget_ejf": 0,
-   "over_min_score": 51,
+   "over_min_score": 1,
    "min_score": 25,
-   "bevaret_fra_tidligere": 1,
+   "bevaret_fra_tidligere": 51,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -32,9 +34,7 @@
     "dawa",
     "ejerfortegnelsen"
    ],
-   "fejl": [
-    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
-   ]
+   "fejl": []
   }
  },
  "cases": [
@@ -82,7 +82,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/33377088",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -149,6 +151,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:14+00:00"
   },
   {
@@ -195,7 +198,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34484872",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -268,6 +273,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:11+00:00"
   },
   {
@@ -314,7 +320,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/21032794",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -386,6 +394,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:09+00:00"
   },
   {
@@ -432,7 +441,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -537,6 +548,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:08+00:00"
   },
   {
@@ -583,7 +595,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32439284",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -655,6 +669,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:10+00:00"
   },
   {
@@ -701,7 +716,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41553308",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -771,6 +788,7 @@
     "apicvr-rest"
    ],
    "noter": [],
+   "relationer": [],
    "sidst_opdateret": "2026-09-04T10:59:54+00:00"
   },
   {
@@ -817,7 +835,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/38252712",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-10-31",
@@ -883,6 +903,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:19+00:00"
   },
   {
@@ -929,7 +950,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40523286",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -996,6 +1019,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:20+00:00"
   },
   {
@@ -1042,7 +1066,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42854980",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1108,6 +1134,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:22+00:00"
   },
   {
@@ -1154,7 +1181,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43839284",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1220,6 +1249,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:29+00:00"
   },
   {
@@ -1266,7 +1296,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42536857",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1326,6 +1358,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:28+00:00"
   },
   {
@@ -1372,7 +1405,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32100279",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -1438,6 +1473,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:12+00:00"
   },
   {
@@ -1484,7 +1520,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42347841",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1544,6 +1582,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:37+00:00"
   },
   {
@@ -1590,7 +1629,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40590641",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1650,6 +1691,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:13+00:00"
   },
   {
@@ -1696,7 +1738,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32277470",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1756,6 +1800,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:18+00:00"
   },
   {
@@ -1802,7 +1847,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37540811",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1862,6 +1909,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:17+00:00"
   },
   {
@@ -1908,7 +1956,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/35889981",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -1968,6 +2018,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:16+00:00"
   },
   {
@@ -2014,7 +2065,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/26270871",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2074,6 +2127,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:15+00:00"
   },
   {
@@ -2120,7 +2174,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36492139",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2180,6 +2236,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:21+00:00"
   },
   {
@@ -2226,7 +2283,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37902896",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2287,6 +2346,7 @@
     "Selskabet var 'under likvidation' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:24+00:00"
   },
   {
@@ -2333,7 +2393,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36893575",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -2393,6 +2455,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:23+00:00"
   },
   {
@@ -2439,7 +2502,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41982659",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -2499,6 +2564,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:25+00:00"
   },
   {
@@ -2545,7 +2611,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/20402644",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2605,6 +2673,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:45:20+00:00"
   },
   {
@@ -2651,7 +2720,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40445935",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -2705,6 +2776,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:27+00:00"
   },
   {
@@ -2751,7 +2823,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/12830033",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": null,
@@ -2810,6 +2884,7 @@
     "Ingen XBRL-årsrapport fundet (nystiftet, holding uden pligt eller kun PDF)",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:55:16+00:00"
   },
   {
@@ -2856,7 +2931,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40207422",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-06-30",
@@ -2917,6 +2994,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:45:08+00:00"
   },
   {
@@ -2963,7 +3041,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39276445",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -3023,6 +3103,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:45:05+00:00"
   },
   {
@@ -3069,7 +3150,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43723758",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3130,6 +3213,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:51+00:00"
   },
   {
@@ -3176,7 +3260,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44145227",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3230,6 +3316,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:26+00:00"
   },
   {
@@ -3276,7 +3363,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41298332",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2022-12-31",
@@ -3330,6 +3419,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:40+00:00"
   },
   {
@@ -3376,7 +3466,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37867462",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3430,6 +3522,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:44+00:00"
   },
   {
@@ -3476,7 +3569,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43781626",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -3530,6 +3625,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:43+00:00"
   },
   {
@@ -3576,7 +3672,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32569633",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3630,6 +3728,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:42+00:00"
   },
   {
@@ -3676,7 +3775,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43729225",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3730,6 +3831,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:41+00:00"
   },
   {
@@ -3776,7 +3878,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41727586",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3830,6 +3934,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:39+00:00"
   },
   {
@@ -3876,7 +3981,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/10214343",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -3930,6 +4037,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:38+00:00"
   },
   {
@@ -3976,7 +4084,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/84895210",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -4030,6 +4140,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:36+00:00"
   },
   {
@@ -4076,7 +4187,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34895562",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -4130,6 +4243,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:35+00:00"
   },
   {
@@ -4176,7 +4290,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/37700789",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-09-30",
@@ -4230,6 +4346,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:34+00:00"
   },
   {
@@ -4276,7 +4393,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43258842",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -4331,6 +4450,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:33+00:00"
   },
   {
@@ -4377,7 +4497,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/14412107",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -4431,6 +4553,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:32+00:00"
   },
   {
@@ -4477,7 +4600,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39775298",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -4531,6 +4656,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:31+00:00"
   },
   {
@@ -4577,7 +4703,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32887902",
-    "formaal": null
+    "formaal": null,
+    "lat": 55.77655204,
+    "lon": 8.71969732
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -4631,7 +4759,8 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "sidst_opdateret": "2026-09-05T08:44:30+00:00"
+   "relationer": [],
+   "sidst_opdateret": "2026-09-06T07:16:48+00:00"
   },
   {
    "id": "25155688",
@@ -4677,7 +4806,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/25155688",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-06-30",
@@ -4731,6 +4862,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:58:48+00:00"
   },
   {
@@ -4777,7 +4909,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40465820",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2023-12-31",
@@ -4838,6 +4972,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:45+00:00"
   },
   {
@@ -4884,7 +5019,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27983944",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -4939,6 +5076,7 @@
     "Selskabet var 'under tvangsopløsning' ved dekretet",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:55:07+00:00"
   },
   {
@@ -4985,7 +5123,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40096957",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-09-30",
@@ -5039,6 +5179,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:52:31+00:00"
   },
   {
@@ -5085,7 +5226,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40134999",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5139,6 +5282,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:52:12+00:00"
   },
   {
@@ -5185,7 +5329,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43321137",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5239,6 +5385,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:48:31+00:00"
   },
   {
@@ -5285,7 +5432,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40313761",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5339,6 +5488,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:47+00:00"
   },
   {
@@ -5385,7 +5535,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42984523",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -5439,6 +5591,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:46+00:00"
   },
   {
@@ -5485,7 +5638,9 @@
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/45690725",
-    "formaal": null
+    "formaal": null,
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -5539,6 +5694,7 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
+   "relationer": [],
    "sidst_opdateret": "2026-09-05T08:44:45+00:00"
   }
  ]

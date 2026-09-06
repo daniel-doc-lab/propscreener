@@ -37,7 +37,7 @@ from typing import Any, Iterable
 
 from ..config import Settings
 from ..http import Http, HttpError
-from ..models import BankruptcyCase, Kurator, Property, Skifteret
+from ..models import Auction, BankruptcyCase, Kurator, Property, Skifteret
 from .cvr import region_for_postnr
 
 log = logging.getLogger(__name__)
@@ -706,6 +706,83 @@ def parse_tvangsauktion(msg: RawMessage) -> Property:
     else:
         p.ejendomstype = "Samlet fast ejendom"
     return p
+
+
+AUKTION_NR_RE = re.compile(r"(\d)\.\s*auktion", re.IGNORECASE)
+VURDERING_RE = re.compile(r"pr\.?\s*" + DATE_ANY + r"\s*kr\.?\s*([\d.]+)(?:\s*heraf\s*grundværdi\s*kr\.?\s*([\d.]+))?", re.IGNORECASE)
+
+
+def _first(f: dict[str, Any], prefix: str) -> list[str]:
+    return [str(v) for k, v in sorted(f.items()) if k.startswith(prefix) and v not in (None, "")]
+
+
+def auction_from_message(msg: RawMessage) -> Auction:
+    """Tvangsauktion som selvstændig post (register). Feltnavne verificeret mod rigtige
+    meddelelser 5/9-2026: ejendom/#n, ejendomsværdi/#1, skødehaver ifølge tingbogsattest/#1,
+    begæreren af auktionen (rekvirenten)/#n, dato, tid og sted for afholdelse af auktion/…"""
+    f = msg.felter
+    prop = parse_tvangsauktion(msg)
+    cvr, navn = auction_debtor_keys(msg)
+    a = Auction(id=msg.id, statstidende_url=msg.url, offentliggjort=msg.offentliggjort,
+                auktionsdato=prop.tvangsauktion_dato, adresse=prop.adresse, postnr=prop.postnr, by=prop.by,
+                matrikel=prop.matrikel, ejendomstype=prop.ejendomstype, offentlig_vurdering=prop.offentlig_vurdering,
+                skoedehaver=navn, skyldner_cvr=cvr)
+    a.region = region_for_postnr(a.postnr)
+    m = AUKTION_NR_RE.search((msg.overskrift or "") + " " + " ".join(_first(f, "ejendom/")))
+    a.auktionsnummer = int(m.group(1)) if m else 1
+    a.tidspunkt = f.get("dato, tid og sted for afholdelse af auktion/tidspunkt") or f.get("tidspunkt")
+    sted = _first(f, "dato, tid og sted for afholdelse af auktion/#")
+    a.fogedret = next((x for x in sted if re.match(r"^(Retten|Fogedretten|Sø- og Handelsretten)", x)), None)
+    if not a.fogedret:
+        mm = re.search(r"\b(Retten i [A-ZÆØÅ][\wæøå]+(?: [A-ZÆØÅ][\wæøå]+)?)", msg.tekst)
+        a.fogedret = mm.group(1) if mm else None
+    rekv = _first(f, "begæreren af auktionen (rekvirenten)/#")
+    a.rekvirent = _clean(rekv[0]) if rekv else None
+    a.rekvirent_telefon = f.get("begæreren af auktionen (rekvirenten)/telefon")
+    bes = [v for k, v in sorted(f.items()) if k.startswith("henvendelse vedr. besigtigelse") and k.endswith("/#1")]
+    a.besigtigelse = _clean(bes[0]) if bes else None
+    ev = f.get("ejendomsværdi/#1") or f.get("summary/ejendomsværdi") or ""
+    mv = VURDERING_RE.search(ev)
+    if mv:
+        a.vurderingsdato = parse_date(mv.group(1))
+        a.offentlig_vurdering = _kr(mv.group(2)) or a.offentlig_vurdering
+        a.grundvaerdi = _kr(mv.group(3)) if mv.group(3) else None
+    desc = f.get("/#1") or ""
+    if not desc:  # beskrivelsen ligger som fritekst efter ejendomsblokken
+        parts = msg.tekst.split("Danmark\n", 1)
+        desc = parts[1] if len(parts) == 2 else ""
+    desc = re.sub(r"\s+", " ", desc).strip()
+    a.beskrivelse = (desc[:600] + "…") if len(desc) > 600 else (desc or None)
+    a.ejendomstype = classify_auction_type(desc, msg.tekst)
+    if a.fogedret:
+        a.fogedret = re.split(r",\s*(?:mødelokale|retssal|lokale|sal)\b", a.fogedret, flags=re.IGNORECASE)[0].strip()
+    return a
+
+
+AUCTION_TYPES: tuple[tuple[str, str], ...] = (
+    ("Ejerlejlighed", r"ejerlejlighed"),
+    ("Sommerhus", r"sommerhus|fritidshus|fritidsbolig|feriebolig"),
+    ("Landbrug", r"landbrug|landejendom|nedlagt landbrug|bedrift|hektar|\bha\b"),
+    ("Erhvervsejendom", r"erhvervsejendom|erhvervsareal|erhvervslokaler|erhvervslejemål|kontor|lager|butik|fabrik|"
+                        r"industri|værksted|restaurant|hotel|domicil|blandet bolig og erhverv|blandet beboelse"),
+    ("Beboelse", r"enfamilie\w*|villa|parcelhus|rækkehus|r[æe]kkehus|dobbelthus|beboelsesejendom|udlejningsejendom|"
+                 r"boligejendom|etageejendom|helårsbolig|stuehus|boligareal|beboelse|bolig\b"),
+    ("Grund", r"ubebygget|byggegrund|\bgrund\b|parcel\b|sommerhusgrund"),
+)
+
+
+def classify_auction_type(beskrivelse: str, tekst: str) -> str:
+    """Ejendomstype ud fra beskrivelsens indledning (overskrift + første linjer). Første match i
+    prioriteret rækkefølge vinder; ejerlejlighed og sommerhus før den brede "bolig"-klasse."""
+    head = (beskrivelse or "")[:260].lower()
+    for name, pat in AUCTION_TYPES:
+        if re.search(pat, head):
+            return name
+    body = (beskrivelse or tekst or "")[:1200].lower()
+    for name, pat in AUCTION_TYPES:
+        if re.search(pat, body):
+            return name
+    return "Fast ejendom"
 
 
 def auction_debtor_keys(msg: RawMessage) -> tuple[str | None, str | None]:

@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from . import __version__
-from .models import BankruptcyCase
+from .models import Auction, BankruptcyCase
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
 DATA_MARKER = "/*__PROPSCREENER_DATA__*/null"
@@ -53,7 +53,8 @@ CSV_COLUMNS = [
 ]
 
 
-def build_dataset(cases: list[BankruptcyCase], stats: Any, demo: bool = False) -> dict[str, Any]:
+def build_dataset(cases: list[BankruptcyCase], stats: Any, demo: bool = False,
+                  auctions: list[Auction] | None = None) -> dict[str, Any]:
     return {
         "meta": {
             "genereret": datetime.now(UTC).isoformat(timespec="seconds"),
@@ -64,6 +65,7 @@ def build_dataset(cases: list[BankruptcyCase], stats: Any, demo: bool = False) -
             "stats": asdict(stats) if hasattr(stats, "__dataclass_fields__") else stats,
         },
         "cases": [c.to_dict() for c in cases],
+        "auktioner": [a.to_dict() for a in (auctions or [])],
     }
 
 
@@ -110,6 +112,32 @@ def merge_with_existing(cases: list[BankruptcyCase], path: Path, retention_days:
             and c.score >= min_score]
     merged = cases + kept
     merged.sort(key=lambda c: (-c.score, c.dekretdato or "", c.selskab.navn or ""))
+    return merged, len(kept)
+
+
+def write_auctions(auctions: list[Auction], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {"genereret": datetime.now(UTC).isoformat(timespec="seconds"), "antal": len(auctions),
+               "auktioner": [a.to_dict() for a in auctions]}
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def load_auctions(path: Path) -> list[Auction]:
+    if not path.exists():
+        return []
+    d = json.loads(path.read_text(encoding="utf-8"))
+    return [Auction.from_dict(x) for x in d.get("auktioner", [])]
+
+
+def merge_auctions(auctions: list[Auction], path: Path, retention_days: int = 180) -> tuple[list[Auction], int]:
+    """Som merge_with_existing, men for auktionsregistret: nye meddelelser vinder, gamle beholdes
+    indtil auktionsdatoen (eller bekendtgørelsen) er ældre end retention_days."""
+    old = load_auctions(path)
+    cutoff = (datetime.now(UTC).date() - timedelta(days=retention_days)).isoformat()
+    seen = {a.id for a in auctions}
+    kept = [a for a in old if a.id not in seen and (a.auktionsdato or a.offentliggjort or "") >= cutoff]
+    merged = auctions + kept
+    merged.sort(key=lambda a: (a.auktionsdato or "9", a.offentliggjort or ""))
     return merged, len(kept)
 
 
