@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-07T09:27:53+00:00",
+  "genereret": "2026-09-08T09:01:06+00:00",
   "version": "0.1.0",
-  "antal": 52,
+  "antal": 54,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,15 +14,15 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-07T09:19:34+00:00",
-   "dekreter": 966,
+   "started": "2026-09-08T08:51:37+00:00",
+   "dekreter": 991,
    "tvangsauktioner": 2,
-   "auktioner_i_alt": 344,
-   "boer_med_relationer": 252,
-   "beriget_cvr": 964,
-   "beriget_regnskab": 735,
+   "auktioner_i_alt": 349,
+   "boer_med_relationer": 258,
+   "beriget_cvr": 989,
+   "beriget_regnskab": 758,
    "beriget_ejf": 0,
-   "over_min_score": 51,
+   "over_min_score": 53,
    "min_score": 25,
    "bevaret_fra_tidligere": 1,
    "kilder_aktive": [
@@ -154,7 +154,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:48+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:31+00:00"
   },
   {
    "id": "34484872",
@@ -276,7 +276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:47+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:30+00:00"
   },
   {
    "id": "21032794",
@@ -415,7 +415,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:46+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:29+00:00"
   },
   {
    "id": "28850794",
@@ -569,7 +569,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:46+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:29+00:00"
   },
   {
    "id": "32439284",
@@ -708,7 +708,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:46+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:29+00:00"
   },
   {
    "id": "41553308",
@@ -979,7 +979,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:51+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:34+00:00"
   },
   {
    "id": "40523286",
@@ -1133,7 +1133,122 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:51+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:35+00:00"
+  },
+  {
+   "id": "36982489",
+   "statstidende_id": "S04092026-137",
+   "statstidende_url": "https://www.statstidende.dk/messages/S04092026-137",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-08",
+   "dekretdato": "2026-09-03",
+   "fristdag": "2026-08-26",
+   "anmeldelsesfrist": "2026-10-06",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Nykøbing Falster",
+    "sagsnummer": "SKS 12-264/2026"
+   },
+   "kurator": {
+    "navn": "Morten Dobel Ammentorp",
+    "firma": null,
+    "adresse": "Skolegade 24",
+    "postnr": "4800",
+    "by": "Nykøbing F",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Morten+Dobel+Ammentorp"
+   },
+   "selskab": {
+    "cvr": "36982489",
+    "navn": "PD Ejendomme 2015 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Løjtoftevej 203",
+    "postnr": "4900",
+    "by": "Nakskov",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": "2015-08-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36982489",
+    "formaal": null,
+    "lat": 54.84427962,
+    "lon": 11.15457571
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/98428963/amNsb3VkczovLzAzLzcyL2M1LzI5LzhkLzhhY2MtNDU5ZC1iZjA0LWE4YWE0OTVhZTRkMw.pdf",
+    "aktiver": 800957,
+    "egenkapital": 1087,
+    "investeringsejendomme": 759500,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 759500,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 797249,
+    "omsaetning": null,
+    "bruttofortjeneste": 9812,
+    "aarets_resultat": -6857,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 759500,
+    "ejendomsandel_pct": 94.8,
+    "soliditet_pct": 0.1,
+    "ltv_pct": null,
+    "samlet_gaeld": 797249
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 759.500 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 90,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "PD Ejendomme 2015 ApS\nVed dekret af 03.09.2026 har Retten i Nykøbing Falster taget\n\nPD Ejendomme 2015 ApS\nCVR-nr: 36982489\nLøjtoftevej 203\n4900 Nakskov\nSagsnr: SKS 12-264/2026\n\nunder konkursbehandling efter begæring modtaget den 26.08.2026.\n\nKurator er advokat Morten Dobel Ammentorp, Skolegade 24, 4800 Nykøbing F.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Nykøbing Falster, den 03.09.2026.\n\nKurator\nAdvokat Morten Dobel Ammentorp\nSkolegade 24\n4800 Nykøbing F\n\nSkifteret\nRetten i Nykøbing Falster",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/36982489",
+    "statstidende": "https://www.statstidende.dk/messages/S04092026-137",
+    "aarsrapport": "http://regnskaber.virk.dk/98428963/amNsb3VkczovLzAzLzcyL2M1LzI5LzhkLzhhY2MtNDU5ZC1iZjA0LWE4YWE0OTVhZTRkMw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/36982489?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Løjtoftevej+203,+4900+Nakskov",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Morten+Dobel+Ammentorp"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-08T08:52:35+00:00"
   },
   {
    "id": "42854980",
@@ -1248,7 +1363,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:52+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:36+00:00"
   },
   {
    "id": "43839284",
@@ -1363,7 +1478,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:56+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:40+00:00"
   },
   {
    "id": "42536857",
@@ -1490,7 +1605,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:55+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:39+00:00"
   },
   {
    "id": "32100279",
@@ -1605,7 +1720,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:47+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:30+00:00"
   },
   {
    "id": "42347841",
@@ -1732,7 +1847,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:20:00+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:45+00:00"
   },
   {
    "id": "40590641",
@@ -1841,7 +1956,117 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:48+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:31+00:00"
+  },
+  {
+   "id": "44112329",
+   "statstidende_id": "S04092026-102",
+   "statstidende_url": "https://www.statstidende.dk/messages/S04092026-102",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-08",
+   "dekretdato": "2026-09-04",
+   "fristdag": "2026-08-27",
+   "anmeldelsesfrist": "2026-10-06",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Roskilde",
+    "sagsnummer": "SKS 11-478/2026"
+   },
+   "kurator": {
+    "navn": "Peter-Michael Marskot Engstrøm",
+    "firma": null,
+    "adresse": "Dampfærgevej 10, 2",
+    "postnr": "2100",
+    "by": "København Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Peter-Michael+Marskot+Engstrøm"
+   },
+   "selskab": {
+    "cvr": "44112329",
+    "navn": "Ejendomsselskabet ano 2023 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682030",
+    "branchetekst": "Anden udlejning af boliger",
+    "bibrancher": [],
+    "adresse": "Arnøje Bygade 30",
+    "postnr": "4660",
+    "by": "Store Heddinge",
+    "kommune": "Arnøje",
+    "region": "Sjælland",
+    "stiftet": "2023-06-12",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44112329",
+    "formaal": null,
+    "lat": 55.31735458,
+    "lon": 12.29149462
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-05-31",
+    "kilde_url": "http://regnskaber.virk.dk/92321144/amNsb3VkczovLzAzL2U2LzQzLzE3LzdiLzcwY2QtNDZjZi05YmRhLWNiMTZiOTI2YTY1YQ.xml",
+    "aktiver": 1501764,
+    "egenkapital": 381358,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1500000,
+    "materielle_anlaeg": 1500000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 1100000,
+    "kortfristet_gaeld": 20406,
+    "omsaetning": 57582,
+    "bruttofortjeneste": -9538,
+    "aarets_resultat": -18642,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 1500000,
+    "ejendomsandel_pct": 99.9,
+    "soliditet_pct": 25.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 1120406
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.500.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.30 Anden udlejning af boliger",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "Ejendomsselskabet ano 2023 ApS under likvidation\nVed dekret af 04.09.2026 har Retten i Roskilde taget\n\nEjendomsselskabet ano 2023 ApS under likvidation\nCVR-nr: 44112329\nArnøje Bygade 30\n4660 Store Heddinge\nSagsnr: SKS 11-478/2026\n\nunder konkursbehandling efter begæring modtaget den 27.08.2026.\n\nKurator er advokat Peter-Michael Marskot Engstrøm, Dampfærgevej 10, 2., 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 04.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Roskilde, den 04.09.2026.\n\nKurator\nAdvokat Peter-Michael Marskot Engstrøm\nDampfærgevej 10, 2\n2100 København Ø\n\nSkifteret\nRetten i Roskilde",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/44112329",
+    "statstidende": "https://www.statstidende.dk/messages/S04092026-102",
+    "aarsrapport": "http://regnskaber.virk.dk/92321144/amNsb3VkczovLzAzL2U2LzQzLzE3LzdiLzcwY2QtNDZjZi05YmRhLWNiMTZiOTI2YTY1YQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/44112329?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Arnøje+Bygade+30,+4660+Store+Heddinge",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Peter-Michael+Marskot+Engstrøm"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'under likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-08T08:52:41+00:00"
   },
   {
    "id": "32277470",
@@ -1969,7 +2194,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:50+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:33+00:00"
   },
   {
    "id": "37540811",
@@ -2283,7 +2508,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:50+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:33+00:00"
   },
   {
    "id": "35889981",
@@ -2392,7 +2617,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:49+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:32+00:00"
   },
   {
    "id": "26270871",
@@ -2501,7 +2726,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:49+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:32+00:00"
   },
   {
    "id": "36492139",
@@ -2610,7 +2835,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:52+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:36+00:00"
   },
   {
    "id": "37902896",
@@ -2720,7 +2945,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:53+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:37+00:00"
   },
   {
    "id": "36893575",
@@ -2829,7 +3054,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:53+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:37+00:00"
   },
   {
    "id": "41982659",
@@ -2956,7 +3181,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:54+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:38+00:00"
   },
   {
    "id": "20402644",
@@ -3065,7 +3290,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:24+00:00"
+   "sidst_opdateret": "2026-09-08T08:53:08+00:00"
   },
   {
    "id": "40445935",
@@ -3168,7 +3393,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:55+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:39+00:00"
   },
   {
    "id": "12830033",
@@ -3276,7 +3501,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:25:47+00:00"
+   "sidst_opdateret": "2026-09-08T08:58:56+00:00"
   },
   {
    "id": "40207422",
@@ -3424,7 +3649,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:20:18+00:00"
+   "sidst_opdateret": "2026-09-08T08:53:02+00:00"
   },
   {
    "id": "39276445",
@@ -3533,7 +3758,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:17+00:00"
+   "sidst_opdateret": "2026-09-08T08:53:01+00:00"
   },
   {
    "id": "43723758",
@@ -3643,7 +3868,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:09+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:53+00:00"
   },
   {
    "id": "44145227",
@@ -3746,7 +3971,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:54+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:38+00:00"
   },
   {
    "id": "41298332",
@@ -3849,7 +4074,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:01+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:46+00:00"
   },
   {
    "id": "37867462",
@@ -3970,7 +4195,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:20:03+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:48+00:00"
   },
   {
    "id": "43781626",
@@ -4073,7 +4298,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:03+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:48+00:00"
   },
   {
    "id": "32569633",
@@ -4176,7 +4401,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:02+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:47+00:00"
   },
   {
    "id": "43729225",
@@ -4279,7 +4504,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:02+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:47+00:00"
   },
   {
    "id": "41727586",
@@ -4382,7 +4607,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:01+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:46+00:00"
   },
   {
    "id": "10214343",
@@ -4485,7 +4710,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:00+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:45+00:00"
   },
   {
    "id": "84895210",
@@ -4588,7 +4813,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:59+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:44+00:00"
   },
   {
    "id": "34895562",
@@ -4691,7 +4916,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:59+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:44+00:00"
   },
   {
    "id": "37700789",
@@ -4794,7 +5019,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:58+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:43+00:00"
   },
   {
    "id": "43258842",
@@ -4898,7 +5123,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:58+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:43+00:00"
   },
   {
    "id": "14412107",
@@ -5020,7 +5245,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:19:57+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:42+00:00"
   },
   {
    "id": "39775298",
@@ -5123,7 +5348,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:57+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:42+00:00"
   },
   {
    "id": "32887902",
@@ -5226,7 +5451,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:19:56+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:41+00:00"
   },
   {
    "id": "25155688",
@@ -5329,7 +5554,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:27:34+00:00"
+   "sidst_opdateret": "2026-09-08T09:00:44+00:00"
   },
   {
    "id": "40465820",
@@ -5439,7 +5664,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:05+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:49+00:00"
   },
   {
    "id": "27983944",
@@ -5563,7 +5788,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:25:43+00:00"
+   "sidst_opdateret": "2026-09-08T08:58:52+00:00"
   },
   {
    "id": "40096957",
@@ -5740,7 +5965,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:24:25+00:00"
+   "sidst_opdateret": "2026-09-08T08:57:34+00:00"
   },
   {
    "id": "40134999",
@@ -5862,7 +6087,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-07T09:24:15+00:00"
+   "sidst_opdateret": "2026-09-08T08:57:24+00:00"
   },
   {
    "id": "43321137",
@@ -5965,7 +6190,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:22:20+00:00"
+   "sidst_opdateret": "2026-09-08T08:55:28+00:00"
   },
   {
    "id": "40313761",
@@ -6068,7 +6293,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:06+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:50+00:00"
   },
   {
    "id": "42984523",
@@ -6171,7 +6396,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:05+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:50+00:00"
   },
   {
    "id": "45690725",
@@ -6274,7 +6499,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-07T09:20:05+00:00"
+   "sidst_opdateret": "2026-09-08T08:52:49+00:00"
   }
  ]
 }
