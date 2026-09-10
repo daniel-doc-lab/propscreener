@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-09T09:07:30+00:00",
+  "genereret": "2026-09-10T09:06:24+00:00",
   "version": "0.1.0",
-  "antal": 57,
+  "antal": 62,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-09T08:57:37+00:00",
-   "dekreter": 999,
+   "started": "2026-09-10T08:56:36+00:00",
+   "dekreter": 1003,
    "tvangsauktioner": 2,
-   "auktioner_i_alt": 343,
-   "boer_med_relationer": 260,
-   "beriget_cvr": 997,
-   "beriget_regnskab": 767,
+   "auktioner_i_alt": 352,
+   "boer_med_relationer": 254,
+   "beriget_cvr": 1001,
+   "beriget_regnskab": 774,
    "beriget_ejf": 0,
-   "over_min_score": 56,
+   "over_min_score": 59,
    "min_score": 25,
-   "bevaret_fra_tidligere": 1,
+   "bevaret_fra_tidligere": 3,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -154,7 +154,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:38+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:40+00:00"
   },
   {
    "id": "34484872",
@@ -276,7 +276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:36+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:38+00:00"
   },
   {
    "id": "21032794",
@@ -415,7 +415,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:35+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:37+00:00"
   },
   {
    "id": "28850794",
@@ -569,7 +569,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:33+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:36+00:00"
   },
   {
    "id": "32439284",
@@ -708,7 +708,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:36+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:38+00:00"
   },
   {
    "id": "34597227",
@@ -829,7 +829,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:35+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:37+00:00"
   },
   {
    "id": "41553308",
@@ -1234,7 +1234,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:39+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:40+00:00"
   },
   {
    "id": "40523286",
@@ -1388,7 +1388,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:42+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:44+00:00"
   },
   {
    "id": "36982489",
@@ -1503,7 +1503,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:42+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:43+00:00"
   },
   {
    "id": "42854980",
@@ -1618,7 +1618,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:43+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:46+00:00"
   },
   {
    "id": "25438744",
@@ -1734,7 +1734,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:34+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:36+00:00"
   },
   {
    "id": "43839284",
@@ -1849,7 +1849,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:47+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:51+00:00"
   },
   {
    "id": "42536857",
@@ -1976,7 +1976,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:46+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:51+00:00"
   },
   {
    "id": "32100279",
@@ -2091,7 +2091,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:37+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:39+00:00"
   },
   {
    "id": "42347841",
@@ -2218,7 +2218,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:51+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:56+00:00"
   },
   {
    "id": "40590641",
@@ -2327,7 +2327,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:37+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:39+00:00"
   },
   {
    "id": "44112329",
@@ -2437,7 +2437,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:47+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:52+00:00"
   },
   {
    "id": "32277470",
@@ -2565,7 +2565,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:41+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:43+00:00"
   },
   {
    "id": "37540811",
@@ -2879,7 +2879,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:40+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
   },
   {
    "id": "35889981",
@@ -2988,7 +2988,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:40+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
   },
   {
    "id": "26270871",
@@ -3097,7 +3097,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:39+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
   },
   {
    "id": "36492139",
@@ -3206,7 +3206,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:43+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:44+00:00"
   },
   {
    "id": "37902896",
@@ -3316,7 +3316,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:44+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:47+00:00"
   },
   {
    "id": "36893575",
@@ -3425,7 +3425,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:44+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:46+00:00"
+  },
+  {
+   "id": "39721473",
+   "statstidende_id": "S08092026-190",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08092026-190",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-10",
+   "dekretdato": "2026-09-02",
+   "fristdag": "2026-08-17",
+   "anmeldelsesfrist": "2026-10-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Nykøbing Falster",
+    "sagsnummer": "SKS 12-250/2026"
+   },
+   "kurator": {
+    "navn": "Lonnie Kromann Nielsen",
+    "firma": null,
+    "adresse": "Torvestræde 7",
+    "postnr": "4760",
+    "by": "Vordingborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Lonnie+Kromann+Nielsen"
+   },
+   "selskab": {
+    "cvr": "39721473",
+    "navn": "Linds Byg & Anlæg af 2018 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "439100",
+    "branchetekst": "Murerarbejde",
+    "bibrancher": [],
+    "adresse": "Vesterskovvej 4",
+    "postnr": "4772",
+    "by": "Langebæk",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": "2018-07-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39721473",
+    "formaal": null,
+    "lat": 54.9871533,
+    "lon": 12.08203392
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/37412793/amNsb3VkczovLzAzLzkwLzZmLzkxL2U3Lzc1NWYtNDlkNy1iZTMzLTIwZjE5ZDNkNjg0ZQ.pdf",
+    "aktiver": 437580,
+    "egenkapital": -149790,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 178767,
+    "materielle_anlaeg": 290922,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 587370,
+    "omsaetning": null,
+    "bruttofortjeneste": 160153,
+    "aarets_resultat": 60269,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 178767,
+    "ejendomsandel_pct": 40.9,
+    "soliditet_pct": -34.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 587370
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 178.767 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Grund/Projekt",
+   "raa_tekst": "Linds Byg & Anlæg af 2018 ApS\nVed dekret af 02.09.2026 har Retten i Nykøbing Falster taget\n\nLinds Byg & Anlæg af 2018 ApS\nCVR-nr: 39721473\nVesterskovvej 4\n4772 Langebæk\nSagsnr: SKS 12-250/2026\n\nunder konkursbehandling efter begæring modtaget den 17.08.2026.\n\nKurator er advokat Lonnie Kromann Nielsen, Torvestræde 7, 4760 Vordingborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 02.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Nykøbing Falster, den 02.09.2026.\n\nKurator\nAdvokat Lonnie Kromann Nielsen\nTorvestræde 7\n4760 Vordingborg\n\nSkifteret\nRetten i Nykøbing Falster",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39721473",
+    "statstidende": "https://www.statstidende.dk/messages/S08092026-190",
+    "aarsrapport": "http://regnskaber.virk.dk/37412793/amNsb3VkczovLzAzLzkwLzZmLzkxL2U3Lzc1NWYtNDlkNy1iZTMzLTIwZjE5ZDNkNjg0ZQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39721473?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vesterskovvej+4,+4772+Langebæk",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Lonnie+Kromann+Nielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-10T08:57:45+00:00"
   },
   {
    "id": "41982659",
@@ -3552,7 +3661,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:45+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:47+00:00"
   },
   {
    "id": "20402644",
@@ -3661,7 +3770,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:59:18+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:21+00:00"
   },
   {
    "id": "40445935",
@@ -3764,7 +3873,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:46+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:50+00:00"
   },
   {
    "id": "12830033",
@@ -3872,7 +3981,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T09:05:26+00:00"
+   "sidst_opdateret": "2026-09-10T09:04:28+00:00"
   },
   {
    "id": "40207422",
@@ -4020,7 +4129,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:59:12+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:15+00:00"
   },
   {
    "id": "39276445",
@@ -4129,7 +4238,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:59:11+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:13+00:00"
   },
   {
    "id": "43723758",
@@ -4239,7 +4348,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:59:02+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:06+00:00"
   },
   {
    "id": "44145227",
@@ -4342,7 +4451,245 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:45+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:50+00:00"
+  },
+  {
+   "id": "26074967",
+   "statstidende_id": "S08092026-203",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08092026-203",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-10",
+   "dekretdato": "2026-09-08",
+   "fristdag": "2026-09-07",
+   "anmeldelsesfrist": "2026-10-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-337/2026"
+   },
+   "kurator": {
+    "navn": "Anders Hvidberg Plum",
+    "firma": null,
+    "adresse": "Buen 11",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Hvidberg+Plum"
+   },
+   "selskab": {
+    "cvr": "26074967",
+    "navn": "CL HOLDING RØDEKRO ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642120",
+    "branchetekst": "Ikke-finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Vejle Landevej 16, st",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "kommune": "Brovad",
+    "region": "Syddanmark",
+    "stiftet": "2001-06-12",
+    "status": "NORMAL",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/26074967",
+    "formaal": null,
+    "lat": 55.54462311,
+    "lon": 9.68211395
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/76947062/amNsb3VkczovLzAzL2NiL2FhL2Y3LzczL2M3NTEtNDVhYS05MTliLTAyMzllYTU0NDdiZA.xml",
+    "aktiver": 1728445,
+    "egenkapital": -1723643,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1122738,
+    "materielle_anlaeg": 1136613,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 554800,
+    "kortfristet_gaeld": 2897288,
+    "omsaetning": null,
+    "bruttofortjeneste": 853932,
+    "aarets_resultat": 339239,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 1122738,
+    "ejendomsandel_pct": 65.0,
+    "soliditet_pct": -99.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 3452088
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.122.738 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "CL HOLDING RØDEKRO ApS\nVed dekret af 08.09.2026 har Retten i Kolding taget\n\nCL HOLDING RØDEKRO ApS\nCVR-nr: 26074967\nVejle Landevej 16, st\n7000 Fredericia\nSagsnr: 6-337/2026\n\nunder konkursbehandling efter begæring modtaget den 07.09.2026.\n\nKurator er advokat Anders Hvidberg Plum, Buen 11, 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 08.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 08.09.2026.\n\nKurator\nAdvokat Anders Hvidberg Plum\nBuen 11\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/26074967",
+    "statstidende": "https://www.statstidende.dk/messages/S08092026-203",
+    "aarsrapport": "http://regnskaber.virk.dk/76947062/amNsb3VkczovLzAzL2NiL2FhL2Y3LzczL2M3NTEtNDVhYS05MTliLTAyMzllYTU0NDdiZA.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/26074967?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vejle+Landevej+16,+st,+7000+Fredericia",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Hvidberg+Plum"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-10T08:57:49+00:00"
+  },
+  {
+   "id": "43167731",
+   "statstidende_id": "S08092026-212",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08092026-212",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-10",
+   "dekretdato": "2026-09-08",
+   "fristdag": "2026-08-31",
+   "anmeldelsesfrist": "2026-10-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Viborg",
+    "sagsnummer": "SKS 5-285/2026"
+   },
+   "kurator": {
+    "navn": "Birgitte Jørgensen",
+    "firma": null,
+    "adresse": "Værkmestergade 2",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Birgitte+Jørgensen"
+   },
+   "selskab": {
+    "cvr": "43167731",
+    "navn": "DACHSTEIN Holding ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642120",
+    "branchetekst": "Ikke-finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Langesgårdvej 4",
+    "postnr": "7870",
+    "by": "Roslev",
+    "kommune": "Langesgård",
+    "region": "Midtjylland",
+    "stiftet": "2022-03-24",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/43167731",
+    "formaal": null,
+    "lat": 56.69287329,
+    "lon": 9.08921406
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2023-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/13776134/amNsb3VkczovLzAzLzM0L2I2LzRhL2FmLzdlNzEtNDMyOC1hYzA2LTFiNGY1YTFhYjA3MQ.pdf",
+    "aktiver": 827488,
+    "egenkapital": 255509,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 443154,
+    "materielle_anlaeg": 490794,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 571979,
+    "omsaetning": null,
+    "bruttofortjeneste": -18164,
+    "aarets_resultat": -95003,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 443154,
+    "ejendomsandel_pct": 53.6,
+    "soliditet_pct": 30.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 571979
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 443.154 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "DACHSTEIN Holding ApS\nVed dekret af 08.09.2026 har Retten i Viborg taget\n\nDACHSTEIN Holding ApS\nCVR-nr: 43167731\nLangesgårdvej 4\n7870 Roslev\nSagsnr: SKS 5-285/2026\n\nunder konkursbehandling efter begæring modtaget den 31.08.2026.\n\nKurator er advokat Birgitte Jørgensen, Værkmestergade 2, 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 08.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Viborg, den 08.09.2026.\n\nKurator\nAdvokat Birgitte Jørgensen\nVærkmestergade 2\n8000 Århus C\n\nSkifteret\nRetten i Viborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43167731",
+    "statstidende": "https://www.statstidende.dk/messages/S08092026-212",
+    "aarsrapport": "http://regnskaber.virk.dk/13776134/amNsb3VkczovLzAzLzM0L2I2LzRhL2FmLzdlNzEtNDMyOC1hYzA2LTFiNGY1YTFhYjA3MQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43167731?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Langesgårdvej+4,+7870+Roslev",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Birgitte+Jørgensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "43095676",
+     "cvr": "43095676",
+     "navn": "DACHSTEIN ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-08",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Roslev",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S08092026-221",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »dachstein« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-10T08:57:48+00:00"
   },
   {
    "id": "41298332",
@@ -4445,7 +4792,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:53+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:57+00:00"
   },
   {
    "id": "37867462",
@@ -4669,7 +5016,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:54+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:59+00:00"
   },
   {
    "id": "32569633",
@@ -4772,7 +5119,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:54+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:58+00:00"
   },
   {
    "id": "43729225",
@@ -4875,7 +5222,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:54+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:58+00:00"
   },
   {
    "id": "41727586",
@@ -4978,7 +5325,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:52+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:57+00:00"
   },
   {
    "id": "10214343",
@@ -5081,7 +5428,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:52+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:56+00:00"
   },
   {
    "id": "84895210",
@@ -5184,7 +5531,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:51+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:55+00:00"
   },
   {
    "id": "34895562",
@@ -5287,7 +5634,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:50+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:55+00:00"
   },
   {
    "id": "37700789",
@@ -5390,7 +5737,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:50+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:54+00:00"
   },
   {
    "id": "43258842",
@@ -5494,7 +5841,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:49+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:54+00:00"
   },
   {
    "id": "14412107",
@@ -5616,7 +5963,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T08:58:49+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:53+00:00"
   },
   {
    "id": "39775298",
@@ -5719,7 +6066,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:48+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:53+00:00"
   },
   {
    "id": "32887902",
@@ -5822,7 +6169,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:48+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:52+00:00"
   },
   {
    "id": "25155688",
@@ -5925,7 +6272,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T09:07:16+00:00"
+   "sidst_opdateret": "2026-09-10T09:06:13+00:00"
   },
   {
    "id": "40465820",
@@ -6035,7 +6382,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:55+00:00"
+   "sidst_opdateret": "2026-09-10T08:57:59+00:00"
   },
   {
    "id": "27983944",
@@ -6159,7 +6506,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T09:05:21+00:00"
+   "sidst_opdateret": "2026-09-10T09:04:23+00:00"
   },
   {
    "id": "40096957",
@@ -6336,7 +6683,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T09:04:01+00:00"
+   "sidst_opdateret": "2026-09-10T09:03:04+00:00"
   },
   {
    "id": "40134999",
@@ -6458,7 +6805,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-09T09:03:51+00:00"
+   "sidst_opdateret": "2026-09-10T09:02:55+00:00"
   },
   {
    "id": "43321137",
@@ -6561,7 +6908,212 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T09:01:53+00:00"
+   "sidst_opdateret": "2026-09-10T09:01:00+00:00"
+  },
+  {
+   "id": "45041522",
+   "statstidende_id": "S08092026-193",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08092026-193",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-10",
+   "dekretdato": "2026-09-03",
+   "fristdag": "2026-08-18",
+   "anmeldelsesfrist": "2026-10-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Nykøbing Falster",
+    "sagsnummer": "SKS 12-252/2026"
+   },
+   "kurator": {
+    "navn": "Morten Dobel Ammentorp",
+    "firma": null,
+    "adresse": "Skolegade 24",
+    "postnr": "4800",
+    "by": "Nykøbing F",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Morten+Dobel+Ammentorp"
+   },
+   "selskab": {
+    "cvr": "45041522",
+    "navn": "Strædet 2 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682030",
+    "branchetekst": "Anden udlejning af boliger",
+    "bibrancher": [],
+    "adresse": "Strædet 2",
+    "postnr": "4920",
+    "by": "Søllested",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": "2024-08-28",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/45041522",
+    "formaal": null,
+    "lat": 54.79923688,
+    "lon": 11.29808318
+   },
+   "regnskab": {
+    "regnskabsaar_slut": null,
+    "kilde_url": null,
+    "aktiver": null,
+    "egenkapital": null,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": null,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": null,
+    "omsaetning": null,
+    "bruttofortjeneste": null,
+    "aarets_resultat": null,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": null,
+    "ltv_pct": null,
+    "samlet_gaeld": null
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.30 Anden udlejning af boliger",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "Strædet 2 ApS\nVed dekret af 03.09.2026 har Retten i Nykøbing Falster taget\n\nStrædet 2 ApS\nCVR-nr: 45041522\nStrædet 2\n4920 Søllested\nSagsnr: SKS 12-252/2026\n\nunder konkursbehandling efter begæring modtaget den 18.08.2026.\n\nKurator er advokat Morten Dobel Ammentorp, Skolegade 24, 4800 Nykøbing F.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Nykøbing Falster, den 03.09.2026.\n\nKurator\nAdvokat Morten Dobel Ammentorp\nSkolegade 24\n4800 Nykøbing F\n\nSkifteret\nRetten i Nykøbing Falster",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/45041522",
+    "statstidende": "https://www.statstidende.dk/messages/S08092026-193",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/45041522?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Strædet+2,+4920+Søllested",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Morten+Dobel+Ammentorp"
+   },
+   "kilder": [
+    "statstidende",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ingen XBRL-årsrapport fundet (nystiftet, holding uden pligt eller kun PDF)",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-10T08:59:54+00:00"
+  },
+  {
+   "id": "27111408",
+   "statstidende_id": "S08092026-116",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08092026-116",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-10",
+   "dekretdato": "2026-09-04",
+   "fristdag": "2026-08-26",
+   "anmeldelsesfrist": "2026-10-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Næstved",
+    "sagsnummer": "SKS INS-390/2026"
+   },
+   "kurator": {
+    "navn": "Louise Lecanda",
+    "firma": null,
+    "adresse": "Ndr.Ringgade 70C",
+    "postnr": "4200",
+    "by": "Slagelse",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Louise+Lecanda"
+   },
+   "selskab": {
+    "cvr": "27111408",
+    "navn": "MARINEBUEN 6, NÆSTVED ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Marinebuen 6",
+    "postnr": "4700",
+    "by": "Næstved",
+    "kommune": "Øverup",
+    "region": "Sjælland",
+    "stiftet": "2003-04-11",
+    "status": "NORMAL",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27111408",
+    "formaal": null,
+    "lat": 55.25253153,
+    "lon": 11.79714598
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/80411172/amNsb3VkczovLzAzLzMzL2M1LzE2LzdlL2Y4OGQtNGJlYy05MDQyLTI2MTRlNjZlYWEwNQ.xml",
+    "aktiver": 6519034,
+    "egenkapital": -3840989,
+    "investeringsejendomme": 0,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 4665496,
+    "kortfristet_gaeld": 5667340,
+    "omsaetning": null,
+    "bruttofortjeneste": 534700,
+    "aarets_resultat": -2317942,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -58.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 10332836
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "MARINEBUEN 6, NÆSTVED ApS\nVed dekret af 04.09.2026 har Retten i Næstved taget\n\nMARINEBUEN 6, NÆSTVED ApS\nCVR-nr: 27111408\nMarinebuen 6\n4700 Næstved\nSagsnr: SKS INS-390/2026\n\nunder konkursbehandling efter begæring modtaget den 26.08.2026.\n\nSelskabet har hjemsted i Næstved kommune og har drevet virksomhed fra adressen Marinebuen 6, 4700 Næstved.\n\nKurator er advokat Louise Lecanda, Ndr.Ringgade 70C, 4200 Slagelse.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 04.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Næstved, den 04.09.2026.\n\nKurator\nAdvokat Louise Lecanda\nNdr.Ringgade 70C\n4200 Slagelse\n\nSkifteret\nRetten i Næstved",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/27111408",
+    "statstidende": "https://www.statstidende.dk/messages/S08092026-116",
+    "aarsrapport": "http://regnskaber.virk.dk/80411172/amNsb3VkczovLzAzLzMzL2M1LzE2LzdlL2Y4OGQtNGJlYy05MDQyLTI2MTRlNjZlYWEwNQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/27111408?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Marinebuen+6,+4700+Næstved",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Louise+Lecanda"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-10T08:59:59+00:00"
   },
   {
    "id": "40313761",
@@ -6664,7 +7216,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:57+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:01+00:00"
   },
   {
    "id": "42984523",
@@ -6767,7 +7319,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:56+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:00+00:00"
   },
   {
    "id": "45690725",
@@ -6870,7 +7422,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-09T08:58:56+00:00"
+   "sidst_opdateret": "2026-09-10T08:58:00+00:00"
   }
  ]
 }
