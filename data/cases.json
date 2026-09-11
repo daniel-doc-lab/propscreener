@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-10T09:06:24+00:00",
+  "genereret": "2026-09-11T09:04:38+00:00",
   "version": "0.1.0",
   "antal": 62,
   "demo": false,
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-10T08:56:36+00:00",
-   "dekreter": 1003,
+   "started": "2026-09-11T08:54:51+00:00",
+   "dekreter": 1018,
    "tvangsauktioner": 2,
-   "auktioner_i_alt": 352,
+   "auktioner_i_alt": 350,
    "boer_med_relationer": 254,
-   "beriget_cvr": 1001,
-   "beriget_regnskab": 774,
+   "beriget_cvr": 1016,
+   "beriget_regnskab": 785,
    "beriget_ejf": 0,
-   "over_min_score": 59,
+   "over_min_score": 58,
    "min_score": 25,
-   "bevaret_fra_tidligere": 3,
+   "bevaret_fra_tidligere": 4,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -154,7 +154,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:40+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:49+00:00"
   },
   {
    "id": "34484872",
@@ -276,7 +276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:38+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:48+00:00"
   },
   {
    "id": "21032794",
@@ -415,7 +415,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:37+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:47+00:00"
   },
   {
    "id": "28850794",
@@ -569,7 +569,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:36+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:45+00:00"
   },
   {
    "id": "32439284",
@@ -708,7 +708,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:38+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:47+00:00"
   },
   {
    "id": "34597227",
@@ -829,7 +829,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:37+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:47+00:00"
   },
   {
    "id": "41553308",
@@ -1234,7 +1234,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:40+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:50+00:00"
   },
   {
    "id": "40523286",
@@ -1388,7 +1388,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:44+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:53+00:00"
   },
   {
    "id": "36982489",
@@ -1503,7 +1503,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:43+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:52+00:00"
   },
   {
    "id": "42854980",
@@ -1618,7 +1618,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:46+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:54+00:00"
   },
   {
    "id": "25438744",
@@ -1734,7 +1734,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:36+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:45+00:00"
   },
   {
    "id": "43839284",
@@ -1849,7 +1849,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:51+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:59+00:00"
   },
   {
    "id": "42536857",
@@ -1976,7 +1976,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:51+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:59+00:00"
   },
   {
    "id": "32100279",
@@ -2091,7 +2091,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:39+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:48+00:00"
   },
   {
    "id": "42347841",
@@ -2218,7 +2218,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:56+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:04+00:00"
   },
   {
    "id": "40590641",
@@ -2327,7 +2327,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:39+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:49+00:00"
   },
   {
    "id": "44112329",
@@ -2437,7 +2437,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:52+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:00+00:00"
   },
   {
    "id": "32277470",
@@ -2565,7 +2565,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:43+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:52+00:00"
   },
   {
    "id": "37540811",
@@ -2760,6 +2760,23 @@
      ]
     },
     {
+     "id": "44756862",
+     "cvr": "44756862",
+     "navn": "Sami 24 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-09",
+     "branchetekst": "Almindelig rengøring i bygninger",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S09092026-119",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
      "id": "46087275",
      "cvr": "46087275",
      "navn": "Ejendomsselskabet Barnstedt ApS",
@@ -2860,26 +2877,9 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
-    },
-    {
-     "id": "42777803",
-     "cvr": "42777803",
-     "navn": "KBH-HS EL & VVS ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": null,
-     "branchetekst": "El-installation",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S19082026-10",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:51+00:00"
   },
   {
    "id": "35889981",
@@ -2988,7 +2988,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:51+00:00"
   },
   {
    "id": "26270871",
@@ -3097,7 +3097,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:42+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:50+00:00"
   },
   {
    "id": "36492139",
@@ -3206,7 +3206,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:44+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:53+00:00"
   },
   {
    "id": "37902896",
@@ -3316,7 +3316,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:47+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:55+00:00"
   },
   {
    "id": "36893575",
@@ -3425,7 +3425,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:46+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:55+00:00"
   },
   {
    "id": "39721473",
@@ -3534,7 +3534,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:45+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:54+00:00"
   },
   {
    "id": "41982659",
@@ -3661,7 +3661,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:47+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:56+00:00"
   },
   {
    "id": "20402644",
@@ -3770,7 +3770,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:21+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:29+00:00"
   },
   {
    "id": "40445935",
@@ -3873,7 +3873,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:50+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:59+00:00"
   },
   {
    "id": "12830033",
@@ -3981,7 +3981,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T09:04:28+00:00"
+   "sidst_opdateret": "2026-09-11T09:02:53+00:00"
   },
   {
    "id": "40207422",
@@ -4129,7 +4129,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:58:15+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:23+00:00"
   },
   {
    "id": "39276445",
@@ -4238,7 +4238,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:13+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:22+00:00"
   },
   {
    "id": "43723758",
@@ -4348,7 +4348,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:06+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:14+00:00"
   },
   {
    "id": "44145227",
@@ -4451,7 +4451,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:50+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:57+00:00"
   },
   {
    "id": "26074967",
@@ -4560,7 +4560,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:49+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:57+00:00"
   },
   {
    "id": "43167731",
@@ -4689,7 +4689,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:48+00:00"
+   "sidst_opdateret": "2026-09-11T08:55:56+00:00"
   },
   {
    "id": "41298332",
@@ -4792,7 +4792,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:57+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:05+00:00"
   },
   {
    "id": "37867462",
@@ -5016,7 +5016,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:59+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:07+00:00"
   },
   {
    "id": "32569633",
@@ -5119,7 +5119,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:58+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:06+00:00"
   },
   {
    "id": "43729225",
@@ -5222,7 +5222,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:58+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:06+00:00"
   },
   {
    "id": "41727586",
@@ -5325,7 +5325,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:57+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:05+00:00"
   },
   {
    "id": "10214343",
@@ -5428,7 +5428,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:56+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:04+00:00"
   },
   {
    "id": "84895210",
@@ -5531,7 +5531,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:55+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:03+00:00"
   },
   {
    "id": "34895562",
@@ -5634,7 +5634,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:55+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:03+00:00"
   },
   {
    "id": "37700789",
@@ -5737,7 +5737,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:54+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:02+00:00"
   },
   {
    "id": "43258842",
@@ -5841,7 +5841,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:54+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:02+00:00"
   },
   {
    "id": "14412107",
@@ -5963,7 +5963,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T08:57:53+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:01+00:00"
   },
   {
    "id": "39775298",
@@ -6066,7 +6066,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:53+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:01+00:00"
   },
   {
    "id": "32887902",
@@ -6169,7 +6169,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:52+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:00+00:00"
   },
   {
    "id": "25155688",
@@ -6382,7 +6382,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:57:59+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:07+00:00"
   },
   {
    "id": "27983944",
@@ -6506,7 +6506,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T09:04:23+00:00"
+   "sidst_opdateret": "2026-09-11T09:02:48+00:00"
   },
   {
    "id": "40096957",
@@ -6683,7 +6683,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T09:03:04+00:00"
+   "sidst_opdateret": "2026-09-11T09:01:31+00:00"
   },
   {
    "id": "40134999",
@@ -6805,7 +6805,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-10T09:02:55+00:00"
+   "sidst_opdateret": "2026-09-11T09:01:21+00:00"
   },
   {
    "id": "43321137",
@@ -6908,7 +6908,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T09:01:00+00:00"
+   "sidst_opdateret": "2026-09-11T08:59:26+00:00"
   },
   {
    "id": "45041522",
@@ -7010,7 +7010,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:59:54+00:00"
+   "sidst_opdateret": "2026-09-11T08:58:23+00:00"
   },
   {
    "id": "27111408",
@@ -7113,7 +7113,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:59:59+00:00"
+   "sidst_opdateret": "2026-09-11T08:58:26+00:00"
   },
   {
    "id": "40313761",
@@ -7216,7 +7216,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:01+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:10+00:00"
   },
   {
    "id": "42984523",
@@ -7319,7 +7319,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:00+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:09+00:00"
   },
   {
    "id": "45690725",
@@ -7422,7 +7422,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-10T08:58:00+00:00"
+   "sidst_opdateret": "2026-09-11T08:56:09+00:00"
   }
  ]
 }
