@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-09-14T09:59:48+00:00",
+  "genereret": "2026-09-15T09:35:12+00:00",
   "version": "0.1.0",
   "antal": 64,
   "demo": false,
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-14T09:50:49+00:00",
-   "dekreter": 1045,
-   "tvangsauktioner": 2,
-   "auktioner_i_alt": 350,
-   "boer_med_relationer": 271,
-   "beriget_cvr": 1043,
-   "beriget_regnskab": 807,
+   "started": "2026-09-15T09:24:38+00:00",
+   "dekreter": 1069,
+   "tvangsauktioner": 0,
+   "auktioner_i_alt": 349,
+   "boer_med_relationer": 277,
+   "beriget_cvr": 1067,
+   "beriget_regnskab": 828,
    "beriget_ejf": 0,
-   "over_min_score": 57,
+   "over_min_score": 56,
    "min_score": 25,
-   "bevaret_fra_tidligere": 7,
+   "bevaret_fra_tidligere": 8,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -276,7 +276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:03+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:54+00:00"
   },
   {
    "id": "21032794",
@@ -415,161 +415,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:02+00:00"
-  },
-  {
-   "id": "28850794",
-   "statstidende_id": "S07082026-177",
-   "statstidende_url": "https://www.statstidende.dk/messages/S07082026-177",
-   "meddelelsestype": "Konkursdekret",
-   "offentliggjort": "2026-08-11",
-   "dekretdato": "2026-08-07",
-   "fristdag": "2026-08-07",
-   "anmeldelsesfrist": "2026-09-08",
-   "skiftesamling": null,
-   "fordringsproevelse": null,
-   "skifteret": {
-    "navn": "Retten i Randers",
-    "sagsnummer": "SKS 60-5266/2026"
-   },
-   "kurator": {
-    "navn": "Christian Jul Madsen",
-    "firma": null,
-    "adresse": "Kalkværksvej 16, 25",
-    "postnr": "8000",
-    "by": "Århus C",
-    "telefon": null,
-    "email": null,
-    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
-   },
-   "selskab": {
-    "cvr": "28850794",
-    "navn": "RØNBÆKVEJ 17 ApS",
-    "binavne": [],
-    "selskabsform": "ApS",
-    "branchekode": "469000",
-    "branchetekst": "Ikke-specialiseret engroshandel",
-    "bibrancher": [],
-    "adresse": "Skolegyden 3",
-    "postnr": "8963",
-    "by": "Auning",
-    "kommune": null,
-    "region": "Midtjylland",
-    "stiftet": "2005-06-22",
-    "status": "UNDERKONKURS",
-    "ansatte": null,
-    "ejere": [],
-    "ledelse": [],
-    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
-    "formaal": null,
-    "lat": 56.43018757,
-    "lon": 10.38276679
-   },
-   "regnskab": {
-    "regnskabsaar_slut": "2024-09-30",
-    "kilde_url": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
-    "aktiver": 8097359,
-    "egenkapital": 539342,
-    "investeringsejendomme": 8000000,
-    "grunde_og_bygninger": 0,
-    "materielle_anlaeg": 8000000,
-    "realkreditgaeld": null,
-    "langfristet_gaeld": 5853938,
-    "kortfristet_gaeld": 597822,
-    "omsaetning": null,
-    "bruttofortjeneste": 238466,
-    "aarets_resultat": 2084669,
-    "ansatte": 0,
-    "ejendomsvaerdi_bogfoert": 8000000,
-    "ejendomsandel_pct": 98.8,
-    "soliditet_pct": 6.7,
-    "ltv_pct": null,
-    "samlet_gaeld": 6451760
-   },
-   "ejendomme": [
-    {
-     "bfe_nummer": null,
-     "adresse": "Rønbækvej 17",
-     "postnr": "8382",
-     "by": "Hinnerup",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "10 al, Grundfør By, Grundfør",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 2400000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-07-01",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-78",
-     "lat": 56.26225376,
-     "lon": 10.09869229
-    },
-    {
-     "bfe_nummer": null,
-     "adresse": "Rønbækvej 15A",
-     "postnr": "8382",
-     "by": "Hinnerup",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "10 ar, Grundfør By, Grundfør",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 1050000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-07-01",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S12062026-76",
-     "lat": 56.26335663,
-     "lon": 10.09826344
-    }
-   ],
-   "signaler": [
-    {
-     "kode": "tvangsauktion",
-     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
-     "point": 50,
-     "kilde": "Statstidende"
-    },
-    {
-     "kode": "xbrl_investeringsejendomme",
-     "beskrivelse": "Investeringsejendomme bogført til 8.000.000 kr.",
-     "point": 45,
-     "kilde": "Årsrapport (XBRL)"
-    },
-    {
-     "kode": "navn_adresse",
-     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
-     "point": 15,
-     "kilde": "CVR"
-    }
-   ],
-   "score": 100,
-   "konfidens": "høj",
-   "ejendomstype_hoved": "Blandet",
-   "raa_tekst": "RØNBÆKVEJ 17 ApS\nVed dekret af 07.08.2026 har Retten i Randers taget\n\nRØNBÆKVEJ 17 ApS\nCVR-nr: 28850794\nSkolegyden 3\n8963 Auning\nSagsnr: SKS 60-5266/2026\n\nunder konkursbehandling efter begæring modtaget den 07.08.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 07.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 07.08.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Randers",
-   "links": {
-    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
-    "statstidende": "https://www.statstidende.dk/messages/S07082026-177",
-    "tvangsauktion": "https://www.statstidende.dk/messages/S12062026-78",
-    "aarsrapport": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
-    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28850794?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Skolegyden+3,+8963+Auning",
-    "tinglysning": "https://www.tinglysning.dk",
-    "ois": "https://www.ois.dk",
-    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
-   },
-   "kilder": [
-    "statstidende",
-    "tvangsauktion",
-    "regnskab-xbrl",
-    "apicvr-rest"
-   ],
-   "noter": [
-    "Ejerfortegnelsen kunne ikke slås op"
-   ],
-   "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:01+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:53+00:00"
   },
   {
    "id": "32439284",
@@ -708,7 +554,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:02+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:54+00:00"
   },
   {
    "id": "34597227",
@@ -829,7 +675,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:01+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:53+00:00"
   },
   {
    "id": "41553308",
@@ -1234,7 +1080,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:05+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:56+00:00"
   },
   {
    "id": "40523286",
@@ -1388,7 +1234,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:08+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:00+00:00"
   },
   {
    "id": "36982489",
@@ -1503,7 +1349,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:07+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:59+00:00"
   },
   {
    "id": "42854980",
@@ -1618,7 +1464,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:09+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:02+00:00"
   },
   {
    "id": "25438744",
@@ -1734,7 +1580,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:01+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:52+00:00"
   },
   {
    "id": "43839284",
@@ -1849,7 +1695,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:13+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:06+00:00"
   },
   {
    "id": "42536857",
@@ -1976,7 +1822,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:13+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:05+00:00"
   },
   {
    "id": "32100279",
@@ -2091,7 +1937,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:03+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:55+00:00"
   },
   {
    "id": "42347841",
@@ -2218,7 +2064,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:18+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:10+00:00"
   },
   {
    "id": "40590641",
@@ -2327,7 +2173,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:04+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:55+00:00"
   },
   {
    "id": "44112329",
@@ -2437,7 +2283,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:14+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:06+00:00"
   },
   {
    "id": "32277470",
@@ -2565,7 +2411,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:07+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:58+00:00"
   },
   {
    "id": "37540811",
@@ -2760,6 +2606,40 @@
      ]
     },
     {
+     "id": "44265966",
+     "cvr": "44265966",
+     "navn": "P&N Foran Engineering Denmark ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-11",
+     "branchetekst": "Rådgivende ingeniøraktiviteter inden for byggeri og anlægsarbejder",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S11092026-79",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "45155838",
+     "cvr": "45155838",
+     "navn": "Sophia-Rengøring ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-11",
+     "branchetekst": "Almindelig rengøring i bygninger",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S11092026-33",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
      "id": "45113078",
      "cvr": "45113078",
      "navn": "Green Cretan ApS",
@@ -2843,43 +2723,9 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
-    },
-    {
-     "id": "45513890",
-     "cvr": "45513890",
-     "navn": "SIERRA BIOSYSTEMS DENMARK ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-08-27",
-     "branchetekst": "Engroshandel med medicinalvarer og sygeplejeartikler",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S27082026-78",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    },
-    {
-     "id": "45601196",
-     "cvr": "45601196",
-     "navn": "NICRAM ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-08-26",
-     "branchetekst": "El-installation",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S26082026-91",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:06+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:58+00:00"
   },
   {
    "id": "35889981",
@@ -2988,7 +2834,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:06+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:57+00:00"
   },
   {
    "id": "26270871",
@@ -3097,7 +2943,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:05+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:57+00:00"
   },
   {
    "id": "29243484",
@@ -3206,7 +3052,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:04+00:00"
+   "sidst_opdateret": "2026-09-15T09:25:56+00:00"
   },
   {
    "id": "36492139",
@@ -3315,7 +3161,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:08+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:01+00:00"
+  },
+  {
+   "id": "28850794",
+   "statstidende_id": "S07082026-177",
+   "statstidende_url": "https://www.statstidende.dk/messages/S07082026-177",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-08-11",
+   "dekretdato": "2026-08-07",
+   "fristdag": "2026-08-07",
+   "anmeldelsesfrist": "2026-09-08",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Randers",
+    "sagsnummer": "SKS 60-5266/2026"
+   },
+   "kurator": {
+    "navn": "Christian Jul Madsen",
+    "firma": null,
+    "adresse": "Kalkværksvej 16, 25",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "selskab": {
+    "cvr": "28850794",
+    "navn": "RØNBÆKVEJ 17 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "469000",
+    "branchetekst": "Ikke-specialiseret engroshandel",
+    "bibrancher": [],
+    "adresse": "Skolegyden 3",
+    "postnr": "8963",
+    "by": "Auning",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2005-06-22",
+    "status": "UNDERKONKURS",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
+    "formaal": null,
+    "lat": 56.43018757,
+    "lon": 10.38276679
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "aktiver": 8097359,
+    "egenkapital": 539342,
+    "investeringsejendomme": 8000000,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 8000000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 5853938,
+    "kortfristet_gaeld": 597822,
+    "omsaetning": null,
+    "bruttofortjeneste": 238466,
+    "aarets_resultat": 2084669,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 8000000,
+    "ejendomsandel_pct": 98.8,
+    "soliditet_pct": 6.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 6451760
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 8.000.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 60,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "RØNBÆKVEJ 17 ApS\nVed dekret af 07.08.2026 har Retten i Randers taget\n\nRØNBÆKVEJ 17 ApS\nCVR-nr: 28850794\nSkolegyden 3\n8963 Auning\nSagsnr: SKS 60-5266/2026\n\nunder konkursbehandling efter begæring modtaget den 07.08.2026.\n\nKurator er advokat Christian Jul Madsen, Kalkværksvej 16, 25., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 07.08.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Randers, den 07.08.2026.\n\nKurator\nAdvokat Christian Jul Madsen\nKalkværksvej 16, 25\n8000 Århus C\n\nSkifteret\nRetten i Randers",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28850794",
+    "statstidende": "https://www.statstidende.dk/messages/S07082026-177",
+    "aarsrapport": "http://regnskaber.virk.dk/49705882/amNsb3VkczovLzAzL2ZhLzc3LzJmLzU2L2YzMDQtNGRiMi1hZWIyLWU4MGU2Y2VlOTY0OQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28850794?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skolegyden+3,+8963+Auning",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Jul+Madsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-15T09:25:59+00:00"
   },
   {
    "id": "37902896",
@@ -3534,7 +3489,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:10+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:02+00:00"
   },
   {
    "id": "39721473",
@@ -3643,7 +3598,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:09+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:01+00:00"
   },
   {
    "id": "41982659",
@@ -3770,7 +3725,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:10+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:03+00:00"
   },
   {
    "id": "20402644",
@@ -3982,7 +3937,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:12+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:05+00:00"
   },
   {
    "id": "12830033",
@@ -4090,7 +4045,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:58:14+00:00"
+   "sidst_opdateret": "2026-09-15T09:33:39+00:00"
   },
   {
    "id": "40207422",
@@ -4238,7 +4193,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:37+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:30+00:00"
   },
   {
    "id": "39276445",
@@ -4347,7 +4302,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:36+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:29+00:00"
   },
   {
    "id": "43723758",
@@ -4457,7 +4412,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:28+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:21+00:00"
   },
   {
    "id": "44145227",
@@ -4560,7 +4515,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:12+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:04+00:00"
   },
   {
    "id": "26074967",
@@ -4669,7 +4624,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:11+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:04+00:00"
   },
   {
    "id": "43167731",
@@ -4798,7 +4753,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:11+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:03+00:00"
   },
   {
    "id": "41298332",
@@ -4901,7 +4856,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:19+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:12+00:00"
   },
   {
    "id": "37867462",
@@ -5125,7 +5080,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:22+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:13+00:00"
   },
   {
    "id": "32569633",
@@ -5228,7 +5183,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:20+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:13+00:00"
   },
   {
    "id": "43729225",
@@ -5331,7 +5286,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:20+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:12+00:00"
   },
   {
    "id": "41727586",
@@ -5434,7 +5389,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:19+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:11+00:00"
   },
   {
    "id": "10214343",
@@ -5537,7 +5492,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:18+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:11+00:00"
   },
   {
    "id": "84895210",
@@ -5640,7 +5595,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:17+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:10+00:00"
   },
   {
    "id": "34895562",
@@ -5743,7 +5698,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:17+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:09+00:00"
   },
   {
    "id": "37700789",
@@ -5846,7 +5801,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:16+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:09+00:00"
   },
   {
    "id": "43258842",
@@ -5950,7 +5905,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:16+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:08+00:00"
   },
   {
    "id": "14412107",
@@ -6072,7 +6027,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:51:15+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:08+00:00"
   },
   {
    "id": "39775298",
@@ -6175,7 +6130,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:15+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:07+00:00"
   },
   {
    "id": "32887902",
@@ -6278,7 +6233,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:14+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:07+00:00"
   },
   {
    "id": "36068620",
@@ -6387,7 +6342,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:49+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:47+00:00"
   },
   {
    "id": "25155688",
@@ -6600,7 +6555,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:22+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:14+00:00"
   },
   {
    "id": "27983944",
@@ -6724,7 +6679,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:58:10+00:00"
+   "sidst_opdateret": "2026-09-15T09:33:34+00:00"
   },
   {
    "id": "40096957",
@@ -6901,7 +6856,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:56:51+00:00"
+   "sidst_opdateret": "2026-09-15T09:32:16+00:00"
   },
   {
    "id": "40134999",
@@ -7023,7 +6978,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-14T09:56:41+00:00"
+   "sidst_opdateret": "2026-09-15T09:32:06+00:00"
   },
   {
    "id": "43321137",
@@ -7126,7 +7081,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:54:45+00:00"
+   "sidst_opdateret": "2026-09-15T09:30:11+00:00"
   },
   {
    "id": "45041522",
@@ -7228,7 +7183,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:53:43+00:00"
+   "sidst_opdateret": "2026-09-15T09:29:09+00:00"
   },
   {
    "id": "27111408",
@@ -7331,7 +7286,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:53:46+00:00"
+   "sidst_opdateret": "2026-09-15T09:29:12+00:00"
   },
   {
    "id": "40313761",
@@ -7537,7 +7492,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:23+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:15+00:00"
   },
   {
    "id": "45690725",
@@ -7640,7 +7595,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-14T09:51:22+00:00"
+   "sidst_opdateret": "2026-09-15T09:26:14+00:00"
   }
  ]
 }
