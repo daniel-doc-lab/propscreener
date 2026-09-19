@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-18T09:10:06+00:00",
+  "genereret": "2026-09-19T09:05:48+00:00",
   "version": "0.1.0",
-  "antal": 65,
+  "antal": 68,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,15 +14,15 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-18T08:59:56+00:00",
-   "dekreter": 1089,
-   "tvangsauktioner": 0,
-   "auktioner_i_alt": 354,
-   "boer_med_relationer": 287,
-   "beriget_cvr": 1087,
-   "beriget_regnskab": 836,
+   "started": "2026-09-19T08:48:06+00:00",
+   "dekreter": 1105,
+   "tvangsauktioner": 1,
+   "auktioner_i_alt": 361,
+   "boer_med_relationer": 295,
+   "beriget_cvr": 1103,
+   "beriget_regnskab": 851,
    "beriget_ejf": 0,
-   "over_min_score": 55,
+   "over_min_score": 58,
    "min_score": 25,
    "bevaret_fra_tidligere": 10,
    "kilder_aktive": [
@@ -40,6 +40,142 @@
   }
  },
  "cases": [
+  {
+   "id": "42558168",
+   "statstidende_id": "S17092026-58",
+   "statstidende_url": "https://www.statstidende.dk/messages/S17092026-58",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-19",
+   "dekretdato": "1900-01-01",
+   "fristdag": "2026-05-12",
+   "anmeldelsesfrist": "2026-10-17",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1050/26-K"
+   },
+   "kurator": {
+    "navn": "Torben Korsager Andersen",
+    "firma": null,
+    "adresse": "Mariane Thomsens Gade 1C, 8 1",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Torben+Korsager+Andersen"
+   },
+   "selskab": {
+    "cvr": "42558168",
+    "navn": "Ejendomsselskabet Klb ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "681100",
+    "branchetekst": "Køb og salg af egen fast ejendom",
+    "bibrancher": [],
+    "adresse": "Amager Landevej 259",
+    "postnr": "2770",
+    "by": "Kastrup",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2021-07-21",
+    "status": "NORMAL",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42558168",
+    "formaal": null,
+    "lat": 55.61694078,
+    "lon": 12.62920951
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/86185524/amNsb3VkczovLzAzLzMyLzhkLzczLzY2LzNjODQtNGQzMy1iYzY4LTcxZmFiMWMzMGQ3Nw.xhtml",
+    "aktiver": 28644727,
+    "egenkapital": 180,
+    "investeringsejendomme": 23598086,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 23961528,
+    "realkreditgaeld": 11839602,
+    "langfristet_gaeld": 14133811,
+    "kortfristet_gaeld": 14330791,
+    "omsaetning": null,
+    "bruttofortjeneste": 2610287,
+    "aarets_resultat": 2610287,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 23598086,
+    "ejendomsandel_pct": 82.4,
+    "soliditet_pct": 0.0,
+    "ltv_pct": 50.2,
+    "samlet_gaeld": 28464602
+   },
+   "ejendomme": [
+    {
+     "bfe_nummer": null,
+     "adresse": "Vænget 19",
+     "postnr": "4400",
+     "by": "Kalundborg",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "141 c, Kalundborg Bygrunde",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1650000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-10-05",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S02092026-144",
+     "lat": 55.67993488,
+     "lon": 11.08899521
+    }
+   ],
+   "signaler": [
+    {
+     "kode": "tvangsauktion",
+     "beskrivelse": "1 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
+     "point": 50,
+     "kilde": "Statstidende"
+    },
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 23.598.086 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 11.839.602 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Ejendomsselskabet KLB ApS\nVed dekret af 01.01.1900 har Sø- og Handelsrettens skifteret taget\n\nEjendomsselskabet KLB ApS\nCVR-nr: 42558168\nAmager Landevej 259\n2770 Kastrup\nSagsnr: K 1050/26-K\n\nunder konkursbehandling på grundlag af en begæring modtaget den 12.05.2026.\n\nSom kurator er udpeget advokat Torben Korsager Andersen, Mariane Thomsens Gade 1C, 8. 1, 8000 Århus C.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 17.09.2026\n\nKurator\nAdvokat Torben Korsager Andersen\nMariane Thomsens Gade 1C, 8 1\n8000 Århus C\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42558168",
+    "statstidende": "https://www.statstidende.dk/messages/S17092026-58",
+    "tvangsauktion": "https://www.statstidende.dk/messages/S02092026-144",
+    "aarsrapport": "http://regnskaber.virk.dk/86185524/amNsb3VkczovLzAzLzMyLzhkLzczLzY2LzNjODQtNGQzMy1iYzY4LTcxZmFiMWMzMGQ3Nw.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42558168?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Amager+Landevej+259,+2770+Kastrup",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Torben+Korsager+Andersen"
+   },
+   "kilder": [
+    "statstidende",
+    "tvangsauktion",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-19T08:56:17+00:00"
+  },
   {
    "id": "33377088",
    "statstidende_id": "S11062026-52",
@@ -276,7 +412,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:48+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:20+00:00"
   },
   {
    "id": "21032794",
@@ -415,7 +551,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:47+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:18+00:00"
   },
   {
    "id": "32439284",
@@ -554,7 +690,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:47+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:19+00:00"
   },
   {
    "id": "34597227",
@@ -675,7 +811,147 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:46+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:17+00:00"
+  },
+  {
+   "id": "33038100",
+   "statstidende_id": "S17092026-125",
+   "statstidende_url": "https://www.statstidende.dk/messages/S17092026-125",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-19",
+   "dekretdato": "2026-09-17",
+   "fristdag": "2026-09-14",
+   "anmeldelsesfrist": "2026-10-17",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Nykøbing Falster",
+    "sagsnummer": "SKS 12-284/2026"
+   },
+   "kurator": {
+    "navn": "Bent Ellegård Pedersen",
+    "firma": null,
+    "adresse": "Storegade 4",
+    "postnr": "4780",
+    "by": "Stege",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Bent+Ellegård+Pedersen"
+   },
+   "selskab": {
+    "cvr": "33038100",
+    "navn": "VH EJENDOMME STEGE ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Lendemark Hovedgade 17",
+    "postnr": "4780",
+    "by": "Stege",
+    "kommune": null,
+    "region": "Sjælland",
+    "stiftet": "2010-04-15",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/33038100",
+    "formaal": null,
+    "lat": 54.97825402,
+    "lon": 12.27564954
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/00183033/amNsb3VkczovLzAzL2JjL2U5LzE0Lzk1LzNlY2UtNDU1Yy1iZDYzLTEyOGRlNWY3ZjZmYw.pdf",
+    "aktiver": 900000,
+    "egenkapital": -163868,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 900000,
+    "materielle_anlaeg": 900000,
+    "realkreditgaeld": 749885,
+    "langfristet_gaeld": 749885,
+    "kortfristet_gaeld": 181983,
+    "omsaetning": null,
+    "bruttofortjeneste": -219608,
+    "aarets_resultat": -152922,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 900000,
+    "ejendomsandel_pct": 100.0,
+    "soliditet_pct": -18.2,
+    "ltv_pct": 83.3,
+    "samlet_gaeld": 931868
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 900.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 749.885 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "VH EJENDOMME STEGE ApS\nVed dekret af 17.09.2026 har Retten i Nykøbing Falster taget\n\nVH EJENDOMME STEGE ApS\nCVR-nr: 33038100\nLendemark Hovedgade 17\n4780 Stege\nSagsnr: SKS 12-284/2026\n\nunder konkursbehandling efter begæring modtaget den 14.09.2026.\n\nKurator er advokat Bent Ellegård Pedersen, Storegade 4, 4780 Stege.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 17.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Nykøbing Falster, den 17.09.2026.\n\nKurator\nAdvokat Bent Ellegård Pedersen\nStoregade 4\n4780 Stege\n\nSkifteret\nRetten i Nykøbing Falster",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/33038100",
+    "statstidende": "https://www.statstidende.dk/messages/S17092026-125",
+    "aarsrapport": "http://regnskaber.virk.dk/00183033/amNsb3VkczovLzAzL2JjL2U5LzE0Lzk1LzNlY2UtNDU1Yy1iZDYzLTEyOGRlNWY3ZjZmYw.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/33038100?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Lendemark+Hovedgade+17,+4780+Stege",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Bent+Ellegård+Pedersen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "25761278",
+     "cvr": "25761278",
+     "navn": "VH HOLDING STEGE ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-17",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Stege",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S17092026-128",
+     "i_registret": false,
+     "grund": [
+      "fælles navnestamme »stege« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-19T08:56:19+00:00"
   },
   {
    "id": "41553308",
@@ -1080,7 +1356,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:50+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:22+00:00"
   },
   {
    "id": "40523286",
@@ -1234,7 +1510,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:53+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:25+00:00"
   },
   {
    "id": "36982489",
@@ -1349,7 +1625,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:52+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:24+00:00"
   },
   {
    "id": "42854980",
@@ -1464,7 +1740,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:55+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:28+00:00"
   },
   {
    "id": "25438744",
@@ -1580,7 +1856,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:46+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:17+00:00"
   },
   {
    "id": "43839284",
@@ -1695,7 +1971,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:58+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:31+00:00"
   },
   {
    "id": "42536857",
@@ -1822,7 +2098,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:58+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:31+00:00"
   },
   {
    "id": "32100279",
@@ -1937,7 +2213,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:48+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:20+00:00"
   },
   {
    "id": "42347841",
@@ -2064,7 +2340,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:01:04+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:36+00:00"
   },
   {
    "id": "40590641",
@@ -2173,7 +2449,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:49+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:21+00:00"
   },
   {
    "id": "44112329",
@@ -2283,7 +2559,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:00+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:32+00:00"
   },
   {
    "id": "32277470",
@@ -2411,7 +2687,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:52+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:24+00:00"
   },
   {
    "id": "37540811",
@@ -2725,7 +3001,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:51+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:23+00:00"
   },
   {
    "id": "35889981",
@@ -2834,7 +3110,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:51+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:23+00:00"
   },
   {
    "id": "26270871",
@@ -2943,7 +3219,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:50+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:22+00:00"
   },
   {
    "id": "29243484",
@@ -3052,7 +3328,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:49+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:21+00:00"
   },
   {
    "id": "36492139",
@@ -3161,7 +3437,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:54+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:26+00:00"
   },
   {
    "id": "28850794",
@@ -3270,7 +3546,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:53+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:25+00:00"
   },
   {
    "id": "37902896",
@@ -3489,7 +3765,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:55+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:28+00:00"
   },
   {
    "id": "39721473",
@@ -3598,7 +3874,135 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:54+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:27+00:00"
+  },
+  {
+   "id": "44049090",
+   "statstidende_id": "S17092026-203",
+   "statstidende_url": "https://www.statstidende.dk/messages/S17092026-203",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-19",
+   "dekretdato": "2026-09-17",
+   "fristdag": "2026-09-17",
+   "anmeldelsesfrist": "2026-10-17",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1871/26-D"
+   },
+   "kurator": {
+    "navn": "Anne Birgitte Gammeljord",
+    "firma": null,
+    "adresse": "Poul Ankers Gade 2",
+    "postnr": "1271",
+    "by": "København K",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anne+Birgitte+Gammeljord"
+   },
+   "selskab": {
+    "cvr": "44049090",
+    "navn": "H.C. Ørstedsvej 50B ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "681100",
+    "branchetekst": "Køb og salg af egen fast ejendom",
+    "bibrancher": [],
+    "adresse": "H.C. Ørsteds Vej 50B, st",
+    "postnr": "1879",
+    "by": "Frederiksberg C",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2023-04-28",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44049090",
+    "formaal": null,
+    "lat": 55.68198653,
+    "lon": 12.54987926
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/09094044/amNsb3VkczovLzAzLzBkLzEyLzRjLzJmLzAzNTMtNDE0OC1hMTM2LTNlZjNlMTUzODg0MA.xml",
+    "aktiver": 1012418,
+    "egenkapital": 175008,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1000000,
+    "materielle_anlaeg": 1000000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 818000,
+    "kortfristet_gaeld": 19410,
+    "omsaetning": null,
+    "bruttofortjeneste": -3750,
+    "aarets_resultat": -3750,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 1000000,
+    "ejendomsandel_pct": 98.8,
+    "soliditet_pct": 17.3,
+    "ltv_pct": null,
+    "samlet_gaeld": 837410
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.000.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "H.C. Ørstedsvej 50B ApS\nVed dekret af 17.09.2026 har Sø- og Handelsrettens skifteret taget\n\nH.C. Ørstedsvej 50B ApS\nCVR-nr: 44049090\nH.C. Ørsteds Vej 50B, st 1\n1879 Frederiksberg C\nSagsnr: K 1871/26-D\n\nunder konkursbehandling på grundlag af en begæring modtaget den 17.09.2026 fra likvidator.\n\nSom kurator er udpeget advokat Anne Birgitte Gammeljord, Poul Ankers Gade 2, 1271 København K.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 17.09.2026\n\nKurator\nAdvokat Anne Birgitte Gammeljord\nPoul Ankers Gade 2\n1271 København K\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/44049090",
+    "statstidende": "https://www.statstidende.dk/messages/S17092026-203",
+    "aarsrapport": "http://regnskaber.virk.dk/09094044/amNsb3VkczovLzAzLzBkLzEyLzRjLzJmLzAzNTMtNDE0OC1hMTM2LTNlZjNlMTUzODg0MA.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/44049090?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=H.C.+Ørsteds+Vej+50B,+st,+1879+Frederiksberg+C",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anne+Birgitte+Gammeljord"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "44017342",
+     "cvr": "44017342",
+     "navn": "Tolab Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-17",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Frederiksberg C",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S17092026-57",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-19T08:56:27+00:00"
   },
   {
    "id": "41982659",
@@ -3937,7 +4341,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:57+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:30+00:00"
   },
   {
    "id": "12830033",
@@ -4045,7 +4449,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:08:52+00:00"
+   "sidst_opdateret": "2026-09-19T09:04:40+00:00"
   },
   {
    "id": "40207422",
@@ -4193,7 +4597,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:01:23+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:55+00:00"
   },
   {
    "id": "39276445",
@@ -4302,7 +4706,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:21+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:53+00:00"
   },
   {
    "id": "43723758",
@@ -4412,7 +4816,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:13+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:46+00:00"
   },
   {
    "id": "44145227",
@@ -4515,7 +4919,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:57+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:30+00:00"
   },
   {
    "id": "26074967",
@@ -4624,7 +5028,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:56+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:29+00:00"
   },
   {
    "id": "43167731",
@@ -4753,7 +5157,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:00:56+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:29+00:00"
   },
   {
    "id": "41298332",
@@ -4856,7 +5260,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:05+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:38+00:00"
   },
   {
    "id": "37867462",
@@ -5080,7 +5484,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:07+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:39+00:00"
   },
   {
    "id": "32569633",
@@ -5183,7 +5587,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:06+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:39+00:00"
   },
   {
    "id": "43729225",
@@ -5286,7 +5690,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:06+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:38+00:00"
   },
   {
    "id": "41727586",
@@ -5389,7 +5793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:05+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:37+00:00"
   },
   {
    "id": "10214343",
@@ -5492,7 +5896,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:04+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:37+00:00"
   },
   {
    "id": "84895210",
@@ -5595,7 +5999,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:03+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:36+00:00"
   },
   {
    "id": "34895562",
@@ -5698,7 +6102,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:03+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:35+00:00"
   },
   {
    "id": "37700789",
@@ -5801,7 +6205,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:02+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:35+00:00"
   },
   {
    "id": "43258842",
@@ -5905,7 +6309,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:02+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:34+00:00"
   },
   {
    "id": "14412107",
@@ -6027,7 +6431,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:01:01+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:34+00:00"
   },
   {
    "id": "39775298",
@@ -6130,7 +6534,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:01+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:33+00:00"
   },
   {
    "id": "32887902",
@@ -6233,7 +6637,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:00+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:33+00:00"
   },
   {
    "id": "42214914",
@@ -6336,7 +6740,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:00:59+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:32+00:00"
   },
   {
    "id": "36068620",
@@ -6445,7 +6849,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:46+00:00"
+   "sidst_opdateret": "2026-09-19T08:57:26+00:00"
   },
   {
    "id": "25155688",
@@ -6658,7 +7062,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:07+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:40+00:00"
   },
   {
    "id": "27983944",
@@ -6782,7 +7186,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:08:47+00:00"
+   "sidst_opdateret": "2026-09-19T09:04:36+00:00"
   },
   {
    "id": "40096957",
@@ -6959,7 +7363,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:07:30+00:00"
+   "sidst_opdateret": "2026-09-19T09:03:18+00:00"
   },
   {
    "id": "40134999",
@@ -7081,7 +7485,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-18T09:07:20+00:00"
+   "sidst_opdateret": "2026-09-19T09:03:09+00:00"
   },
   {
    "id": "43321137",
@@ -7184,7 +7588,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:05:24+00:00"
+   "sidst_opdateret": "2026-09-19T09:01:15+00:00"
   },
   {
    "id": "45041522",
@@ -7286,7 +7690,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:04:22+00:00"
+   "sidst_opdateret": "2026-09-19T09:00:13+00:00"
   },
   {
    "id": "27111408",
@@ -7389,7 +7793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:04:25+00:00"
+   "sidst_opdateret": "2026-09-19T09:00:16+00:00"
   },
   {
    "id": "40313761",
@@ -7698,7 +8102,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-18T09:01:08+00:00"
+   "sidst_opdateret": "2026-09-19T08:56:40+00:00"
   }
  ]
 }
