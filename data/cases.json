@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-24T09:28:37+00:00",
+  "genereret": "2026-09-25T09:48:06+00:00",
   "version": "0.1.0",
-  "antal": 71,
+  "antal": 75,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-24T09:17:43+00:00",
-   "dekreter": 1140,
-   "tvangsauktioner": 1,
-   "auktioner_i_alt": 372,
-   "boer_med_relationer": 307,
-   "beriget_cvr": 1139,
-   "beriget_regnskab": 880,
+   "started": "2026-09-25T09:36:08+00:00",
+   "dekreter": 1156,
+   "tvangsauktioner": 2,
+   "auktioner_i_alt": 377,
+   "boer_med_relationer": 309,
+   "beriget_cvr": 1155,
+   "beriget_regnskab": 890,
    "beriget_ejf": 0,
-   "over_min_score": 58,
+   "over_min_score": 61,
    "min_score": 25,
-   "bevaret_fra_tidligere": 13,
+   "bevaret_fra_tidligere": 14,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:43+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:05+00:00"
   },
   {
    "id": "33377088",
@@ -412,7 +412,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:46+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:08+00:00"
   },
   {
    "id": "21032794",
@@ -551,7 +551,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:44+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:07+00:00"
   },
   {
    "id": "32439284",
@@ -690,7 +690,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:45+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:08+00:00"
   },
   {
    "id": "34597227",
@@ -811,7 +811,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:44+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:06+00:00"
   },
   {
    "id": "33038100",
@@ -951,7 +951,199 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:45+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:07+00:00"
+  },
+  {
+   "id": "39268876",
+   "statstidende_id": "S23092026-312",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-312",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-25",
+   "dekretdato": "2026-09-23",
+   "fristdag": "2026-09-23",
+   "anmeldelsesfrist": "2026-10-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-354/2026"
+   },
+   "kurator": {
+    "navn": "Michael E. Hansen",
+    "firma": null,
+    "adresse": "Kolding Åpark 1, 2",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "selskab": {
+    "cvr": "39268876",
+    "navn": "A-PORTAL.DK ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Nyager 13",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "kommune": "Bredstrup",
+    "region": "Syddanmark",
+    "stiftet": "2018-01-22",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39268876",
+    "formaal": null,
+    "lat": 55.5901839,
+    "lon": 9.66846815
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
+    "aktiver": 20167355,
+    "egenkapital": 2606861,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 14612740,
+    "materielle_anlaeg": 15177065,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 7274202,
+    "kortfristet_gaeld": 9841777,
+    "omsaetning": null,
+    "bruttofortjeneste": 1161747,
+    "aarets_resultat": 739,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 14612740,
+    "ejendomsandel_pct": 72.5,
+    "soliditet_pct": 12.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 17115979
+   },
+   "ejendomme": [
+    {
+     "bfe_nummer": null,
+     "adresse": "Mjels Brovej 84",
+     "postnr": "9230",
+     "by": "Svenstrup J",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "6 r, Ellidshøj by, Ellidshøj",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1085000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-09-22",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S02092026-86",
+     "lat": 56.92456337,
+     "lon": 9.88167922
+    }
+   ],
+   "signaler": [
+    {
+     "kode": "tvangsauktion",
+     "beskrivelse": "1 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
+     "point": 50,
+     "kilde": "Statstidende"
+    },
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 14.612.740 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "A-PORTAL.DK ApS i likvidation\nVed dekret af 23.09.2026 har Retten i Kolding taget\n\nA-PORTAL.DK ApS i likvidation\nCVR-nr: 39268876\nNyager 13\n7000 Fredericia\nSagsnr: 6-354/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nKurator er advokat Michael E. Hansen, Kolding Åpark 1, 2., 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 23.09.2026.\n\nKurator\nAdvokat Michael E. Hansen\nKolding Åpark 1, 2\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39268876",
+    "statstidende": "https://www.statstidende.dk/messages/S23092026-312",
+    "tvangsauktion": "https://www.statstidende.dk/messages/S02092026-86",
+    "aarsrapport": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39268876?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nyager+13,+7000+Fredericia",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "tvangsauktion",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'i likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "27359663",
+     "cvr": "27359663",
+     "navn": "E73 Ejendomme ApS",
+     "score": 60,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Opførelse af bygninger",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 1608800,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-301",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "26712815",
+     "cvr": "26712815",
+     "navn": "Blommehaven 2 ApS",
+     "score": 45,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 2794000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-324",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40541985",
+     "cvr": "40541985",
+     "navn": "E73 Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-337",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-25T09:38:05+00:00"
   },
   {
    "id": "41553308",
@@ -1356,7 +1548,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:48+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:11+00:00"
   },
   {
    "id": "41887885",
@@ -1490,7 +1682,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:47+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:10+00:00"
   },
   {
    "id": "40523286",
@@ -1644,7 +1836,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:51+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:15+00:00"
   },
   {
    "id": "36982489",
@@ -1759,7 +1951,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:50+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:14+00:00"
   },
   {
    "id": "42854980",
@@ -1874,7 +2066,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:54+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:17+00:00"
   },
   {
    "id": "25438744",
@@ -1990,7 +2182,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:43+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:06+00:00"
   },
   {
    "id": "42944572",
@@ -2125,7 +2317,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:53+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:16+00:00"
   },
   {
    "id": "43839284",
@@ -2482,7 +2674,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:46+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:09+00:00"
   },
   {
    "id": "42347841",
@@ -2609,7 +2801,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:19:02+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:26+00:00"
   },
   {
    "id": "40590641",
@@ -2718,7 +2910,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:47+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:09+00:00"
   },
   {
    "id": "44112329",
@@ -2828,7 +3020,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:58+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:22+00:00"
   },
   {
    "id": "32277470",
@@ -3360,7 +3552,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:49+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:12+00:00"
   },
   {
    "id": "26270871",
@@ -3469,7 +3661,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:49+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:11+00:00"
   },
   {
    "id": "29243484",
@@ -3578,7 +3770,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:48+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:10+00:00"
   },
   {
    "id": "36492139",
@@ -3687,7 +3879,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:52+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:15+00:00"
   },
   {
    "id": "28850794",
@@ -3796,7 +3988,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:51+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:14+00:00"
   },
   {
    "id": "43888757",
@@ -3905,7 +4097,171 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:50+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:13+00:00"
+  },
+  {
+   "id": "27359663",
+   "statstidende_id": "S23092026-301",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-301",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-25",
+   "dekretdato": "2026-09-23",
+   "fristdag": "2026-09-23",
+   "anmeldelsesfrist": "2026-10-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-356/2026"
+   },
+   "kurator": {
+    "navn": "Michael E. Hansen",
+    "firma": null,
+    "adresse": "Kolding Åpark 1, 2",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "selskab": {
+    "cvr": "27359663",
+    "navn": "E73 Ejendomme ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "410000",
+    "branchetekst": "Opførelse af bygninger",
+    "bibrancher": [],
+    "adresse": "Nyager 13",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "kommune": "Bredstrup",
+    "region": "Syddanmark",
+    "stiftet": "2003-09-25",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27359663",
+    "formaal": null,
+    "lat": 55.5901839,
+    "lon": 9.66846815
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/36695372/amNsb3VkczovLzAzL2JmLzZmLzdlLzg2LzFmZDAtNDY2OS05ZDYzLTZiZjBiOGI1YTQwOQ.xml",
+    "aktiver": 7296131,
+    "egenkapital": 2202446,
+    "investeringsejendomme": 1608800,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 1608800,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 3769842,
+    "kortfristet_gaeld": 1231557,
+    "omsaetning": null,
+    "bruttofortjeneste": 1009329,
+    "aarets_resultat": 124359,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 1608800,
+    "ejendomsandel_pct": 22.1,
+    "soliditet_pct": 30.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 5001399
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 1.608.800 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 60,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "E73 Ejendomme ApS i likvadation\nVed dekret af 23.09.2026 har Retten i Kolding taget\n\nE73 Ejendomme ApS i likvadation\nCVR-nr: 27359663\nNyager 13\n7000 Fredericia\nSagsnr: 6-356/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nKurator er advokat Michael E. Hansen, Kolding Åpark 1, 2., 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 23.09.2026.\n\nKurator\nAdvokat Michael E. Hansen\nKolding Åpark 1, 2\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/27359663",
+    "statstidende": "https://www.statstidende.dk/messages/S23092026-301",
+    "aarsrapport": "http://regnskaber.virk.dk/36695372/amNsb3VkczovLzAzL2JmLzZmLzdlLzg2LzFmZDAtNDY2OS05ZDYzLTZiZjBiOGI1YTQwOQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/27359663?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nyager+13,+7000+Fredericia",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "39268876",
+     "cvr": "39268876",
+     "navn": "A-PORTAL.DK ApS",
+     "score": 100,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Udlejning af erhvervsejendomme",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 14612740,
+     "antal_ejendomme": 1,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-312",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "26712815",
+     "cvr": "26712815",
+     "navn": "Blommehaven 2 ApS",
+     "score": 45,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 2794000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-324",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40541985",
+     "cvr": "40541985",
+     "navn": "E73 Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-337",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-25T09:38:13+00:00"
   },
   {
    "id": "37902896",
@@ -4124,7 +4480,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:55+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:18+00:00"
   },
   {
    "id": "39721473",
@@ -4233,7 +4589,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:54+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:17+00:00"
   },
   {
    "id": "44049090",
@@ -4361,7 +4717,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:53+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:16+00:00"
   },
   {
    "id": "41982659",
@@ -4700,7 +5056,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:57+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:21+00:00"
   },
   {
    "id": "12830033",
@@ -4808,7 +5164,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:27:59+00:00"
+   "sidst_opdateret": "2026-09-25T09:47:34+00:00"
   },
   {
    "id": "40207422",
@@ -4956,7 +5312,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:19:25+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:47+00:00"
   },
   {
    "id": "39276445",
@@ -5065,7 +5421,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:23+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:46+00:00"
   },
   {
    "id": "43723758",
@@ -5175,7 +5531,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:15+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:38+00:00"
   },
   {
    "id": "44145227",
@@ -5278,7 +5634,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:56+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:20+00:00"
   },
   {
    "id": "26074967",
@@ -5387,7 +5743,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:56+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:20+00:00"
   },
   {
    "id": "43167731",
@@ -5516,7 +5872,166 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:18:55+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:19+00:00"
+  },
+  {
+   "id": "26712815",
+   "statstidende_id": "S23092026-324",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-324",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-25",
+   "dekretdato": "2026-09-23",
+   "fristdag": "2026-09-23",
+   "anmeldelsesfrist": "2026-10-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-353/2026"
+   },
+   "kurator": {
+    "navn": "Michael E. Hansen",
+    "firma": null,
+    "adresse": "Kolding Åpark 1, 2",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "selskab": {
+    "cvr": "26712815",
+    "navn": "Blommehaven 2 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "681100",
+    "branchetekst": "Køb og salg af egen fast ejendom",
+    "bibrancher": [],
+    "adresse": "Nyager 13",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "kommune": "Bredstrup",
+    "region": "Syddanmark",
+    "stiftet": "2002-07-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/26712815",
+    "formaal": null,
+    "lat": 55.5901839,
+    "lon": 9.66846815
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/51821762/amNsb3VkczovLzAzLzUyL2RkLzYyL2MzL2NkYjYtNDNjYS1hMDBiLWU4NTZiYjdkOTMzNA.xhtml",
+    "aktiver": 2880786,
+    "egenkapital": 927,
+    "investeringsejendomme": 2794000,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 2794000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 312,
+    "kortfristet_gaeld": 1198723,
+    "omsaetning": null,
+    "bruttofortjeneste": -7,
+    "aarets_resultat": 15,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 2794000,
+    "ejendomsandel_pct": 97.0,
+    "soliditet_pct": 0.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 1199035
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 2.794.000 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "Blommehaven 2 ApS i likvidation\nVed dekret af 23.09.2026 har Retten i Kolding taget\n\nBlommehaven 2 ApS i likvidation\nCVR-nr: 26712815\nNyager 13\n7000 Fredericia\nSagsnr: 6-353/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nKurator er advokat Michael E. Hansen, Kolding Åpark 1, 2., 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 23.09.2026.\n\nKurator\nAdvokat Michael E. Hansen\nKolding Åpark 1, 2\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/26712815",
+    "statstidende": "https://www.statstidende.dk/messages/S23092026-324",
+    "aarsrapport": "http://regnskaber.virk.dk/51821762/amNsb3VkczovLzAzLzUyL2RkLzYyL2MzL2NkYjYtNDNjYS1hMDBiLWU4NTZiYjdkOTMzNA.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/26712815?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nyager+13,+7000+Fredericia",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'i likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "39268876",
+     "cvr": "39268876",
+     "navn": "A-PORTAL.DK ApS",
+     "score": 100,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Udlejning af erhvervsejendomme",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 14612740,
+     "antal_ejendomme": 1,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-312",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "27359663",
+     "cvr": "27359663",
+     "navn": "E73 Ejendomme ApS",
+     "score": 60,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Opførelse af bygninger",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 1608800,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-301",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40541985",
+     "cvr": "40541985",
+     "navn": "E73 Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-337",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-09-25T09:38:19+00:00"
   },
   {
    "id": "41298332",
@@ -5619,7 +6134,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:04+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:27+00:00"
   },
   {
    "id": "37867462",
@@ -5843,7 +6358,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:05+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:29+00:00"
   },
   {
    "id": "32569633",
@@ -5946,7 +6461,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:05+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:28+00:00"
   },
   {
    "id": "43729225",
@@ -6049,7 +6564,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:04+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:28+00:00"
   },
   {
    "id": "41727586",
@@ -6152,7 +6667,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:03+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:27+00:00"
   },
   {
    "id": "10214343",
@@ -6255,7 +6770,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:03+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:26+00:00"
   },
   {
    "id": "84895210",
@@ -6358,7 +6873,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:02+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:25+00:00"
   },
   {
    "id": "34895562",
@@ -6461,7 +6976,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:01+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:25+00:00"
   },
   {
    "id": "37700789",
@@ -6564,7 +7079,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:01+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:24+00:00"
   },
   {
    "id": "43258842",
@@ -6668,7 +7183,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:00+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:24+00:00"
   },
   {
    "id": "14412107",
@@ -6790,7 +7305,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:19:00+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:23+00:00"
   },
   {
    "id": "39775298",
@@ -6893,7 +7408,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:59+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:23+00:00"
   },
   {
    "id": "32887902",
@@ -6996,7 +7511,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:59+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:22+00:00"
   },
   {
    "id": "42214914",
@@ -7099,7 +7614,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:18:58+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:21+00:00"
   },
   {
    "id": "36068620",
@@ -7208,7 +7723,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:20:04+00:00"
+   "sidst_opdateret": "2026-09-25T09:39:35+00:00"
   },
   {
    "id": "25155688",
@@ -7421,7 +7936,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:06+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:29+00:00"
   },
   {
    "id": "27983944",
@@ -7545,7 +8060,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:27:55+00:00"
+   "sidst_opdateret": "2026-09-25T09:47:30+00:00"
   },
   {
    "id": "40096957",
@@ -7704,7 +8219,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:26:36+00:00"
+   "sidst_opdateret": "2026-09-25T09:46:12+00:00"
   },
   {
    "id": "40134999",
@@ -7826,7 +8341,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-24T09:26:27+00:00"
+   "sidst_opdateret": "2026-09-25T09:46:02+00:00"
   },
   {
    "id": "43321137",
@@ -7929,7 +8444,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:24:32+00:00"
+   "sidst_opdateret": "2026-09-25T09:44:06+00:00"
   },
   {
    "id": "45041522",
@@ -8031,7 +8546,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:23:30+00:00"
+   "sidst_opdateret": "2026-09-25T09:43:04+00:00"
   },
   {
    "id": "27111408",
@@ -8134,7 +8649,110 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:23:32+00:00"
+   "sidst_opdateret": "2026-09-25T09:43:07+00:00"
+  },
+  {
+   "id": "39270536",
+   "statstidende_id": "S23092026-370",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-370",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-25",
+   "dekretdato": "2026-09-21",
+   "fristdag": "2026-09-04",
+   "anmeldelsesfrist": "2026-10-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-431/2026"
+   },
+   "kurator": {
+    "navn": "Lars Møgelvang Hansen",
+    "firma": null,
+    "adresse": "Adelgade 1",
+    "postnr": "9500",
+    "by": "Hobro",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Møgelvang+Hansen"
+   },
+   "selskab": {
+    "cvr": "39270536",
+    "navn": "Holdingselskabet AK ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Skovsgårdsvej 2",
+    "postnr": "9370",
+    "by": "Hals",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": "2018-01-23",
+    "status": "NORMAL",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39270536",
+    "formaal": null,
+    "lat": 56.99891174,
+    "lon": 10.310465
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/63507293/amNsb3VkczovLzAzLzlkLzFiLzRhLzMxLzIzYjQtNGE0ZS04YjQ2LTBhODA3YTkzZWY2Nw.xml",
+    "aktiver": 0,
+    "egenkapital": 50,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": -50,
+    "omsaetning": 0,
+    "bruttofortjeneste": 0,
+    "aarets_resultat": 0,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": null,
+    "ltv_pct": null,
+    "samlet_gaeld": -50
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "Holdingselskabet AK ApS\nVed dekret af 21.09.2026 har Retten i Aalborg taget\n\nHoldingselskabet AK ApS\nCVR-nr: 39270536\nSkovsgårdsvej 2\n9370 Hals\nSagsnr: SKS 31-431/2026\n\nunder konkursbehandling efter begæring modtaget den 04.09.2026.\n\nSelskabet har hjemsted i Aalborg kommune og har drevet virksomhed fra adressen Skovsgårdsvej 2, 9370 Hals.\n\nKurator er advokat Lars Møgelvang Hansen, Adelgade 1, 9500 Hobro.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 21.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 21.09.2026.\n\nKurator\nAdvokat Lars Møgelvang Hansen\nAdelgade 1\n9500 Hobro\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39270536",
+    "statstidende": "https://www.statstidende.dk/messages/S23092026-370",
+    "aarsrapport": "http://regnskaber.virk.dk/63507293/amNsb3VkczovLzAzLzlkLzFiLzRhLzMxLzIzYjQtNGE0ZS04YjQ2LTBhODA3YTkzZWY2Nw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39270536?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Skovsgårdsvej+2,+9370+Hals",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Lars+Møgelvang+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-09-25T09:40:52+00:00"
   },
   {
    "id": "40313761",
@@ -8443,7 +9061,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-24T09:19:06+00:00"
+   "sidst_opdateret": "2026-09-25T09:38:30+00:00"
   }
  ]
 }
