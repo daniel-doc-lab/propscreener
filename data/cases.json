@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-09-30T10:42:52+00:00",
+  "genereret": "2026-10-01T11:08:39+00:00",
   "version": "0.1.0",
-  "antal": 78,
+  "antal": 81,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-09-30T10:28:54+00:00",
-   "dekreter": 1235,
+   "started": "2026-10-01T10:56:25+00:00",
+   "dekreter": 1252,
    "tvangsauktioner": 3,
-   "auktioner_i_alt": 391,
-   "boer_med_relationer": 354,
-   "beriget_cvr": 1234,
-   "beriget_regnskab": 950,
+   "auktioner_i_alt": 394,
+   "boer_med_relationer": 361,
+   "beriget_cvr": 1251,
+   "beriget_regnskab": 964,
    "beriget_ejf": 0,
-   "over_min_score": 59,
+   "over_min_score": 60,
    "min_score": 25,
-   "bevaret_fra_tidligere": 19,
+   "bevaret_fra_tidligere": 21,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: QUOTA_EXCEEDED"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"172.174.165.4\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:31:57+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:48+00:00"
   },
   {
    "id": "33377088",
@@ -551,7 +551,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:31:59+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:50+00:00"
   },
   {
    "id": "32439284",
@@ -690,7 +690,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:00+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:51+00:00"
   },
   {
    "id": "34597227",
@@ -811,7 +811,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:31:58+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
   },
   {
    "id": "33038100",
@@ -951,7 +951,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:31:59+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:50+00:00"
   },
   {
    "id": "39268876",
@@ -1161,7 +1161,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:31:57+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
   },
   {
    "id": "41553308",
@@ -1566,7 +1566,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:03+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:54+00:00"
   },
   {
    "id": "41887885",
@@ -1700,7 +1700,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:02+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:53+00:00"
   },
   {
    "id": "71106217",
@@ -1834,7 +1834,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:01+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:52+00:00"
   },
   {
    "id": "40523286",
@@ -1988,7 +1988,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:07+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:58+00:00"
   },
   {
    "id": "36982489",
@@ -2103,7 +2103,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:06+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:57+00:00"
   },
   {
    "id": "42854980",
@@ -2218,7 +2218,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:09+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:01+00:00"
   },
   {
    "id": "25438744",
@@ -2334,7 +2334,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:31:58+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
   },
   {
    "id": "42944572",
@@ -2469,7 +2469,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:08+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:59+00:00"
   },
   {
    "id": "43839284",
@@ -2826,7 +2826,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:00+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:51+00:00"
   },
   {
    "id": "42347841",
@@ -2953,7 +2953,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:17+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:10+00:00"
   },
   {
    "id": "40590641",
@@ -3062,7 +3062,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:01+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:52+00:00"
   },
   {
    "id": "44112329",
@@ -3172,7 +3172,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:13+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:06+00:00"
   },
   {
    "id": "32277470",
@@ -3704,7 +3704,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:04+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:55+00:00"
   },
   {
    "id": "26270871",
@@ -3813,7 +3813,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:04+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:55+00:00"
   },
   {
    "id": "29243484",
@@ -3922,7 +3922,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:03+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:54+00:00"
   },
   {
    "id": "44227584",
@@ -4032,7 +4032,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:02+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:53+00:00"
   },
   {
    "id": "36492139",
@@ -4141,7 +4141,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:07+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:58+00:00"
   },
   {
    "id": "28850794",
@@ -4250,7 +4250,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:06+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:57+00:00"
   },
   {
    "id": "43888757",
@@ -4377,7 +4377,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:05+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:56+00:00"
   },
   {
    "id": "27359663",
@@ -4541,7 +4541,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:05+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:56+00:00"
   },
   {
    "id": "37902896",
@@ -4869,7 +4869,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:09+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:00+00:00"
   },
   {
    "id": "44049090",
@@ -4997,7 +4997,116 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:08+00:00"
+   "sidst_opdateret": "2026-10-01T10:57:59+00:00"
+  },
+  {
+   "id": "34587434",
+   "statstidende_id": "S29092026-197",
+   "statstidende_url": "https://www.statstidende.dk/messages/S29092026-197",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-01",
+   "dekretdato": "2026-09-29",
+   "fristdag": "2026-09-28",
+   "anmeldelsesfrist": "2026-10-29",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Esbjerg",
+    "sagsnummer": "SKS 15-259/2026"
+   },
+   "kurator": {
+    "navn": "Stefan Nielsen",
+    "firma": null,
+    "adresse": "John Tranums Vej 23",
+    "postnr": "6705",
+    "by": "Esbjerg Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "selskab": {
+    "cvr": "34587434",
+    "navn": "REFGAARD ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Debelvej 115",
+    "postnr": "6855",
+    "by": "Outrup",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2012-06-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/34587434",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/43478543/amNsb3VkczovLzAzL2EyLzRmLzlhLzA5Lzk0NDktNDQzMy1hZGVjLTRlZTE3YTI3YTQyMg.xml",
+    "aktiver": 17752858,
+    "egenkapital": -5857012,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 26250,
+    "realkreditgaeld": 19244566,
+    "langfristet_gaeld": 19244566,
+    "kortfristet_gaeld": 4365304,
+    "omsaetning": null,
+    "bruttofortjeneste": -4121,
+    "aarets_resultat": -691194,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -33.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 23609870
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 19.244.566 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "REFGAARD ApS\nVed dekret af 29.09.2026 har Retten i Esbjerg taget\n\nREFGAARD ApS\nCVR-nr: 34587434\nDebelvej 115\n6855 Outrup\nSagsnr: SKS 15-259/2026\n\nunder konkursbehandling efter begæring modtaget den 28.09.2026. Selskabet har været under tvangsopløsning siden 17.08.2026.\n\nKurator er advokat Stefan Nielsen, John Tranums Vej 23, 6705 Esbjerg Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 29.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Esbjerg, den 29.09.2026.\n\nKurator\nAdvokat Stefan Nielsen\nJohn Tranums Vej 23\n6705 Esbjerg Ø\n\nSkifteret\nRetten i Esbjerg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/34587434",
+    "statstidende": "https://www.statstidende.dk/messages/S29092026-197",
+    "aarsrapport": "http://regnskaber.virk.dk/43478543/amNsb3VkczovLzAzL2EyLzRmLzlhLzA5Lzk0NDktNDQzMy1hZGVjLTRlZTE3YTI3YTQyMg.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/34587434?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Debelvej+115,+6855+Outrup",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-01T10:58:13+00:00"
   },
   {
    "id": "41982659",
@@ -5592,7 +5701,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:41+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:34+00:00"
   },
   {
    "id": "39276445",
@@ -5701,7 +5810,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:39+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:33+00:00"
   },
   {
    "id": "43723758",
@@ -5811,7 +5920,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:32+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:25+00:00"
   },
   {
    "id": "44145227",
@@ -5914,7 +6023,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:12+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:04+00:00"
   },
   {
    "id": "26074967",
@@ -6023,7 +6132,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:12+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:03+00:00"
   },
   {
    "id": "43167731",
@@ -6152,7 +6261,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:11+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:03+00:00"
   },
   {
    "id": "26712815",
@@ -6311,7 +6420,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:11+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:02+00:00"
   },
   {
    "id": "38532499",
@@ -6625,7 +6734,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:11+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:02+00:00"
   },
   {
    "id": "41298332",
@@ -6728,7 +6837,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:19+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:11+00:00"
   },
   {
    "id": "37867462",
@@ -7158,7 +7267,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:19+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:12+00:00"
   },
   {
    "id": "41727586",
@@ -7261,7 +7370,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:18+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:11+00:00"
   },
   {
    "id": "10214343",
@@ -7364,7 +7473,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:18+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:10+00:00"
   },
   {
    "id": "84895210",
@@ -7467,7 +7576,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:17+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:09+00:00"
   },
   {
    "id": "34895562",
@@ -7570,7 +7679,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:16+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:09+00:00"
   },
   {
    "id": "37700789",
@@ -7673,7 +7782,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:16+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:08+00:00"
   },
   {
    "id": "43258842",
@@ -7777,7 +7886,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:15+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:08+00:00"
   },
   {
    "id": "14412107",
@@ -7899,7 +8008,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:32:15+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:07+00:00"
   },
   {
    "id": "39775298",
@@ -8002,7 +8111,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:14+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:07+00:00"
   },
   {
    "id": "32887902",
@@ -8105,7 +8214,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:14+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:06+00:00"
   },
   {
    "id": "42214914",
@@ -8208,7 +8317,110 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:13+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:05+00:00"
+  },
+  {
+   "id": "41939494",
+   "statstidende_id": "S29092026-183",
+   "statstidende_url": "https://www.statstidende.dk/messages/S29092026-183",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-01",
+   "dekretdato": "2026-09-29",
+   "fristdag": "2026-09-28",
+   "anmeldelsesfrist": "2026-10-29",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Esbjerg",
+    "sagsnummer": "SKS 15-258/2026"
+   },
+   "kurator": {
+    "navn": "Stefan Nielsen",
+    "firma": null,
+    "adresse": "John Tranums Vej 23",
+    "postnr": "6705",
+    "by": "Esbjerg Ø",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "selskab": {
+    "cvr": "41939494",
+    "navn": "Cab DK 04 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "493300",
+    "branchetekst": "Passagertransport på bestilling i køretøj med chauffør",
+    "bibrancher": [],
+    "adresse": "N J Poulsens Vej 17, 2",
+    "postnr": "6700",
+    "by": "Esbjerg",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2020-12-11",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41939494",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/49493914/amNsb3VkczovLzAzLzRhLzRiLzQ1L2YwL2QzMGQtNDFlYS04YzBhLWQxNzc1ZGM3OTU2YQ.pdf",
+    "aktiver": 725177,
+    "egenkapital": 386924,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 250247,
+    "materielle_anlaeg": 577230,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 20000,
+    "kortfristet_gaeld": 304672,
+    "omsaetning": null,
+    "bruttofortjeneste": 908670,
+    "aarets_resultat": 102216,
+    "ansatte": 2,
+    "ejendomsvaerdi_bogfoert": 250247,
+    "ejendomsandel_pct": 34.5,
+    "soliditet_pct": 53.4,
+    "ltv_pct": null,
+    "samlet_gaeld": 324672
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 250.247 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Cab DK 04 ApS\nVed dekret af 29.09.2026 har Retten i Esbjerg taget\n\nCab DK 04 ApS\nCVR-nr: 41939494\nN J Poulsens Vej 17\n6700 Esbjerg\nSagsnr: SKS 15-258/2026\n\nunder konkursbehandling efter begæring modtaget den 28.09.2026. Selskabet har været under tvangsopløsning siden 11.08.2026.\n\nKurator er advokat Stefan Nielsen, John Tranums Vej 23, 6705 Esbjerg Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 29.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Esbjerg, den 29.09.2026.\n\nKurator\nAdvokat Stefan Nielsen\nJohn Tranums Vej 23\n6705 Esbjerg Ø\n\nSkifteret\nRetten i Esbjerg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41939494",
+    "statstidende": "https://www.statstidende.dk/messages/S29092026-183",
+    "aarsrapport": "http://regnskaber.virk.dk/49493914/amNsb3VkczovLzAzLzRhLzRiLzQ1L2YwL2QzMGQtNDFlYS04YzBhLWQxNzc1ZGM3OTU2YQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41939494?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=N+J+Poulsens+Vej+17,+2,+6700+Esbjerg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Nielsen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-01T10:58:05+00:00"
   },
   {
    "id": "36068620",
@@ -8317,7 +8529,117 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:33:43+00:00"
+   "sidst_opdateret": "2026-10-01T10:59:35+00:00"
+  },
+  {
+   "id": "32365655",
+   "statstidende_id": "S29092026-347",
+   "statstidende_url": "https://www.statstidende.dk/messages/S29092026-347",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-01",
+   "dekretdato": "2026-09-29",
+   "fristdag": "2026-09-27",
+   "anmeldelsesfrist": "2026-10-29",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aarhus",
+    "sagsnummer": "SKS 41-20525/2026"
+   },
+   "kurator": {
+    "navn": "John Sommer Schmidt",
+    "firma": null,
+    "adresse": "Ceres Allé 3",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=John+Sommer+Schmidt"
+   },
+   "selskab": {
+    "cvr": "32365655",
+    "navn": "NOVA GROUP ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "683210",
+    "branchetekst": "Administration af fast ejendom på kontraktbasis",
+    "bibrancher": [],
+    "adresse": "Elmosevej 51A",
+    "postnr": "8330",
+    "by": "Beder",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2009-08-24",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/32365655",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/55656323/amNsb3VkczovLzAzLzJlL2M2LzZjL2Q3LzIzYzEtNDQzNC1iODdjLTY5ZjFjNjQ5MWNjOQ.pdf",
+    "aktiver": 60099,
+    "egenkapital": -866580,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 44000,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 926679,
+    "omsaetning": null,
+    "bruttofortjeneste": 51206,
+    "aarets_resultat": -37880,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -1441.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 926679
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.32.10 Administration af fast ejendom på kontraktbasis",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 35,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "NOVA GROUP ApS under tvangsopløsning\nVed dekret af 29.09.2026 har Retten i Aarhus taget\n\nNOVA GROUP ApS under tvangsopløsning\nCVR-nr: 32365655\nElmosevej 51A\n8330 Beder\nSagsnr: SKS 41-20525/2026\n\nunder konkursbehandling efter begæring modtaget den 27.09.2026.\n\nKurator er advokat John Sommer Schmidt, Ceres Allé 3, 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 29.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nAnmeldelse indgivet under forudgående likvidation til likvidator, advokat John Sommer Schmidt, tages i betragtning uden ny anmeldelse, dog må eventuelle renter opgjort pr. konkursdagen anmeldes.\n\nRetten i Aarhus, den 29.09.2026.\n\nKurator\nAdvokat John Sommer Schmidt\nCeres Allé 3\n8000 Århus C\n\nSkifteret\nRetten i Aarhus",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/32365655",
+    "statstidende": "https://www.statstidende.dk/messages/S29092026-347",
+    "aarsrapport": "http://regnskaber.virk.dk/55656323/amNsb3VkczovLzAzLzJlL2M2LzZjL2Q3LzIzYzEtNDQzNC1iODdjLTY5ZjFjNjQ5MWNjOQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/32365655?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Elmosevej+51A,+8330+Beder",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=John+Sommer+Schmidt"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-01T10:58:38+00:00"
   },
   {
    "id": "25155688",
@@ -8654,7 +8976,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:42:41+00:00"
+   "sidst_opdateret": "2026-10-01T11:08:34+00:00"
   },
   {
    "id": "40096957",
@@ -8813,7 +9135,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:41:22+00:00"
+   "sidst_opdateret": "2026-10-01T11:07:16+00:00"
   },
   {
    "id": "40134999",
@@ -8935,7 +9257,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-09-30T10:41:13+00:00"
+   "sidst_opdateret": "2026-10-01T11:07:07+00:00"
   },
   {
    "id": "43321137",
@@ -9038,7 +9360,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:39:18+00:00"
+   "sidst_opdateret": "2026-10-01T11:05:13+00:00"
   },
   {
    "id": "45041522",
@@ -9140,7 +9462,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:38:15+00:00"
+   "sidst_opdateret": "2026-10-01T11:04:11+00:00"
   },
   {
    "id": "27111408",
@@ -9243,7 +9565,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:38:18+00:00"
+   "sidst_opdateret": "2026-10-01T11:04:14+00:00"
   },
   {
    "id": "39270536",
@@ -9346,7 +9668,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:36:08+00:00"
+   "sidst_opdateret": "2026-10-01T11:02:03+00:00"
   },
   {
    "id": "40313761",
@@ -9655,7 +9977,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-09-30T10:32:20+00:00"
+   "sidst_opdateret": "2026-10-01T10:58:13+00:00"
   }
  ]
 }
