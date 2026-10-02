@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-10-01T11:08:39+00:00",
+  "genereret": "2026-10-02T10:44:02+00:00",
   "version": "0.1.0",
-  "antal": 81,
+  "antal": 86,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-10-01T10:56:25+00:00",
-   "dekreter": 1252,
+   "started": "2026-10-02T10:29:46+00:00",
+   "dekreter": 1283,
    "tvangsauktioner": 3,
-   "auktioner_i_alt": 394,
-   "boer_med_relationer": 361,
-   "beriget_cvr": 1251,
-   "beriget_regnskab": 964,
+   "auktioner_i_alt": 400,
+   "boer_med_relationer": 366,
+   "beriget_cvr": 1282,
+   "beriget_regnskab": 983,
    "beriget_ejf": 0,
-   "over_min_score": 60,
+   "over_min_score": 61,
    "min_score": 25,
-   "bevaret_fra_tidligere": 21,
+   "bevaret_fra_tidligere": 25,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"172.174.165.4\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"4.242.196.196\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:48+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:24+00:00"
   },
   {
    "id": "33377088",
@@ -551,7 +551,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:50+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:26+00:00"
   },
   {
    "id": "32439284",
@@ -690,7 +690,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:51+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:34+00:00"
   },
   {
    "id": "34597227",
@@ -811,7 +811,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:26+00:00"
   },
   {
    "id": "33038100",
@@ -951,7 +951,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:50+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:27+00:00"
   },
   {
    "id": "39268876",
@@ -1161,7 +1161,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:25+00:00"
   },
   {
    "id": "41553308",
@@ -1566,7 +1566,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:54+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:39+00:00"
   },
   {
    "id": "41887885",
@@ -1680,27 +1680,8 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [
-    {
-     "id": "37926434",
-     "cvr": "37926434",
-     "navn": "Datoselskabet Roof A/S",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-06-30",
-     "branchetekst": "Tagdækningsaktiviteter",
-     "by": "Aulum",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S01072026-16",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse",
-      "fælles navnestamme »datoselskabet« og samme kurator"
-     ]
-    }
-   ],
-   "sidst_opdateret": "2026-10-01T10:57:53+00:00"
+   "relationer": [],
+   "sidst_opdateret": "2026-10-02T10:32:38+00:00"
   },
   {
    "id": "71106217",
@@ -1832,9 +1813,43 @@
       "samme hjemstedsadresse",
       "samme kurator og dekret samme dage"
      ]
+    },
+    {
+     "id": "27005128",
+     "cvr": "27005128",
+     "navn": "SVOSTRUP HOLDING ApS",
+     "score": 70,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Gjern",
+     "ejendomsvaerdi": 4200000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-256",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "31260310",
+     "cvr": "31260310",
+     "navn": "TUK-TUK ApS",
+     "score": 40,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Anden finansiel formidling i.a.n.",
+     "by": "Gjern",
+     "ejendomsvaerdi": 424013,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-280",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:52+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:37+00:00"
   },
   {
    "id": "40523286",
@@ -2103,7 +2118,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:57+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:42+00:00"
   },
   {
    "id": "42854980",
@@ -2218,7 +2233,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:01+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:45+00:00"
   },
   {
    "id": "25438744",
@@ -2334,7 +2349,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:49+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:25+00:00"
   },
   {
    "id": "42944572",
@@ -2469,7 +2484,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:59+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:44+00:00"
   },
   {
    "id": "43839284",
@@ -2826,7 +2841,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:51+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:34+00:00"
   },
   {
    "id": "42347841",
@@ -2953,7 +2968,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:58:10+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:54+00:00"
   },
   {
    "id": "40590641",
@@ -3062,7 +3077,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:52+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:37+00:00"
   },
   {
    "id": "44112329",
@@ -3172,7 +3187,285 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:06+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:50+00:00"
+  },
+  {
+   "id": "27005128",
+   "statstidende_id": "S30092026-256",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30092026-256",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-02",
+   "dekretdato": "2026-09-30",
+   "fristdag": "2026-09-29",
+   "anmeldelsesfrist": "2026-10-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Viborg",
+    "sagsnummer": "SKS 5-345/2026"
+   },
+   "kurator": {
+    "navn": "Henrik Ejlersen",
+    "firma": null,
+    "adresse": "Gothersgade 2",
+    "postnr": "8800",
+    "by": "Viborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Ejlersen"
+   },
+   "selskab": {
+    "cvr": "27005128",
+    "navn": "SVOSTRUP HOLDING ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642120",
+    "branchetekst": "Ikke-finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Østergade 29",
+    "postnr": "8883",
+    "by": "Gjern",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2002-11-14",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27005128",
+    "formaal": null,
+    "lat": 56.23191228,
+    "lon": 9.74235783
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/82150072/amNsb3VkczovLzAzL2IwLzViL2M2LzRiLzJhNTItNDhjYy1hMWIwLTM2MjI4YjQ3ZTBmYQ.xhtml",
+    "aktiver": 4909490,
+    "egenkapital": 1904273,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 4200000,
+    "materielle_anlaeg": 4200000,
+    "realkreditgaeld": 2463335,
+    "langfristet_gaeld": 2463335,
+    "kortfristet_gaeld": 417,
+    "omsaetning": null,
+    "bruttofortjeneste": 244,
+    "aarets_resultat": 92,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 4200000,
+    "ejendomsandel_pct": 85.5,
+    "soliditet_pct": 38.8,
+    "ltv_pct": 58.7,
+    "samlet_gaeld": 2463752
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 4.200.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 2.463.335 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "SVOSTRUP HOLDING ApS\nVed dekret af 30.09.2026 har Retten i Viborg taget\n\nSVOSTRUP HOLDING ApS\nCVR-nr: 27005128\nØstergade 29\n8883 Gjern\nSagsnr: SKS 5-345/2026\n\nunder konkursbehandling efter begæring modtaget den 29.09.2026.\n\nKurator er advokat Henrik Ejlersen, Gothersgade 2, 8800 Viborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 30.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Viborg, den 30.09.2026.\n\nKurator\nAdvokat Henrik Ejlersen\nGothersgade 2\n8800 Viborg\n\nSkifteret\nRetten i Viborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/27005128",
+    "statstidende": "https://www.statstidende.dk/messages/S30092026-256",
+    "aarsrapport": "http://regnskaber.virk.dk/82150072/amNsb3VkczovLzAzL2IwLzViL2M2LzRiLzJhNTItNDhjYy1hMWIwLTM2MjI4YjQ3ZTBmYQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/27005128?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Østergade+29,+8883+Gjern",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Ejlersen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "31260310",
+     "cvr": "31260310",
+     "navn": "TUK-TUK ApS",
+     "score": 40,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Anden finansiel formidling i.a.n.",
+     "by": "Gjern",
+     "ejendomsvaerdi": 424013,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-280",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "71106217",
+     "cvr": "71106217",
+     "navn": "NYBO ApS",
+     "score": 95,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-25",
+     "branchetekst": "Anden udlejning af boliger",
+     "by": "Gjern",
+     "ejendomsvaerdi": 891,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S25092026-40",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "29136335",
+     "cvr": "29136335",
+     "navn": "PRIMO ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-25",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Gjern",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S25092026-47",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-10-02T10:32:36+00:00"
+  },
+  {
+   "id": "40073884",
+   "statstidende_id": "S30092026-93",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30092026-93",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-02",
+   "dekretdato": "2026-09-30",
+   "fristdag": "2026-09-23",
+   "anmeldelsesfrist": "2026-10-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aalborg",
+    "sagsnummer": "SKS 31-471/2026"
+   },
+   "kurator": {
+    "navn": "Finn Bødstrup",
+    "firma": null,
+    "adresse": "K. Christensens Vej 2E",
+    "postnr": "9200",
+    "by": "Aalborg SV",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Bødstrup"
+   },
+   "selskab": {
+    "cvr": "40073884",
+    "navn": "VVS-holdingselskabet af 9. marts 2026 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642120",
+    "branchetekst": "Ikke-finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Vesterbro 12",
+    "postnr": "9631",
+    "by": "Gedsted",
+    "kommune": null,
+    "region": "Nordjylland",
+    "stiftet": "2018-12-06",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40073884",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/48837004/amNsb3VkczovLzAzL2U5L2IwL2JhLzk0LzBkMzEtNDQ2ZC04MDgwLWQ1NjYyNzI5YzA1ZA.pdf",
+    "aktiver": 2924088,
+    "egenkapital": 246491,
+    "investeringsejendomme": 1809529,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 1809529,
+    "realkreditgaeld": 1107499,
+    "langfristet_gaeld": 1107499,
+    "kortfristet_gaeld": 1570098,
+    "omsaetning": null,
+    "bruttofortjeneste": 60187,
+    "aarets_resultat": 31947,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 1809529,
+    "ejendomsandel_pct": 61.9,
+    "soliditet_pct": 8.4,
+    "ltv_pct": 61.2,
+    "samlet_gaeld": 2677597
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 1.809.529 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.107.499 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Blandet",
+   "raa_tekst": "VVS-holdingselskabet af 9. marts 2026 ApS under tvangsopløsning\nVed dekret af 30.09.2026 har Retten i Aalborg taget\n\nVVS-holdingselskabet af 9. marts 2026 ApS under tvangsopløsning\nCVR-nr: 40073884\nVesterbro 12\n9631 Gedsted\nSagsnr: SKS 31-471/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nForudgående anmodning om opløsning af selskabet er dateret 12.08.2026.\n\nKurator er advokat Finn Bødstrup, K. Christensens Vej 2E, 9200 Aalborg SV.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 30.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Aalborg, den 30.09.2026.\n\nKurator\nAdvokat Finn Bødstrup\nK. Christensens Vej 2E\n9200 Aalborg SV\n\nSkifteret\nRetten i Aalborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40073884",
+    "statstidende": "https://www.statstidende.dk/messages/S30092026-93",
+    "aarsrapport": "http://regnskaber.virk.dk/48837004/amNsb3VkczovLzAzL2U5L2IwL2JhLzk0LzBkMzEtNDQ2ZC04MDgwLWQ1NjYyNzI5YzA1ZA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40073884?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vesterbro+12,+9631+Gedsted",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Finn+Bødstrup"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-02T10:32:35+00:00"
   },
   {
    "id": "32277470",
@@ -3704,7 +3997,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:55+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:40+00:00"
   },
   {
    "id": "26270871",
@@ -3813,7 +4106,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:55+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:40+00:00"
   },
   {
    "id": "29243484",
@@ -3922,7 +4215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:54+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:39+00:00"
   },
   {
    "id": "44227584",
@@ -4032,7 +4325,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:53+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:38+00:00"
   },
   {
    "id": "36492139",
@@ -4250,7 +4543,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:57:57+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:42+00:00"
   },
   {
    "id": "43888757",
@@ -4377,7 +4670,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:56+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:41+00:00"
   },
   {
    "id": "27359663",
@@ -4541,7 +4834,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:56+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:41+00:00"
   },
   {
    "id": "37902896",
@@ -4869,7 +5162,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:00+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:45+00:00"
   },
   {
    "id": "44049090",
@@ -4997,7 +5290,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:57:59+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:44+00:00"
   },
   {
    "id": "34587434",
@@ -5106,7 +5399,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:13+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:57+00:00"
+  },
+  {
+   "id": "28311435",
+   "statstidende_id": "S30092026-123",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30092026-123",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-02",
+   "dekretdato": "2026-09-30",
+   "fristdag": "2026-09-08",
+   "anmeldelsesfrist": "2026-10-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Helsingør",
+    "sagsnummer": "SKS 42-293/2026"
+   },
+   "kurator": {
+    "navn": "Søren Pihl Hansen",
+    "firma": null,
+    "adresse": "Nordhavnsvej 1A",
+    "postnr": "3000",
+    "by": "Helsingør",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Pihl+Hansen"
+   },
+   "selskab": {
+    "cvr": "28311435",
+    "navn": "HESSELBJERG BYG ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "649990",
+    "branchetekst": "Anden finansiel formidling i.a.n.",
+    "bibrancher": [],
+    "adresse": "Smedevej 7",
+    "postnr": "3200",
+    "by": "Helsinge",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2005-01-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/28311435",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-06-30",
+    "kilde_url": "http://regnskaber.virk.dk/53411382/amNsb3VkczovLzAzL2I4LzI4L2Q1LzA4LzBjNGItNDg1NS04MTEzLWU0ZDFjMjgxMTcyZg.xhtml",
+    "aktiver": 505,
+    "egenkapital": -331,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 505,
+    "materielle_anlaeg": 505,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 836,
+    "omsaetning": 0,
+    "bruttofortjeneste": -19,
+    "aarets_resultat": -28,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 505,
+    "ejendomsandel_pct": 100.0,
+    "soliditet_pct": -65.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 836
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 505 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 55,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Grund/Projekt",
+   "raa_tekst": "HESSELBJERG BYG ApS\nVed dekret af 30.09.2026 har Retten i Helsingør taget\n\nHESSELBJERG BYG ApS\nCVR-nr: 28311435\nSmedevej 7\n3200 Helsinge\nSagsnr: SKS 42-293/2026\n\nunder konkursbehandling efter begæring modtaget den 08.09.2026.\n\nKurator er advokat Søren Pihl Hansen, Nordhavnsvej 1A, 3000 Helsingør.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 30.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Helsingør, den 30.09.2026.\n\nKurator\nAdvokat Søren Pihl Hansen\nNordhavnsvej 1A\n3000 Helsingør\n\nSkifteret\nRetten i Helsingør",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/28311435",
+    "statstidende": "https://www.statstidende.dk/messages/S30092026-123",
+    "aarsrapport": "http://regnskaber.virk.dk/53411382/amNsb3VkczovLzAzL2I4LzI4L2Q1LzA4LzBjNGItNDg1NS04MTEzLWU0ZDFjMjgxMTcyZg.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/28311435?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Smedevej+7,+3200+Helsinge",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Pihl+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-02T10:32:43+00:00"
   },
   {
    "id": "41982659",
@@ -5810,7 +6212,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:33+00:00"
+   "sidst_opdateret": "2026-10-02T10:33:20+00:00"
   },
   {
    "id": "43723758",
@@ -5920,7 +6322,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:25+00:00"
+   "sidst_opdateret": "2026-10-02T10:33:12+00:00"
   },
   {
    "id": "44145227",
@@ -6023,7 +6425,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:04+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:48+00:00"
   },
   {
    "id": "26074967",
@@ -6132,7 +6534,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:03+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:47+00:00"
   },
   {
    "id": "43167731",
@@ -6261,7 +6663,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:58:03+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:47+00:00"
   },
   {
    "id": "26712815",
@@ -6420,7 +6822,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:58:02+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:46+00:00"
   },
   {
    "id": "38532499",
@@ -6734,7 +7136,171 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:58:02+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:46+00:00"
+  },
+  {
+   "id": "42434434",
+   "statstidende_id": "S30092026-298",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30092026-298",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-02",
+   "dekretdato": "2026-09-30",
+   "fristdag": "2026-09-30",
+   "anmeldelsesfrist": "2026-10-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 2085/26-K"
+   },
+   "kurator": {
+    "navn": "Christian Elmer",
+    "firma": null,
+    "adresse": "Kalvebod Brygge 39",
+    "postnr": "1560",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Elmer"
+   },
+   "selskab": {
+    "cvr": "42434434",
+    "navn": "Taarnby Ejendomme ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682030",
+    "branchetekst": "Anden udlejning af boliger",
+    "bibrancher": [],
+    "adresse": "Erhvervsvej 21",
+    "postnr": "2610",
+    "by": "Rødovre",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2021-06-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42434434",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/43443424/amNsb3VkczovLzAzL2VlLzQ1LzdmLzdkLzNhMjYtNDJmNS04MTk1LWVlODE1MTJkZDcxOQ.pdf",
+    "aktiver": 11036757,
+    "egenkapital": -2589867,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 0,
+    "materielle_anlaeg": 0,
+    "realkreditgaeld": 0,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": 13626624,
+    "omsaetning": null,
+    "bruttofortjeneste": 722888,
+    "aarets_resultat": -1109985,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": -23.5,
+    "ltv_pct": null,
+    "samlet_gaeld": 13626624
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.30 Anden udlejning af boliger",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "Taarnby Ejendomme ApS\nVed dekret af 30.09.2026 har Sø- og Handelsrettens skifteret taget\n\nTaarnby Ejendomme ApS\nCVR-nr: 42434434\nErhvervsvej 21\n2610 Rødovre\nSagsnr: K 2085/26-K\n\nunder konkursbehandling på grundlag af en begæring modtaget den 30.09.2026 fra likvidator.\n\nSom kurator er udpeget advokat Christian Elmer, Kalvebod Brygge 39, 1560 København V.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 30.09.2026\n\nKurator\nAdvokat Christian Elmer\nKalvebod Brygge 39\n1560 København V\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42434434",
+    "statstidende": "https://www.statstidende.dk/messages/S30092026-298",
+    "aarsrapport": "http://regnskaber.virk.dk/43443424/amNsb3VkczovLzAzL2VlLzQ1LzdmLzdkLzNhMjYtNDJmNS04MTk1LWVlODE1MTJkZDcxOQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42434434?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Erhvervsvej+21,+2610+Rødovre",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Elmer"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "44188708",
+     "cvr": "44188708",
+     "navn": "Taarnby Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Rødovre",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-261",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "fælles navnestamme »taarnby« og samme kurator",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "44195917",
+     "cvr": "44195917",
+     "navn": "Sundby Transport ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Passagertransport på bestilling i køretøj med chauffør",
+     "by": "Rødovre",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-224",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "39344483",
+     "cvr": "39344483",
+     "navn": "Bülow Taxi 3 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-07-03",
+     "branchetekst": "Passagertransport på bestilling i køretøj med chauffør",
+     "by": "Rødovre",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03072026-114",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-10-02T10:32:58+00:00"
   },
   {
    "id": "41298332",
@@ -6837,7 +7403,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:11+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:56+00:00"
   },
   {
    "id": "37867462",
@@ -7267,7 +7833,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:12+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:56+00:00"
   },
   {
    "id": "41727586",
@@ -7370,7 +7936,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:11+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:55+00:00"
   },
   {
    "id": "10214343",
@@ -7473,7 +8039,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:10+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:55+00:00"
   },
   {
    "id": "84895210",
@@ -7576,7 +8142,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:09+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:54+00:00"
   },
   {
    "id": "34895562",
@@ -7679,7 +8245,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:09+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:53+00:00"
   },
   {
    "id": "37700789",
@@ -7782,7 +8348,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:08+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:53+00:00"
   },
   {
    "id": "43258842",
@@ -7886,7 +8452,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:08+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:52+00:00"
   },
   {
    "id": "14412107",
@@ -8008,7 +8574,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T10:58:07+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:52+00:00"
   },
   {
    "id": "39775298",
@@ -8111,7 +8677,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:07+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:51+00:00"
   },
   {
    "id": "32887902",
@@ -8214,7 +8780,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:06+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:51+00:00"
   },
   {
    "id": "42214914",
@@ -8317,7 +8883,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:05+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:50+00:00"
   },
   {
    "id": "41939494",
@@ -8420,7 +8986,163 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:05+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:49+00:00"
+  },
+  {
+   "id": "31260310",
+   "statstidende_id": "S30092026-280",
+   "statstidende_url": "https://www.statstidende.dk/messages/S30092026-280",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-02",
+   "dekretdato": "2026-09-30",
+   "fristdag": "2026-09-29",
+   "anmeldelsesfrist": "2026-10-30",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Viborg",
+    "sagsnummer": "SKS 5-343/2026"
+   },
+   "kurator": {
+    "navn": "Henrik Ejlersen",
+    "firma": null,
+    "adresse": "Gothersgade 2",
+    "postnr": "8800",
+    "by": "Viborg",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Ejlersen"
+   },
+   "selskab": {
+    "cvr": "31260310",
+    "navn": "TUK-TUK ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "649990",
+    "branchetekst": "Anden finansiel formidling i.a.n.",
+    "bibrancher": [],
+    "adresse": "Østergade 29",
+    "postnr": "8883",
+    "by": "Gjern",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2008-02-07",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/31260310",
+    "formaal": null,
+    "lat": 56.23191228,
+    "lon": 9.74235783
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/01306213/amNsb3VkczovLzAzL2FkLzM0LzFmLzQ3LzgxNWQtNDE4Zi1hY2Q3LTVkMjc0OTk5YzE4ZQ.xml",
+    "aktiver": 466065,
+    "egenkapital": 335071,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 424013,
+    "materielle_anlaeg": 424013,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 130994,
+    "omsaetning": null,
+    "bruttofortjeneste": -8243,
+    "aarets_resultat": -22032,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 424013,
+    "ejendomsandel_pct": 91.0,
+    "soliditet_pct": 71.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 130994
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 424.013 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "TUK-TUK ApS\nVed dekret af 30.09.2026 har Retten i Viborg taget\n\nTUK-TUK ApS\nCVR-nr: 31260310\nØstergade 29\n8883 Gjern\nSagsnr: SKS 5-343/2026\n\nunder konkursbehandling efter begæring modtaget den 29.09.2026.\n\nKurator er advokat Henrik Ejlersen, Gothersgade 2, 8800 Viborg.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 30.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Viborg, den 30.09.2026.\n\nKurator\nAdvokat Henrik Ejlersen\nGothersgade 2\n8800 Viborg\n\nSkifteret\nRetten i Viborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/31260310",
+    "statstidende": "https://www.statstidende.dk/messages/S30092026-280",
+    "aarsrapport": "http://regnskaber.virk.dk/01306213/amNsb3VkczovLzAzL2FkLzM0LzFmLzQ3LzgxNWQtNDE4Zi1hY2Q3LTVkMjc0OTk5YzE4ZQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/31260310?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Østergade+29,+8883+Gjern",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Henrik+Ejlersen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "27005128",
+     "cvr": "27005128",
+     "navn": "SVOSTRUP HOLDING ApS",
+     "score": 70,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-30",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Gjern",
+     "ejendomsvaerdi": 4200000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S30092026-256",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "71106217",
+     "cvr": "71106217",
+     "navn": "NYBO ApS",
+     "score": 95,
+     "konfidens": "høj",
+     "dekretdato": "2026-09-25",
+     "branchetekst": "Anden udlejning af boliger",
+     "by": "Gjern",
+     "ejendomsvaerdi": 891,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S25092026-40",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "29136335",
+     "cvr": "29136335",
+     "navn": "PRIMO ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-25",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Gjern",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S25092026-47",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-10-02T10:32:49+00:00"
   },
   {
    "id": "36068620",
@@ -8529,7 +9251,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:59:35+00:00"
+   "sidst_opdateret": "2026-10-02T10:34:34+00:00"
   },
   {
    "id": "32365655",
@@ -8639,7 +9361,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:38+00:00"
+   "sidst_opdateret": "2026-10-02T10:33:36+00:00"
   },
   {
    "id": "25155688",
@@ -9135,7 +9857,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T11:07:16+00:00"
+   "sidst_opdateret": "2026-10-02T10:42:39+00:00"
   },
   {
    "id": "40134999",
@@ -9257,7 +9979,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-01T11:07:07+00:00"
+   "sidst_opdateret": "2026-10-02T10:42:29+00:00"
   },
   {
    "id": "43321137",
@@ -9360,7 +10082,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T11:05:13+00:00"
+   "sidst_opdateret": "2026-10-02T10:40:35+00:00"
   },
   {
    "id": "45041522",
@@ -9462,7 +10184,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T11:04:11+00:00"
+   "sidst_opdateret": "2026-10-02T10:39:32+00:00"
   },
   {
    "id": "27111408",
@@ -9565,7 +10287,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T11:04:14+00:00"
+   "sidst_opdateret": "2026-10-02T10:39:35+00:00"
   },
   {
    "id": "39270536",
@@ -9668,7 +10390,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T11:02:03+00:00"
+   "sidst_opdateret": "2026-10-02T10:37:24+00:00"
   },
   {
    "id": "40313761",
@@ -9977,7 +10699,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-01T10:58:13+00:00"
+   "sidst_opdateret": "2026-10-02T10:32:57+00:00"
   }
  ]
 }
