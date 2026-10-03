@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-10-02T10:44:02+00:00",
+  "genereret": "2026-10-03T10:10:46+00:00",
   "version": "0.1.0",
-  "antal": 86,
+  "antal": 88,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-10-02T10:29:46+00:00",
-   "dekreter": 1283,
+   "started": "2026-10-03T09:51:15+00:00",
+   "dekreter": 1322,
    "tvangsauktioner": 3,
-   "auktioner_i_alt": 400,
-   "boer_med_relationer": 366,
-   "beriget_cvr": 1282,
-   "beriget_regnskab": 983,
+   "auktioner_i_alt": 401,
+   "boer_med_relationer": 377,
+   "beriget_cvr": 1321,
+   "beriget_regnskab": 1008,
    "beriget_ejf": 0,
    "over_min_score": 61,
    "min_score": 25,
-   "bevaret_fra_tidligere": 25,
+   "bevaret_fra_tidligere": 27,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"4.242.196.196\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.163.246.209\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:24+00:00"
+   "sidst_opdateret": "2026-10-03T09:58:58+00:00"
   },
   {
    "id": "33377088",
@@ -671,26 +671,8 @@
    "noter": [
     "Ejerfortegnelsen kunne ikke slås op"
    ],
-   "relationer": [
-    {
-     "id": "32439268",
-     "cvr": "32439268",
-     "navn": "MM HOLDING AF 1/9-2009 ApS",
-     "score": 5,
-     "konfidens": "lav",
-     "dekretdato": "2026-07-02",
-     "branchetekst": "Ikke-finansielle holdingselskaber",
-     "by": "Sorø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S02072026-279",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    }
-   ],
-   "sidst_opdateret": "2026-10-02T10:32:34+00:00"
+   "relationer": [],
+   "sidst_opdateret": "2026-10-03T09:59:00+00:00"
   },
   {
    "id": "34597227",
@@ -811,7 +793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:26+00:00"
+   "sidst_opdateret": "2026-10-03T09:58:59+00:00"
   },
   {
    "id": "33038100",
@@ -951,7 +933,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:27+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:00+00:00"
   },
   {
    "id": "39268876",
@@ -1161,7 +1143,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:25+00:00"
+   "sidst_opdateret": "2026-10-03T09:58:58+00:00"
   },
   {
    "id": "41553308",
@@ -1566,7 +1548,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:39+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:06+00:00"
   },
   {
    "id": "41887885",
@@ -1681,7 +1663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:38+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:05+00:00"
   },
   {
    "id": "71106217",
@@ -1849,7 +1831,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:37+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:04+00:00"
   },
   {
    "id": "40523286",
@@ -2118,7 +2100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:42+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:08+00:00"
   },
   {
    "id": "42854980",
@@ -2233,7 +2215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:45+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:11+00:00"
   },
   {
    "id": "25438744",
@@ -2349,7 +2331,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:25+00:00"
+   "sidst_opdateret": "2026-10-03T09:58:59+00:00"
   },
   {
    "id": "42944572",
@@ -2484,7 +2466,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:44+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:10+00:00"
   },
   {
    "id": "43839284",
@@ -2841,7 +2823,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:34+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:01+00:00"
   },
   {
    "id": "42347841",
@@ -2968,7 +2950,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:54+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:21+00:00"
   },
   {
    "id": "40590641",
@@ -3077,7 +3059,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:37+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:02+00:00"
   },
   {
    "id": "44112329",
@@ -3187,7 +3169,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:50+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:17+00:00"
   },
   {
    "id": "27005128",
@@ -3355,7 +3337,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:36+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:02+00:00"
   },
   {
    "id": "40073884",
@@ -3465,7 +3447,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:35+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:01+00:00"
   },
   {
    "id": "32277470",
@@ -3997,7 +3979,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:40+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:07+00:00"
   },
   {
    "id": "26270871",
@@ -4106,7 +4088,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:40+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:06+00:00"
   },
   {
    "id": "29243484",
@@ -4215,7 +4197,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:39+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:05+00:00"
   },
   {
    "id": "44227584",
@@ -4325,7 +4307,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:38+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:04+00:00"
+  },
+  {
+   "id": "40085327",
+   "statstidende_id": "S01102026-74",
+   "statstidende_url": "https://www.statstidende.dk/messages/S01102026-74",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-03",
+   "dekretdato": "2026-10-01",
+   "fristdag": "2026-09-29",
+   "anmeldelsesfrist": "2026-10-31",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Esbjerg",
+    "sagsnummer": "SKS 15-263/2026"
+   },
+   "kurator": {
+    "navn": "Jan Bruun Jørgensen",
+    "firma": null,
+    "adresse": "Buen 11",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Jan+Bruun+Jørgensen"
+   },
+   "selskab": {
+    "cvr": "40085327",
+    "navn": "Scandic Miljø Service ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "390000",
+    "branchetekst": "Rensning af jord og grundvand og anden dekontaminering",
+    "bibrancher": [],
+    "adresse": "Vestervang 54",
+    "postnr": "6650",
+    "by": "Brørup",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2018-12-01",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 18,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40085327",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/72358004/amNsb3VkczovLzAzLzM2LzJhL2NjLzYxLzE2ZDMtNDllNC04YWNmLTY5ODAwYTgxZjRkZg.xhtml",
+    "aktiver": 1046318,
+    "egenkapital": 78,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 510,
+    "materielle_anlaeg": 702,
+    "realkreditgaeld": 268,
+    "langfristet_gaeld": 276,
+    "kortfristet_gaeld": 692,
+    "omsaetning": 10291753,
+    "bruttofortjeneste": 2868934,
+    "aarets_resultat": 28,
+    "ansatte": 12,
+    "ejendomsvaerdi_bogfoert": 510,
+    "ejendomsandel_pct": 0.0,
+    "soliditet_pct": 0.0,
+    "ltv_pct": 52.5,
+    "samlet_gaeld": 968
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 510 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 268 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Scandic Miljø Service ApS\nVed dekret af 01.10.2026 har Retten i Esbjerg taget\n\nScandic Miljø Service ApS\nCVR-nr: 40085327\nVestervang 54\n6650 Brørup\nSagsnr: SKS 15-263/2026\n\nunder konkursbehandling efter begæring modtaget den 29.09.2026. Selskabet har været under tvangsopløsning siden 13.08.2026.\n\nKurator er advokat Jan Bruun Jørgensen, Buen 11, 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 01.10.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Esbjerg, den 01.10.2026.\n\nKurator\nAdvokat Jan Bruun Jørgensen\nBuen 11\n6000 Kolding\n\nSkifteret\nRetten i Esbjerg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40085327",
+    "statstidende": "https://www.statstidende.dk/messages/S01102026-74",
+    "aarsrapport": "http://regnskaber.virk.dk/72358004/amNsb3VkczovLzAzLzM2LzJhL2NjLzYxLzE2ZDMtNDllNC04YWNmLTY5ODAwYTgxZjRkZg.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40085327?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vestervang+54,+6650+Brørup",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Jan+Bruun+Jørgensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-03T09:59:03+00:00"
   },
   {
    "id": "36492139",
@@ -4543,7 +4634,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:42+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:09+00:00"
   },
   {
    "id": "43888757",
@@ -4670,7 +4761,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:41+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:08+00:00"
   },
   {
    "id": "27359663",
@@ -4834,7 +4925,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:41+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:07+00:00"
   },
   {
    "id": "37902896",
@@ -5162,7 +5253,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:45+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:11+00:00"
   },
   {
    "id": "44049090",
@@ -5290,7 +5381,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:44+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:10+00:00"
   },
   {
    "id": "34587434",
@@ -5399,7 +5490,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:57+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:23+00:00"
   },
   {
    "id": "28311435",
@@ -5508,7 +5599,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:43+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:09+00:00"
   },
   {
    "id": "41982659",
@@ -6212,7 +6303,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:33:20+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:46+00:00"
   },
   {
    "id": "43723758",
@@ -6322,7 +6413,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:33:12+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:38+00:00"
   },
   {
    "id": "44145227",
@@ -6425,7 +6516,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:48+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:14+00:00"
   },
   {
    "id": "26074967",
@@ -6534,7 +6625,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:47+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:13+00:00"
   },
   {
    "id": "43167731",
@@ -6663,7 +6754,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:47+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:13+00:00"
   },
   {
    "id": "26712815",
@@ -6822,7 +6913,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:46+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:12+00:00"
   },
   {
    "id": "38532499",
@@ -7017,23 +7108,6 @@
      ]
     },
     {
-     "id": "41937807",
-     "cvr": "41937807",
-     "navn": "Bjerregaard OE Holding ApS",
-     "score": 5,
-     "konfidens": "lav",
-     "dekretdato": "2026-07-02",
-     "branchetekst": "Ikke-finansielle holdingselskaber",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S02072026-92",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    },
-    {
      "id": "45976882",
      "cvr": "45976882",
      "navn": "Ocd entreprenør ApS",
@@ -7134,9 +7208,26 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
+    },
+    {
+     "id": "45155838",
+     "cvr": "45155838",
+     "navn": "Sophia-Rengøring ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-11",
+     "branchetekst": "Almindelig rengøring i bygninger",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S11092026-33",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:46+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:12+00:00"
   },
   {
    "id": "42434434",
@@ -7300,7 +7391,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:58+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:26+00:00"
   },
   {
    "id": "41298332",
@@ -7403,7 +7494,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:56+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:22+00:00"
   },
   {
    "id": "37867462",
@@ -7936,7 +8027,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:55+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:22+00:00"
   },
   {
    "id": "10214343",
@@ -8039,7 +8130,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:55+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:21+00:00"
   },
   {
    "id": "84895210",
@@ -8142,7 +8233,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:54+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:20+00:00"
   },
   {
    "id": "34895562",
@@ -8245,7 +8336,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:53+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:20+00:00"
   },
   {
    "id": "37700789",
@@ -8348,7 +8439,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:53+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:19+00:00"
   },
   {
    "id": "43258842",
@@ -8452,7 +8543,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:52+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:19+00:00"
   },
   {
    "id": "14412107",
@@ -8574,7 +8665,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:52+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:18+00:00"
   },
   {
    "id": "39775298",
@@ -8677,7 +8768,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:51+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:18+00:00"
   },
   {
    "id": "32887902",
@@ -8780,7 +8871,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:51+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:17+00:00"
   },
   {
    "id": "42214914",
@@ -8883,7 +8974,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:50+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:16+00:00"
   },
   {
    "id": "41939494",
@@ -8986,7 +9077,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:49+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:16+00:00"
   },
   {
    "id": "31260310",
@@ -9142,7 +9233,110 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:32:49+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:15+00:00"
+  },
+  {
+   "id": "16341940",
+   "statstidende_id": "S01102026-41",
+   "statstidende_url": "https://www.statstidende.dk/messages/S01102026-41",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-03",
+   "dekretdato": "2026-10-01",
+   "fristdag": "2026-09-30",
+   "anmeldelsesfrist": "2026-10-31",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 2107/26-K"
+   },
+   "kurator": {
+    "navn": "Christian Elmer",
+    "firma": null,
+    "adresse": "Kalvebod Brygge 39",
+    "postnr": "1560",
+    "by": "København V",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Elmer"
+   },
+   "selskab": {
+    "cvr": "16341940",
+    "navn": "CONTEXT CONSULTING ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "621000",
+    "branchetekst": "Computerprogrammering",
+    "bibrancher": [],
+    "adresse": "Drosselvej 30",
+    "postnr": "2000",
+    "by": "Frederiksberg",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "1992-06-25",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/16341940",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/04914361/amNsb3VkczovLzAzLzE3LzMzLzk3L2UxLzA1NWEtNGFhNS05YzVjLWU0YzIyOWE0MzEyOA.pdf",
+    "aktiver": 991348,
+    "egenkapital": 567884,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1,
+    "materielle_anlaeg": 1,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 346719,
+    "kortfristet_gaeld": 76745,
+    "omsaetning": null,
+    "bruttofortjeneste": -490634,
+    "aarets_resultat": -393852,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 1,
+    "ejendomsandel_pct": 0.0,
+    "soliditet_pct": 57.3,
+    "ltv_pct": null,
+    "samlet_gaeld": 423464
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "CONTEXT CONSULTING ApS\nVed dekret af 01.10.2026 har Sø- og Handelsrettens skifteret taget\n\nCONTEXT CONSULTING ApS\nCVR-nr: 16341940\nDrosselvej 30\n2000 Frederiksberg\nSagsnr: K 2107/26-K\n\nunder konkursbehandling på grundlag af en begæring modtaget den 30.09.2026 fra likvidator.\n\nSom kurator er udpeget advokat Christian Elmer, Kalvebod Brygge 39, 1560 København V.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 01.10.2026\n\nKurator\nAdvokat Christian Elmer\nKalvebod Brygge 39\n1560 København V\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/16341940",
+    "statstidende": "https://www.statstidende.dk/messages/S01102026-41",
+    "aarsrapport": "http://regnskaber.virk.dk/04914361/amNsb3VkczovLzAzLzE3LzMzLzk3L2UxLzA1NWEtNGFhNS05YzVjLWU0YzIyOWE0MzEyOA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/16341940?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Drosselvej+30,+2000+Frederiksberg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Christian+Elmer"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-03T09:59:15+00:00"
   },
   {
    "id": "36068620",
@@ -9251,7 +9445,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:34:34+00:00"
+   "sidst_opdateret": "2026-10-03T10:01:05+00:00"
   },
   {
    "id": "32365655",
@@ -9361,7 +9555,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:33:36+00:00"
+   "sidst_opdateret": "2026-10-03T10:00:10+00:00"
   },
   {
    "id": "25155688",
@@ -9857,7 +10051,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:42:39+00:00"
+   "sidst_opdateret": "2026-10-03T10:09:26+00:00"
   },
   {
    "id": "40134999",
@@ -9979,7 +10173,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-02T10:42:29+00:00"
+   "sidst_opdateret": "2026-10-03T10:09:17+00:00"
   },
   {
    "id": "43321137",
@@ -10082,7 +10276,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:40:35+00:00"
+   "sidst_opdateret": "2026-10-03T10:07:23+00:00"
   },
   {
    "id": "45041522",
@@ -10184,7 +10378,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:39:32+00:00"
+   "sidst_opdateret": "2026-10-03T10:06:21+00:00"
   },
   {
    "id": "27111408",
@@ -10287,7 +10481,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:39:35+00:00"
+   "sidst_opdateret": "2026-10-03T10:06:24+00:00"
   },
   {
    "id": "39270536",
@@ -10390,7 +10584,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:37:24+00:00"
+   "sidst_opdateret": "2026-10-03T10:04:15+00:00"
   },
   {
    "id": "40313761",
@@ -10699,7 +10893,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-02T10:32:57+00:00"
+   "sidst_opdateret": "2026-10-03T09:59:23+00:00"
   }
  ]
 }
