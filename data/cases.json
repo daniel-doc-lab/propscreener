@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-10-07T11:22:12+00:00",
+  "genereret": "2026-10-08T11:39:14+00:00",
   "version": "0.1.0",
-  "antal": 92,
+  "antal": 93,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-10-07T11:03:44+00:00",
-   "dekreter": 1355,
+   "started": "2026-10-08T11:21:19+00:00",
+   "dekreter": 1374,
    "tvangsauktioner": 3,
-   "auktioner_i_alt": 403,
-   "boer_med_relationer": 378,
-   "beriget_cvr": 1354,
-   "beriget_regnskab": 1034,
+   "auktioner_i_alt": 408,
+   "boer_med_relationer": 388,
+   "beriget_cvr": 1373,
+   "beriget_regnskab": 1045,
    "beriget_ejf": 0,
    "over_min_score": 63,
    "min_score": 25,
-   "bevaret_fra_tidligere": 29,
+   "bevaret_fra_tidligere": 30,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.3.155.160\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.62.255.212\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:06:58+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:31+00:00"
   },
   {
    "id": "33377088",
@@ -672,7 +672,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:01+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:34+00:00"
   },
   {
    "id": "34597227",
@@ -793,7 +793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:00+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:33+00:00"
   },
   {
    "id": "33038100",
@@ -933,7 +933,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:00+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:34+00:00"
   },
   {
    "id": "39268876",
@@ -1143,7 +1143,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:06:59+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:32+00:00"
   },
   {
    "id": "41553308",
@@ -1548,7 +1548,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:06+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:39+00:00"
   },
   {
    "id": "41887885",
@@ -1663,7 +1663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:05+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:38+00:00"
   },
   {
    "id": "71106217",
@@ -1831,7 +1831,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:04+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:37+00:00"
   },
   {
    "id": "40523286",
@@ -2026,14 +2026,14 @@
     "kommune": null,
     "region": "Sjælland",
     "stiftet": "2015-08-01",
-    "status": "UNDERTVANGSOPLØSNING",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/36982489",
     "formaal": null,
-    "lat": 54.84427962,
-    "lon": 11.15457571
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2024-12-31",
@@ -2100,7 +2100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:10+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:42+00:00"
   },
   {
    "id": "42854980",
@@ -2215,7 +2215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:13+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:45+00:00"
   },
   {
    "id": "25438744",
@@ -2331,7 +2331,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:06:59+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:33+00:00"
   },
   {
    "id": "42944572",
@@ -2466,7 +2466,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:12+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:44+00:00"
   },
   {
    "id": "43839284",
@@ -2823,7 +2823,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:01+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:35+00:00"
   },
   {
    "id": "43643274",
@@ -2932,7 +2932,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:14+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:46+00:00"
   },
   {
    "id": "42347841",
@@ -3059,7 +3059,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:25+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:58+00:00"
   },
   {
    "id": "40590641",
@@ -3168,7 +3168,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:03+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:36+00:00"
   },
   {
    "id": "44112329",
@@ -3209,14 +3209,14 @@
     "kommune": "Arnøje",
     "region": "Sjælland",
     "stiftet": "2023-06-12",
-    "status": "UNDERTVANGSOPLØSNING",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44112329",
     "formaal": null,
-    "lat": 55.31735458,
-    "lon": 12.29149462
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-05-31",
@@ -3278,7 +3278,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:21+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:53+00:00"
   },
   {
    "id": "27005128",
@@ -3446,7 +3446,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:02+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:36+00:00"
   },
   {
    "id": "40073884",
@@ -3556,7 +3556,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:02+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:35+00:00"
   },
   {
    "id": "32277470",
@@ -4088,7 +4088,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:07+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:40+00:00"
   },
   {
    "id": "26270871",
@@ -4197,7 +4197,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:06+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:40+00:00"
   },
   {
    "id": "29243484",
@@ -4306,7 +4306,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:05+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:39+00:00"
   },
   {
    "id": "44227584",
@@ -4416,7 +4416,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:04+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:38+00:00"
   },
   {
    "id": "40085327",
@@ -4525,7 +4525,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:03+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:37+00:00"
   },
   {
    "id": "36492139",
@@ -4743,7 +4743,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:11+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:43+00:00"
   },
   {
    "id": "43888757",
@@ -4870,7 +4870,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:10+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:41+00:00"
   },
   {
    "id": "27359663",
@@ -5034,7 +5034,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:07+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:41+00:00"
   },
   {
    "id": "37902896",
@@ -5362,7 +5362,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:13+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:45+00:00"
   },
   {
    "id": "44049090",
@@ -5490,7 +5490,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:12+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:44+00:00"
   },
   {
    "id": "34587434",
@@ -5599,7 +5599,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:27+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:59+00:00"
   },
   {
    "id": "28311435",
@@ -5708,7 +5708,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:11+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:43+00:00"
   },
   {
    "id": "41982659",
@@ -6522,7 +6522,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:44+00:00"
+   "sidst_opdateret": "2026-10-08T11:24:15+00:00"
   },
   {
    "id": "44145227",
@@ -6625,7 +6625,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:17+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:48+00:00"
   },
   {
    "id": "26074967",
@@ -6734,7 +6734,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:16+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:48+00:00"
   },
   {
    "id": "43167731",
@@ -6863,7 +6863,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:16+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:47+00:00"
   },
   {
    "id": "26712815",
@@ -7022,7 +7022,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:15+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:47+00:00"
   },
   {
    "id": "38532499",
@@ -7217,23 +7217,6 @@
      ]
     },
     {
-     "id": "40829660",
-     "cvr": "40829660",
-     "navn": "TY Holding.ApS",
-     "score": 5,
-     "konfidens": "lav",
-     "dekretdato": "2026-07-07",
-     "branchetekst": "Formueforvaltning",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S07072026-41",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    },
-    {
      "id": "45434605",
      "cvr": "45434605",
      "navn": "ARBA Car service ApS",
@@ -7334,9 +7317,26 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
+    },
+    {
+     "id": "45624668",
+     "cvr": "45624668",
+     "navn": "VEV 2025 ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-21",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S21092026-25",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:15+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:46+00:00"
   },
   {
    "id": "42434434",
@@ -7483,7 +7483,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:32+00:00"
+   "sidst_opdateret": "2026-10-08T11:24:03+00:00"
   },
   {
    "id": "43242164",
@@ -7592,7 +7592,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:29+00:00"
+   "sidst_opdateret": "2026-10-08T11:24:00+00:00"
   },
   {
    "id": "41298332",
@@ -8331,7 +8331,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:26+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:58+00:00"
   },
   {
    "id": "84895210",
@@ -8434,7 +8434,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:25+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:57+00:00"
   },
   {
    "id": "34895562",
@@ -8537,7 +8537,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:24+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:57+00:00"
   },
   {
    "id": "37700789",
@@ -8640,7 +8640,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:24+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:56+00:00"
   },
   {
    "id": "43258842",
@@ -8744,7 +8744,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:23+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:56+00:00"
   },
   {
    "id": "14412107",
@@ -8866,7 +8866,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:23+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:56+00:00"
   },
   {
    "id": "39775298",
@@ -8969,7 +8969,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:22+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:54+00:00"
   },
   {
    "id": "32887902",
@@ -9072,7 +9072,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:22+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:54+00:00"
   },
   {
    "id": "42214914",
@@ -9175,7 +9175,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:21+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:52+00:00"
   },
   {
    "id": "41939494",
@@ -9278,7 +9278,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:20+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:52+00:00"
   },
   {
    "id": "31260310",
@@ -9434,7 +9434,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:07:20+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:51+00:00"
   },
   {
    "id": "16341940",
@@ -9537,7 +9537,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:19+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:51+00:00"
   },
   {
    "id": "35029605",
@@ -9640,7 +9640,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:18+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:50+00:00"
   },
   {
    "id": "35640827",
@@ -9744,7 +9744,111 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:18+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:50+00:00"
+  },
+  {
+   "id": "41232641",
+   "statstidende_id": "S06102026-330",
+   "statstidende_url": "https://www.statstidende.dk/messages/S06102026-330",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-08",
+   "dekretdato": "2026-10-06",
+   "fristdag": "2026-09-27",
+   "anmeldelsesfrist": "2026-11-05",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Aarhus",
+    "sagsnummer": "SKS 45-20527/2026"
+   },
+   "kurator": {
+    "navn": "John Sommer Schmidt",
+    "firma": null,
+    "adresse": "Ceres Allé 3",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=John+Sommer+Schmidt"
+   },
+   "selskab": {
+    "cvr": "41232641",
+    "navn": "ZEN 7 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "433200",
+    "branchetekst": "Tømrer- og bygningssnedkeraktiviteter",
+    "bibrancher": [],
+    "adresse": "Gammel Viborgvej 11M",
+    "postnr": "8381",
+    "by": "Tilst",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2020-03-11",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41232641",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/14623214/amNsb3VkczovLzAzLzgxLzQzLzM1L2VmLzk5ZGYtNDQ2Ny04MDhhLWUyMjFjNjY4NDMzYQ.pdf",
+    "aktiver": 2196471,
+    "egenkapital": 179859,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 671630,
+    "materielle_anlaeg": 671630,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 0,
+    "kortfristet_gaeld": 2016612,
+    "omsaetning": null,
+    "bruttofortjeneste": 3238974,
+    "aarets_resultat": 2240025,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 671630,
+    "ejendomsandel_pct": 30.6,
+    "soliditet_pct": 8.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 2016612
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 671.630 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "ZEN 7 ApS under tvangsopløsning\nVed dekret af 06.10.2026 har Retten i Aarhus taget\n\nZEN 7 ApS under tvangsopløsning\nCVR-nr: 41232641\nGammel Viborgvej 11M\n8381 Tilst\nSagsnr: SKS 45-20527/2026\n\nunder konkursbehandling efter begæring modtaget den 27.09.2026.\n\nKurator er advokat John Sommer Schmidt, Ceres Allé 3, 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 06.10.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nAnmeldelse indgivet under forudgående likvidation til likvidator, advokat John Sommer Schmidt, tages i betragtning uden ny anmeldelse, dog må eventuelle renter opgjort pr. konkursdagen anmeldes.\n\nRetten i Aarhus, den 06.10.2026.\n\nKurator\nAdvokat John Sommer Schmidt\nCeres Allé 3\n8000 Århus C\n\nSkifteret\nRetten i Aarhus",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/41232641",
+    "statstidende": "https://www.statstidende.dk/messages/S06102026-330",
+    "aarsrapport": "http://regnskaber.virk.dk/14623214/amNsb3VkczovLzAzLzgxLzQzLzM1L2VmLzk5ZGYtNDQ2Ny04MDhhLWUyMjFjNjY4NDMzYQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/41232641?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Gammel+Viborgvej+11M,+8381+Tilst",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=John+Sommer+Schmidt"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'under tvangsopløsning' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-08T11:23:49+00:00"
   },
   {
    "id": "36068620",
@@ -9853,7 +9957,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:09:16+00:00"
+   "sidst_opdateret": "2026-10-08T11:25:48+00:00"
   },
   {
    "id": "32365655",
@@ -9963,7 +10067,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:08:20+00:00"
+   "sidst_opdateret": "2026-10-08T11:24:53+00:00"
   },
   {
    "id": "25155688",
@@ -10459,7 +10563,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:18:00+00:00"
+   "sidst_opdateret": "2026-10-08T11:35:05+00:00"
   },
   {
    "id": "40134999",
@@ -10581,7 +10685,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-07T11:17:50+00:00"
+   "sidst_opdateret": "2026-10-08T11:34:56+00:00"
   },
   {
    "id": "43321137",
@@ -10684,7 +10788,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:15:54+00:00"
+   "sidst_opdateret": "2026-10-08T11:32:56+00:00"
   },
   {
    "id": "45041522",
@@ -10786,7 +10890,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:14:53+00:00"
+   "sidst_opdateret": "2026-10-08T11:31:43+00:00"
   },
   {
    "id": "27111408",
@@ -10889,7 +10993,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:14:55+00:00"
+   "sidst_opdateret": "2026-10-08T11:31:45+00:00"
   },
   {
    "id": "39270536",
@@ -10992,7 +11096,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:12:45+00:00"
+   "sidst_opdateret": "2026-10-08T11:29:33+00:00"
   },
   {
    "id": "40313761",
@@ -11301,7 +11405,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-07T11:07:27+00:00"
+   "sidst_opdateret": "2026-10-08T11:23:59+00:00"
   }
  ]
 }
