@@ -1,6 +1,6 @@
 {
- "genereret": "2026-10-09T11:37:26+00:00",
- "antal": 513,
+ "genereret": "2026-10-10T10:59:39+00:00",
+ "antal": 521,
  "auktioner": [
   {
    "id": "S13072026-144",
@@ -53,8 +53,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.83647563,
-   "lon": 8.71734703
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S18062026-176",
@@ -9260,8 +9260,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 56.55691334,
-   "lon": 10.11517697
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S04092026-80",
@@ -9287,8 +9287,8 @@
    "rekvirent_telefon": "73333100",
    "besigtigelse": "Compass Advokatfirma",
    "konkursbo_id": null,
-   "lat": 56.24876171,
-   "lon": 10.60966994
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S10092026-257",
@@ -9422,8 +9422,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Penta advokater A/S",
    "konkursbo_id": null,
-   "lat": 55.12729432,
-   "lon": 9.12597655
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-227",
@@ -9449,8 +9449,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "HORTENDAHL Advokatpartnerselskab",
    "konkursbo_id": null,
-   "lat": 55.00238954,
-   "lon": 9.03836489
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S15092026-249",
@@ -9800,8 +9800,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.77734569,
-   "lon": 8.8394948
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-228",
@@ -9827,8 +9827,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.83647563,
-   "lon": 8.71734703
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-225",
@@ -9854,8 +9854,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.79863276,
-   "lon": 8.8627805
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-218",
@@ -9908,8 +9908,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.61104605,
-   "lon": 8.87981318
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-202",
@@ -9935,8 +9935,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.80114516,
-   "lon": 8.86991001
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-197",
@@ -9962,8 +9962,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.79618777,
-   "lon": 8.85990761
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-171",
@@ -9989,8 +9989,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.79858443,
-   "lon": 8.85686277
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S08092026-124",
@@ -10016,8 +10016,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.80488559,
-   "lon": 8.84992518
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S09092026-87",
@@ -11474,8 +11474,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Focus Advokater P/S",
    "konkursbo_id": null,
-   "lat": 55.33477956,
-   "lon": 10.33891609
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S15092026-177",
@@ -12932,8 +12932,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 56.55691334,
-   "lon": 10.11517697
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S30092026-116",
@@ -13201,6 +13201,60 @@
    "rekvirent": "E/F Badstue v/advokat Jens Anker Hansen",
    "rekvirent_telefon": null,
    "besigtigelse": "Qvortrup Advokatfirma",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-222",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-222",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-10-29",
+   "tidspunkt": "14:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Helsingør",
+   "adresse": "Tjørnevang 36",
+   "postnr": "3250",
+   "by": "Gilleleje m.fl",
+   "region": "Hovedstaden",
+   "matrikel": "3 abt, Gilleleje By, Gilleleje",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Murstens rækkehus med fibercementtag herunder asbest, ifølge BBR, Huset er opført i 1966 og er i et plan. Boligarealet iht. BBR på 80 m2 omfatter 3 værelser, 1 badeværelse og køkken, hvoraf 1 af værelserne i dag udgør en del stuen. Rækkehuset indeholder entré med trægulv. Fra entréen er der adgang til stuen. I entréen er der yderligere et opbevaringsrum. Stue med trægulv, træloft samt brændeovn. Fra stuen er der udgang til en flisebelagt terrasse. Fra entréen er der adgang til værelse, opbevaringsrum, badeværelse med toilet, håndvask samt bruser. Fra entréen er der videre adgang til køkken med…",
+   "offentlig_vurdering": 840000,
+   "grundvaerdi": 318800,
+   "vurderingsdato": "2020-10-01",
+   "skoedehaver": "Person med navne- og adressebeskyttelse",
+   "skyldner_cvr": null,
+   "rekvirent": "Ejerlejlighedsforeningen Tjørnevang - Rosenvang og Hyldevang v/advokat Carl Gustaf Jespersen",
+   "rekvirent_telefon": null,
+   "besigtigelse": "August Jørgensen Advokater",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-104",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-104",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-10-29",
+   "tidspunkt": "13:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Helsingør",
+   "adresse": "Kingosvej 3",
+   "postnr": "3000",
+   "by": "Helsingør",
+   "region": "Hovedstaden",
+   "matrikel": "38 v, Helsingør Overdrev",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 1044 m², heraf vej 0 m². Ejendommen er beliggende i et stille villakvarter i den vestlige del af Helsingør. Ejendommen er et fritliggende enfamilieshus opført i 1957 og væsentlige om-/tilbygninger i 2002 og 2020. Ejendommen er opført i hvidmalede mursten og med sadeltag. Grundareal ifølge tingbogen udgør 1044 m2. Ifølge BBR har ejendommen et boligareal på 170 m2. Dertil kommer følgende bygninger: Udhus fra 2003 (bygning 2) på 20 m2, som er opført i træ og plastmaterialer, udhus fra 2005 (bygning 3) på 5 m2, som er opført i træ, udhus/drivhus fra 2008 (bygning 4) på 3 m2 og udhus…",
+   "offentlig_vurdering": 4021000,
+   "grundvaerdi": 2385000,
+   "vurderingsdato": "2022-01-01",
+   "skoedehaver": "Ebubekir Colak",
+   "skyldner_cvr": null,
+   "rekvirent": "Vexa Ejendomslån II ApS",
+   "rekvirent_telefon": "31642400",
+   "besigtigelse": "Tina Bach Advokater",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
@@ -13580,8 +13634,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.80114516,
-   "lon": 8.86991001
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S06102026-341",
@@ -13607,8 +13661,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.79863276,
-   "lon": 8.8627805
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S06102026-340",
@@ -13634,8 +13688,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.61104605,
-   "lon": 8.87981318
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S06102026-339",
@@ -13688,8 +13742,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.79618777,
-   "lon": 8.85990761
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S06102026-335",
@@ -13715,8 +13769,62 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Poul Schmith I/S",
    "konkursbo_id": null,
-   "lat": 56.83647563,
-   "lon": 8.71734703
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-53",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-53",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-03",
+   "tidspunkt": "09:20",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Aalborg",
+   "adresse": "Lyngageren 9",
+   "postnr": "9370",
+   "by": "Hals",
+   "region": "Nordjylland",
+   "matrikel": "7 co, Hou by, Hals",
+   "ejendomstype": "Sommerhus",
+   "beskrivelse": "Tinglyst areal 1409 m², heraf vej 0 m². Ejendommen er et rummeligt sommerhus opført i 2004, beliggende i naturskønne omgivelser ved Hou, nær Hals og Hou Havn. Ejendommen er opført i træ med udvendig beklædning af gråmalede træbrædder og med tag af mørke betontagsten. Grundarealet udgør ifølge tingbogen 1.409 m². Ifølge BBR har ejendommen et bebygget areal på 140 m². Boligarealet er tillige på 140 m². Dertil kommer carport på 12 m². Ejendommen fremstår som et rummeligt sommerhus med gode muligheder for ophold for såvel den store familie som flere familier sammen. Huset er beliggende på en stor …",
+   "offentlig_vurdering": 1412000,
+   "grundvaerdi": 195000,
+   "vurderingsdato": "2022-01-01",
+   "skoedehaver": "Anne Lise Bjørn Jensen",
+   "skyldner_cvr": null,
+   "rekvirent": "Totalkredit A/S",
+   "rekvirent_telefon": "31642400",
+   "besigtigelse": "Tina Bach Advokater",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-141",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-141",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-03",
+   "tidspunkt": "09:40",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Aalborg",
+   "adresse": "Houvej 47",
+   "postnr": "9550",
+   "by": "Mariager",
+   "region": "Nordjylland",
+   "matrikel": "12 m, Hou, Mariager Jorder",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 1242 m2, heraf vej 0 m2. Fritliggende enfamiliehus opført i 1952 med ydervægge af mursten og tagdækning af betontagsten. Ifølge BBR har ejendommen et bebygget areal på 81 m2, tagetageareal på 42 m 2 og et samlet boligareal på 81 m2. Ejendommen opvarmes af flydende brændsel. Køkkenområdet fremstår enkelt indrettet med laminatbordplade, stålvask og over- samt underskabe i ældre udførelse. Der ses en fritstående køle-/fryseenhed af mærket Electrolux. I ejendommen er der ligeledes et opholdsrum med trægulv samt synlige loft- og vægbeklædninger af træ. Fra køkkenets kan man tilgå hus…",
+   "offentlig_vurdering": 418000,
+   "grundvaerdi": 182000,
+   "vurderingsdato": "2026-06-20",
+   "skoedehaver": "Brian Christensen",
+   "skyldner_cvr": null,
+   "rekvirent": "Tryg Forsikring A/S v/advokat Jacob Dreist",
+   "rekvirent_telefon": null,
+   "besigtigelse": "DreistStorgaard Advokater A/S",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S07102026-57",
@@ -13744,6 +13852,33 @@
    "konkursbo_id": null,
    "lat": null,
    "lon": null
+  },
+  {
+   "id": "S08102026-63",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-63",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-04",
+   "tidspunkt": "10:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Holstebro",
+   "adresse": "Bygmarken 3",
+   "postnr": "7600",
+   "by": "Struer",
+   "region": "Midtjylland",
+   "matrikel": "5 ai, Den østlige Del, Resen",
+   "ejendomstype": "Fast ejendom",
+   "beskrivelse": "Tinglyst areal 825 m², heraf vej 0 m². Ejendommen er ifølge BBR opført i 1971 i mursten med tag af fibercement herunder asbest. Vinduer i plast. Gulve med tæpper eller vinyl og lofter i gips. Haven er meget tilgroet og huset bærer bræg af at være ubeboet. Bebygget areal andrager 130 m2. Ejendommen er indrettet entre og bryggers med hver sin indgang, begge med adgang til gangareal der leder ind til stuen, køkkenet, 3 værelser og et bad. Ved besigtigelsen forefandtes i køkkenet Zanussi ovn, Zanussi kogeplade, Zanussi opvaskemaskine, Zanussi køle/frys, og Brandt emhætte. I bryggers fandtes Gorenj…",
+   "offentlig_vurdering": 660000,
+   "grundvaerdi": 108500,
+   "vurderingsdato": "2020-10-01",
+   "skoedehaver": "Søren Eduard Høgh Hansen",
+   "skyldner_cvr": null,
+   "rekvirent": "Totalkredit A/S v/advokat Niels Rud Aamann",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Penta advokater A/S",
+   "konkursbo_id": null,
+   "lat": 56.51673635,
+   "lon": 8.53985777
   },
   {
    "id": "S28092026-157",
@@ -13800,6 +13935,33 @@
    "lon": null
   },
   {
+   "id": "S08102026-22",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-22",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-06",
+   "tidspunkt": "09:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Viborg",
+   "adresse": "Kildebakken 8",
+   "postnr": "8800",
+   "by": "Viborg",
+   "region": "Midtjylland",
+   "matrikel": "4 cd, Overlund By, Asmild",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Ejendommen, der er et fritliggende enfamiliehus, er ifølge tingbogen beliggende på et areal stort 1141 m2, heraf vej 0 m2. Ejendomsværdi er pr. 01.10.2022 kr. 3.017.000,00, heraf grundværdi kr. 843.000,00. Ny foreløbig ejendomsvurdering for 2024: Ejendomsværdi kr. 3.132.000,00 – grundværdi kr. 903.000,00. Ejendommen er beliggende i byzone. Vandforsyning: Alment vandforsyningsanlæg. Afløbsforhold: Afløb til offentligt kloaksystem. Varmeinstallation: Fjernvarme/blokvarme Ejendommen består ifølge BBR af følgende bygninger: Bygning nr. 1: Fritliggende enfamiliehus. Opført i 1976. Om-/tilbygning i …",
+   "offentlig_vurdering": 3017000,
+   "grundvaerdi": 843000,
+   "vurderingsdato": "2022-10-01",
+   "skoedehaver": "Niels Erik Tranum Laursen",
+   "skyldner_cvr": null,
+   "rekvirent": "Ringkjøbing Landbobank A/S",
+   "rekvirent_telefon": "97222050",
+   "besigtigelse": "Advokat Sune Bækgaard Sørensen",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
    "id": "S29092026-170",
    "statstidende_url": "https://www.statstidende.dk/messages/S29092026-170",
    "offentliggjort": "2026-10-01",
@@ -13849,6 +14011,60 @@
    "rekvirent": "Nordea Kredit Realkreditaktieselskab v/advokat Bettina Erringsø",
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-157",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-157",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-12",
+   "tidspunkt": "10:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Sønderborg",
+   "adresse": "Krügersvej 34",
+   "postnr": "6541",
+   "by": "Bevtoft",
+   "region": "Syddanmark",
+   "matrikel": "77, Bevtoft Ejerlav, Bevtoft",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Ejendommen matr.nr. 77 Bevtoft Ejerlav, Bevtoft, beliggende Krügersvej 34, 6541 Bevtoft, med et tinglyst areal på 778m2, heraf vej 0m2, med en ejendomsværdi pr. 1. januar 2020 på kr. 872.000,00, heraf grundværdi kr. 76.000,00, og som ifølge BBR-meddelelsen består af følgende bygningsnumre: Bygning nr. 1 Beboelsesejendom opført i 1927 med om/tilbygning i 1976. Ydervægge af mursten og tagdækningsma-teriale af tegl. Ejendommen opvarmes via varmepumpe med elektricitet. Grunden har vandforsyning fra privat vandforsyningsanlæg og afløbsforhold er separatkloakeret, spildevand. Det samlede bebyg-gede …",
+   "offentlig_vurdering": 872000,
+   "grundvaerdi": 76000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Peter Petersen",
+   "skyldner_cvr": null,
+   "rekvirent": "Advokat Thomas Monberg",
+   "rekvirent_telefon": "33150102",
+   "besigtigelse": "Advokat Thomas Monberg",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S08102026-150",
+   "statstidende_url": "https://www.statstidende.dk/messages/S08102026-150",
+   "offentliggjort": "2026-10-10",
+   "auktionsdato": "2026-11-12",
+   "tidspunkt": "11:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Sønderborg",
+   "adresse": "Røllikevej 4",
+   "postnr": "6430",
+   "by": "Nordborg",
+   "region": "Syddanmark",
+   "matrikel": "300, Havnbjerg Ejerlav, Havnbjerg",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Ejendommen matr.nr. 300 Havnbjerg Ejerlav, Havnbjerg, beliggende Røllikevej 4, 6430 Nordborg, med et tinglyst areal på 835m2, heraf vej 0m2, med en ejendomsværdi pr. 1. januar 2022 på kr. 748.000,00, heraf grundværdi kr. 156.000,00, og som ifølge BBR-meddelelsen består af følgende byg-ningsnumre: Bygning nr. 1 Fritliggende en-familieshus opført i 1968. Ydervægge af mursten og tagdækningsmateriale af tegl. Ejendommen opvarmes med centralvarme, naturgas og der er i ejendommen installeret en brændeovn. Grunden har vandforsyning fra alment vandforsyningsanlæg og afløbsforhold er separatkloakeret, …",
+   "offentlig_vurdering": 748000,
+   "grundvaerdi": 156000,
+   "vurderingsdato": "2022-01-01",
+   "skoedehaver": "Viorel Vasile Sasniresan og Alexandra Magda Sasniresan",
+   "skyldner_cvr": null,
+   "rekvirent": "Advokat Thomas Monberg",
+   "rekvirent_telefon": "33150102",
+   "besigtigelse": "Advokat Thomas Monberg",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
