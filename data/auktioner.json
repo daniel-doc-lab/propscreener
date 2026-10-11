@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-10T10:59:39+00:00",
+ "genereret": "2026-10-11T11:05:06+00:00",
  "antal": 521,
  "auktioner": [
   {
@@ -8801,8 +8801,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Andersen Partners",
    "konkursbo_id": null,
-   "lat": 56.19056035,
-   "lon": 10.05570378
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S27082026-77",
@@ -9206,8 +9206,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Andersen Partners",
    "konkursbo_id": null,
-   "lat": 56.19056035,
-   "lon": 10.05570378
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S02092026-350",
@@ -10043,8 +10043,8 @@
    "rekvirent_telefon": "86620600",
    "besigtigelse": "Leoni Advokater",
    "konkursbo_id": null,
-   "lat": 55.78098669,
-   "lon": 12.18852012
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S09092026-78",
@@ -10259,8 +10259,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 55.15549511,
-   "lon": 10.6994232
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S10092026-81",
@@ -10691,8 +10691,8 @@
    "rekvirent_telefon": "87274700",
    "besigtigelse": "Advokat Tine Blach Ladefoged Christensen",
    "konkursbo_id": null,
-   "lat": 56.58842386,
-   "lon": 8.78347959
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S14092026-48",
@@ -11555,8 +11555,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Andersen Partners",
    "konkursbo_id": null,
-   "lat": 56.19056035,
-   "lon": 10.05570378
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S21092026-223",
