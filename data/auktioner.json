@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-12T07:26:44+00:00",
+ "genereret": "2026-10-12T12:13:54+00:00",
  "antal": 521,
  "auktioner": [
   {
@@ -10097,8 +10097,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 56.95378283,
-   "lon": 8.59316873
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S11092026-54",
@@ -10286,8 +10286,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Penta advokater A/S",
    "konkursbo_id": null,
-   "lat": 56.51673635,
-   "lon": 8.53985777
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S10092026-67",
@@ -13877,8 +13877,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Penta advokater A/S",
    "konkursbo_id": null,
-   "lat": 56.51673635,
-   "lon": 8.53985777
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-157",
