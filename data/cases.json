@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-10-12T12:13:54+00:00",
+  "genereret": "2026-10-13T12:03:28+00:00",
   "version": "0.1.0",
-  "antal": 95,
+  "antal": 98,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-10-12T11:56:44+00:00",
-   "dekreter": 1398,
+   "started": "2026-10-13T11:45:46+00:00",
+   "dekreter": 1413,
    "tvangsauktioner": 3,
-   "auktioner_i_alt": 401,
+   "auktioner_i_alt": 406,
    "boer_med_relationer": 405,
-   "beriget_cvr": 1397,
-   "beriget_regnskab": 1067,
+   "beriget_cvr": 1412,
+   "beriget_regnskab": 1081,
    "beriget_ejf": 0,
-   "over_min_score": 62,
+   "over_min_score": 64,
    "min_score": 25,
-   "bevaret_fra_tidligere": 33,
+   "bevaret_fra_tidligere": 34,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"13.83.235.210\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.118.239.225\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:45+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:28+00:00"
   },
   {
    "id": "33377088",
@@ -672,7 +672,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:49+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:31+00:00"
   },
   {
    "id": "34597227",
@@ -793,7 +793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:48+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:30+00:00"
   },
   {
    "id": "33038100",
@@ -933,7 +933,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:48+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:31+00:00"
   },
   {
    "id": "39268876",
@@ -1143,7 +1143,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:47+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:29+00:00"
   },
   {
    "id": "41553308",
@@ -1548,7 +1548,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:54+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:37+00:00"
   },
   {
    "id": "41887885",
@@ -1663,7 +1663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:52+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:36+00:00"
   },
   {
    "id": "71106217",
@@ -1831,7 +1831,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:51+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:35+00:00"
   },
   {
    "id": "40523286",
@@ -2100,7 +2100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:56+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:39+00:00"
   },
   {
    "id": "42854980",
@@ -2215,7 +2215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:59+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:43+00:00"
   },
   {
    "id": "25438744",
@@ -2331,7 +2331,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:47+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:30+00:00"
   },
   {
    "id": "42944572",
@@ -2466,7 +2466,122 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:58+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:42+00:00"
+  },
+  {
+   "id": "42364703",
+   "statstidende_id": "S09102026-156",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09102026-156",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-13",
+   "dekretdato": "2026-10-09",
+   "fristdag": "2026-09-25",
+   "anmeldelsesfrist": "2026-11-10",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Sønderborg",
+    "sagsnummer": "SKS S01-284/2026"
+   },
+   "kurator": {
+    "navn": "Anders Tourlin Kolte",
+    "firma": null,
+    "adresse": "Klinkbjerg 1A",
+    "postnr": "6200",
+    "by": "Aabenraa",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Tourlin+Kolte"
+   },
+   "selskab": {
+    "cvr": "42364703",
+    "navn": "Blåbærvej 37 ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682030",
+    "branchetekst": "Anden udlejning af boliger",
+    "bibrancher": [],
+    "adresse": "Nordvestkajen 5",
+    "postnr": "6400",
+    "by": "Sønderborg",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2021-05-04",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42364703",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/30746324/amNsb3VkczovLzAzLzZkLzIzLzMzLzU0LzUzYWYtNDIxMC05MTczLTc2ODA2YzIzY2ZmMA.pdf",
+    "aktiver": 306868,
+    "egenkapital": -13024,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 293184,
+    "materielle_anlaeg": 293184,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": null,
+    "kortfristet_gaeld": 319892,
+    "omsaetning": null,
+    "bruttofortjeneste": -12256,
+    "aarets_resultat": 197769,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 293184,
+    "ejendomsandel_pct": 95.5,
+    "soliditet_pct": -4.2,
+    "ltv_pct": null,
+    "samlet_gaeld": 319892
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 293.184 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.30 Anden udlejning af boliger",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_adresse",
+     "beskrivelse": "Selskabsnavn er en adresse/matrikel",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 85,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Bolig",
+   "raa_tekst": "Blåbærvej 37 ApS\nVed dekret af 09.10.2026 har Retten i Sønderborg taget\n\nBlåbærvej 37 ApS\nCVR-nr: 42364703\nNordvestkajen 5\n6400 Sønderborg\nSagsnr: SKS S01-284/2026\n\nunder konkursbehandling efter begæring modtaget den 25.09.2026.\n\nKurator er advokat Anders Tourlin Kolte, Klinkbjerg 1A, 6200 Aabenraa.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.10.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Sønderborg, den 09.10.2026.\n\nKurator\nAdvokat Anders Tourlin Kolte\nKlinkbjerg 1A\n6200 Aabenraa\n\nSkifteret\nRetten i Sønderborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42364703",
+    "statstidende": "https://www.statstidende.dk/messages/S09102026-156",
+    "aarsrapport": "http://regnskaber.virk.dk/30746324/amNsb3VkczovLzAzLzZkLzIzLzMzLzU0LzUzYWYtNDIxMC05MTczLTc2ODA2YzIzY2ZmMA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42364703?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nordvestkajen+5,+6400+Sønderborg",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Tourlin+Kolte"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-13T11:47:41+00:00"
   },
   {
    "id": "43839284",
@@ -2932,7 +3047,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:00+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:44+00:00"
   },
   {
    "id": "42347841",
@@ -3168,7 +3283,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:50+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:33+00:00"
   },
   {
    "id": "44112329",
@@ -3278,7 +3393,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:07+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:52+00:00"
   },
   {
    "id": "27005128",
@@ -3446,7 +3561,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:50+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:32+00:00"
   },
   {
    "id": "40073884",
@@ -3556,7 +3671,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:49+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:32+00:00"
   },
   {
    "id": "32277470",
@@ -4088,7 +4203,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:55+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:38+00:00"
   },
   {
    "id": "26270871",
@@ -4197,7 +4312,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:54+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:37+00:00"
   },
   {
    "id": "29243484",
@@ -4306,7 +4421,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:53+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:36+00:00"
   },
   {
    "id": "44227584",
@@ -4416,7 +4531,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:52+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:35+00:00"
   },
   {
    "id": "40085327",
@@ -4525,7 +4640,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:51+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:34+00:00"
+  },
+  {
+   "id": "16843741",
+   "statstidende_id": "S09102026-158",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09102026-158",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-13",
+   "dekretdato": "2026-10-09",
+   "fristdag": "2026-09-25",
+   "anmeldelsesfrist": "2026-11-10",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Sønderborg",
+    "sagsnummer": "SKS S01-282/2026"
+   },
+   "kurator": {
+    "navn": "Anders Tourlin Kolte",
+    "firma": null,
+    "adresse": "Klinkbjerg 1A",
+    "postnr": "6200",
+    "by": "Aabenraa",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Tourlin+Kolte"
+   },
+   "selskab": {
+    "cvr": "16843741",
+    "navn": "ALTRANS ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "522600",
+    "branchetekst": "Andre støtteaktiviteter i forbindelse med transport",
+    "bibrancher": [],
+    "adresse": "Lundsbjerg Industrivej 61",
+    "postnr": "6200",
+    "by": "Aabenraa",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "1993-03-31",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 2,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/16843741",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/14734861/amNsb3VkczovLzAzLzRkL2Q0Lzc4LzgxL2U5NzMtNDc0ZC1hNzc2LTFmNjhhZWYzNTc2ZQ.pdf",
+    "aktiver": 3773012,
+    "egenkapital": -3150519,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 498921,
+    "materielle_anlaeg": 498921,
+    "realkreditgaeld": 29576,
+    "langfristet_gaeld": 29576,
+    "kortfristet_gaeld": 6893955,
+    "omsaetning": null,
+    "bruttofortjeneste": 801794,
+    "aarets_resultat": -617408,
+    "ansatte": 3,
+    "ejendomsvaerdi_bogfoert": 498921,
+    "ejendomsandel_pct": 13.2,
+    "soliditet_pct": -83.5,
+    "ltv_pct": 5.9,
+    "samlet_gaeld": 6923531
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 498.921 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 29.576 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "ALTRANS ApS\nVed dekret af 09.10.2026 har Retten i Sønderborg taget\n\nALTRANS ApS\nCVR-nr: 16843741\nLundsbjerg Industrivej 61\n6200 Aabenraa\nSagsnr: SKS S01-282/2026\n\nunder konkursbehandling efter begæring modtaget den 25.09.2026.\n\nKurator er advokat Anders Tourlin Kolte, Klinkbjerg 1A, 6200 Aabenraa.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.10.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Sønderborg, den 09.10.2026.\n\nKurator\nAdvokat Anders Tourlin Kolte\nKlinkbjerg 1A\n6200 Aabenraa\n\nSkifteret\nRetten i Sønderborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/16843741",
+    "statstidende": "https://www.statstidende.dk/messages/S09102026-158",
+    "aarsrapport": "http://regnskaber.virk.dk/14734861/amNsb3VkczovLzAzLzRkL2Q0Lzc4LzgxL2U5NzMtNDc0ZC1hNzc2LTFmNjhhZWYzNTc2ZQ.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/16843741?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Lundsbjerg+Industrivej+61,+6200+Aabenraa",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Tourlin+Kolte"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-13T11:47:34+00:00"
   },
   {
    "id": "36492139",
@@ -4743,7 +4967,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:57+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:40+00:00"
   },
   {
    "id": "43888757",
@@ -4870,7 +5094,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:56+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:39+00:00"
   },
   {
    "id": "27359663",
@@ -5034,7 +5258,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:55+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:38+00:00"
   },
   {
    "id": "37902896",
@@ -5362,7 +5586,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:59+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:43+00:00"
   },
   {
    "id": "44049090",
@@ -5490,7 +5714,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:57:58+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:42+00:00"
   },
   {
    "id": "34587434",
@@ -5599,7 +5823,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:11+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:56+00:00"
   },
   {
    "id": "28311435",
@@ -5708,7 +5932,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:57:57+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:41+00:00"
   },
   {
    "id": "41982659",
@@ -6522,7 +6746,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:29+00:00"
+   "sidst_opdateret": "2026-10-13T11:48:15+00:00"
   },
   {
    "id": "44145227",
@@ -6625,7 +6849,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:02+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:46+00:00"
   },
   {
    "id": "26074967",
@@ -6734,7 +6958,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:02+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:46+00:00"
   },
   {
    "id": "43167731",
@@ -6863,7 +7087,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:01+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:45+00:00"
   },
   {
    "id": "26712815",
@@ -7022,7 +7246,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:01+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:45+00:00"
   },
   {
    "id": "38532499",
@@ -7131,6 +7355,23 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [
+    {
+     "id": "42434582",
+     "cvr": "42434582",
+     "navn": "NBS Development & Projects ApS",
+     "score": 15,
+     "konfidens": "lav",
+     "dekretdato": "2026-10-09",
+     "branchetekst": "Virksomhedsrådgivning og anden ledelsesrådgivning",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S09102026-229",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
     {
      "id": "45181332",
      "cvr": "45181332",
@@ -7317,26 +7558,9 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
-    },
-    {
-     "id": "45976882",
-     "cvr": "45976882",
-     "navn": "Ocd entreprenør ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-09-28",
-     "branchetekst": "Anlæg af veje og motorveje",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S28092026-96",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:00+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:44+00:00"
   },
   {
    "id": "42434434",
@@ -7483,7 +7707,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:17+00:00"
+   "sidst_opdateret": "2026-10-13T11:48:02+00:00"
   },
   {
    "id": "43242164",
@@ -7592,7 +7816,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:14+00:00"
+   "sidst_opdateret": "2026-10-13T11:48:00+00:00"
   },
   {
    "id": "41298332",
@@ -8537,7 +8761,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:10+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:55+00:00"
   },
   {
    "id": "37700789",
@@ -8640,7 +8864,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:10+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:55+00:00"
   },
   {
    "id": "43258842",
@@ -8744,7 +8968,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:09+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:54+00:00"
   },
   {
    "id": "14412107",
@@ -8866,7 +9090,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:09+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:54+00:00"
   },
   {
    "id": "39775298",
@@ -8969,7 +9193,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:08+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:53+00:00"
   },
   {
    "id": "32887902",
@@ -9072,7 +9296,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:08+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:53+00:00"
   },
   {
    "id": "42214914",
@@ -9175,7 +9399,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:07+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:52+00:00"
   },
   {
    "id": "41939494",
@@ -9278,7 +9502,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:06+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:51+00:00"
   },
   {
    "id": "31260310",
@@ -9434,7 +9658,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T11:58:06+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:51+00:00"
   },
   {
    "id": "16341940",
@@ -9537,7 +9761,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:05+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:50+00:00"
   },
   {
    "id": "35029605",
@@ -9640,7 +9864,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:05+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:50+00:00"
   },
   {
    "id": "35640827",
@@ -9744,7 +9968,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:04+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:49+00:00"
   },
   {
    "id": "41232641",
@@ -9848,7 +10072,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:04+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:49+00:00"
   },
   {
    "id": "44708604",
@@ -9951,7 +10175,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:03+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:48+00:00"
   },
   {
    "id": "26734584",
@@ -10054,7 +10278,110 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:03+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:48+00:00"
+  },
+  {
+   "id": "39596326",
+   "statstidende_id": "S09102026-145",
+   "statstidende_url": "https://www.statstidende.dk/messages/S09102026-145",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-13",
+   "dekretdato": "2026-10-09",
+   "fristdag": "2026-09-28",
+   "anmeldelsesfrist": "2026-11-10",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Sønderborg",
+    "sagsnummer": "SKS S01-283/2026"
+   },
+   "kurator": {
+    "navn": "Stefan Michael Østerby-Jørgensen",
+    "firma": null,
+    "adresse": "Vestergade 14",
+    "postnr": "6270",
+    "by": "Tønder",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Michael+Østerby-Jørgensen"
+   },
+   "selskab": {
+    "cvr": "39596326",
+    "navn": "Sønderjyske Pizza & Grill ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "561190",
+    "branchetekst": "Drift af øvrige spisesteder",
+    "bibrancher": [],
+    "adresse": "Stationsvej 34A",
+    "postnr": "6360",
+    "by": "Tinglev",
+    "kommune": null,
+    "region": "Syddanmark",
+    "stiftet": "2018-05-26",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39596326",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/62369593/amNsb3VkczovLzAzLzQ3LzM4LzhmL2FjLzUzOGItNGY0OC1hYzNhLWE5ZDA3ZDliMjFhNg.xml",
+    "aktiver": 1491675,
+    "egenkapital": 308746,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 1243604,
+    "materielle_anlaeg": 1344241,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 806146,
+    "kortfristet_gaeld": 376783,
+    "omsaetning": 776050,
+    "bruttofortjeneste": 259460,
+    "aarets_resultat": -110401,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 1243604,
+    "ejendomsandel_pct": 83.4,
+    "soliditet_pct": 20.7,
+    "ltv_pct": null,
+    "samlet_gaeld": 1182929
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 1.243.604 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 40,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Sønderjyske Pizza & Grill ApS\nVed dekret af 09.10.2026 har Retten i Sønderborg taget\n\nSønderjyske Pizza & Grill ApS\nCVR-nr: 39596326\nStationsvej 34A\n6360 Tinglev\nSagsnr: SKS S01-283/2026\n\nunder konkursbehandling efter begæring modtaget den 28.09.2026.\n\nKurator er advokat Stefan Michael Østerby-Jørgensen, Vestergade 14, 6270 Tønder.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 09.10.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Sønderborg, den 09.10.2026.\n\nKurator\nAdvokat Stefan Michael Østerby-Jørgensen\nVestergade 14\n6270 Tønder\n\nSkifteret\nRetten i Sønderborg",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39596326",
+    "statstidende": "https://www.statstidende.dk/messages/S09102026-145",
+    "aarsrapport": "http://regnskaber.virk.dk/62369593/amNsb3VkczovLzAzLzQ3LzM4LzhmL2FjLzUzOGItNGY0OC1hYzNhLWE5ZDA3ZDliMjFhNg.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39596326?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Stationsvej+34A,+6360+Tinglev",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Stefan+Michael+Østerby-Jørgensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-13T11:47:47+00:00"
   },
   {
    "id": "36068620",
@@ -10163,7 +10490,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T12:00:12+00:00"
+   "sidst_opdateret": "2026-10-13T11:49:55+00:00"
   },
   {
    "id": "32365655",
@@ -10273,7 +10600,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:59:12+00:00"
+   "sidst_opdateret": "2026-10-13T11:49:00+00:00"
   },
   {
    "id": "25155688",
@@ -10769,7 +11096,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T12:09:42+00:00"
+   "sidst_opdateret": "2026-10-13T11:59:15+00:00"
   },
   {
    "id": "40134999",
@@ -10891,7 +11218,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-12T12:09:32+00:00"
+   "sidst_opdateret": "2026-10-13T11:59:06+00:00"
   },
   {
    "id": "43321137",
@@ -10994,7 +11321,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T12:07:37+00:00"
+   "sidst_opdateret": "2026-10-13T11:57:11+00:00"
   },
   {
    "id": "45041522",
@@ -11096,7 +11423,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T12:06:33+00:00"
+   "sidst_opdateret": "2026-10-13T11:56:09+00:00"
   },
   {
    "id": "27111408",
@@ -11199,7 +11526,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T12:06:35+00:00"
+   "sidst_opdateret": "2026-10-13T11:56:12+00:00"
   },
   {
    "id": "39270536",
@@ -11302,7 +11629,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T12:04:07+00:00"
+   "sidst_opdateret": "2026-10-13T11:54:02+00:00"
   },
   {
    "id": "40313761",
@@ -11611,7 +11938,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-12T11:58:12+00:00"
+   "sidst_opdateret": "2026-10-13T11:47:56+00:00"
   }
  ]
 }
