@@ -1,6 +1,6 @@
 {
- "genereret": "2026-10-15T09:27:29+00:00",
- "antal": 545,
+ "genereret": "2026-10-16T09:20:24+00:00",
+ "antal": 547,
  "auktioner": [
   {
    "id": "S08092026-199",
@@ -10097,8 +10097,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Advokatfirmaet Rödstenen",
    "konkursbo_id": null,
-   "lat": 56.15812406,
-   "lon": 10.19498436
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S14092026-314",
@@ -10313,8 +10313,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 54.76820188,
-   "lon": 11.6449755
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S11092026-44",
@@ -10340,8 +10340,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "DreistStorgaard Advokater A/S",
    "konkursbo_id": null,
-   "lat": 56.1979597,
-   "lon": 10.40517587
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S14092026-127",
@@ -14421,6 +14421,33 @@
    "lon": null
   },
   {
+   "id": "S14102026-54",
+   "statstidende_url": "https://www.statstidende.dk/messages/S14102026-54",
+   "offentliggjort": "2026-10-16",
+   "auktionsdato": "2026-11-10",
+   "tidspunkt": "11:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Roskilde",
+   "adresse": "Haraldstedvej 162",
+   "postnr": "4100",
+   "by": "Ringsted m.fl",
+   "region": "Sjælland",
+   "matrikel": "8 e, Valsømagle By, Haraldsted",
+   "ejendomstype": "Landbrug",
+   "beskrivelse": "Stuehus til landbrugsejendom med stor grund ned mod Langesø. Ca. 10 km. fra Ringsted. Tinglyst grundareal 273.659 m², heraf vej 0 m². Boligareal: 206 m². Ifølge BBR er der en kælder på 65 m2 samt tagetage på 110 m2, hvoraf 44 m2 er udnyttet areal. Ejendommen er opført i 1914 med facade i mursten og tagdækningsmateriale i tegl. Vinduerne er trævinduer, herunder ældre vinduer på første sal. Ifølge BBR er følgende bygninger registreret: * Tiloversbleven landbrugsbygning (hestestald), opført i 1914 på 280 m2. * Maskinhus, garage m.v., (kornlager/maskinhus), opført i 1914 på 312 m2 * Maskinhus, gar…",
+   "offentlig_vurdering": 5650000,
+   "grundvaerdi": 1293800,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Niels Grejs Højgaard Hansen",
+   "skyldner_cvr": null,
+   "rekvirent": "Nordea Kredit Realkreditaktieselskab v/advokat Bettina Erringsø",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Njord Law Firm",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
    "id": "S09102026-45",
    "statstidende_url": "https://www.statstidende.dk/messages/S09102026-45",
    "offentliggjort": "2026-10-13",
@@ -14632,6 +14659,33 @@
    "rekvirent": "Nordea Kredit Realkreditaktieselskab v/advokat Bettina Erringsø",
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S14102026-17",
+   "statstidende_url": "https://www.statstidende.dk/messages/S14102026-17",
+   "offentliggjort": "2026-10-16",
+   "auktionsdato": "2026-11-12",
+   "tidspunkt": "10:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Sønderborg",
+   "adresse": "Nørregade 37",
+   "postnr": "6280",
+   "by": "Højer",
+   "region": "Syddanmark",
+   "matrikel": "22, Højer",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 735 m2, heraf vej 0 m2. Fritliggende enfamiliehus opført i 1900 og til-/ombygget i 1923 med ydervægge af røde mursten og tagdækning af metalplader. Ifølge BBR har ejendommen et bebygget areal på 130 m2, tagetageareal på 105 m2 og et samlet boligareal på 130 m2. Ejendommen opvarmes iht. BBR med elvarme. På besigtigelsestidspunktet var der dog ingen varme-kilde i huset, ej heller brændeovn/pejs, selvom dette er angivet i BBR. Ejendommen er ikke indrettet med møbler eller andet løsøre. Ejendommen fremstår som værende under renovering og tømt for brugsgenstande eller andet. Køkkenet…",
+   "offentlig_vurdering": 431000,
+   "grundvaerdi": 87000,
+   "vurderingsdato": "2022-01-01",
+   "skoedehaver": "Anja Knudsen Lerche Nielsen og Michael Nielsen",
+   "skyldner_cvr": null,
+   "rekvirent": "Tryg Forsikring A/S v/advokat Jacob Dreist",
+   "rekvirent_telefon": null,
+   "besigtigelse": "DreistStorgaard Advokater A/S",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
