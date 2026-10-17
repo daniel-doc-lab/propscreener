@@ -1,6 +1,6 @@
 {
- "genereret": "2026-10-16T09:20:24+00:00",
- "antal": 547,
+ "genereret": "2026-10-17T08:52:37+00:00",
+ "antal": 548,
  "auktioner": [
   {
    "id": "S08092026-199",
@@ -10124,8 +10124,8 @@
    "rekvirent_telefon": "49770000",
    "besigtigelse": "Andersen Advokater",
    "konkursbo_id": null,
-   "lat": 55.96489441,
-   "lon": 11.86751073
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S15092026-58",
@@ -10367,8 +10367,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Lindhardt Steffensen Advokater",
    "konkursbo_id": null,
-   "lat": 56.43010898,
-   "lon": 9.85491907
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S16092026-311",
@@ -13877,8 +13877,8 @@
    "rekvirent_telefon": "49770000",
    "besigtigelse": "Andersen Advokater",
    "konkursbo_id": null,
-   "lat": 55.96489441,
-   "lon": 11.86751073
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S09102026-282",
@@ -14149,6 +14149,33 @@
    "konkursbo_id": null,
    "lat": null,
    "lon": null
+  },
+  {
+   "id": "S15102026-27",
+   "statstidende_url": "https://www.statstidende.dk/messages/S15102026-27",
+   "offentliggjort": "2026-10-17",
+   "auktionsdato": "2026-11-04",
+   "tidspunkt": "10:30",
+   "auktionsnummer": 1,
+   "fogedret": "Fogedretten i Nykøbing Falster",
+   "adresse": "Olstrupvej 3",
+   "postnr": "4895",
+   "by": "Errindlev",
+   "region": "Sjælland",
+   "matrikel": "8 f, Assenbølle By, Olstrup",
+   "ejendomstype": "Landbrug",
+   "beskrivelse": "Tinglyst areal 2196 m2 heraf vej 0 m2. Bygning nr. 1 er en beboelsesejendom der ifølge BBR er opført i 1877 og noteret som nedlagt landbrug. Ejendommen har et beboelsesareal på 134 m2. Ejendommen er indrettet med entre/fordelingsgang, badeværelse med bruseniche, køkken med spiseplads, stor stue samt 3 værelser. Ejendommen opvarmes med pillefyr. Bygning nr. 2 er en staldbygning, der ifølge BBR er opført i 1877 og betegnes som en staldbygning og med et samlet areal på 180 m2. Der er indlagt vand i stalden. Bygning nr. 3 er en ladebygning der ifølge BBR er opført i 1931 og har et bebygget areal p…",
+   "offentlig_vurdering": 510000,
+   "grundvaerdi": 109000,
+   "vurderingsdato": "2022-10-01",
+   "skoedehaver": "Steffen Petersen og Pernille Petersen",
+   "skyldner_cvr": null,
+   "rekvirent": "Investeringsselskabet Luxor A/S",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Advokat Thomas Buus Pedersen",
+   "konkursbo_id": null,
+   "lat": 54.6733844,
+   "lon": 11.4716635
   },
   {
    "id": "S28092026-157",
@@ -14552,8 +14579,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Lindhardt Steffensen Advokater",
    "konkursbo_id": null,
-   "lat": 56.43010898,
-   "lon": 9.85491907
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S07102026-320",
