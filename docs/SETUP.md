@@ -68,3 +68,10 @@ HTTP-cachen gemmes mellem kørsler (`actions/cache`), så regnskaber og CVR-opsl
 pytest -q          # 23 tests, ingen netværk
 ruff check .       # lint
 ```
+
+## Vercel (valgfrit spejl af dashboardet)
+
+Repoet kan også deployes på Vercel. `vercel.json` fortæller Vercel, at projektet er en statisk side:
+ingen install- eller build-kommando, og `site/` serveres direkte. Uden den fil gætter Vercel på
+"Python" ud fra `pyproject.toml` og fejler med "No python entrypoint found". Hver daglig data-commit
+på `main` giver en ny Vercel-deploy med de nyeste boer.
