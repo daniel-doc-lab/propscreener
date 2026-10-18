@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-17T08:52:37+00:00",
+ "genereret": "2026-10-18T09:14:32+00:00",
  "antal": 548,
  "auktioner": [
   {
@@ -9449,8 +9449,8 @@
    "rekvirent_telefon": "33113525",
    "besigtigelse": "Lønberg & Leth Christensen Advokataktieselskab",
    "konkursbo_id": null,
-   "lat": 55.64837128,
-   "lon": 12.52920322
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S22082026-1",
@@ -10151,8 +10151,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 55.70086088,
-   "lon": 11.9452534
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S16092026-116",
@@ -10394,8 +10394,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "DreistStorgaard Advokater A/S",
    "konkursbo_id": null,
-   "lat": 56.35763682,
-   "lon": 9.72081221
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S16092026-147",
@@ -10421,8 +10421,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Advokat Thomas Buus Pedersen",
    "konkursbo_id": null,
-   "lat": 54.6733844,
-   "lon": 11.4716635
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S16092026-114",
@@ -10448,8 +10448,8 @@
    "rekvirent_telefon": "33337133",
    "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
-   "lat": 56.5364315,
-   "lon": 8.33271804
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S17092026-188",
@@ -10745,8 +10745,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Szocska A/S",
    "konkursbo_id": null,
-   "lat": 55.85170881,
-   "lon": 9.75977784
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S15092026-209",
@@ -14093,8 +14093,8 @@
    "rekvirent_telefon": "33337133",
    "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
-   "lat": 56.5364315,
-   "lon": 8.33271804
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S12102026-38",
@@ -14174,8 +14174,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Advokat Thomas Buus Pedersen",
    "konkursbo_id": null,
-   "lat": 54.6733844,
-   "lon": 11.4716635
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-157",
@@ -14552,8 +14552,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "DreistStorgaard Advokater A/S",
    "konkursbo_id": null,
-   "lat": 56.35763682,
-   "lon": 9.72081221
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S12102026-182",
