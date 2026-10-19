@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-18T09:14:32+00:00",
+ "genereret": "2026-10-19T10:11:03+00:00",
  "antal": 548,
  "auktioner": [
   {
@@ -10502,8 +10502,8 @@
    "rekvirent_telefon": "97851504",
    "besigtigelse": "Advokat Nikolaj Hejslet",
    "konkursbo_id": null,
-   "lat": 56.48271089,
-   "lon": 8.5958323
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S17092026-126",
@@ -10529,8 +10529,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Bech-Bruun",
    "konkursbo_id": null,
-   "lat": 55.23974779,
-   "lon": 10.80252453
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S18092026-188",
@@ -10826,8 +10826,8 @@
    "rekvirent_telefon": "75520822",
    "besigtigelse": "Advokatfirmaet Skjøde Knudsen & Partnere",
    "konkursbo_id": null,
-   "lat": 55.49631494,
-   "lon": 9.38251139
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S17092026-210",
@@ -10853,8 +10853,8 @@
    "rekvirent_telefon": "33337133",
    "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
-   "lat": 56.55864503,
-   "lon": 9.03709759
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S18092026-241",
@@ -10907,8 +10907,8 @@
    "rekvirent_telefon": "33337133",
    "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
-   "lat": 56.55864503,
-   "lon": 9.03709759
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S21092026-19",
@@ -11231,8 +11231,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Mortang Advokater",
    "konkursbo_id": null,
-   "lat": 55.68491305,
-   "lon": 12.5847429
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S21092026-174",
@@ -14390,8 +14390,8 @@
    "rekvirent_telefon": "33337133",
    "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
-   "lat": 56.55864503,
-   "lon": 9.03709759
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S29092026-170",
