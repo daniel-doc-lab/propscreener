@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-10-22T09:46:39+00:00",
+  "genereret": "2026-10-23T09:43:28+00:00",
   "version": "0.1.0",
-  "antal": 107,
+  "antal": 108,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,15 +14,15 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-10-22T09:24:00+00:00",
-   "dekreter": 1592,
+   "started": "2026-10-23T09:20:16+00:00",
+   "dekreter": 1636,
    "tvangsauktioner": 4,
-   "auktioner_i_alt": 398,
-   "boer_med_relationer": 444,
-   "beriget_cvr": 1591,
-   "beriget_regnskab": 1210,
+   "auktioner_i_alt": 402,
+   "boer_med_relationer": 452,
+   "beriget_cvr": 1635,
+   "beriget_regnskab": 1246,
    "beriget_ejf": 0,
-   "over_min_score": 70,
+   "over_min_score": 71,
    "min_score": 25,
    "bevaret_fra_tidligere": 37,
    "kilder_aktive": [
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"52.160.149.139\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.83.228.74\"}"
    ]
   }
  },
@@ -174,7 +174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:29+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:54+00:00"
   },
   {
    "id": "33377088",
@@ -672,7 +672,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:34+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:58+00:00"
   },
   {
    "id": "34597227",
@@ -793,7 +793,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:33+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:56+00:00"
   },
   {
    "id": "33038100",
@@ -933,7 +933,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:33+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:57+00:00"
   },
   {
    "id": "39268876",
@@ -1143,7 +1143,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:31+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:55+00:00"
   },
   {
    "id": "41553308",
@@ -1548,7 +1548,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:39+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:07+00:00"
   },
   {
    "id": "41887885",
@@ -1589,14 +1589,14 @@
     "kommune": null,
     "region": "Midtjylland",
     "stiftet": "2020-11-25",
-    "status": "NORMAL",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/41887885",
     "formaal": null,
-    "lat": 56.25112013,
-    "lon": 8.79694212
+    "lat": null,
+    "lon": null
    },
    "regnskab": {
     "regnskabsaar_slut": "2025-12-31",
@@ -1663,7 +1663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:38+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:06+00:00"
   },
   {
    "id": "71106217",
@@ -1831,7 +1831,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:37+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:04+00:00"
   },
   {
    "id": "40523286",
@@ -2100,7 +2100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:42+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:09+00:00"
   },
   {
    "id": "42854980",
@@ -2215,7 +2215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:46+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:13+00:00"
   },
   {
    "id": "25438744",
@@ -2331,7 +2331,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:31+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:56+00:00"
   },
   {
    "id": "42944572",
@@ -2466,7 +2466,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:44+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:12+00:00"
   },
   {
    "id": "42364703",
@@ -2581,7 +2581,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:43+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:11+00:00"
   },
   {
    "id": "34596794",
@@ -2714,7 +2714,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:33+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:57+00:00"
   },
   {
    "id": "43839284",
@@ -3180,7 +3180,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:48+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:18+00:00"
   },
   {
    "id": "42347841",
@@ -3416,7 +3416,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:35+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:03+00:00"
   },
   {
    "id": "44112329",
@@ -3526,7 +3526,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:56+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:26+00:00"
   },
   {
    "id": "27005128",
@@ -3694,7 +3694,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:35+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:59+00:00"
   },
   {
    "id": "40073884",
@@ -3804,7 +3804,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:34+00:00"
+   "sidst_opdateret": "2026-10-23T09:23:58+00:00"
   },
   {
    "id": "32277470",
@@ -4336,7 +4336,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:40+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:08+00:00"
   },
   {
    "id": "26270871",
@@ -4445,7 +4445,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:39+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:07+00:00"
   },
   {
    "id": "29243484",
@@ -4554,7 +4554,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:38+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:06+00:00"
   },
   {
    "id": "44227584",
@@ -4664,7 +4664,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:37+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:05+00:00"
   },
   {
    "id": "40085327",
@@ -4773,7 +4773,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:36+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:04+00:00"
   },
   {
    "id": "16843741",
@@ -4882,7 +4882,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:36+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:03+00:00"
   },
   {
    "id": "36492139",
@@ -5100,7 +5100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:42+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:10+00:00"
   },
   {
    "id": "43888757",
@@ -5227,7 +5227,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:41+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:09+00:00"
   },
   {
    "id": "27359663",
@@ -5391,7 +5391,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:40+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:08+00:00"
   },
   {
    "id": "37902896",
@@ -5719,7 +5719,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:45+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:13+00:00"
   },
   {
    "id": "44049090",
@@ -5847,7 +5847,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:45+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:12+00:00"
   },
   {
    "id": "34587434",
@@ -5956,7 +5956,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:59+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:28+00:00"
   },
   {
    "id": "28311435",
@@ -6065,7 +6065,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:44+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:11+00:00"
   },
   {
    "id": "28974124",
@@ -6174,7 +6174,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:43+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:10+00:00"
   },
   {
    "id": "41982659",
@@ -6425,7 +6425,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:47+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:14+00:00"
   },
   {
    "id": "20402644",
@@ -7112,7 +7112,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:29:22+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:52+00:00"
   },
   {
    "id": "44145227",
@@ -7215,7 +7215,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:51+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:20+00:00"
   },
   {
    "id": "26074967",
@@ -7324,7 +7324,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:50+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:20+00:00"
   },
   {
    "id": "43167731",
@@ -7453,7 +7453,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:50+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:19+00:00"
   },
   {
    "id": "26712815",
@@ -7612,7 +7612,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:49+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:19+00:00"
   },
   {
    "id": "38532499",
@@ -7750,6 +7750,23 @@
      "ejendomsvaerdi": null,
      "antal_ejendomme": 0,
      "statstidende_url": "https://www.statstidende.dk/messages/S05102026-294",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "43706772",
+     "cvr": "43706772",
+     "navn": "SSN Holte Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-10-21",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S21102026-103",
      "i_registret": false,
      "grund": [
       "samme hjemstedsadresse"
@@ -7907,26 +7924,9 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
-    },
-    {
-     "id": "37831778",
-     "cvr": "37831778",
-     "navn": "DACWR ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-10-07",
-     "branchetekst": "Anden finansiel formidling i.a.n.",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S07102026-11",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:49+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:18+00:00"
   },
   {
    "id": "42434434",
@@ -8073,7 +8073,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:29:09+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:38+00:00"
   },
   {
    "id": "43242164",
@@ -8182,7 +8182,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:29:07+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:36+00:00"
   },
   {
    "id": "35401725",
@@ -8310,7 +8310,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:47+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:17+00:00"
   },
   {
    "id": "43590936",
@@ -8438,7 +8438,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:48+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:17+00:00"
   },
   {
    "id": "45688992",
@@ -8546,7 +8546,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:29:02+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:31+00:00"
+  },
+  {
+   "id": "25511824",
+   "statstidende_id": "S21102026-341",
+   "statstidende_url": "https://www.statstidende.dk/messages/S21102026-341",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-10-23",
+   "dekretdato": "2026-10-21",
+   "fristdag": "2026-09-22",
+   "anmeldelsesfrist": "2026-11-20",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 1951/26-D"
+   },
+   "kurator": {
+    "navn": "Søren Aamann Jensen",
+    "firma": null,
+    "adresse": "Alexandriagade 8",
+    "postnr": "2150",
+    "by": "Nordhavn",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Aamann+Jensen"
+   },
+   "selskab": {
+    "cvr": "25511824",
+    "navn": "INVEST B 2 B ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642120",
+    "branchetekst": "Ikke-finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Sundkrogsgade 21",
+    "postnr": "2100",
+    "by": "København Ø",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2000-07-06",
+    "status": "NORMAL",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/25511824",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/42811552/amNsb3VkczovLzAzL2I3LzU2L2JlLzYyL2I2MDEtNDMwOS1iM2U5LTIwNzM4MjExODkyOQ.xml",
+    "aktiver": 7625532,
+    "egenkapital": -62730230,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 7618248,
+    "materielle_anlaeg": 7618248,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 11864976,
+    "kortfristet_gaeld": 58490786,
+    "omsaetning": null,
+    "bruttofortjeneste": -526570,
+    "aarets_resultat": -1068500,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 7618248,
+    "ejendomsandel_pct": 99.9,
+    "soliditet_pct": -822.6,
+    "ltv_pct": null,
+    "samlet_gaeld": 70355762
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 7.618.248 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 45,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Invest B 2 B ApS\nVed dekret af 21.10.2026 har Sø- og Handelsrettens skifteret taget\n\nInvest B 2 B ApS\nCVR-nr: 25511824\nSundkrogsgade 21\n2100 København Ø\nSagsnr: K 1951/26-D\n\nunder konkursbehandling på grundlag af en begæring modtaget den 22.09.2026.\n\nSom kurator er udpeget advokat Søren Aamann Jensen, Alexandriagade 8, 2150 Nordhavn.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 21.10.2026\n\nKurator\nAdvokat Søren Aamann Jensen\nAlexandriagade 8\n2150 Nordhavn\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/25511824",
+    "statstidende": "https://www.statstidende.dk/messages/S21102026-341",
+    "aarsrapport": "http://regnskaber.virk.dk/42811552/amNsb3VkczovLzAzL2I3LzU2L2JlLzYyL2I2MDEtNDMwOS1iM2U5LTIwNzM4MjExODkyOQ.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/25511824?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Sundkrogsgade+21,+2100+København+Ø",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Søren+Aamann+Jensen"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-10-23T09:24:16+00:00"
   },
   {
    "id": "41298332",
@@ -9698,7 +9807,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:58+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:28+00:00"
   },
   {
    "id": "14412107",
@@ -9820,7 +9929,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:58+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:27+00:00"
   },
   {
    "id": "39775298",
@@ -9923,7 +10032,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:57+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:27+00:00"
   },
   {
    "id": "32887902",
@@ -10026,7 +10135,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:57+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:26+00:00"
   },
   {
    "id": "42214914",
@@ -10129,7 +10238,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:56+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:25+00:00"
   },
   {
    "id": "41939494",
@@ -10232,7 +10341,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:55+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:25+00:00"
   },
   {
    "id": "31260310",
@@ -10388,7 +10497,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:28:55+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:24+00:00"
   },
   {
    "id": "16341940",
@@ -10491,7 +10600,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:54+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:24+00:00"
   },
   {
    "id": "35029605",
@@ -10594,7 +10703,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:54+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:23+00:00"
   },
   {
    "id": "35640827",
@@ -10698,7 +10807,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:53+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:23+00:00"
   },
   {
    "id": "41232641",
@@ -10802,7 +10911,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:53+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:22+00:00"
   },
   {
    "id": "44708604",
@@ -10905,7 +11014,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:52+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:21+00:00"
   },
   {
    "id": "26734584",
@@ -11008,7 +11117,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:52+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:22+00:00"
   },
   {
    "id": "39596326",
@@ -11111,7 +11220,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:51+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:21+00:00"
   },
   {
    "id": "36068620",
@@ -11220,7 +11329,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:31:31+00:00"
+   "sidst_opdateret": "2026-10-23T09:27:20+00:00"
   },
   {
    "id": "32365655",
@@ -11330,7 +11439,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:30:32+00:00"
+   "sidst_opdateret": "2026-10-23T09:26:18+00:00"
   },
   {
    "id": "44262606",
@@ -11439,7 +11548,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:29:43+00:00"
+   "sidst_opdateret": "2026-10-23T09:25:28+00:00"
   },
   {
    "id": "25155688",
@@ -12057,7 +12166,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-10-22T09:42:20+00:00"
+   "sidst_opdateret": "2026-10-23T09:38:35+00:00"
   },
   {
    "id": "43321137",
@@ -12160,7 +12269,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:40:25+00:00"
+   "sidst_opdateret": "2026-10-23T09:36:41+00:00"
   },
   {
    "id": "45041522",
@@ -12262,7 +12371,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:39:23+00:00"
+   "sidst_opdateret": "2026-10-23T09:35:39+00:00"
   },
   {
    "id": "27111408",
@@ -12365,7 +12474,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:39:25+00:00"
+   "sidst_opdateret": "2026-10-23T09:35:41+00:00"
   },
   {
    "id": "39270536",
@@ -12468,7 +12577,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:37:06+00:00"
+   "sidst_opdateret": "2026-10-23T09:33:16+00:00"
   },
   {
    "id": "31468051",
@@ -12571,7 +12680,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:33:53+00:00"
+   "sidst_opdateret": "2026-10-23T09:30:01+00:00"
   },
   {
    "id": "26817374",
@@ -12673,7 +12782,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:33:22+00:00"
+   "sidst_opdateret": "2026-10-23T09:29:30+00:00"
   },
   {
    "id": "40313761",
@@ -12982,7 +13091,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-10-22T09:28:59+00:00"
+   "sidst_opdateret": "2026-10-23T09:24:29+00:00"
   }
  ]
 }
