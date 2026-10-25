@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-24T09:13:12+00:00",
+ "genereret": "2026-10-25T09:33:36+00:00",
  "antal": 575,
  "auktioner": [
   {
@@ -11609,8 +11609,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Njord Law Firm",
    "konkursbo_id": null,
-   "lat": 55.78122984,
-   "lon": 12.16319424
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S22092026-69",
@@ -11636,8 +11636,8 @@
    "rekvirent_telefon": "55740503",
    "besigtigelse": "Advokat John Larsen",
    "konkursbo_id": null,
-   "lat": 55.34152241,
-   "lon": 11.13369548
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S22092026-34",
@@ -11663,8 +11663,8 @@
    "rekvirent_telefon": "55740503",
    "besigtigelse": "Advokat John Larsen",
    "konkursbo_id": null,
-   "lat": 55.30754341,
-   "lon": 11.54814208
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S22092026-247",
