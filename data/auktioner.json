@@ -1,5 +1,5 @@
 {
- "genereret": "2026-10-25T09:33:36+00:00",
+ "genereret": "2026-10-26T10:26:51+00:00",
  "antal": 575,
  "auktioner": [
   {
@@ -11717,8 +11717,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Ret&Råd Fyn A/S",
    "konkursbo_id": null,
-   "lat": 57.07669564,
-   "lon": 10.25372698
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S23092026-164",
@@ -11771,8 +11771,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Hortendahl Advokatpartnerselskab",
    "konkursbo_id": null,
-   "lat": 56.10668038,
-   "lon": 10.03171081
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S24092026-64",
@@ -11798,8 +11798,8 @@
    "rekvirent_telefon": "66120303",
    "besigtigelse": "Bobestyrer advokat Birte Veggerby",
    "konkursbo_id": null,
-   "lat": 55.39140609,
-   "lon": 10.11493796
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S24092026-294",
@@ -11825,8 +11825,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "DreistStorgaard Advokater A/S",
    "konkursbo_id": null,
-   "lat": 55.43576701,
-   "lon": 11.24591155
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-95",
@@ -12122,8 +12122,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Lynge Husum Advokater I/S",
    "konkursbo_id": null,
-   "lat": 56.19712867,
-   "lon": 10.43633625
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S25092026-24",
@@ -12419,8 +12419,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Advokatanpartsselskabet Thorninger",
    "konkursbo_id": null,
-   "lat": 56.02592728,
-   "lon": 8.38194018
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S24092026-101",
@@ -12446,8 +12446,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Advokatanpartsselskabet Thorninger",
    "konkursbo_id": null,
-   "lat": 55.94562879,
-   "lon": 8.49012345
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S01102026-125",
@@ -15524,8 +15524,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Ret&Råd Fyn A/S",
    "konkursbo_id": null,
-   "lat": 57.07669564,
-   "lon": 10.25372698
+   "lat": null,
+   "lon": null
   }
  ]
 }
