@@ -1,6 +1,6 @@
 {
- "genereret": "2026-10-29T11:19:04+00:00",
- "antal": 591,
+ "genereret": "2026-10-30T11:15:18+00:00",
+ "antal": 598,
  "auktioner": [
   {
    "id": "S08092026-199",
@@ -11852,8 +11852,8 @@
    "rekvirent_telefon": "55740503",
    "besigtigelse": "Advokat John Larsen",
    "konkursbo_id": null,
-   "lat": 55.30535776,
-   "lon": 11.26030667
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-216",
@@ -11960,8 +11960,8 @@
    "rekvirent_telefon": "55740503",
    "besigtigelse": "Advokat John Larsen",
    "konkursbo_id": null,
-   "lat": 55.34998515,
-   "lon": 11.50561179
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S29092026-63",
@@ -12203,8 +12203,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "HORTENDAHL Herning Advokataktieselskab",
    "konkursbo_id": null,
-   "lat": 56.54321418,
-   "lon": 8.54763823
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-111",
@@ -12257,8 +12257,8 @@
    "rekvirent_telefon": "97821300",
    "besigtigelse": "Advokatfirmaet Damborg & Toft",
    "konkursbo_id": null,
-   "lat": 56.55037696,
-   "lon": 8.31673736
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S30092026-73",
@@ -12581,8 +12581,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Focus Advokater P/S",
    "konkursbo_id": null,
-   "lat": 55.4174597,
-   "lon": 9.92008162
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-23",
@@ -12608,8 +12608,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "ADVODAN Næstved",
    "konkursbo_id": null,
-   "lat": 55.25092617,
-   "lon": 11.60279368
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S28092026-213",
@@ -12635,8 +12635,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Focus Advokater P/S",
    "konkursbo_id": null,
-   "lat": 55.36677601,
-   "lon": 10.39186622
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S29092026-82",
@@ -13445,8 +13445,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "Penta advokater A/S",
    "konkursbo_id": null,
-   "lat": 55.43860044,
-   "lon": 8.83410897
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S29092026-266",
@@ -15285,6 +15285,60 @@
    "lon": null
   },
   {
+   "id": "S28102026-12",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-12",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-16",
+   "tidspunkt": "11:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Holbæk",
+   "adresse": "Åmosevej 73",
+   "postnr": "4440",
+   "by": "Mørkøv",
+   "region": "Sjælland",
+   "matrikel": "2 m, Skellingsted By, Skamstrup",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 2425 m2 heraf vej 0 m2. Beboelsesejendom der ifølge BBR er opført i 1900 med om-/tilbygning i 2012 og med et bebygget boligareal på 369 m2, hvoraf 245 m2 erm i stueplan og 124 m2 er udnyttet tagetage. Endvidere er der uudnyttet kælderareal på 15 m2. Der er til beboelsesejendommen tilknyttet et anneks der ifølge BBR er opført i 1900 med om-/tilbygning i 1988 og med et samlet boligareal på 69 m2. Endvidere er der en carport der ifølge BBR har et bebygget areal på 36 m2 og endnu en bygning \"udhus\" der ifølge BBR har et bebygget areal på 33 m2. Hovedhuset byder på hele 6 værelser og…",
+   "offentlig_vurdering": 2955000,
+   "grundvaerdi": 515000,
+   "vurderingsdato": "2020-10-01",
+   "skoedehaver": "Ejendomsselskabet Multibyg ApS",
+   "skyldner_cvr": null,
+   "rekvirent": "Hans-Christian Rasmussen",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Advokat Thomas Buus Pedersen",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S28102026-116",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-116",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-16",
+   "tidspunkt": "09:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Hjørring",
+   "adresse": "Hylholtvej 5",
+   "postnr": "9330",
+   "by": "Dronninglund",
+   "region": "Nordjylland",
+   "matrikel": "36 ad, Bolle Fjerding, Dronninglund",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 551 m², heraf vej 0 m². Fritliggende etplans enfamiliehus. Ifølge ejendommens BBR-meddelelse er ejendommen opført i 1930. Ejendommen er opført i mursten og er hvidkalket/malet. Ifølge BBR er der et bebygget areal på 80 m2 med en overetage på 50 m2 hvoraf 20 m2 et udnyttet, således at der er et samlet boligareal på 100 m2. Der er tillige til ejendommen en garage, ifølge BBR på 50 m2. Opførselsåret er ukendt. Der tages forbehold for, at der kan være uoverensstemmelse mellem BBR-ejermeddelelse og de faktiske forhold. Der er ved besigtigelsen konstateret et overdækket areal, som ikk…",
+   "offentlig_vurdering": 463000,
+   "grundvaerdi": 118000,
+   "vurderingsdato": "2022-10-01",
+   "skoedehaver": "boet efter Kjeld Arno Jensen",
+   "skyldner_cvr": null,
+   "rekvirent": "bobestyrer advokat Per Bøgh Jensen",
+   "rekvirent_telefon": "98842211",
+   "besigtigelse": "Advokat Per Bøgh Jensen, Nielsen & Østergaard, Advokatfirma I/S",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
    "id": "S13102026-312",
    "statstidende_url": "https://www.statstidende.dk/messages/S13102026-312",
    "offentliggjort": "2026-10-15",
@@ -15501,6 +15555,60 @@
    "lon": null
   },
   {
+   "id": "S28102026-189",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-189",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-17",
+   "tidspunkt": "09:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Aarhus, Fogedretten",
+   "adresse": "Tisetvej 18, st tv",
+   "postnr": "8355",
+   "by": "Solbjerg",
+   "region": "Midtjylland",
+   "matrikel": "2 a, Tiset By, Tiset",
+   "ejendomstype": "Ejerlejlighed",
+   "beskrivelse": "Ejerlejlighed er i to plan. Bygningen er opført i 1892 i mursten og har tag af fibercement, herunder asbest. Ifølge tingbogen er ejerlejlighedens samlede areal 522 m², heraf 0 m² vej. Ejendommen er registreret med et boligareal på 164 m² og indgår i en ejerforening med to boligenheder med et tinglyst fordelingstal på 55/100. Det samlede grundareal for hele ejendommen udgør 7.151 m², hvor ejerlejlighed nr. 1 st.th. har registreret 374 m², og ejerlejlighed nr. 2 st.tv. har registreret 522 m². Således udgør fællesarealer i alt 6.255 m². Det fremgår af BBR-meddelelsen, at der ud over ejerlejlighed…",
+   "offentlig_vurdering": 2180000,
+   "grundvaerdi": 2208000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Tom Hedegaard",
+   "skyldner_cvr": null,
+   "rekvirent": "Realkredit Danmark A/S v/advokat Søren Christensen Volder",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Bech-Bruun",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S28102026-188",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-188",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-17",
+   "tidspunkt": "09:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Aarhus, Fogedretten",
+   "adresse": "Tisetvej 18, st th",
+   "postnr": "8355",
+   "by": "Solbjerg",
+   "region": "Midtjylland",
+   "matrikel": "2 a, Tiset By, Tiset",
+   "ejendomstype": "Ejerlejlighed",
+   "beskrivelse": "Ejerlejlighed i to plan . Bygningen er opført i 1892 i mursten og har tag af fibercement, herunder asbest. Ejerlejlighedens areal ifølge Tingbogen udgør 374 m², heraf vej på 0 m², og ejerlejlighedens boligareal udgør ifølge BBR-meddelelsen 164 m². Ejerlejligheden indgår i en ejerforening med to boligenheder, og denne lejlighed har et tinglyst fordelingstal på 45/100. Det samlede grundareal for hele ejendommen udgør 7.151 m², hvor ejerlejlighed nr. 1 st.th. har registreret 374 m², og ejerlejlighed nr. 2 st.tv. har registreret 522 m². Således udgør fællesarealer i alt 6.255 m². Det fremgår af BB…",
+   "offentlig_vurdering": 2180000,
+   "grundvaerdi": 1806000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Tom Hedegaard",
+   "skyldner_cvr": null,
+   "rekvirent": "Realkredit Danmark A/S v/advokat Søren Christensen Volder",
+   "rekvirent_telefon": null,
+   "besigtigelse": "Bech-Bruun",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
    "id": "S22102026-31",
    "statstidende_url": "https://www.statstidende.dk/messages/S22102026-31",
    "offentliggjort": "2026-10-24",
@@ -15524,8 +15632,8 @@
    "rekvirent_telefon": "97821300",
    "besigtigelse": "Advokatfirmaet Damborg & Toft",
    "konkursbo_id": null,
-   "lat": 56.55037696,
-   "lon": 8.31673736
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S22102026-166",
@@ -15578,8 +15686,8 @@
    "rekvirent_telefon": null,
    "besigtigelse": "HORTENDAHL Herning Advokataktieselskab",
    "konkursbo_id": null,
-   "lat": 56.54321418,
-   "lon": 8.54763823
+   "lat": null,
+   "lon": null
   },
   {
    "id": "S26102026-115",
@@ -15604,6 +15712,33 @@
    "rekvirent": "Advokat Thomas Monberg",
    "rekvirent_telefon": "33150102",
    "besigtigelse": "Advokat Thomas Monberg",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S27102026-80",
+   "statstidende_url": "https://www.statstidende.dk/messages/S27102026-80",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-18",
+   "tidspunkt": "09:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Lyngby",
+   "adresse": "Helleruplund Alle 16",
+   "postnr": "2900",
+   "by": "Hellerup",
+   "region": "Hovedstaden",
+   "matrikel": "14 gm, Gentofte",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "I henhold til ejendommens registreringer i BBR-registeret er følgende forhold noteret: Enfamiliehus opført i 1975. Det bebyggede areal udgør 253 m², heraf udestue 29 m² el.lign. BBR har anmærkning om nedrivning af eksisterende udestue samt opførelse af ny. Boligarealet er registreret med 224 m². Tagdækningsmateriale er fibercement herunder asbest. Ydervæggenes materiale er mursten. Varmeinstallation er fjernvarme. BBR har anført nedgravet olietank fra 1975, der er i drift. Ejendommen indeholder 8 værelser, 2 toiletter og 2 badeværelser. Derudover er på BBR anført en garage på 29 m². Tagdækning…",
+   "offentlig_vurdering": 11475000,
+   "grundvaerdi": 5795000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Charlotte Egsgaard Sørensen",
+   "skyldner_cvr": null,
+   "rekvirent": "Totalkredit A/S",
+   "rekvirent_telefon": "28120905",
+   "besigtigelse": "Skau Reipurth Advokatpartnerselskab (Susanne Jensen)",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
@@ -15933,6 +16068,33 @@
    "lon": null
   },
   {
+   "id": "S28102026-142",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-142",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-25",
+   "tidspunkt": "09:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Svendborg",
+   "adresse": "Åbyskovvej 16",
+   "postnr": "5881",
+   "by": "Skårup Fyn",
+   "region": "Syddanmark",
+   "matrikel": "13 b, Ø. Åby By, Skårup",
+   "ejendomstype": "Fast ejendom",
+   "beskrivelse": "Tinglyst areal 1001 m2, heraf vej 0 m2. Ifølge BBR: Boligen er ifølge BBR i alt på 51 m2 i 2 plan og består af 2 værelser, 1 bad og 1 toilet. Tagetagens areal er på 38 m2 ifølge BBR. Til ejendommen hører udhus på 40 m2. Varmeforsyning: Bygningens varmeinstallation: Centralvarme med én fyringsenhed Opvarmningsmiddel: Fast brændsel Bygningens supplerende varme: Brændeovne og lignende med skorsten Der er adgang til ejendommen via en entre. Fra entreen er der adgang til ejendommens primære opholds-rum, hvor der er stue og køkken i et. Køkkenet er meget interimistisk indrettet, og der er kun instal…",
+   "offentlig_vurdering": 669000,
+   "grundvaerdi": 598000,
+   "vurderingsdato": "2022-01-01",
+   "skoedehaver": "Boet efter Jens Andersen",
+   "skyldner_cvr": null,
+   "rekvirent": "Bobestyrer advokat Henrik Dalegaard v/advokat Peter Filip Albertsen",
+   "rekvirent_telefon": null,
+   "besigtigelse": "BORCH Advokater",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
    "id": "S26102026-135",
    "statstidende_url": "https://www.statstidende.dk/messages/S26102026-135",
    "offentliggjort": "2026-10-28",
@@ -15955,6 +16117,33 @@
    "rekvirent": "Totalkredit A/S v/advokat Christian Løvgren",
    "rekvirent_telefon": null,
    "besigtigelse": "ADVODAN Holbæk",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S28102026-315",
+   "statstidende_url": "https://www.statstidende.dk/messages/S28102026-315",
+   "offentliggjort": "2026-10-30",
+   "auktionsdato": "2026-11-30",
+   "tidspunkt": "13:00",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Esbjerg, Fogedretten",
+   "adresse": "Sønder Land 31",
+   "postnr": "6720",
+   "by": "Fanø",
+   "region": "Syddanmark",
+   "matrikel": "249, Sønderho by, Sønderho",
+   "ejendomstype": "Beboelse",
+   "beskrivelse": "Tinglyst areal 769 m², heraf vej 0 m². Fritliggende enfamilieshus på Fanø med god loftshøjde IFØLGE BBR: Bygning 1: Fritliggende enfamilieshus opført i 1963, om-/tilbygget i 2021. Samlet boligareal 155 m2, samlet bygningsareal 90 m2, dyb kælder 40 m2 og udnyttet tagetage 65 m2. Ydervæggens materiale mursten og tagdækningsmateriale stråtag. Varmeinstallation: Varmepumpe Opvarmningsmiddel: Elektricitet Grundens vandforsyning: Alment vandforsyningsanlæg Grundens afløbsforhold: Afløb til offentligt kloaksystem Bygning 2: Udhus opført i 1963. Bebygget areal 16 m2. Ydervæggens materiale mursten og t…",
+   "offentlig_vurdering": 1648000,
+   "grundvaerdi": 835000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Boet efter Doris Johanne Thygesen",
+   "skyldner_cvr": null,
+   "rekvirent": "Boet efter Doris Johanne Thygesen v/ bobestyrer advokat Peter Boe Christensen",
+   "rekvirent_telefon": "79125455",
+   "besigtigelse": "Advokatfirmaet Thuesen Bødker & Jæger",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
