@@ -1,8 +1,8 @@
 {
  "meta": {
-  "genereret": "2026-11-04T12:40:26+00:00",
+  "genereret": "2026-11-05T12:45:33+00:00",
   "version": "0.1.0",
-  "antal": 127,
+  "antal": 130,
   "demo": false,
   "kilder_aktive": [
    "statstidende:web",
@@ -14,15 +14,15 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-11-04T12:06:17+00:00",
-   "dekreter": 1914,
+   "started": "2026-11-05T12:17:58+00:00",
+   "dekreter": 1942,
    "tvangsauktioner": 6,
    "auktioner_i_alt": 425,
-   "boer_med_relationer": 555,
-   "beriget_cvr": 1913,
-   "beriget_regnskab": 1457,
+   "boer_med_relationer": 572,
+   "beriget_cvr": 1941,
+   "beriget_regnskab": 1477,
    "beriget_ejf": 0,
-   "over_min_score": 87,
+   "over_min_score": 90,
    "min_score": 25,
    "bevaret_fra_tidligere": 40,
    "kilder_aktive": [
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"134.33.77.28\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.131.7\"}"
    ]
   }
  },
@@ -192,7 +192,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:48+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:20+00:00"
   },
   {
    "id": "33377088",
@@ -690,7 +690,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:52+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:24+00:00"
   },
   {
    "id": "34597227",
@@ -811,7 +811,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:50+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:22+00:00"
   },
   {
    "id": "33038100",
@@ -951,7 +951,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:51+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:23+00:00"
   },
   {
    "id": "39268876",
@@ -1161,7 +1161,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:49+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:21+00:00"
   },
   {
    "id": "34483906",
@@ -1304,7 +1304,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:47+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:18+00:00"
   },
   {
    "id": "41553308",
@@ -1709,7 +1709,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:59+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:32+00:00"
   },
   {
    "id": "41887885",
@@ -1824,7 +1824,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:58+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:31+00:00"
   },
   {
    "id": "71106217",
@@ -1992,7 +1992,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:57+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:30+00:00"
   },
   {
    "id": "31773261",
@@ -2126,7 +2126,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:55+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:28+00:00"
   },
   {
    "id": "10084059",
@@ -2279,7 +2279,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:54+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:27+00:00"
   },
   {
    "id": "40523286",
@@ -2548,7 +2548,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:02+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:34+00:00"
   },
   {
    "id": "42854980",
@@ -2663,7 +2663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:08+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:39+00:00"
   },
   {
    "id": "25438744",
@@ -2779,7 +2779,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:50+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:22+00:00"
   },
   {
    "id": "42944572",
@@ -2914,7 +2914,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:06+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:37+00:00"
   },
   {
    "id": "42364703",
@@ -3029,7 +3029,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:05+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:36+00:00"
   },
   {
    "id": "44114828",
@@ -3163,7 +3163,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:04+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:35+00:00"
   },
   {
    "id": "40404015",
@@ -3279,7 +3279,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:03+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:35+00:00"
   },
   {
    "id": "34596794",
@@ -3412,7 +3412,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:51+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:23+00:00"
   },
   {
    "id": "43839284",
@@ -3878,7 +3878,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:12+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:43+00:00"
   },
   {
    "id": "42347841",
@@ -4224,7 +4224,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:25+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:55+00:00"
   },
   {
    "id": "27005128",
@@ -4392,7 +4392,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:53+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:26+00:00"
   },
   {
    "id": "40073884",
@@ -4502,7 +4502,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:53+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:25+00:00"
   },
   {
    "id": "31500931",
@@ -4647,7 +4647,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:18+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:48+00:00"
   },
   {
    "id": "39410141",
@@ -4810,7 +4810,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:17+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:47+00:00"
   },
   {
    "id": "10083524",
@@ -4957,7 +4957,214 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:16+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:46+00:00"
+  },
+  {
+   "id": "30691105",
+   "statstidende_id": "S03112026-264",
+   "statstidende_url": "https://www.statstidende.dk/messages/S03112026-264",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-11-05",
+   "dekretdato": "2026-11-03",
+   "fristdag": "2026-11-01",
+   "anmeldelsesfrist": "2026-12-03",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-421/2026"
+   },
+   "kurator": {
+    "navn": "Per Buttenschøn",
+    "firma": null,
+    "adresse": "Hack Kampmanns Plads 2, 3",
+    "postnr": "8000",
+    "by": "Århus C",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "selskab": {
+    "cvr": "30691105",
+    "navn": "STÆRKÆR INVEST ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "642110",
+    "branchetekst": "Finansielle holdingselskaber",
+    "bibrancher": [],
+    "adresse": "Sellerup Strandvej 62",
+    "postnr": "7080",
+    "by": "Børkop",
+    "kommune": "Sellerup",
+    "region": "Syddanmark",
+    "stiftet": "2007-06-25",
+    "status": "UNDERTVANGSOPLØSNING",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/30691105",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/50119603/amNsb3VkczovLzAzL2U3LzYxLzg0Lzk0L2RhOGMtNDNkMS1hMjE1LTVjY2UwOTM0OTUyZA.pdf",
+    "aktiver": 11879524,
+    "egenkapital": -119719,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 2449292,
+    "materielle_anlaeg": 2449292,
+    "realkreditgaeld": 1981357,
+    "langfristet_gaeld": 1981357,
+    "kortfristet_gaeld": 10017886,
+    "omsaetning": null,
+    "bruttofortjeneste": 270250,
+    "aarets_resultat": -7995358,
+    "ansatte": null,
+    "ejendomsvaerdi_bogfoert": 2449292,
+    "ejendomsandel_pct": 20.6,
+    "soliditet_pct": -1.0,
+    "ltv_pct": 80.9,
+    "samlet_gaeld": 11999243
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 2.449.292 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 1.981.357 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 70,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "STÆRKÆR INVEST ApS i likvidation\nVed dekret af 03.11.2026 har Retten i Kolding taget\n\nSTÆRKÆR INVEST ApS i likvidation\nCVR-nr: 30691105\nSellerup Strandvej 62\n7080 Børkop\nSagsnr: 6-421/2026\n\nunder konkursbehandling efter begæring modtaget den 01.11.2026.\n\nKurator er advokat Per Buttenschøn, Hack Kampmanns Plads 2, 3., 8000 Århus C.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.11.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 03.11.2026.\n\nKurator\nAdvokat Per Buttenschøn\nHack Kampmanns Plads 2, 3\n8000 Århus C\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/30691105",
+    "statstidende": "https://www.statstidende.dk/messages/S03112026-264",
+    "aarsrapport": "http://regnskaber.virk.dk/50119603/amNsb3VkczovLzAzL2U3LzYxLzg0Lzk0L2RhOGMtNDNkMS1hMjE1LTVjY2UwOTM0OTUyZA.pdf",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/30691105?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Sellerup+Strandvej+62,+7080+Børkop",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Per+Buttenschøn"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'i likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "40268731",
+     "cvr": "40268731",
+     "navn": "Frandsen Invest Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Investering for egen regning",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-270",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "38232282",
+     "cvr": "38232282",
+     "navn": "Jactus Invest ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-246",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40184236",
+     "cvr": "40184236",
+     "navn": "MBSF ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Investering for egen regning",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-276",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40558047",
+     "cvr": "40558047",
+     "navn": "BDA Finance ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Investering for egen regning",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-267",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40324224",
+     "cvr": "40324224",
+     "navn": "Scandinavian Pet Design ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Administrations- og kontorserviceaktiviteter",
+     "by": "Børkop",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-253",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-11-05T12:23:25+00:00"
   },
   {
    "id": "32277470",
@@ -5634,7 +5841,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:00+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:32+00:00"
   },
   {
    "id": "29243484",
@@ -5743,7 +5950,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:58+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:31+00:00"
   },
   {
    "id": "44227584",
@@ -5853,7 +6060,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:57+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:30+00:00"
   },
   {
    "id": "40085327",
@@ -5962,7 +6169,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:56+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:29+00:00"
   },
   {
    "id": "16843741",
@@ -6071,7 +6278,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:15:56+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:29+00:00"
   },
   {
    "id": "34485216",
@@ -6199,7 +6406,135 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:15:55+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:28+00:00"
+  },
+  {
+   "id": "40603131",
+   "statstidende_id": "S03112026-91",
+   "statstidende_url": "https://www.statstidende.dk/messages/S03112026-91",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-11-05",
+   "dekretdato": "2026-11-03",
+   "fristdag": "2026-10-23",
+   "anmeldelsesfrist": "2026-12-03",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Horsens",
+    "sagsnummer": "SKS 41-278/2026"
+   },
+   "kurator": {
+    "navn": "Janus Bang Topp",
+    "firma": null,
+    "adresse": "Vitus Berings Plads 5",
+    "postnr": "8700",
+    "by": "Horsens",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Janus+Bang+Topp"
+   },
+   "selskab": {
+    "cvr": "40603131",
+    "navn": "Hornsyld Træbriketter ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "162600",
+    "branchetekst": "Fremstilling af fast brændsel på basis af vegetabilsk biomasse",
+    "bibrancher": [],
+    "adresse": "Industrivænget 11",
+    "postnr": "8783",
+    "by": "Hornsyld",
+    "kommune": null,
+    "region": "Midtjylland",
+    "stiftet": "2019-06-24",
+    "status": "NORMAL",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40603131",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/13130604/amNsb3VkczovLzAzL2E2L2RmL2NhL2ZlLzljMGUtNDhlMC1hMWE3LWMxOTdjNWE2MzAwZg.xml",
+    "aktiver": 9890000,
+    "egenkapital": -4760298,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 7900000,
+    "materielle_anlaeg": 9750000,
+    "realkreditgaeld": 6310000,
+    "langfristet_gaeld": 8370000,
+    "kortfristet_gaeld": 6280298,
+    "omsaetning": null,
+    "bruttofortjeneste": -323855,
+    "aarets_resultat": -940406,
+    "ansatte": 0,
+    "ejendomsvaerdi_bogfoert": 7900000,
+    "ejendomsandel_pct": 79.9,
+    "soliditet_pct": -48.1,
+    "ltv_pct": 79.9,
+    "samlet_gaeld": 14650298
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 7.900.000 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 6.310.000 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    }
+   ],
+   "score": 65,
+   "konfidens": "middel",
+   "ejendomstype_hoved": "Egen domicil",
+   "raa_tekst": "Hornsyld Træbriketter ApS\nVed dekret af 03.11.2026 har Retten i Horsens taget\n\nHornsyld Træbriketter ApS\nCVR-nr: 40603131\nIndustrivænget 11\n8783 Hornsyld\nSagsnr: SKS 41-278/2026\n\nunder konkursbehandling efter begæring modtaget den 23.10.2026.\n\nSelskabet har hjemsted i Hedensted kommune og har drevet virksomhed fra adressen Industrivænget 11, 8783 Hornsyld.\n\nKurator er advokat Janus Bang Topp, Vitus Berings Plads 5, 8700 Horsens.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 03.11.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Horsens, den 03.11.2026.\n\nKurator\nAdvokat Janus Bang Topp\nVitus Berings Plads 5\n8700 Horsens\n\nSkifteret\nRetten i Horsens",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40603131",
+    "statstidende": "https://www.statstidende.dk/messages/S03112026-91",
+    "aarsrapport": "http://regnskaber.virk.dk/13130604/amNsb3VkczovLzAzL2E2L2RmL2NhL2ZlLzljMGUtNDhlMC1hMWE3LWMxOTdjNWE2MzAwZg.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40603131?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Industrivænget+11,+8783+Hornsyld",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Janus+Bang+Topp"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "38764055",
+     "cvr": "38764055",
+     "navn": "Fynbo Holding 2017 ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-03",
+     "branchetekst": "Finansielle holdingselskaber",
+     "by": "Hornsyld",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S03112026-88",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-11-05T12:23:27+00:00"
   },
   {
    "id": "36492139",
@@ -6417,7 +6752,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:03+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:34+00:00"
   },
   {
    "id": "43888757",
@@ -6544,7 +6879,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:01+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:33+00:00"
   },
   {
    "id": "27359663",
@@ -6708,7 +7043,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:00+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:33+00:00"
   },
   {
    "id": "37902896",
@@ -7036,7 +7371,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:07+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:38+00:00"
   },
   {
    "id": "44049090",
@@ -7164,7 +7499,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:06+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:38+00:00"
   },
   {
    "id": "34587434",
@@ -7273,7 +7608,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:29+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:59+00:00"
   },
   {
    "id": "28311435",
@@ -7382,7 +7717,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:05+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:37+00:00"
   },
   {
    "id": "28974124",
@@ -7491,7 +7826,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:04+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:36+00:00"
   },
   {
    "id": "41982659",
@@ -7742,7 +8077,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:09+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:40+00:00"
   },
   {
    "id": "20402644",
@@ -8429,7 +8764,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:17:01+00:00"
+   "sidst_opdateret": "2026-11-05T12:24:29+00:00"
   },
   {
    "id": "44145227",
@@ -8532,7 +8867,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:15+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:45+00:00"
   },
   {
    "id": "26074967",
@@ -8641,7 +8976,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:14+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:45+00:00"
   },
   {
    "id": "43167731",
@@ -8770,7 +9105,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:13+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:44+00:00"
   },
   {
    "id": "26712815",
@@ -8929,7 +9264,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:13+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:44+00:00"
   },
   {
    "id": "38532499",
@@ -9243,7 +9578,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:12+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:43+00:00"
   },
   {
    "id": "42434434",
@@ -9390,7 +9725,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:45+00:00"
+   "sidst_opdateret": "2026-11-05T12:24:15+00:00"
   },
   {
    "id": "43242164",
@@ -9499,7 +9834,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:43+00:00"
+   "sidst_opdateret": "2026-11-05T12:24:12+00:00"
   },
   {
    "id": "35401725",
@@ -9627,7 +9962,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:11+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:42+00:00"
   },
   {
    "id": "43590936",
@@ -9755,7 +10090,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:11+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:42+00:00"
   },
   {
    "id": "45688992",
@@ -9863,7 +10198,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:38+00:00"
+   "sidst_opdateret": "2026-11-05T12:24:06+00:00"
   },
   {
    "id": "25511824",
@@ -9990,7 +10325,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:10+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:41+00:00"
   },
   {
    "id": "35052542",
@@ -10170,7 +10505,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:10+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:41+00:00"
   },
   {
    "id": "43931946",
@@ -10279,7 +10614,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:09+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:40+00:00"
   },
   {
    "id": "27923372",
@@ -10388,7 +10723,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:31+00:00"
+   "sidst_opdateret": "2026-11-05T12:24:00+00:00"
   },
   {
    "id": "41298332",
@@ -11540,7 +11875,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:29+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:57+00:00"
   },
   {
    "id": "14412107",
@@ -11662,7 +11997,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:28+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:57+00:00"
   },
   {
    "id": "39775298",
@@ -11765,7 +12100,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:27+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:56+00:00"
   },
   {
    "id": "32887902",
@@ -11868,7 +12203,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:26+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:56+00:00"
   },
   {
    "id": "42214914",
@@ -11971,7 +12306,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:24+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:55+00:00"
   },
   {
    "id": "41939494",
@@ -12074,7 +12409,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:24+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:54+00:00"
   },
   {
    "id": "31260310",
@@ -12230,7 +12565,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:16:23+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:54+00:00"
   },
   {
    "id": "16341940",
@@ -12333,7 +12668,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:23+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:53+00:00"
   },
   {
    "id": "35029605",
@@ -12374,7 +12709,7 @@
     "kommune": "Tvingstrup",
     "region": "Midtjylland",
     "stiftet": "2013-01-23",
-    "status": "NORMAL",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
@@ -12436,7 +12771,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:22+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:53+00:00"
   },
   {
    "id": "35640827",
@@ -12540,7 +12875,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:22+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:52+00:00"
   },
   {
    "id": "41232641",
@@ -12644,7 +12979,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:21+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:51+00:00"
   },
   {
    "id": "44708604",
@@ -12747,7 +13082,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:20+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:50+00:00"
   },
   {
    "id": "26734584",
@@ -12850,7 +13185,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:21+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:51+00:00"
   },
   {
    "id": "39596326",
@@ -12953,7 +13288,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:20+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:50+00:00"
   },
   {
    "id": "43613367",
@@ -13056,7 +13391,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:19+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:49+00:00"
   },
   {
    "id": "30358325",
@@ -13159,7 +13494,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:18+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:48+00:00"
   },
   {
    "id": "43890514",
@@ -13262,7 +13597,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:19+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:49+00:00"
   },
   {
    "id": "43238779",
@@ -13365,7 +13700,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:17+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:47+00:00"
   },
   {
    "id": "40612904",
@@ -13468,7 +13803,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:16+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:46+00:00"
   },
   {
    "id": "36068620",
@@ -13577,7 +13912,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:19:58+00:00"
+   "sidst_opdateret": "2026-11-05T12:27:31+00:00"
   },
   {
    "id": "32365655",
@@ -13687,7 +14022,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:19:03+00:00"
+   "sidst_opdateret": "2026-11-05T12:26:34+00:00"
   },
   {
    "id": "44262606",
@@ -13796,7 +14131,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:18:14+00:00"
+   "sidst_opdateret": "2026-11-05T12:25:42+00:00"
   },
   {
    "id": "25155688",
@@ -14517,7 +14852,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:32:01+00:00"
+   "sidst_opdateret": "2026-11-05T12:38:51+00:00"
   },
   {
    "id": "45041522",
@@ -14619,7 +14954,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:30:19+00:00"
+   "sidst_opdateret": "2026-11-05T12:37:48+00:00"
   },
   {
    "id": "27111408",
@@ -14722,7 +15057,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:30:22+00:00"
+   "sidst_opdateret": "2026-11-05T12:37:51+00:00"
   },
   {
    "id": "39270536",
@@ -14825,7 +15160,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:28:12+00:00"
+   "sidst_opdateret": "2026-11-05T12:35:42+00:00"
   },
   {
    "id": "31468051",
@@ -14928,7 +15263,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:24:58+00:00"
+   "sidst_opdateret": "2026-11-05T12:32:18+00:00"
   },
   {
    "id": "26817374",
@@ -15030,7 +15365,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:24:27+00:00"
+   "sidst_opdateret": "2026-11-05T12:31:47+00:00"
   },
   {
    "id": "33640552",
@@ -15237,7 +15572,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-04T12:22:42+00:00"
+   "sidst_opdateret": "2026-11-05T12:30:01+00:00"
   },
   {
    "id": "42869562",
@@ -15341,7 +15676,116 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:21:07+00:00"
+   "sidst_opdateret": "2026-11-05T12:28:40+00:00"
+  },
+  {
+   "id": "42292540",
+   "statstidende_id": "S03112026-282",
+   "statstidende_url": "https://www.statstidende.dk/messages/S03112026-282",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-11-05",
+   "dekretdato": "2026-11-03",
+   "fristdag": "2026-10-05",
+   "anmeldelsesfrist": "2026-12-03",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Sø- og Handelsrettens skifteret",
+    "sagsnummer": "K 2182/26-E"
+   },
+   "kurator": {
+    "navn": "Anders Ibsen Melballe",
+    "firma": null,
+    "adresse": "Philip Heymans Alle 7",
+    "postnr": "2900",
+    "by": "Hellerup",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Ibsen+Melballe"
+   },
+   "selskab": {
+    "cvr": "42292540",
+    "navn": "Certainly Group ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "603900",
+    "branchetekst": "Anden distribution af medieindhold",
+    "bibrancher": [],
+    "adresse": "Pilestræde 52A",
+    "postnr": "1112",
+    "by": "København K",
+    "kommune": null,
+    "region": "Hovedstaden",
+    "stiftet": "2021-03-30",
+    "status": "NORMAL",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/42292540",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/04529224/amNsb3VkczovLzAzLzZlLzg2LzdhLzk5LzAxNTAtNDJmNi04NThiLWJjOTcwMWQ3OTQ0Nw.xml",
+    "aktiver": 11745464,
+    "egenkapital": 1895712,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 16834,
+    "realkreditgaeld": 3533190,
+    "langfristet_gaeld": 4886401,
+    "kortfristet_gaeld": 4963351,
+    "omsaetning": null,
+    "bruttofortjeneste": 2415101,
+    "aarets_resultat": -3335888,
+    "ansatte": 3,
+    "ejendomsvaerdi_bogfoert": null,
+    "ejendomsandel_pct": null,
+    "soliditet_pct": 16.1,
+    "ltv_pct": null,
+    "samlet_gaeld": 9849752
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_realkredit",
+     "beskrivelse": "Realkreditgæld 3.533.190 kr. (kræver pant i fast ejendom)",
+     "point": 25,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "navn_invest",
+     "beskrivelse": "Selskabsnavn indikerer investering/holding",
+     "point": 5,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 30,
+   "konfidens": "lav",
+   "ejendomstype_hoved": "Ukendt",
+   "raa_tekst": "Certainly Group ApS\nVed dekret af 03.11.2026 har Sø- og Handelsrettens skifteret taget\n\nCertainly Group ApS\nCVR-nr: 42292540\nPilestræde 52A\n1112 København K\nSagsnr: K 2182/26-E\n\nunder konkursbehandling på grundlag af en begæring modtaget den 05.10.2026.\n\nSom kurator er udpeget advokat Anders Ibsen Melballe, Philip Heymans Alle 7, 2900 Hellerup.\n\nDer er ikke berammet møde til valg af kurator eller nedsættelse af kreditorudvalg. Begæring herom fra en fordringshaver skal fremsættes skriftligt overfor Sø- og Handelsrettens skifteret, Amaliegade 35, 2. sal, 1256 København K., inden 3 uger efter denne bekendtgørelse.\n\nEnhver, der har en fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. konkursdagen. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nSø- og Handelsretten, Skifteretten, den 03.11.2026\n\nKurator\nAdvokat Anders Ibsen Melballe\nPhilip Heymans Alle 7\n2900 Hellerup\n\nSkifteret\nSø- og Handelsretten",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/42292540",
+    "statstidende": "https://www.statstidende.dk/messages/S03112026-282",
+    "aarsrapport": "http://regnskaber.virk.dk/04529224/amNsb3VkczovLzAzLzZlLzg2LzdhLzk5LzAxNTAtNDJmNi04NThiLWJjOTcwMWQ3OTQ0Nw.xml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/42292540?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Pilestræde+52A,+1112+København+K",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Anders+Ibsen+Melballe"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [],
+   "sidst_opdateret": "2026-11-05T12:23:58+00:00"
   },
   {
    "id": "40313761",
@@ -15650,7 +16094,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-04T12:16:30+00:00"
+   "sidst_opdateret": "2026-11-05T12:23:59+00:00"
   }
  ]
 }
