@@ -1,6 +1,6 @@
 {
- "genereret": "2026-11-24T15:21:47+00:00",
- "antal": 704,
+ "genereret": "2026-11-25T15:18:46+00:00",
+ "antal": 705,
  "auktioner": [
   {
    "id": "S08092026-199",
@@ -18871,6 +18871,33 @@
    "rekvirent": "Jyske Realkredit A/S",
    "rekvirent_telefon": "89340042",
    "besigtigelse": "Holst, Advokater",
+   "konkursbo_id": null,
+   "lat": null,
+   "lon": null
+  },
+  {
+   "id": "S23112026-191",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23112026-191",
+   "offentliggjort": "2026-11-25",
+   "auktionsdato": "2026-12-15",
+   "tidspunkt": "09:30",
+   "auktionsnummer": 1,
+   "fogedret": "Retten i Holstebro, afdelingskontoret i Thisted",
+   "adresse": "Dæmningen 4",
+   "postnr": "7700",
+   "by": "Thisted",
+   "region": "Midtjylland",
+   "matrikel": "9 i, Hovsør By, Østerild",
+   "ejendomstype": "Sommerhus",
+   "beskrivelse": "Tinglyst areal 317 m², heraf vej 0 m². Boligarealet iflg. BBR-ejermeddelelse udgør 159 m2 fordelt med 94 m2 i stueplan og 65 m2 på 1. sal. Der er ingen bopælspligt, så huset kan benyttes både som fritidshus og som helårshus. Til ejendommen hører en garage på 20 m2, carport på 15 m2 og et udhus på 15 m2 iflg. BBR- ejermeddelelse. Ejendommen er skøn beliggende nær vandet og med kun 12 km. til Thisted centrum. I stueplan er der entré, fordelingsgang, toilet, køkken og stue. Fra stuen er der udgang til udestue og kontor. På første sal er der tre værelser og udgang til terrasse med fantastisk udsig…",
+   "offentlig_vurdering": 1276000,
+   "grundvaerdi": 439000,
+   "vurderingsdato": "2020-01-01",
+   "skoedehaver": "Boet efter Lis Rita Jakobsen",
+   "skyldner_cvr": null,
+   "rekvirent": "Bobestyrer, advokat, Ole Møller Knudsen",
+   "rekvirent_telefon": "33337133",
+   "besigtigelse": "Advokathuset Funch & Nielsen",
    "konkursbo_id": null,
    "lat": null,
    "lon": null
