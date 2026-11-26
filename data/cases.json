@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genereret": "2026-11-25T15:18:46+00:00",
+  "genereret": "2026-11-26T14:28:00+00:00",
   "version": "0.1.0",
   "antal": 155,
   "demo": false,
@@ -14,17 +14,17 @@
    "ejerfortegnelsen"
   ],
   "stats": {
-   "started": "2026-11-25T14:18:31+00:00",
-   "dekreter": 2364,
+   "started": "2026-11-26T13:52:16+00:00",
+   "dekreter": 2360,
    "tvangsauktioner": 5,
    "auktioner_i_alt": 425,
-   "boer_med_relationer": 701,
-   "beriget_cvr": 2242,
-   "beriget_regnskab": 1772,
+   "boer_med_relationer": 708,
+   "beriget_cvr": 2359,
+   "beriget_regnskab": 1769,
    "beriget_ejf": 0,
-   "over_min_score": 106,
+   "over_min_score": 107,
    "min_score": 25,
-   "bevaret_fra_tidligere": 49,
+   "bevaret_fra_tidligere": 48,
    "kilder_aktive": [
     "statstidende:web",
     "apicvr-rest",
@@ -35,7 +35,7 @@
     "ejerfortegnelsen"
    ],
    "fejl": [
-    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}"
+    "cvrapi.dk kvote opbrugt: HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"52.176.124.107\"}"
    ]
   }
  },
@@ -192,7 +192,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:21:56+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:47+00:00"
   },
   {
    "id": "33377088",
@@ -830,7 +830,217 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:16+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:52+00:00"
+  },
+  {
+   "id": "39268876",
+   "statstidende_id": "S23092026-312",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-312",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-09-25",
+   "dekretdato": "2026-09-23",
+   "fristdag": "2026-09-23",
+   "anmeldelsesfrist": "2026-10-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Retten i Kolding",
+    "sagsnummer": "6-354/2026"
+   },
+   "kurator": {
+    "navn": "Michael E. Hansen",
+    "firma": null,
+    "adresse": "Kolding Åpark 1, 2",
+    "postnr": "6000",
+    "by": "Kolding",
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "selskab": {
+    "cvr": "39268876",
+    "navn": "A-PORTAL.DK ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Nyager 13",
+    "postnr": "7000",
+    "by": "Fredericia",
+    "kommune": "Bredstrup",
+    "region": "Syddanmark",
+    "stiftet": "2018-01-22",
+    "status": "UNDERKONKURS",
+    "ansatte": 1,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/39268876",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2024-09-30",
+    "kilde_url": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
+    "aktiver": 20167355,
+    "egenkapital": 2606861,
+    "investeringsejendomme": null,
+    "grunde_og_bygninger": 14612740,
+    "materielle_anlaeg": 15177065,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 7274202,
+    "kortfristet_gaeld": 9841777,
+    "omsaetning": null,
+    "bruttofortjeneste": 1161747,
+    "aarets_resultat": 739,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 14612740,
+    "ejendomsandel_pct": 72.5,
+    "soliditet_pct": 12.9,
+    "ltv_pct": null,
+    "samlet_gaeld": 17115979
+   },
+   "ejendomme": [
+    {
+     "bfe_nummer": null,
+     "adresse": "Mjels Brovej 84",
+     "postnr": "9230",
+     "by": "Svenstrup J",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "6 r, Ellidshøj by, Ellidshøj",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1085000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-10-20",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S28092026-216",
+     "lat": null,
+     "lon": null
+    },
+    {
+     "bfe_nummer": null,
+     "adresse": "Mjels Brovej 84",
+     "postnr": "9230",
+     "by": "Svenstrup J",
+     "kommune": null,
+     "ejendomstype": "Erhvervsejendom",
+     "ejerandel": null,
+     "matrikel": "6 r, Ellidshøj by, Ellidshøj",
+     "kilde": "tvangsauktion",
+     "offentlig_vurdering": 1085000,
+     "grundareal_m2": null,
+     "bygningsareal_m2": null,
+     "tvangsauktion_dato": "2026-09-22",
+     "tvangsauktion_url": "https://www.statstidende.dk/messages/S02092026-86",
+     "lat": null,
+     "lon": null
+    }
+   ],
+   "signaler": [
+    {
+     "kode": "tvangsauktion",
+     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
+     "point": 50,
+     "kilde": "Statstidende"
+    },
+    {
+     "kode": "xbrl_grunde_bygninger",
+     "beskrivelse": "Grunde og bygninger bogført til 14.612.740 kr.",
+     "point": 40,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 100,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "A-PORTAL.DK ApS i likvidation\nVed dekret af 23.09.2026 har Retten i Kolding taget\n\nA-PORTAL.DK ApS i likvidation\nCVR-nr: 39268876\nNyager 13\n7000 Fredericia\nSagsnr: 6-354/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nKurator er advokat Michael E. Hansen, Kolding Åpark 1, 2., 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 23.09.2026.\n\nKurator\nAdvokat Michael E. Hansen\nKolding Åpark 1, 2\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39268876",
+    "statstidende": "https://www.statstidende.dk/messages/S23092026-312",
+    "tvangsauktion": "https://www.statstidende.dk/messages/S28092026-216",
+    "aarsrapport": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39268876?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nyager+13,+7000+Fredericia",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+   },
+   "kilder": [
+    "statstidende",
+    "tvangsauktion",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Selskabet var 'i likvidation' ved dekretet",
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "27359663",
+     "cvr": "27359663",
+     "navn": "E73 Ejendomme ApS",
+     "score": 60,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Opførelse af bygninger",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 1608800,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-301",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "26712815",
+     "cvr": "26712815",
+     "navn": "Blommehaven 2 ApS",
+     "score": 45,
+     "konfidens": "middel",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": 2794000,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-324",
+     "i_registret": true,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    },
+    {
+     "id": "40541985",
+     "cvr": "40541985",
+     "navn": "E73 Holding ApS",
+     "score": 5,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-23",
+     "branchetekst": "Køb og salg af egen fast ejendom",
+     "by": "Fredericia",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-337",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse",
+      "samme kurator og dekret samme dage"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-11-26T14:00:49+00:00"
   },
   {
    "id": "34483906",
@@ -973,7 +1183,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:21:55+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:46+00:00"
   },
   {
    "id": "34597227",
@@ -1094,7 +1304,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:14+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:50+00:00"
   },
   {
    "id": "41553308",
@@ -1499,7 +1709,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:39+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:00+00:00"
   },
   {
    "id": "41887885",
@@ -1614,7 +1824,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:38+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:59+00:00"
   },
   {
    "id": "71106217",
@@ -1782,7 +1992,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:22+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:57+00:00"
   },
   {
    "id": "31773261",
@@ -1916,7 +2126,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:20+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:56+00:00"
   },
   {
    "id": "10084059",
@@ -2069,7 +2279,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:19+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:55+00:00"
   },
   {
    "id": "40523286",
@@ -2338,211 +2548,290 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:30+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:05+00:00"
   },
   {
-   "id": "39268876",
-   "statstidende_id": "S23092026-312",
-   "statstidende_url": "https://www.statstidende.dk/messages/S23092026-312",
+   "id": "40400508",
+   "statstidende_id": "S23112026-316",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23112026-316",
    "meddelelsestype": "Konkursdekret",
-   "offentliggjort": "2026-09-25",
-   "dekretdato": "2026-09-23",
-   "fristdag": "2026-09-23",
-   "anmeldelsesfrist": "2026-10-23",
+   "offentliggjort": "2026-11-25",
+   "dekretdato": "2026-11-23",
+   "fristdag": "2026-11-19",
+   "anmeldelsesfrist": "2026-12-23",
    "skiftesamling": null,
    "fordringsproevelse": null,
    "skifteret": {
-    "navn": "Retten i Kolding",
-    "sagsnummer": "6-354/2026"
+    "navn": "Skifteretten i Odense",
+    "sagsnummer": "SK-3349/2026-ODE"
    },
    "kurator": {
-    "navn": "Michael E. Hansen",
+    "navn": "35209352",
     "firma": null,
-    "adresse": "Kolding Åpark 1, 2",
-    "postnr": "6000",
-    "by": "Kolding",
+    "adresse": null,
+    "postnr": null,
+    "by": null,
     "telefon": null,
     "email": null,
-    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
    },
    "selskab": {
-    "cvr": "39268876",
-    "navn": "A-PORTAL.DK ApS",
+    "cvr": "40400508",
+    "navn": "Flex Ejendom ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
     "bibrancher": [],
-    "adresse": "Nyager 13",
-    "postnr": "7000",
-    "by": "Fredericia",
-    "kommune": null,
+    "adresse": "Vestbirkvej 3",
+    "postnr": "5240",
+    "by": "Odense NØ",
+    "kommune": "Seden",
     "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "2019-03-31",
+    "status": "UNDERFRIVILLIGLIKVIDATION",
+    "ansatte": 5,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/40400508",
     "formaal": null,
     "lat": null,
     "lon": null
    },
    "regnskab": {
-    "regnskabsaar_slut": "2024-09-30",
-    "kilde_url": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
-    "aktiver": 20167355,
-    "egenkapital": 2606861,
-    "investeringsejendomme": null,
-    "grunde_og_bygninger": 14612740,
-    "materielle_anlaeg": 15177065,
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/80500404/amNsb3VkczovLzAzLzI2LzM1L2FlL2U3L2NkYTMtNGFkNC1iMGI3LTgyMTcxMTA2YzJjNA.xhtml",
+    "aktiver": 12739469,
+    "egenkapital": 2034005,
+    "investeringsejendomme": 11317579,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 11447984,
     "realkreditgaeld": null,
-    "langfristet_gaeld": 7274202,
-    "kortfristet_gaeld": 9841777,
+    "langfristet_gaeld": 1428193,
+    "kortfristet_gaeld": 9241732,
     "omsaetning": null,
-    "bruttofortjeneste": 1161747,
-    "aarets_resultat": 739,
+    "bruttofortjeneste": 1731503,
+    "aarets_resultat": -2554368,
     "ansatte": 1,
-    "ejendomsvaerdi_bogfoert": 14612740,
-    "ejendomsandel_pct": 72.5,
-    "soliditet_pct": 12.9,
+    "ejendomsvaerdi_bogfoert": 11317579,
+    "ejendomsandel_pct": 88.8,
+    "soliditet_pct": 16.0,
     "ltv_pct": null,
-    "samlet_gaeld": 17115979
+    "samlet_gaeld": 10669925
    },
-   "ejendomme": [
-    {
-     "bfe_nummer": null,
-     "adresse": "Mjels Brovej 84",
-     "postnr": "9230",
-     "by": "Svenstrup J",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "6 r, Ellidshøj by, Ellidshøj",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 1085000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-10-20",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S28092026-216",
-     "lat": null,
-     "lon": null
-    },
-    {
-     "bfe_nummer": null,
-     "adresse": "Mjels Brovej 84",
-     "postnr": "9230",
-     "by": "Svenstrup J",
-     "kommune": null,
-     "ejendomstype": "Erhvervsejendom",
-     "ejerandel": null,
-     "matrikel": "6 r, Ellidshøj by, Ellidshøj",
-     "kilde": "tvangsauktion",
-     "offentlig_vurdering": 1085000,
-     "grundareal_m2": null,
-     "bygningsareal_m2": null,
-     "tvangsauktion_dato": "2026-09-22",
-     "tvangsauktion_url": "https://www.statstidende.dk/messages/S02092026-86",
-     "lat": null,
-     "lon": null
-    }
-   ],
+   "ejendomme": [],
    "signaler": [
     {
-     "kode": "tvangsauktion",
-     "beskrivelse": "2 tvangsauktion(er) bekendtgjort i Statstidende på skyldneren",
-     "point": 50,
-     "kilde": "Statstidende"
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 11.317.579 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
     },
     {
-     "kode": "xbrl_grunde_bygninger",
-     "beskrivelse": "Grunde og bygninger bogført til 14.612.740 kr.",
-     "point": 40,
-     "kilde": "Årsrapport (XBRL)"
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
     }
    ],
    "score": 90,
    "konfidens": "høj",
-   "ejendomstype_hoved": "Blandet",
-   "raa_tekst": "A-PORTAL.DK ApS i likvidation\nVed dekret af 23.09.2026 har Retten i Kolding taget\n\nA-PORTAL.DK ApS i likvidation\nCVR-nr: 39268876\nNyager 13\n7000 Fredericia\nSagsnr: 6-354/2026\n\nunder konkursbehandling efter begæring modtaget den 23.09.2026.\n\nKurator er advokat Michael E. Hansen, Kolding Åpark 1, 2., 6000 Kolding.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftligt over for skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23.09.2026. Anmeldelsen bør være vedlagt dokumentation for kravet.\n\nRetten i Kolding, den 23.09.2026.\n\nKurator\nAdvokat Michael E. Hansen\nKolding Åpark 1, 2\n6000 Kolding\n\nSkifteret\nRetten i Kolding",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "Flex Ejendom ApS\nVed dekret af 23.11.2026 har Skifteretten i Odense taget\n\nFlex Ejendom ApS\nCVR-nr: 40400508\nVestbirkvej 3\n5240 Odense NØ\nSagsnr: SK-3349/2026-ODE\n\nunder konkursbehandling efter begæring modtaget den 19. november 2026.\n\nKurator er advokat Per Buttenschøn, DLA Piper Denmark Advokatpartnerselskab, Oslo Plads 2, 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftlig overfor skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23. november 2026.\nAnmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 23. november 2026.\n\nKurator\nAdvokat Per Buttenschøn\nKurator CVR-nr: 35209352\nOslo Plads 2\n2100 København Ø\nDanmark\n\nSkifteret\nRetten i Odense",
    "links": {
-    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/39268876",
-    "statstidende": "https://www.statstidende.dk/messages/S23092026-312",
-    "tvangsauktion": "https://www.statstidende.dk/messages/S28092026-216",
-    "aarsrapport": "http://regnskaber.virk.dk/67886293/amNsb3VkczovLzAzL2UyLzRjL2FhL2ZlLzQzN2QtNGRkNC1iYmRkLWQwODBjYjY3M2FmMQ.xhtml",
-    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/39268876?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Nyager+13,+7000+Fredericia",
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40400508",
+    "statstidende": "https://www.statstidende.dk/messages/S23112026-316",
+    "aarsrapport": "http://regnskaber.virk.dk/80500404/amNsb3VkczovLzAzLzI2LzM1L2FlL2U3L2NkYTMtNGFkNC1iMGI3LTgyMTcxMTA2YzJjNA.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40400508?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Vestbirkvej+3,+5240+Odense+NØ",
     "tinglysning": "https://www.tinglysning.dk",
     "ois": "https://www.ois.dk",
-    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=Michael+E.+Hansen"
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
    },
    "kilder": [
     "statstidende",
-    "tvangsauktion",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
    "noter": [
-    "Selskabet var 'i likvidation' ved dekretet",
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [
     {
-     "id": "27359663",
-     "cvr": "27359663",
-     "navn": "E73 Ejendomme ApS i likvadation",
-     "score": 60,
-     "konfidens": "middel",
-     "dekretdato": "2026-09-23",
-     "branchetekst": null,
-     "by": "Fredericia",
-     "ejendomsvaerdi": 1608800,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-301",
-     "i_registret": true,
-     "grund": [
-      "samme hjemstedsadresse",
-      "samme kurator og dekret samme dage"
-     ]
-    },
-    {
-     "id": "26712815",
-     "cvr": "26712815",
-     "navn": "Blommehaven 2 ApS",
-     "score": 45,
-     "konfidens": "middel",
-     "dekretdato": "2026-09-23",
-     "branchetekst": null,
-     "by": "Fredericia",
-     "ejendomsvaerdi": 2794000,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-324",
-     "i_registret": true,
-     "grund": [
-      "samme hjemstedsadresse",
-      "samme kurator og dekret samme dage"
-     ]
-    },
-    {
-     "id": "40541985",
-     "cvr": "40541985",
-     "navn": "E73 Holding ApS",
+     "id": "39498286",
+     "cvr": "39498286",
+     "navn": "Flex Holding Odense ApS",
      "score": 5,
      "konfidens": "lav",
-     "dekretdato": "2026-09-23",
-     "branchetekst": null,
-     "by": "Fredericia",
+     "dekretdato": "2026-10-29",
+     "branchetekst": "Ikke-finansielle holdingselskaber",
+     "by": "Odense NØ",
      "ejendomsvaerdi": null,
      "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S23092026-337",
+     "statstidende_url": "https://www.statstidende.dk/messages/S29102026-239",
      "i_registret": false,
      "grund": [
-      "samme hjemstedsadresse",
-      "samme kurator og dekret samme dage"
+      "samme hjemstedsadresse"
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:14+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:01+00:00"
+  },
+  {
+   "id": "44561832",
+   "statstidende_id": "S23112026-315",
+   "statstidende_url": "https://www.statstidende.dk/messages/S23112026-315",
+   "meddelelsestype": "Konkursdekret",
+   "offentliggjort": "2026-11-25",
+   "dekretdato": "2026-11-23",
+   "fristdag": "2026-11-19",
+   "anmeldelsesfrist": "2026-12-23",
+   "skiftesamling": null,
+   "fordringsproevelse": null,
+   "skifteret": {
+    "navn": "Skifteretten i Odense",
+    "sagsnummer": "SK-3352/2026-ODE"
+   },
+   "kurator": {
+    "navn": "35209352",
+    "firma": null,
+    "adresse": null,
+    "postnr": null,
+    "by": null,
+    "telefon": null,
+    "email": null,
+    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
+   },
+   "selskab": {
+    "cvr": "44561832",
+    "navn": "Flex Ejendom II ApS",
+    "binavne": [],
+    "selskabsform": "ApS",
+    "branchekode": "682040",
+    "branchetekst": "Udlejning af erhvervsejendomme",
+    "bibrancher": [],
+    "adresse": "Nordbirkvej 4",
+    "postnr": "5240",
+    "by": "Odense NØ",
+    "kommune": "Seden",
+    "region": "Syddanmark",
+    "stiftet": "2024-01-11",
+    "status": "UNDERFRIVILLIGLIKVIDATION",
+    "ansatte": null,
+    "ejere": [],
+    "ledelse": [],
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44561832",
+    "formaal": null,
+    "lat": null,
+    "lon": null
+   },
+   "regnskab": {
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/23816544/amNsb3VkczovLzAzLzliL2Q0L2FkL2IzLzU0NzUtNDdjMy05NTAzLThkYTE1NTg2MGMwMA.xhtml",
+    "aktiver": 3330585,
+    "egenkapital": 401,
+    "investeringsejendomme": 3108112,
+    "grunde_og_bygninger": null,
+    "materielle_anlaeg": 3108112,
+    "realkreditgaeld": null,
+    "langfristet_gaeld": 96,
+    "kortfristet_gaeld": 2801671,
+    "omsaetning": null,
+    "bruttofortjeneste": 460,
+    "aarets_resultat": 214,
+    "ansatte": 1,
+    "ejendomsvaerdi_bogfoert": 3108112,
+    "ejendomsandel_pct": 93.3,
+    "soliditet_pct": 0.0,
+    "ltv_pct": null,
+    "samlet_gaeld": 2801767
+   },
+   "ejendomme": [],
+   "signaler": [
+    {
+     "kode": "xbrl_investeringsejendomme",
+     "beskrivelse": "Investeringsejendomme bogført til 3.108.112 kr.",
+     "point": 45,
+     "kilde": "Årsrapport (XBRL)"
+    },
+    {
+     "kode": "branche_ejendom",
+     "beskrivelse": "Hovedbranche 68.20.40 Udlejning af erhvervsejendomme (egne/leasede)",
+     "point": 30,
+     "kilde": "CVR"
+    },
+    {
+     "kode": "navn_ejendom",
+     "beskrivelse": "Selskabsnavn indikerer ejendom",
+     "point": 15,
+     "kilde": "CVR"
+    }
+   ],
+   "score": 90,
+   "konfidens": "høj",
+   "ejendomstype_hoved": "Erhverv",
+   "raa_tekst": "Flex Ejendom II ApS\nVed dekret af 23.11.2026 har Skifteretten i Odense taget\n\nFlex Ejendom II ApS\nCVR-nr: 44561832\nNordbirkvej 4\n5240 Odense NØ\nSagsnr: SK-3352/2026-ODE\n\nunder konkursbehandling efter begæring modtaget den 19. november 2026.\n\nKurator er advokat Per Buttenschøn, DLA Piper Denmark Advokatpartnerselskab, Oslo Plads 2, 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftlig overfor skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23. november 2026.\nAnmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 23. november 2026.\n\nKurator\nAdvokat Per Buttenschøn\nKurator CVR-nr: 35209352\nOslo Plads 2\n2100 København Ø\nDanmark\n\nSkifteret\nRetten i Odense",
+   "links": {
+    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/44561832",
+    "statstidende": "https://www.statstidende.dk/messages/S23112026-315",
+    "aarsrapport": "http://regnskaber.virk.dk/23816544/amNsb3VkczovLzAzLzliL2Q0L2FkL2IzLzU0NzUtNDdjMy05NTAzLThkYTE1NTg2MGMwMA.xhtml",
+    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/44561832?tab=regnskaber",
+    "kort": "https://www.google.com/maps/search/?api=1&query=Nordbirkvej+4,+5240+Odense+NØ",
+    "tinglysning": "https://www.tinglysning.dk",
+    "ois": "https://www.ois.dk",
+    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
+   },
+   "kilder": [
+    "statstidende",
+    "regnskab-xbrl",
+    "apicvr-rest"
+   ],
+   "noter": [
+    "Ejerfortegnelsen kunne ikke slås op"
+   ],
+   "relationer": [
+    {
+     "id": "37259241",
+     "cvr": "37259241",
+     "navn": "LS BUSSER ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-14",
+     "branchetekst": "Passagertransport ad vej uden fast køreplan",
+     "by": "Odense NØ",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S14092026-308",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
+     "id": "39501961",
+     "cvr": "39501961",
+     "navn": "Flex Admin ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-09-07",
+     "branchetekst": "Passagertransport på bestilling i køretøj med chauffør",
+     "by": "Odense NØ",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S07092026-169",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    }
+   ],
+   "sidst_opdateret": "2026-11-26T14:01:02+00:00"
   },
   {
    "id": "42854980",
@@ -2773,7 +3062,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:15+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:50+00:00"
   },
   {
    "id": "42944572",
@@ -2908,7 +3197,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:34+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:10+00:00"
   },
   {
    "id": "42364703",
@@ -3023,7 +3312,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:33+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:09+00:00"
   },
   {
    "id": "44114828",
@@ -3064,7 +3353,7 @@
     "kommune": null,
     "region": "Nordjylland",
     "stiftet": "2023-06-13",
-    "status": "NORMAL",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
@@ -3157,7 +3446,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:32+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:08+00:00"
   },
   {
    "id": "40404015",
@@ -3198,7 +3487,7 @@
     "kommune": null,
     "region": "Midtjylland",
     "stiftet": "2019-04-02",
-    "status": "UNDERTVANGSOPLØSNING",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
@@ -3273,7 +3562,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:31+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:07+00:00"
   },
   {
    "id": "34596794",
@@ -3406,7 +3695,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:16+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:51+00:00"
   },
   {
    "id": "37767557",
@@ -3522,7 +3811,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:15+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:51+00:00"
   },
   {
    "id": "43839284",
@@ -3988,7 +4277,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:38+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:15+00:00"
   },
   {
    "id": "42347841",
@@ -4334,7 +4623,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:25+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:32+00:00"
   },
   {
    "id": "27005128",
@@ -4502,7 +4791,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:18+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:53+00:00"
   },
   {
    "id": "40073884",
@@ -4612,7 +4901,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:17+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:53+00:00"
   },
   {
    "id": "31500931",
@@ -4740,7 +5029,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:18+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:24+00:00"
   },
   {
    "id": "39410141",
@@ -4903,7 +5192,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:17+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:23+00:00"
   },
   {
    "id": "10083524",
@@ -5050,7 +5339,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:16+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:22+00:00"
   },
   {
    "id": "30691105",
@@ -5257,7 +5546,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:17+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:52+00:00"
   },
   {
    "id": "34582491",
@@ -5367,7 +5656,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:13+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:19+00:00"
   },
   {
    "id": "32277470",
@@ -6153,7 +6442,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:39+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:59+00:00"
   },
   {
    "id": "44227584",
@@ -6185,20 +6474,20 @@
     "navn": "Ask Højskole ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "681200",
+    "branchetekst": "Gennemførelse af byggeprojekter",
     "bibrancher": [],
     "adresse": "Åbovej 45",
     "postnr": "8260",
     "by": "Viby J",
-    "kommune": null,
+    "kommune": "Åbo",
     "region": "Midtjylland",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
+    "stiftet": "2023-08-10",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/44227584",
     "formaal": null,
     "lat": null,
     "lon": null
@@ -6255,15 +6544,15 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'under tvangsopløsning' ved dekretet",
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:38+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:58+00:00"
   },
   {
    "id": "40085327",
@@ -6372,7 +6661,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:21+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:57+00:00"
   },
   {
    "id": "16843741",
@@ -6499,7 +6788,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:21+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:57+00:00"
   },
   {
    "id": "34485216",
@@ -6627,7 +6916,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:20+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:55+00:00"
   },
   {
    "id": "40603131",
@@ -6755,7 +7044,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:22:19+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:54+00:00"
   },
   {
    "id": "42035068",
@@ -6864,7 +7153,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:22:18+00:00"
+   "sidst_opdateret": "2026-11-26T14:00:54+00:00"
   },
   {
    "id": "36492139",
@@ -7209,7 +7498,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:30+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:05+00:00"
   },
   {
    "id": "27359663",
@@ -7238,23 +7527,23 @@
    },
    "selskab": {
     "cvr": "27359663",
-    "navn": "E73 Ejendomme ApS i likvadation",
+    "navn": "E73 Ejendomme ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "410000",
+    "branchetekst": "Opførelse af bygninger",
     "bibrancher": [],
     "adresse": "Nyager 13",
     "postnr": "7000",
     "by": "Fredericia",
-    "kommune": null,
+    "kommune": "Bredstrup",
     "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
+    "stiftet": "2003-09-25",
+    "status": "UNDERKONKURS",
+    "ansatte": 1,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/27359663",
     "formaal": null,
     "lat": null,
     "lon": null
@@ -7311,10 +7600,10 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
    "noter": [
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [
@@ -7322,10 +7611,10 @@
      "id": "39268876",
      "cvr": "39268876",
      "navn": "A-PORTAL.DK ApS",
-     "score": 90,
+     "score": 100,
      "konfidens": "høj",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Udlejning af erhvervsejendomme",
      "by": "Fredericia",
      "ejendomsvaerdi": 14612740,
      "antal_ejendomme": 2,
@@ -7343,7 +7632,7 @@
      "score": 45,
      "konfidens": "middel",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Køb og salg af egen fast ejendom",
      "by": "Fredericia",
      "ejendomsvaerdi": 2794000,
      "antal_ejendomme": 0,
@@ -7361,7 +7650,7 @@
      "score": 5,
      "konfidens": "lav",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Køb og salg af egen fast ejendom",
      "by": "Fredericia",
      "ejendomsvaerdi": null,
      "antal_ejendomme": 0,
@@ -7373,7 +7662,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:29+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:04+00:00"
   },
   {
    "id": "42956945",
@@ -7482,7 +7771,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:13+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:03+00:00"
   },
   {
    "id": "30485785",
@@ -7591,278 +7880,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:13+00:00"
-  },
-  {
-   "id": "40400508",
-   "statstidende_id": "S23112026-316",
-   "statstidende_url": "https://www.statstidende.dk/messages/S23112026-316",
-   "meddelelsestype": "Konkursdekret",
-   "offentliggjort": "2026-11-25",
-   "dekretdato": "2026-11-23",
-   "fristdag": "2026-11-19",
-   "anmeldelsesfrist": "2026-12-23",
-   "skiftesamling": null,
-   "fordringsproevelse": null,
-   "skifteret": {
-    "navn": "Skifteretten i Odense",
-    "sagsnummer": "SK-3349/2026-ODE"
-   },
-   "kurator": {
-    "navn": "35209352",
-    "firma": null,
-    "adresse": null,
-    "postnr": null,
-    "by": null,
-    "telefon": null,
-    "email": null,
-    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
-   },
-   "selskab": {
-    "cvr": "40400508",
-    "navn": "Flex Ejendom ApS",
-    "binavne": [],
-    "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
-    "bibrancher": [],
-    "adresse": "Vestbirkvej 3",
-    "postnr": "5240",
-    "by": "Odense NØ",
-    "kommune": null,
-    "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
-    "ejere": [],
-    "ledelse": [],
-    "cvr_url": null,
-    "formaal": null,
-    "lat": null,
-    "lon": null
-   },
-   "regnskab": {
-    "regnskabsaar_slut": "2025-12-31",
-    "kilde_url": "http://regnskaber.virk.dk/80500404/amNsb3VkczovLzAzLzI2LzM1L2FlL2U3L2NkYTMtNGFkNC1iMGI3LTgyMTcxMTA2YzJjNA.xhtml",
-    "aktiver": 12739469,
-    "egenkapital": 2034005,
-    "investeringsejendomme": 11317579,
-    "grunde_og_bygninger": null,
-    "materielle_anlaeg": 11447984,
-    "realkreditgaeld": null,
-    "langfristet_gaeld": 1428193,
-    "kortfristet_gaeld": 9241732,
-    "omsaetning": null,
-    "bruttofortjeneste": 1731503,
-    "aarets_resultat": -2554368,
-    "ansatte": 1,
-    "ejendomsvaerdi_bogfoert": 11317579,
-    "ejendomsandel_pct": 88.8,
-    "soliditet_pct": 16.0,
-    "ltv_pct": null,
-    "samlet_gaeld": 10669925
-   },
-   "ejendomme": [],
-   "signaler": [
-    {
-     "kode": "xbrl_investeringsejendomme",
-     "beskrivelse": "Investeringsejendomme bogført til 11.317.579 kr.",
-     "point": 45,
-     "kilde": "Årsrapport (XBRL)"
-    },
-    {
-     "kode": "navn_ejendom",
-     "beskrivelse": "Selskabsnavn indikerer ejendom",
-     "point": 15,
-     "kilde": "CVR"
-    }
-   ],
-   "score": 60,
-   "konfidens": "middel",
-   "ejendomstype_hoved": "Blandet",
-   "raa_tekst": "Flex Ejendom ApS\nVed dekret af 23.11.2026 har Skifteretten i Odense taget\n\nFlex Ejendom ApS\nCVR-nr: 40400508\nVestbirkvej 3\n5240 Odense NØ\nSagsnr: SK-3349/2026-ODE\n\nunder konkursbehandling efter begæring modtaget den 19. november 2026.\n\nKurator er advokat Per Buttenschøn, DLA Piper Denmark Advokatpartnerselskab, Oslo Plads 2, 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftlig overfor skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23. november 2026.\nAnmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 23. november 2026.\n\nKurator\nAdvokat Per Buttenschøn\nKurator CVR-nr: 35209352\nOslo Plads 2\n2100 København Ø\nDanmark\n\nSkifteret\nRetten i Odense",
-   "links": {
-    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/40400508",
-    "statstidende": "https://www.statstidende.dk/messages/S23112026-316",
-    "aarsrapport": "http://regnskaber.virk.dk/80500404/amNsb3VkczovLzAzLzI2LzM1L2FlL2U3L2NkYTMtNGFkNC1iMGI3LTgyMTcxMTA2YzJjNA.xhtml",
-    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/40400508?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Vestbirkvej+3,+5240+Odense+NØ",
-    "tinglysning": "https://www.tinglysning.dk",
-    "ois": "https://www.ois.dk",
-    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
-   },
-   "kilder": [
-    "statstidende",
-    "regnskab-xbrl"
-   ],
-   "noter": [
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
-    "Ejerfortegnelsen kunne ikke slås op"
-   ],
-   "relationer": [
-    {
-     "id": "39498286",
-     "cvr": "39498286",
-     "navn": "Flex Holding Odense ApS",
-     "score": 5,
-     "konfidens": "lav",
-     "dekretdato": "2026-10-29",
-     "branchetekst": "Ikke-finansielle holdingselskaber",
-     "by": "Odense NØ",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S29102026-239",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    }
-   ],
-   "sidst_opdateret": "2026-11-25T14:22:55+00:00"
-  },
-  {
-   "id": "44561832",
-   "statstidende_id": "S23112026-315",
-   "statstidende_url": "https://www.statstidende.dk/messages/S23112026-315",
-   "meddelelsestype": "Konkursdekret",
-   "offentliggjort": "2026-11-25",
-   "dekretdato": "2026-11-23",
-   "fristdag": "2026-11-19",
-   "anmeldelsesfrist": "2026-12-23",
-   "skiftesamling": null,
-   "fordringsproevelse": null,
-   "skifteret": {
-    "navn": "Skifteretten i Odense",
-    "sagsnummer": "SK-3352/2026-ODE"
-   },
-   "kurator": {
-    "navn": "35209352",
-    "firma": null,
-    "adresse": null,
-    "postnr": null,
-    "by": null,
-    "telefon": null,
-    "email": null,
-    "advokatsamfundet_url": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
-   },
-   "selskab": {
-    "cvr": "44561832",
-    "navn": "Flex Ejendom II ApS",
-    "binavne": [],
-    "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
-    "bibrancher": [],
-    "adresse": "Nordbirkvej 4",
-    "postnr": "5240",
-    "by": "Odense NØ",
-    "kommune": null,
-    "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
-    "ansatte": null,
-    "ejere": [],
-    "ledelse": [],
-    "cvr_url": null,
-    "formaal": null,
-    "lat": null,
-    "lon": null
-   },
-   "regnskab": {
-    "regnskabsaar_slut": "2025-12-31",
-    "kilde_url": "http://regnskaber.virk.dk/23816544/amNsb3VkczovLzAzLzliL2Q0L2FkL2IzLzU0NzUtNDdjMy05NTAzLThkYTE1NTg2MGMwMA.xhtml",
-    "aktiver": 3330585,
-    "egenkapital": 401,
-    "investeringsejendomme": 3108112,
-    "grunde_og_bygninger": null,
-    "materielle_anlaeg": 3108112,
-    "realkreditgaeld": null,
-    "langfristet_gaeld": 96,
-    "kortfristet_gaeld": 2801671,
-    "omsaetning": null,
-    "bruttofortjeneste": 460,
-    "aarets_resultat": 214,
-    "ansatte": 1,
-    "ejendomsvaerdi_bogfoert": 3108112,
-    "ejendomsandel_pct": 93.3,
-    "soliditet_pct": 0.0,
-    "ltv_pct": null,
-    "samlet_gaeld": 2801767
-   },
-   "ejendomme": [],
-   "signaler": [
-    {
-     "kode": "xbrl_investeringsejendomme",
-     "beskrivelse": "Investeringsejendomme bogført til 3.108.112 kr.",
-     "point": 45,
-     "kilde": "Årsrapport (XBRL)"
-    },
-    {
-     "kode": "navn_ejendom",
-     "beskrivelse": "Selskabsnavn indikerer ejendom",
-     "point": 15,
-     "kilde": "CVR"
-    }
-   ],
-   "score": 60,
-   "konfidens": "middel",
-   "ejendomstype_hoved": "Blandet",
-   "raa_tekst": "Flex Ejendom II ApS\nVed dekret af 23.11.2026 har Skifteretten i Odense taget\n\nFlex Ejendom II ApS\nCVR-nr: 44561832\nNordbirkvej 4\n5240 Odense NØ\nSagsnr: SK-3352/2026-ODE\n\nunder konkursbehandling efter begæring modtaget den 19. november 2026.\n\nKurator er advokat Per Buttenschøn, DLA Piper Denmark Advokatpartnerselskab, Oslo Plads 2, 2100 København Ø.\n\nEventuel anmodning om valg af kurator og kreditorudvalg skal fremsættes skriftlig overfor skifteretten senest 3 uger efter denne bekendtgørelse.\n\nEnhver, der har fordring eller andet krav mod skyldneren, opfordres til inden 4 uger efter denne bekendtgørelse til boets kurator at anmelde sit krav opgjort pr. 23. november 2026.\nAnmeldelsen bør være vedlagt dokumentation for kravet.\n\nSkifteretten i Odense, den 23. november 2026.\n\nKurator\nAdvokat Per Buttenschøn\nKurator CVR-nr: 35209352\nOslo Plads 2\n2100 København Ø\nDanmark\n\nSkifteret\nRetten i Odense",
-   "links": {
-    "cvr": "https://datacvr.virk.dk/enhed/virksomhed/44561832",
-    "statstidende": "https://www.statstidende.dk/messages/S23112026-315",
-    "aarsrapport": "http://regnskaber.virk.dk/23816544/amNsb3VkczovLzAzLzliL2Q0L2FkL2IzLzU0NzUtNDdjMy05NTAzLThkYTE1NTg2MGMwMA.xhtml",
-    "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/44561832?tab=regnskaber",
-    "kort": "https://www.google.com/maps/search/?api=1&query=Nordbirkvej+4,+5240+Odense+NØ",
-    "tinglysning": "https://www.tinglysning.dk",
-    "ois": "https://www.ois.dk",
-    "kurator_opslag": "https://www.advokatsamfundet.dk/find-advokat/?q=35209352"
-   },
-   "kilder": [
-    "statstidende",
-    "regnskab-xbrl"
-   ],
-   "noter": [
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
-    "Ejerfortegnelsen kunne ikke slås op"
-   ],
-   "relationer": [
-    {
-     "id": "37259241",
-     "cvr": "37259241",
-     "navn": "LS BUSSER ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-09-14",
-     "branchetekst": "Passagertransport ad vej uden fast køreplan",
-     "by": "Odense NØ",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S14092026-308",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    },
-    {
-     "id": "39501961",
-     "cvr": "39501961",
-     "navn": "Flex Admin ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-09-07",
-     "branchetekst": "Passagertransport på bestilling i køretøj med chauffør",
-     "by": "Odense NØ",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S07092026-169",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
-    }
-   ],
-   "sidst_opdateret": "2026-11-25T14:23:13+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:03+00:00"
   },
   {
    "id": "37902896",
@@ -8190,7 +8208,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:35+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:11+00:00"
   },
   {
    "id": "44049090",
@@ -8318,7 +8336,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:34+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:10+00:00"
   },
   {
    "id": "34587434",
@@ -8427,7 +8445,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:27+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:35+00:00"
   },
   {
    "id": "28311435",
@@ -8536,7 +8554,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:33+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:09+00:00"
   },
   {
    "id": "28974124",
@@ -8645,7 +8663,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:32+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:08+00:00"
   },
   {
    "id": "33381670",
@@ -8754,7 +8772,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:31+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:06+00:00"
   },
   {
    "id": "41982659",
@@ -9692,7 +9710,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:27:14+00:00"
+   "sidst_opdateret": "2026-11-26T14:02:22+00:00"
   },
   {
    "id": "44145227",
@@ -9795,7 +9813,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:12+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:18+00:00"
   },
   {
    "id": "26074967",
@@ -9904,7 +9922,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:12+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:18+00:00"
   },
   {
    "id": "43167731",
@@ -10033,7 +10051,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:11+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:17+00:00"
   },
   {
    "id": "26712815",
@@ -10065,20 +10083,20 @@
     "navn": "Blommehaven 2 ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "681100",
+    "branchetekst": "Køb og salg af egen fast ejendom",
     "bibrancher": [],
     "adresse": "Nyager 13",
     "postnr": "7000",
     "by": "Fredericia",
-    "kommune": null,
+    "kommune": "Bredstrup",
     "region": "Syddanmark",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
+    "stiftet": "2002-07-01",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/26712815",
     "formaal": null,
     "lat": null,
     "lon": null
@@ -10129,11 +10147,11 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
    "noter": [
     "Selskabet var 'i likvidation' ved dekretet",
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [
@@ -10141,10 +10159,10 @@
      "id": "39268876",
      "cvr": "39268876",
      "navn": "A-PORTAL.DK ApS",
-     "score": 90,
+     "score": 100,
      "konfidens": "høj",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Udlejning af erhvervsejendomme",
      "by": "Fredericia",
      "ejendomsvaerdi": 14612740,
      "antal_ejendomme": 2,
@@ -10158,11 +10176,11 @@
     {
      "id": "27359663",
      "cvr": "27359663",
-     "navn": "E73 Ejendomme ApS i likvadation",
+     "navn": "E73 Ejendomme ApS",
      "score": 60,
      "konfidens": "middel",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Opførelse af bygninger",
      "by": "Fredericia",
      "ejendomsvaerdi": 1608800,
      "antal_ejendomme": 0,
@@ -10180,7 +10198,7 @@
      "score": 5,
      "konfidens": "lav",
      "dekretdato": "2026-09-23",
-     "branchetekst": null,
+     "branchetekst": "Køb og salg af egen fast ejendom",
      "by": "Fredericia",
      "ejendomsvaerdi": null,
      "antal_ejendomme": 0,
@@ -10192,7 +10210,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:11+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:17+00:00"
   },
   {
    "id": "38532499",
@@ -10224,20 +10242,20 @@
     "navn": "Pallis Holding ApS",
     "binavne": [],
     "selskabsform": "ApS",
-    "branchekode": null,
-    "branchetekst": null,
+    "branchekode": "410000",
+    "branchetekst": "Opførelse af bygninger",
     "bibrancher": [],
     "adresse": "Langelinie Allé 17",
     "postnr": "2100",
     "by": "København Ø",
     "kommune": null,
     "region": "Hovedstaden",
-    "stiftet": null,
-    "status": "UNDER KONKURS",
+    "stiftet": "2017-03-30",
+    "status": "UNDERKONKURS",
     "ansatte": null,
     "ejere": [],
     "ledelse": [],
-    "cvr_url": null,
+    "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/38532499",
     "formaal": null,
     "lat": null,
     "lon": null
@@ -10294,10 +10312,10 @@
    },
    "kilder": [
     "statstidende",
-    "regnskab-xbrl"
+    "regnskab-xbrl",
+    "apicvr-rest"
    ],
    "noter": [
-    "CVR-opslag fejlede (HTTP 403 for https://cvrapi.dk/api: {\"error\":\"QUOTA_EXCEEDED\",\"message\":\"Your quota has been exceeded. Reach out if you are certain this is a error. https://cvrapi.dk/contact\",\"ip\":\"20.168.128.252\"}) – branche og ejere mangler",
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [
@@ -10404,6 +10422,23 @@
      ]
     },
     {
+     "id": "40499164",
+     "cvr": "40499164",
+     "navn": "Luxury Home Interior ApS",
+     "score": 0,
+     "konfidens": "lav",
+     "dekretdato": "2026-11-23",
+     "branchetekst": "Industrielt design og modedesign",
+     "by": "København Ø",
+     "ejendomsvaerdi": null,
+     "antal_ejendomme": 0,
+     "statstidende_url": "https://www.statstidende.dk/messages/S23112026-69",
+     "i_registret": false,
+     "grund": [
+      "samme hjemstedsadresse"
+     ]
+    },
+    {
      "id": "45464741",
      "cvr": "45464741",
      "navn": "Optima Force ApS",
@@ -10487,26 +10522,9 @@
      "grund": [
       "samme hjemstedsadresse"
      ]
-    },
-    {
-     "id": "46153049",
-     "cvr": "46153049",
-     "navn": "Rasmus Bygfirma ApS",
-     "score": 0,
-     "konfidens": "lav",
-     "dekretdato": "2026-11-12",
-     "branchetekst": "Opførelse af bygninger",
-     "by": "København Ø",
-     "ejendomsvaerdi": null,
-     "antal_ejendomme": 0,
-     "statstidende_url": "https://www.statstidende.dk/messages/S12112026-100",
-     "i_registret": false,
-     "grund": [
-      "samme hjemstedsadresse"
-     ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:55+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:16+00:00"
   },
   {
    "id": "42434434",
@@ -10670,7 +10688,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:25:43+00:00"
+   "sidst_opdateret": "2026-11-26T14:02:07+00:00"
   },
   {
    "id": "43242164",
@@ -10779,7 +10797,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:25:41+00:00"
+   "sidst_opdateret": "2026-11-26T14:02:04+00:00"
   },
   {
    "id": "35401725",
@@ -10907,7 +10925,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:37+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:14+00:00"
   },
   {
    "id": "43590936",
@@ -11035,7 +11053,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:38+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:14+00:00"
   },
   {
    "id": "45688992",
@@ -11143,7 +11161,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:25:36+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:59+00:00"
   },
   {
    "id": "25511824",
@@ -11270,7 +11288,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:37+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:13+00:00"
   },
   {
    "id": "35052542",
@@ -11311,8 +11329,8 @@
     "kommune": null,
     "region": "Sjælland",
     "stiftet": "2013-03-05",
-    "status": "NORMAL",
-    "ansatte": 52,
+    "status": "UNDERKONKURS",
+    "ansatte": 47,
     "ejere": [],
     "ledelse": [],
     "cvr_url": "https://datacvr.virk.dk/enhed/virksomhed/35052542",
@@ -11450,7 +11468,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:36+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:13+00:00"
   },
   {
    "id": "43931946",
@@ -11559,7 +11577,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:23:36+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:12+00:00"
   },
   {
    "id": "27923372",
@@ -11668,7 +11686,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:25:29+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:51+00:00"
   },
   {
    "id": "43091743",
@@ -11777,7 +11795,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:25:23+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:44+00:00"
   },
   {
    "id": "45479552",
@@ -12006,7 +12024,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:25:18+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:41+00:00"
   },
   {
    "id": "42058238",
@@ -12129,7 +12147,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:23:35+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:11+00:00"
   },
   {
    "id": "41298332",
@@ -13609,7 +13627,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:25+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:33+00:00"
   },
   {
    "id": "42214914",
@@ -13730,7 +13748,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:24+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:32+00:00"
   },
   {
    "id": "41939494",
@@ -13833,7 +13851,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:24+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:31+00:00"
   },
   {
    "id": "31260310",
@@ -13989,7 +14007,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:24:23+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:31+00:00"
   },
   {
    "id": "16341940",
@@ -14092,7 +14110,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:23+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:30+00:00"
   },
   {
    "id": "35029605",
@@ -14195,7 +14213,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:22+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:30+00:00"
   },
   {
    "id": "35640827",
@@ -14299,7 +14317,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:22+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:29+00:00"
   },
   {
    "id": "41232641",
@@ -14403,7 +14421,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:21+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:29+00:00"
   },
   {
    "id": "44708604",
@@ -14506,7 +14524,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:20+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:28+00:00"
   },
   {
    "id": "26734584",
@@ -14609,7 +14627,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:21+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:28+00:00"
   },
   {
    "id": "39596326",
@@ -14712,7 +14730,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:20+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:27+00:00"
   },
   {
    "id": "43613367",
@@ -14753,7 +14771,7 @@
     "kommune": null,
     "region": "Syddanmark",
     "stiftet": "2022-10-31",
-    "status": "NORMAL",
+    "status": "UNDERKONKURS",
     "ansatte": 1,
     "ejere": [],
     "ledelse": [],
@@ -14815,7 +14833,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:19+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:27+00:00"
   },
   {
    "id": "30358325",
@@ -14918,7 +14936,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:18+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:24+00:00"
   },
   {
    "id": "43890514",
@@ -15021,7 +15039,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:19+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:25+00:00"
   },
   {
    "id": "43238779",
@@ -15124,7 +15142,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:17+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:23+00:00"
   },
   {
    "id": "40612904",
@@ -15227,7 +15245,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:16+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:22+00:00"
   },
   {
    "id": "41558342",
@@ -15330,7 +15348,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:15+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:21+00:00"
   },
   {
    "id": "41714026",
@@ -15433,7 +15451,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:15+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:21+00:00"
   },
   {
    "id": "42934607",
@@ -15536,7 +15554,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:14+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:20+00:00"
   },
   {
    "id": "44974673",
@@ -15639,7 +15657,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:14+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:20+00:00"
   },
   {
    "id": "37412392",
@@ -15742,7 +15760,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:13+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:19+00:00"
   },
   {
    "id": "36068620",
@@ -15851,7 +15869,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:38:09+00:00"
+   "sidst_opdateret": "2026-11-26T14:06:41+00:00"
   },
   {
    "id": "32365655",
@@ -15961,7 +15979,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:31:15+00:00"
+   "sidst_opdateret": "2026-11-26T14:05:34+00:00"
   },
   {
    "id": "44262606",
@@ -16070,7 +16088,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:30:26+00:00"
+   "sidst_opdateret": "2026-11-26T14:04:45+00:00"
   },
   {
    "id": "43613529",
@@ -16121,25 +16139,25 @@
     "lon": null
    },
    "regnskab": {
-    "regnskabsaar_slut": "2024-12-31",
-    "kilde_url": "http://regnskaber.virk.dk/92531634/amNsb3VkczovLzAzLzViLzQzLzEwLzA5L2JmYjAtNDkwMC04MjY5LWRiMGU5NjNhMDRiYg.pdf",
-    "aktiver": 40825,
-    "egenkapital": 37075,
+    "regnskabsaar_slut": "2025-12-31",
+    "kilde_url": "http://regnskaber.virk.dk/92531634/amNsb3VkczovLzAzL2QwLzQ4LzAzL2U4L2Y4NjItNDIxYy04NGRjLTAzZTA3ZDM2MDNiYQ.xml",
+    "aktiver": 41650,
+    "egenkapital": 34150,
     "investeringsejendomme": null,
     "grunde_og_bygninger": null,
     "materielle_anlaeg": null,
     "realkreditgaeld": null,
     "langfristet_gaeld": null,
-    "kortfristet_gaeld": 3750,
+    "kortfristet_gaeld": 7500,
     "omsaetning": null,
     "bruttofortjeneste": -3750,
-    "aarets_resultat": -3750,
-    "ansatte": null,
+    "aarets_resultat": -2925,
+    "ansatte": 0,
     "ejendomsvaerdi_bogfoert": null,
     "ejendomsandel_pct": null,
-    "soliditet_pct": 90.8,
+    "soliditet_pct": 82.0,
     "ltv_pct": null,
-    "samlet_gaeld": 3750
+    "samlet_gaeld": 7500
    },
    "ejendomme": [],
    "signaler": [
@@ -16163,7 +16181,7 @@
    "links": {
     "cvr": "https://datacvr.virk.dk/enhed/virksomhed/43613529",
     "statstidende": "https://www.statstidende.dk/messages/S17112026-34",
-    "aarsrapport": "http://regnskaber.virk.dk/92531634/amNsb3VkczovLzAzLzViLzQzLzEwLzA5L2JmYjAtNDkwMC04MjY5LWRiMGU5NjNhMDRiYg.pdf",
+    "aarsrapport": "http://regnskaber.virk.dk/92531634/amNsb3VkczovLzAzL2QwLzQ4LzAzL2U4L2Y4NjItNDIxYy04NGRjLTAzZTA3ZDM2MDNiYQ.xml",
     "regnskaber": "https://datacvr.virk.dk/enhed/virksomhed/43613529?tab=regnskaber",
     "kort": "https://www.google.com/maps/search/?api=1&query=Tårnfalkevej+13A,+2650+Hvidovre",
     "tinglysning": "https://www.tinglysning.dk",
@@ -16179,7 +16197,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:28:30+00:00"
+   "sidst_opdateret": "2026-11-26T14:02:44+00:00"
   },
   {
    "id": "25155688",
@@ -16900,7 +16918,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T15:12:59+00:00"
+   "sidst_opdateret": "2026-11-26T14:22:21+00:00"
   },
   {
    "id": "45041522",
@@ -17002,7 +17020,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T15:11:58+00:00"
+   "sidst_opdateret": "2026-11-26T14:21:19+00:00"
   },
   {
    "id": "27111408",
@@ -17105,7 +17123,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T15:12:00+00:00"
+   "sidst_opdateret": "2026-11-26T14:21:21+00:00"
   },
   {
    "id": "39270536",
@@ -17208,7 +17226,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-24T15:11:56+00:00"
+   "sidst_opdateret": "2026-11-26T14:19:04+00:00"
   },
   {
    "id": "31468051",
@@ -17311,7 +17329,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:49:45+00:00"
+   "sidst_opdateret": "2026-11-26T14:15:22+00:00"
   },
   {
    "id": "26817374",
@@ -17413,7 +17431,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:49:13+00:00"
+   "sidst_opdateret": "2026-11-26T14:14:51+00:00"
   },
   {
    "id": "33640552",
@@ -17603,7 +17621,7 @@
      ]
     }
    ],
-   "sidst_opdateret": "2026-11-25T14:47:29+00:00"
+   "sidst_opdateret": "2026-11-26T14:12:45+00:00"
   },
   {
    "id": "42869562",
@@ -17707,7 +17725,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:46:09+00:00"
+   "sidst_opdateret": "2026-11-26T14:11:24+00:00"
   },
   {
    "id": "42292540",
@@ -17816,7 +17834,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:26+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:33+00:00"
   },
   {
    "id": "34884226",
@@ -17919,7 +17937,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:45:50+00:00"
+   "sidst_opdateret": "2026-11-26T14:11:05+00:00"
   },
   {
    "id": "41345330",
@@ -18022,7 +18040,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:45:24+00:00"
+   "sidst_opdateret": "2026-11-26T14:10:39+00:00"
   },
   {
    "id": "45559629",
@@ -18125,7 +18143,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:44:12+00:00"
+   "sidst_opdateret": "2026-11-26T14:09:26+00:00"
   },
   {
    "id": "41434597",
@@ -18229,7 +18247,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:43:41+00:00"
+   "sidst_opdateret": "2026-11-26T14:08:55+00:00"
   },
   {
    "id": "44762595",
@@ -18332,7 +18350,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:43:47+00:00"
+   "sidst_opdateret": "2026-11-26T14:09:02+00:00"
   },
   {
    "id": "45071642",
@@ -18435,7 +18453,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:42:51+00:00"
+   "sidst_opdateret": "2026-11-26T14:08:04+00:00"
   },
   {
    "id": "40313761",
@@ -18744,7 +18762,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:28+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:35+00:00"
   },
   {
    "id": "44892561",
@@ -18847,7 +18865,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:27+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:34+00:00"
   },
   {
    "id": "44511096",
@@ -18951,7 +18969,7 @@
     "Ejerfortegnelsen kunne ikke slås op"
    ],
    "relationer": [],
-   "sidst_opdateret": "2026-11-25T14:24:26+00:00"
+   "sidst_opdateret": "2026-11-26T14:01:34+00:00"
   }
  ]
 }
